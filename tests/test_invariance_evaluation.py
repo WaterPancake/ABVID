@@ -8,6 +8,7 @@ import torch
 from vehicle_audio.audio import save_audio
 from vehicle_audio.invariance_evaluation import (
     METHODS,
+    build_factorial_split_and_partitions,
     evaluate_invariance,
     hard_negative_partner_indices,
     hard_positive_partner_indices,
@@ -163,6 +164,60 @@ def test_partner_mining_is_deterministic_and_respects_pair_semantics() -> None:
     assert negatives[0] == 2
     assert negatives[1] == 2
     assert records[negatives[0]]["vehicle_class"] != records[0]["vehicle_class"]
+
+
+def test_factorial_split_produces_balanced_controlled_partitions() -> None:
+    records: list[dict[str, object]] = []
+    for vehicle_class in ("tracked", "wheeled"):
+        for geometry, group_count in (("near_broadside", 3), ("far_offset", 1)):
+            for group_index in range(group_count):
+                session = f"{vehicle_class}_{geometry}_{group_index}"
+                for background in ("rain", "road traffic"):
+                    for snr_db in (10.0, 0.0):
+                        for microphone in (False, True):
+                            records.append(
+                                {
+                                    "sample_id": f"sample_{len(records)}",
+                                    "vehicle_class": vehicle_class,
+                                    "recording_session": session,
+                                    "background_category": background,
+                                    "snr_db": snr_db,
+                                    "corruption_view": 0,
+                                    "factorial_dataset_version": 1,
+                                    "source_listener_geometry": {
+                                        "geometry_id": geometry
+                                    },
+                                    "augmentations": {
+                                        "microphone_response": {
+                                            "applied": microphone
+                                        }
+                                    },
+                                }
+                            )
+
+    split, partitions = build_factorial_split_and_partitions(
+        records,
+        42,
+        heldout_noise="road traffic",
+        heldout_geometry="far_offset",
+    )
+
+    assert len(split.train) == len(split.validation) == 16
+    assert len(split.test) == 32
+    assert len(partitions["train_in_distribution"]) == 4
+    assert len(partitions["validation_in_distribution"]) == 4
+    assert len(partitions["seen_corruption"]) == 4
+    assert len(partitions["unseen_noise"]) == 4
+    assert len(partitions["unseen_microphone"]) == 4
+    assert len(partitions["unseen_environment"]) == 4
+    for indices in partitions.values():
+        counts = {
+            vehicle_class: sum(
+                records[index]["vehicle_class"] == vehicle_class for index in indices
+            )
+            for vehicle_class in ("tracked", "wheeled")
+        }
+        assert counts["tracked"] == counts["wheeled"]
 
 
 def test_toy_invariance_protocol_writes_required_artifacts(tmp_path: Path) -> None:

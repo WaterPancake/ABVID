@@ -239,6 +239,7 @@ class AugmentationPipeline:
         generator: torch.Generator,
         *,
         impulse_responses: Sequence[tuple[str, Path]] = (),
+        snr_db_override: float | None = None,
     ) -> AugmentationResult:
         validate_waveform(target)
         validate_waveform(background)
@@ -375,7 +376,12 @@ class AugmentationPipeline:
             generator,
         )
         if apply_augmentation:
-            snr_db = float(_choose(generator, self.config.noise.snr_db_choices))
+            sampled_snr_db = float(_choose(generator, self.config.noise.snr_db_choices))
+            snr_db = (
+                sampled_snr_db
+                if snr_db_override is None
+                else float(snr_db_override)
+            )
             mix = mix_at_snr(output, background, snr_db)
             output = mix.mixture
             parameters["noise"] = {
@@ -487,4 +493,3 @@ class AugmentationPipeline:
         if not torch.isfinite(output).all():
             raise RuntimeError("augmentation pipeline produced NaN or Inf")
         return AugmentationResult(output.to(torch.float32), parameters)
-

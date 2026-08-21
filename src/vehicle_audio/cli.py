@@ -10,6 +10,7 @@ from typing import Sequence
 from vehicle_audio.array_dataset import ArrayDatasetGenerator
 from vehicle_audio.config import load_config
 from vehicle_audio.dataset import DatasetGenerator
+from vehicle_audio.factorial_dataset import FactorialDatasetGenerator
 from vehicle_audio.multichannel import load_array_config
 from vehicle_audio.real_corpus import load_real_corpus_config, prepare_real_corpus
 from vehicle_audio.source_simulation import generate_controlled_corpus
@@ -34,6 +35,21 @@ def build_parser() -> argparse.ArgumentParser:
     )
     generate_parser.add_argument("--num-samples", type=int, required=True)
     generate_parser.add_argument("--seed", type=int, required=True)
+    factorial_parser = subparsers.add_parser(
+        "generate-factorial",
+        help="generate a balanced paired nuisance/SNR corpus for Milestone 6",
+    )
+    factorial_parser.add_argument("--config", type=Path, required=True)
+    factorial_parser.add_argument("--targets", type=Path, required=True)
+    factorial_parser.add_argument("--backgrounds", type=Path, required=True)
+    factorial_parser.add_argument("--output", type=Path, required=True)
+    factorial_parser.add_argument(
+        "--impulse-responses",
+        type=Path,
+        default=Path("data/impulse_responses"),
+    )
+    factorial_parser.add_argument("--corruption-views", type=int, default=1)
+    factorial_parser.add_argument("--seed", type=int, required=True)
     source_parser = subparsers.add_parser(
         "synthesize-sources",
         help="generate a controlled procedural vehicle-source corpus",
@@ -76,6 +92,20 @@ def main(argv: Sequence[str] | None = None) -> int:
             impulse_responses_root=args.impulse_responses,
         )
         summary = generator.generate(args.num_samples, args.seed)
+        print(json.dumps(summary, indent=2, sort_keys=True))
+        return 0
+    if args.command == "generate-factorial":
+        generator = FactorialDatasetGenerator(
+            load_config(args.config),
+            args.targets,
+            args.backgrounds,
+            args.output,
+            impulse_responses_root=args.impulse_responses,
+        )
+        summary = generator.generate(
+            seed=args.seed,
+            corruption_views=args.corruption_views,
+        )
         print(json.dumps(summary, indent=2, sort_keys=True))
         return 0
     if args.command == "synthesize-sources":

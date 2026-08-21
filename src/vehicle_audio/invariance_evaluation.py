@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
+import random
 import subprocess
 from typing import Any, Mapping, Sequence
 
@@ -267,6 +268,160 @@ def build_nuisance_partitions(
         if not _has_both_classes(records, indices):
             raise ValueError(f"nuisance partition {name!r} does not contain both classes")
     return partitions
+
+
+def build_factorial_split_and_partitions(
+    records: Sequence[Mapping[str, Any]],
+    split_seed: int,
+    *,
+    heldout_noise: str,
+    heldout_geometry: str,
+) -> tuple[SplitIndices, dict[str, tuple[int, ...]]]:
+    """Split a fully crossed corpus while keeping nuisance tests balanced."""
+
+    groups: dict[str, list[int]] = {}
+    for index, record in enumerate(records):
+        if record.get("factorial_dataset_version") is None:
+            raise ValueError("factorial split requires factorial_dataset_version")
+        groups.setdefault(str(record["recording_session"]), []).append(index)
+
+    reference_factors: set[tuple[str, float, bool, int]] | None = None
+    near_groups_by_class: dict[str, list[str]] = {name: [] for name in CLASS_NAMES}
+    heldout_groups: set[str] = set()
+    for group, indices in groups.items():
+        classes = {str(records[index]["vehicle_class"]) for index in indices}
+        geometries = {_geometry_id(records[index]) for index in indices}
+        if len(classes) != 1 or len(geometries) != 1:
+            raise ValueError(
+                f"factorial group {group!r} must have one class and geometry"
+            )
+        factors = {
+            (
+                str(records[index]["background_category"]),
+                float(records[index]["snr_db"]),
+                _microphone_applied(records[index]),
+                int(records[index].get("corruption_view", 0)),
+            )
+            for index in indices
+        }
+        if len(factors) != len(indices):
+            raise ValueError(f"factorial group {group!r} contains duplicate factor cells")
+        if reference_factors is None:
+            reference_factors = factors
+        elif factors != reference_factors:
+            raise ValueError(f"factorial group {group!r} does not contain the full factor grid")
+        vehicle_class = next(iter(classes))
+        geometry = next(iter(geometries))
+        if geometry == heldout_geometry:
+            heldout_groups.add(group)
+        else:
+            near_groups_by_class[vehicle_class].append(group)
+
+    if reference_factors is None:
+        raise ValueError("factorial manifest is empty")
+    background_values = {value[0] for value in reference_factors}
+    microphone_values = {value[2] for value in reference_factors}
+    if heldout_noise not in background_values or microphone_values != {False, True}:
+        raise ValueError("factorial grid lacks the requested noise or microphone states")
+
+    split_groups: dict[str, set[str]] = {
+        "train": set(),
+        "validation": set(),
+        "test": set(heldout_groups),
+    }
+    selector = random.Random(split_seed)
+    for vehicle_class in CLASS_NAMES:
+        class_groups = sorted(near_groups_by_class[vehicle_class])
+        if len(class_groups) < 3:
+            raise ValueError(
+                f"factorial split needs at least three non-heldout {vehicle_class} groups"
+            )
+        selector.shuffle(class_groups)
+        validation_count = max(1, round(len(class_groups) * 0.2))
+        test_count = max(1, round(len(class_groups) * 0.2))
+        while validation_count + test_count >= len(class_groups):
+            if validation_count >= test_count and validation_count > 1:
+                validation_count -= 1
+            elif test_count > 1:
+                test_count -= 1
+            else:
+                break
+        split_groups["validation"].update(class_groups[:validation_count])
+        split_groups["test"].update(
+            class_groups[validation_count : validation_count + test_count]
+        )
+        split_groups["train"].update(
+            class_groups[validation_count + test_count :]
+        )
+
+    def group_indices(names: set[str]) -> tuple[int, ...]:
+        return tuple(
+            index
+            for group in sorted(names)
+            for index in groups[group]
+        )
+
+    split = SplitIndices(
+        train=group_indices(split_groups["train"]),
+        validation=group_indices(split_groups["validation"]),
+        test=group_indices(split_groups["test"]),
+    )
+
+    def select(
+        group_names: set[str],
+        *,
+        noise: bool | None = None,
+        microphone: bool | None = None,
+        geometry: str | None = None,
+    ) -> tuple[int, ...]:
+        selected: list[int] = []
+        for group in sorted(group_names):
+            for index in groups[group]:
+                record = records[index]
+                if noise is not None:
+                    is_heldout_noise = str(record["background_category"]) == heldout_noise
+                    if is_heldout_noise != noise:
+                        continue
+                if microphone is not None and _microphone_applied(record) != microphone:
+                    continue
+                if geometry is not None and _geometry_id(record) != geometry:
+                    continue
+                selected.append(index)
+        return tuple(selected)
+
+    near_test_groups = {
+        group
+        for group in split_groups["test"]
+        if group not in heldout_groups
+    }
+    partitions = {
+        "train_in_distribution": select(
+            split_groups["train"], noise=False, microphone=False
+        ),
+        "validation_in_distribution": select(
+            split_groups["validation"], noise=False, microphone=False
+        ),
+        "seen_corruption": select(
+            near_test_groups, noise=False, microphone=False
+        ),
+        "unseen_noise": select(
+            near_test_groups, noise=True, microphone=False
+        ),
+        "unseen_microphone": select(
+            near_test_groups, noise=False, microphone=True
+        ),
+        "unseen_environment": select(
+            heldout_groups,
+            noise=False,
+            microphone=False,
+            geometry=heldout_geometry,
+        ),
+        "all_corruptions": split.test,
+    }
+    for name, indices in partitions.items():
+        if not indices or not _has_both_classes(records, indices):
+            raise ValueError(f"factorial partition {name!r} is empty or lacks a class")
+    return split, partitions
 
 
 def hard_positive_partner_indices(
@@ -823,14 +978,31 @@ def evaluate_invariance(
     real_features = cached["real_features"]
     real_labels = cached["real_labels"]
 
-    synthetic_split = grouped_stratified_split(synthetic_records, resolved_split_seed)
+    factorial_versions = {
+        record.get("factorial_dataset_version") for record in synthetic_records
+    }
+    if factorial_versions == {None}:
+        synthetic_split = grouped_stratified_split(
+            synthetic_records, resolved_split_seed
+        )
+        nuisance = build_nuisance_partitions(
+            synthetic_records,
+            synthetic_split,
+            heldout_noise=heldout_noise,
+            heldout_geometry=heldout_geometry,
+        )
+        split_strategy = "recording_session_grouped_with_posthoc_nuisance_holdouts"
+    elif None not in factorial_versions and len(factorial_versions) == 1:
+        synthetic_split, nuisance = build_factorial_split_and_partitions(
+            synthetic_records,
+            resolved_split_seed,
+            heldout_noise=heldout_noise,
+            heldout_geometry=heldout_geometry,
+        )
+        split_strategy = "balanced_factorial_recording_session_grouped"
+    else:
+        raise ValueError("synthetic manifest mixes factorial and non-factorial records")
     real_split = grouped_stratified_split(real_records, resolved_split_seed)
-    nuisance = build_nuisance_partitions(
-        synthetic_records,
-        synthetic_split,
-        heldout_noise=heldout_noise,
-        heldout_geometry=heldout_geometry,
-    )
     hard_partners = hard_positive_partner_indices(
         synthetic_records, nuisance["train_in_distribution"]
     )
@@ -967,7 +1139,7 @@ def evaluate_invariance(
 
     _write_plots_and_csv(output, method_results)
     split_payload = {
-        "strategy": "recording_session_grouped_with_controlled_nuisance_holdouts",
+        "strategy": split_strategy,
         "seed": resolved_split_seed,
         "synthetic": _split_payload(synthetic_records, synthetic_split),
         "real": _split_payload(real_records, real_split),
