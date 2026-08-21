@@ -1,0 +1,30 @@
+source_id: candidate-target-wheeled-s2as-humvee-mrzr-2025
+status: review_required
+kind: target
+provider: direct
+source_page: "https://www.dvidshub.net/video/973361/spectrum-situational-awareness-system-s2as-user-assessment-b-roll"
+direct_url: "https://www.dvidshub.net/download/videofile/9814974"
+title: "Spectrum Situational Awareness System (S2AS) User Assessment B-Roll"
+creator: "Shawn Nesaw and Christopher Nwagbara"
+license: "Public domain (DVIDS page statement; DVIDS usage restrictions apply)"
+license_url: "https://www.dvidshub.net/about/copyright"
+vehicle_class: wheeled
+vehicle_model: "Humvee and MRZR (multiple wheeled vehicles in one session)"
+recording_session: dvids_s2as_lakehurst_vehicle_assessment_2025
+operating_condition: mixed
+format: "MP4, H.264 video with AAC audio; proposed 256x144 download"
+duration_seconds: 93
+attribution: >-
+  Shawn Nesaw and Christopher Nwagbara, Spectrum Situational Awareness System
+  (S2AS) User Assessment B-Roll, DVIDS, public domain.
+evidence:
+  - "https://www.dvidshub.net/video/973361/spectrum-situational-awareness-system-s2as-user-assessment-b-roll (official timestamps, date, creators, duration, and PUBLIC DOMAIN statement)"
+  - "https://www.dvidshub.net/download/popup/973361 (official MP4 download variants)"
+  - "https://www.dvidshub.net/about/copyright (DVIDS reuse restrictions)"
+reason_for_review: >-
+  Discovery proposal only. The source page identifies wheeled-vehicle motion at
+  0:02-0:04, 0:32-0:36, 0:38-0:41, 0:47-0:55, and 1:01-1:33, but each interval
+  still needs audio review for vehicle dominance and usable boundaries. Humvee and
+  MRZR clips must remain in one recording_session and vehicle identity must not be
+  inferred for mixed intervals. The proposed direct endpoint returned HTTP 403 to
+  the metadata client, so collector access must be confirmed after approval.

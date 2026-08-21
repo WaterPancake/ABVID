@@ -1,0 +1,29 @@
+source_id: candidate-target-wheeled-humvee-southern-strike-2022
+status: review_required
+kind: target
+provider: direct
+source_page: "https://www.dvidshub.net/video/842870/156-crg-southern-strike-2022-humvee-driving-training"
+direct_url: "https://www.dvidshub.net/download/videofile/8309579"
+title: "156 CRG - Southern Strike 2022: Humvee driving training"
+creator: "Eliezer Soto, 102d Public Affairs Detachment"
+license: "Public domain (DVIDS page statement; DVIDS usage restrictions apply)"
+license_url: "https://www.dvidshub.net/about/copyright"
+vehicle_class: wheeled
+vehicle_model: "High Mobility Multipurpose Wheeled Vehicle (Humvee)"
+recording_session: dvids_southern_strike_humvee_driving_2022
+operating_condition: mixed
+format: "MP4, H.264 video with AAC audio; proposed 256x144 download"
+duration_seconds: 90
+attribution: >-
+  Eliezer Soto, 156 CRG - Southern Strike 2022: Humvee driving training,
+  DVIDS, public domain.
+evidence:
+  - "https://www.dvidshub.net/video/842870/156-crg-southern-strike-2022-humvee-driving-training (official description, date, creator, duration, and PUBLIC DOMAIN statement)"
+  - "https://www.dvidshub.net/download/popup/842870 (official MP4 download variants)"
+  - "https://www.dvidshub.net/about/copyright (DVIDS reuse restrictions)"
+reason_for_review: >-
+  Discovery proposal only. The 90-second B-roll needs audiovisual review to mark
+  vehicle-dominant operating-state segments. The page byline says Staff Sgt. while
+  the rights statement displays 1st Lt.; retain the creator without rank until that
+  provider inconsistency is resolved. The proposed direct endpoint returned HTTP 403
+  to the metadata client, so collector access must also be confirmed after approval.

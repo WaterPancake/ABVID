@@ -1,0 +1,28 @@
+source_id: candidate-target-wheeled-humvee-capabilities-2008
+status: review_required
+kind: target
+provider: direct
+source_page: "https://www.dvidshub.net/video/35282/humvee-capabilities"
+direct_url: "https://www.dvidshub.net/download/videofile/1394997"
+title: "Humvee Capabilities"
+creator: "Courtesy Video, III Marine Expeditionary Force"
+license: "Public domain (DVIDS page statement; DVIDS usage restrictions apply)"
+license_url: "https://www.dvidshub.net/about/copyright"
+vehicle_class: wheeled
+vehicle_model: "High Mobility Multipurpose Wheeled Vehicle (Humvee)"
+recording_session: dvids_iii_mef_humvee_capabilities_okinawa_2008
+operating_condition: mixed
+format: "MP4, H.264 video with AAC audio; 240x180 download"
+duration_seconds: 305
+attribution: >-
+  Courtesy Video, III Marine Expeditionary Force, Humvee Capabilities, DVIDS,
+  public domain.
+evidence:
+  - "https://www.dvidshub.net/video/35282/humvee-capabilities (official description, date, creator, duration, and PUBLIC DOMAIN statement)"
+  - "https://www.dvidshub.net/download/popup/35282 (official MP4 download listing)"
+  - "https://www.dvidshub.net/about/copyright (DVIDS reuse restrictions)"
+reason_for_review: >-
+  Discovery proposal only. The five-minute B-roll mixes exterior obstacle driving
+  and vehicle-interior footage, so reviewed time boundaries are required before it
+  can become a target source. The proposed direct endpoint returned HTTP 403 to the
+  metadata client; collector access must be confirmed after approval.
