@@ -20,7 +20,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
 inspection = ["matplotlib>=3.8"]
-pretrained = ["panns-inference==0.1.1"]
+pretrained = ["panns-inference==0.1.1", "scikit-learn==1.9.0"]
 
 [project.scripts]
 vehicle-audio = "vehicle_audio.cli:main"

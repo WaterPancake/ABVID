@@ -2011,6 +2011,7 @@ inspection = [
 ]
 pretrained = [
     { name = "panns-inference" },
+    { name = "scikit-learn" },
 ]
 
 [package.metadata]
@@ -2020,6 +2021,7 @@ requires-dist = [
     { name = "panns-inference", marker = "extra == 'pretrained'", specifier = "==0.1.1" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
     { name = "pyyaml", specifier = ">=6.0" },
+    { name = "scikit-learn", marker = "extra == 'pretrained'", specifier = "==1.9.0" },
     { name = "scipy", specifier = ">=1.11" },
     { name = "soundfile", specifier = ">=0.12" },
     { name = "torch", specifier = ">=2.2" },
