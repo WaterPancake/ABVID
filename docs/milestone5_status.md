@@ -1,9 +1,8 @@
 # Milestone 5 — Real-World Transfer Status
 
-Date: 2026-08-20  
-Status: evaluation implementation complete; checked experiment blocked by real-data
-coverage and content review  
-Performance claim: **none**
+Date: 2026-08-21
+Status: first reviewed, grouped transfer experiment complete
+Performance claim: **limited to the exact held-out real sessions documented below**
 
 ## Implemented protocol
 
@@ -52,7 +51,7 @@ Prepare native real windows:
 uv run python -m vehicle_audio.cli prepare-real \
   --config configs/real_corpus.yaml \
   --targets data/targets \
-  --output data/real_eval_v1
+  --output data/real_eval_v2
 ```
 
 Run the full transfer protocol after the audit passes:
@@ -60,7 +59,7 @@ Run the full transfer protocol after the audit passes:
 ```bash
 uv run python scripts/evaluate_transfer.py \
   --synthetic-manifest data/generated/m3_controlled_seed42/manifest.jsonl \
-  --real-manifest data/real_eval_v1/real_manifest.jsonl \
+  --real-manifest data/real_eval_v2/real_manifest.jsonl \
   --output runs/m5_transfer_seed42 \
   --real-fraction 0.01 \
   --real-fraction 0.05 \
@@ -77,90 +76,81 @@ uv run python scripts/evaluate_transfer.py \
 `engineering_smoke_unreviewed`. It does not bypass the minimum independent-session
 gate and its results are not reportable research evidence.
 
-## Checked local corpus audit
+## Checked real corpus
 
-Dataset version (SHA-256 of `data/real_eval_v1/real_manifest.jsonl`):
-
-```text
-4f1e6daf5137f3b93852e9d574a5ad40e3b656306f9e08536d029e2cd740e889
-```
-
-| Property | Current value | Required state |
-|---|---:|---:|
-| Real windows | 115 | Not a substitute for source sessions |
-| Tracked windows | 64 | — |
-| Wheeled windows | 51 | — |
-| Independent tracked sessions | **1** | At least 3; preferably 5+ |
-| Independent wheeled sessions | **2** | At least 3; preferably 5+ |
-| Provenance-complete sources | 3/3 | All |
-| Sources with reviewed segment boundaries | **0/3** | All used sources |
-
-Current sessions:
-
-- tracked: `dvids_romanian_tank_range_2014`;
-- wheeled: `commons_goodwood_festival_of_speed_2009`;
-- wheeled: `commons_soundsofchanges_private_collection`.
-
-The preflight error is intentional:
+Real manifest SHA-256:
 
 ```text
-Milestone 5 grouped evaluation requires at least three independent recording
-sessions per class; found tracked=1, wheeled=2
+84fb1ef0e9f44df7f8d5c48400ea3f9b3bac3de2b3bdf5ae63004b073883c1dd
 ```
 
-No model was trained and no accuracy was reported on this corpus. Splitting its 115
-windows randomly would turn one tracked recording into apparent train/test diversity
-and violate the project leakage rule.
+| Property | Value |
+|---|---:|
+| Real windows | 271 |
+| Tracked windows | 170 |
+| Wheeled windows | 101 |
+| Independent tracked sessions | 4 |
+| Independent wheeled sessions | 3 |
+| Provenance-complete sources | 7/7 |
+| Sources with reviewed segment boundaries | 7/7 |
 
-## Data needed next
+The corpus satisfies the evaluator's minimum three independent sessions per class,
+but it is still smaller than the preferred five-plus sessions per class. In
+particular, each validation/test class is represented by only one source session.
 
-The local catalog contains approval-gated candidates from independent sessions. A
-minimal split-capable addition would require two tracked sessions and one wheeled
-session, but that would leave only one session per class in each partition. A more
-defensible first experiment should target at least five sessions per class.
+## First transfer result
 
-Candidate IDs already present in the local catalog include:
+Run: `runs/m5_transfer_seed42`
 
-- tracked: `target-tracked-mpf-firepower`,
-  `target-tracked-stug-iiig-lappeenranta`, and
-  `target-tracked-bae-mpf-arrival`;
-- wheeled sessions beyond the two already present:
-  `target-wheeled-vanwall-1957-goodwood-2010`,
-  `target-wheeled-maserati-granturismo-exhaust`,
-  `target-wheeled-car-cobblestone-pass`, and
-  `target-wheeled-cars-night-stopping`.
+Git commit: `737933f9a1203c657438015152f75b62e48a80c7`
 
-The two MPF entries are alternate platform copies of the same 2023-01-25
-Tankodrome arrival. Their catalog records now share
-`us_army_armor_cavalry_collection_tankodrome_2023`, so they count as one session.
-The Tiger 131 item has been returned to `review_required`: its Commons license is
-CC0, but the author is unknown and the file came from YouTube.
+Combined dataset version:
+`a0a38e6d900e6ea85c5eb395583ad2f44a376f1c82abb0553fe61036289b03d5`
 
-A 2026-08-20 proposal-only source refresh found three independent tracked-session
-candidates. They remain outside the catalog until operator content/provenance
-review:
+The fixed real test set contains 124 windows from two completely held-out sessions:
 
-- `candidate-target-tracked-retromobile-amx30-2015` (preferred);
-- `candidate-target-tracked-t18-khabarovsk-2015` (fallback);
-- `candidate-target-tracked-bovington-type59-2014` (weaker fallback; vehicle label
-  is disputed on Commons).
+- tracked: `commons_retromobile_amx30_demo_2015` (64 windows);
+- wheeled: `freesound_lmartins_maserati_granturismo_2019` (60 windows).
 
-The proposal records are:
+| Experiment | Real data used for training | Accuracy | Balanced accuracy | Macro F1 |
+|---|---:|---:|---:|---:|
+| A — real only | 100% of fixed real train split | 10.5% | 10.2% | 9.5% |
+| B — synthetic only | 0 | 33.9% | **32.8%** | **25.3%** |
+| C — pretrained + requested 1% real | 2 windows (actual 2.1%) | 16.9% | 16.4% | 14.5% |
+| C — pretrained + requested 5% real | 5 windows (actual 5.3%) | 27.4% | 26.6% | 21.5% |
+| C — pretrained + requested 10% real | 10 windows (actual 10.5%) | 27.4% | 26.6% | 21.5% |
+| C — pretrained + requested 25% real | 24 windows (actual 25.3%) | 17.7% | 17.2% | 15.1% |
 
-- `openclaw/vehicle-audio-curator/proposals/2026-08-20-milestone5-balanced-acquisition.yaml`;
-- `openclaw/vehicle-audio-curator/proposals/2026-08-20-milestone5-additional-tracked.yaml`.
+Every evaluated model had **0% recall on the held-out Maserati session**. The
+synthetic-only model correctly classified 42/64 AMX-30 windows but 0/60 Maserati
+windows. The real-only model selected a checkpoint with 98.5% validation balanced
+accuracy, then fell to 10.2% on the two unseen sessions. This large validation/test
+reversal is evidence of source/session overfitting, not a successful transfer result.
 
-The collector rechecks provider metadata and licenses at collection time. The
-OpenClaw download gate still requires an explicit operator message of the form:
+Calibration is also poor: expected calibration error is 0.414 for real-only and
+0.505 for synthetic-only on the real test set. Adding the currently available real
+windows does not close the sim-to-real gap and generally degrades the synthetic-only
+checkpoint.
 
-```text
-approve download: <source-id>
-```
+## Interpretation and next data work
 
-After collection, usable vehicle-only time intervals must be reviewed and stored as
-`condition_segments` before the full protocol will run. Milestone 6 should not begin
-until this transfer experiment produces a reproducible, reviewed result.
+This run demonstrates that the current representation does **not** generalize at
+category level across these real source sessions. It should not be generalized to a
+broader tracked-vs-wheeled claim because:
 
-The current workspace is not a Git checkout (`.git` is absent). Before a reportable
-Milestone 5 run, version control must be restored or initialized so the required git
-commit can be recorded with the experiment.
+- the test set is one recording session per class;
+- the real training split contains only one short wheeled session;
+- source identity, venue, microphone, and vehicle identity are inseparable in this
+  small corpus;
+- the failed Wikimedia collection attempts prevented reaching the preferred five
+  sessions per class.
+
+The collection manifest retains the throttled T-18, cobblestone-car, and Cologne
+night-traffic attempts for later retry. The duplicate MPF repost remains grouped into
+one `recording_session`, and Tiger 131 remains `review_required` because its author
+and YouTube chain of custody are ambiguous.
+
+Milestone 6 may now proceed as a controlled attempt to improve corruption invariance,
+but it must retain this exact Milestone 5 result as the transfer baseline and must not
+present invariance training as a substitute for acquiring more independent real
+sessions.

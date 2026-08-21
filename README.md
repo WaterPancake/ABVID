@@ -4,12 +4,12 @@ This repository builds deterministic paired audio for the first research questio
 do wheeled and tracked vehicle signatures remain identifiable after realistic
 environmental and microphone corruption?
 
-Milestones 1-4 currently provide an offline augmentation engine, leakage-safe
-classical/CNN baselines, a separate controlled procedural source corpus, and a
-deterministic microphone-array simulation/evaluation baseline. Milestone 5's
-synthetic-to-real evaluation machinery is implemented, but the checked real corpus
-does not yet satisfy its session-count and content-review gates. The project therefore
-does not claim synthetic-to-real transfer.
+Milestones 1-5 provide an offline augmentation engine, leakage-safe classical/CNN
+baselines, a separate controlled procedural source corpus, deterministic microphone-
+array baselines, and a first grouped synthetic-to-real experiment. That transfer run
+is a negative result on a small reviewed corpus and is not a general tracked-versus-
+wheeled performance claim. Milestone 6 adds a controlled paired-representation
+comparison against clean-only and augmentation-only training.
 
 ## Setup
 
@@ -370,7 +370,7 @@ windows; it does not add corruption or infer an unavailable SNR:
 uv run python -m vehicle_audio.cli prepare-real \
   --config configs/real_corpus.yaml \
   --targets data/targets \
-  --output data/real_eval_v1
+  --output data/real_eval_v2
 ```
 
 The resulting `real_manifest.jsonl` preserves recording session, source URL, license,
@@ -384,7 +384,7 @@ Once that audit passes, run the fixed protocol:
 ```bash
 uv run python scripts/evaluate_transfer.py \
   --synthetic-manifest data/generated/m3_controlled_seed42/manifest.jsonl \
-  --real-manifest data/real_eval_v1/real_manifest.jsonl \
+  --real-manifest data/real_eval_v2/real_manifest.jsonl \
   --output runs/m5_transfer_seed42 \
   --seed 42 --device cpu
 ```
@@ -396,11 +396,52 @@ actual adaptation fractions, complete group/sample splits, checkpoints, calibrat
 a learning curve, and a PCA view of pooled encoder embeddings. PCA is labeled as
 visualization only and is not treated as proof of representation quality.
 
-The current local corpus produces 115 windows but only one tracked and two wheeled
-recording sessions, all lacking reviewed segment boundaries. Evaluation therefore
-stops at preflight. See
-[`docs/milestone5_status.md`](docs/milestone5_status.md) for the exact readiness audit
-and next data requirements.
+The checked corpus contains 271 reviewed windows from four tracked and three wheeled
+sessions. On the fixed two-session real test set, the real-only model reaches 10.2%
+balanced accuracy and the synthetic-only model reaches 32.8%; limited-real adaptation
+does not improve the latter. Every model misses the held-out wheeled session, so this
+is evidence of severe source/session overfitting and sim-to-real failure, not a useful
+category classifier. See [`docs/milestone5_status.md`](docs/milestone5_status.md) for
+the exact split, hashes, metrics, calibration, and limitations.
+
+## Milestone 6: paired noise-invariance evaluation
+
+The invariance evaluator uses Milestone 1's aligned `clean_path`/`corrupted_path`
+pairs and holds complete `recording_session` groups out of training. It compares the
+same CNN architecture, initialization seed, batch order, split, and validation rule
+across:
+
+- standard supervised training on clean inputs;
+- augmentation-only supervised training on corrupted inputs;
+- paired training with class-weighted cross entropy, clean/corrupted cosine
+  consistency, same-vehicle hard positives, and metadata-matched cross-class hard
+  negatives in an established cosine triplet-margin objective.
+
+Run the checked comparison with:
+
+```bash
+uv run python scripts/evaluate_invariance.py \
+  --synthetic-manifest data/generated/m3_controlled_seed42/manifest.jsonl \
+  --real-manifest data/real_eval_v2/real_manifest.jsonl \
+  --output runs/m6_invariance_seed42 \
+  --heldout-noise 'road traffic' \
+  --heldout-geometry far_offset \
+  --consistency-weight 0.5 \
+  --hard-positive-weight 0.1 \
+  --hard-negative-weight 0.1 \
+  --triplet-margin 0.2 \
+  --epochs 10 --batch-size 32 --learning-rate 0.001 \
+  --seed 42 --device cpu
+```
+
+Training excludes the selected noise category, microphone-response augmentation,
+and held-out geometry. Test partitions isolate each nuisance where possible, plus an
+all-corruptions view and the same grouped native-real test sessions used by Milestone
+5. Geometry is explicitly recorded as an environment proxy because the checked
+corpus has no impulse-response observations; this is not a true unseen-room test.
+Each run saves machine-readable configuration, manifest hashes, complete grouped
+splits, model checkpoints, per-condition/per-SNR metrics, embedding consistency, and
+comparison plots.
 
 ## Reproducibility boundary
 
