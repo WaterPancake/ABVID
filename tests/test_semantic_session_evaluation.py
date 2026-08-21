@@ -77,7 +77,26 @@ def test_nested_session_evaluation_has_disjoint_grouped_outer_folds() -> None:
     assert result["aggregate"]["outer_fold_count"] == 9
     assert result["aggregate"]["balanced_accuracy"]["mean"] >= 0.9
     assert result["aggregate"]["both_heldout_sessions_correct_rate"] >= 0.8
+    assert result["regularization_ensemble_aggregate"]["outer_fold_count"] == 9
+    assert (
+        result["regularization_ensemble_aggregate"]["balanced_accuracy"]["mean"]
+        >= 0.9
+    )
     assert len(states) == 9
+    assert all(
+        set(state) == {"nested_selected", "regularization_ensemble"}
+        for state in states.values()
+    )
+    assert all(
+        set(state["regularization_ensemble"]) == {"c_0.1", "c_1"}
+        for state in states.values()
+    )
+    assert all(
+        fold["regularization_ensemble_metrics"]["snr_available"] is False
+        and set(fold["regularization_ensemble_session_predictions"])
+        == {fold["tracked_test_session"], fold["wheeled_test_session"]}
+        for fold in result["folds"]
+    )
     assert len(splits["folds"]) == 9
     for fold in splits["folds"]:
         train_ids = set(fold["train_sample_ids"])

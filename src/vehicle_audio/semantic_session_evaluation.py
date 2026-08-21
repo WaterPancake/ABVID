@@ -27,7 +27,7 @@ from vehicle_audio.pretrained_evaluation import (
 )
 
 
-SEMANTIC_SESSION_EVALUATION_VERSION = 1
+SEMANTIC_SESSION_EVALUATION_VERSION = 2
 
 # Fixed before evaluation from the AudioSet ontology. These features describe
 # vehicles, road/rail motion, engines, and mechanical track-like sound. They exclude
@@ -191,6 +191,66 @@ def _evaluate_probe(
     return metrics, probabilities
 
 
+def _evaluate_probe_ensemble(
+    features: np.ndarray,
+    labels: np.ndarray,
+    indices: Sequence[int],
+    probes: Sequence[tuple[Any, Any]],
+) -> tuple[dict[str, Any], np.ndarray]:
+    if not probes:
+        raise ValueError("probe ensemble cannot be empty")
+    selected = np.asarray(sorted(int(index) for index in indices), dtype=np.int64)
+    probabilities = np.mean(
+        [
+            model.predict_proba(scaler.transform(features[selected]))
+            for scaler, model in probes
+        ],
+        axis=0,
+    )
+    predictions = probabilities.argmax(axis=1)
+    metrics = classification_metrics(
+        torch.from_numpy(predictions),
+        torch.from_numpy(labels[selected]),
+        torch.zeros(len(selected)),
+        torch.from_numpy(probabilities).to(torch.float32),
+    )
+    metrics.pop("per_snr")
+    metrics["snr_available"] = False
+    return metrics, probabilities
+
+
+def _session_predictions(
+    probabilities: np.ndarray,
+    sorted_test_indices: Sequence[int],
+    records: Sequence[Mapping[str, Any]],
+    tracked_session: str,
+    wheeled_session: str,
+) -> dict[str, Any]:
+    predictions: dict[str, Any] = {}
+    for vehicle_class, session in (
+        ("tracked", tracked_session),
+        ("wheeled", wheeled_session),
+    ):
+        positions = [
+            position
+            for position, record_index in enumerate(sorted_test_indices)
+            if str(records[record_index]["recording_session"]) == session
+        ]
+        mean_probability = probabilities[positions].mean(axis=0)
+        predicted_class = CLASS_NAMES[int(mean_probability.argmax())]
+        predictions[session] = {
+            "vehicle_class": vehicle_class,
+            "predicted_class": predicted_class,
+            "correct": predicted_class == vehicle_class,
+            "mean_probability": {
+                name: float(mean_probability[class_index])
+                for class_index, name in enumerate(CLASS_NAMES)
+            },
+            "support": len(positions),
+        }
+    return predictions
+
+
 def _metric_summary(values: Sequence[float]) -> dict[str, float | int]:
     return {
         "count": len(values),
@@ -202,6 +262,43 @@ def _metric_summary(values: Sequence[float]) -> dict[str, float | int]:
     }
 
 
+def _aggregate_folds(
+    folds: Sequence[Mapping[str, Any]],
+    *,
+    metrics_field: str,
+    session_predictions_field: str,
+) -> dict[str, Any]:
+    return {
+        "outer_fold_count": len(folds),
+        "balanced_accuracy": _metric_summary(
+            [float(fold[metrics_field]["balanced_accuracy"]) for fold in folds]
+        ),
+        "macro_f1": _metric_summary(
+            [float(fold[metrics_field]["macro_f1"]) for fold in folds]
+        ),
+        "per_class_recall": {
+            vehicle_class: _metric_summary(
+                [
+                    float(fold[metrics_field]["per_class_recall"][vehicle_class])
+                    for fold in folds
+                ]
+            )
+            for vehicle_class in CLASS_NAMES
+        },
+        "both_heldout_sessions_correct_rate": mean(
+            [
+                float(
+                    all(
+                        prediction["correct"]
+                        for prediction in fold[session_predictions_field].values()
+                    )
+                )
+                for fold in folds
+            ]
+        ),
+    }
+
+
 def nested_leave_session_pair_out(
     features: torch.Tensor,
     labels: torch.Tensor,
@@ -209,7 +306,7 @@ def nested_leave_session_pair_out(
     *,
     c_values: Sequence[float] = (0.001, 0.01, 0.1, 1.0, 10.0),
     seed: int = 42,
-) -> tuple[dict[str, Any], dict[str, dict[str, torch.Tensor]], dict[str, Any]]:
+) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
     """Run nested leave-one-tracked/one-wheeled-session-out evaluation."""
 
     if features.ndim != 2 or features.shape[0] != len(records):
@@ -234,7 +331,7 @@ def nested_leave_session_pair_out(
         raise ValueError("feature-cache labels do not align with the real manifest")
 
     folds: list[dict[str, Any]] = []
-    model_states: dict[str, dict[str, torch.Tensor]] = {}
+    model_states: dict[str, Any] = {}
     split_folds: list[dict[str, Any]] = []
     for tracked_session, tracked_indices in sessions["tracked"].items():
         for wheeled_session, wheeled_indices in sessions["wheeled"].items():
@@ -316,32 +413,46 @@ def nested_leave_session_pair_out(
                 model,
             )
             sorted_test = sorted(outer_test)
-            session_predictions: dict[str, Any] = {}
-            for vehicle_class, session in (
-                ("tracked", tracked_session),
-                ("wheeled", wheeled_session),
-            ):
-                positions = [
-                    position
-                    for position, record_index in enumerate(sorted_test)
-                    if str(records[record_index]["recording_session"]) == session
-                ]
-                mean_probability = probabilities[positions].mean(axis=0)
-                predicted_class = CLASS_NAMES[int(mean_probability.argmax())]
-                session_predictions[session] = {
-                    "vehicle_class": vehicle_class,
-                    "predicted_class": predicted_class,
-                    "correct": predicted_class == vehicle_class,
-                    "mean_probability": {
-                        name: float(mean_probability[class_index])
-                        for class_index, name in enumerate(CLASS_NAMES)
-                    },
-                    "support": len(positions),
-                }
+            session_predictions = _session_predictions(
+                probabilities,
+                sorted_test,
+                records,
+                tracked_session,
+                wheeled_session,
+            )
+            ensemble_probes: list[tuple[Any, Any]] = []
+            ensemble_states: dict[str, dict[str, torch.Tensor]] = {}
+            for regularization_c in candidates:
+                ensemble_scaler, ensemble_model, ensemble_state = _fit_probe(
+                    feature_array,
+                    label_array,
+                    records,
+                    outer_train,
+                    regularization_c,
+                    seed,
+                )
+                ensemble_probes.append((ensemble_scaler, ensemble_model))
+                ensemble_states[f"c_{regularization_c:g}"] = ensemble_state
+            ensemble_metrics, ensemble_probabilities = _evaluate_probe_ensemble(
+                feature_array,
+                label_array,
+                outer_test,
+                ensemble_probes,
+            )
+            ensemble_session_predictions = _session_predictions(
+                ensemble_probabilities,
+                sorted_test,
+                records,
+                tracked_session,
+                wheeled_session,
+            )
             fold_id = hashlib.sha256(
                 f"{tracked_session}:{wheeled_session}".encode("utf-8")
             ).hexdigest()[:16]
-            model_states[fold_id] = state
+            model_states[fold_id] = {
+                "nested_selected": state,
+                "regularization_ensemble": ensemble_states,
+            }
             folds.append(
                 {
                     "fold_id": fold_id,
@@ -354,6 +465,10 @@ def nested_leave_session_pair_out(
                     "candidate_selection": candidate_results,
                     "metrics": metrics,
                     "session_predictions": session_predictions,
+                    "regularization_ensemble_metrics": ensemble_metrics,
+                    "regularization_ensemble_session_predictions": (
+                        ensemble_session_predictions
+                    ),
                 }
             )
             split_folds.append(
@@ -387,41 +502,26 @@ def nested_leave_session_pair_out(
                 }
             )
 
-    aggregate = {
-        "outer_fold_count": len(folds),
-        "balanced_accuracy": _metric_summary(
-            [float(fold["metrics"]["balanced_accuracy"]) for fold in folds]
-        ),
-        "macro_f1": _metric_summary(
-            [float(fold["metrics"]["macro_f1"]) for fold in folds]
-        ),
-        "per_class_recall": {
-            vehicle_class: _metric_summary(
-                [
-                    float(fold["metrics"]["per_class_recall"][vehicle_class])
-                    for fold in folds
-                ]
-            )
-            for vehicle_class in CLASS_NAMES
-        },
-        "both_heldout_sessions_correct_rate": mean(
-            [
-                float(
-                    all(
-                        prediction["correct"]
-                        for prediction in fold["session_predictions"].values()
-                    )
-                )
-                for fold in folds
-            ]
-        ),
-    }
+    aggregate = _aggregate_folds(
+        folds,
+        metrics_field="metrics",
+        session_predictions_field="session_predictions",
+    )
+    ensemble_aggregate = _aggregate_folds(
+        folds,
+        metrics_field="regularization_ensemble_metrics",
+        session_predictions_field="regularization_ensemble_session_predictions",
+    )
     split_payload = {
         "strategy": "nested_leave_one_tracked_and_one_wheeled_session_out",
         "group_field": "recording_session",
         "folds": split_folds,
     }
-    return {"folds": folds, "aggregate": aggregate}, model_states, split_payload
+    return {
+        "folds": folds,
+        "aggregate": aggregate,
+        "regularization_ensemble_aggregate": ensemble_aggregate,
+    }, model_states, split_payload
 
 
 def _load_semantic_features(
@@ -482,7 +582,10 @@ def evaluate_semantic_sessions(
     _, _, sklearn_version = _require_sklearn()
     training_config = {
         "semantic_session_evaluation_version": SEMANTIC_SESSION_EVALUATION_VERSION,
-        "model": "frozen_panns_semantic_outputs_session_balanced_logistic_regression",
+        "models": [
+            "nested_selected_logistic_regression",
+            "regularization_probability_ensemble",
+        ],
         "encoder_trainable": False,
         "semantic_audioset_features": [
             {"index": index, "name": name}
@@ -490,6 +593,7 @@ def evaluate_semantic_sessions(
         ],
         "regularization_c_candidates": [float(value) for value in c_values],
         "selection_metric": "inner_pair_mean_balanced_accuracy",
+        "ensemble_rule": "equal_mean_of_probabilities_across_all_regularization_candidates",
         "sample_weighting": "equal_class_equal_session_equal_window_within_session",
         "seed": seed,
         "scikit_learn_version": sklearn_version,
@@ -552,13 +656,35 @@ def evaluate_semantic_sessions(
             "tracked_test_session": fold["tracked_test_session"],
             "wheeled_test_session": fold["wheeled_test_session"],
             "selected_regularization_c": fold["selected_regularization_c"],
-            "balanced_accuracy": fold["metrics"]["balanced_accuracy"],
-            "macro_f1": fold["metrics"]["macro_f1"],
-            "tracked_recall": fold["metrics"]["per_class_recall"]["tracked"],
-            "wheeled_recall": fold["metrics"]["per_class_recall"]["wheeled"],
-            "both_sessions_correct": all(
+            "selected_balanced_accuracy": fold["metrics"]["balanced_accuracy"],
+            "selected_macro_f1": fold["metrics"]["macro_f1"],
+            "selected_tracked_recall": fold["metrics"]["per_class_recall"][
+                "tracked"
+            ],
+            "selected_wheeled_recall": fold["metrics"]["per_class_recall"][
+                "wheeled"
+            ],
+            "selected_both_sessions_correct": all(
                 prediction["correct"]
                 for prediction in fold["session_predictions"].values()
+            ),
+            "ensemble_balanced_accuracy": fold[
+                "regularization_ensemble_metrics"
+            ]["balanced_accuracy"],
+            "ensemble_macro_f1": fold["regularization_ensemble_metrics"][
+                "macro_f1"
+            ],
+            "ensemble_tracked_recall": fold[
+                "regularization_ensemble_metrics"
+            ]["per_class_recall"]["tracked"],
+            "ensemble_wheeled_recall": fold[
+                "regularization_ensemble_metrics"
+            ]["per_class_recall"]["wheeled"],
+            "ensemble_both_sessions_correct": all(
+                prediction["correct"]
+                for prediction in fold[
+                    "regularization_ensemble_session_predictions"
+                ].values()
             ),
         }
         for fold in results["folds"]
@@ -570,15 +696,40 @@ def evaluate_semantic_sessions(
         writer.writeheader()
         writer.writerows(csv_rows)
     figure, axis = plt.subplots(figsize=(10.5, 5.2))
-    values = [float(row["balanced_accuracy"]) for row in csv_rows]
-    axis.bar(range(len(values)), values)
+    selected_values = [float(row["selected_balanced_accuracy"]) for row in csv_rows]
+    ensemble_values = [float(row["ensemble_balanced_accuracy"]) for row in csv_rows]
+    positions = np.arange(len(selected_values))
+    axis.bar(
+        positions - 0.2,
+        selected_values,
+        width=0.4,
+        label="nested-selected C",
+    )
+    axis.bar(
+        positions + 0.2,
+        ensemble_values,
+        width=0.4,
+        label="regularization ensemble",
+    )
     axis.axhline(
         float(results["aggregate"]["balanced_accuracy"]["mean"]),
-        color="black",
+        color="tab:blue",
         linestyle="--",
-        label="fold mean",
+        label="selected mean",
     )
-    axis.set_xticks(range(len(values)), [str(index + 1) for index in range(len(values))])
+    axis.axhline(
+        float(
+            results["regularization_ensemble_aggregate"]["balanced_accuracy"][
+                "mean"
+            ]
+        ),
+        color="tab:orange",
+        linestyle="--",
+        label="ensemble mean",
+    )
+    axis.set_xticks(
+        positions, [str(index + 1) for index in range(len(selected_values))]
+    )
     axis.set_xlabel("Held-out tracked/wheeled session pair")
     axis.set_ylabel("Balanced accuracy")
     axis.set_ylim(0.0, 1.02)
@@ -618,8 +769,18 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "output_dir": str(args.output),
                 "protocol_status": results["protocol_status"],
                 "outer_fold_count": results["aggregate"]["outer_fold_count"],
-                "balanced_accuracy": results["aggregate"]["balanced_accuracy"],
-                "per_class_recall": results["aggregate"]["per_class_recall"],
+                "nested_selected": {
+                    "balanced_accuracy": results["aggregate"]["balanced_accuracy"],
+                    "per_class_recall": results["aggregate"]["per_class_recall"],
+                },
+                "regularization_ensemble": {
+                    "balanced_accuracy": results[
+                        "regularization_ensemble_aggregate"
+                    ]["balanced_accuracy"],
+                    "per_class_recall": results[
+                        "regularization_ensemble_aggregate"
+                    ]["per_class_recall"],
+                },
             },
             indent=2,
             sort_keys=True,
