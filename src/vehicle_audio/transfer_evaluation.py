@@ -36,7 +36,7 @@ from vehicle_audio.baseline import (
 from vehicle_audio.real_corpus import audit_real_manifest, validate_real_manifest_record
 
 
-TRANSFER_EVALUATION_VERSION = 1
+TRANSFER_EVALUATION_VERSION = 2
 
 
 def _sha256(path: Path) -> str:
@@ -101,14 +101,34 @@ def validate_transfer_protocol(
             "real manifest contains unreviewed whole-recording labels for sources: "
             + ", ".join(audit["unreviewed_source_ids"])
         )
-    synthetic_rate = {int(record["sample_rate"]) for record in synthetic_records}
-    real_rate = {int(record["sample_rate"]) for record in real_records}
-    if synthetic_rate != real_rate:
+    synthetic_shapes = {
+        (int(record["sample_rate"]), int(record["num_samples"]))
+        for record in synthetic_records
+    }
+    real_shapes = {
+        (int(record["sample_rate"]), int(record["num_samples"]))
+        for record in real_records
+    }
+    if len(synthetic_shapes) != 1 or len(real_shapes) != 1:
         raise ValueError(
-            f"synthetic and real sample rates differ: {sorted(synthetic_rate)} vs "
-            f"{sorted(real_rate)}"
+            "each transfer domain must have one observation shape; found "
+            f"synthetic={sorted(synthetic_shapes)}, real={sorted(real_shapes)}"
         )
-    return audit
+    if synthetic_shapes != real_shapes:
+        raise ValueError(
+            "synthetic and real observation shapes differ; align sample rate and clip "
+            f"duration before evaluation: {sorted(synthetic_shapes)} vs "
+            f"{sorted(real_shapes)}"
+        )
+    sample_rate, num_samples = next(iter(synthetic_shapes))
+    return {
+        **audit,
+        "observation_shape": {
+            "sample_rate": sample_rate,
+            "num_samples": num_samples,
+            "duration_seconds": num_samples / sample_rate,
+        },
+    }
 
 
 def stratified_fraction_indices(

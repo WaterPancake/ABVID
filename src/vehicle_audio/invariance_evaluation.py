@@ -35,7 +35,7 @@ from vehicle_audio.baseline import (
 from vehicle_audio.transfer_evaluation import validate_transfer_protocol
 
 
-INVARIANCE_EVALUATION_VERSION = 2
+INVARIANCE_EVALUATION_VERSION = 3
 METHODS = ("standard_supervised", "augmentation_only", "representation_invariance")
 
 

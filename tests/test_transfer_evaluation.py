@@ -120,6 +120,41 @@ def test_transfer_protocol_rejects_insufficient_real_sessions() -> None:
         validate_transfer_protocol(synthetic, real)
 
 
+def test_transfer_protocol_rejects_duration_domain_cue() -> None:
+    synthetic = [
+        {
+            "source_domain": "procedural_synthetic",
+            "vehicle_class": vehicle_class,
+            "sample_rate": 8_000,
+            "num_samples": 32_000,
+        }
+        for vehicle_class in ("tracked", "wheeled")
+    ]
+    real = [
+        {
+            "sample_id": f"real_{vehicle_class}_{session}",
+            "audio_path": "audio.wav",
+            "metadata_path": "metadata.json",
+            "vehicle_class": vehicle_class,
+            "recording_session": f"{vehicle_class}_session_{session}",
+            "source_domain": "real_recording",
+            "source_id": f"source-{vehicle_class}-{session}",
+            "sample_rate": 8_000,
+            "num_channels": 1,
+            "num_samples": 16_000,
+            "window_start_sample": 0,
+            "snr_db": None,
+            "provenance_complete": True,
+            "content_review_status": "reviewed_segment",
+        }
+        for vehicle_class in ("tracked", "wheeled")
+        for session in range(3)
+    ]
+
+    with pytest.raises(ValueError, match="observation shapes differ"):
+        validate_transfer_protocol(synthetic, real)
+
+
 def test_toy_transfer_protocol_writes_all_required_artifacts(tmp_path: Path) -> None:
     synthetic_manifest, real_manifest = _write_transfer_manifests(tmp_path)
     output = tmp_path / "run"
