@@ -546,7 +546,7 @@ uv run --extra pretrained --extra inspection python \
   --real-manifest data/real_eval_v2/real_manifest.jsonl \
   --feature-cache runs/m6_panns_audioset_transfer/feature_cache.pt \
   --checkpoint .artifacts/models/panns/Cnn14_mAP=0.431.pth \
-  --output runs/m6_semantic_nested_sessions \
+  --output runs/m6_semantic_nested_sessions_ensemble \
   --regularization-c 0.001 --regularization-c 0.01 \
   --regularization-c 0.1 --regularization-c 1.0 \
   --regularization-c 10.0 --seed 42
@@ -555,9 +555,11 @@ uv run --extra pretrained --extra inspection python \
 Every outer fold excludes one complete tracked and one complete wheeled recording
 session. Regularization is selected only through pair-wise inner folds among the
 remaining sessions. Training weights give each class equal mass, each session within
-a class equal mass, and each window within a session equal mass. The evaluator saves
-all inner/outer groups and sample IDs, fold models, calibrated window metrics, CSV,
-and a fold plot. See
+a class equal mass, and each window within a session equal mass. The evaluator reports
+both the inner-selected probe and an equal-probability ensemble of probes fitted at
+every declared regularization value. No ensemble member is selected using an outer
+test pair. The evaluator saves all inner/outer groups and sample IDs, both model
+families, window metrics, CSV, and a comparative fold plot. See
 [`docs/milestone6_semantic_session_report.md`](docs/milestone6_semantic_session_report.md).
 
 ## Reproducibility boundary
