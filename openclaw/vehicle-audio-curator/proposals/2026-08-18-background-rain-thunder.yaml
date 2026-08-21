@@ -1,0 +1,20 @@
+source_id: candidate-background-rain-thunder
+status: review_required
+kind: background
+provider: wikimedia_commons
+source_page: https://commons.wikimedia.org/wiki/File:Rain_and_thunder.ogg
+direct_url: https://upload.wikimedia.org/wikipedia/commons/4/42/Rain_and_thunder.ogg
+title: Rain and thunder
+creator: User:Caesar
+license: Public domain
+license_url: null
+category: rain
+recording_session: commons_caesar_sundbyberg_rain
+format: Ogg Vorbis
+duration_seconds: null
+attribution: User:Caesar, Rain and thunder, Wikimedia Commons (public domain)
+evidence:
+  - https://commons.wikimedia.org/wiki/File:Rain_and_thunder.ogg
+  - https://commons.wikimedia.org/w/api.php?action=query&titles=File%3ARain_and_thunder.ogg&prop=imageinfo&iiprop=url%7Cextmetadata&format=json
+reason_for_review: Add to the project catalog and verify the Commons public-domain statement immediately before download.
+notes: Recorded in Sundbyberg, Stockholm, Sweden.

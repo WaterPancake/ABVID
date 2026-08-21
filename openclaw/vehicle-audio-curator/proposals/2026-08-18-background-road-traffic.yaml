@@ -1,0 +1,20 @@
+source_id: candidate-background-road-traffic-two-lane-kelowna
+status: review_required
+kind: background
+provider: wikimedia_commons
+source_page: https://commons.wikimedia.org/wiki/File:Two_Lane_Road_in_Kelowna_at_Midnight.flac
+direct_url: https://upload.wikimedia.org/wikipedia/commons/e/ee/Two_Lane_Road_in_Kelowna_at_Midnight.flac
+title: Two Lane Road in Kelowna at Midnight
+creator: Extemporalist
+license: CC0
+license_url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
+category: road traffic
+recording_session: commons_extemporalist_kelowna_midnight
+format: FLAC
+duration_seconds: null
+attribution: Extemporalist, Two Lane Road in Kelowna at Midnight, Wikimedia Commons (CC0)
+evidence:
+  - https://commons.wikimedia.org/wiki/File:Two_Lane_Road_in_Kelowna_at_Midnight.flac
+  - https://commons.wikimedia.org/w/api.php?action=query&titles=File%3ATwo_Lane_Road_in_Kelowna_at_Midnight.flac&prop=imageinfo&iiprop=url%7Cextmetadata&format=json
+reason_for_review: Add to the project catalog and confirm that the recording-session identifier is acceptable before download.
+notes: Dry two-lane arterial road; vehicles pass approximately once per minute and Doppler effect is audible.

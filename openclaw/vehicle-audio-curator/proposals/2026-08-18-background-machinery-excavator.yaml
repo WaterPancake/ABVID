@@ -1,0 +1,20 @@
+source_id: candidate-background-machinery-excavator
+status: review_required
+kind: background
+provider: wikimedia_commons
+source_page: https://commons.wikimedia.org/wiki/File:A_small_orange_excavator_shoveling_gravel.ogg
+direct_url: https://upload.wikimedia.org/wikipedia/commons/5/54/A_small_orange_excavator_shoveling_gravel.ogg
+title: A small orange excavator shoveling gravel
+creator: T.Voekler
+license: CC BY-SA 3.0
+license_url: https://creativecommons.org/licenses/by-sa/3.0
+category: machinery
+recording_session: commons_tvoekler_excavator_gravel
+format: Ogg Vorbis
+duration_seconds: null
+attribution: T.Voekler, A small orange excavator shoveling gravel, Wikimedia Commons, CC BY-SA 3.0
+evidence:
+  - https://commons.wikimedia.org/wiki/File:A_small_orange_excavator_shoveling_gravel.ogg
+  - https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AA_small_orange_excavator_shoveling_gravel.ogg&prop=imageinfo&iiprop=url%7Cextmetadata&format=json
+reason_for_review: Add to the project catalog and confirm share-alike handling before download.
+notes: Machinery background candidate; do not relabel it as a vehicle target.

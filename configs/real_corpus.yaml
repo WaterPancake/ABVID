@@ -1,0 +1,15 @@
+sample_rate: 16000
+window_seconds: 2.0
+hop_seconds: 1.0
+
+# Milestone 5 remains a one-microphone experiment. Channel selection is explicit;
+# stereo recordings are never silently averaged.
+channel: 0
+
+# Prevent a single long recording from dominating while retaining windows spread
+# across its full duration. This cap is applied independently per recording session.
+max_windows_per_session: 64
+
+# Preserve all finite full-length windows. Content review, rather than an energy
+# heuristic, determines whether a window contains a valid vehicle event.
+minimum_rms: 0.0

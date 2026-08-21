@@ -1,0 +1,27 @@
+.venv/
+.DS_Store
+.pi/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+.artifacts/
+runs/
+
+# Audio corpora and generated artifacts are local-only.
+data/targets/*
+data/backgrounds/*
+data/impulse_responses/*
+data/generated/*
+data/synthetic_targets/*
+data/real_eval*/
+!data/targets/.gitkeep
+!data/backgrounds/.gitkeep
+!data/impulse_responses/.gitkeep
+!data/generated/.gitkeep
+!data/synthetic_targets/.gitkeep

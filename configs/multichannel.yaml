@@ -1,0 +1,39 @@
+sample_rate: 16000
+duration_seconds: 2.0
+speed_of_sound_mps: 343.0
+
+# Both selections are explicit; neither target nor background channels are
+# silently collapsed.
+source_channel: 0
+background_channel: 0
+
+# Four-microphone uniform linear array. Azimuth zero is broadside (+y), and the
+# configured source angles stay within the ULA's unambiguous front half-plane.
+microphone_positions_m:
+  - [-0.12, 0.0, 1.2]
+  - [-0.04, 0.0, 1.2]
+  - [0.04, 0.0, 1.2]
+  - [0.12, 0.0, 1.2]
+microphone_counts: [1, 2, 4]
+
+# Every base event is regenerated with identical source/background/geometry and
+# channel responses at each SNR, changing only the controlled noise scale.
+paired_snr_sweep: true
+snr_db_choices: [30.0, 20.0, 10.0, 5.0, 0.0, -5.0, -10.0]
+azimuth_deg_choices: [-75.0, -60.0, -45.0, -30.0, -15.0, 0.0, 15.0, 30.0, 45.0, 60.0, 75.0]
+source_distance_m_choices: [12.0, 20.0, 35.0]
+independent_sensor_noise_fraction: 0.03
+
+reverberation:
+  enabled: true
+  num_reflections: 3
+  min_delay_ms: 2.0
+  max_delay_ms: 14.0
+  min_gain: 0.03
+  max_gain: 0.12
+
+microphone_response:
+  enabled: true
+  anchor_frequencies_hz: [0.0, 80.0, 250.0, 1000.0, 4000.0, 8000.0]
+  min_gain_db: -2.0
+  max_gain_db: 2.0

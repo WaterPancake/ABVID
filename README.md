@@ -1,0 +1,414 @@
+# Synthetic Vehicle Acoustic Dataset
+
+This repository builds deterministic paired audio for the first research question:
+do wheeled and tracked vehicle signatures remain identifiable after realistic
+environmental and microphone corruption?
+
+Milestones 1-4 currently provide an offline augmentation engine, leakage-safe
+classical/CNN baselines, a separate controlled procedural source corpus, and a
+deterministic microphone-array simulation/evaluation baseline. Milestone 5's
+synthetic-to-real evaluation machinery is implemented, but the checked real corpus
+does not yet satisfy its session-count and content-review gates. The project therefore
+does not claim synthetic-to-real transfer.
+
+## Setup
+
+The project requires Python 3.11 or newer. The checked-in `.python-version` selects
+3.11 for `uv`:
+
+```bash
+uv sync --extra dev --extra inspection
+```
+
+An equivalent standard-library environment is:
+
+```bash
+python3.11 -m venv .venv
+.venv/bin/python -m pip install -e '.[dev,inspection]'
+```
+
+## Input layout and metadata
+
+Audio discovery is recursive and accepts WAV, FLAC, OGG, AIFF, and AIF files. A
+recommended target layout is:
+
+```text
+data/targets/
+├── tracked/session_001/clip_001.wav
+└── wheeled/session_002/clip_002.wav
+```
+
+The class is inferred from the first directory and the recording session from the
+audio file's parent directory. For an explicit, future-proof identity, place a JSON
+sidecar next to each target (for example, `clip_001.json`):
+
+```json
+{
+  "vehicle_class": "tracked",
+  "vehicle_model": null,
+  "recording_session": "session_001",
+  "operating_condition": "steady_speed"
+}
+```
+
+Supported operating conditions are `idle`, `accelerating`, `decelerating`,
+`steady_speed`, `startup`, `mixed`, and `unknown`. Mixed recordings can expose
+reviewed time intervals instead of assigning one label to the entire file:
+
+```json
+{
+  "vehicle_class": "tracked",
+  "recording_session": "session_001",
+  "operating_condition": "mixed",
+  "condition_segments": [
+    {
+      "operating_condition": "idle",
+      "start_seconds": 12.5,
+      "end_seconds": 24.0,
+      "notes": "Post-start stationary interval verified from the source video."
+    }
+  ]
+}
+```
+
+When segments are present, each interval is a selectable target source and random
+crops are constrained to its boundaries. The manifest records both the condition
+and segment times.
+
+Background categories are inferred from the first directory below
+`data/backgrounds/`, or specified by a sibling sidecar:
+
+```json
+{
+  "category": "road traffic"
+}
+```
+
+Impulse responses are optional and are discovered recursively below
+`data/impulse_responses/`. The generator never downloads any source data.
+
+### Vetted source collection
+
+`configs/audio_sources.yaml` is a small, reviewable starter catalog. It currently
+contains 14 approved vehicle recordings and 10 approved environmental recordings,
+plus one rights-ambiguous historical tank recording that remains review-gated. The
+catalog records source pages, recording sessions, operating conditions, expected
+licenses, attribution, and output placement. Audio files remain local and are
+ignored by Git.
+
+The separate collector resolves current provider metadata, checks the expected
+license exactly, downloads only explicitly selected sources, extracts audio from
+video with `ffmpeg`, writes WAV files plus provenance sidecars, and maintains a
+JSONL collection manifest. It is the only networked command in the project:
+
+```bash
+# Inspect records and current Commons/Internet Archive rights without downloading
+uv run python scripts/collect_audio.py --list
+uv run python scripts/collect_audio.py \
+  --catalog configs/audio_sources.yaml \
+  --all-approved --dry-run --output .artifacts/collection_preview
+
+# Download the approved set into data/ (explicit network action)
+uv run python scripts/collect_audio.py \
+  --catalog configs/audio_sources.yaml \
+  --all-approved --output data
+```
+
+The collector includes a review gate for sources with ambiguous rights. Do not
+use `--include-review-required` for redistribution without resolving the license.
+The Internet Archive tank recording is intentionally review-gated; the approved
+tracked sample currently comes from the DVIDS page, which states PUBLIC DOMAIN.
+Wikimedia may temporarily return HTTP 429 for large or repeated downloads; retry
+later rather than bypassing the source/license checks.
+
+After adding or refining catalog condition labels, synchronize already-collected
+sidecars without redownloading audio:
+
+```bash
+uv run python scripts/sync_catalog_metadata.py \
+  --catalog configs/audio_sources.yaml --output data
+```
+
+All waveform APIs use `[num_channels, num_samples]`. Target channels are always
+preserved. Mono background and mono impulse responses may be explicitly broadcast
+over target channels; incompatible multichannel sources raise an error instead of
+being silently downmixed. For the one-microphone experiment,
+`audio.background_channel: 0` explicitly selects and records channel 0 from every
+background. Set it to `null` to require exact channel compatibility.
+
+## Generate a dataset
+
+Populate the three input directories, then run:
+
+```bash
+uv run python -m vehicle_audio.cli generate \
+  --config configs/default.yaml \
+  --targets data/targets \
+  --backgrounds data/backgrounds \
+  --impulse-responses data/impulse_responses \
+  --output data/generated \
+  --num-samples 1000 \
+  --seed 42
+```
+
+The installed `vehicle-audio generate` command and `scripts/generate_dataset.py`
+expose the same interface. Relative input source identifiers, recording sessions,
+original and output sample rates, crop offsets, the sample seed, every sampled
+augmentation parameter, and a complete configuration snapshot are stored in each
+record.
+
+Long recordings are seeked before decoding: only the selected crop plus a small
+resampling margin is read, rather than loading an entire field recording for every
+sample. Crop offsets are recorded both as original-rate frames and output-rate
+samples.
+
+Output is organized as paired events:
+
+```text
+data/generated/
+├── manifest.jsonl
+└── sample_000000_<seed>/
+    ├── clean.wav
+    ├── corrupted.wav
+    └── metadata.json
+```
+
+`clean.wav` is the explicitly resampled and temporally cropped target before
+corruption. `corrupted.wav` has the same sample rate, channel count, and length.
+Both are float WAVs. The root JSONL record and the sample's `metadata.json` are
+identical.
+
+The corruption pipeline samples each enabled augmentation independently. It
+supports random gain, controlled-SNR background mixing, low/high/band-pass filters,
+random EQ, round-trip resampling, clipping, dynamic-range compression, impulse
+response convolution, random cropping, and a microphone frequency response. Edit
+`configs/default.yaml` to change ranges or set an augmentation's `enabled` flag or
+`probability`.
+
+Target selection defaults to `class_condition_balanced`: select tracked/wheeled
+first, then an operating condition available for that class, then a source. This
+prevents a class with more collected recordings from silently dominating generated
+examples. Set `sampling.target_strategy` to `uniform_source` to recover plain
+source-uniform sampling, or `class_balanced` to balance only the top-level class.
+
+The `snr_db` field is the SNR at the controlled mixing stage. Later nonlinear or
+frequency-selective microphone corruptions may change an SNR measured from the final
+waveform.
+
+## Tests
+
+Tests use generated waveforms and do not require an audio corpus:
+
+```bash
+uv run pytest
+```
+
+They verify requested SNR, sample counts/rates, multichannel shape preservation,
+finite clipping, required manifest fields, and same-seed byte reproducibility.
+
+## Tiny end-to-end smoke test
+
+Create deterministic toy vehicle, background, and impulse-response recordings:
+
+```bash
+uv run python scripts/create_toy_audio.py --output .artifacts/toy_inputs
+```
+
+Generate six paired examples through the real CLI:
+
+```bash
+uv run python -m vehicle_audio.cli generate \
+  --config configs/default.yaml \
+  --targets .artifacts/toy_inputs/targets \
+  --backgrounds .artifacts/toy_inputs/backgrounds \
+  --impulse-responses .artifacts/toy_inputs/impulse_responses \
+  --output .artifacts/toy_generated \
+  --num-samples 6 \
+  --seed 42
+```
+
+Render a waveform and log-Mel comparison for one pair:
+
+```bash
+SAMPLE_DIR="$(find .artifacts/toy_generated -maxdepth 1 -type d -name 'sample_*' | sort | head -n 1)"
+uv run python scripts/inspect_sample.py "$SAMPLE_DIR" \
+  --output .artifacts/toy_sample_inspection.png
+```
+
+For multichannel audio, add `--channel N`; inspection selects that channel
+explicitly and never averages channels together.
+
+## Milestone 2: leakage-safe baselines
+
+The training CLI supports two modular one-channel baselines:
+
+- `classical`: MFCC, spectral centroid/bandwidth/rolloff, spectral flatness,
+  harmonic peak concentration, RMS, zero-crossing rate, and crest factor followed
+  by logistic regression;
+- `cnn`: standardized log-Mel spectrogram, a small convolutional encoder, temporal
+  pooling, and a linear classifier.
+
+The default grouped split assigns complete `recording_session` values to exactly
+one partition and refuses corpora with fewer than three sessions per class. The
+old sample-level run under `runs/simple_cnn_channel0_seed42` is retained only as a
+known-leaked historical artifact and must not be reported as performance evidence.
+
+Train both baselines on the same grouped split:
+
+```bash
+uv run python scripts/train_baseline.py \
+  --manifest data/generated/m3_controlled_seed42/manifest.jsonl \
+  --output runs/m2_classical_grouped_seed42 \
+  --model classical --channel 0 --epochs 30 --batch-size 64 \
+  --learning-rate 0.01 --seed 42 --device cpu \
+  --split-strategy grouped --group-field recording_session \
+  --test-domain 'synthetic -> synthetic'
+
+uv run python scripts/train_baseline.py \
+  --manifest data/generated/m3_controlled_seed42/manifest.jsonl \
+  --output runs/m2_cnn_grouped_seed42 \
+  --model cnn --channel 0 --epochs 10 --batch-size 32 \
+  --learning-rate 0.001 --seed 42 --device cpu \
+  --split-strategy grouped --group-field recording_session \
+  --test-domain 'synthetic -> synthetic'
+```
+
+Every run stores `experiment.json`, `splits.json`, `model.pt`, `metrics.json`, a
+versioned feature cache, and `accuracy_by_snr.csv`. Metrics include accuracy,
+balanced accuracy, per-class and macro precision/recall/F1, confusion matrices,
+expected calibration error, negative log likelihood, Brier score, and SNR slices.
+
+## Milestone 3: controlled procedural source corpus
+
+The source generator is intentionally separate from augmentation and labels every
+output `procedural_synthetic`; it is not real-world audio or a high-fidelity vehicle
+simulator. The checked configuration crosses 4 tracked and 4 wheeled identities
+with idle, acceleration, steady-speed, and deceleration states, two simulation runs,
+and the same two geometries for every identity:
+
+```bash
+uv run python -m vehicle_audio.cli synthesize-sources \
+  --config configs/procedural_vehicles.yaml \
+  --output data/synthetic_targets \
+  --seed 20260819
+
+uv run python -m vehicle_audio.cli generate \
+  --config configs/default.yaml \
+  --targets data/synthetic_targets \
+  --backgrounds data/backgrounds \
+  --impulse-responses data/impulse_responses \
+  --output data/generated/m3_controlled_seed42 \
+  --num-samples 840 --seed 42
+```
+
+Each source sidecar and generated manifest preserves vehicle ID/class, engine state,
+RPM and throttle ranges, speed range, acceleration, load, simulation run, and
+source/listener geometry. Controlled holdouts use `--split-strategy holdout` and
+select complete values of `operating_condition`, `background_category`, or
+`vehicle_id`; exact commands and results are in
+[`docs/milestones_1_3_report.md`](docs/milestones_1_3_report.md).
+
+## Milestone 4: multichannel simulation and baselines
+
+The array simulator writes synchronized tensors in `[num_channels, num_samples]`
+form. It applies a known source direction and distance, per-microphone delay and
+attenuation, independent impulse and frequency responses, real recorded background
+crops, independent sensor noise, and exact controlled SNR. Azimuth is measured from
+array broadside: `0` degrees is positive y and positive angles rotate toward positive
+x. The checked configuration is a four-microphone uniform linear array, so evaluation
+is intentionally restricted to the unambiguous front half-plane `(-90, 90)`.
+
+Generate the checked, paired-SNR experiment corpus:
+
+```bash
+uv run python -m vehicle_audio.cli generate-array \
+  --config configs/multichannel.yaml \
+  --source-manifest data/generated/m3_controlled_seed42/manifest.jsonl \
+  --backgrounds data/backgrounds \
+  --output data/generated/m4_array_paired_sessions_seed42 \
+  --num-samples 896 --seed 42
+```
+
+With `paired_snr_sweep: true`, the sample count must be divisible by the number of
+configured SNRs. Each base event reuses the same source crop, background crops,
+geometry, array responses, and random seed at every SNR; only the controlled noise
+scale changes. Source selection cycles through every recording session in each class
+before reusing one, and every observation records its `base_event_id` and complete
+array realization.
+
+Run localization, beamforming, and the controlled classifier comparison:
+
+```bash
+uv run python scripts/evaluate_multichannel.py \
+  --manifest data/generated/m4_array_paired_sessions_seed42/array_manifest.jsonl \
+  --output runs/m4_multichannel_paired_sessions_seed42 \
+  --seed 42 --epochs 30 --batch-size 64 --learning-rate 0.01 \
+  --group-field recording_session \
+  --test-domain 'procedural synthetic -> simulated multichannel synthetic (paired SNR, session-balanced)'
+```
+
+The comparison keeps the handcrafted feature extractor, linear classifier, split,
+and training settings fixed while changing only the audio representation:
+
+- one microphone;
+- two/four microphones without beamforming, using mean feature fusion;
+- two/four microphones with GCC-PHAT- or SRP-PHAT-steered delay-and-sum beamforming.
+
+The evaluator also measures GCC-PHAT and SRP-PHAT angular error against the known
+source azimuth. It saves machine-readable metrics, split groups, checkpoints, CSVs,
+a versioned feature cache, and the three required plots. The checked experiment and
+its limitations are documented in
+[`docs/milestone4_report.md`](docs/milestone4_report.md).
+
+## Milestone 5: real-world transfer protocol
+
+Native real recordings are prepared separately from synthetic augmentation. The
+preparer selects one explicit channel, resamples, and emits deterministic fixed
+windows; it does not add corruption or infer an unavailable SNR:
+
+```bash
+uv run python -m vehicle_audio.cli prepare-real \
+  --config configs/real_corpus.yaml \
+  --targets data/targets \
+  --output data/real_eval_v1
+```
+
+The resulting `real_manifest.jsonl` preserves recording session, source URL, license,
+source hashes, window boundaries, content-review status, and normalized audio
+provenance. `corpus_audit.json` fails closed unless there are at least three complete
+recording sessions per class, complete provenance, and reviewed vehicle-audio segment
+boundaries.
+
+Once that audit passes, run the fixed protocol:
+
+```bash
+uv run python scripts/evaluate_transfer.py \
+  --synthetic-manifest data/generated/m3_controlled_seed42/manifest.jsonl \
+  --real-manifest data/real_eval_v1/real_manifest.jsonl \
+  --output runs/m5_transfer_seed42 \
+  --seed 42 --device cpu
+```
+
+The evaluator compares real-only training, synthetic-only training, and synthetic
+pretraining followed by 1%, 5%, 10%, and 25% of the fixed real training partition.
+All methods use the same held-out real recording sessions. It records requested and
+actual adaptation fractions, complete group/sample splits, checkpoints, calibration,
+a learning curve, and a PCA view of pooled encoder embeddings. PCA is labeled as
+visualization only and is not treated as proof of representation quality.
+
+The current local corpus produces 115 windows but only one tracked and two wheeled
+recording sessions, all lacking reviewed segment boundaries. Evaluation therefore
+stops at preflight. See
+[`docs/milestone5_status.md`](docs/milestone5_status.md) for the exact readiness audit
+and next data requirements.
+
+## Reproducibility boundary
+
+For identical source files, configuration, package versions, command seed, and CPU
+platform, generation is deterministic. Float-WAV timestamps are normalized so
+separate CLI processes produce byte-identical audio. Each single-channel sample uses
+a derived `augmentation_seed`; each array base event uses a derived `array_seed`.
+The seeds and all realized parameters are recorded. Training runs record the manifest
+hash as the dataset version, the feature implementation version, seed, complete split
+groups, model configuration, checkpoint, metrics, and Git commit when the checkout is
+a Git repository.

@@ -1,0 +1,20 @@
+source_id: candidate-background-wind-swedish-pine
+status: review_required
+kind: background
+provider: wikimedia_commons
+source_page: https://commons.wikimedia.org/wiki/File:Wind_in_Swedish_pine_forest_at_25_mps.ogg
+direct_url: https://upload.wikimedia.org/wikipedia/commons/f/f3/Wind_in_Swedish_pine_forest_at_25_mps.ogg
+title: Wind in Swedish pine forest at 25 mps
+creator: W.carter
+license: CC BY-SA 4.0
+license_url: https://creativecommons.org/licenses/by-sa/4.0
+category: wind
+recording_session: commons_wcarter_tuntorp_blastad
+format: Ogg Vorbis
+duration_seconds: null
+attribution: W.carter, Wind in Swedish pine forest at 25 mps, Wikimedia Commons, CC BY-SA 4.0
+evidence:
+  - https://commons.wikimedia.org/wiki/File:Wind_in_Swedish_pine_forest_at_25_mps.ogg
+  - https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AWind_in_Swedish_pine_forest_at_25_mps.ogg&prop=imageinfo&iiprop=url%7Cextmetadata&format=json
+reason_for_review: Add to the project catalog and confirm share-alike handling before download.
+notes: Field recording in Tuntorp, Brastad, Sweden; internal camera microphones with a makeshift windscreen.

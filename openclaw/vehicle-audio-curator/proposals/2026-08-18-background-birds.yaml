@@ -1,0 +1,20 @@
+source_id: candidate-background-birdsong-sunny-day
+status: review_required
+kind: background
+provider: wikimedia_commons
+source_page: https://commons.wikimedia.org/wiki/File:Birdsong_mild_sunny_day.ogg
+direct_url: https://upload.wikimedia.org/wikipedia/commons/7/75/Birdsong_mild_sunny_day.ogg
+title: Birdsong mild sunny day
+creator: stephan
+license: Public domain
+license_url: null
+category: animals/insects
+recording_session: commons_stephan_pdsounds_104
+format: Ogg Vorbis
+duration_seconds: 37
+attribution: stephan, Birdsong mild sunny day, Wikimedia Commons (public domain)
+evidence:
+  - https://commons.wikimedia.org/wiki/File:Birdsong_mild_sunny_day.ogg
+  - https://commons.wikimedia.org/w/api.php?action=query&titles=File%3ABirdsong_mild_sunny_day.ogg&prop=imageinfo&iiprop=url%7Cextmetadata&format=json
+reason_for_review: Add to the project catalog and verify the Commons public-domain statement immediately before download.
+notes: Open woodland birdsong and mild breeze; PDSounds record 104.

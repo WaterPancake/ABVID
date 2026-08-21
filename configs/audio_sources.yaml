@@ -1,0 +1,481 @@
+# Human-reviewed source catalog for the first vehicle-audio collection.
+# The collector resolves provider metadata at download time and refuses licenses
+# outside collection_policy.allowed_licenses.
+version: 2
+collection_policy:
+  allowed_licenses:
+    - CC0
+    - Public domain
+    - CC BY 3.0
+    - CC BY 4.0
+    - CC BY-SA 3.0
+    - CC BY-SA 4.0
+  provider: wikimedia_commons
+  providers:
+    - wikimedia_commons
+    - internet_archive
+    - direct
+  review_note: >-
+    These licenses permit redistribution of the source audio, subject to the
+    listed attribution/share-alike obligations. Verify project redistribution
+    terms before releasing a derived corpus.
+sources:
+  - id: target-wheeled-abarth-205-goodwood
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Abarth 205 Monza (1950).ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Abarth_205_Monza_(1950).ogg"
+    vehicle_class: wheeled
+    vehicle_model: "Abarth 205 Monza"
+    recording_session: "commons_goodwood_festival_of_speed_2009"
+    operating_condition: accelerating
+    condition_segments:
+      - operating_condition: accelerating
+        start_seconds: 0.0
+        end_seconds: 8.8
+        notes: >-
+          Reviewed source-audio spectrogram: vehicle pull-away is active through
+          8.8 seconds; the quieter trailing ambience is excluded.
+    expected_license: "CC BY-SA 3.0"
+    output_path: "targets/wheeled/commons_goodwood_festival_of_speed_2009/abarth_205_monza.wav"
+    attribution: "Edvvc, Abarth 205 Monza (1950), Wikimedia Commons, CC BY-SA 3.0"
+    notes: "15-second recording of a restored 1.1 L four-cylinder car pulling away."
+    status: approved
+
+  - id: target-wheeled-ford-model-t-start
+    kind: target
+    provider: wikimedia_commons
+    file_title: 'File:Ford Model T "Tin Lizzy" - Starting the Engine.webm'
+    source_page: 'https://commons.wikimedia.org/wiki/File:Ford_Model_T_%22Tin_Lizzy%22_-_Starting_the_Engine.webm'
+    vehicle_class: wheeled
+    vehicle_model: "Ford Model T (1926)"
+    recording_session: "commons_soundsofchanges_private_collection"
+    operating_condition: startup
+    condition_segments:
+      - operating_condition: startup
+        start_seconds: 0.0
+        end_seconds: 5.8
+        notes: "Reviewed engine-start interval before the steady running state."
+      - operating_condition: idle
+        start_seconds: 6.2
+        end_seconds: 37.8
+        notes: "Reviewed continuous post-start engine-running interval."
+    expected_license: "CC BY 3.0"
+    output_path: "targets/wheeled/commons_soundsofchanges_private_collection/ford_model_t_starting.wav"
+    attribution: "Kathinka Engels, Ford Model T Tin Lizzy - Starting the Engine, Wikimedia Commons, CC BY 3.0"
+    notes: "Video source; collector extracts its first audio stream with ffmpeg."
+    status: approved
+
+  - id: target-wheeled-perseverance-rover-sol-16
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Sounds of Perseverance Mars rover driving.oga"
+    source_page: "https://commons.wikimedia.org/wiki/File:Sounds_of_Perseverance_Mars_rover_driving.oga"
+    vehicle_class: wheeled
+    vehicle_model: "Perseverance Mars rover"
+    recording_session: "nasa_perseverance_sol_16_2021"
+    operating_condition: steady_speed
+    expected_license: "Public domain"
+    output_path: "targets/wheeled/nasa_perseverance_sol_16_2021/perseverance_rover_driving.wav"
+    attribution: "NASA/JPL-Caltech, Sounds of Perseverance Mars rover driving, Wikimedia Commons"
+    notes: "NASA rover wheel/suspension recording; technically a wheeled, not tracked, vehicle."
+    status: approved
+
+  - id: target-tracked-tr85m1-tank-range
+    kind: target
+    provider: direct
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/1406/DOD_101745211/DOD_101745211-720x406-800k.mp4"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    source_page: "https://www.dvidshub.net/video/343966/romanian-tanks"
+    vehicle_class: tracked
+    vehicle_model: "TR-85M1"
+    recording_session: "dvids_romanian_tank_range_2014"
+    operating_condition: mixed
+    condition_segments:
+      - operating_condition: mixed
+        start_seconds: 75.0
+        end_seconds: 94.0
+        notes: >-
+          Reviewed against five-second source-video frames and the source-audio
+          spectrogram. This interval contains vehicle maneuvering; ammunition
+          handling, firing, and the closing interview are excluded.
+    expected_license: "Public domain"
+    output_path: "targets/tracked/dvids_romanian_tank_range_2014/tr85m1_tank_range.wav"
+    attribution: "Ellis McDaniels, TR-85M1 - Romanian Tanks, Wikimedia Commons"
+    notes: "2014 public-domain DVIDS video source; collector extracts its first audio stream with ffmpeg."
+    status: approved
+
+  - id: background-rain-effib
+    kind: background
+    provider: wikimedia_commons
+    file_title: "File:Sound of rain.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Sound_of_rain.ogg"
+    category: rain
+    expected_license: "CC BY-SA 3.0"
+    output_path: "backgrounds/rain/commons_effib_sound_of_rain.wav"
+    attribution: "Effib, Sound of rain, Wikimedia Commons, CC BY-SA 3.0"
+    notes: "26-second field recording."
+    status: approved
+
+  - id: background-forest-nille
+    kind: background
+    provider: wikimedia_commons
+    file_title: "File:20090610 0 ambience.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:20090610_0_ambience.ogg"
+    category: generic environmental ambience
+    expected_license: "Public domain"
+    output_path: "backgrounds/generic_environmental_ambience/commons_nille_forest_ambience.wav"
+    attribution: "nille, 20090610 0 ambience, Wikimedia Commons (public domain)"
+    notes: "Forest ambience with birds, insects, and wind; originally from PDSounds record 707."
+    status: approved
+
+  - id: background-rain-heavy-aporee
+    kind: background
+    provider: internet_archive
+    archive_identifier: aporee_52865_60398
+    archive_file: 27121GarageRainBirds.mp3
+    source_page: "https://archive.org/details/aporee_52865_60398"
+    category: rain
+    expected_license: "Public domain"
+    output_path: "backgrounds/rain/internet_archive_aporee_52865_60398.wav"
+    attribution: "david.j.pitt, Heavy Rain, Malvern Wells, Internet Archive (public domain mark)"
+    notes: "Internet Archive item; this provider is cataloged for the next collector revision."
+    status: approved
+    review_reason: "The collector rechecks the item-level public-domain mark at download time."
+
+  - id: background-road-traffic-keelung-aporee
+    kind: background
+    provider: internet_archive
+    archive_identifier: aporee_17410_20263
+    archive_file: Soundmap2012062456.mp3
+    source_page: "https://archive.org/details/aporee_17410_20263"
+    category: road traffic
+    expected_license: "CC BY 3.0"
+    output_path: "backgrounds/road_traffic/internet_archive_aporee_17410_20263/keelung_traffic.wav"
+    attribution: "Wu Tsan-Cheng, Keelung, Taiwan - Traffic noise, Internet Archive, CC BY 3.0"
+    notes: "Radio aporee soundmap field recording from Keelung City, Taiwan."
+    status: approved
+
+  - id: target-tracked-tank-78rpm
+    kind: target
+    provider: internet_archive
+    archive_identifier: "78_1-tank-stars-and-idles-shifts-gears-and-off-2-tank-approaching-and-stopping_gbia0410053a"
+    source_page: "https://archive.org/details/78_1-tank-stars-and-idles-shifts-gears-and-off-2-tank-approaching-and-stopping_gbia0410053a"
+    vehicle_class: tracked
+    vehicle_model: null
+    recording_session: "internet_archive_78rpm_gbia0410053a"
+    operating_condition: mixed
+    expected_license: null
+    output_path: "targets/tracked/internet_archive_78rpm_gbia0410053a/tank_78rpm.wav"
+    attribution: "Internet Archive, George Blood 78rpm digitization"
+    notes: "Historically relevant tank recording, but not automatically collectible until item rights are explicit."
+    status: review_required
+    review_reason: "Internet Archive metadata does not expose a clear reusable license. Do not download for redistribution without legal review."
+
+  # Approved during the first OpenClaw discovery review on 2026-08-18.
+  - id: target-tracked-mpf-firepower
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:U.S. Army Armor & Cavalry Collection Mobile Protected Firepower.webm"
+    source_page: "https://commons.wikimedia.org/wiki/File:U.S._Army_Armor_%26_Cavalry_Collection_Mobile_Protected_Firepower.webm"
+    vehicle_class: tracked
+    vehicle_model: "Mobile Protected Firepower testbed"
+    recording_session: "us_army_armor_cavalry_collection_tankodrome_2023"
+    operating_condition: mixed
+    condition_segments:
+      - operating_condition: mixed
+        start_seconds: 0.0
+        end_seconds: 90.0
+        notes: >-
+          Reviewed active arrival audio against the source description and
+          waveform/spectrogram. The 90.73-98.05 second silent tail is excluded.
+    expected_license: "Public domain"
+    output_path: "targets/tracked/us_army_armor_cavalry_collection_tankodrome_2023/mpf_testbed.wav"
+    attribution: "U.S. Army Armor & Cavalry Collection, Mobile Protected Firepower, Wikimedia Commons (public domain)"
+    notes: "Official U.S. Army Armor & Cavalry Collection video; collector extracts the first audio stream."
+    status: approved
+
+  - id: target-tracked-stug-iiig-lappeenranta
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Taistelunäytös Lippujuhlan päivä 2014 16 Stug IIIG.webm"
+    source_page: "https://commons.wikimedia.org/wiki/File:Taistelun%C3%A4yt%C3%B6s_Lippujuhlan_p%C3%A4iv%C3%A4_2014_16_Stug_IIIG.webm"
+    vehicle_class: tracked
+    vehicle_model: "Sturmgeschütz III Ausf. G"
+    recording_session: "commons_lappeenranta_flag_day_reenactment_2014"
+    operating_condition: decelerating
+    condition_segments:
+      - operating_condition: decelerating
+        start_seconds: 0.0
+        end_seconds: 25.8
+        notes: >-
+          Reviewed continuous active arrival/deceleration interval; bounded below
+          the measured 25.92-second normalized duration.
+    expected_license: "Public domain"
+    output_path: "targets/tracked/commons_lappeenranta_flag_day_reenactment_2014/stug_iiig_arrival.wav"
+    attribution: "MKFI, Taistelunäytös Lippujuhlan päivä 2014 16 Stug IIIG, Wikimedia Commons (public domain)"
+    notes: "Short tracked-vehicle arrival recording; collector extracts the first audio stream."
+    status: approved
+
+  - id: background-road-traffic-circulation-carrefour
+    kind: background
+    provider: wikimedia_commons
+    file_title: "File:Circulation carrefour.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Circulation_carrefour.ogg"
+    category: road traffic
+    expected_license: "CC BY-SA 3.0"
+    output_path: "backgrounds/road_traffic/commons_toulouse_crossroad_2007_08/circulation_carrefour.wav"
+    attribution: "Luk, Circulation carrefour, Wikimedia Commons, CC BY-SA 3.0"
+    notes: "Traffic field recording at a Toulouse crossroad; retain attribution/share-alike obligations."
+    status: approved
+
+  - id: background-wind-fisterra
+    kind: background
+    provider: wikimedia_commons
+    file_title: "File:Vento fisterra.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Vento_fisterra.ogg"
+    category: wind
+    expected_license: "Public domain"
+    output_path: "backgrounds/wind/escoitar_fisterra_2006/vento_fisterra.wav"
+    attribution: "Escoitar.org, Vento fisterra, Wikimedia Commons (public domain)"
+    notes: "Field recording of wind at Fisterra, Galicia."
+    status: approved
+
+  - id: background-machinery-excavator-gravel
+    kind: background
+    provider: wikimedia_commons
+    file_title: "File:A small orange excavator shoveling gravel.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:A_small_orange_excavator_shoveling_gravel.ogg"
+    category: machinery
+    expected_license: "CC BY-SA 3.0"
+    output_path: "backgrounds/machinery/commons_excavator_gravel_2007_10_20/excavator_gravel.wav"
+    attribution: "T. Voekler, A small orange excavator shoveling gravel, Wikimedia Commons, CC BY-SA 3.0"
+    notes: "Machinery background, not a tracked target label."
+    status: approved
+
+  - id: background-construction-site
+    kind: background
+    provider: wikimedia_commons
+    file_title: "File:Construction.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Construction.ogg"
+    category: construction
+    expected_license: "Public domain"
+    output_path: "backgrounds/construction/commons_dsw4_construction_site/construction.wav"
+    attribution: "Dsw4, Construction, Wikimedia Commons (public domain)"
+    notes: "Shotgun-microphone field recording of a construction site."
+    status: approved
+
+  - id: background-rain-thunder
+    kind: background
+    provider: wikimedia_commons
+    file_title: "File:Rain and thunder.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Rain_and_thunder.ogg"
+    category: rain
+    expected_license: "Public domain"
+    output_path: "backgrounds/rain/commons_caesar_sundbyberg_rain/rain_and_thunder.wav"
+    attribution: "User:Caesar, Rain and thunder, Wikimedia Commons (public domain)"
+    notes: "Rain and thunder recorded in Sundbyberg, Stockholm, Sweden."
+    status: approved
+
+  - id: background-birdsong-sunny-day
+    kind: background
+    provider: wikimedia_commons
+    file_title: "File:Birdsong mild sunny day.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Birdsong_mild_sunny_day.ogg"
+    category: animals/insects
+    expected_license: "Public domain"
+    output_path: "backgrounds/animals_insects/commons_stephan_pdsounds_104/birdsong_sunny_day.wav"
+    attribution: "stephan, Birdsong mild sunny day, Wikimedia Commons (public domain)"
+    notes: "37-second PDSounds field recording of birds and mild breeze."
+    status: approved
+
+  # Condition-focused vehicle additions reviewed on 2026-08-18.
+  - id: target-wheeled-vanwall-1957-goodwood-2010
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Vanwall (1957).ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Vanwall_(1957).ogg"
+    vehicle_class: wheeled
+    vehicle_model: "Vanwall (1957)"
+    recording_session: "commons_goodwood_festival_of_speed_2010"
+    operating_condition: accelerating
+    expected_license: "CC BY-SA 3.0"
+    output_path: "targets/wheeled/commons_goodwood_festival_of_speed_2010/vanwall_1957_pulling_away.wav"
+    attribution: "Edvvc, Vanwall (1957), Wikimedia Commons, CC BY-SA 3.0"
+    notes: "Vehicle pulling away from the Goodwood hillclimb start; condition is explicitly described by the source."
+    status: approved
+
+  - id: target-wheeled-porsche-911r-goodwood-2009
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Porsche 911R (1967).ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Porsche_911R_(1967).ogg"
+    vehicle_class: wheeled
+    vehicle_model: "Porsche 911 R (1967)"
+    recording_session: "commons_goodwood_festival_of_speed_2009"
+    operating_condition: accelerating
+    expected_license: "CC BY-SA 3.0"
+    output_path: "targets/wheeled/commons_goodwood_festival_of_speed_2009/porsche_911r_pulling_away.wav"
+    attribution: "Edvvc, Porsche 911R (1967), Wikimedia Commons, CC BY-SA 3.0"
+    notes: "Vehicle pulling away from the Goodwood hillclimb start; same event session as the Abarth source."
+    status: approved
+
+  - id: target-wheeled-sauber-mercedes-c11-goodwood-2009
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Sauber-Mercedes C11 (1990).ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Sauber-Mercedes_C11_(1990).ogg"
+    vehicle_class: wheeled
+    vehicle_model: "Sauber-Mercedes C11 (1990)"
+    recording_session: "commons_goodwood_festival_of_speed_2009"
+    operating_condition: accelerating
+    expected_license: "CC BY-SA 3.0"
+    output_path: "targets/wheeled/commons_goodwood_festival_of_speed_2009/sauber_mercedes_c11_pulling_away.wav"
+    attribution: "Edvvc, Sauber-Mercedes C11 (1990), Wikimedia Commons, CC BY-SA 3.0"
+    notes: "Vehicle pulling away from the Goodwood hillclimb start; same event session as the Abarth source."
+    status: approved
+
+  - id: target-wheeled-maserati-granturismo-exhaust
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Maserati GranTurismo S Exhaust.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Maserati_GranTurismo_S_Exhaust.ogg"
+    vehicle_class: wheeled
+    vehicle_model: "Maserati GranTurismo S"
+    recording_session: "freesound_lmartins_maserati_granturismo_2019"
+    operating_condition: mixed
+    condition_segments:
+      - operating_condition: startup
+        start_seconds: 0.0
+        end_seconds: 2.5
+        notes: "Reviewed engine-start transient at the beginning of the recording."
+      - operating_condition: idle
+        start_seconds: 2.5
+        end_seconds: 14.5
+        notes: "Reviewed low-amplitude steady engine interval after startup."
+      - operating_condition: mixed
+        start_seconds: 15.0
+        end_seconds: 61.5
+        notes: >-
+          Reviewed repeated stationary rev and recovery cycles. Labeled mixed
+          because vehicle speed and acceleration are unavailable.
+      - operating_condition: idle
+        start_seconds: 61.5
+        end_seconds: 66.0
+        notes: "Reviewed final low-amplitude engine-running interval."
+    expected_license: "CC BY 4.0"
+    output_path: "targets/wheeled/freesound_lmartins_maserati_granturismo_2019/maserati_start_rev_idle.wav"
+    attribution: "lmartins, Maserati GranTurismo S Exhaust, Freesound/Wikimedia Commons, CC BY 4.0"
+    notes: "Source describes starting, revving, and idling; time segments require listening review before condition-specific use."
+    status: approved
+
+  - id: target-wheeled-car-cobblestone-pass
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Car on cobblestone.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Car_on_cobblestone.ogg"
+    vehicle_class: wheeled
+    vehicle_model: null
+    recording_session: "pdsounds_mastermesh_car_cobblestone_2008"
+    operating_condition: steady_speed
+    expected_license: "Public domain"
+    output_path: "targets/wheeled/pdsounds_mastermesh_car_cobblestone_2008/car_passing.wav"
+    attribution: "mastermesh, Car on Cobblestone, PDSounds/Wikimedia Commons (public domain)"
+    notes: "Single car driving past on a cobblestone street."
+    status: approved
+
+  - id: target-wheeled-cars-night-stopping
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Cars Passing by at Night.webm"
+    source_page: "https://commons.wikimedia.org/wiki/File:Cars_Passing_by_at_Night.webm"
+    vehicle_class: wheeled
+    vehicle_model: null
+    recording_session: "commons_cologne_night_traffic_light_2024"
+    operating_condition: mixed
+    expected_license: "CC BY-SA 4.0"
+    output_path: "targets/wheeled/commons_cologne_night_traffic_light_2024/cars_passing_and_stopping.wav"
+    attribution: "Maximilian Schönherr, Cars Passing by at Night, Wikimedia Commons, CC BY-SA 4.0"
+    notes: "Cars pass and stop at a traffic light; time segments require audiovisual review before deceleration-specific use."
+    status: approved
+
+  - id: target-tracked-tiger131-engine-start
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Tiger Engine Start.webm"
+    source_page: "https://commons.wikimedia.org/wiki/File:Tiger_Engine_Start.webm"
+    vehicle_class: tracked
+    vehicle_model: "Tiger 131"
+    recording_session: "commons_tiger131_engine_start_2017"
+    operating_condition: startup
+    expected_license: "CC0"
+    output_path: "targets/tracked/commons_tiger131_engine_start_2017/tiger131_engine_start.wav"
+    attribution: "Unknown author, Tiger 131 Engine Start, Wikimedia Commons, CC0"
+    notes: "Stationary tracked-vehicle engine startup; inspect post-start interval for an idle segment."
+    status: review_required
+    review_reason: >-
+      The Commons file is CC0, but its author is unknown and it was imported from
+      YouTube. Require an explicit operator provenance decision before collection.
+
+  - id: target-tracked-bae-mpf-arrival
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:BAE MPF Testbed arrives at ACC.webm"
+    source_page: "https://commons.wikimedia.org/wiki/File:BAE_MPF_Testbed_arrives_at_ACC.webm"
+    vehicle_class: tracked
+    vehicle_model: "BAE Mobile Protected Firepower testbed"
+    recording_session: "us_army_armor_cavalry_collection_tankodrome_2023"
+    operating_condition: decelerating
+    expected_license: "Public domain"
+    output_path: "targets/tracked/us_army_armor_cavalry_collection_tankodrome_2023/bae_mpf_arrival.wav"
+    attribution: "U.S. Army Armor & Cavalry Collection, BAE MPF Testbed arrives at ACC, public domain"
+    notes: >-
+      Alternate platform copy of target-tracked-mpf-firepower from the same
+      2023-01-25 Tankodrome arrival. It must remain in the same recording_session
+      and does not count as an independent source session. Segment boundaries
+      require audiovisual review.
+    status: approved
+
+  # Approved by the operator for the Milestone 5 acquisition batch on 2026-08-20.
+  - id: candidate-target-tracked-retromobile-amx30-2015
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Rétromobile 2015 - Char AMX 30 - 001.ogv"
+    source_page: "https://commons.wikimedia.org/wiki/File:R%C3%A9tromobile_2015_-_Char_AMX_30_-_001.ogv"
+    vehicle_class: tracked
+    vehicle_model: "AMX 30"
+    recording_session: "commons_retromobile_amx30_demo_2015"
+    operating_condition: unknown
+    condition_segments:
+      - operating_condition: mixed
+        start_seconds: 5.6
+        end_seconds: 167.0
+        notes: >-
+          Reviewed active demonstration interval against the source description,
+          waveform, and spectrogram. Initial 5.54 seconds and final 7.07 seconds
+          are silent and excluded; no unavailable speed/RPM label is inferred.
+    expected_license: "CC BY-SA 4.0"
+    output_path: "targets/tracked/commons_retromobile_amx30_demo_2015/amx30_demo.wav"
+    attribution: "Thesupermat, Rétromobile 2015 - Char AMX 30 - 001, Wikimedia Commons, CC BY-SA 4.0"
+    notes: >-
+      Own-work recording of an AMX 30 movement demonstration. Retain unknown
+      operating condition until vehicle-dominant time intervals are reviewed.
+    status: approved
+
+  - id: candidate-target-tracked-t18-khabarovsk-2015
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Танк Т-18 из Уссурийска в Хабаровске 7 мая 2015.ogv"
+    source_page: "https://commons.wikimedia.org/wiki/File:%D0%A2%D0%B0%D0%BD%D0%BA_%D0%A2-18_%D0%B8%D0%B7_%D0%A3%D1%81%D1%81%D1%83%D1%80%D0%B8%D0%B9%D1%81%D0%BA%D0%B0_%D0%B2_%D0%A5%D0%B0%D0%B1%D0%B0%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B5_7_%D0%BC%D0%B0%D1%8F_2015.ogv"
+    vehicle_class: tracked
+    vehicle_model: "T-18 / MS-1"
+    recording_session: "rw_russia_t18_khabarovsk_2015"
+    operating_condition: unknown
+    expected_license: "CC BY-SA 4.0"
+    output_path: "targets/tracked/rw_russia_t18_khabarovsk_2015/t18_khabarovsk.wav"
+    attribution: "Andshel, Танк Т-18 из Уссурийска в Хабаровске 7 мая 2015, Wikimedia Commons, CC BY-SA 4.0"
+    notes: >-
+      Own-work recording of a moving T-18 / MS-1. Retain unknown operating
+      condition until vehicle-dominant time intervals and background content are
+      reviewed.
+    status: approved

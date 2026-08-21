@@ -1,0 +1,128 @@
+version: 1
+sample_rate: 16000
+duration_seconds: 8.0
+runs_per_state: 2
+reference_distance_m: 10.0
+
+# Every vehicle is crossed with every state and both geometries. This prevents
+# vehicle identity from becoming a shortcut for speed, state, or position.
+states:
+  idle:
+    rpm_start: 700.0
+    rpm_end: 720.0
+    throttle_start: 0.08
+    throttle_end: 0.08
+    speed_start_mps: 0.0
+    speed_end_mps: 0.0
+    acceleration_mps2: 0.0
+    load: 0.25
+  accelerating:
+    rpm_start: 900.0
+    rpm_end: 2400.0
+    throttle_start: 0.25
+    throttle_end: 0.90
+    speed_start_mps: 1.0
+    speed_end_mps: 12.0
+    acceleration_mps2: 1.375
+    load: 0.85
+  steady_speed:
+    rpm_start: 1750.0
+    rpm_end: 1750.0
+    throttle_start: 0.48
+    throttle_end: 0.48
+    speed_start_mps: 8.0
+    speed_end_mps: 8.0
+    acceleration_mps2: 0.0
+    load: 0.55
+  decelerating:
+    rpm_start: 2300.0
+    rpm_end: 850.0
+    throttle_start: 0.35
+    throttle_end: 0.06
+    speed_start_mps: 12.0
+    speed_end_mps: 2.0
+    acceleration_mps2: -1.25
+    load: 0.35
+
+geometries:
+  - geometry_id: near_broadside
+    source_position_m: [0.0, 0.0, 0.8]
+    listener_position_m: [0.0, 10.0, 1.5]
+  - geometry_id: far_offset
+    source_position_m: [15.0, -5.0, 0.8]
+    listener_position_m: [0.0, 20.0, 1.5]
+
+vehicles:
+  - vehicle_id: tracked_alpha
+    vehicle_class: tracked
+    vehicle_model: Procedural Tracked Alpha
+    firing_events_per_revolution: 3.0
+    harmonic_decay: 1.08
+    engine_gain: 0.95
+    mobility_rate_hz_per_mps: 2.7
+    mobility_texture_gain: 0.72
+    mechanical_noise_gain: 0.22
+  - vehicle_id: tracked_bravo
+    vehicle_class: tracked
+    vehicle_model: Procedural Tracked Bravo
+    firing_events_per_revolution: 4.0
+    harmonic_decay: 1.18
+    engine_gain: 0.88
+    mobility_rate_hz_per_mps: 3.1
+    mobility_texture_gain: 0.66
+    mechanical_noise_gain: 0.27
+  - vehicle_id: tracked_charlie
+    vehicle_class: tracked
+    vehicle_model: Procedural Tracked Charlie
+    firing_events_per_revolution: 5.0
+    harmonic_decay: 1.28
+    engine_gain: 0.82
+    mobility_rate_hz_per_mps: 2.4
+    mobility_texture_gain: 0.78
+    mechanical_noise_gain: 0.25
+  - vehicle_id: tracked_delta
+    vehicle_class: tracked
+    vehicle_model: Procedural Tracked Delta
+    firing_events_per_revolution: 6.0
+    harmonic_decay: 1.35
+    engine_gain: 0.78
+    mobility_rate_hz_per_mps: 3.4
+    mobility_texture_gain: 0.69
+    mechanical_noise_gain: 0.30
+
+  - vehicle_id: wheeled_alpha
+    vehicle_class: wheeled
+    vehicle_model: Procedural Wheeled Alpha
+    firing_events_per_revolution: 2.0
+    harmonic_decay: 1.12
+    engine_gain: 0.92
+    mobility_rate_hz_per_mps: 0.85
+    mobility_texture_gain: 0.38
+    mechanical_noise_gain: 0.16
+  - vehicle_id: wheeled_bravo
+    vehicle_class: wheeled
+    vehicle_model: Procedural Wheeled Bravo
+    firing_events_per_revolution: 3.0
+    harmonic_decay: 1.22
+    engine_gain: 0.86
+    mobility_rate_hz_per_mps: 1.05
+    mobility_texture_gain: 0.34
+    mechanical_noise_gain: 0.19
+  - vehicle_id: wheeled_charlie
+    vehicle_class: wheeled
+    vehicle_model: Procedural Wheeled Charlie
+    firing_events_per_revolution: 4.0
+    harmonic_decay: 1.32
+    engine_gain: 0.80
+    mobility_rate_hz_per_mps: 0.72
+    mobility_texture_gain: 0.42
+    mechanical_noise_gain: 0.18
+  - vehicle_id: wheeled_delta
+    vehicle_class: wheeled
+    vehicle_model: Procedural Wheeled Delta
+    firing_events_per_revolution: 5.0
+    harmonic_decay: 1.40
+    engine_gain: 0.76
+    mobility_rate_hz_per_mps: 1.18
+    mobility_texture_gain: 0.36
+    mechanical_noise_gain: 0.21

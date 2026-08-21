@@ -1,0 +1,212 @@
+# Milestone 5 priority review — 2026-08-19
+# Derived exclusively from proposals/2026-08-18-initial-discovery.yaml.
+# No new candidates added; no network activity performed.
+#
+# Focus: independent, real (non-synthetic) tracked and wheeled recording sessions.
+#   - Priority 1 (P1): tracked-vehicle target recordings, each an independent session.
+#   - Priority 2 (P2): wheeled-vehicle traffic sessions (road ambience; note that no
+#     isolated single-wheeled-vehicle target take exists in the catalog yet).
+# Wind, machinery, construction, and birds/insects background candidates are out of
+# scope for this Milestone 5 pass and remain recorded in the 2026-08-18 discovery file.
+#
+# Status semantics in this file:
+#   - approved: license/provenance evidence is complete and authoritative for the
+#     listed source page; the AGENTS.md download gate still requires an explicit
+#     operator `approve download: <source-id>` before any collection runs.
+#   - review_required: a concrete evidence gap remains (license provenance, creator
+#     identity, or usable-content verification). Source URLs, creators, and prior
+#     evidence text are preserved verbatim from the 2026-08-18 discovery run.
+
+- source_id: candidate-target-tracked-mpf-firepower
+  status: approved
+  priority: P1
+  kind: target
+  provider: wikimedia_commons
+  file_title: "File:U.S. Army Armor & Cavalry Collection Mobile Protected Firepower.webm"
+  source_page: "https://commons.wikimedia.org/wiki/File:U.S._Army_Armor_%26_Cavalry_Collection_Mobile_Protected_Firepower.webm"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/c/c1/U.S._Army_Armor_%26_Cavalry_Collection_Mobile_Protected_Firepower.webm"
+  title: "U.S. Army Armor & Cavalry Collection Mobile Protected Firepower"
+  creator: "U.S. Army Armor & Cavalry Collection"
+  license: "Public domain"
+  license_url: "https://commons.wikimedia.org/wiki/File:U.S._Army_Armor_%26_Cavalry_Collection_Mobile_Protected_Firepower.webm"
+  vehicle_class: tracked
+  vehicle_model: "Mobile Protected Firepower testbed (M8 Armored Gun System-based, later M10 Booker)"
+  recording_session: "us_army_armor_cavalry_collection_tankodrome_2023"
+  format: "webm (VP9/Opus video; collector extracts first audio stream)"
+  duration_seconds: 98.1
+  attribution: "U.S. Army Armor & Cavalry Collection, Mobile Protected Firepower, Wikimedia Commons (public domain)"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:U.S._Army_Armor_%26_Cavalry_Collection_Mobile_Protected_Firepower.webm"
+    - "https://twitter.com/ArmorCollection/status/1618379172191285252"
+  reason_for_review: "Awaiting operator approval; PD US Army, tracked MPF testbed driving at the Tankodrome (2023-01-25), source is the official U.S. Army Armor & Cavalry Collection account."
+  evidence_gaps: []
+
+- source_id: candidate-target-tracked-stug-iiig-lappeenranta
+  status: approved
+  priority: P1
+  kind: target
+  provider: wikimedia_commons
+  file_title: "File:Taistelunäytös Lippujuhlan päivä 2014 16 Stug IIIG.webm"
+  source_page: "https://commons.wikimedia.org/wiki/File:Taistelun%C3%A4yt%C3%B6s_Lippujuhlan_p%C3%A4iv%C3%A4_2014_16_Stug_IIIG.webm"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/5/58/Taistelun%C3%A4yt%C3%B6s_Lippujuhlan_p%C3%A4iv%C3%A4_2014_16_Stug_IIIG.webm"
+  title: "Taistelunäytös Lippujuhlan päivä 2014 16 Stug IIIG"
+  creator: "MKFI (Mikko K. Finnilä)"
+  license: "Public domain"
+  license_url: "https://commons.wikimedia.org/wiki/File:Taistelun%C3%A4yt%C3%B6s_Lippujuhlan_p%C3%A4iv%C3%A4_2014_16_Stug_IIIG.webm"
+  vehicle_class: tracked
+  vehicle_model: "Sturmgeschütz III Ausf. G (Finnish service)"
+  recording_session: "commons_lappeenranta_flag_day_reenactment_2014"
+  format: "webm (VP8/Vorbis video; collector extracts first audio stream)"
+  duration_seconds: 25.9
+  attribution: "MKFI, Taistelunäytös Lippujuhlan päivä 2014 16 Stug IIIG, Wikimedia Commons (public domain)"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Taistelun%C3%A4yt%C3%B6s_Lippujuhlan_p%C3%A4iv%C3%A4_2014_16_Stug_IIIG.webm"
+  reason_for_review: "Awaiting operator approval; PD-self release, tracked StuG III G arriving at battle reenactment, Lappeenranta 2014-06-04. Short (26 s) but clean engine/arrival signature."
+  evidence_gaps: []
+
+- source_id: candidate-target-tracked-m60-king-of-armor
+  status: review_required
+  priority: P1
+  kind: target
+  provider: wikimedia_commons
+  file_title: "File:M60 Tank - King of Armor (1966).webm"
+  source_page: "https://commons.wikimedia.org/wiki/File:M60_Tank_-_King_of_Armor_(1966).webm"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/e/ee/M60_Tank_-_King_of_Armor_%281966%29.webm"
+  title: "M60 Tank - King of Armor (1966)"
+  creator: "US Army"
+  license: "Public domain"
+  license_url: "https://commons.wikimedia.org/wiki/File:M60_Tank_-_King_of_Armor_(1966).webm"
+  vehicle_class: tracked
+  vehicle_model: "M60 Patton"
+  recording_session: "us_army_m60_king_of_armor_film_1966"
+  format: "webm (AV1/Opus video; collector extracts first audio stream)"
+  duration_seconds: 1705.4
+  attribution: "US Army, M60 Tank - King of Armor (1966), Wikimedia Commons (public domain)"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:M60_Tank_-_King_of_Armor_(1966).webm"
+  reason_for_review: "Marked PD US Army / PD-US-no-notice for a 1966 Army film, but the file was uploaded via video2commons from a YouTube mirror; re-verify the public-domain determination and check for narration/music over engine audio before use."
+  evidence_gaps:
+    - "Authoritative PD evidence for the 1966 Army film (upload chain runs through a YouTube mirror via video2commons, not the original film credit); PD-US-no-notice determination needs re-verification."
+    - "Narration/music overlay over engine audio not yet checked in the 28-minute span."
+
+- source_id: candidate-bg-roadtraffic-circulation-carrefour
+  status: approved
+  priority: P2
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Circulation carrefour.ogg"
+  source_page: "https://commons.wikimedia.org/wiki/File:Circulation_carrefour.ogg"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Circulation_carrefour.ogg"
+  title: "Circulation carrefour"
+  creator: "Luk"
+  license: "CC BY-SA 3.0"
+  license_url: "https://creativecommons.org/licenses/by-sa/3.0"
+  category: "road traffic"
+  recording_session: "commons_toulouse_crossroad_2007_08"
+  format: "Ogg Vorbis"
+  duration_seconds: 185.8
+  attribution: "Luk, Circulation carrefour, Wikimedia Commons, CC BY-SA 3.0"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Circulation_carrefour.ogg"
+  reason_for_review: "Awaiting operator approval; traffic sounds at a crossroad, Toulouse, August 2007; also offered under GFDL (multi-license)."
+  evidence_gaps: []
+
+- source_id: candidate-bg-roadtraffic-urban-street-rainy-afternoon
+  status: approved
+  priority: P2
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Urban Street on a Rainy Afternoon.flac"
+  source_page: "https://commons.wikimedia.org/wiki/File:Urban_Street_on_a_Rainy_Afternoon.flac"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Urban_Street_on_a_Rainy_Afternoon.flac"
+  title: "Urban Street on a Rainy Afternoon"
+  creator: "Extemporalist"
+  license: "CC0"
+  license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  category: "road traffic"
+  recording_session: "commons_kelowna_rainy_afternoon_2015_02_09"
+  format: "FLAC"
+  duration_seconds: 1800.0
+  attribution: "Extemporalist, Urban Street on a Rainy Afternoon, Wikimedia Commons, CC0"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Urban_Street_on_a_Rainy_Afternoon.flac"
+  reason_for_review: "Awaiting operator approval; 30-minute CC0 recording of moderate 2-lane urban traffic in Kelowna with rain percussion and crows in background — also usable as a rain-mixed traffic ambience."
+  evidence_gaps: []
+
+- source_id: candidate-bg-roadtraffic-keelung-aporee
+  status: approved
+  priority: P2
+  kind: background
+  provider: internet_archive
+  archive_identifier: aporee_17410_20263
+  archive_file: Soundmap2012062456.mp3
+  source_page: "https://archive.org/details/aporee_17410_20263"
+  direct_url: "https://archive.org/download/aporee_17410_20263/Soundmap2012062456.mp3"
+  title: "Keelung,Taiwan - Traffic noise"
+  creator: "Wu, Tsan-Cheng"
+  license: "CC BY 3.0"
+  license_url: "http://creativecommons.org/licenses/by/3.0/"
+  category: "road traffic"
+  recording_session: "radio_aporee_soundmap_20120624_keelung"
+  format: "MP3 (VBR); Ogg Vorbis derivative also available"
+  duration_seconds: 94.2
+  attribution: "Wu Tsan-Cheng, Keelung,Taiwan - Traffic noise, Internet Archive, CC BY 3.0"
+  evidence:
+    - "https://archive.org/details/aporee_17410_20263"
+    - "https://archive.org/metadata/aporee_17410_20263"
+  reason_for_review: "Awaiting operator approval; radio aporee soundmap field recording (SoundMap20120624-56), Keelung City 2012-06-24, Sony PCM D50; traffic noise with some air-conditioning hum noted in the description."
+  evidence_gaps: []
+
+- source_id: candidate-bg-roadtraffic-porthacourt
+  status: review_required
+  priority: P2
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Audio sound of a busy traffic in Porthacourt.ogg"
+  source_page: "https://commons.wikimedia.org/wiki/File:Audio_sound_of_a_busy_traffic_in_Porthacourt.ogg"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Audio_sound_of_a_busy_traffic_in_Porthacourt.ogg"
+  title: "Audio sound of a busy traffic in Porthacourt"
+  creator: "ElemePodcast"
+  license: "CC BY 4.0"
+  license_url: "https://creativecommons.org/licenses/by/4.0"
+  category: "road traffic"
+  recording_session: "wla_2026_niger_delta_porthacourt"
+  format: "Ogg Vorbis"
+  duration_seconds: 24.4
+  attribution: "ElemePodcast, Audio sound of a busy traffic in Porthacourt, Wikimedia Commons, CC BY 4.0"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Audio_sound_of_a_busy_traffic_in_Porthacourt.ogg"
+  reason_for_review: "Short (24 s) and the description mentions occupants speaking inside vehicles; confirm no foreground speech in the usable span before cataloging."
+  evidence_gaps:
+    - "License is complete (CC BY 4.0); the open item is content verification: no foreground speech from vehicle occupants in the usable 24 s span."
+
+- source_id: candidate-bg-roadtraffic-berlin-wonderwalk
+  status: review_required
+  priority: P2
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Ambient sound street traffic Berlin 2026-05-17.oga"
+  source_page: "https://commons.wikimedia.org/wiki/File:Ambient_sound_street_traffic_Berlin_2026-05-17.oga"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Ambient_sound_street_traffic_Berlin_2026-05-17.oga"
+  title: "Ambient sound street traffic Berlin 2026-05-17"
+  creator: "SchlurcherBot (uploader; WonderWalk project)"
+  license: "CC BY-SA 4.0"
+  license_url: "https://creativecommons.org/licenses/by-sa/4.0"
+  category: "road traffic"
+  recording_session: "wonderwalk_berlin_2026_05_17"
+  format: "Ogg Opus"
+  duration_seconds: 30.0
+  attribution: "SchlurcherBot, Ambient sound street traffic Berlin 2026-05-17, Wikimedia Commons, CC BY-SA 4.0"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Ambient_sound_street_traffic_Berlin_2026-05-17.oga"
+  reason_for_review: "Creator field is an automated uploader bot; the human recordist is not identified on the file page. GPS (52.4476 N, 13.3420 E) and date are present, but confirm recordist identity before attribution."
+  evidence_gaps:
+    - "Recordist identity unconfirmed — creator field names an uploader bot (SchlurcherBot / WonderWalk), so the license grant cannot yet be attributed to a named human author."
+
+# Summary of evidence gaps (also listed per-entry above):
+# 1. M60 King of Armor — PD claim rests on a YouTube-mirror upload chain via video2commons;
+#    needs authoritative PD-US evidence and a narration/music-overlay check.
+# 2. Berlin street traffic — uploader is a bot; no named human recordist for attribution.
+# 3. Porthacourt traffic — license fine; foreground-speech verification still open.
+# 4. Catalog-level gap: no isolated wheeled-vehicle target recording session exists yet;
+#    P2 entries are mixed wheeled-traffic ambience, not single-vehicle target takes.

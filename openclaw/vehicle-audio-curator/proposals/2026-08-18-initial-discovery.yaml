@@ -1,0 +1,374 @@
+# Initial discovery run — 2026-08-18
+# Scope: missing background categories (road traffic, wind, machinery, construction,
+# rain, birds/insects) plus one additional legally clear tracked-vehicle recording.
+# All entries are discovery proposals: status review_required until the operator
+# approves adding a source to configs/audio_sources.yaml.
+# Evidence standard: explicit license statement, creator, source/session identity,
+# and stable media URL verified from provider metadata (Commons API / Archive.org).
+
+- source_id: candidate-target-tracked-mpf-firepower
+  status: review_required
+  kind: target
+  provider: wikimedia_commons
+  file_title: "File:U.S. Army Armor & Cavalry Collection Mobile Protected Firepower.webm"
+  source_page: "https://commons.wikimedia.org/wiki/File:U.S._Army_Armor_%26_Cavalry_Collection_Mobile_Protected_Firepower.webm"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/c/c1/U.S._Army_Armor_%26_Cavalry_Collection_Mobile_Protected_Firepower.webm"
+  title: "U.S. Army Armor & Cavalry Collection Mobile Protected Firepower"
+  creator: "U.S. Army Armor & Cavalry Collection"
+  license: "Public domain"
+  license_url: "https://commons.wikimedia.org/wiki/File:U.S._Army_Armor_%26_Cavalry_Collection_Mobile_Protected_Firepower.webm"
+  vehicle_class: tracked
+  vehicle_model: "Mobile Protected Firepower testbed (M8 Armored Gun System-based, later M10 Booker)"
+  recording_session: "us_army_armor_cavalry_collection_tankodrome_2023"
+  format: "webm (VP9/Opus video; collector extracts first audio stream)"
+  duration_seconds: 98.1
+  attribution: "U.S. Army Armor & Cavalry Collection, Mobile Protected Firepower, Wikimedia Commons (public domain)"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:U.S._Army_Armor_%26_Cavalry_Collection_Mobile_Protected_Firepower.webm"
+    - "https://twitter.com/ArmorCollection/status/1618379172191285252"
+  reason_for_review: "Awaiting operator approval; PD US Army, tracked MPF testbed driving at the Tankodrome (2023-01-25), source is the official U.S. Army Armor & Cavalry Collection account."
+
+- source_id: candidate-target-tracked-stug-iiig-lappeenranta
+  status: review_required
+  kind: target
+  provider: wikimedia_commons
+  file_title: "File:Taistelunäytös Lippujuhlan päivä 2014 16 Stug IIIG.webm"
+  source_page: "https://commons.wikimedia.org/wiki/File:Taistelun%C3%A4yt%C3%B6s_Lippujuhlan_p%C3%A4iv%C3%A4_2014_16_Stug_IIIG.webm"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/5/58/Taistelun%C3%A4yt%C3%B6s_Lippujuhlan_p%C3%A4iv%C3%A4_2014_16_Stug_IIIG.webm"
+  title: "Taistelunäytös Lippujuhlan päivä 2014 16 Stug IIIG"
+  creator: "MKFI (Mikko K. Finnilä)"
+  license: "Public domain"
+  license_url: "https://commons.wikimedia.org/wiki/File:Taistelun%C3%A4yt%C3%B6s_Lippujuhlan_p%C3%A4iv%C3%A4_2014_16_Stug_IIIG.webm"
+  vehicle_class: tracked
+  vehicle_model: "Sturmgeschütz III Ausf. G (Finnish service)"
+  recording_session: "commons_lappeenranta_flag_day_reenactment_2014"
+  format: "webm (VP8/Vorbis video; collector extracts first audio stream)"
+  duration_seconds: 25.9
+  attribution: "MKFI, Taistelunäytös Lippujuhlan päivä 2014 16 Stug IIIG, Wikimedia Commons (public domain)"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Taistelun%C3%A4yt%C3%B6s_Lippujuhlan_p%C3%A4iv%C3%A4_2014_16_Stug_IIIG.webm"
+  reason_for_review: "Awaiting operator approval; PD-self release, tracked StuG III G arriving at battle reenactment, Lappeenranta 2014-06-04. Short (26 s) but clean engine/arrival signature."
+
+- source_id: candidate-target-tracked-m60-king-of-armor
+  status: review_required
+  kind: target
+  provider: wikimedia_commons
+  file_title: "File:M60 Tank - King of Armor (1966).webm"
+  source_page: "https://commons.wikimedia.org/wiki/File:M60_Tank_-_King_of_Armor_(1966).webm"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/e/ee/M60_Tank_-_King_of_Armor_%281966%29.webm"
+  title: "M60 Tank - King of Armor (1966)"
+  creator: "US Army"
+  license: "Public domain"
+  license_url: "https://commons.wikimedia.org/wiki/File:M60_Tank_-_King_of_Armor_(1966).webm"
+  vehicle_class: tracked
+  vehicle_model: "M60 Patton"
+  recording_session: "us_army_m60_king_of_armor_film_1966"
+  format: "webm (AV1/Opus video; collector extracts first audio stream)"
+  duration_seconds: 1705.4
+  attribution: "US Army, M60 Tank - King of Armor (1966), Wikimedia Commons (public domain)"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:M60_Tank_-_King_of_Armor_(1966).webm"
+  reason_for_review: "Marked PD US Army / PD-US-no-notice for a 1966 Army film, but the file was uploaded via video2commons from a YouTube mirror; re-verify the public-domain determination and check for narration/music over engine audio before use."
+
+- source_id: candidate-bg-roadtraffic-circulation-carrefour
+  status: review_required
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Circulation carrefour.ogg"
+  source_page: "https://commons.wikimedia.org/wiki/File:Circulation_carrefour.ogg"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Circulation_carrefour.ogg"
+  title: "Circulation carrefour"
+  creator: "Luk"
+  license: "CC BY-SA 3.0"
+  license_url: "https://creativecommons.org/licenses/by-sa/3.0"
+  category: "road traffic"
+  recording_session: "commons_toulouse_crossroad_2007_08"
+  format: "Ogg Vorbis"
+  duration_seconds: 185.8
+  attribution: "Luk, Circulation carrefour, Wikimedia Commons, CC BY-SA 3.0"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Circulation_carrefour.ogg"
+  reason_for_review: "Awaiting operator approval; traffic sounds at a crossroad, Toulouse, August 2007; also offered under GFDL (multi-license)."
+
+- source_id: candidate-bg-roadtraffic-urban-street-rainy-afternoon
+  status: review_required
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Urban Street on a Rainy Afternoon.flac"
+  source_page: "https://commons.wikimedia.org/wiki/File:Urban_Street_on_a_Rainy_Afternoon.flac"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Urban_Street_on_a_Rainy_Afternoon.flac"
+  title: "Urban Street on a Rainy Afternoon"
+  creator: "Extemporalist"
+  license: "CC0"
+  license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  category: "road traffic"
+  recording_session: "commons_kelowna_rainy_afternoon_2015_02_09"
+  format: "FLAC"
+  duration_seconds: 1800.0
+  attribution: "Extemporalist, Urban Street on a Rainy Afternoon, Wikimedia Commons, CC0"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Urban_Street_on_a_Rainy_Afternoon.flac"
+  reason_for_review: "Awaiting operator approval; 30-minute CC0 recording of moderate 2-lane urban traffic in Kelowna with rain percussion and crows in background — also usable as a rain-mixed traffic ambience."
+
+- source_id: candidate-bg-roadtraffic-keelung-aporee
+  status: review_required
+  kind: background
+  provider: internet_archive
+  archive_identifier: aporee_17410_20263
+  archive_file: Soundmap2012062456.mp3
+  source_page: "https://archive.org/details/aporee_17410_20263"
+  direct_url: "https://archive.org/download/aporee_17410_20263/Soundmap2012062456.mp3"
+  title: "Keelung,Taiwan - Traffic noise"
+  creator: "Wu, Tsan-Cheng"
+  license: "CC BY 3.0"
+  license_url: "http://creativecommons.org/licenses/by/3.0/"
+  category: "road traffic"
+  recording_session: "radio_aporee_soundmap_20120624_keelung"
+  format: "MP3 (VBR); Ogg Vorbis derivative also available"
+  duration_seconds: 94.2
+  attribution: "Wu Tsan-Cheng, Keelung,Taiwan - Traffic noise, Internet Archive, CC BY 3.0"
+  evidence:
+    - "https://archive.org/details/aporee_17410_20263"
+    - "https://archive.org/metadata/aporee_17410_20263"
+  reason_for_review: "Awaiting operator approval; radio aporee soundmap field recording (SoundMap20120624-56), Keelung City 2012-06-24, Sony PCM D50; traffic noise with some air-conditioning hum noted in the description."
+
+- source_id: candidate-bg-roadtraffic-porthacourt
+  status: review_required
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Audio sound of a busy traffic in Porthacourt.ogg"
+  source_page: "https://commons.wikimedia.org/wiki/File:Audio_sound_of_a_busy_traffic_in_Porthacourt.ogg"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Audio_sound_of_a_busy_traffic_in_Porthacourt.ogg"
+  title: "Audio sound of a busy traffic in Porthacourt"
+  creator: "ElemePodcast"
+  license: "CC BY 4.0"
+  license_url: "https://creativecommons.org/licenses/by/4.0"
+  category: "road traffic"
+  recording_session: "wla_2026_niger_delta_porthacourt"
+  format: "Ogg Vorbis"
+  duration_seconds: 24.4
+  attribution: "ElemePodcast, Audio sound of a busy traffic in Porthacourt, Wikimedia Commons, CC BY 4.0"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Audio_sound_of_a_busy_traffic_in_Porthacourt.ogg"
+  reason_for_review: "Short (24 s) and the description mentions occupants speaking inside vehicles; confirm no foreground speech in the usable span before cataloging."
+
+- source_id: candidate-bg-roadtraffic-berlin-wonderwalk
+  status: review_required
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Ambient sound street traffic Berlin 2026-05-17.oga"
+  source_page: "https://commons.wikimedia.org/wiki/File:Ambient_sound_street_traffic_Berlin_2026-05-17.oga"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Ambient_sound_street_traffic_Berlin_2026-05-17.oga"
+  title: "Ambient sound street traffic Berlin 2026-05-17"
+  creator: "SchlurcherBot (uploader; WonderWalk project)"
+  license: "CC BY-SA 4.0"
+  license_url: "https://creativecommons.org/licenses/by-sa/4.0"
+  category: "road traffic"
+  recording_session: "wonderwalk_berlin_2026_05_17"
+  format: "Ogg Opus"
+  duration_seconds: 30.0
+  attribution: "SchlurcherBot, Ambient sound street traffic Berlin 2026-05-17, Wikimedia Commons, CC BY-SA 4.0"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Ambient_sound_street_traffic_Berlin_2026-05-17.oga"
+  reason_for_review: "Creator field is an automated uploader bot; the human recordist is not identified on the file page. GPS (52.4476 N, 13.3420 E) and date are present, but confirm recordist identity before attribution."
+
+- source_id: candidate-bg-wind-bourne
+  status: review_required
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Wind sounds 2020-05-10 1625.mp3"
+  source_page: "https://commons.wikimedia.org/wiki/File:Wind_sounds_2020-05-10_1625.mp3"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/d/d0/Wind_sounds_2020-05-10_1625.mp3"
+  title: "Wind sounds 2020-05-10 1625"
+  creator: "Robert EA Harvey"
+  license: "CC BY-SA 4.0"
+  license_url: "https://creativecommons.org/licenses/by-sa/4.0"
+  category: "wind"
+  recording_session: "commons_bourne_lincolnshire_2020_05_10"
+  format: "MP3"
+  duration_seconds: 811.4
+  attribution: "Robert EA Harvey, Wind sounds 2020-05-10 1625, Wikimedia Commons, CC BY-SA 4.0"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Wind_sounds_2020-05-10_1625.mp3"
+  reason_for_review: "Awaiting operator approval; 13.5-minute wind-in-trees recording at woodland edge, Bourne, Lincolnshire (52.7725 N, -0.3930 W), Roland R-07 field recording series."
+
+- source_id: candidate-bg-wind-fisterra
+  status: review_required
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Vento fisterra.ogg"
+  source_page: "https://commons.wikimedia.org/wiki/File:Vento_fisterra.ogg"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/3/38/Vento_fisterra.ogg"
+  title: "Vento fisterra"
+  creator: "Escoitar.org"
+  license: "Public domain"
+  license_url: "https://commons.wikimedia.org/wiki/File:Vento_fisterra.ogg"
+  category: "wind"
+  recording_session: "escoitar_fisterra_2006"
+  format: "Ogg Vorbis"
+  duration_seconds: 257.0
+  attribution: "Escoitar.org, Vento fisterra, Wikimedia Commons (public domain)"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Vento_fisterra.ogg"
+  reason_for_review: "Awaiting operator approval; PD-self wind recording at Fisterra, Galicia (2006-08-02), 'Gravación do vento de Fisterra'."
+
+- source_id: candidate-bg-machinery-angle-grinder
+  status: review_required
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Angle Grinder cutting a steel chain - Soundbite.ogg"
+  source_page: "https://commons.wikimedia.org/wiki/File:Angle_Grinder_cutting_a_steel_chain_-_Soundbite.ogg"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Angle_Grinder_cutting_a_steel_chain_-_Soundbite.ogg"
+  title: "Angle Grinder cutting a steel chain - Soundbite"
+  creator: "Pittigrilli"
+  license: "CC BY-SA 4.0"
+  license_url: "https://creativecommons.org/licenses/by-sa/4.0"
+  category: "machinery"
+  recording_session: "commons_munich_2020_01_05"
+  format: "Ogg Vorbis"
+  duration_seconds: 30.7
+  attribution: "Pittigrilli, Angle Grinder cutting a steel chain - Soundbite, Wikimedia Commons, CC BY-SA 4.0"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Angle_Grinder_cutting_a_steel_chain_-_Soundbite.ogg"
+  reason_for_review: "Awaiting operator approval; power-tool (angle grinder) recording in Munich (48.1316 N, 11.5664 E), 2020-01-05."
+
+- source_id: candidate-bg-machinery-excavator-gravel
+  status: review_required
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:A small orange excavator shoveling gravel.ogg"
+  source_page: "https://commons.wikimedia.org/wiki/File:A_small_orange_excavator_shoveling_gravel.ogg"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/5/54/A_small_orange_excavator_shoveling_gravel.ogg"
+  title: "A small orange excavator shoveling gravel"
+  creator: "T. Voekler"
+  license: "CC BY-SA 3.0"
+  license_url: "https://creativecommons.org/licenses/by-sa/3.0"
+  category: "machinery"
+  recording_session: "commons_excavator_gravel_2007_10_20"
+  format: "Ogg Vorbis"
+  duration_seconds: 25.9
+  attribution: "T. Voekler, A small orange excavator shoveling gravel, Wikimedia Commons, CC BY-SA 3.0"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:A_small_orange_excavator_shoveling_gravel.ogg"
+  reason_for_review: "Awaiting operator approval; excavator loading gravel, 2007-10-20; short (26 s) but usable at controlled SNR."
+
+- source_id: candidate-bg-construction-site
+  status: review_required
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Construction.ogg"
+  source_page: "https://commons.wikimedia.org/wiki/File:Construction.ogg"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Construction.ogg"
+  title: "Construction"
+  creator: "Dsw4"
+  license: "Public domain"
+  license_url: "https://commons.wikimedia.org/wiki/File:Construction.ogg"
+  category: "construction"
+  recording_session: "commons_construction_site_autumn_2008"
+  format: "Ogg Vorbis"
+  duration_seconds: 204.7
+  attribution: "Dsw4, Construction, Wikimedia Commons (public domain)"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Construction.ogg"
+  reason_for_review: "Awaiting operator approval; PD-self field recording of a construction site made with a shotgun microphone, Autumn 2008."
+
+- source_id: candidate-bg-construction-kleemann
+  status: review_required
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Kleemann crushing plant Koskela depot.opus"
+  source_page: "https://commons.wikimedia.org/wiki/File:Kleemann_crushing_plant_Koskela_depot.opus"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/7/73/Kleemann_crushing_plant_Koskela_depot.opus"
+  title: "Kleemann crushing plant Koskela depot"
+  creator: "Antti Leppänen"
+  license: "CC BY 4.0"
+  license_url: "https://creativecommons.org/licenses/by/4.0"
+  category: "construction"
+  recording_session: "commons_koskela_depot_helsinki_2025_05_05"
+  format: "Opus"
+  duration_seconds: 82.0
+  attribution: "Antti Leppänen, Kleemann crushing plant Koskela depot, Wikimedia Commons, CC BY 4.0"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Kleemann_crushing_plant_Koskela_depot.opus"
+  reason_for_review: "Awaiting operator approval; Kleemann Mobirex MR 130 Z Evo 2 crushing plant at the Koskela tram depot demolition site, Helsinki (60.2160 N, 24.9688 E), 2025-05-05."
+
+- source_id: candidate-bg-birds-bourne-birdsong
+  status: review_required
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Bourne woods Birdsong 2020-05-02 0804.mp3"
+  source_page: "https://commons.wikimedia.org/wiki/File:Bourne_woods_Birdsong_2020-05-02_0804.mp3"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/3/33/Bourne_woods_Birdsong_2020-05-02_0804.mp3"
+  title: "Bourne woods Birdsong 2020-05-02 0804"
+  creator: "Robert EA Harvey"
+  license: "CC BY-SA 4.0"
+  license_url: "https://creativecommons.org/licenses/by-sa/4.0"
+  category: "birds/insects"
+  recording_session: "commons_bourne_woods_2020_05_02"
+  format: "MP3"
+  duration_seconds: 55.7
+  attribution: "Robert EA Harvey, Bourne woods Birdsong 2020-05-02 0804, Wikimedia Commons, CC BY-SA 4.0"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Bourne_woods_Birdsong_2020-05-02_0804.mp3"
+  reason_for_review: "Awaiting operator approval; birdsong in Bourne Woods, Lincolnshire (52.7740 N, -0.3974 W); some wind-in-trees noise noted by the recordist."
+
+- source_id: candidate-bg-birds-xeno-canto-dawn-chorus
+  status: review_required
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Sonus naturalis - Soundscape XC269088.mp3"
+  source_page: "https://commons.wikimedia.org/wiki/File:Sonus_naturalis_-_Soundscape_XC269088.mp3"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/1/19/Sonus_naturalis_-_Soundscape_XC269088.mp3"
+  title: "Sonus naturalis - Soundscape XC269088"
+  creator: "Alexander Kurthy"
+  license: "CC BY-SA 4.0"
+  license_url: "https://creativecommons.org/licenses/by-sa/4.0"
+  category: "birds/insects"
+  recording_session: "xeno_canto_xc269088_bacuch_2015_06_04"
+  format: "MP3"
+  duration_seconds: 25.0
+  attribution: "Alexander Kurthy, Sonus naturalis - Soundscape XC269088, Wikimedia Commons, CC BY-SA 4.0 (xeno-canto XC269088)"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Sonus_naturalis_-_Soundscape_XC269088.mp3"
+    - "https://www.xeno-canto.org/269088"
+  reason_for_review: "Awaiting operator approval; multi-species dawn chorus at nautical twilight, Bacúch, Slovakia (48.8411 N, 19.8061 E), 2015-06-04 02:30, unfiltered 25 s excerpt from a 24 h recording. Short; verify no wind handling issues."
+
+- source_id: candidate-bg-insects-ode-field-cricket
+  status: review_required
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Gryllus campestris - sound.ogg"
+  source_page: "https://commons.wikimedia.org/wiki/File:Gryllus_campestris_-_sound.ogg"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Gryllus_campestris_-_sound.ogg"
+  title: "Gryllus campestris - sound"
+  creator: "Baudewijn Odé"
+  license: "CC BY-SA 4.0"
+  license_url: "https://creativecommons.org/licenses/by-sa/4.0"
+  category: "birds/insects"
+  recording_session: "ode_collection_gryllus_campestris_2016"
+  format: "Ogg Vorbis"
+  duration_seconds: 32.2
+  attribution: "Baudewijn Odé, Gryllus campestris - sound, Wikimedia Commons, CC BY-SA 4.0 (VRT ticket 2016100310004754)"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Gryllus_campestris_-_sound.ogg"
+  reason_for_review: "Awaiting operator approval; field-cricket stridulation from the Odé Collection (Veldgids Sprinkhanen en Krekels CD-ROM, KNNV 2014), permission verified by Wikimedia VRT."
+
+- source_id: candidate-bg-insects-ode-oak-bush-cricket
+  status: review_required
+  kind: background
+  provider: wikimedia_commons
+  file_title: "File:Meconema thalassinum - sound.oga"
+  source_page: "https://commons.wikimedia.org/wiki/File:Meconema_thalassinum_-_sound.oga"
+  direct_url: "https://upload.wikimedia.org/wikipedia/commons/5/56/Meconema_thalassinum_-_sound.oga"
+  title: "Meconema thalassinum - sound"
+  creator: "Baudewijn Odé"
+  license: "CC BY-SA 4.0"
+  license_url: "https://creativecommons.org/licenses/by-sa/4.0"
+  category: "birds/insects"
+  recording_session: "ode_collection_meconema_thalassinum_2016"
+  format: "Ogg Vorbis"
+  duration_seconds: 23.3
+  attribution: "Baudewijn Odé, Meconema thalassinum - sound, Wikimedia Commons, CC BY-SA 4.0 (VRT ticket 2016100310004754)"
+  evidence:
+    - "https://commons.wikimedia.org/wiki/File:Meconema_thalassinum_-_sound.oga"
+  reason_for_review: "Awaiting operator approval; oak bush-cricket stridulation from the Odé Collection, permission verified by Wikimedia VRT. Short (23 s)."

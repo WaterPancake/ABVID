@@ -1,0 +1,237 @@
+# Milestone 5 — Additional Independent Tracked-Vehicle Sessions (proposal-only)
+# Purpose: The balanced acquisition refresh (2026-08-20) established that the catalog
+# reaches only FOUR independent tracked sessions because the two MPF entries are the
+# same recording session (duplicate footage posted to Twitter and YouTube). To reach
+# the >=5 independent tracked-session gate with a fallback, locate at least TWO
+# genuinely independent, real (non-synthetic) tracked-vehicle recording sessions.
+#
+# Status legend (per source-curator skill): discovery entries are `review_required`
+# until the operator has verified chain of custody / listened to the audio. No entry
+# here is `approved`; approval must follow an explicit operator decision.
+#
+# Constraint: no downloads, no collector invocation, no catalog/code/label edits.
+
+purpose: >-
+  Close the Milestone 5 tracked-session shortfall by discovering at least two genuinely
+  independent, real tracked-vehicle recording sessions with allowlisted redistribution
+  rights, so one can serve as the fifth tracked session and another as a fallback.
+  Searched authoritative Wikimedia Commons file pages and DVIDS-derived Commons mirrors
+  only. No audio was downloaded; the collector was not invoked.
+assessment_date: "2026-08-20"
+method: >-
+  Enumerated Wikimedia Commons 'Videos of tanks' and 'Videos of M1 Abrams tanks'
+  categories plus individual authoritative file pages. For each candidate, verified
+  creator, title, date, resolution/format, license + license URL, source URL, direct
+  upload.wikimedia.org URL, and recording-session identity. Cross-checked against
+  configs/audio_sources.yaml and all curator proposals to exclude duplicates and
+  session leaks. Reported date is 2026-08-20.
+
+local_corpus_baseline:
+  collected_tracked_sessions: 1
+  collected_tracked_detail:
+    - dvids_romanian_tank_range_2014   # local corpus, via TR-85M1 (approved, collected)
+  cataloged_tracked_sessions_prior_to_this_proposal: 4
+  cataloged_tracked_detail:
+    - dvids_romanian_tank_range_2014                                # collected (local)
+    - us_army_armor_cavalry_collection_tankodrome_2023             # approved (MPF, both files = same session)
+    - commons_lappeenranta_flag_day_reenactment_2014               # approved (StuG III G)
+    - commons_tiger131_engine_start_2017                           # review_required (chain of custody)
+  leakage_note: >-
+    mpf-firepower and bae-mpf-arrival are the SAME Tankodrome 2023 recording session
+    (identical Armor & Cavalry Collection footage on two platforms) and count as ONE
+    session. This is why the prior catalog reached only 4 independent tracked sessions
+    from 5 source records.
+
+session_gate_assessment:
+  requirement: ">=5 independent tracked sessions/class for the first-transfer corpus"
+  after_operator_review_of_this_proposal: reachable
+  scenario_A_tiger131_cleared: >-
+    local(1) + tankodrome(1) + lappeenranta(1) + tiger131(1) = 4; adding ONE of this
+    proposal's candidates (e.g. retromobile_amx30) closes the gate at 5.
+  scenario_B_tiger131_blocked: >-
+    local(1) + tankodrome(1) + lappeenranta(1) = 3; adding TWO of this proposal's
+    candidates (e.g. retromobile_amx30 + one fallback) closes the gate at 5, with the
+    third candidate available as an extra fallback.
+  verdict: >-
+    The five-session tracked gate becomes REACHABLE once the operator approves at
+    least two of the three new candidates (or one new candidate plus tiger131
+    clearance). It is NOT independently satisfied by catalog fields alone; operator
+    review of chain of custody and audio content is required.
+
+# ================= CANDIDATES (all review_required) =================
+
+candidates:
+  # ---- PRIMARY (fifth-session candidate) ----
+  - source_id: candidate-target-tracked-retromobile-amx30-2015
+    status: review_required
+    kind: target
+    provider: wikimedia_commons
+    vehicle_class: tracked
+    vehicle_model: "AMX 30 (French main battle tank)"
+    recording_session: "commons_retromobile_amx30_demo_2015"
+    recording_session_note: >-
+      Real AMX 30 tracked MBT demonstrated in motion at the Rétromobile classic-vehicle
+      show, Paris. Single coherent session on 2015-03-07; independent of every
+      cataloged session (different event, venue, date, and vehicle).
+    operating_condition: moving (demo run)
+    title: "Rétromobile 2015 - Char AMX 30 - 001"
+    creator: Thesupermat
+    attribution: "Thesupermat, Rétromobile 2015 - Char AMX 30 - 001, Wikimedia Commons, CC BY-SA 4.0"
+    source_page: "https://commons.wikimedia.org/wiki/File:R%C3%A9tromobile_2015_-_Char_AMX_30_-_001.ogv"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/e/ed/R%C3%A9tromobile_2015_-_Char_AMX_30_-_001.ogv"
+    license: "CC BY-SA 4.0"
+    license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
+    format: 'Ogg (Theora/Vorbis), 1920x1080, 7.69 Mbps overall'
+    duration_seconds: 174
+    file_size_mb: 159.73
+    date: "2015-03-07"
+    source_provenance: >-
+      Self-published own work by Thesupermat, produced with Wikimedia France support
+      (Atget camera pack). Author is the copyright holder.
+    why_strong: >-
+      Longest and cleanest candidate (2:54). Defensible tracked label (AMX 30 MBT on
+      the move). Allowlisted CC BY-SA 4.0. Explicit single recording session.
+    reason_for_review: >-
+      Show-venue ambience likely (crowd/hall); needs listening review to confirm the
+      dominant acoustic content is tracked-engine/vehicle sound rather than PA/announcer
+      audio or background music, and to set target segment boundaries.
+    expected_license_matches_catalog: true
+
+  # ---- FALLBACK A ----
+  - source_id: candidate-target-tracked-bovington-type59-2014
+    status: review_required
+    kind: target
+    provider: wikimedia_commons
+    vehicle_class: tracked
+    vehicle_model: "Type 59 (Chinese main battle tank; label disputed)"
+    recording_session: "commons_bovington_type59_2014"
+    recording_session_note: >-
+      A tracked tank driven around the demonstration area of The Tank Museum, Bovington,
+      October 2014 (uploaded 2014-11-09). Genuinely independent of all other cataloged
+      sessions (different museum-run demo event, different year/venue/vehicle).
+    operating_condition: moving (museum demonstration run)
+    title: "Type59 bovington"
+    creator: Geni
+    attribution: "Geni, Type59 bovington, Wikimedia Commons, CC BY-SA 4.0 / GFDL 1.2"
+    source_page: "https://commons.wikimedia.org/wiki/File:Type59_bovington.ogv"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Type59_bovington.ogv"
+    license: "CC BY-SA 4.0 (optionally 3.0/2.5/2.0/1.0) or GFDL 1.2, license of choice"
+    license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
+    format: 'Ogg Theora video, 320x240'
+    duration_seconds: 37
+    file_size_mb: 15.41
+    date: "2014-10"
+    source_provenance: >-
+      Self-published own work by Geni (user), provided GFDL 1.2 + CC BY-SA (choice).
+    why_strong: >-
+      Clear single-vehicle movement demo, allowlisted CC BY-SA 4.0, explicit session.
+    reason_for_review: >-
+      (1) A Commons language note disputes whether the vehicle is genuinely a Type 59
+      (differences in gun, glacis protrusion, loader-hatch race on the mantlet) — label
+      must be confirmed before use. (2) Very low video resolution (320x240) but audio is
+      the target of interest. (3) Museum demo may carry crowd/announcer content; needs
+      listening review.
+
+  # ---- FALLBACK B ----
+  - source_id: candidate-target-tracked-t18-khabarovsk-2015
+    status: review_required
+    kind: target
+    provider: wikimedia_commons
+    vehicle_class: tracked
+    vehicle_model: "T-18 / MS-1 (Soviet interwar light tank)"
+    recording_session: "rw_russia_t18_khabarovsk_2015"
+    recording_session_note: >-
+      Historical Soviet T-18 (MS-1) light tank in movement during a transit in
+      Khabarovsk on 2015-05-07 (title: "Tank T-18 from Ussuriysk in Khabarovsk,
+      7 May 2015"). Genuinely independent: distinct venue, year, date, and vehicle
+      from every cataloged session.
+    operating_condition: moving (transit / low-speed drive)
+    title: "Танк Т-18 из Уссурийска в Хабаровске 7 мая 2015"
+    creator: Andshel
+    attribution: "Andshel, Танк Т-18 из Уссурийска в Хабаровске 7 мая 2015, Wikimedia Commons, CC BY-SA 4.0"
+    source_page: "https://commons.wikimedia.org/wiki/File:%D0%A2%D0%B0%D0%BD%D0%BA_%D0%A2-18_%D0%B8%D0%B7_%D0%A3%D1%81%D1%81%D1%83%D1%80%D0%B8%D0%B9%D1%81%D0%BA%D0%B0_%D0%B2_%D0%A5%D0%B0%D0%B1%D0%B0%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B5_7_%D0%BC%D0%B0%D1%8F_2015.ogv"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/0/0b/%D0%A2%D0%B0%D0%BD%D0%BA_%D0%A2-18_%D0%B8%D0%B7_%D0%A3%D1%81%D1%81%D1%83%D1%80%D0%B8%D0%B9%D1%81%D0%BA%D0%B0_%D0%B2_%D0%A5%D0%B0%D0%B1%D0%B0%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B5_7_%D0%BC%D0%B0%D1%8F_2015.ogv"
+    license: "CC BY-SA 4.0"
+    license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
+    format: 'Ogg (Theora/Vorbis), 854x480, 1.48 Mbps overall'
+    duration_seconds: 35
+    file_size_mb: 6.09
+    date: "2015-05-07"
+    source_provenance: "Self-published own work by Andshel (user)."
+    why_strong: >-
+      Distinct interwar tracked vehicle, clear independent session identity, allowlisted
+      CC BY-SA 4.0, modest size (6 MB).
+    reason_for_review: >-
+      (1) Transit context may include surrounding street/traffic ambience; needs
+      listening review to confirm the tracked-vehicle source is the dominant acoustic
+      content. (2) Victory-Day-related date raises possible music/parade background that
+      must be excluded at segment-boundary setting. (3) Vehicle model/class label relies
+      on the filename; confirm identity during review.
+
+# ================= REJECTED / NOT ADOPTED =================
+
+rejected:
+  - source_id: candidate-tracked-merkava-III-showoff
+    reason: >-
+      Predominantly gunfire and smoke-grenade bursts; not isolated engine/movement audio.
+      Content unsuitable for a clean target-class recording.
+  - source_id: candidate-tracked-hungarian-kf41-lynx-dvids
+    reason: >-
+      DVIDS compilation/montage ("various shots ... in action") likely carrying narration;
+      not a single coherent recording session.
+  - source_id: candidate-tracked-inside-ccvl-1
+    reason: >-
+      YouTube-derived interior footage with talking; not isolated vehicle movement;
+      provenance unclear. Rejected.
+  - source_id: candidate-tracked-zorawar-light-tank
+    reason: >-
+      GODL-India license is NOT in the catalog allowlist (CC0 / PD / CC BY / CC BY-SA
+      only); field-firing content (gunfire) and not-yet-reviewed license status. Rejected.
+  - source_id: candidate-tracked-m1-2nd-tanks-camp-lejeune
+    reason: >-
+      DVIDS field-exercise B-roll, 1080p but an integrated multi-scenario exercise clip
+      with firing/maneuver montage; not a single identical tracked session; favor cleaner
+      candidates.
+  - source_id: candidate-tracked-m1-staying-on-track
+    reason: >-
+      KMEP 17-6 multi-vehicle bilateral training montage (M1 / K1 / AAV / mine-clearing
+      line charge) with likely narration; not a single tracked recording session; 508 MB
+      documentary-style content.
+  - source_id: candidate-tracked-m1-other-live-fire
+    reason: >-
+      All remaining M1 Abrams category videos are live-fire / target-practice / firing
+      dominated (Jet Turbines, Live-Fire HotEx, Loader, Mosul over-watch, NTC night
+      firing), unsuitable as clean isolated movement/idle/start audio.
+  - source_id: candidate-tracked-saumur-panther-2012
+    reason_note: >-
+      Potentially valid (Panzer V movement at Saumur, CC BY-SA 3.0) but listed as
+      not-adopted here because its exact direct URL could not be re-verified during this
+      pass and it shares a demo date/venue group with the Saumur Renault FT 2012-07-25
+      (same-session risk). Re-check if a cleaner isolated single-vehicle take is needed.
+  - source_id: candidate-tracked-lippujuhlan-2016-parade
+    reason_note: >-
+      Finnish 2016 Turku parade with Leopard 2A4 / 2S1 (CC BY-SA 4.0, MKFI) is a valid
+      independent event but is a multi-vehicle parade with likely music/PA; weaker than
+      the three adopted candidates. Held as a lower-priority fallback.
+
+# ================= SUMMARY =================
+
+summary:
+  new_independent_tracked_sessions_verified: 3
+  adopted_candidates:
+    - candidate-target-tracked-retromobile-amx30-2015   # primary (fifth-session)
+    - candidate-target-tracked-bovington-type59-2014    # fallback A
+    - candidate-target-tracked-t18-khabarovsk-2015      # fallback B
+  session_gate_reachable_after_review: true
+  session_gate_conditions: >-
+    Operator must approve at least two of the three new candidates (scenario B) or one
+    new candidate plus tiger131 clearance (scenario A), after listening review confirms
+    tracked-engine-dominant audio and any disputed label (Type 59) is resolved.
+  notes:
+    - >-
+      All adopted candidates are `review_required` per the skill. None is auto-approved.
+    - >-
+      No downloads were performed and the collector was not invoked.
+    - >-
+      No catalog, code, label, or other file was modified; this proposal is the only
+      new artifact.

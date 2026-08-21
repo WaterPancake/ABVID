@@ -1,0 +1,382 @@
+# Milestone 5 balanced acquisition refresh — proposal-only review
+# Date: 2026-08-20
+# Reviewer: Vehicle Audio Curator (proposal; no downloads, no collector runs)
+#
+# Scope: verify current authoritative provider metadata and reuse rights for the
+# eight already-cataloged target sessions listed in the request, and identify the
+# smallest balanced first-transfer batch reaching at least five independent
+# sessions per class when combined with the locally collected real corpus.
+#
+# All eight sources below were present in configs/audio_sources.yaml when reviewed.
+# Seven remained approved; Tiger 131 was returned to review_required because its
+# unknown-author YouTube provenance needs an explicit operator decision.
+# No audio was downloaded and no catalog or code was modified.
+
+purpose: "Milestone 5 (real-world transfer) readiness: establish a balanced, session-independent first-transfer real corpus."
+assessment_date: 2026-08-20
+proposal_type: acquisition_refresh
+download_gate: "No downloads performed. An explicit operator message (e.g. 'approve download: <source-id>') is required before the collector runs."
+
+# ---------------------------------------------------------------------------
+# Current local real corpus (already collected; from data/real_eval_v1/corpus_audit.json)
+# ---------------------------------------------------------------------------
+local_corpus_baseline:
+  tracked_sessions:
+    - dvids_romanian_tank_range_2014        # collected via target-tracked-tr85m1-tank-range
+  wheeled_sessions:
+    - commons_goodwood_festival_of_speed_2009   # collected via target-wheeled-abarth-205-goodwood
+    - commons_soundsofchanges_private_collection # collected via target-wheeled-ford-model-t-start
+  audit_gate:
+    requires_min_sessions_per_class: 3
+    current_tracked_sessions: 1
+    current_wheeled_sessions: 2
+    blocking_reasons:
+      - "fewer than three independent recording sessions per class required (tracked=1, wheeled=2)"
+      - "reviewed vehicle-audio segment boundaries not set (all collected target sessions unreviewed)"
+
+# ---------------------------------------------------------------------------
+# Balanced batch analysis (independent recording sessions only)
+# ---------------------------------------------------------------------------
+batch_analysis:
+  summary: >-
+    The four prioritized wheeled sources add four independent sessions, bringing
+    wheeled to six. The four prioritized tracked sources add only three independent
+    sessions because target-tracked-mpf-firepower and target-tracked-bae-mpf-arrival
+    are two platform copies of the same 2023-01-25 Tankodrome arrival event and must
+    be treated as one recording session under the dataset leakage rules. Combined with
+    the already-collected terminal tracked session, tracked reaches four independent
+    sessions only. Five independent tracked sessions are NOT reachable from the current
+    catalog; the tracked side is the binding blocker for the ≥5/class gate.
+
+  wheeled_session_projection:
+    description: "Local (2) + prioritized (4) = 6 independent sessions. >=5 achieved."
+    sessions:
+      - commons_goodwood_festival_of_speed_2009       # local, collected
+      - commons_soundsofchanges_private_collection     # local, collected
+      - commons_goodwood_festival_of_speed_2010        # target-wheeled-vanwall-1957-goodwood-2010
+      - freesound_lmartins_maserati_granturismo_2019   # target-wheeled-maserati-granturismo-exhaust
+      - pdsounds_mastermesh_car_cobblestone_2008       # target-wheeled-car-cobblestone-pass
+      - commons_cologne_night_traffic_light_2024       # target-wheeled-cars-night-stopping
+    independent_confirmed: true
+
+  tracked_session_projection:
+    description: "Local (1) + prioritized-distinct (3) = 4 independent sessions. Short of 5."
+    sessions:
+      - dvids_romanian_tank_range_2014                     # local, collected
+      - us_army_armor_cavalry_collection_tankodrome_2023   # mpf-firepower AND bae-mpf (same event -> one session)
+      - commons_lappeenranta_flag_day_reenactment_2014     # stug-iiig
+      - commons_tiger131_engine_start_2017                 # tiger131
+    independent_confirmed: true
+    collision_note: >-
+      mpf-firepower (Twitter upload) and bae-mpf-arrival (YouTube upload) carry the
+      same U.S. Army Armor & Cavalry Collection description of the same 2023-01-25
+      BAE MPF testbed arrival at the Tankodrome, both dated 2023-01-25. They are the
+      same recording event / source footage on two platforms and MUST be grouped as
+      one recording_session. Counting them as two sessions would be a session leak.
+
+  verdict: BLOCKED_ON_TRACKED
+  blocker: >-
+    At least five independent sessions per class is required for the transfer split.
+    The wheeled side reaches six, but the tracked side reaches only four from the
+    current catalog. No fifth independent tracked session exists in
+    configs/audio_sources.yaml. Reaching the five-session tracked gate requires at
+    least one additional independent tracked target recording (not currently cataloged)
+    OR explicit legal clearance to re-enable the rights-ambiguous Internet Archive 78rpm
+    tank item (internet_archive_78rpm_gbia0410053a) as an independent session. Do not
+    fabricate a fifth tracked session.
+  smallest_balanced_batch: >-
+    Recommended first transfer batch = the eight prioritized sources below (4 wheeled
+    + 4 tracked sources). This yields 6 wheeled / 4 tracked independent sessions when
+    combined with the local corpus (for tracked, mpf+bae count as one session). It is
+    the smallest batch that delivers a balanced six/four split; it does NOT satisfy the
+    >=5 tracked requirement and therefore the protocol should not be claimed as
+    session-gate complete until a fifth tracked session is secured.
+
+# ---------------------------------------------------------------------------
+# Tracked entries
+# ---------------------------------------------------------------------------
+sources:
+  # 1 ------------------------------------------------------------------------
+  - source_id: target-tracked-mpf-firepower
+    status: approved                      # existing catalog approval; rights re-verified 2026-08-20
+    kind: target
+    provider: wikimedia_commons
+    class: tracked
+    vehicle_model: "Mobile Protected Firepower testbed (BAE Systems)"
+    recording_session: "us_army_armor_cavalry_collection_tankodrome_2023"
+    recording_session_note: >-
+      Same session as target-tracked-bae-mpf-arrival (identical event, same 2023-01-25
+      date, same Armor & Cavalry Collection source footage). Treat as one group.
+    operating_condition: mixed
+    source_page: "https://commons.wikimedia.org/wiki/File:U.S._Army_Armor_%26_Cavalry_Collection_Mobile_Protected_Firepower.webm"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/c/c1/U.S._Army_Armor_%26_Cavalry_Collection_Mobile_Protected_Firepower.webm"
+    title: "U.S. Army Armor & Cavalry Collection Mobile Protected Firepower"
+    creator: "U.S. Army Armor & Cavalry Collection (via Twitter @ArmorCollection)"
+    license: "Public domain (work of a U.S. Army employee in official duties; PD-USGov-Military-Army)"
+    license_url: "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-Army"
+    format: "WebM (VP9 video / Opus audio)"
+    duration_seconds: 98                  # 1 min 38 s
+    attribution: "Public domain; attribution to U.S. Army Armor & Cavalry Collection recommended, not required."
+    share_alike_obligation: false
+    collected_state: not_collected        # not present in collection manifest
+    evidence:
+      - "https://commons.wikimedia.org/wiki/File:U.S._Army_Armor_%26_Cavalry_Collection_Mobile_Protected_Firepower.webm (PD-USGov-Military-Army, 1:38, 2023-01-25)"
+      - "Catalog entry: target-tracked-mpf-firepower (approved)"
+    content_review_need: "Review segment boundaries; the arriving MPF clip spans startup/movement conditions."
+    recommendation: approve
+
+  # 2 ------------------------------------------------------------------------
+  - source_id: target-tracked-stug-iiig-lappeenranta
+    status: approved                      # existing catalog approval; rights re-verified 2026-08-20
+    kind: target
+    provider: wikimedia_commons
+    class: tracked
+    vehicle_model: "Sturmgeschuetz III Ausf. G"
+    recording_session: "commons_lappeenranta_flag_day_reenactment_2014"
+    recording_session_note: >-
+      Independent session: Finnish military Flag Day reenactment, 2014-06-04,
+      Adolf Ehrnrooth square, Lappeenranta. Distinct event from all other tracked sessions.
+    operating_condition: decelerating
+    source_page: "https://commons.wikimedia.org/wiki/File:Taistelun%C3%A4yt%C3%B6s_Lippujuhlan_p%C3%A4iv%C3%A4_2014_16_Stug_IIIG.webm"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/5/58/Taistelun%C3%A4yt%C3%B6s_Lippujuhlan_p%C3%A4iv%C3%A4_2014_16_Stug_IIIG.webm"
+    title: "Taistelunäytös Lippujuhlan päivä 2014 16 Stug IIIG"
+    creator: "MKFI"
+    license: "Public domain (PD-self; author released work into the public domain, worldwide)"
+    license_url: "https://commons.wikimedia.org/wiki/Template:PD-self"
+    format: "WebM (VP8 video / Vorbis audio)"
+    duration_seconds: 26                  # 26 s
+    attribution: "Public domain; attribution to MKFI recommended, not required."
+    share_alike_obligation: false
+    collected_state: not_collected
+    evidence:
+      - "https://commons.wikimedia.org/wiki/File:Taistelun%C3%A4yt%C3%B6s_Lippujuhlan_p%C3%A4iv%C3%A4_2014_16_Stug_IIIG.webm (PD-self, 26 s, 2014-06-04)"
+      - "Catalog entry: target-tracked-stug-iiig-lappeenranta (approved)"
+    content_review_need: "Short clip; verify decelerating/arrival segment boundaries."
+    recommendation: approve
+
+  # 3 ------------------------------------------------------------------------
+  - source_id: target-tracked-tiger131-engine-start
+    status: review_required                # license CC0 is fine, but unknown author + YouTube provenance warrant a human sign-off
+    kind: target
+    provider: wikimedia_commons
+    class: tracked
+    vehicle_model: "Tiger 131"
+    recording_session: "commons_tiger131_engine_start_2017"
+    recording_session_note: "Independent session: Tiger 131 (Bovington) engine start, 2017-02-10."
+    operating_condition: startup
+    source_page: "https://commons.wikimedia.org/wiki/File:Tiger_Engine_Start.webm"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/d/d1/Tiger_Engine_Start.webm"
+    title: "Tiger Engine Start"
+    creator: "Unknown author (uploaded from YouTube https://www.youtube.com/watch?v=k7qecCydSlE)"
+    license: "CC0 1.0 Universal Public Domain Dedication"
+    license_url: "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    format: "WebM (VP9 video / Opus audio)"
+    duration_seconds: 108                 # 1 min 48 s
+    attribution: "CC0 waives attribution; none required."
+    share_alike_obligation: false
+    collected_state: not_collected
+    evidence:
+      - "https://commons.wikimedia.org/wiki/File:Tiger_Engine_Start.webm (CC0, 1:48, 2017-02-10, unknown author from YouTube)"
+      - "Catalog entry: target-tracked-tiger131-engine-start (approved)"
+    content_review_need: >-
+      REQUIRED before use: author is 'unknown' and the file was imported from YouTube.
+      CC0 legally permits use without attribution, but the recording session / original
+      recordist provenance is not authoritative. Confirm the underlying event (Tiger 131
+      engine start at Bovington) and that no third-party rights beyond the uploader's CC0
+      dedication block reuse. Flag for operator legal review.
+    recommendation: review_required
+    reason_for_review: "Unknown author and YouTube-origin provenance; CC0 dediction is clear but the chain of custody to the original recording is not."
+
+  # 4 ------------------------------------------------------------------------
+  - source_id: target-tracked-bae-mpf-arrival
+    status: approved                      # existing catalog approval; rights re-verified 2026-08-20
+    kind: target
+    provider: wikimedia_commons
+    class: tracked
+    vehicle_model: "Mobile Protected Firepower testbed (BAE Systems)"
+    recording_session: "us_army_bae_mpf_arrival_tankodrome_2023"
+    recording_session_note: >-
+      SAME event as target-tracked-mpf-firepower (2023-01-25 Tankodrome BAE MPF arrival).
+      Treat as one recording_session with mpf-firepower. The catalog assigns a distinct
+      session id here; this must NOT be counted as an independent session.
+    operating_condition: decelerating
+    source_page: "https://commons.wikimedia.org/wiki/File:BAE_MPF_Testbed_arrives_at_ACC.webm"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/e/ef/BAE_MPF_Testbed_arrives_at_ACC.webm"
+    title: "BAE MPF Testbed arrives at ACC"
+    creator: "The U.S. Army Armor & Cavalry Collection (YouTube @ArmorCavCollection)"
+    license: "Public domain (work of a U.S. Army employee in official duties; PD-USGov-Military-Army)"
+    license_url: "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-Army"
+    format: "WebM (VP9 video / Opus audio)"
+    duration_seconds: 98                  # 1 min 38 s
+    attribution: "Public domain; attribution to U.S. Army Armor & Cavalry Collection recommended, not required."
+    share_alike_obligation: false
+    collected_state: not_collected
+    evidence:
+      - "https://commons.wikimedia.org/wiki/File:BAE_MPF_Testbed_arrives_at_ACC.webm (PD-USGov-Military-Army, 1:38, 2023-01-25, YouTube Ga_mifE3gtE)"
+      - "Catalog entry: target-tracked-bae-mpf-arrival (approved)"
+    content_review_need: "Review segment boundaries for the arriving/decelerating phase."
+    recommendation: approve
+    session_note: "Count toward the tankodrome_2023 session group, NOT as an additional independent tracked session."
+
+# ---------------------------------------------------------------------------
+# Wheeled entries
+# ---------------------------------------------------------------------------
+  # 5 ------------------------------------------------------------------------
+  - source_id: target-wheeled-vanwall-1957-goodwood-2010
+    status: approved                      # existing catalog approval; rights re-verified 2026-08-20
+    kind: target
+    provider: wikimedia_commons
+    class: wheeled
+    vehicle_model: "Vanwall (1957)"
+    recording_session: "commons_goodwood_festival_of_speed_2010"
+    recording_session_note: >-
+      Independent session: Goodwood Festival of Speed hillclimb, 2010-07-03 (Saturday),
+      recorded by Edvvc. Distinct date/event from the 2009 Goodwood session already collected.
+    operating_condition: accelerating
+    source_page: "https://commons.wikimedia.org/wiki/File:Vanwall_(1957).ogg"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/5/59/Vanwall_%281957%29.ogg"
+    title: "Vanwall (1957) pulling away from the start - Goodwood Festival of Speed hillclimb 2010"
+    creator: "Edvvc (Ed Pond per EXIF/image metadata)"
+    license: "CC BY-SA 3.0 Unported (dual-licensed GFDL 1.2 or later; license of choice)"
+    license_url: "https://creativecommons.org/licenses/by-sa/3.0/"
+    format: "Ogg Vorbis audio"
+    duration_seconds: 18                  # 18 s, 260 kbps
+    attribution: "Attribution required (credit Edvvc, link to license, indicate changes)."
+    share_alike_obligation: true          # derived works must be shared under same/compatible license
+    collected_state: failed               # previous attempt returned HTTP 429 in collection manifest (2026-08-19)
+    collection_failure_note: "Prior manifest row result=error HTTP 429 (Too Many Requests) at 2026-08-19 19:00:59 UTC. Retry later; do not bypass provider limits."
+    evidence:
+      - "https://commons.wikimedia.org/wiki/File:Vanwall_(1957).ogg (CC BY-SA 3.0, 18 s, 2010-07-03, Edvvc)"
+      - "Catalog entry: target-wheeled-vanwall-1957-goodwood-2010 (approved)"
+      - "Manifest evidence of prior HTTP 429 failure."
+    content_review_need: "Confirm accelerating pull-away segment; short clip."
+    recommendation: approve
+
+  # 6 ------------------------------------------------------------------------
+  - source_id: target-wheeled-maserati-granturismo-exhaust
+    status: approved                      # existing catalog approval; rights re-verified 2026-08-20
+    kind: target
+    provider: wikimedia_commons
+    class: wheeled
+    vehicle_model: "Maserati GranTurismo S"
+    recording_session: "freesound_lmartins_maserati_granturismo_2019"
+    recording_session_note: "Independent session: Freesound 465453 recording by lmartins, 2019-04-02 (start/rev/idle). Distinct from all other wheeled sessions."
+    operating_condition: mixed
+    source_page: "https://commons.wikimedia.org/wiki/File:Maserati_GranTurismo_S_Exhaust.ogg"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/9/98/Maserati_GranTurismo_S_Exhaust.ogg"
+    title: "Maserati GranTurismo S - V8 engine starting, revving and idling"
+    creator: "lmartins (Freesound.org/people/lmartins/sounds/465453/)"
+    license: "CC BY 4.0 International"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    format: "Ogg Vorbis audio"
+    duration_seconds: 66                  # 1 min 6 s, 65 kbps
+    attribution: "Attribution required (credit lmartins, link to license, indicate changes)."
+    share_alike_obligation: false         # CC BY permits share alike optional
+    collected_state: not_collected
+    evidence:
+      - "https://commons.wikimedia.org/wiki/File:Maserati_GranTurismo_S_Exhaust.ogg (CC BY 4.0, 1:06, 2019-04-02, lmartins / Freesound 465453)"
+      - "Catalog entry: target-wheeled-maserati-granturismo-exhaust (approved)"
+    content_review_need: >-
+      Required before condition-specific use: source mixes start, revving, and idle.
+      Listening review must mark segment boundaries (startup / steady idle / rev) before
+      labeling operating_condition precisely.
+    recommendation: approve
+
+  # 7 ------------------------------------------------------------------------
+  - source_id: target-wheeled-car-cobblestone-pass
+    status: approved                      # existing catalog approval; rights re-verified 2026-08-20
+    kind: target
+    provider: wikimedia_commons
+    class: wheeled
+    vehicle_model: null                  # unspecified make/model
+    recording_session: "pdsounds_mastermesh_car_cobblestone_2008"
+    recording_session_note: "Independent session: PDSounds record 482 by mastermesh, 2008-03-27 (car passing on cobblestone)."
+    operating_condition: steady_speed
+    source_page: "https://commons.wikimedia.org/wiki/File:Car_on_cobblestone.ogg"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Car_on_cobblestone.ogg"
+    title: "Car on Cobblestone (PDSounds record 482)"
+    creator: "mastermesh (pdsounds.org)"
+    license: "Public domain (PD-author; released by mastermesh into the public domain worldwide)"
+    license_url: "https://commons.wikimedia.org/wiki/Template:PD-author"
+    format: "Ogg Vorbis audio"
+    duration_seconds: 8                   # 8.4 s, 78 kbps, mono 22 kHz source
+    attribution: "Public domain; attribution to mastermesh / pdsounds.org recommended, not required."
+    share_alike_obligation: false
+    collected_state: not_collected
+    evidence:
+      - "https://commons.wikimedia.org/wiki/File:Car_on_cobblestone.ogg (PD-author via pdsounds 482, 8.4 s, 2008-03-27, mastermesh)"
+      - "Catalog entry: target-wheeled-car-cobblestone-pass (approved)"
+    content_review_need: "Very short (8.4 s) pass-by; confirm steady_speed, no intervening speech/noise."
+    recommendation: approve
+
+  # 8 ------------------------------------------------------------------------
+  - source_id: target-wheeled-cars-night-stopping
+    status: approved                      # existing catalog approval; rights re-verified 2026-08-20
+    kind: target
+    provider: wikimedia_commons
+    class: wheeled
+    vehicle_model: null                  # multiple unidentified cars
+    recording_session: "commons_cologne_night_traffic_light_2024"
+    recording_session_note: "Independent session: Maximilian Schönherr, 2024-01-03, Cologne night traffic light (pass + stop)."
+    operating_condition: mixed
+    source_page: "https://commons.wikimedia.org/wiki/File:Cars_Passing_by_at_Night.webm"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Cars_Passing_by_at_Night.webm"
+    title: "Cars Passing by at Night (with stopping at a traffic light)"
+    creator: "Maximilian Schönherr"
+    license: "CC BY-SA 4.0 International"
+    license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
+    format: "WebM (VP9 video / Opus audio)"
+    duration_seconds: 16                  # 16 s, 3840x2160
+    attribution: "Attribution required (credit Maximilian Schönherr, link to license, indicate changes)."
+    share_alike_obligation: true         # derived works must be shared under same/compatible license
+    collected_state: not_collected
+    evidence:
+      - "https://commons.wikimedia.org/wiki/File:Cars_Passing_by_at_Night.webm (CC BY-SA 4.0, 16 s, 2024-01-03, Maximilian Schönherr)"
+      - "Catalog entry: target-wheeled-cars-night-stopping (approved)"
+    content_review_need: >-
+      Required before condition-specific use: mixed pass/stop. Audiovisual review must
+      mark decelerating vs steady-speed vs stopped segment boundaries before labeling.
+    recommendation: approve
+
+# ---------------------------------------------------------------------------
+# Recommendations summary
+# ---------------------------------------------------------------------------
+recommendations:
+  approve: [target-tracked-mpf-firepower, target-tracked-stug-iiig-lappeenranta, target-tracked-bae-mpf-arrival, target-wheeled-vanwall-1957-goodwood-2010, target-wheeled-maserati-granturismo-exhaust, target-wheeled-car-cobblestone-pass, target-wheeled-cars-night-stopping]
+  review_required: [target-tracked-tiger131-engine-start]
+  reject: []
+
+blockers:
+  - id: tracked-session-gate
+    severity: blocking
+    detail: >-
+      The ≥5 independent sessions per class transfer gate is not reachable for the
+      tracked class from the current catalog. Local corpus contributes 1 tracked session;
+      the four prioritized tracked sources add only 3 independent sessions (mpf-firepower
+      and bae-mpf-arrival are the same 2023-01-25 Tankodrome BAE MPF arrival event and
+      must be grouped). Total tracked = 4. At least one additional independent tracked
+      target recording must be discovered/cataloged, or the rights-ambiguous Internet
+      Archive 78rpm tank item must receive explicit legal clearance, before the tracked
+      gate (>=5) can be claimed. No fabrication of a fifth tracked session is acceptable.
+  - id: tiger131-provenance
+    severity: review_required
+    detail: >-
+      CC0 license is clear, but the file lists 'Unknown author' and a YouTube origin.
+      Operator must confirm the recording chain of custody and that no third-party rights
+      beyond the CC0 dedication block reuse before treating it as an approved transfer source.
+  - id: vanwall-429
+    severity: retry
+    detail: >-
+      Vanwall (1957).ogg previously failed with HTTP 429 (2026-08-19). Wikimedia rate
+      limiting requires a later retry; do not bypass the provider's access controls.
+  - id: content-review-gate
+    severity: process
+    detail: >-
+      corpus_audit.json fails closed until reviewed vehicle-audio segment boundaries are
+      set. maserati and cars-night are mixed-condition sources that require audiovisual
+      segment review; every proposed target needs review before the audit gate can pass.
+
+# ---------------------------------------------------------------------------
+# Existing proposals directory
+# ---------------------------------------------------------------------------
+existing_proposals: reviewed_in_curator_workspace
