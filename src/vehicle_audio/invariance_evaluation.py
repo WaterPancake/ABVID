@@ -36,8 +36,32 @@ from vehicle_audio.baseline import (
 from vehicle_audio.transfer_evaluation import validate_transfer_protocol
 
 
-INVARIANCE_EVALUATION_VERSION = 4
-METHODS = ("standard_supervised", "augmentation_only", "representation_invariance")
+INVARIANCE_EVALUATION_VERSION = 5
+METHODS = (
+    "standard_supervised",
+    "augmentation_only",
+    "paired_supervised",
+    "representation_invariance",
+    "projected_invariance",
+)
+
+
+class ProjectedAudioCNN(SmallAudioCNN):
+    """Keep the established classifier encoder separate from contrastive space."""
+
+    def __init__(self, num_classes: int = 2) -> None:
+        super().__init__(num_classes)
+        self.projector = nn.Sequential(
+            nn.Linear(64, 64),
+            nn.ReLU(),
+            nn.Linear(64, 32),
+        )
+
+
+def _model_for_method(method: str) -> SmallAudioCNN:
+    if method == "projected_invariance":
+        return ProjectedAudioCNN(len(CLASS_NAMES))
+    return SmallAudioCNN(len(CLASS_NAMES))
 
 
 def _load_jsonl(path: Path) -> tuple[list[dict[str, Any]], str]:
@@ -585,7 +609,7 @@ def _fit_method(
     if method not in METHODS:
         raise ValueError(f"unknown invariance method: {method}")
     torch.manual_seed(seed)
-    model = SmallAudioCNN(len(CLASS_NAMES)).to(device)
+    model = _model_for_method(method).to(device)
     train_labels = labels[list(train_indices)]
     class_counts = torch.bincount(train_labels, minlength=len(CLASS_NAMES)).float()
     if (class_counts == 0).any():
@@ -677,17 +701,48 @@ def _fit_method(
                     classification_loss(clean_logits, target_batch)
                     + classification_loss(corrupted_logits, target_batch)
                 )
+                if method == "paired_supervised":
+                    pair_loss = torch.zeros((), device=device)
+                    hard_loss = torch.zeros((), device=device)
+                    triplet_loss = torch.zeros((), device=device)
+                    loss = class_loss
+                    loss.backward()
+                    optimizer.step()
+                    count = len(target_batch)
+                    total_sum += float(loss.detach().cpu()) * count
+                    classification_sum += float(class_loss.detach().cpu()) * count
+                    seen += count
+                    continue
+                if method == "projected_invariance":
+                    if not isinstance(model, ProjectedAudioCNN):
+                        raise RuntimeError("projected method has the wrong model type")
+                    clean_objective_embeddings = model.projector(clean_embeddings)
+                    corrupted_objective_embeddings = model.projector(
+                        corrupted_embeddings
+                    )
+                else:
+                    clean_objective_embeddings = clean_embeddings
+                    corrupted_objective_embeddings = corrupted_embeddings
                 pair_loss = (
                     1.0
-                    - F.cosine_similarity(clean_embeddings, corrupted_embeddings, dim=1)
+                    - F.cosine_similarity(
+                        clean_objective_embeddings,
+                        corrupted_objective_embeddings,
+                        dim=1,
+                    )
                 ).mean()
                 if valid_hard.any():
                     _, hard_embeddings = _forward_embeddings(model, hard_batch)
+                    hard_objective_embeddings = (
+                        model.projector(hard_embeddings)
+                        if isinstance(model, ProjectedAudioCNN)
+                        else hard_embeddings
+                    )
                     hard_loss = (
                         1.0
                         - F.cosine_similarity(
-                            clean_embeddings[valid_hard],
-                            hard_embeddings[valid_hard],
+                            clean_objective_embeddings[valid_hard],
+                            hard_objective_embeddings[valid_hard],
                             dim=1,
                         )
                     ).mean()
@@ -697,14 +752,19 @@ def _fit_method(
                     _, negative_embeddings = _forward_embeddings(
                         model, negative_batch
                     )
+                    negative_objective_embeddings = (
+                        model.projector(negative_embeddings)
+                        if isinstance(model, ProjectedAudioCNN)
+                        else negative_embeddings
+                    )
                     positive_distance = 1.0 - F.cosine_similarity(
-                        clean_embeddings[valid_triplet],
-                        hard_embeddings[valid_triplet],
+                        clean_objective_embeddings[valid_triplet],
+                        hard_objective_embeddings[valid_triplet],
                         dim=1,
                     )
                     negative_distance = 1.0 - F.cosine_similarity(
-                        clean_embeddings[valid_triplet],
-                        negative_embeddings[valid_triplet],
+                        clean_objective_embeddings[valid_triplet],
+                        negative_objective_embeddings[valid_triplet],
                         dim=1,
                     )
                     triplet_loss = F.relu(
@@ -760,6 +820,7 @@ def _fit_method(
 
 
 def _embedding_consistency(
+    method: str,
     state: Mapping[str, torch.Tensor],
     clean_features: torch.Tensor,
     corrupted_features: torch.Tensor,
@@ -768,7 +829,7 @@ def _embedding_consistency(
     batch_size: int,
     device: torch.device,
 ) -> dict[str, float | int]:
-    model = SmallAudioCNN(len(CLASS_NAMES)).to(device)
+    model = _model_for_method(method).to(device)
     model.load_state_dict(state)
     loader = DataLoader(
         TensorDataset(
@@ -780,6 +841,7 @@ def _embedding_consistency(
     )
     cosine_values: list[torch.Tensor] = []
     l2_values: list[torch.Tensor] = []
+    projected_cosine_values: list[torch.Tensor] = []
     model.eval()
     with torch.inference_mode():
         for clean_batch, corrupted_batch in loader:
@@ -795,13 +857,26 @@ def _embedding_consistency(
             l2_values.append(
                 (clean_normalized - corrupted_normalized).norm(dim=1).cpu()
             )
+            if isinstance(model, ProjectedAudioCNN):
+                projected_cosine_values.append(
+                    F.cosine_similarity(
+                        model.projector(clean_embeddings),
+                        model.projector(corrupted_embeddings),
+                        dim=1,
+                    ).cpu()
+                )
     cosine = torch.cat(cosine_values)
     l2 = torch.cat(l2_values)
-    return {
+    result: dict[str, float | int] = {
         "support": len(cosine),
         "mean_cosine_similarity": float(cosine.mean()),
         "mean_normalized_l2_distance": float(l2.mean()),
     }
+    if projected_cosine_values:
+        result["mean_projected_cosine_similarity"] = float(
+            torch.cat(projected_cosine_values).mean()
+        )
+    return result
 
 
 def _split_payload(
@@ -890,7 +965,7 @@ def _write_plots_and_csv(output: Path, methods: Mapping[str, Any]) -> None:
     plt.close(figure)
 
     figure, axis = plt.subplots(figsize=(10.5, 5.0))
-    width = 0.25
+    width = 0.8 / len(METHODS)
     x_values = list(range(len(condition_order)))
     for method_index, method in enumerate(METHODS):
         values = [
@@ -902,7 +977,10 @@ def _write_plots_and_csv(output: Path, methods: Mapping[str, Any]) -> None:
             for condition in condition_order
         ]
         axis.bar(
-            [x + (method_index - 1) * width for x in x_values],
+            [
+                x + (method_index - (len(METHODS) - 1) / 2.0) * width
+                for x in x_values
+            ],
             values,
             width=width,
             label=method.replace("_", " "),
@@ -1051,7 +1129,7 @@ def evaluate_invariance(
             device=device,
         )
         model_states[method] = state
-        model = SmallAudioCNN(len(CLASS_NAMES)).to(device)
+        model = _model_for_method(method).to(device)
         model.load_state_dict(state)
         evaluations = {
             "clean_synthetic": _evaluate(
@@ -1122,11 +1200,14 @@ def evaluate_invariance(
             "training_input": {
                 "standard_supervised": "clean_only",
                 "augmentation_only": "corrupted_only",
+                "paired_supervised": "paired_clean_corrupted_classification_only",
                 "representation_invariance": "paired_clean_corrupted",
+                "projected_invariance": "paired_clean_corrupted_projection_head",
             }[method],
             "best_epoch": best_epoch,
             "history": history,
             "embedding_consistency": _embedding_consistency(
+                method,
                 state,
                 clean_features,
                 corrupted_features,
