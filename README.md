@@ -477,6 +477,50 @@ the invariance variants fixes the held-out real wheeled failure. See
 [`docs/milestone6_improvement_checkpoint.md`](docs/milestone6_improvement_checkpoint.md)
 for the controlled aggregate and the remaining Milestone 7 gate.
 
+### Pretrained environmental-audio baseline
+
+The optional frozen-encoder experiment uses the official MIT-licensed PANNs Cnn14
+AudioSet representation. It fits only a standardized linear tracked/wheeled head and
+compares corrupted-only against paired clean/corrupted probe training. The encoder is
+never updated, and the same factorial split, real split, nuisance partitions, and
+session diagnostics are retained.
+
+Install the optional inference dependency and place the official checkpoint under the
+ignored artifact directory:
+
+```bash
+uv sync --extra dev --extra inspection --extra pretrained
+mkdir -p .artifacts/models/panns
+wget -O .artifacts/models/panns/Cnn14_mAP=0.431.pth \
+  'https://zenodo.org/records/3987831/files/Cnn14_mAP=0.431.pth'
+shasum -a 256 .artifacts/models/panns/Cnn14_mAP=0.431.pth
+```
+
+The required SHA-256 is
+`0dc499e40e9761ef5ea061ffc77697697f277f6a960894903df3ada000e34b31`.
+The evaluator refuses any other checkpoint. The upstream `panns-inference` package
+also creates `~/panns_data/class_labels_indices.csv` on first import; this 14 KB
+AudioSet label table is an upstream behavior, not an ABVID experiment artifact.
+
+Run one controlled seed with a shared, manifest- and checkpoint-hash-validated
+embedding cache:
+
+```bash
+uv run python scripts/evaluate_pretrained.py \
+  --synthetic-manifest data/generated/m6_factorial_2s_seed42/manifest.jsonl \
+  --real-manifest data/real_eval_v2/real_manifest.jsonl \
+  --checkpoint .artifacts/models/panns/Cnn14_mAP=0.431.pth \
+  --embedding-cache runs/m6_panns_factorial/embedding_cache.pt \
+  --output runs/m6_panns_factorial/seed_42 \
+  --epochs 50 --batch-size 32 --extraction-batch-size 16 \
+  --learning-rate 0.001 --weight-decay 0.0001 \
+  --seed 42 --split-seed 42 --device cpu
+```
+
+Each run records the external checkpoint URL, hash, size, repository, license,
+pretraining dataset, split, seed, probe state, and both fixed-test and all-session
+metrics. The PANNs checkpoint remains local and is not committed.
+
 ## Reproducibility boundary
 
 For identical source files, configuration, package versions, command seed, and CPU

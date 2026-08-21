@@ -20,6 +20,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
 inspection = ["matplotlib>=3.8"]
+pretrained = ["panns-inference==0.1.1"]
 
 [project.scripts]
 vehicle-audio = "vehicle_audio.cli:main"
@@ -31,4 +32,3 @@ packages = ["src/vehicle_audio"]
 addopts = "-q"
 testpaths = ["tests"]
 pythonpath = ["src"]
-
