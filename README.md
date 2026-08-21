@@ -443,6 +443,15 @@ Each run saves machine-readable configuration, manifest hashes, complete grouped
 splits, model checkpoints, per-condition/per-SNR metrics, embedding consistency, and
 comparison plots.
 
+In the checked seed-42 run, invariance training raises all-corruption synthetic
+balanced accuracy from 77.7% to 78.9% relative to clean-only training and increases
+paired embedding cosine similarity from 0.845 to 0.916. It does **not** transfer: its
+balanced accuracy on the fixed native-real sessions is 12.5%, versus 29.0% for
+clean-only and 48.4% for augmentation-only, and it has 0% recall on the held-out
+wheeled session. See [`docs/milestone6_report.md`](docs/milestone6_report.md) for the
+exact protocol, condition and SNR tables, confusion matrices, reproducibility check,
+and limitations.
+
 ## Reproducibility boundary
 
 For identical source files, configuration, package versions, command seed, and CPU
