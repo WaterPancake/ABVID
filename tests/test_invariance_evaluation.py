@@ -176,10 +176,12 @@ def test_toy_invariance_protocol_writes_required_artifacts(tmp_path: Path) -> No
         epochs=1,
         batch_size=4,
         seed=7,
+        split_seed=11,
         device_name="cpu",
     )
 
     assert results["protocol_status"] == "complete"
+    assert results["training_config"]["split_seed"] == 11
     assert set(results["methods"]) == set(METHODS)
     assert results["training_config"]["hard_positive_pair_count"] == 4
     assert results["training_config"]["hard_negative_pair_count"] == 4
@@ -209,6 +211,7 @@ def test_toy_invariance_protocol_writes_required_artifacts(tmp_path: Path) -> No
         assert (output / name).is_file()
 
     splits = json.loads((output / "splits.json").read_text(encoding="utf-8"))
+    assert splits["seed"] == 11
     for domain in ("synthetic", "real"):
         groups = [
             set(splits[domain][name]["groups"])

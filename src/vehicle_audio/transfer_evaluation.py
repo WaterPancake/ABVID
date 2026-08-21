@@ -36,7 +36,7 @@ from vehicle_audio.baseline import (
 from vehicle_audio.real_corpus import audit_real_manifest, validate_real_manifest_record
 
 
-TRANSFER_EVALUATION_VERSION = 2
+TRANSFER_EVALUATION_VERSION = 3
 
 
 def _sha256(path: Path) -> str:
@@ -575,6 +575,7 @@ def evaluate_transfer(
     *,
     real_fractions: Sequence[float] = (0.01, 0.05, 0.10, 0.25),
     seed: int = 42,
+    split_seed: int | None = None,
     channel: int = 0,
     pretrain_epochs: int = 10,
     finetune_epochs: int = 5,
@@ -586,8 +587,9 @@ def evaluate_transfer(
     group_field: str = "recording_session",
     require_content_review: bool = True,
 ) -> dict[str, Any]:
-    if seed < 0 or channel < 0:
-        raise ValueError("seed and channel must be nonnegative")
+    resolved_split_seed = seed if split_seed is None else split_seed
+    if seed < 0 or resolved_split_seed < 0 or channel < 0:
+        raise ValueError("seed, split_seed, and channel must be nonnegative")
     fractions = tuple(float(value) for value in real_fractions)
     if not fractions or any(not 0 < value <= 1 for value in fractions):
         raise ValueError("real_fractions must contain values in (0, 1]")
@@ -609,9 +611,11 @@ def evaluate_transfer(
     random.seed(seed)
     torch.manual_seed(seed)
     synthetic_split = grouped_stratified_split(
-        synthetic_records, seed, group_field=group_field
+        synthetic_records, resolved_split_seed, group_field=group_field
     )
-    real_split = grouped_stratified_split(real_records, seed, group_field=group_field)
+    real_split = grouped_stratified_split(
+        real_records, resolved_split_seed, group_field=group_field
+    )
     synthetic_split_metadata = _split_metadata(
         synthetic_records, synthetic_split, group_field
     )
@@ -702,7 +706,7 @@ def evaluate_transfer(
             real_labels,
             real_split.train,
             fraction,
-            seed=seed,
+            seed=resolved_split_seed,
         )
         state, history, best_epoch, validation = _fit(
             real_features[list(indices)],
@@ -788,7 +792,7 @@ def evaluate_transfer(
     splits_payload = {
         "strategy": "recording_session_grouped",
         "group_field": group_field,
-        "seed": seed,
+        "seed": resolved_split_seed,
         "synthetic": synthetic_split_metadata,
         "real": real_split_metadata,
     }
@@ -804,6 +808,7 @@ def evaluate_transfer(
         "model": "small_log_mel_cnn",
         "channel": channel,
         "seed": seed,
+        "split_seed": resolved_split_seed,
         "device": str(device),
         "group_field": group_field,
         "real_fractions": list(fractions),
@@ -891,6 +896,7 @@ def evaluate_transfer(
                 "git_commit": results["git_commit"],
                 "configuration": training_config,
                 "random_seed": seed,
+                "split_seed": resolved_split_seed,
                 "dataset_version": dataset_version,
                 "synthetic_manifest_sha256": synthetic_sha256,
                 "real_manifest_sha256": real_sha256,
@@ -917,6 +923,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--real-fraction", type=float, action="append", dest="real_fractions")
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument(
+        "--split-seed",
+        type=int,
+        help="fixed grouped-split/subset seed; defaults to --seed",
+    )
     parser.add_argument("--channel", type=int, default=0)
     parser.add_argument("--pretrain-epochs", type=int, default=10)
     parser.add_argument("--finetune-epochs", type=int, default=5)
@@ -942,6 +953,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         args.output,
         real_fractions=(0.01, 0.05, 0.10, 0.25) if args.real_fractions is None else args.real_fractions,
         seed=args.seed,
+        split_seed=args.split_seed,
         channel=args.channel,
         pretrain_epochs=args.pretrain_epochs,
         finetune_epochs=args.finetune_epochs,

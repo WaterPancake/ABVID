@@ -35,7 +35,7 @@ from vehicle_audio.baseline import (
 from vehicle_audio.transfer_evaluation import validate_transfer_protocol
 
 
-INVARIANCE_EVALUATION_VERSION = 3
+INVARIANCE_EVALUATION_VERSION = 4
 METHODS = ("standard_supervised", "augmentation_only", "representation_invariance")
 
 
@@ -778,6 +778,7 @@ def evaluate_invariance(
     batch_size: int = 32,
     learning_rate: float = 1e-3,
     seed: int = 42,
+    split_seed: int | None = None,
     channel: int = 0,
     device_name: str = "auto",
 ) -> dict[str, Any]:
@@ -787,8 +788,9 @@ def evaluate_invariance(
         raise ValueError("consistency weights must be nonnegative")
     if triplet_margin <= 0:
         raise ValueError("triplet_margin must be positive")
-    if seed < 0 or channel < 0:
-        raise ValueError("seed and channel must be nonnegative")
+    resolved_split_seed = seed if split_seed is None else split_seed
+    if seed < 0 or resolved_split_seed < 0 or channel < 0:
+        raise ValueError("seed, split_seed, and channel must be nonnegative")
     synthetic_manifest = Path(synthetic_manifest_path)
     real_manifest = Path(real_manifest_path)
     output = Path(output_dir)
@@ -821,8 +823,8 @@ def evaluate_invariance(
     real_features = cached["real_features"]
     real_labels = cached["real_labels"]
 
-    synthetic_split = grouped_stratified_split(synthetic_records, seed)
-    real_split = grouped_stratified_split(real_records, seed)
+    synthetic_split = grouped_stratified_split(synthetic_records, resolved_split_seed)
+    real_split = grouped_stratified_split(real_records, resolved_split_seed)
     nuisance = build_nuisance_partitions(
         synthetic_records,
         synthetic_split,
@@ -966,7 +968,7 @@ def evaluate_invariance(
     _write_plots_and_csv(output, method_results)
     split_payload = {
         "strategy": "recording_session_grouped_with_controlled_nuisance_holdouts",
-        "seed": seed,
+        "seed": resolved_split_seed,
         "synthetic": _split_payload(synthetic_records, synthetic_split),
         "real": _split_payload(real_records, real_split),
         "heldout_noise": heldout_noise,
@@ -1013,6 +1015,7 @@ def evaluate_invariance(
         "batch_size": batch_size,
         "learning_rate": learning_rate,
         "seed": seed,
+        "split_seed": resolved_split_seed,
         "channel": channel,
         "device": str(device),
     }
@@ -1071,6 +1074,7 @@ def evaluate_invariance(
                 "git_commit": results["git_commit"],
                 "configuration": training_config,
                 "random_seed": seed,
+                "split_seed": resolved_split_seed,
                 "dataset_version": dataset_version,
                 "train_test_split": "splits.json",
                 "model_checkpoint": "models.pt",
@@ -1103,6 +1107,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--batch-size", type=int, default=32)
     parser.add_argument("--learning-rate", type=float, default=1e-3)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument(
+        "--split-seed",
+        type=int,
+        help="fixed grouped-split seed; defaults to --seed",
+    )
     parser.add_argument("--channel", type=int, default=0)
     parser.add_argument("--device", choices=("auto", "cpu", "mps", "cuda"), default="auto")
     return parser
@@ -1124,6 +1133,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         batch_size=args.batch_size,
         learning_rate=args.learning_rate,
         seed=args.seed,
+        split_seed=args.split_seed,
         channel=args.channel,
         device_name=args.device,
     )

@@ -168,10 +168,12 @@ def test_toy_transfer_protocol_writes_all_required_artifacts(tmp_path: Path) -> 
         finetune_epochs=1,
         real_only_epochs=1,
         batch_size=4,
+        split_seed=11,
         device_name="cpu",
     )
 
     assert results["protocol_status"] == "complete"
+    assert results["training_config"]["split_seed"] == 11
     assert results["test_domain"] == "held-out native real recording sessions"
     assert results["split_counts"]["real"] == {"train": 4, "validation": 4, "test": 4}
     assert results["experiments"]["A_real_only"]["test"]["support"] == 4
@@ -194,6 +196,7 @@ def test_toy_transfer_protocol_writes_all_required_artifacts(tmp_path: Path) -> 
     ):
         assert (output / name).is_file()
     split_payload = json.loads((output / "splits.json").read_text())
+    assert split_payload["seed"] == 11
     for domain in ("synthetic", "real"):
         groups = [
             set(split_payload[domain][name]["groups"])
