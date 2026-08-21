@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 from vehicle_audio.invariance_evaluation import METHODS
 
 
-AGGREGATION_VERSION = 2
+AGGREGATION_VERSION = 3
 SCALAR_METRICS = ("accuracy", "balanced_accuracy", "macro_f1")
 OPTIONAL_SCALAR_METRICS = ("session_macro_accuracy", "session_balanced_accuracy")
 PLOT_CONDITIONS = (
@@ -66,7 +66,7 @@ def _load_runs(paths: Sequence[str | Path]) -> list[tuple[Path, dict[str, Any]]]
 
 def _validate_runs(
     runs: Sequence[tuple[Path, Mapping[str, Any]]],
-) -> tuple[list[str], list[str]]:
+) -> tuple[list[str], list[str], list[str]]:
     reference_path, reference = runs[0]
     dataset_version = reference.get("dataset_version")
     commit = reference.get("git_commit")
@@ -78,6 +78,14 @@ def _validate_runs(
         )
     )
     seeds: set[int] = set()
+    reference_adaptation = reference.get("real_adaptation")
+    adaptation_keys = (
+        [str(row["key"]) for row in reference_adaptation]
+        if reference_adaptation is not None
+        else []
+    )
+    if len(adaptation_keys) != len(set(adaptation_keys)):
+        raise ValueError(f"duplicate real-adaptation keys: {reference_path}")
 
     for path, metrics in runs:
         seed = int(metrics["training_config"]["seed"])
@@ -94,6 +102,36 @@ def _validate_runs(
             raise ValueError(f"controlled training configuration mismatch: {path}")
         if sorted(metrics["methods"]) != methods:
             raise ValueError(f"method set mismatch: {path}")
+        observed_adaptation = metrics.get("real_adaptation")
+        if (observed_adaptation is None) != (reference_adaptation is None):
+            raise ValueError(f"real-adaptation protocol mismatch: {path}")
+        if reference_adaptation is not None:
+            observed_keys = [str(row["key"]) for row in observed_adaptation]
+            if observed_keys != adaptation_keys:
+                raise ValueError(f"real-adaptation fraction mismatch: {path}")
+            for reference_row, observed_row in zip(
+                reference_adaptation, observed_adaptation, strict=True
+            ):
+                for field in (
+                    "requested_real_fraction",
+                    "actual_real_fraction",
+                    "real_training_support",
+                    "real_training_class_support",
+                    "real_training_sample_ids",
+                ):
+                    if observed_row[field] != reference_row[field]:
+                        raise ValueError(
+                            f"real-adaptation {field} mismatch for "
+                            f"{reference_row['key']}: {path}"
+                        )
+                if (
+                    int(observed_row["native_real"]["support"])
+                    != int(reference_row["native_real"]["support"])
+                ):
+                    raise ValueError(
+                        f"real-adaptation test support mismatch for "
+                        f"{reference_row['key']}: {path}"
+                    )
         for method in methods:
             observed_conditions = sorted(metrics["methods"][method]["evaluations"])
             if observed_conditions != conditions:
@@ -109,7 +147,7 @@ def _validate_runs(
                 raise ValueError(
                     f"support mismatch for {method}/{condition}: {sorted(supports)}"
                 )
-    return methods, conditions
+    return methods, conditions, adaptation_keys
 
 
 def aggregate_invariance_runs(
@@ -118,7 +156,7 @@ def aggregate_invariance_runs(
     """Aggregate controlled seed repeats after validating their experiment identity."""
 
     runs = _load_runs(metrics_paths)
-    methods, conditions = _validate_runs(runs)
+    methods, conditions, adaptation_keys = _validate_runs(runs)
     output = Path(output_dir)
     output.mkdir(parents=True, exist_ok=True)
     reference = runs[0][1]
@@ -210,6 +248,85 @@ def aggregate_invariance_runs(
                 )
         method_results[method] = {"evaluations": evaluation_results}
 
+    adaptation_results: dict[str, Any] | None = None
+    if adaptation_keys:
+        source_method = str(
+            reference["training_config"].get(
+                "adaptation_source_method", "panns_audioset_paired_linear"
+            )
+        )
+        if source_method not in method_results:
+            raise ValueError(f"real-adaptation source method is absent: {source_method}")
+        fractions: dict[str, Any] = {}
+        for row_index, key in enumerate(adaptation_keys):
+            reference_row = reference["real_adaptation"][row_index]
+            metric_results = {
+                metric: _summary(
+                    [
+                        float(run["real_adaptation"][row_index]["native_real"][metric])
+                        for _, run in runs
+                    ]
+                )
+                for metric in SCALAR_METRICS
+            }
+            class_results = {
+                vehicle_class: _summary(
+                    [
+                        float(
+                            run["real_adaptation"][row_index]["native_real"]
+                            ["per_class_recall"][vehicle_class]
+                        )
+                        for _, run in runs
+                    ]
+                )
+                for vehicle_class in sorted(
+                    reference_row["native_real"]["per_class_recall"]
+                )
+            }
+            fractions[key] = {
+                "requested_real_fraction": float(
+                    reference_row["requested_real_fraction"]
+                ),
+                "actual_real_fraction": float(reference_row["actual_real_fraction"]),
+                "real_training_support": int(reference_row["real_training_support"]),
+                "real_training_class_support": reference_row[
+                    "real_training_class_support"
+                ],
+                "real_training_sample_ids": reference_row[
+                    "real_training_sample_ids"
+                ],
+                "test_support_per_run": int(reference_row["native_real"]["support"]),
+                "metrics": metric_results,
+                "per_class_recall": class_results,
+            }
+            for metric, summary in metric_results.items():
+                csv_rows.append(
+                    {
+                        "method": source_method,
+                        "condition": f"real_adaptation/{key}",
+                        "metric": metric,
+                        "vehicle_class": "",
+                        **summary,
+                    }
+                )
+            for vehicle_class, summary in class_results.items():
+                csv_rows.append(
+                    {
+                        "method": source_method,
+                        "condition": f"real_adaptation/{key}",
+                        "metric": "recall",
+                        "vehicle_class": vehicle_class,
+                        **summary,
+                    }
+                )
+        adaptation_results = {
+            "source_method": source_method,
+            "zero_real_baseline": method_results[source_method]["evaluations"][
+                "native_real"
+            ],
+            "fractions": fractions,
+        }
+
     source_runs = [
         {
             "metrics_path": str(path),
@@ -240,8 +357,15 @@ def aggregate_invariance_runs(
         "artifacts": {
             "summary_csv": "aggregate_summary.csv",
             "condition_plot": "aggregate_condition_comparison.png",
+            **(
+                {"real_adaptation_plot": "aggregate_real_adaptation_curve.png"}
+                if adaptation_results is not None
+                else {}
+            ),
         },
     }
+    if adaptation_results is not None:
+        result["real_adaptation"] = adaptation_results
     (output / "aggregate_metrics.json").write_text(
         json.dumps(result, indent=2, sort_keys=True, allow_nan=False) + "\n",
         encoding="utf-8",
@@ -289,6 +413,52 @@ def aggregate_invariance_runs(
     figure.tight_layout()
     figure.savefig(output / "aggregate_condition_comparison.png", dpi=160)
     plt.close(figure)
+
+    if adaptation_results is not None:
+        baseline = adaptation_results["zero_real_baseline"]
+        fraction_results = list(adaptation_results["fractions"].values())
+        x_values = [0.0] + [
+            100 * row["actual_real_fraction"] for row in fraction_results
+        ]
+        series = {
+            "balanced accuracy": [
+                baseline["metrics"]["balanced_accuracy"],
+                *[
+                    row["metrics"]["balanced_accuracy"] for row in fraction_results
+                ],
+            ],
+            "tracked recall": [
+                baseline["per_class_recall"]["tracked"],
+                *[
+                    row["per_class_recall"]["tracked"] for row in fraction_results
+                ],
+            ],
+            "wheeled recall": [
+                baseline["per_class_recall"]["wheeled"],
+                *[
+                    row["per_class_recall"]["wheeled"] for row in fraction_results
+                ],
+            ],
+        }
+        figure, axis = plt.subplots(figsize=(8.0, 5.0))
+        for label, summaries in series.items():
+            axis.errorbar(
+                x_values,
+                [summary["mean"] for summary in summaries],
+                yerr=[summary["sample_standard_deviation"] for summary in summaries],
+                marker="o",
+                capsize=3,
+                label=label,
+            )
+        axis.set_xlabel("Actual fraction of fixed real training split (%)")
+        axis.set_ylabel("Held-out native-real metric (mean +/- sample SD)")
+        axis.set_ylim(0.0, 1.02)
+        axis.set_title(f"Real-data adaptation across {len(runs)} seeds")
+        axis.grid(alpha=0.3)
+        axis.legend()
+        figure.tight_layout()
+        figure.savefig(output / "aggregate_real_adaptation_curve.png", dpi=160)
+        plt.close(figure)
     return result
 
 

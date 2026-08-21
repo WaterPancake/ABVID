@@ -34,12 +34,16 @@ from vehicle_audio.invariance_evaluation import (
     _split_payload,
     build_factorial_split_and_partitions,
 )
-from vehicle_audio.transfer_evaluation import validate_transfer_protocol
+from vehicle_audio.transfer_evaluation import (
+    stratified_fraction_indices,
+    validate_transfer_protocol,
+)
 
 
-PRETRAINED_EVALUATION_VERSION = 1
+PRETRAINED_EVALUATION_VERSION = 2
 PANN_SAMPLE_RATE = 32_000
 PANN_EMBEDDING_DIMENSION = 2_048
+PANN_AUDIOSET_DIMENSION = 527
 PANN_CHECKPOINT_SHA256 = (
     "0dc499e40e9761ef5ea061ffc77697697f277f6a960894903df3ada000e34b31"
 )
@@ -51,8 +55,10 @@ PANN_LICENSE_URL = (
     "https://github.com/qiuqiangkong/audioset_tagging_cnn/blob/master/LICENSE.MIT"
 )
 METHODS = (
-    "panns_frozen_corrupted_linear",
-    "panns_frozen_paired_linear",
+    "panns_embedding_corrupted_linear",
+    "panns_embedding_paired_linear",
+    "panns_audioset_corrupted_linear",
+    "panns_audioset_paired_linear",
 )
 
 
@@ -112,6 +118,7 @@ def validate_panns_checkpoint(path: str | Path) -> dict[str, Any]:
         "pretraining_dataset": "AudioSet",
         "architecture": "PANNs Cnn14",
         "embedding_dimension": PANN_EMBEDDING_DIMENSION,
+        "audioset_output_dimension": PANN_AUDIOSET_DIMENSION,
         "input_sample_rate": PANN_SAMPLE_RATE,
     }
 
@@ -134,7 +141,7 @@ def _read_resampled_channel(
     return waveform
 
 
-def _extract_panns_embeddings(
+def _extract_panns_features(
     records: Sequence[Mapping[str, Any]],
     manifest: Path,
     audio_key: str,
@@ -144,10 +151,11 @@ def _extract_panns_embeddings(
     sample_rate: int,
     batch_size: int,
     label: str,
-) -> torch.Tensor:
+) -> tuple[torch.Tensor, torch.Tensor]:
     root = manifest.parent
     waveform_batch: list[torch.Tensor] = []
     embedding_batches: list[torch.Tensor] = []
+    clipwise_batches: list[torch.Tensor] = []
 
     def flush() -> None:
         if not waveform_batch:
@@ -156,13 +164,19 @@ def _extract_panns_embeddings(
         if len(lengths) != 1:
             raise ValueError(f"{label} clips have unequal lengths: {sorted(lengths)}")
         audio = torch.stack(waveform_batch).numpy()
-        _, embeddings = tagging.inference(audio)
+        clipwise_outputs, embeddings = tagging.inference(audio)
         embedding_batch = torch.from_numpy(np.asarray(embeddings)).to(torch.float32)
+        clipwise_batch = torch.from_numpy(np.asarray(clipwise_outputs)).to(torch.float32)
         if embedding_batch.shape != (len(waveform_batch), PANN_EMBEDDING_DIMENSION):
             raise RuntimeError(
                 f"unexpected PANNs embedding shape: {tuple(embedding_batch.shape)}"
             )
+        if clipwise_batch.shape != (len(waveform_batch), PANN_AUDIOSET_DIMENSION):
+            raise RuntimeError(
+                f"unexpected PANNs AudioSet shape: {tuple(clipwise_batch.shape)}"
+            )
         embedding_batches.append(embedding_batch)
+        clipwise_batches.append(clipwise_batch)
         waveform_batch.clear()
 
     for index, record in enumerate(records):
@@ -176,12 +190,18 @@ def _extract_panns_embeddings(
         if len(waveform_batch) == batch_size:
             flush()
         if (index + 1) % 100 == 0 or index + 1 == len(records):
-            print(f"Extracted {label} PANNs embeddings: {index + 1}/{len(records)}", flush=True)
+            print(
+                f"Extracted {label} PANNs features: {index + 1}/{len(records)}",
+                flush=True,
+            )
     flush()
-    result = torch.cat(embedding_batches)
-    if not torch.isfinite(result).all():
-        raise RuntimeError(f"{label} PANNs embeddings contain NaN or Inf")
-    return result
+    embeddings = torch.cat(embedding_batches)
+    clipwise_outputs = torch.cat(clipwise_batches)
+    if not torch.isfinite(embeddings).all() or not torch.isfinite(
+        clipwise_outputs
+    ).all():
+        raise RuntimeError(f"{label} PANNs features contain NaN or Inf")
+    return embeddings, clipwise_outputs
 
 
 def _precompute_panns_embeddings(
@@ -220,7 +240,7 @@ def _precompute_panns_embeddings(
             "PANNs extraction requires `uv sync --extra pretrained`"
         ) from error
     tagging = AudioTagging(checkpoint_path=checkpoint["path"], device="cpu")
-    clean_embeddings = _extract_panns_embeddings(
+    clean_embeddings, clean_clipwise_outputs = _extract_panns_features(
         synthetic_records,
         synthetic_manifest,
         "clean_path",
@@ -230,7 +250,7 @@ def _precompute_panns_embeddings(
         batch_size=batch_size,
         label="synthetic clean",
     )
-    corrupted_embeddings = _extract_panns_embeddings(
+    corrupted_embeddings, corrupted_clipwise_outputs = _extract_panns_features(
         synthetic_records,
         synthetic_manifest,
         "corrupted_path",
@@ -240,7 +260,7 @@ def _precompute_panns_embeddings(
         batch_size=batch_size,
         label="synthetic corrupted",
     )
-    real_embeddings = _extract_panns_embeddings(
+    real_embeddings, real_clipwise_outputs = _extract_panns_features(
         real_records,
         real_manifest,
         "audio_path",
@@ -256,6 +276,9 @@ def _precompute_panns_embeddings(
         "clean_embeddings": clean_embeddings,
         "corrupted_embeddings": corrupted_embeddings,
         "real_embeddings": real_embeddings,
+        "clean_clipwise_outputs": clean_clipwise_outputs,
+        "corrupted_clipwise_outputs": corrupted_clipwise_outputs,
+        "real_clipwise_outputs": real_clipwise_outputs,
         "synthetic_labels": torch.tensor(
             [label_map[str(record["vehicle_class"])] for record in synthetic_records],
             dtype=torch.long,
@@ -293,7 +316,7 @@ def _fit_probe(
         raise ValueError(f"unknown PANNs probe method: {method}")
     train_corrupted = corrupted_embeddings[list(train_indices)]
     train_labels = labels[list(train_indices)]
-    if method == "panns_frozen_paired_linear":
+    if method.endswith("_paired_linear"):
         train_features = torch.cat(
             (clean_embeddings[list(train_indices)], train_corrupted), dim=0
         )
@@ -375,12 +398,181 @@ def _probe_from_state(state: Mapping[str, torch.Tensor]) -> StandardizedLinearPr
     return model
 
 
+def _adapt_probe(
+    initial_state: Mapping[str, torch.Tensor],
+    real_features: torch.Tensor,
+    real_labels: torch.Tensor,
+    train_indices: Sequence[int],
+    validation_indices: Sequence[int],
+    *,
+    epochs: int,
+    batch_size: int,
+    learning_rate: float,
+    weight_decay: float,
+    seed: int,
+    device: torch.device,
+) -> tuple[dict[str, torch.Tensor], list[dict[str, Any]], int, dict[str, Any]]:
+    model = _probe_from_state(initial_state).to(device)
+    selected_labels = real_labels[list(train_indices)]
+    class_counts = torch.bincount(
+        selected_labels, minlength=len(CLASS_NAMES)
+    ).float()
+    if (class_counts == 0).any():
+        raise ValueError("real adaptation subset must contain both classes")
+    class_weights = len(selected_labels) / (len(CLASS_NAMES) * class_counts)
+    loss_function = nn.CrossEntropyLoss(weight=class_weights.to(device))
+    optimizer = torch.optim.Adam(
+        model.classifier.parameters(),
+        lr=learning_rate,
+        weight_decay=weight_decay,
+    )
+    loader = DataLoader(
+        TensorDataset(real_features[list(train_indices)], selected_labels),
+        batch_size=batch_size,
+        shuffle=True,
+        generator=torch.Generator().manual_seed(seed),
+        num_workers=0,
+    )
+    best_score = -1.0
+    best_epoch = 0
+    best_state: dict[str, torch.Tensor] = {}
+    history: list[dict[str, Any]] = []
+    for epoch in range(1, epochs + 1):
+        model.train()
+        loss_sum = 0.0
+        seen = 0
+        for feature_batch, target_batch in loader:
+            optimizer.zero_grad(set_to_none=True)
+            loss = loss_function(
+                model(feature_batch.to(device)), target_batch.to(device)
+            )
+            loss.backward()
+            optimizer.step()
+            loss_sum += float(loss.detach().cpu()) * len(target_batch)
+            seen += len(target_batch)
+        validation = _evaluate(
+            model,
+            real_features,
+            real_labels,
+            validation_indices,
+            None,
+            batch_size=batch_size,
+            device=device,
+        )
+        history.append(
+            {
+                "epoch": epoch,
+                "train_loss": loss_sum / seen,
+                "validation_balanced_accuracy": validation["balanced_accuracy"],
+                "validation_macro_f1": validation["macro_f1"],
+            }
+        )
+        if validation["balanced_accuracy"] > best_score:
+            best_score = validation["balanced_accuracy"]
+            best_epoch = epoch
+            best_state = {
+                name: parameter.detach().cpu().clone()
+                for name, parameter in model.state_dict().items()
+            }
+    best_model = _probe_from_state(best_state).to(device)
+    validation = _evaluate(
+        best_model,
+        real_features,
+        real_labels,
+        validation_indices,
+        None,
+        batch_size=batch_size,
+        device=device,
+    )
+    return best_state, history, best_epoch, validation
+
+
+def evaluate_real_adaptation(
+    initial_state: Mapping[str, torch.Tensor],
+    real_features: torch.Tensor,
+    real_labels: torch.Tensor,
+    real_records: Sequence[Mapping[str, Any]],
+    real_split: SplitIndices,
+    fractions: Sequence[float],
+    *,
+    epochs: int,
+    batch_size: int,
+    learning_rate: float,
+    weight_decay: float,
+    seed: int,
+    subset_seed: int,
+    device: torch.device,
+) -> tuple[list[dict[str, Any]], dict[str, dict[str, torch.Tensor]]]:
+    """Fine-tune only the AudioSet probe using grouped real development data."""
+
+    rows: list[dict[str, Any]] = []
+    states: dict[str, dict[str, torch.Tensor]] = {}
+    for fraction_index, fraction in enumerate(fractions):
+        indices = stratified_fraction_indices(
+            real_labels,
+            real_split.train,
+            fraction,
+            seed=subset_seed,
+        )
+        state, history, best_epoch, validation = _adapt_probe(
+            initial_state,
+            real_features,
+            real_labels,
+            indices,
+            real_split.validation,
+            epochs=epochs,
+            batch_size=batch_size,
+            learning_rate=learning_rate,
+            weight_decay=weight_decay,
+            seed=seed + 1000 + fraction_index,
+            device=device,
+        )
+        key = f"{100 * fraction:g}_percent_real"
+        states[key] = state
+        model = _probe_from_state(state).to(device)
+        test_metrics = _evaluate(
+            model,
+            real_features,
+            real_labels,
+            real_split.test,
+            None,
+            batch_size=batch_size,
+            device=device,
+        )
+        rows.append(
+            {
+                "key": key,
+                "requested_real_fraction": fraction,
+                "actual_real_fraction": len(indices) / len(real_split.train),
+                "real_training_support": len(indices),
+                "real_training_class_support": {
+                    name: sum(
+                        int(real_records[index]["vehicle_class"] == name)
+                        for index in indices
+                    )
+                    for name in CLASS_NAMES
+                },
+                "real_training_sample_ids": [
+                    str(real_records[index]["sample_id"]) for index in indices
+                ],
+                "best_epoch": best_epoch,
+                "history": history,
+                "real_validation": validation,
+                "native_real": test_metrics,
+            }
+        )
+    return rows, states
+
+
 def evaluate_precomputed_panns(
     clean_embeddings: torch.Tensor,
     corrupted_embeddings: torch.Tensor,
+    clean_clipwise_outputs: torch.Tensor,
+    corrupted_clipwise_outputs: torch.Tensor,
     synthetic_labels: torch.Tensor,
     synthetic_snrs: torch.Tensor,
     real_embeddings: torch.Tensor,
+    real_clipwise_outputs: torch.Tensor,
     real_labels: torch.Tensor,
     synthetic_records: Sequence[Mapping[str, Any]],
     real_records: Sequence[Mapping[str, Any]],
@@ -397,18 +589,39 @@ def evaluate_precomputed_panns(
     """Fit frozen-embedding probes and evaluate the established partitions."""
 
     expected_synthetic = (len(synthetic_records), PANN_EMBEDDING_DIMENSION)
-    if clean_embeddings.shape != expected_synthetic or corrupted_embeddings.shape != expected_synthetic:
+    if (
+        clean_embeddings.shape != expected_synthetic
+        or corrupted_embeddings.shape != expected_synthetic
+    ):
         raise ValueError("synthetic PANNs embeddings have the wrong shape")
     if real_embeddings.shape != (len(real_records), PANN_EMBEDDING_DIMENSION):
         raise ValueError("native-real PANNs embeddings have the wrong shape")
+    expected_clipwise = (len(synthetic_records), PANN_AUDIOSET_DIMENSION)
+    if (
+        clean_clipwise_outputs.shape != expected_clipwise
+        or corrupted_clipwise_outputs.shape != expected_clipwise
+    ):
+        raise ValueError("synthetic PANNs AudioSet outputs have the wrong shape")
+    if real_clipwise_outputs.shape != (len(real_records), PANN_AUDIOSET_DIMENSION):
+        raise ValueError("native-real PANNs AudioSet outputs have the wrong shape")
 
     method_results: dict[str, Any] = {}
     model_states: dict[str, dict[str, torch.Tensor]] = {}
     for method in METHODS:
+        if method.startswith("panns_embedding_"):
+            representation = "embedding"
+            clean_features = clean_embeddings
+            corrupted_features = corrupted_embeddings
+            real_features = real_embeddings
+        else:
+            representation = "audioset_clipwise_output"
+            clean_features = clean_clipwise_outputs
+            corrupted_features = corrupted_clipwise_outputs
+            real_features = real_clipwise_outputs
         state, history, best_epoch = _fit_probe(
             method,
-            clean_embeddings,
-            corrupted_embeddings,
+            clean_features,
+            corrupted_features,
             synthetic_labels,
             nuisance["train_in_distribution"],
             nuisance["validation_in_distribution"],
@@ -424,7 +637,7 @@ def evaluate_precomputed_panns(
         evaluations = {
             "clean_synthetic": _evaluate(
                 model,
-                clean_embeddings,
+                clean_features,
                 synthetic_labels,
                 nuisance["all_corruptions"],
                 synthetic_snrs,
@@ -434,7 +647,7 @@ def evaluate_precomputed_panns(
             **{
                 condition: _evaluate(
                     model,
-                    corrupted_embeddings,
+                    corrupted_features,
                     synthetic_labels,
                     nuisance[condition],
                     synthetic_snrs,
@@ -451,7 +664,7 @@ def evaluate_precomputed_panns(
             },
             "native_real": _evaluate(
                 model,
-                real_embeddings,
+                real_features,
                 real_labels,
                 real_split.test,
                 None,
@@ -460,7 +673,7 @@ def evaluate_precomputed_panns(
             ),
             "native_real_all_sessions": _evaluate_real_sessions(
                 model,
-                real_embeddings,
+                real_features,
                 real_labels,
                 real_records,
                 batch_size=batch_size,
@@ -468,10 +681,10 @@ def evaluate_precomputed_panns(
             ),
         }
         method_results[method] = {
+            "representation": representation,
             "training_input": (
-                "paired_clean_corrupted_embeddings"
-                if method == "panns_frozen_paired_linear"
-                else "corrupted_embeddings_only"
+                "paired_clean_corrupted" if method.endswith("_paired_linear")
+                else "corrupted_only"
             ),
             "encoder_trainable": False,
             "best_epoch": best_epoch,
@@ -481,7 +694,11 @@ def evaluate_precomputed_panns(
     return method_results, model_states
 
 
-def _write_summaries(output: Path, methods: Mapping[str, Any]) -> None:
+def _write_summaries(
+    output: Path,
+    methods: Mapping[str, Any],
+    adaptation: Sequence[Mapping[str, Any]],
+) -> None:
     condition_order = (
         "seen_corruption",
         "unseen_noise",
@@ -546,6 +763,55 @@ def _write_summaries(output: Path, methods: Mapping[str, Any]) -> None:
     figure.savefig(output / "condition_comparison.png", dpi=160)
     plt.close(figure)
 
+    adaptation_rows = [
+        {
+            "requested_real_fraction": row["requested_real_fraction"],
+            "actual_real_fraction": row["actual_real_fraction"],
+            "real_training_support": row["real_training_support"],
+            "balanced_accuracy": row["native_real"]["balanced_accuracy"],
+            "macro_f1": row["native_real"]["macro_f1"],
+            "tracked_recall": row["native_real"]["per_class_recall"]["tracked"],
+            "wheeled_recall": row["native_real"]["per_class_recall"]["wheeled"],
+        }
+        for row in adaptation
+    ]
+    with (output / "real_adaptation_curve.csv").open(
+        "w", encoding="utf-8", newline=""
+    ) as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(adaptation_rows[0]))
+        writer.writeheader()
+        writer.writerows(adaptation_rows)
+
+    figure, axis = plt.subplots(figsize=(7.5, 4.7))
+    x_values = [100 * row["actual_real_fraction"] for row in adaptation_rows]
+    axis.plot(
+        x_values,
+        [row["balanced_accuracy"] for row in adaptation_rows],
+        marker="o",
+        label="balanced accuracy",
+    )
+    axis.plot(
+        x_values,
+        [row["tracked_recall"] for row in adaptation_rows],
+        marker="o",
+        label="tracked recall",
+    )
+    axis.plot(
+        x_values,
+        [row["wheeled_recall"] for row in adaptation_rows],
+        marker="o",
+        label="wheeled recall",
+    )
+    axis.set_xlabel("Actual fraction of fixed real training split (%)")
+    axis.set_ylabel("Held-out native-real metric")
+    axis.set_ylim(0.0, 1.02)
+    axis.set_title("PANNs AudioSet probe real-data adaptation")
+    axis.grid(alpha=0.3)
+    axis.legend()
+    figure.tight_layout()
+    figure.savefig(output / "real_adaptation_curve.png", dpi=160)
+    plt.close(figure)
+
 
 def evaluate_panns_transfer(
     synthetic_manifest_path: str | Path,
@@ -561,15 +827,30 @@ def evaluate_panns_transfer(
     extraction_batch_size: int = 16,
     learning_rate: float = 1e-3,
     weight_decay: float = 1e-4,
+    real_fractions: Sequence[float] = (0.01, 0.05, 0.10, 0.25, 1.0),
+    adaptation_epochs: int = 100,
+    adaptation_learning_rate: float = 1e-4,
     seed: int = 42,
     split_seed: int = 42,
     channel: int = 0,
     device_name: str = "cpu",
 ) -> dict[str, Any]:
-    if epochs <= 0 or batch_size <= 0 or extraction_batch_size <= 0:
+    if (
+        epochs <= 0
+        or adaptation_epochs <= 0
+        or batch_size <= 0
+        or extraction_batch_size <= 0
+    ):
         raise ValueError("epoch and batch sizes must be positive")
-    if learning_rate <= 0 or weight_decay < 0:
+    if learning_rate <= 0 or adaptation_learning_rate <= 0 or weight_decay < 0:
         raise ValueError("learning rate must be positive and weight decay nonnegative")
+    fractions = tuple(float(value) for value in real_fractions)
+    if (
+        not fractions
+        or any(not 0 < value <= 1 for value in fractions)
+        or tuple(sorted(set(fractions))) != fractions
+    ):
+        raise ValueError("real fractions must be unique, increasing, and in (0, 1]")
     if seed < 0 or split_seed < 0 or channel < 0:
         raise ValueError("seeds and channel must be nonnegative")
     output = Path(output_dir)
@@ -610,9 +891,12 @@ def evaluate_panns_transfer(
     method_results, model_states = evaluate_precomputed_panns(
         cached["clean_embeddings"],
         cached["corrupted_embeddings"],
+        cached["clean_clipwise_outputs"],
+        cached["corrupted_clipwise_outputs"],
         cached["synthetic_labels"],
         cached["synthetic_snrs"],
         cached["real_embeddings"],
+        cached["real_clipwise_outputs"],
         cached["real_labels"],
         synthetic_records,
         real_records,
@@ -625,7 +909,22 @@ def evaluate_panns_transfer(
         seed=seed,
         device=device,
     )
-    _write_summaries(output, method_results)
+    adaptation, adaptation_states = evaluate_real_adaptation(
+        model_states["panns_audioset_paired_linear"],
+        cached["real_clipwise_outputs"],
+        cached["real_labels"],
+        real_records,
+        real_split,
+        fractions,
+        epochs=adaptation_epochs,
+        batch_size=batch_size,
+        learning_rate=adaptation_learning_rate,
+        weight_decay=weight_decay,
+        seed=seed,
+        subset_seed=split_seed,
+        device=device,
+    )
+    _write_summaries(output, method_results, adaptation)
     split_payload = {
         "strategy": "balanced_factorial_recording_session_grouped",
         "seed": split_seed,
@@ -656,6 +955,7 @@ def evaluate_panns_transfer(
         "model": "frozen_panns_cnn14_linear_probe",
         "encoder_trainable": False,
         "embedding_dimension": PANN_EMBEDDING_DIMENSION,
+        "audioset_output_dimension": PANN_AUDIOSET_DIMENSION,
         "heldout_noise": heldout_noise,
         "heldout_geometry": heldout_geometry,
         "epochs": epochs,
@@ -663,6 +963,11 @@ def evaluate_panns_transfer(
         "extraction_batch_size": extraction_batch_size,
         "learning_rate": learning_rate,
         "weight_decay": weight_decay,
+        "real_fractions": list(fractions),
+        "adaptation_source_method": "panns_audioset_paired_linear",
+        "adaptation_epochs": adaptation_epochs,
+        "adaptation_learning_rate": adaptation_learning_rate,
+        "real_subset_seed": split_seed,
         "seed": seed,
         "split_seed": split_seed,
         "channel": channel,
@@ -695,17 +1000,21 @@ def evaluate_panns_transfer(
             },
         },
         "methods": method_results,
+        "real_adaptation": adaptation,
         "artifacts": {
             "checkpoint": "probe_models.pt",
             "embedding_cache": str(cache_path),
             "splits": "splits.json",
             "condition_csv": "condition_summary.csv",
             "condition_plot": "condition_comparison.png",
+            "adaptation_csv": "real_adaptation_curve.csv",
+            "adaptation_plot": "real_adaptation_curve.png",
         },
     }
     torch.save(
         {
             "models": model_states,
+            "real_adaptation_models": adaptation_states,
             "training_config": training_config,
             "pretrained_encoder": checkpoint,
             "class_names": list(CLASS_NAMES),
@@ -757,6 +1066,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--extraction-batch-size", type=int, default=16)
     parser.add_argument("--learning-rate", type=float, default=1e-3)
     parser.add_argument("--weight-decay", type=float, default=1e-4)
+    parser.add_argument(
+        "--real-fraction", type=float, action="append", dest="real_fractions"
+    )
+    parser.add_argument("--adaptation-epochs", type=int, default=100)
+    parser.add_argument("--adaptation-learning-rate", type=float, default=1e-4)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--split-seed", type=int, default=42)
     parser.add_argument("--channel", type=int, default=0)
@@ -779,6 +1093,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         extraction_batch_size=args.extraction_batch_size,
         learning_rate=args.learning_rate,
         weight_decay=args.weight_decay,
+        real_fractions=(
+            (0.01, 0.05, 0.10, 0.25, 1.0)
+            if args.real_fractions is None
+            else args.real_fractions
+        ),
+        adaptation_epochs=args.adaptation_epochs,
+        adaptation_learning_rate=args.adaptation_learning_rate,
         seed=args.seed,
         split_seed=args.split_seed,
         channel=args.channel,
@@ -797,6 +1118,10 @@ def main(argv: Sequence[str] | None = None) -> int:
                         ["native_real"]["balanced_accuracy"],
                     }
                     for method, result in results["methods"].items()
+                },
+                "real_adaptation": {
+                    row["key"]: row["native_real"]["balanced_accuracy"]
+                    for row in results["real_adaptation"]
                 },
             },
             indent=2,
