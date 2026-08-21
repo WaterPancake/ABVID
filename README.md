@@ -480,10 +480,17 @@ for the controlled aggregate and the remaining Milestone 7 gate.
 ### Pretrained environmental-audio baseline
 
 The optional frozen-encoder experiment uses the official MIT-licensed PANNs Cnn14
-AudioSet representation. It fits only a standardized linear tracked/wheeled head and
-compares corrupted-only against paired clean/corrupted probe training. The encoder is
-never updated, and the same factorial split, real split, nuisance partitions, and
-session diagnostics are retained.
+AudioSet model. It compares standardized linear tracked/wheeled heads on both the
+2,048-dimensional embedding and the 527 AudioSet outputs, with corrupted-only and
+paired clean/corrupted training for each representation. The encoder is never
+updated. A second stage adapts only the paired AudioSet-output head using nested
+1%/5%/10%/25%/100% subsets of the grouped real training partition, selects epochs on
+the separate real validation sessions, and evaluates once on the fixed real test
+sessions. The same factorial split and nuisance partitions are retained.
+
+Because PANNs was pretrained on real AudioSet material, this is an external-pretraining
+baseline, not a strict synthetic-only model even when its ABVID linear head sees only
+synthetic examples.
 
 Install the optional inference dependency and place the official checkpoint under the
 ignored artifact directory:
@@ -503,23 +510,31 @@ also creates `~/panns_data/class_labels_indices.csv` on first import; this 14 KB
 AudioSet label table is an upstream behavior, not an ABVID experiment artifact.
 
 Run one controlled seed with a shared, manifest- and checkpoint-hash-validated
-embedding cache:
+feature cache:
 
 ```bash
 uv run python scripts/evaluate_pretrained.py \
   --synthetic-manifest data/generated/m6_factorial_2s_seed42/manifest.jsonl \
   --real-manifest data/real_eval_v2/real_manifest.jsonl \
   --checkpoint .artifacts/models/panns/Cnn14_mAP=0.431.pth \
-  --embedding-cache runs/m6_panns_factorial/embedding_cache.pt \
-  --output runs/m6_panns_factorial/seed_42 \
+  --embedding-cache runs/m6_panns_audioset_transfer/feature_cache.pt \
+  --output runs/m6_panns_audioset_transfer/seed_42 \
   --epochs 50 --batch-size 32 --extraction-batch-size 16 \
   --learning-rate 0.001 --weight-decay 0.0001 \
+  --real-fraction 0.01 --real-fraction 0.05 \
+  --real-fraction 0.10 --real-fraction 0.25 --real-fraction 1.0 \
+  --adaptation-epochs 100 --adaptation-learning-rate 0.0001 \
   --seed 42 --split-seed 42 --device cpu
 ```
 
 Each run records the external checkpoint URL, hash, size, repository, license,
-pretraining dataset, split, seed, probe state, and both fixed-test and all-session
-metrics. The PANNs checkpoint remains local and is not committed.
+pretraining dataset, split, seed, probe states, fixed-test metrics, all-session
+diagnostics, and real-adaptation learning curve. Aggregate repeated seeds with the
+same `scripts/aggregate_invariance.py` command used above; when adaptation results are
+present it also writes an uncertainty plot for the learning curve. The PANNs
+checkpoint and feature cache remain local and are not committed. See
+[`docs/milestone6_pretrained_transfer_report.md`](docs/milestone6_pretrained_transfer_report.md)
+for the controlled five-seed result and its Milestone 7 gate assessment.
 
 ## Reproducibility boundary
 
