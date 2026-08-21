@@ -27,6 +27,15 @@ def _write_metrics(
             "wheeled": wheeled_recall,
         },
     }
+    all_session_evaluation = {
+        **evaluation,
+        "session_macro_accuracy": balanced_accuracy,
+        "session_balanced_accuracy": balanced_accuracy,
+        "class_session_mean_recall": {
+            "tracked": tracked_recall,
+            "wheeled": wheeled_recall,
+        },
+    }
     payload = {
         "protocol_status": "complete",
         "git_commit": "abc123",
@@ -43,6 +52,7 @@ def _write_metrics(
                 "evaluations": {
                     "all_corruptions": evaluation,
                     "native_real": evaluation,
+                    "native_real_all_sessions": all_session_evaluation,
                 }
             }
         },
@@ -65,6 +75,9 @@ def test_aggregate_invariance_runs_writes_validated_statistics(tmp_path: Path) -
     assert summary["native_real"]["metrics"]["balanced_accuracy"]["mean"] == 0.5
     assert summary["native_real"]["per_class_recall"]["tracked"]["mean"] == 0.7
     assert summary["native_real"]["per_class_recall"]["wheeled"]["mean"] == pytest.approx(0.3)
+    all_sessions = summary["native_real_all_sessions"]
+    assert all_sessions["metrics"]["session_balanced_accuracy"]["mean"] == 0.5
+    assert all_sessions["class_session_mean_recall"]["tracked"]["mean"] == 0.7
     for name in (
         "aggregate_metrics.json",
         "aggregate_summary.csv",

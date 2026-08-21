@@ -471,6 +471,12 @@ wheeled session. See [`docs/milestone6_report.md`](docs/milestone6_report.md) fo
 exact protocol, condition and SNR tables, confusion matrices, reproducibility check,
 and limitations.
 
+The subsequent balanced-factorial, five-seed checkpoint adds paired-supervised and
+projection-head ablations plus session-balanced diagnostics. It confirms that none of
+the invariance variants fixes the held-out real wheeled failure. See
+[`docs/milestone6_improvement_checkpoint.md`](docs/milestone6_improvement_checkpoint.md)
+for the controlled aggregate and the remaining Milestone 7 gate.
+
 ## Reproducibility boundary
 
 For identical source files, configuration, package versions, command seed, and CPU

@@ -18,8 +18,9 @@ import matplotlib.pyplot as plt
 from vehicle_audio.invariance_evaluation import METHODS
 
 
-AGGREGATION_VERSION = 1
+AGGREGATION_VERSION = 2
 SCALAR_METRICS = ("accuracy", "balanced_accuracy", "macro_f1")
+OPTIONAL_SCALAR_METRICS = ("session_macro_accuracy", "session_balanced_accuracy")
 PLOT_CONDITIONS = (
     "seen_corruption",
     "unseen_noise",
@@ -128,6 +129,11 @@ def aggregate_invariance_runs(
         evaluation_results: dict[str, Any] = {}
         for condition in conditions:
             reference_evaluation = reference["methods"][method]["evaluations"][condition]
+            scalar_metrics = SCALAR_METRICS + tuple(
+                metric
+                for metric in OPTIONAL_SCALAR_METRICS
+                if metric in reference_evaluation
+            )
             metric_results = {
                 metric: _summary(
                     [
@@ -135,7 +141,7 @@ def aggregate_invariance_runs(
                         for _, run in runs
                     ]
                 )
-                for metric in SCALAR_METRICS
+                for metric in scalar_metrics
             }
             class_results = {
                 vehicle_class: _summary(
@@ -149,11 +155,29 @@ def aggregate_invariance_runs(
                 )
                 for vehicle_class in sorted(reference_evaluation["per_class_recall"])
             }
+            class_session_results = {
+                vehicle_class: _summary(
+                    [
+                        float(
+                            run["methods"][method]["evaluations"][condition]
+                            ["class_session_mean_recall"][vehicle_class]
+                        )
+                        for _, run in runs
+                    ]
+                )
+                for vehicle_class in sorted(
+                    reference_evaluation.get("class_session_mean_recall", {})
+                )
+            }
             evaluation_results[condition] = {
                 "support_per_run": int(reference_evaluation["support"]),
                 "metrics": metric_results,
                 "per_class_recall": class_results,
             }
+            if class_session_results:
+                evaluation_results[condition][
+                    "class_session_mean_recall"
+                ] = class_session_results
             for metric, summary in metric_results.items():
                 csv_rows.append(
                     {
@@ -170,6 +194,16 @@ def aggregate_invariance_runs(
                         "method": method,
                         "condition": condition,
                         "metric": "recall",
+                        "vehicle_class": vehicle_class,
+                        **summary,
+                    }
+                )
+            for vehicle_class, summary in class_session_results.items():
+                csv_rows.append(
+                    {
+                        "method": method,
+                        "condition": condition,
+                        "metric": "session_mean_recall",
                         "vehicle_class": vehicle_class,
                         **summary,
                     }
