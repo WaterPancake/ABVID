@@ -413,9 +413,12 @@ across:
 
 - standard supervised training on clean inputs;
 - augmentation-only supervised training on corrupted inputs;
+- paired clean/corrupted classification without a consistency term;
 - paired training with class-weighted cross entropy, clean/corrupted cosine
   consistency, same-vehicle hard positives, and metadata-matched cross-class hard
-  negatives in an established cosine triplet-margin objective.
+  negatives in an established cosine triplet-margin objective;
+- the same invariance objective in a projection head, leaving the classifier encoder
+  free to retain class information.
 
 Run the checked comparison with:
 
@@ -441,7 +444,23 @@ all-corruptions view and the same grouped native-real test sessions used by Mile
 corpus has no impulse-response observations; this is not a true unseen-room test.
 Each run saves machine-readable configuration, manifest hashes, complete grouped
 splits, model checkpoints, per-condition/per-SNR metrics, embedding consistency, and
-comparison plots.
+comparison plots. Because Milestone 6 never trains or selects on native-real audio,
+the evaluator also writes a clearly marked all-session diagnostic with per-session
+metrics and a class-balanced mean of session recall. The fixed held-out real split
+remains the primary transfer result.
+
+Aggregate controlled training-seed repeats only after keeping `--split-seed` fixed:
+
+```bash
+uv run python scripts/aggregate_invariance.py \
+  runs/m6_factorial_2s_ablation/seed_*/metrics.json \
+  --output runs/m6_factorial_2s_ablation/aggregate
+```
+
+The aggregator rejects mismatched commits, datasets, split/configuration fields,
+method sets, evaluation conditions, and supports. It writes JSON and CSV summaries
+with mean, median, sample standard deviation, min/max, and per-class recall, plus a
+condition comparison plot with error bars.
 
 In the checked seed-42 run, invariance training raises all-corruption synthetic
 balanced accuracy from 77.7% to 78.9% relative to clean-only training and increases

@@ -249,8 +249,14 @@ def test_toy_invariance_protocol_writes_required_artifacts(tmp_path: Path) -> No
             "unseen_environment",
             "all_corruptions",
             "native_real",
+            "native_real_all_sessions",
         ):
             assert evaluations[condition]["support"] > 0
+        all_real = evaluations["native_real_all_sessions"]
+        assert all_real["support"] == 12
+        assert all_real["session_count"] == 6
+        assert set(all_real["class_session_mean_recall"]) == {"tracked", "wheeled"}
+        assert len(all_real["per_session"]) == 6
 
     for name in (
         "metrics.json",

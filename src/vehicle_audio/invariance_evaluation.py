@@ -36,7 +36,7 @@ from vehicle_audio.baseline import (
 from vehicle_audio.transfer_evaluation import validate_transfer_protocol
 
 
-INVARIANCE_EVALUATION_VERSION = 5
+INVARIANCE_EVALUATION_VERSION = 6
 METHODS = (
     "standard_supervised",
     "augmentation_only",
@@ -156,7 +156,6 @@ def _precompute_features(
 ) -> dict[str, Any]:
     cache_path = output / "paired_features.pt"
     expected = {
-        "invariance_evaluation_version": INVARIANCE_EVALUATION_VERSION,
         "feature_implementation_version": FEATURE_IMPLEMENTATION_VERSION,
         "feature_config": asdict(feature_config),
         "synthetic_manifest_sha256": synthetic_sha256,
@@ -586,6 +585,98 @@ def _evaluate(
     return metrics
 
 
+def _evaluate_real_sessions(
+    model: SmallAudioCNN,
+    features: torch.Tensor,
+    labels: torch.Tensor,
+    records: Sequence[Mapping[str, Any]],
+    *,
+    batch_size: int,
+    device: torch.device,
+) -> dict[str, Any]:
+    """Evaluate every native-real session without weighting long sources more heavily."""
+
+    session_indices: dict[str, list[int]] = {}
+    for index, record in enumerate(records):
+        session_indices.setdefault(str(record["recording_session"]), []).append(index)
+
+    per_session: dict[str, Any] = {}
+    class_session_recalls: dict[str, list[float]] = {
+        name: [] for name in CLASS_NAMES
+    }
+    for session in sorted(session_indices):
+        indices = session_indices[session]
+        classes = {str(records[index]["vehicle_class"]) for index in indices}
+        if len(classes) != 1:
+            raise ValueError(
+                f"native-real session {session!r} contains multiple vehicle classes"
+            )
+        vehicle_class = next(iter(classes))
+        metrics = _evaluate(
+            model,
+            features,
+            labels,
+            indices,
+            None,
+            batch_size=batch_size,
+            device=device,
+        )
+        recall = metrics["per_class_recall"][vehicle_class]
+        if recall is None:
+            raise RuntimeError(f"missing recall for native-real session {session!r}")
+        class_session_recalls[vehicle_class].append(float(recall))
+        per_session[session] = {
+            "vehicle_class": vehicle_class,
+            "vehicle_id": str(
+                records[indices[0]].get("vehicle_id")
+                or records[indices[0]].get("vehicle_model")
+                or "unknown"
+            ),
+            "source_id": str(records[indices[0]].get("source_id") or "unknown"),
+            **metrics,
+        }
+
+    missing_classes = [
+        name for name, recalls in class_session_recalls.items() if not recalls
+    ]
+    if missing_classes:
+        raise ValueError(
+            "native-real all-session evaluation lacks classes: "
+            + ", ".join(missing_classes)
+        )
+    class_mean_recall = {
+        name: sum(recalls) / len(recalls)
+        for name, recalls in class_session_recalls.items()
+    }
+    result = _evaluate(
+        model,
+        features,
+        labels,
+        tuple(range(len(records))),
+        None,
+        batch_size=batch_size,
+        device=device,
+    )
+    result.update(
+        {
+            "scope": (
+                "diagnostic over all native-real sessions; no native-real audio is "
+                "used to train or select Milestone 6 models"
+            ),
+            "session_count": len(per_session),
+            "session_macro_accuracy": sum(
+                float(metrics["accuracy"]) for metrics in per_session.values()
+            )
+            / len(per_session),
+            "session_balanced_accuracy": sum(class_mean_recall.values())
+            / len(CLASS_NAMES),
+            "class_session_mean_recall": class_mean_recall,
+            "per_session": per_session,
+        }
+    )
+    return result
+
+
 def _fit_method(
     method: str,
     clean_features: torch.Tensor,
@@ -907,6 +998,7 @@ def _write_plots_and_csv(output: Path, methods: Mapping[str, Any]) -> None:
         "unseen_environment",
         "all_corruptions",
         "native_real",
+        "native_real_all_sessions",
     )
     for method, result in methods.items():
         for condition in condition_order:
@@ -1195,6 +1287,14 @@ def evaluate_invariance(
                 batch_size=batch_size,
                 device=device,
             ),
+            "native_real_all_sessions": _evaluate_real_sessions(
+                model,
+                real_features,
+                real_labels,
+                real_records,
+                batch_size=batch_size,
+                device=device,
+            ),
         }
         method_results[method] = {
             "training_input": {
@@ -1305,6 +1405,10 @@ def evaluate_invariance(
             "snr_csv": "snr_robustness.csv",
             "condition_plot": "condition_comparison.png",
             "snr_plot": "accuracy_vs_snr.png",
+            "native_real_all_sessions_scope": (
+                "diagnostic only; all Milestone 6 models are trained and selected "
+                "without native-real audio"
+            ),
         },
     }
     torch.save(
