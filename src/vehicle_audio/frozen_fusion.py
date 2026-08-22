@@ -231,7 +231,7 @@ def select_and_fit_frozen_fusion(
         "wheeled_threshold": torch.tensor(threshold, dtype=torch.float32),
     }
     development_selection = {
-        "protocol_status": "development_selection_only",
+        "selection_protocol_status": "development_selection_only",
         "performance_claim": "not a locked or independent test",
         "selection_strategy": (
             "leave_one_tracked_and_one_wheeled_session_out_global_threshold"

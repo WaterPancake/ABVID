@@ -64,7 +64,7 @@ def test_freeze_selects_global_threshold_and_serializable_predictor() -> None:
     )
     probabilities, predictions = predict_frozen_fusion(semantic, classical, state)
 
-    assert selection["protocol_status"] == "development_selection_only"
+    assert selection["selection_protocol_status"] == "development_selection_only"
     assert selection["selected_wheeled_threshold"] in {0.25, 0.5, 0.75}
     assert selection["selected_threshold_aggregate"]["outer_fold_count"] == 9
     assert selection["selected_threshold_aggregate"]["balanced_accuracy"]["mean"] >= 0.9
