@@ -91,6 +91,35 @@ This is the first leakage-safe development run to pass gates 2 and 3. It does no
 authorize Milestone 7 because a stronger mean cannot compensate for catastrophic
 individual sessions or the missing corpus and confirmation requirements.
 
+## Frozen confirmation protocol
+
+A deployable rule is now frozen before any confirmation pair is admitted:
+
+| Field | Value |
+|---|---|
+| Run | `runs/m6_fusion_frozen_development_v2` |
+| Code commit | `ae42478a98bc0e2bfdc3b75da6314a87388af14b` |
+| Frozen checkpoint | `frozen_fusion_model.pt` |
+| Checkpoint SHA-256 | `8be2081987124dfce5abe59fb973a81c05188cd681a2924a27f67681814e9e6e` |
+| Selected global wheeled threshold | `0.25` |
+| Status | `frozen_awaiting_locked_evaluation` |
+
+The global threshold was selected across the same 12 leave-session-pair-out
+development folds, then both five-member probe ensembles were refitted on all 271
+development windows. At the selected threshold, the development-selection summary
+is 83.73% mean balanced accuracy, 74.81% tracked recall, and 92.66% wheeled recall.
+These numbers are selection statistics and **not** an independent performance claim.
+The minimum tracked recall remains 46.88%, so the development corpus still fails the
+per-session floor as well.
+
+The frozen checkpoint records the development manifest hash and protected values for
+recording session, source ID, original media URL, normalized-source hash, and raw
+hash. `scripts/evaluate_locked_fusion.py` requires exactly one provenance-complete
+unseen session per class, rejects any protected overlap, validates the PANN checkpoint
+and both feature definitions, writes the split and window predictions, and refuses to
+overwrite a completed locked result. This closes the procedural gap for gate 5; it
+does not satisfy the gate until real new data are evaluated once.
+
 ## Next action
 
 The highest-value action remains new independent data, not a larger classifier:

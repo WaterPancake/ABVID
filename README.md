@@ -589,6 +589,35 @@ assignment, saves both five-member probe ensembles for every outer fold, and rep
 thresholded metrics without claiming probability calibration. See
 [`docs/milestone6_fusion_session_report.md`](docs/milestone6_fusion_session_report.md).
 
+Freeze the development rule before admitting a confirmation pair:
+
+```bash
+uv run --extra pretrained --extra inspection python \
+  scripts/freeze_fusion_model.py \
+  --real-manifest data/real_eval_v2/real_manifest.jsonl \
+  --panns-feature-cache runs/m6_panns_audioset_transfer/feature_cache.pt \
+  --checkpoint .artifacts/models/panns/Cnn14_mAP=0.431.pth \
+  --output runs/m6_fusion_frozen_development_v2 --channel 0 --seed 42
+```
+
+This produces a model-selection artifact, not a test result. It records protected
+development fingerprints and fits the selected rule on all development sessions.
+Once one genuinely new, provenance-complete session per class has been admitted,
+evaluate that pair once with:
+
+```bash
+uv run --extra pretrained --extra inspection python \
+  scripts/evaluate_locked_fusion.py \
+  --locked-manifest data/real_locked_v1/real_manifest.jsonl \
+  --frozen-model runs/m6_fusion_frozen_development_v2/frozen_fusion_model.pt \
+  --checkpoint .artifacts/models/panns/Cnn14_mAP=0.431.pth \
+  --output runs/m6_fusion_locked_v1 --channel 0
+```
+
+The locked evaluator requires exactly one unseen session per class, rejects overlap
+in session/source/media/hash provenance, validates the frozen feature definitions and
+checkpoint, and refuses to overwrite a completed evaluation.
+
 ## Reproducibility boundary
 
 For identical source files, configuration, package versions, command seed, and CPU
