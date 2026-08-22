@@ -479,3 +479,30 @@ sources:
       condition until vehicle-dominant time intervals and background content are
       reviewed.
     status: approved
+
+  # Official DVIDS alternative to the Wikimedia-only wheeled acquisition queue.
+  # Cataloged for operator review on 2026-08-22; no download is authorized yet.
+  - id: candidate-target-wheeled-humvee-southern-strike-2022
+    kind: target
+    provider: direct
+    direct_url: "https://www.dvidshub.net/download/videofile/8309579"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    source_page: "https://www.dvidshub.net/video/842870/156-crg-southern-strike-2022-humvee-driving-training"
+    vehicle_class: wheeled
+    vehicle_model: "High Mobility Multipurpose Wheeled Vehicle (Humvee)"
+    recording_session: "dvids_southern_strike_humvee_driving_2022"
+    operating_condition: mixed
+    expected_license: "Public domain"
+    output_path: "targets/wheeled/dvids_southern_strike_humvee_driving_2022/humvee_driving_training.wav"
+    attribution: >-
+      Eliezer Soto, 156 CRG - Southern Strike 2022: Humvee driving training,
+      DVIDS, public domain.
+    notes: >-
+      Official 90-second DVIDS driving-training B-roll. After collection, audiovisual
+      review must identify vehicle-dominant operating-state segments before corpus use.
+    status: review_required
+    review_reason: >-
+      Requires explicit operator approval. The DVIDS page states public domain, but
+      DVIDS usage restrictions still apply; the page has a byline/rank inconsistency,
+      and the proposed official download endpoint previously returned HTTP 403 to the
+      metadata client.

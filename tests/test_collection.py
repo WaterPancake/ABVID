@@ -67,6 +67,22 @@ def test_ambiguous_tiger131_provenance_remains_review_gated() -> None:
     assert tiger.review_reason
 
 
+def test_dvids_humvee_candidate_remains_behind_review_gate() -> None:
+    _, sources = load_catalog(CATALOG)
+    humvee = next(
+        source
+        for source in sources
+        if source.id == "candidate-target-wheeled-humvee-southern-strike-2022"
+    )
+
+    assert humvee.provider == "direct"
+    assert humvee.vehicle_class == "wheeled"
+    assert humvee.recording_session == "dvids_southern_strike_humvee_driving_2022"
+    assert humvee.expected_license == "Public domain"
+    assert humvee.status == "review_required"
+    assert humvee.review_reason
+
+
 def test_license_allowlist_is_exact() -> None:
     assert is_license_allowed("Public domain", ["Public domain"])
     assert is_license_allowed("CC BY 4.0", ["CC BY 4.0"])
