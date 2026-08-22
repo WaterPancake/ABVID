@@ -2,7 +2,8 @@
 
 Date: 2026-08-21
 
-Status: strongest real-session category baseline so far; Milestone 7 gate not met
+Status: semantic-only baseline; superseded by the late-fusion diagnostic; Milestone
+7 gate not met
 
 Performance claim: **real-only development evaluation on the exact seven-session
 corpus identified below; not an independent final test**
@@ -91,6 +92,11 @@ meet all of these development gates before hierarchical or open-set work begins:
 
 The ensemble run fails items 1, 2, 3, 4, and has no fresh confirmation for item 5.
 It must not be used to authorize Milestone 7.
+
+The subsequent equal semantic/classical late-fusion experiment clears the two mean
+model-quality thresholds but still fails the corpus, per-session, and locked-pair
+requirements. See
+[`milestone6_fusion_session_report.md`](milestone6_fusion_session_report.md).
 
 ## Next action and acquisition status
 

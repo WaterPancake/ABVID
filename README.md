@@ -562,6 +562,33 @@ test pair. The evaluator saves all inner/outer groups and sample IDs, both model
 families, window metrics, CSV, and a comparative fold plot. See
 [`docs/milestone6_semantic_session_report.md`](docs/milestone6_semantic_session_report.md).
 
+The strongest current real-session diagnostic fuses that semantic ensemble with an
+equal-weight ensemble of the 53 classical MFCC/spectral features. Its wheeled
+decision threshold is selected separately in every outer fold using only inner
+held-out session pairs:
+
+```bash
+uv run --extra pretrained --extra inspection python \
+  scripts/evaluate_fusion_sessions.py \
+  --real-manifest data/real_eval_v2/real_manifest.jsonl \
+  --panns-feature-cache runs/m6_panns_audioset_transfer/feature_cache.pt \
+  --checkpoint .artifacts/models/panns/Cnn14_mAP=0.431.pth \
+  --output runs/m6_fusion_nested_sessions \
+  --regularization-c 0.001 --regularization-c 0.01 \
+  --regularization-c 0.1 --regularization-c 1.0 \
+  --regularization-c 10.0 \
+  --wheeled-threshold 0.2 --wheeled-threshold 0.25 \
+  --wheeled-threshold 0.3 --wheeled-threshold 0.35 \
+  --wheeled-threshold 0.4 --wheeled-threshold 0.45 \
+  --wheeled-threshold 0.5 --wheeled-threshold 0.55 \
+  --wheeled-threshold 0.6 --channel 0 --seed 42
+```
+
+The evaluator caches the classical features, records every inner and outer sample
+assignment, saves both five-member probe ensembles for every outer fold, and reports
+thresholded metrics without claiming probability calibration. See
+[`docs/milestone6_fusion_session_report.md`](docs/milestone6_fusion_session_report.md).
+
 ## Reproducibility boundary
 
 For identical source files, configuration, package versions, command seed, and CPU
