@@ -67,7 +67,7 @@ def test_ambiguous_tiger131_provenance_remains_review_gated() -> None:
     assert tiger.review_reason
 
 
-def test_dvids_humvee_candidate_records_operator_approval() -> None:
+def test_dvids_humvee_candidate_is_regated_after_access_denial() -> None:
     _, sources = load_catalog(CATALOG)
     humvee = next(
         source
@@ -79,9 +79,10 @@ def test_dvids_humvee_candidate_records_operator_approval() -> None:
     assert humvee.vehicle_class == "wheeled"
     assert humvee.recording_session == "dvids_southern_strike_humvee_driving_2022"
     assert humvee.expected_license == "Public domain"
-    assert humvee.status == "approved"
+    assert humvee.status == "review_required"
     assert humvee.review_reason
-    assert "approved collection on 2026-08-23" in humvee.review_reason
+    assert "approved one collection attempt on 2026-08-23" in humvee.review_reason
+    assert "HTTP 403" in humvee.review_reason
 
 
 def test_license_allowlist_is_exact() -> None:

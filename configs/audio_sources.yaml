@@ -500,10 +500,10 @@ sources:
     notes: >-
       Official 90-second DVIDS driving-training B-roll. After collection, audiovisual
       review must identify vehicle-dominant operating-state segments before corpus use.
-    status: approved
+    status: review_required
     review_reason: >-
-      Operator explicitly approved collection on 2026-08-23. The DVIDS page states
-      public domain, but DVIDS usage restrictions still apply; the page has a
-      byline/rank inconsistency, and the proposed official download endpoint previously
-      returned HTTP 403 to the metadata client. Audiovisual review remains required
-      before corpus admission.
+      Operator explicitly approved one collection attempt on 2026-08-23. That attempt
+      returned HTTP 403 from the official download endpoint, so automatic retry is
+      disabled pending a reviewed access path. The DVIDS page states public domain,
+      but DVIDS usage restrictions still apply; the page also has a byline/rank
+      inconsistency. Audiovisual review remains required before corpus admission.
