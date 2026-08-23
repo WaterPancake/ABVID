@@ -86,7 +86,7 @@ def test_dvids_humvee_candidate_is_regated_after_access_denial() -> None:
     assert "HTTP 403" in humvee.review_reason
 
 
-def test_pdsounds_car_candidate_records_immediate_retry_approval() -> None:
+def test_pdsounds_car_candidate_is_regated_after_repeated_rate_limit() -> None:
     _, sources = load_catalog(CATALOG)
     car = next(
         source
@@ -99,9 +99,10 @@ def test_pdsounds_car_candidate_records_immediate_retry_approval() -> None:
     assert car.vehicle_class == "wheeled"
     assert car.recording_session == "pdsounds_194_stephan_car_start_drive_2007_04_26"
     assert car.expected_license == "Public domain"
-    assert car.status == "approved"
+    assert car.status == "review_required"
     assert car.review_reason
-    assert "approved one immediate retry on 2026-08-23" in car.review_reason
+    assert "Two operator-approved collector invocations" in car.review_reason
+    assert "18:09 UTC" in car.review_reason
     assert "HTTP 429" in car.review_reason
 
 
@@ -123,6 +124,7 @@ def test_catalog_license_url_fills_missing_provider_metadata(
         CATALOG,
         tmp_path,
         ["candidate-target-wheeled-car-start-drive-pdsounds-194"],
+        include_review_required=True,
         dry_run=True,
     )
 

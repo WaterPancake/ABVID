@@ -531,9 +531,10 @@ sources:
       vehicle-dominant operating-state segments before corpus admission. Reserve as a
       fresh held-out wheeled session unless the locked-pair protocol assigns it
       otherwise.
-    status: approved
+    status: review_required
     review_reason: >-
-      The first approved collection attempt on 2026-08-23 resolved the source and
-      public-domain metadata but received HTTP 429 during media transfer. The operator
-      explicitly approved one immediate retry on 2026-08-23. Listening review remains
-      required before corpus admission.
+      Two operator-approved collector invocations on 2026-08-23 resolved the source
+      and public-domain metadata but received HTTP 429 during media transfer; the
+      second failure was recorded at 18:09 UTC. Automatic retry is disabled pending a
+      later explicit approval after a substantially longer provider cooldown.
+      Listening review remains required before corpus admission.
