@@ -1,0 +1,357 @@
+# Wheeled-replacement acquisition proposal — 2026-08-23 (proposal-only)
+#
+# Purpose:
+#   1. Provide a legitimate alternative media URL for the cataloged DVIDS Southern
+#      Strike Humvee source (candidate-target-wheeled-humvee-southern-strike-2022)
+#      whose direct endpoint (https://www.dvidshub.net/download/videofile/8309579)
+#      failed once with HTTP 403 on 2026-08-23 and must NOT be retried or bypassed.
+#   2. Identify at least one NEW independent, real-world, ground-wheeled vehicle
+#      recording suitable for a fresh held-out tracked-vs-wheeled evaluation session.
+#
+# Constraints honored (per operator instruction and AGENTS.md):
+#   - Read-only research: no downloads, no collector invocation, no catalog/code/label edits.
+#   - Authoritative sources only: Wikimedia Commons file-page/API metadata, official
+#     DVIDS pages, and Internet Archive item search/metadata. No scraped YouTube, no
+#     CDN/player scraping as a workaround, no NC terms, no Mars/synthetic sources,
+#     no duplicates of cataloged or already-proposed items, no same-session footage.
+#   - Every candidate below is status: review_required. Nothing is approved.
+#
+# Status legend: all entries are review_required (operator decision required before
+# any download gate). `decision: accepted` = recommended lead; `decision: rejected`
+# = investigated and rejected with the reason recorded.
+
+purpose: >-
+  Replace the blocked DVIDS wheeled acquisition path with (a) an officially listed
+  alternative media URL for the same Southern Strike Humvee source and (b) fresh,
+  independently verifiable wheeled-vehicle target recordings for the Milestone 5/6
+  held-out evaluation session.
+assessment_date: "2026-08-23"
+method: >-
+  Re-verified the authoritative DVIDS video page and the official DVIDS download-popup
+  metadata for video 842870; enumerated Wikimedia Commons audio candidates via the
+  Commons search API and verified each file's creator, date, license short name,
+  duration, and stable upload.wikimedia.org URL via the Commons imageinfo API
+  (iiprop=url|extmetadata|size); queried Internet Archive advancedsearch for
+  vehicle-dominant field recordings with allowlisted licenses. Cross-checked all
+  leads against configs/audio_sources.yaml, data/collection_manifest.jsonl, and all
+  13 existing curator proposals to exclude duplicates and same-session footage.
+
+# ---------------------------------------------------------------------------
+# 1. Southern Strike Humvee — legitimate alternative media URL (same source)
+# ---------------------------------------------------------------------------
+# The failed endpoint (8309579, 256x144, 3 MB) is one of seven official MP4 variants
+# of the SAME video. The authoritative download-popup metadata lists the others.
+# No endpoint was requested; this is metadata inspection only.
+
+southern_strike_humvee_alternative:
+  source_id: candidate-target-wheeled-humvee-southern-strike-2022
+  status: review_required
+  decision: accepted
+  kind: target
+  provider: direct
+  vehicle_class: wheeled
+  vehicle_model: "High Mobility Multipurpose Wheeled Vehicle (Humvee)"
+  recording_session: dvids_southern_strike_humvee_driving_2022
+  title: "156 CRG - Southern Strike 2022: Humvee driving training"
+  creator: "Eliezer Soto (byline 'Staff Sgt.'; PUBLIC DOMAIN statement '1st Lt.'; rank inconsistency retained, creator name without rank)"
+  source_page: "https://www.dvidshub.net/video/842870/156-crg-southern-strike-2022-humvee-driving-training"
+  download_popup_metadata: "https://www.dvidshub.net/download/popup/842870"
+  license: "Public domain (DVIDS page PUBLIC DOMAIN statement; DVIDS usage restrictions apply)"
+  license_url: "https://www.dvidshub.net/about/copyright"
+  format: "MP4 (H.264/AAC); seven official variants listed"
+  duration_seconds: 90
+  failed_endpoint: "https://www.dvidshub.net/download/videofile/8309579  (256x144, 3 MB; HTTP 403 on 2026-08-23; DO NOT RETRY)"
+  alternative_media_urls:
+    - id: 8309576
+      url: "https://www.dvidshub.net/download/videofile/8309576"
+      resolution: "1280x720"
+      size_mb: 17
+      recommended: true
+    - id: 8309577
+      url: "https://www.dvidshub.net/download/videofile/8309577"
+      resolution: "1024x576"
+      size_mb: 12
+      recommended: true
+    - id: 8309573
+      url: "https://www.dvidshub.net/download/videofile/8309573"
+      resolution: "1920x1080"
+      size_mb: 52
+    - id: 8309574
+      url: "https://www.dvidshub.net/download/videofile/8309574"
+      resolution: "1920x1080"
+      size_mb: 53
+    - id: 8309575
+      url: "https://www.dvidshub.net/download/videofile/8309575"
+      resolution: "1920x1080"
+      size_mb: 36
+    - id: 8309578
+      url: "https://www.dvidshub.net/download/videofile/8309578"
+      resolution: "512x288"
+      size_mb: 6
+  evidence:
+    - "https://www.dvidshub.net/video/842870/156-crg-southern-strike-2022-humvee-driving-training (PUBLIC DOMAIN statement, VIRIN 220424-Z-HM700-1001, filename DOD_108970135, length 00:01:30, taken 04.24.2022, posted 05.13.2022, B-Roll, Gulfport CRTC MS)"
+    - "https://www.dvidshub.net/download/popup/842870 (official list of all seven MP4 variants with resolutions and sizes)"
+    - "https://www.dvidshub.net/about/copyright (DVIDS reuse restrictions)"
+  reason_for_review: >-
+    The previously approved endpoint 8309579 returned HTTP 403 and must not be
+    retried or bypassed. The official download-popup metadata lists six additional
+    variants of the same source; 8309576 (1280x720) and 8309577 (1024x576) are
+    recommended alternatives. All /download/videofile/ endpoints share the same
+    DVIDS access path: after explicit operator approval the collector must verify the
+    chosen variant with its metadata client and must NOT circumvent authentication or
+    scrape the player/CDN if the provider blocks the path. If every official variant
+    returns 403, the source stays blocked and the wheeled slot goes to the Commons
+    candidates below. Page-level audiovisual review of vehicle-dominant segments is
+    still required before corpus use.
+
+# ---------------------------------------------------------------------------
+# 2. New independent wheeled-vehicle candidates (accepted leads)
+# ---------------------------------------------------------------------------
+candidates:
+  # Primary: single-vehicle car start-and-drive, public domain, PDSounds record 194.
+  - source_id: candidate-target-wheeled-car-start-drive-pdsounds-194
+    status: review_required
+    decision: accepted
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Starting a car and driving.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Starting_a_car_and_driving.ogg"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Starting_a_car_and_driving.ogg"
+    title: "Starting a car and driving"
+    creator: "stephan (PDSounds recordist)"
+    license: "Public domain"
+    license_url: "https://commons.wikimedia.org/wiki/Template:PD-author"
+    vehicle_class: wheeled
+    vehicle_model: null
+    recording_session: "pdsounds_194_stephan_car_start_drive_2007_04_26"
+    recording_session_note: >-
+      PDSounds record 194, original recording date 2007-04-26, uploaded to Commons
+      2013-01-19 by Fæ. Independent of every cataloged/proposed session (distinct
+      recordist record, date, and vehicle from Car on Cobblestone / PDSounds 482).
+    operating_condition: mixed
+    format: "Ogg Vorbis (source MP3, stereo 44 kHz 160 kbps CBR)"
+    duration_seconds: 44.9
+    file_size_bytes: 1269848
+    attribution: "stephan, Starting a car and driving, PDSounds record 194 via Wikimedia Commons (public domain)"
+    evidence:
+      - "https://commons.wikimedia.org/wiki/File:Starting_a_car_and_driving.ogg (LicenseShortName 'Public domain'; categories PD-author, PDsounds.org, Audio files about automobiles)"
+      - "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AStarting%20a%20car%20and%20driving.ogg&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&format=json (duration 44.85 s, size 1,269,848 B, DateTimeOriginal 2007-04-26)"
+      - "http://www.pdsounds.org/sounds/starting_a_car_and_driving (PDSounds description page)"
+    reason_for_review: >-
+      Content is a single vehicle's start-and-drive take (seatbelt, ignition, gear
+      change, drive back and forward, turn indicator) — vehicle-dominant, no speech.
+      Mixed operating condition: segment boundaries (startup vs steady drive) require
+      listening review. Vehicle model is not stated. Public-domain status confirmed by
+      the Commons API (LicenseShortName 'Public domain', AttributionRequired false).
+
+  # Secondary: museum field recording of a wheeled tractor in motion, CC BY 4.0.
+  - source_id: candidate-target-wheeled-ursus-c342-driving-wws
+    status: review_required
+    decision: accepted
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:WWS TractorUrsusC342driving.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:WWS_TractorUrsusC342driving.ogg"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/9/99/WWS_TractorUrsusC342driving.ogg"
+    title: "WWS TractorUrsusC342driving"
+    creator: "Work With Sounds / National Museum of Agriculture and Agricultural-Food Industry in Szreniawa (sound recordist: Monika Widzicka)"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    vehicle_class: wheeled
+    vehicle_model: "Ursus C 342 (prototype light agricultural tractor, early 1960s)"
+    recording_session: "wws_szreniawa_ursus_c342_2015_06_26"
+    recording_session_note: >-
+      Work With Sounds (WWS) cooperation project with Wikimedia Sverige; recorded
+      2015-06-26 at the National Museum of Agriculture, Szreniawa, Poland; uploaded
+      2015-12-08. VRTS permission confirmed (category 'Items with VRTS permission
+      confirmed'). Independent of every cataloged/proposed session.
+    operating_condition: steady_speed
+    format: "Ogg Vorbis"
+    duration_seconds: 91.4
+    file_size_bytes: 1227706
+    attribution: "Monika Widzicka / Work With Sounds, WWS TractorUrsusC342driving, Wikimedia Commons, CC BY 4.0"
+    evidence:
+      - "https://commons.wikimedia.org/wiki/File:WWS_TractorUrsusC342driving.ogg (description: 'The sound of driving the Ursus C 342 tractor'; CC BY 4.0 license template; VRTS confirmed)"
+      - "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AWWS%20TractorUrsusC342driving.ogg&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&format=json (duration 91.44 s, size 1,227,706 B, DateTimeOriginal 2015-06-26)"
+    reason_for_review: >-
+      Explicit driving-in-operation field recording (wheeled tractor, motion audio),
+      allowlisted CC BY 4.0, named recordist and session date, stable Commons URL.
+      Listening review required to confirm continuous vehicle dominance and to set
+      segment boundaries. Same-session caution: the companion files
+      WWS TractorUrsusC342engine.ogg and the WWS Ursus C 328 takes belong to the same
+      museum collection/session-day family and must NOT be added as independent
+      sessions alongside this file.
+
+  # Tertiary: alternative tractor take from a different WWS partner/venue, CC BY 4.0.
+  - source_id: candidate-target-wheeled-johndeere-5820-wws
+    status: review_required
+    decision: accepted
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:WWS JohnDeereTractor.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:WWS_JohnDeereTractor.ogg"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/1/1a/WWS_JohnDeereTractor.ogg"
+    title: "WWS JohnDeereTractor"
+    creator: "Work With Sounds / Werstas (sound recordist: Sami Laaksonen)"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    vehicle_class: wheeled
+    vehicle_model: "John Deere 5820 (turbocharged diesel, 4-cylinder 4.5 L)"
+    recording_session: "wws_werstas_johndeere_5820_2015_03_18"
+    recording_session_note: >-
+      Work With Sounds / Werstas cooperation recording, 2015-03-18; uploaded
+      2015-05-08. Distinct partner/venue/date/vehicle from the Szreniawa Ursus take.
+      VRTS permission confirmed (category 'Items with VRTS permission confirmed').
+    operating_condition: mixed
+    format: "Ogg Vorbis"
+    duration_seconds: 29.4
+    file_size_bytes: 302389
+    attribution: "Sami Laaksonen / Work With Sounds, WWS JohnDeereTractor, Wikimedia Commons, CC BY 4.0"
+    evidence:
+      - "https://commons.wikimedia.org/wiki/File:WWS_JohnDeereTractor.ogg (description incl. 'Max. dB. idling 72, drive 82'; CC BY 4.0 license template; VRTS confirmed)"
+      - "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AWWS%20JohnDeereTractor.ogg&prop=imageinfo&iiprop=url%7Cextmetadata%7Csize&format=json (duration 29.43 s, size 302,389 B, DateTimeOriginal 2015-03-18)"
+    reason_for_review: >-
+      Wheeled tractor take including idle and drive states, allowlisted CC BY 4.0,
+      named recordist and session date. Shorter than the Ursus take; listening review
+      required to confirm which intervals are drive-dominant and to set segment
+      boundaries.
+
+# ---------------------------------------------------------------------------
+# 3. Rejected / not adopted leads (evidence recorded)
+# ---------------------------------------------------------------------------
+rejected:
+  - source_id: rejected-bus-drive-ambience-with-talk
+    status: review_required
+    decision: rejected
+    title: "File:Bus drive ambience with talk.ogg"
+    provider: wikimedia_commons
+    license: "Public domain (PDSounds 408, qubodup)"
+    reason: >-
+      Interior bus ambience with occupant conversation (title itself states 'with
+      talk'); foreground speech disqualifies it as vehicle-dominant target audio.
+  - source_id: rejected-moped-driving-by
+    status: review_required
+    decision: rejected
+    title: "File:Moped driving by.ogg"
+    provider: wikimedia_commons
+    license: "Public domain (PDSounds 97, stephan, 2007-04-17)"
+    reason: >-
+      Two-wheeled moped pass-by, 19 s, heavy stereo panning; not representative of the
+      wheeled-automobile class used across the catalog and too short for a stable
+      held-out session. Distinct session from the adopted car lead, but class
+      representativeness fails.
+  - source_id: rejected-sunday-city-street-noise-1-3
+    status: review_required
+    decision: rejected
+    title: "File:Sunday in the city street noise1/2/3.ogg"
+    provider: wikimedia_commons
+    license: "Public domain (PDSounds 530-532, cori)"
+    reason: >-
+      Street-traffic ambience, not an isolated single-vehicle target take; background-
+      like content overlapping the existing road-traffic background category.
+  - source_id: rejected-frogs-birds-tractor-holysloot
+    status: review_required
+    decision: rejected
+    title: "File:Frogs, birds, tractor in a field next to Holysloot - SoundCloud - lottebelice.ogg"
+    provider: wikimedia_commons
+    license: "Not established in search snippet; SoundCloud import"
+    reason: >-
+      Frogs and birds are the foreground content; tractor is incidental. SoundCloud-
+      import chain and no verified allowlisted license in the snippet.
+  - source_id: rejected-geiser-cotorra-tractor
+    status: review_required
+    decision: rejected
+    title: "File:Sonido geiser riachuelo cotorra tractor marcha atrás.ogg"
+    provider: wikimedia_commons
+    reason: >-
+      Geyser water, parrots, and an incidentally audible reversing tractor; not
+      vehicle-dominant motion audio.
+  - source_id: rejected-air-tractor-sledge-spoken
+    status: review_required
+    decision: rejected
+    title: "File:En-Air-tractor sledge.ogg"
+    provider: wikimedia_commons
+    reason: >-
+      Spoken Wikipedia article (spoken word), not vehicle audio.
+  - source_id: rejected-morgan-3-wheeler-goodwood-2011
+    status: review_required
+    decision: rejected
+    title: "File:Morgan 3 Wheeler.ogg"
+    provider: wikimedia_commons
+    license: "CC BY-SA 3.0"
+    reason: >-
+      License and session are technically valid (Edvvc own work, Goodwood Festival of
+      Speed 2011-07-03 hillclimb, 19.8 s), but it is a fifth Goodwood/Edvvc-family
+      wheeled take after the four cataloged Goodwood sessions (2009 x3, 2010 x1) and
+      adds almost no venue/session diversity for a held-out evaluation. Keep only as a
+      last-resort fallback.
+  - source_id: rejected-internet-archive-sweep
+    status: review_required
+    decision: rejected
+    title: "Internet Archive audio search: 'car driving', 'tractor', 'engine start', 'car pass'"
+    provider: internet_archive
+    reason: >-
+      Advanced-search sweeps returned only podcasts/interviews, films (e.g.
+      Red_Library_Cars_2), and game/simulator rips; the licenseurl-filtered query
+      (CC0 or CC BY) for tractor/engine-start/car-pass returned zero hits. No
+      vehicle-dominant field recording with an explicit allowlisted license was found
+      on Internet Archive in this pass.
+  - source_id: rejected-dvids-humvee-capabilities-and-s2as
+    status: review_required
+    decision: rejected
+    title: "DVIDS Humvee Capabilities (35282) and S2AS B-Roll (973361)"
+    provider: direct
+    reason: >-
+      Already proposed on 2026-08-21 (proposals/2026-08-21-dvids-humvee-capabilities.yaml
+      and 2026-08-21-dvids-s2as-wheeled-passbys.yaml); both carry the same unresolved
+      /download/videofile/ 403 access-path issue. Not new candidates.
+  - source_id: rejected-perseverance-rover
+    status: review_required
+    decision: rejected
+    title: "Sounds of Perseverance Mars rover driving (already cataloged)"
+    provider: wikimedia_commons
+    reason: >-
+      Mars platform, excluded from fresh work by the operator instruction; already
+      cataloged as target-wheeled-perseverance-rover-sol-16.
+  - source_id: rejected-wws-ursus-c342-engine-and-c328-takes
+    status: review_required
+    decision: rejected
+    title: "WWS TractorUrsusC342engine.ogg; WWS TractorUrsusC328driving/engine.ogg"
+    provider: wikimedia_commons
+    license: "CC BY 4.0"
+    reason: >-
+      Same Work With Sounds museum collection and session-day family as the adopted
+      Ursus C 342 driving take (Szreniawa 2015-06-26); adding them would create
+      same-session leakage under the project's recording-session rules.
+
+# ---------------------------------------------------------------------------
+# Summary
+# ---------------------------------------------------------------------------
+summary:
+  alternative_url_for_blocked_source: >-
+    Official DVIDS download metadata for video 842870 lists six additional MP4
+    variants; 8309576 (1280x720, 17 MB) and 8309577 (1024x576, 12 MB) are the
+    recommended alternative media URLs for the exact Southern Strike Humvee source.
+    The failed 8309579 endpoint is not retried and no bypass (CDN/player scraping)
+    is proposed.
+  new_wheeled_candidates: 3
+  new_wheeled_detail:
+    - candidate-target-wheeled-car-start-drive-pdsounds-194        # primary; Public domain; 44.9 s
+    - candidate-target-wheeled-ursus-c342-driving-wws              # secondary; CC BY 4.0; 91.4 s
+    - candidate-target-wheeled-johndeere-5820-wws                  # tertiary; CC BY 4.0; 29.4 s
+  all_status: review_required
+  downloads_performed: none
+  catalog_or_code_modified: false
+  notes:
+    - >-
+      The recommended primary (PDSounds 194 car start-and-drive) and both WWS tractor
+      takes satisfy the required evidence set: vehicle-dominant motion audio, known
+      recording session, named creator, duration/format, stable direct URL, and an
+      allowlisted license (Public domain / CC BY 4.0).
+    - >-
+      All three candidates are genuinely independent of the 13 existing proposal files
+      and of every cataloged wheeled session (Goodwood 2009/2010, Ford Model T,
+      Perseverance, Maserati, cobblestone, Cologne night, DVIDS Humvee entries).
+    - >-
+      Segment-boundary and vehicle-dominance listening review is required before any
+      candidate is admitted to the corpus; nothing here is approved for download.
