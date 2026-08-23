@@ -481,7 +481,7 @@ sources:
     status: approved
 
   # Official DVIDS alternative to the Wikimedia-only wheeled acquisition queue.
-  # Cataloged for operator review on 2026-08-22; no download is authorized yet.
+  # Cataloged on 2026-08-22 and explicitly approved by the operator on 2026-08-23.
   - id: candidate-target-wheeled-humvee-southern-strike-2022
     kind: target
     provider: direct
@@ -500,9 +500,10 @@ sources:
     notes: >-
       Official 90-second DVIDS driving-training B-roll. After collection, audiovisual
       review must identify vehicle-dominant operating-state segments before corpus use.
-    status: review_required
+    status: approved
     review_reason: >-
-      Requires explicit operator approval. The DVIDS page states public domain, but
-      DVIDS usage restrictions still apply; the page has a byline/rank inconsistency,
-      and the proposed official download endpoint previously returned HTTP 403 to the
-      metadata client.
+      Operator explicitly approved collection on 2026-08-23. The DVIDS page states
+      public domain, but DVIDS usage restrictions still apply; the page has a
+      byline/rank inconsistency, and the proposed official download endpoint previously
+      returned HTTP 403 to the metadata client. Audiovisual review remains required
+      before corpus admission.
