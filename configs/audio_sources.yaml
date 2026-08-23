@@ -507,3 +507,28 @@ sources:
       disabled pending a reviewed access path. The DVIDS page states public domain,
       but DVIDS usage restrictions still apply; the page also has a byline/rank
       inconsistency. Audiovisual review remains required before corpus admission.
+
+  # Proposed by the OpenClaw curator and explicitly approved by the operator on
+  # 2026-08-23 as an independent wheeled held-out candidate.
+  - id: candidate-target-wheeled-car-start-drive-pdsounds-194
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Starting a car and driving.ogg"
+    license_url: "https://commons.wikimedia.org/wiki/Template:PD-author"
+    source_page: "https://commons.wikimedia.org/wiki/File:Starting_a_car_and_driving.ogg"
+    vehicle_class: wheeled
+    vehicle_model: null
+    recording_session: "pdsounds_194_stephan_car_start_drive_2007_04_26"
+    operating_condition: mixed
+    expected_license: "Public domain"
+    output_path: "targets/wheeled/pdsounds_194_stephan_car_start_drive_2007_04_26/starting_car_and_driving.wav"
+    attribution: >-
+      stephan, Starting a car and driving, PDSounds record 194 via Wikimedia
+      Commons, public domain.
+    notes: >-
+      Forty-five-second single-subject recording covering entry, startup, reversing,
+      gear changes, and forward driving. Listening review must identify
+      vehicle-dominant operating-state segments before corpus admission. Reserve as a
+      fresh held-out wheeled session unless the locked-pair protocol assigns it
+      otherwise.
+    status: approved

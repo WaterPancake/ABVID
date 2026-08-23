@@ -479,10 +479,11 @@ def collect_sources(
                 resolved = _archive_record(source, allowed_licenses)
             else:
                 resolved = _direct_record(source, allowed_licenses)
+            license_url = resolved.get("license_url") or source.license_url
             base_record.update(
                 {
                     "license": resolved.get("license"),
-                    "license_url": resolved.get("license_url"),
+                    "license_url": license_url,
                     "download_url": resolved.get("download_url"),
                     "source_sha1": resolved.get("sha1"),
                     "source_size": resolved.get("size"),
@@ -506,7 +507,7 @@ def collect_sources(
                 "download_url": resolved["download_url"],
                 "provider_metadata": resolved,
                 "license": resolved.get("license"),
-                "license_url": resolved.get("license_url"),
+                "license_url": license_url,
                 "attribution": source.attribution,
                 "raw_sha256": raw_sha256,
                 "collected_at_utc": base_record["collected_at_utc"],

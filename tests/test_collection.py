@@ -6,6 +6,7 @@ import pytest
 
 from vehicle_audio.collection import (
     _retry_delay_seconds,
+    collect_sources,
     is_license_allowed,
     load_catalog,
     sync_catalog_metadata,
@@ -83,6 +84,49 @@ def test_dvids_humvee_candidate_is_regated_after_access_denial() -> None:
     assert humvee.review_reason
     assert "approved one collection attempt on 2026-08-23" in humvee.review_reason
     assert "HTTP 403" in humvee.review_reason
+
+
+def test_pdsounds_car_candidate_records_operator_approval() -> None:
+    _, sources = load_catalog(CATALOG)
+    car = next(
+        source
+        for source in sources
+        if source.id == "candidate-target-wheeled-car-start-drive-pdsounds-194"
+    )
+
+    assert car.provider == "wikimedia_commons"
+    assert car.file_title == "File:Starting a car and driving.ogg"
+    assert car.vehicle_class == "wheeled"
+    assert car.recording_session == "pdsounds_194_stephan_car_start_drive_2007_04_26"
+    assert car.expected_license == "Public domain"
+    assert car.status == "approved"
+
+
+def test_catalog_license_url_fills_missing_provider_metadata(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setattr(
+        "vehicle_audio.collection.resolve_commons_file",
+        lambda _title: {
+            "license": "Public domain",
+            "license_url": None,
+            "download_url": "https://upload.wikimedia.org/example.ogg",
+            "sha1": "abc123",
+            "size": 123,
+        },
+    )
+
+    records = collect_sources(
+        CATALOG,
+        tmp_path,
+        ["candidate-target-wheeled-car-start-drive-pdsounds-194"],
+        dry_run=True,
+    )
+
+    assert records[0]["result"] == "ready"
+    assert records[0]["license_url"] == (
+        "https://commons.wikimedia.org/wiki/Template:PD-author"
+    )
 
 
 def test_license_allowlist_is_exact() -> None:
