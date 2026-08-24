@@ -187,19 +187,38 @@ sources:
     recording_session: "us_army_armor_cavalry_collection_tankodrome_2023"
     operating_condition: mixed
     condition_segments:
-      - operating_condition: mixed
+      - operating_condition: idle
         start_seconds: 0.0
+        end_seconds: 32.0
+        notes: >-
+          Human auditory review on 2026-08-24 identified an idle interval from
+          0:00 through 0:32.
+      - operating_condition: mixed
+        start_seconds: 32.0
+        end_seconds: 50.0
+        notes: >-
+          Human auditory review on 2026-08-24 identified vehicle movement from
+          0:32 through 0:50. Exact steady-speed, acceleration, and deceleration
+          state is unavailable, so the interval remains labeled mixed.
+      - operating_condition: unknown
+        start_seconds: 51.0
+        end_seconds: 70.0
+        notes: >-
+          Human auditory review on 2026-08-24 identified mostly engine sound from
+          0:51 through 1:10. Motion state is unavailable and is not inferred.
+      - operating_condition: mixed
+        start_seconds: 71.0
         end_seconds: 90.0
         notes: >-
-          Provisional active arrival interval derived from the source description
-          and waveform/spectrogram. The 90.73-98.05 second silent tail is excluded;
-          human auditory review remains pending.
+          Human auditory review on 2026-08-24 identified squeaky sound consistent
+          with the vehicle tracks from 1:11 through 1:30. Exact speed and
+          acceleration are unavailable, so the interval remains labeled mixed.
     expected_license: "Public domain"
     output_path: "targets/tracked/us_army_armor_cavalry_collection_tankodrome_2023/mpf_testbed.wav"
     attribution: "U.S. Army Armor & Cavalry Collection, Mobile Protected Firepower, Wikimedia Commons (public domain)"
     notes: "Official U.S. Army Armor & Cavalry Collection video; collector extracts the first audio stream."
     status: approved
-    admitted_to_corpus: false
+    admitted_to_corpus: true
 
   - id: target-tracked-stug-iiig-lappeenranta
     kind: target

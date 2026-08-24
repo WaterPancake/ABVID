@@ -2,12 +2,22 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import random
 
 import numpy as np
 import soundfile as sf
+import torch
 
+from vehicle_audio.audio import LoadedCropResult
 from vehicle_audio.config import GenerationConfig
-from vehicle_audio.dataset import DatasetGenerator, discover_target_recordings
+from vehicle_audio.dataset import (
+    BackgroundSource,
+    DatasetGenerator,
+    TargetSource,
+    _load_non_silent_background_crop,
+    discover_target_recordings,
+    select_target_source,
+)
 from vehicle_audio.manifest import REQUIRED_MANIFEST_FIELDS
 
 
@@ -118,6 +128,91 @@ def test_discovery_skips_explicitly_unadmitted_target(tmp_path) -> None:
     sources = discover_target_recordings(target_root)
 
     assert [source.path for source in sources] == [admitted]
+
+
+def test_session_condition_balancing_selects_session_before_segment() -> None:
+    def source(session: str, condition: str, suffix: str) -> TargetSource:
+        return TargetSource(
+            path=Path(f"{session}_{suffix}.wav"),
+            source_id=f"{session}_{suffix}",
+            vehicle_class="tracked",
+            vehicle_model=None,
+            recording_session=session,
+            source_domain="real_recording",
+            vehicle_id=None,
+            simulation_run=None,
+            operating_condition=condition,
+            engine_state=None,
+            rpm=None,
+            throttle=None,
+            speed_mps=None,
+            acceleration_mps2=None,
+            load=None,
+            source_listener_geometry=None,
+        )
+
+    targets = [
+        source("session_a", "idle", "idle"),
+        source("session_a", "mixed", "moving"),
+        source("session_a", "unknown", "engine"),
+        source("session_b", "mixed", "passby"),
+    ]
+
+    class ScriptedSelector:
+        def __init__(self) -> None:
+            self.values = iter((0, 1, 0, 0))
+
+        def randrange(self, stop: int) -> int:
+            value = next(self.values)
+            assert 0 <= value < stop
+            return value
+
+    selected = select_target_source(
+        targets,
+        ScriptedSelector(),  # type: ignore[arg-type]
+        "class_session_condition_balanced",
+    )
+
+    assert selected.recording_session == "session_b"
+
+
+def test_background_crop_retries_exact_silence_deterministically(
+    monkeypatch,
+) -> None:
+    calls = 0
+
+    def fake_load_audio_crop(*args, **kwargs) -> LoadedCropResult:
+        nonlocal calls
+        calls += 1
+        waveform = np.zeros((1, 800), dtype=np.float32)
+        if calls == 2:
+            waveform.fill(0.1)
+        return LoadedCropResult(
+            waveform=torch.from_numpy(waveform),
+            original_sample_rate=8_000,
+            start_frame=calls - 1,
+            start_sample=calls - 1,
+            repeated=False,
+        )
+
+    monkeypatch.setattr("vehicle_audio.dataset.load_audio_crop", fake_load_audio_crop)
+    config = GenerationConfig.from_mapping(
+        {"audio": {"sample_rate": 8_000, "duration_seconds": 0.1}}
+    )
+    background = BackgroundSource(Path("background.wav"), "background", "wind")
+
+    _, crop, waveform, original_channels, attempts = _load_non_silent_background_crop(
+        [background],
+        random.Random(42),
+        torch.Generator().manual_seed(42),
+        config,
+        randomize_start=True,
+    )
+
+    assert attempts == 2
+    assert crop.start_frame == 1
+    assert original_channels == 1
+    assert bool(torch.count_nonzero(waveform))
 
 
 def _run_generation(inputs_root: Path, output_root: Path, seed: int) -> dict[str, object]:

@@ -23,3 +23,11 @@ def test_unknown_configuration_section_is_rejected() -> None:
 def test_unknown_target_sampling_strategy_is_rejected() -> None:
     with pytest.raises(ValueError, match="sampling.target_strategy"):
         GenerationConfig.from_mapping({"sampling": {"target_strategy": "mystery"}})
+
+
+def test_session_condition_balanced_sampling_strategy_is_supported() -> None:
+    config = GenerationConfig.from_mapping(
+        {"sampling": {"target_strategy": "class_session_condition_balanced"}}
+    )
+
+    assert config.sampling.target_strategy == "class_session_condition_balanced"

@@ -1,0 +1,88 @@
+# Development-only paired augmentation of admitted, human-reviewed real sources.
+# The resulting clips are training data, never native-real evaluation evidence.
+audio:
+  sample_rate: 16000
+  duration_seconds: 2.0
+  background_channel: 0
+
+temporal_crop:
+  enabled: true
+  probability: 1.0
+  repeat_if_short: true
+
+# Balance class and source session before condition. This prevents the reviewed
+# MPF source from receiving extra probability merely because it has four labeled
+# segments while older sources have one or two.
+sampling:
+  target_strategy: class_session_condition_balanced
+
+gain:
+  enabled: true
+  probability: 1.0
+  min_db: -12.0
+  max_db: 3.0
+
+noise:
+  enabled: true
+  probability: 1.0
+  snr_db_choices: [10.0, 5.0, 0.0, -5.0, -10.0]
+
+lowpass:
+  enabled: true
+  probability: 0.35
+  min_cutoff_hz: 2500.0
+  max_cutoff_hz: 7500.0
+  order: 4
+
+highpass:
+  enabled: true
+  probability: 0.25
+  min_cutoff_hz: 30.0
+  max_cutoff_hz: 300.0
+  order: 4
+
+bandpass:
+  enabled: true
+  probability: 0.15
+  min_low_hz: 40.0
+  max_low_hz: 400.0
+  min_high_hz: 2500.0
+  max_high_hz: 7500.0
+  order: 3
+
+random_eq:
+  enabled: true
+  probability: 0.35
+  anchor_frequencies_hz: [60.0, 150.0, 400.0, 1000.0, 2500.0, 6000.0, 8000.0]
+  min_gain_db: -5.0
+  max_gain_db: 5.0
+
+resampling:
+  enabled: true
+  probability: 0.25
+  intermediate_rates: [4000, 8000, 12000]
+
+clipping:
+  enabled: true
+  probability: 0.15
+  min_threshold: 0.65
+  max_threshold: 0.95
+
+compression:
+  enabled: true
+  probability: 0.25
+  min_threshold: 0.15
+  max_threshold: 0.5
+  min_ratio: 2.0
+  max_ratio: 6.0
+
+reverb:
+  enabled: true
+  probability: 0.4
+
+microphone_response:
+  enabled: true
+  probability: 0.5
+  anchor_frequencies_hz: [0.0, 80.0, 250.0, 1000.0, 4000.0, 8000.0]
+  min_gain_db: -6.0
+  max_gain_db: 3.0

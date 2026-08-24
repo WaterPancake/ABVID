@@ -11,7 +11,7 @@ from typing import Any, Mapping, Sequence
 
 import torch
 
-from vehicle_audio.audio import load_audio_crop, save_audio
+from vehicle_audio.audio import LoadedCropResult, load_audio_crop, save_audio
 from vehicle_audio.augment import AugmentationPipeline
 from vehicle_audio.config import GenerationConfig
 from vehicle_audio.manifest import ManifestRecord, write_json, write_jsonl
@@ -19,6 +19,7 @@ from vehicle_audio.metadata import ConditionSegment, validate_operating_conditio
 
 
 AUDIO_SUFFIXES = frozenset({".wav", ".flac", ".ogg", ".aif", ".aiff"})
+MAX_BACKGROUND_CROP_ATTEMPTS = 32
 
 
 @dataclass(frozen=True)
@@ -226,6 +227,9 @@ def select_target_source(
 
     ``class_condition_balanced`` first samples a vehicle class, then one of the
     conditions available for that class, and finally a source in that cell.
+    ``class_session_condition_balanced`` additionally samples the recording
+    session before the condition so that a source with more reviewed segments
+    is not selected more often merely because it has richer annotations.
     """
 
     if not targets:
@@ -238,6 +242,22 @@ def select_target_source(
     class_targets = [target for target in targets if target.vehicle_class == vehicle_class]
     if strategy == "class_balanced":
         return class_targets[selector.randrange(len(class_targets))]
+    if strategy == "class_session_condition_balanced":
+        sessions = sorted({target.recording_session for target in class_targets})
+        session = sessions[selector.randrange(len(sessions))]
+        session_targets = [
+            target for target in class_targets if target.recording_session == session
+        ]
+        conditions = sorted(
+            {target.operating_condition for target in session_targets}
+        )
+        condition = conditions[selector.randrange(len(conditions))]
+        cell = [
+            target
+            for target in session_targets
+            if target.operating_condition == condition
+        ]
+        return cell[selector.randrange(len(cell))]
     if strategy == "class_condition_balanced":
         conditions = sorted({target.operating_condition for target in class_targets})
         condition = conditions[selector.randrange(len(conditions))]
@@ -246,6 +266,44 @@ def select_target_source(
         ]
         return cell[selector.randrange(len(cell))]
     raise ValueError(f"unknown target sampling strategy: {strategy!r}")
+
+
+def _load_non_silent_background_crop(
+    backgrounds: Sequence[BackgroundSource],
+    selector: random.Random,
+    generator: torch.Generator,
+    config: GenerationConfig,
+    *,
+    randomize_start: bool,
+) -> tuple[BackgroundSource, LoadedCropResult, torch.Tensor, int, int]:
+    """Deterministically retry background crops that contain exact silence."""
+
+    for attempt in range(1, MAX_BACKGROUND_CROP_ATTEMPTS + 1):
+        source = backgrounds[selector.randrange(len(backgrounds))]
+        crop = load_audio_crop(
+            source.path,
+            config.audio.sample_rate,
+            config.audio.num_samples,
+            generator,
+            repeat_if_short=config.temporal_crop.repeat_if_short,
+            randomize_start=randomize_start,
+        )
+        original_channels = crop.waveform.shape[0]
+        selected_channel = config.audio.background_channel
+        waveform = crop.waveform
+        if selected_channel is not None:
+            if selected_channel >= original_channels:
+                raise ValueError(
+                    f"configured background channel {selected_channel} but "
+                    f"{source.path} has {original_channels} channels"
+                )
+            waveform = waveform[selected_channel : selected_channel + 1]
+        if bool(torch.count_nonzero(waveform)):
+            return source, crop, waveform, original_channels, attempt
+    raise ValueError(
+        "could not select a non-silent background crop after "
+        f"{MAX_BACKGROUND_CROP_ATTEMPTS} deterministic attempts"
+    )
 
 
 class DatasetGenerator:
@@ -300,7 +358,6 @@ class DatasetGenerator:
                 sample_selector,
                 self.config.sampling.target_strategy,
             )
-            background_source = backgrounds[sample_selector.randrange(len(backgrounds))]
             torch_generator = torch.Generator(device="cpu")
             torch_generator.manual_seed(augmentation_seed)
 
@@ -322,26 +379,20 @@ class DatasetGenerator:
             )
             clean = target_crop.waveform.to(torch.float32)
 
-            background_crop = load_audio_crop(
-                background_source.path,
-                output_sample_rate,
-                target_length,
+            (
+                background_source,
+                background_crop,
+                background_waveform,
+                background_original_num_channels,
+                background_selection_attempts,
+            ) = _load_non_silent_background_crop(
+                backgrounds,
+                sample_selector,
                 torch_generator,
-                repeat_if_short=self.config.temporal_crop.repeat_if_short,
+                self.config,
                 randomize_start=crop_randomized,
             )
-            background_original_num_channels = background_crop.waveform.shape[0]
             background_channel_selected = self.config.audio.background_channel
-            background_waveform = background_crop.waveform
-            if background_channel_selected is not None:
-                if background_channel_selected >= background_original_num_channels:
-                    raise ValueError(
-                        f"configured background channel {background_channel_selected} but "
-                        f"{background_source.path} has {background_original_num_channels} channels"
-                    )
-                background_waveform = background_waveform[
-                    background_channel_selected : background_channel_selected + 1
-                ]
 
             result = pipeline(
                 clean,
@@ -353,6 +404,11 @@ class DatasetGenerator:
                 "applied": crop_randomized,
                 "output_num_samples": target_length,
                 "repeat_if_short": self.config.temporal_crop.repeat_if_short,
+            }
+            result.parameters["background_selection"] = {
+                "attempts": background_selection_attempts,
+                "rejected_silent_crops": background_selection_attempts - 1,
+                "maximum_attempts": MAX_BACKGROUND_CROP_ATTEMPTS,
             }
             sample_id = f"sample_{sample_index:06d}_{augmentation_seed:016x}"
             relative_sample_dir = Path(sample_id)

@@ -53,7 +53,12 @@ class SamplingConfig:
     target_strategy: str = "class_condition_balanced"
 
     def __post_init__(self) -> None:
-        allowed = {"uniform_source", "class_balanced", "class_condition_balanced"}
+        allowed = {
+            "uniform_source",
+            "class_balanced",
+            "class_condition_balanced",
+            "class_session_condition_balanced",
+        }
         if self.target_strategy not in allowed:
             raise ValueError(
                 "sampling.target_strategy must be one of "
