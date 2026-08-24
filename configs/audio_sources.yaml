@@ -690,3 +690,98 @@ sources:
       190806-D-VQ984-1001.
     status: approved
     admitted_to_corpus: false
+
+  # Proposed by the OpenClaw curator and explicitly approved by the operator on
+  # 2026-08-24 for download and manual audiovisual review.
+  - id: candidate-target-tracked-t80bvm-driving-readiness-2021
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:A week of combat readiness passed in the 200th Motorized Rifle Brigade (02-02-2021).webm"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    source_page: "https://commons.wikimedia.org/wiki/File:A_week_of_combat_readiness_passed_in_the_200th_Motorized_Rifle_Brigade_(02-02-2021).webm"
+    vehicle_class: tracked
+    vehicle_model: "T-80BVM and MT-LBVMK"
+    recording_session: "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02"
+    operating_condition: mixed
+    expected_license: "CC BY 4.0"
+    output_path: "targets/tracked/commons_milru_200th_t80bvm_mtlb_driving_2021_02_02/t80bvm_mtlb_driving.wav"
+    attribution: >-
+      Mil.ru, 200th Motorized Rifle Brigade combat-readiness driving, Wikimedia
+      Commons, CC BY 4.0; converted to WAV for research review.
+    notes: >-
+      Official 1:11 recording of T-80BVM and MT-LBVMK crews driving difficult
+      terrain. The source is mixed-identity: retain T-80BVM labels only where the
+      pictured vehicle is unambiguous, and exclude speech, music, weapons, other
+      vehicles, and montage transitions.
+    status: approved
+    admitted_to_corpus: false
+
+  - id: candidate-target-tracked-bmp1-trident-juncture-moveout-2018
+    kind: target
+    provider: direct
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/1811/DOD_106180083/DOD_106180083-1024x576-1769k.mp4"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    source_page: "https://www.dvidshub.net/video/637281/trident-juncture-2018-polish-tank-and-fighting-vehicle-and-british-engineering-company-during-training-maneuvers-near-elval-norway"
+    vehicle_class: tracked
+    vehicle_model: "BMP-1"
+    recording_session: "dvids_nato_trident_juncture_bmp1_elval_2018"
+    operating_condition: mixed
+    expected_license: "Public domain"
+    output_path: "targets/tracked/dvids_nato_trident_juncture_bmp1_elval_2018/bmp1_moveout_review.wav"
+    attribution: >-
+      NATO, Trident Juncture 2018 Polish BMP-1 footage, DVIDS, public domain.
+    notes: >-
+      Official shot list identifies BMP-1 maintenance/refueling at 02:00.47,
+      movement beginning at 02:10.44, and T-72 footage beginning at 02:35.10.
+      Review 02:00.47-02:35.10, retaining only BMP-1-dominant audio and excluding
+      personnel, speech, other vehicles, and edit boundaries. DVIDS video 637281;
+      VIRIN 181101-F-ZZ999-426.
+    status: approved
+    admitted_to_corpus: false
+
+  - id: candidate-target-tracked-t72-bmp3-102nd-march-2022
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:102nd Motorized Rifle Regiment marching to the training ground (2022-01-26).webm"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    source_page: "https://commons.wikimedia.org/wiki/File:102nd_Motorized_Rifle_Regiment_marching_to_the_training_ground_(2022-01-26).webm"
+    vehicle_class: tracked
+    vehicle_model: "T-72B3 mod. 2016 and BMP-3"
+    recording_session: "commons_milru_102nd_march_training_ground_2022_01_26"
+    operating_condition: mixed
+    expected_license: "CC BY 4.0"
+    output_path: "targets/tracked/commons_milru_102nd_march_training_ground_2022_01_26/t72_bmp3_road_march.wav"
+    attribution: >-
+      Mil.ru, 102nd Motorized Rifle Regiment march to training ground, Wikimedia
+      Commons, CC BY 4.0; converted to WAV for research review.
+    notes: >-
+      Official 2:29 road-march recording containing both T-72B3 mod. 2016 and
+      BMP-3 vehicles. Treat every trim as one session and label a vehicle model
+      only when visually unambiguous. Exclude narration, music, other convoy
+      vehicles, weapons, and montage transitions.
+    status: approved
+    admitted_to_corpus: false
+
+  - id: candidate-target-tracked-bradley-nato-muddy-maneuver-2025
+    kind: target
+    provider: direct
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/2508/DOD_111204052/DOD_111204052.mp4"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    source_page: "https://www.dvidshub.net/video/972401/nato-allies-demonstrate-their-readiness-through-live-fire-training-poland-b-roll"
+    vehicle_class: tracked
+    vehicle_model: "M2 Bradley"
+    recording_session: "dvids_nato_bradley_bemowo_livefire_2025"
+    operating_condition: mixed
+    expected_license: "Public domain"
+    output_path: "targets/tracked/dvids_nato_bradley_bemowo_livefire_2025/bradley_muddy_maneuver_review.wav"
+    attribution: >-
+      Natochannel, NATO Allies demonstrate their readiness through live-fire
+      training in Poland, DVIDS, public domain.
+    notes: >-
+      Official shot list isolates Bradley maneuvering at 00:00-00:42 and a narrow
+      alternate at 03:39-03:45. The remaining source contains other vehicles,
+      gunfire, slow-motion material without sound, and interviews and must be
+      excluded. The only verified direct endpoint is the 499 MB original MP4.
+      DVIDS video 972401; VIRIN 250731-O-D0483-1001.
+    status: approved
+    admitted_to_corpus: false
