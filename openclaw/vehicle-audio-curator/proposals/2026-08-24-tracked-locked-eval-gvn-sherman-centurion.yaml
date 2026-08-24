@@ -1,0 +1,191 @@
+# Proposal 2026-08-24 — tracked half of the Milestone 6 locked evaluation.
+# Discovery review only. No download performed; no catalog edit performed.
+# Both accepted candidates are NEW independent archival field recordings from the
+# Geluid van Nederland project (Netherlands Institute for Sound and Vision), absent
+# from configs/audio_sources.yaml, from the frozen development sessions
+# (Romanian TR-85M1 2014; Tankodrome MPF 2023 and its repost; Lappeenranta Stug III
+# 2014; Retromobile AMX30 2015), and from all earlier curator proposals.
+proposal_date: 2026-08-24
+purpose: >-
+  Independent real tracked-vehicle target candidates for the tracked half of the
+  frozen Milestone 6 locked evaluation, complementing the freshly admitted wheeled
+  locked-session candidate candidate-target-wheeled-car-start-drive-pdsounds-194.
+  Selection prefers vehicle-dominant movement/pass-by/startup/idle audio without
+  narration, music, weapons fire, or crowds.
+verification_note: >-
+  Candidates verified against configs/audio_sources.yaml, all 15 earlier curator
+  proposal files, and the frozen checkpoint's protected development fingerprints.
+  Both file titles, archival track IDs, source IDs, source pages, and normalized
+  media hashes are absent. Current Wikimedia metadata was independently resolved
+  through the project's collector on 2026-08-24 without downloading either file.
+
+accepted:
+  # ---------------------------------------------------------------------------
+  # PRIMARY
+  # ---------------------------------------------------------------------------
+  - source_id: candidate-target-tracked-sherman-passby-gvn-43670951
+    ranking: primary
+    status: review_required
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Sherman tank, rijden - SoundCloud - Beeld en Geluid.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Sherman_tank,_rijden_-_SoundCloud_-_Beeld_en_Geluid.ogg"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Sherman_tank%2C_rijden_-_SoundCloud_-_Beeld_en_Geluid.ogg"
+    source_sha1: "27e52583f0fa2c1269896f377a140bb23bdfe375"
+    source_size: 7853683
+    title: "Sherman tank, rijden"
+    creator: "Beeld en Geluid (Nederlands Instituut voor Beeld en Geluid)"
+    license: "CC BY-SA 3.0"
+    license_url: "https://creativecommons.org/licenses/by-sa/3.0"
+    vehicle_class: tracked
+    vehicle_model: "M4 Sherman (variant unspecified)"
+    recording_session: "beeldengeluid_gvn_sherman_passby_43670951"
+    operating_condition: mixed
+    condition_segments: []
+    format: "Ogg Vorbis audio (.ogg)"
+    duration_seconds: 102.0
+    attribution: >-
+      Beeld en Geluid (Nederlands Instituut voor Beeld en Geluid), "Sherman tank:
+      rijden", Geluid van Nederland via Wikimedia Commons, CC BY-SA 3.0.
+    evidence:
+      - "https://commons.wikimedia.org/wiki/File:Sherman_tank,_rijden_-_SoundCloud_-_Beeld_en_Geluid.ogg"
+      - "https://commons.wikimedia.org/wiki/Commons:Geluid_van_Nederland"
+      - "https://soundcloud.com/beeldengeluid"
+    reason_for_review: >-
+      Source description (Dutch): "Sherman tank: van grote afstand aankomen en
+      voorbijrijden, op een betonbaan (exterieur)" = approach from a great distance
+      and pass by, on a concrete track (exterior). Vehicle-dominant movement/pass-by
+      field recording; track_type "sound effect"; original format WAV; label
+      Nederlands Instituut voor Beeld en Geluid; SoundCloud track 43670951. No
+      narration, music, weapons fire, or crowds stated. CC BY-SA 3.0 is on the
+      project allowlist; attribution/share-alike obligations apply. Recording date
+      is not published on the source page (Commons shows "Date: None"); session
+      identity is the single archival NISV recording identified by SoundCloud track
+      43670951. File is filed under Commons category "Sounds from Geluid van
+      Nederland to be checked" (volunteer verification pending); license statement
+      on the file page is explicit. Auditory review of operating-state segments
+      remains pending before condition-specific corpus use.
+
+  # ---------------------------------------------------------------------------
+  # FALLBACK
+  # ---------------------------------------------------------------------------
+  - source_id: candidate-target-tracked-centurion-hillclimb-gvn-43673936
+    ranking: fallback
+    status: review_required
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Centurion tank, rijden en klimmen - SoundCloud - Beeld en Geluid.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Centurion_tank,_rijden_en_klimmen_-_SoundCloud_-_Beeld_en_Geluid.ogg"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Centurion_tank%2C_rijden_en_klimmen_-_SoundCloud_-_Beeld_en_Geluid.ogg"
+    source_sha1: "4227b3359fd2eb637a6c59ace6d41ab13768770c"
+    source_size: 8766496
+    title: "Centurion tank, rijden en klimmen"
+    creator: "Beeld en Geluid (Nederlands Instituut voor Beeld en Geluid)"
+    license: "CC BY-SA 3.0"
+    license_url: "https://creativecommons.org/licenses/by-sa/3.0"
+    vehicle_class: tracked
+    vehicle_model: "Centurion (variant unspecified)"
+    recording_session: "beeldengeluid_gvn_centurion_hillclimb_43673936"
+    operating_condition: mixed
+    condition_segments: []
+    format: "Ogg Vorbis audio (.ogg)"
+    duration_seconds: 114.0
+    attribution: >-
+      Beeld en Geluid (Nederlands Instituut voor Beeld en Geluid), "Centurion tank:
+      rijden en klimmen", Geluid van Nederland via Wikimedia Commons, CC BY-SA 3.0.
+    evidence:
+      - "https://commons.wikimedia.org/wiki/File:Centurion_tank,_rijden_en_klimmen_-_SoundCloud_-_Beeld_en_Geluid.ogg"
+      - "https://commons.wikimedia.org/wiki/Commons:Geluid_van_Nederland"
+      - "https://soundcloud.com/beeldengeluid"
+    reason_for_review: >-
+      Source description (Dutch): "Centurion tank: van rechts aankomen, over een
+      heuvel klimmen en op enige afstand ervoor terugrijden, op een zandbaan
+      (exterieur)" = approach from the right, climb a hill, and drive back at some
+      distance, on a sand track (exterior). Vehicle-dominant movement with a
+      gradient phase; track_type "sound effect"; original format WAV; label
+      Nederlands Instituut voor Beeld en Geluid; SoundCloud track 43673936. No
+      narration, music, weapons fire, or crowds stated. CC BY-SA 3.0 is on the
+      project allowlist; attribution/share-alike obligations apply. Recording date
+      is not published on the source page; session identity is the single archival
+      NISV recording identified by SoundCloud track 43673936. Same Commons
+      "to be checked" housekeeping category as the primary. Auditory review of
+      operating-state segments remains pending. If the NISV catalog later shows the
+      primary and this recording share one recording event/date, they must be
+      treated as one group per the project leakage rule.
+
+shared_provenance_note: >-
+  Both accepted candidates belong to the same archival series (Geluid van
+  Nederland, a formal partnership of the Netherlands Institute for Sound and
+  Vision, De Auditieve Dienst, and Kennisland; 2000 NISV-donated field
+  recordings). They are distinct archival recordings: different SoundCloud track
+  identifiers, different vehicles (M4 Sherman vs Centurion), and different
+  surfaces (concrete vs sand track). Each is assigned an independent
+  recording_session keyed to its archival track ID. Collector should confirm the
+  original recording dates via the NISV catalog before admitting both to a
+  train/test split.
+
+rejected:
+  - source_id: candidate-target-tracked-centurion-inspection-gvn
+    file_title: "File:Controle van een Centurion tank met omgevingsgeluiden - SoundCloud - Beeld en Geluid.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Controle_van_een_Centurion_tank_met_omgevingsgeluiden_-_SoundCloud_-_Beeld_en_Geluid.ogg"
+    reason: >-
+      Not vehicle-dominant: description states crowd murmur ("geroezemoes"), engine
+      cooling, a tank passing at distance, and an aircraft flyover.
+  - source_id: candidate-target-tracked-centurion-interior-gvn
+    file_title: "File:Centurion tank, starten, rijden en stoppen - SoundCloud - Beeld en Geluid.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Centurion_tank,_starten,_rijden_en_stoppen_-_SoundCloud_-_Beeld_en_Geluid.ogg"
+    reason: >-
+      Interior recording ("interieur"); listener rides aboard the tank, so it is
+      not an exterior pass-by/movement observation.
+  - source_id: candidate-target-tracked-sherman-column-gvn
+    file_title: "File:Het rijden van een colonne Sherman tanks - SoundCloud - Beeld en Geluid.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Het_rijden_van_een_colonne_Sherman_tanks_-_SoundCloud_-_Beeld_en_Geluid.ogg"
+    reason: >-
+      Multi-vehicle column pass-by; no defensible single-vehicle identity for a
+      locked-session target label.
+  - source_id: candidate-target-tracked-kurganets25
+    file_title: "File:Kurganets-25 Tracked Platform. Infantry Fighting Vehicle and Armoured Personnel Carrier.ogv"
+    source_page: "https://commons.wikimedia.org/wiki/File:Kurganets-25_Tracked_Platform._Infantry_Fighting_Vehicle_and_Armoured_Personnel_Carrier.ogv"
+    reason: >-
+      Imported from YouTube under the pre-2025 CC license option; exhibition
+      footage rather than a field recording; license/provenance requires
+      verification and audio likely contains narration/exhibition ambience.
+  - source_id: target-tracked-stug-iiig-lappeenranta (frozen session)
+    file_title: "File:Taistelunäytös Lippujuhlan päivä 2014 17 Stug IIIG.webm"
+    source_page: "https://commons.wikimedia.org/wiki/File:Taistelun%C3%A4yt%C3%B6s_Lippujuhlan_p%C3%A4iv%C3%A4_2014_17_Stug_IIIG.webm"
+    reason: >-
+      Same recording session as the frozen commons_lappeenranta_flag_day_reenactment_2014
+      development session; excluded by operator instruction (do not reuse different
+      footage from a frozen-development session).
+  - source_id: target-tracked-tiger131-engine-start (cataloged)
+    file_title: "File:Tiger Engine Start.webm"
+    reason: >-
+      Already in configs/audio_sources.yaml as review_required; unknown author and
+      YouTube import; provenance decision pending.
+  - source_id: target-tracked-tank-78rpm (cataloged)
+    reason: >-
+      Already in configs/audio_sources.yaml as review_required; Internet Archive
+      item rights are not explicit.
+  - source_id: frozen/cataloged tracked sessions (not re-proposed)
+    reason: >-
+      Romanian TR-85M1 2014 (dvids_romanian_tank_range_2014), Tankodrome MPF 2023
+      and its BAE repost (us_army_armor_cavalry_collection_tankodrome_2023),
+      Retromobile AMX30 2015 (commons_retromobile_amx30_demo_2015), and T-18
+      Khabarovsk 2015 (rw_russia_t18_khabarovsk_2015) are frozen or already
+      cataloged; none are independent new candidates.
+  - source_id: gvn-same-series-condition-alternates
+    reason: >-
+      Remaining Geluid van Nederland tank takes (Sherman starten en rijden; Sherman
+      met grote snelheid rijden; Sherman rijden en manoeuvreren; Sherman starten,
+      rijden, manoeuvreren en stoppen; Centurion aankomen, stationair en stoppen;
+      Centurion starten, stationair, pompen en afschakelen; Centurion rijden,
+      klimmen en stoppen; Centurion manoeuvreren, stoppen en stationair; Centurion
+      starten, rijden, stationair en stoppen) share the same archival series and
+      unknown recording date; retained only as condition-specific backups (startup,
+      high speed, deceleration), not as independent ranked candidates.
+
+download_gate: >-
+  No download was performed. Collection requires an explicit operator message
+  "approve download: <source-id>" and runs the project collector:
+  uv run python scripts/collect_audio.py --catalog configs/audio_sources.yaml
+  --source-id <source-id> --output data
