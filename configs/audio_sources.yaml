@@ -538,21 +538,19 @@ sources:
         start_seconds: 14.5
         end_seconds: 17.2
         notes: >-
-          The source-described ignition/start event begins at the abrupt broadband
-          and low-frequency onset visible in the waveform and low-band spectrogram.
+          Human auditory review on 2026-08-24 confirmed the engine-start interval.
       - operating_condition: idle
         start_seconds: 17.2
         end_seconds: 20.5
         notes: >-
-          Post-start engine-running interval before the sustained driving region.
-          Retained conservatively as idle pending human auditory confirmation.
+          Human auditory review on 2026-08-24 confirmed the post-start idle interval.
       - operating_condition: mixed
         start_seconds: 20.5
         end_seconds: 41.5
         notes: >-
-          Vehicle-dominant reverse/forward driving region identified from the source
-          description, waveform, and low-band spectrogram. Exact speed, direction,
-          acceleration, and deceleration are not inferred from amplitude alone.
+          Human auditory review on 2026-08-24 confirmed the vehicle-dominant driving
+          interval. Exact speed, direction, acceleration, and deceleration are not
+          inferred from amplitude alone.
     expected_license: "Public domain"
     output_path: "targets/wheeled/pdsounds_194_stephan_car_start_drive_2007_04_26/starting_car_and_driving.wav"
     attribution: >-
@@ -560,17 +558,9 @@ sources:
       Commons, public domain.
     notes: >-
       Forty-five-second single-subject recording covering entry, startup, reversing,
-      gear changes, and forward driving. Listening review must identify
-      vehicle-dominant operating-state segments before corpus admission. Reserve as a
-      fresh held-out wheeled session unless the locked-pair protocol assigns it
-      otherwise.
-    status: review_required
-    admitted_to_corpus: false
-    review_reason: >-
-      Two operator-approved collector invocations on 2026-08-23 resolved the source
-      and public-domain metadata but received HTTP 429 during media transfer; the
-      second failure was recorded at 18:09 UTC. The operator manually downloaded an
-      exact SHA-1 match and it was ingested locally without another network request.
-      Source-description, waveform, and spectrogram review established provisional
-      vehicle-dominant intervals; human auditory confirmation remains required before
-      corpus admission.
+      gear changes, and forward driving. Human auditory review confirmed no speech
+      and approved the listed operating-state boundaries. The manually downloaded
+      file exactly matched the cataloged Wikimedia SHA-1 before local normalization.
+      Reserve as a fresh held-out wheeled session for the locked-pair protocol.
+    status: approved
+    admitted_to_corpus: true

@@ -86,7 +86,7 @@ def test_dvids_humvee_candidate_is_regated_after_access_denial() -> None:
     assert "HTTP 403" in humvee.review_reason
 
 
-def test_pdsounds_car_candidate_is_regated_after_repeated_rate_limit() -> None:
+def test_pdsounds_car_is_admitted_after_exact_ingest_and_human_review() -> None:
     _, sources = load_catalog(CATALOG)
     car = next(
         source
@@ -99,12 +99,18 @@ def test_pdsounds_car_candidate_is_regated_after_repeated_rate_limit() -> None:
     assert car.vehicle_class == "wheeled"
     assert car.recording_session == "pdsounds_194_stephan_car_start_drive_2007_04_26"
     assert car.expected_license == "Public domain"
-    assert car.status == "review_required"
-    assert car.admitted_to_corpus is False
-    assert car.review_reason
-    assert "Two operator-approved collector invocations" in car.review_reason
-    assert "18:09 UTC" in car.review_reason
-    assert "HTTP 429" in car.review_reason
+    assert car.status == "approved"
+    assert car.admitted_to_corpus is True
+    assert car.review_reason is None
+    assert [
+        (segment.operating_condition, segment.start_seconds, segment.end_seconds)
+        for segment in car.condition_segments
+    ] == [
+        ("startup", 14.5, 17.2),
+        ("idle", 17.2, 20.5),
+        ("mixed", 20.5, 41.5),
+    ]
+    assert "confirmed no speech" in car.notes
 
 
 def test_human_audio_review_updates_target_segments() -> None:
@@ -142,7 +148,6 @@ def test_catalog_license_url_fills_missing_provider_metadata(
         CATALOG,
         tmp_path,
         ["candidate-target-wheeled-car-start-drive-pdsounds-194"],
-        include_review_required=True,
         dry_run=True,
     )
 
