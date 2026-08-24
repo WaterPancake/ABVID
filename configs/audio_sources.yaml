@@ -577,6 +577,14 @@ sources:
     vehicle_model: "M4 Sherman (variant unspecified)"
     recording_session: "beeldengeluid_gvn_sherman_passby_43670951"
     operating_condition: mixed
+    condition_segments:
+      - operating_condition: mixed
+        start_seconds: 25.0
+        end_seconds: 90.0
+        notes: >-
+          Human auditory review on 2026-08-24 confirmed the tank-dominant approach
+          from 25 seconds until it fades at about 90 seconds. Exact speed and
+          acceleration are unavailable, so the interval remains labeled mixed.
     expected_license: "CC BY-SA 3.0"
     output_path: "targets/tracked/beeldengeluid_gvn_sherman_passby_43670951/sherman_passby.wav"
     attribution: >-
@@ -584,8 +592,9 @@ sources:
       rijden, Geluid van Nederland via Wikimedia Commons, CC BY-SA 3.0.
     notes: >-
       The source describes an exterior approach from a great distance and pass-by
-      on a concrete track. The file remains excluded from corpus discovery until
-      human auditory review confirms contamination-free operating-state boundaries.
-      Reserve it for the tracked half of the fresh locked evaluation pair.
+      on a concrete track. Human auditory review approved the 25-90 second interval.
+      This historical M4 Sherman is useful for unseen tracked-category transfer but
+      does not establish performance on modern tracked vehicles. Reserve it for the
+      tracked half of the fresh locked evaluation pair.
     status: approved
-    admitted_to_corpus: false
+    admitted_to_corpus: true

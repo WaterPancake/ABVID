@@ -113,7 +113,7 @@ def test_pdsounds_car_is_admitted_after_exact_ingest_and_human_review() -> None:
     assert "confirmed no speech" in car.notes
 
 
-def test_sherman_locked_candidate_is_approved_but_review_gated() -> None:
+def test_sherman_locked_candidate_has_reviewed_approach_segment() -> None:
     _, sources = load_catalog(CATALOG)
     sherman = next(
         source
@@ -122,12 +122,16 @@ def test_sherman_locked_candidate_is_approved_but_review_gated() -> None:
     )
 
     assert sherman.status == "approved"
-    assert sherman.admitted_to_corpus is False
+    assert sherman.admitted_to_corpus is True
     assert sherman.provider == "wikimedia_commons"
     assert sherman.expected_license == "CC BY-SA 3.0"
     assert sherman.vehicle_class == "tracked"
     assert sherman.recording_session == "beeldengeluid_gvn_sherman_passby_43670951"
-    assert sherman.condition_segments == ()
+    assert [
+        (segment.operating_condition, segment.start_seconds, segment.end_seconds)
+        for segment in sherman.condition_segments
+    ] == [("mixed", 25.0, 90.0)]
+    assert "does not establish performance on modern tracked vehicles" in sherman.notes
 
 
 def test_human_audio_review_updates_target_segments() -> None:
