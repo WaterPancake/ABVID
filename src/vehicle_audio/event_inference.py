@@ -191,9 +191,12 @@ def _load_probe(
     if tuple(payload.get("class_names", ())) != tuple(CLASS_NAMES):
         raise ValueError("probe class names do not match tracked/wheeled order")
     models = payload.get("models")
-    if not isinstance(models, Mapping) or state_key not in models:
+    if isinstance(models, Mapping) and state_key in models:
+        state = models[state_key]
+    elif state_key in payload and isinstance(payload[state_key], Mapping):
+        state = payload[state_key]
+    else:
         raise ValueError(f"probe bundle has no model state {state_key!r}")
-    state = models[state_key]
     if state["feature_mean"].shape != (PANN_AUDIOSET_DIMENSION,):
         raise ValueError("event inference requires a 527-output AudioSet probe")
     model = StandardizedLinearProbe(
@@ -209,6 +212,9 @@ def _load_probe(
             "real_manifest_sha256",
             "pretrained_encoder",
             "class_names",
+            "manifest_sha256",
+            "configuration",
+            "base_probe_bundle_sha256",
         )
         if field in payload
     }

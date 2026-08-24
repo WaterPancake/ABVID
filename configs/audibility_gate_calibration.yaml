@@ -1,0 +1,8 @@
+calibration_version: 1
+minimum_active_windows: 3
+relative_peak_threshold_candidates_db: [-3.0, -6.0, -9.0, -12.0, -15.0, -18.0, -24.0, -30.0]
+selection_rule: >-
+  Maximize source-held-out session-balanced accuracy, then active-window
+  balanced accuracy, then coverage. Count an abstained session as incorrect.
+  Resolve any remaining tie in favor of the more permissive threshold.
+status: development_calibration_only_not_vehicle_presence_evaluation
