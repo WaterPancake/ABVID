@@ -1,0 +1,533 @@
+# Military tracked/wheeled acquisition proposal — 2026-08-24 (proposal only)
+#
+# No media was downloaded. Every candidate is review_required until the operator
+# approves an exact source ID and then listens to, labels, and trims the recording.
+
+purpose: >-
+  Build a rights-auditable review pool of real-world recordings for common NATO and
+  Soviet/Russian tracked and wheeled military vehicles. The requested roster is M1
+  Abrams, M2/M2A3 Bradley, T-72, T-80, T-90, BMP-1/2/3, BTR-series, HMMWV/Humvee,
+  and JLTV. These sources are intended for passive acoustic tracked-vs-wheeled
+  research; none is admitted to the corpus by this proposal.
+assessment_date: "2026-08-24"
+status: review_required
+method: >-
+  Searched official DVIDS/DoD records and Wikimedia Commons file pages, checked
+  vehicle identity, creator, source date, stable session identifiers, duration,
+  media format, and reuse terms, and grouped mirrors or multiple trims from one
+  original recording as one recording_session. DVIDS raw-CDN URLs were checked as
+  reachable MP4 resources without downloading their media bodies. Wikimedia file
+  pages provide the original media URLs and codec/duration metadata. Audiovisual
+  cleanliness remains unverified until manual review.
+
+download_gate: >-
+  Do not download any candidate from this proposal until the operator sends the
+  exact message `approve download: <source-id>`. Approval is source-specific. Use
+  the repository collector after approval; do not hand-download or bypass a blocked
+  provider endpoint.
+
+dataset_rules:
+  - Every trim from one source keeps the recording_session shown below.
+  - Mirrors with the same DVIDS video ID, VIRIN, or Commons original are duplicates.
+  - Mixed-vehicle footage may be retained only when the visible vehicle identity is
+    defensible for the entire audio interval; all such trims remain one session.
+  - Speech, music, weapons fire, radios, wind, and other vehicles must be noted or
+    excluded during manual segmentation.
+  - All sources below contain real recorded footage; no procedural or generated
+    vehicle audio is proposed.
+
+license_families:
+  dvids_public_domain:
+    license: "Public domain statement on the item page; DVIDS reuse restrictions apply"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    obligations: >-
+      Retain title, creator, unit, DVIDS ID/VIRIN, and provenance; do not imply DoD
+      endorsement; respect privacy/publicity, trademark, and military-mark limits.
+  milru_cc_by_4:
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    obligations: "Credit Mil.ru, link the license, and identify modifications."
+  kuzmin_cc_by_sa_4:
+    license: "CC BY-SA 4.0"
+    license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
+    obligations: >-
+      Credit Vitaly V. Kuzmin, link the license, identify modifications, and apply
+      the same or a compatible license to adaptations.
+
+review_order:
+  first_batch:
+    - candidate-target-tracked-abrams-bright-star-2017
+    - candidate-target-tracked-bradley-stx-poland-2026
+    - candidate-target-tracked-t72b-yurginsky-2019
+    - candidate-target-tracked-t80u-4guards-2017
+    - candidate-target-tracked-t90m-27guards-2021
+    - candidate-target-tracked-t80u-bmp2-kantemirovskaya-2011
+    - candidate-target-tracked-bwp1-gizycko-2021
+    - candidate-target-tracked-bmp3-tarskoye-2020
+    - candidate-target-wheeled-btr82am-extreme-driving-abkhazia-2017
+    - candidate-target-wheeled-humvee-brawlers-bulgaria-2026
+    - candidate-target-wheeled-jltv-fort-mccoy-2019
+  alternates_after_first_review:
+    - candidate-target-tracked-abrams-ops-summit-2022
+    - candidate-target-tracked-bradley-saber-strike-2018
+    - candidate-target-wheeled-btr82am-abkhazia-2020
+    - candidate-target-wheeled-humvee-m1151-training-2014
+    - candidate-target-wheeled-humvee-southern-strike-2022
+    - candidate-target-wheeled-jltv-fort-mccoy-2020
+
+candidates:
+  # -------------------------------------------------------------------------
+  # NATO tracked vehicles
+  # -------------------------------------------------------------------------
+  - source_id: candidate-target-tracked-abrams-bright-star-2017
+    status: review_required
+    priority: primary
+    kind: target
+    provider: dvids
+    mobility_class: tracked
+    vehicle_model: "M1 Abrams"
+    title: "U.S. Army Abrams tanks maneuver at Exercise Bright Star 2017"
+    creator: "John Raven, United States Air Forces Central"
+    source_page: "https://www.dvidshub.net/video/550523/us-army-abrams-tanks-maneuver-exercise-bright-star-2017"
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/1709/DOD_104830454/DOD_104830454.mp4"
+    license_family: dvids_public_domain
+    recording_session: dvids_bright_star_abrams_mohamed_naguib_2017
+    session_evidence: "DVIDS video 550523; VIRIN 170912-F-AY943-5001; 2017-09-12; Egypt"
+    format: "MP4; audio codec/channels require post-download inspection"
+    duration_seconds: 276
+    operating_condition: maneuver
+    attribution: "John Raven, U.S. Army Abrams tanks maneuver at Exercise Bright Star 2017, DVIDS, public domain."
+    review_risks: >-
+      Multiple Abrams rather than one isolated vehicle. Check speech, other vehicles,
+      music, wind, and distant range sounds. The official description says maneuver,
+      not live fire.
+
+  - source_id: candidate-target-tracked-abrams-ops-summit-2022
+    status: review_required
+    priority: alternate
+    kind: target
+    provider: dvids
+    mobility_class: tracked
+    vehicle_model: "M1A2 Abrams"
+    title: "Abrams Operations Summit tank B-roll"
+    creator: "Javen Owens, U.S. Army V Corps"
+    source_page: "https://www.dvidshub.net/video/841851/abrams-operations-summit-tank-b-roll"
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/2205/DOD_108950838/DOD_108950838.mp4"
+    license_family: dvids_public_domain
+    recording_session: dvids_abrams_operations_summit_drawsko_2022
+    session_evidence: "DVIDS video 841851; VIRIN 220428-A-EW038-923; 2022-04-28; Poland"
+    format: "MP4; audio codec/channels require post-download inspection"
+    duration_seconds: 141
+    operating_condition: mixed
+    attribution: "Javen Owens, Abrams Operations Summit tank B-roll, DVIDS, public domain."
+    review_risks: >-
+      Teaching/demonstration setting makes nearby speech likely; may include several
+      tanks and multiple operating states.
+
+  - source_id: candidate-target-tracked-bradley-stx-poland-2026
+    status: review_required
+    priority: primary
+    kind: target
+    provider: dvids
+    mobility_class: tracked
+    vehicle_model: "M2A3 Bradley"
+    title: "U.S. Soldiers train with M2A3 Bradleys during platoon STX in Poland"
+    creator: "Dakota Bradford, 100th Mobile Public Affairs Detachment"
+    source_page: "https://www.dvidshub.net/video/993637/us-soldiers-train-with-m2a3-bradleys-during-platoon-stx-poland"
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/2601/DOD_111491266/DOD_111491266.mp4"
+    license_family: dvids_public_domain
+    recording_session: dvids_bemowo_m2a3_stx_2026
+    session_evidence: "DVIDS video 993637; VIRIN 260121-Z-GB622-3001; 2026-01-20/21; Poland"
+    format: "MP4; audio codec/channels require post-download inspection"
+    duration_seconds: 107
+    operating_condition: maneuver
+    attribution: "Dakota Bradford, U.S. Soldiers train with M2A3 Bradleys during platoon STX in Poland, DVIDS, public domain."
+    review_risks: >-
+      Multiple Bradleys in a tactical exercise. Check commands, radios, simulated
+      fire, abrupt edits, and distant vehicles. DVIDS page and description differ by
+      one day, so DVIDS ID/VIRIN defines the session.
+
+  - source_id: candidate-target-tracked-bradley-saber-strike-2018
+    status: review_required
+    priority: alternate
+    kind: target
+    provider: dvids
+    mobility_class: tracked
+    vehicle_model: "M2 Bradley"
+    title: "Bradley fighting Vehicle Saber Strike 18 - B-Roll"
+    creator: "Craig Jensen, 126th Theater Public Affairs Support Element"
+    source_page: "https://www.dvidshub.net/video/605923/bradley-fighting-vehicle-saber-strike-18-b-roll"
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/1806/DOD_105717586/DOD_105717586.mp4"
+    license_family: dvids_public_domain
+    recording_session: dvids_saber_strike_bradley_drawsko_2018
+    session_evidence: "DVIDS video 605923; VIRIN 180606-A-JA380-001; 2018-06-06; Poland"
+    format: "MP4; audio codec/channels require post-download inspection"
+    duration_seconds: 137
+    operating_condition: maneuver
+    attribution: "Craig Jensen, Bradley fighting Vehicle Saber Strike 18 - B-Roll, DVIDS, public domain."
+    review_risks: >-
+      Assault-exercise context may contain blank or simulated weapons, commands,
+      several Bradleys, and abrupt cuts.
+
+  # -------------------------------------------------------------------------
+  # Soviet/Russian tracked vehicles
+  # -------------------------------------------------------------------------
+  - source_id: candidate-target-tracked-t72b-yurginsky-2019
+    status: review_required
+    priority: primary
+    kind: target
+    provider: wikimedia_commons
+    mobility_class: tracked
+    vehicle_model: "T-72B mod. 1989"
+    title: "Т-72B mod. 1989.webm"
+    creator: "Ministry of Defence of the Russian Federation"
+    source_page: "https://commons.wikimedia.org/wiki/File:%D0%A2-72B_mod._1989.webm"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/8/8a/%D0%A2-72B_mod._1989.webm"
+    license_family: milru_cc_by_4
+    recording_session: commons_milru_t72b_yurginsky_2019_07_25
+    session_evidence: "35th Guards Motorized Rifle Brigade; Yurginsky training ground; 2019-07-25"
+    format: "WebM VP9/Vorbis"
+    duration_seconds: 48
+    operating_condition: exercise
+    attribution: "Mil.ru, Т-72B mod. 1989, CC BY 4.0; trimmed/converted if applicable."
+    review_risks: >-
+      Short official exercise edit. Check music, narration, firing, and microphone
+      discontinuities at cuts; the source metadata does not explicitly indicate fire.
+
+  - source_id: candidate-target-tracked-t80u-4guards-2017
+    status: review_required
+    priority: primary
+    kind: target
+    provider: wikimedia_commons
+    mobility_class: tracked
+    vehicle_model: "T-80U"
+    title: "T-80U tanks exercise.webm"
+    creator: "Ministry of Defence of the Russian Federation"
+    source_page: "https://commons.wikimedia.org/wiki/File:T-80U_tanks_exercise.webm"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/b/b3/T-80U_tanks_exercise.webm"
+    license_family: milru_cc_by_4
+    recording_session: commons_milru_t80u_4guards_2017_06_26
+    session_evidence: "4th Guards Tank Division exercise; 2017-06-26"
+    format: "WebM VP9/Vorbis"
+    duration_seconds: 68.551
+    operating_condition: exercise
+    attribution: "Mil.ru, T-80U tanks exercise, CC BY 4.0; trimmed/converted if applicable."
+    review_risks: >-
+      Edited exercise footage; check speech, music, gunfire, multiple tanks, and
+      shot-to-shot microphone changes.
+
+  - source_id: candidate-target-tracked-t90m-27guards-2021
+    status: review_required
+    priority: primary_with_high_review_risk
+    kind: target
+    provider: wikimedia_commons
+    mobility_class: tracked
+    vehicle_model: "T-90M Proryv"
+    title: "T-90M tanks of the 27th Guards Motorized Rifle Brigade (2021-03-10).webm"
+    creator: "Ministry of Defence of the Russian Federation"
+    source_page: "https://commons.wikimedia.org/wiki/File:T-90M_tanks_of_the_27th_Guards_Motorized_Rifle_Brigade_(2021-03-10).webm"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/9/9e/T-90M_tanks_of_the_27th_Guards_Motorized_Rifle_Brigade_%282021-03-10%29.webm"
+    license_family: milru_cc_by_4
+    recording_session: commons_milru_t90m_27guards_2021_03_10
+    session_evidence: "Delivery of eight T-90M tanks to the 27th Guards Motorized Rifle Brigade; 2021-03-10"
+    format: "WebM VP9/Vorbis"
+    duration_seconds: 30.13
+    operating_condition: mixed
+    attribution: "Mil.ru, T-90M tanks of the 27th Guards Motorized Rifle Brigade, CC BY 4.0; trimmed/converted if applicable."
+    review_risks: >-
+      Only 30 seconds and likely a promotional montage with narration or music. No
+      firing is indicated by the file metadata. Accept only engine/track-dominant
+      intervals; reject the source if none exist.
+
+  - source_id: candidate-target-tracked-t80u-bmp2-kantemirovskaya-2011
+    status: review_required
+    priority: primary
+    kind: target
+    provider: wikimedia_commons
+    mobility_class: tracked
+    vehicle_model: "T-80U and BMP-2"
+    vehicle_identity_mixed: true
+    title: "T-80U and BMP-2 from 4th Guards Kantemirovskaya Tank Division.ogv"
+    creator: "Vitaly V. Kuzmin"
+    source_page: "https://commons.wikimedia.org/wiki/File:T-80U_and_BMP-2_from_4th_Guards_Kantemirovskaya_Tank_Division.ogv"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/6/67/T-80U_and_BMP-2_from_4th_Guards_Kantemirovskaya_Tank_Division.ogv"
+    license_family: kuzmin_cc_by_sa_4
+    recording_session: commons_kuzmin_t80u_bmp2_narofominsk_2011_10_09
+    session_evidence: "4th Separate Guards Tank Brigade, Naro-Fominsk; 2011-10-09"
+    format: "Ogg Theora/Vorbis"
+    duration_seconds: 256
+    operating_condition: ride_and_maneuver
+    attribution: "Vitaly V. Kuzmin, T-80U and BMP-2 ride, CC BY-SA 4.0; trimmed/converted if applicable."
+    review_risks: >-
+      Likely speech and camera handling. Every retained interval must be assigned to
+      T-80U or BMP-2 from visual evidence. All T-80U and BMP-2 trims stay in this one
+      recording_session and therefore one data split. This may be the strongest
+      naturalistic Soviet-vehicle source in the pool despite its mixed identity.
+
+  - source_id: candidate-target-tracked-bwp1-gizycko-2021
+    status: review_required
+    priority: primary_with_high_review_risk
+    kind: target
+    provider: wikimedia_commons_dvids_mirror
+    mobility_class: tracked
+    vehicle_model: "Polish BWP-1 (BMP-1 variant)"
+    title: "15th Mechanized Brigade's exercise near Giżycko (02-02-2021).webm"
+    creator: "HQ Multinational Division North East"
+    source_page: "https://commons.wikimedia.org/wiki/File:15th_Mechanized_Brigade%27s_exercise_near_Gi%C5%BCycko_(02-02-2021).webm"
+    authoritative_origin: "https://www.dvidshub.net/video/784416/15th-mech-brigade-winter-training-2021"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/6/64/15th_Mechanized_Brigade%27s_exercise_near_Gi%C5%BCycko_%2802-02-2021%29.webm"
+    license_family: dvids_public_domain
+    recording_session: dvids_bwp1_gizycko_winter_training_2021_02_02
+    session_evidence: "DVIDS video 784416; VIRIN 210202-A-TL808-965; 2021-02-02; Poland"
+    format: "WebM VP9/Vorbis"
+    duration_seconds: 80
+    operating_condition: exercise
+    attribution: "HQ Multinational Division North East, 15th Mechanized Brigade winter training 2021, DVIDS/Commons, public domain."
+    review_risks: >-
+      The Commons and DVIDS pages are mirrors of one session. This is a BMP-1 family
+      variant rather than a Soviet-manufactured vehicle label. The event includes
+      shooting training, so expect music, commands, small-arms fire, and other
+      equipment; accept only visually defensible, vehicle-dominant intervals.
+
+  - source_id: candidate-target-tracked-bmp3-tarskoye-2020
+    status: review_required
+    priority: primary_with_high_review_risk
+    kind: target
+    provider: wikimedia_commons
+    mobility_class: tracked
+    vehicle_model: "BMP-3"
+    title: "19th Motorized Rifle Brigade's exercise with BMP-3 at the Tarskoye training ground (06-04-2020).webm"
+    creator: "Ministry of Defence of the Russian Federation"
+    source_page: "https://commons.wikimedia.org/wiki/File:19th_Motorized_Rifle_Brigade%27s_exercise_with_BMP-3_at_the_Tarskoye_training_ground_(06-04-2020).webm"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/2/20/19th_Motorized_Rifle_Brigade%27s_exercise_with_BMP-3_at_the_Tarskoye_training_ground_%2806-04-2020%29.webm"
+    license_family: milru_cc_by_4
+    recording_session: commons_milru_bmp3_tarskoye_2020_04_06
+    session_evidence: "19th Motorized Rifle Brigade, Tarskoye training ground; 2020-04-06"
+    format: "WebM VP9/Vorbis"
+    duration_seconds: 49.563
+    operating_condition: exercise
+    attribution: "Mil.ru, 19th Motorized Rifle Brigade exercise with BMP-3, CC BY 4.0; trimmed/converted if applicable."
+    review_risks: >-
+      The source description explicitly mentions simulated mines, signal flares, and
+      blank small-arms fire. Check for speech/music and multiple vehicles. Reject if
+      no clean engine/track interval can be isolated.
+
+  # -------------------------------------------------------------------------
+  # Wheeled military vehicles
+  # -------------------------------------------------------------------------
+  - source_id: candidate-target-wheeled-btr82am-extreme-driving-abkhazia-2017
+    status: review_required
+    priority: primary
+    kind: target
+    provider: wikimedia_commons
+    mobility_class: wheeled
+    vehicle_model: "BTR-82AM"
+    title: "БТР-82АМ — extreme-driving course at the Russian military base in Abkhazia"
+    creator: "Ministry of Defence of the Russian Federation"
+    source_page: >-
+      https://commons.wikimedia.org/wiki/File:%D0%91%D0%A2%D0%A0-82%D0%90%D0%9C_-_%D0%9E%D0%BA%D0%BE%D0%BB%D0%BE_800_%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9_%D0%B8_%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2-%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9_%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%B9_%D0%B2%D0%BE%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%B1%D0%B0%D0%B7%D1%8B_%D0%B2_%D0%90%D0%B1%D1%85%D0%B0%D0%B7%D0%B8%D0%B8_%D0%BF%D1%80%D0%BE%D1%88%D0%BB%D0%B8_%D0%BA%D1%83%D1%80%D1%81_%D1%8D%D0%BA%D1%81%D1%82%D1%80%D0%B5%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B2%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F.ogv
+    direct_url: >-
+      https://upload.wikimedia.org/wikipedia/commons/0/00/%D0%91%D0%A2%D0%A0-82%D0%90%D0%9C_-_%D0%9E%D0%BA%D0%BE%D0%BB%D0%BE_800_%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9_%D0%B8_%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2-%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9_%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%B9_%D0%B2%D0%BE%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%B1%D0%B0%D0%B7%D1%8B_%D0%B2_%D0%90%D0%B1%D1%85%D0%B0%D0%B7%D0%B8%D0%B8_%D0%BF%D1%80%D0%BE%D1%88%D0%BB%D0%B8_%D0%BA%D1%83%D1%80%D1%81_%D1%8D%D0%BA%D1%81%D1%82%D1%80%D0%B5%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B2%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F.ogv
+    license_family: milru_cc_by_4
+    recording_session: commons_milru_btr82am_extreme_driving_abkhazia_2017_05_23
+    session_evidence: "7th Russian Military Base driver/mechanic course, Abkhazia; 2017-05-23"
+    format: "Ogg video with Vorbis audio"
+    duration_seconds: 48
+    operating_condition: varied_driving
+    attribution: "Mil.ru, BTR-82AM extreme-driving course in Abkhazia, CC BY 4.0; trimmed/converted if applicable."
+    review_risks: >-
+      Likely official narration or music, but the event is explicitly driving-focused.
+      Check cuts, multiple vehicles, and non-engine foreground sounds.
+
+  - source_id: candidate-target-wheeled-btr82am-abkhazia-2020
+    status: review_required
+    priority: alternate
+    kind: target
+    provider: wikimedia_commons
+    mobility_class: wheeled
+    vehicle_model: "BTR-82AM"
+    title: "BTR-82AM in Abkhazia.webm"
+    creator: "Ministry of Defence of the Russian Federation"
+    source_page: "https://commons.wikimedia.org/wiki/File:BTR-82AM_in_Abkhazia.webm"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/f/f4/BTR-82AM_in_Abkhazia.webm"
+    license_family: milru_cc_by_4
+    recording_session: commons_milru_btr82am_driving_abkhazia_2020_01_24
+    session_evidence: "Russian 7th Military Base driving session, Abkhazia; 2020-01-24"
+    format: "WebM VP9/Vorbis"
+    duration_seconds: 33
+    operating_condition: driving
+    attribution: "Mil.ru, BTR-82AM in Abkhazia, CC BY 4.0; trimmed/converted if applicable."
+    review_risks: >-
+      Short exercise edit; check speech, music, firing, and other vehicles. This is a
+      different date/session from the 2017 extreme-driving candidate.
+
+  - source_id: candidate-target-wheeled-humvee-brawlers-bulgaria-2026
+    status: review_required
+    priority: primary
+    kind: target
+    provider: dvids
+    mobility_class: wheeled
+    vehicle_model: "HMMWV"
+    title: "Task Force Brawlers conduct vehicle terrain familiarization training B-Roll"
+    creator: "Kaylan Joseph, 3rd Combat Aviation Brigade"
+    source_page: "https://www.dvidshub.net/video/994737/task-force-brawlers-conduct-vehicle-terrain-familiarization-training-b-roll"
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/2602/DOD_111506702/DOD_111506702.mp4"
+    license_family: dvids_public_domain
+    recording_session: dvids_bulgaria_hmmwv_terrain_2026
+    session_evidence: "DVIDS video 994737; VIRIN 260130-A-FS119-6877; 2026-01-29/30; Bulgaria"
+    format: "MP4; audio codec/channels require post-download inspection"
+    duration_seconds: 91
+    operating_condition: varied_driving
+    attribution: "Kaylan Joseph, Task Force Brawlers vehicle terrain familiarization training B-Roll, DVIDS, public domain."
+    review_risks: >-
+      Check speech, wind, handling noise, cuts, and other vehicles. Mud, sand, snow,
+      and incline driving may provide useful operating-state diversity. DVIDS page
+      and description differ by one day; the DVIDS ID/VIRIN defines the session.
+
+  - source_id: candidate-target-wheeled-humvee-m1151-training-2014
+    status: review_required
+    priority: alternate
+    kind: target
+    provider: dvids
+    mobility_class: wheeled
+    vehicle_model: "M1151 up-armored HMMWV"
+    title: "Humvee Training B-roll"
+    creator: "Richard Stowell, 128th Mobile Public Affairs Detachment"
+    source_page: "https://www.dvidshub.net/video/329602/humvee-training-b-roll"
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/1404/DOD_101347588/DOD_101347588.mp4"
+    license_family: dvids_public_domain
+    recording_session: dvids_jbmdl_m1151_training_2014
+    session_evidence: "DVIDS video 329602; VIRIN 140403-Z-CA120-002; 2014-04-03; New Jersey"
+    format: "MP4; audio codec/channels require post-download inspection"
+    duration_seconds: 263
+    operating_condition: mixed
+    attribution: "Richard Stowell, Humvee Training B-roll, DVIDS, public domain."
+    review_risks: >-
+      Training footage likely combines exterior and interior shots. Check speech,
+      wind, camera-position changes, and multiple vehicles.
+
+  - source_id: candidate-target-wheeled-humvee-southern-strike-2022
+    status: review_required
+    priority: alternate_existing_catalog_source
+    kind: target
+    provider: dvids
+    mobility_class: wheeled
+    vehicle_model: "HMMWV/Humvee"
+    title: "156 CRG - Southern Strike 2022: Humvee driving training"
+    creator: "Eliezer Soto, 102d Public Affairs Detachment"
+    source_page: "https://www.dvidshub.net/video/842870/156-crg-southern-strike-2022-humvee-driving-training"
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/2205/DOD_108970135/DOD_108970135.mp4"
+    license_family: dvids_public_domain
+    recording_session: dvids_southern_strike_humvee_driving_2022
+    session_evidence: "DVIDS video 842870; VIRIN 220424-Z-HM700-1001; 2022-04-24; Mississippi"
+    format: "MP4; audio codec/channels require post-download inspection"
+    duration_seconds: 90
+    operating_condition: varied_driving
+    attribution: "Eliezer Soto, 156 CRG - Southern Strike 2022: Humvee driving training, DVIDS, public domain."
+    review_risks: >-
+      The cataloged /download/videofile/8309579 endpoint failed with HTTP 403 on
+      2026-08-23 and must not be retried. The official raw DVIDS CDN resource above
+      is reachable and is a repaired access path for the same source, not a new
+      session. Require a fresh exact source approval before collector use.
+
+  - source_id: candidate-target-wheeled-jltv-fort-mccoy-2019
+    status: review_required
+    priority: primary
+    kind: target
+    provider: dvids
+    mobility_class: wheeled
+    vehicle_model: "JLTV"
+    title: "JLTV Drivers Training"
+    creator: "Greg Mason, Fort McCoy Multimedia Visual Information Branch"
+    source_page: "https://www.dvidshub.net/video/770767/jltv-drivers-training"
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/2010/DOD_108036842/DOD_108036842.mp4"
+    license_family: dvids_public_domain
+    recording_session: dvids_fort_mccoy_jltv_precision_course_2019
+    session_evidence: "DVIDS video 770767; VIRIN 190806-D-VQ984-1001; 2019-08-06; Wisconsin"
+    format: "MP4; audio codec/channels require post-download inspection"
+    duration_seconds: 410
+    operating_condition: varied_driving
+    attribution: "Greg Mason, JLTV Drivers Training, DVIDS, public domain."
+    review_risks: >-
+      Long driver-training session may contain instructors, crew speech, multiple
+      vehicles, repeated takes, and camera-position changes. Its length makes it a
+      promising manual-segmentation source if the audio is natural.
+
+  - source_id: candidate-target-wheeled-jltv-fort-mccoy-2020
+    status: review_required
+    priority: alternate
+    kind: target
+    provider: dvids
+    mobility_class: wheeled
+    vehicle_model: "JLTV"
+    title: "JLTV Drivers Training"
+    creator: "Greg Mason, Fort McCoy Multimedia Visual Information Branch"
+    source_page: "https://www.dvidshub.net/video/770774/jltv-drivers-training"
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/2010/DOD_108036913/DOD_108036913.mp4"
+    license_family: dvids_public_domain
+    recording_session: dvids_fort_mccoy_jltv_rough_course_2020
+    session_evidence: "DVIDS video 770774; VIRIN 200129-A-VQ984-1001; 2020-01-29; Wisconsin"
+    format: "MP4; audio codec/channels require post-download inspection"
+    duration_seconds: 194
+    operating_condition: varied_driving
+    attribution: "Greg Mason, JLTV Drivers Training, DVIDS, public domain."
+    review_risks: >-
+      Same creator/location family as the 2019 source but a distinct date, VIRIN,
+      course, and DVIDS ID. Check speech, wind, multiple vehicles, and edits.
+
+reserve_or_rejected_leads:
+  - source_id: reserve-target-tracked-abrams-arrive-poland-2017
+    decision: reserve
+    reason: >-
+      Public-domain DVIDS video 504801 (1:44) may contain useful low-speed/idling M1
+      Abrams audio, but railhead, train, truck, handling, and speech contamination
+      are likely. Review only if the two Abrams candidates above fail.
+    source_page: "https://www.dvidshub.net/video/504801/oar-poland-m1-abrams-arrive-poland-broll"
+  - source_id: reserve-target-tracked-bradley-c5-load-2023
+    decision: reserve
+    reason: >-
+      Public-domain DVIDS video 907324 (3:08) shows slow Bradley loading, but C-5/APU,
+      ramp machinery, crew, and speech are likely to dominate.
+    source_page: "https://www.dvidshub.net/video/907324/army-and-air-force-load-bradley-fighting-vehicle-c-5-galaxy-b-roll"
+  - source_id: reserve-target-wheeled-jltv-fort-mccoy-2021
+    decision: reserve
+    reason: >-
+      Public-domain DVIDS video 800301 is an independent JLTV session but only 28
+      seconds; review if longer 2019/2020 sessions fail.
+    source_page: "https://www.dvidshub.net/video/800301/joint-light-tactical-vehicle-driver-training-fort-mccoy"
+  - source_id: rejected-target-tracked-t72b-sergeyevsky-2020
+    decision: rejected_for_initial_batch
+    reason: >-
+      CC BY 4.0 Commons source explicitly documents live firing; engine-only trims
+      might exist, but weapons contamination makes it inferior to the 2019 T-72B.
+    source_page: "https://commons.wikimedia.org/wiki/File:T-72B_%26_T-72B_mod._1989_at_the_Sergeyevsky_Training_Ground_(08-04-2020).webm"
+  - source_id: rejected-target-wheeled-btr80-btr82a-dagestan-2020
+    decision: rejected_for_initial_batch
+    reason: >-
+      CC BY 4.0 exercise montage mixes BTR-80 and BTR-82A and is likely firing-heavy;
+      the two standalone BTR-82AM driving candidates are stronger.
+    source_page: "https://commons.wikimedia.org/wiki/File:177th_Naval_Infantry_Regiment%27s_exercise_at_mountain_area_(26-03-2020).webm"
+
+summary:
+  proposed_unique_sessions: 17
+  new_to_catalog_sessions: 16
+  existing_catalog_sessions: 1
+  tracked_sessions: 10
+  wheeled_sessions: 7
+  requested_platform_coverage:
+    m1_abrams: 2
+    m2_bradley: 2
+    t72: 1
+    t80: 2
+    t90: 1
+    bmp1_family: 1
+    bmp2: 1
+    bmp3: 1
+    btr_series: 2
+    hmmwv_humvee: 3
+    jltv: 2
+  caveat: >-
+    Counts are proposal/session counts, not usable audio counts. The first manual
+    pass must determine clean intervals and may reject entire sources. Current class
+    counts are intentionally not balanced by raw duration because model training must
+    not mistake many trims from one long recording for independent data.
