@@ -564,3 +564,28 @@ sources:
       Reserve as a fresh held-out wheeled session for the locked-pair protocol.
     status: approved
     admitted_to_corpus: true
+
+  # Proposed by the OpenClaw curator and explicitly approved by the operator on
+  # 2026-08-24 as the tracked candidate for the fresh locked evaluation pair.
+  - id: candidate-target-tracked-sherman-passby-gvn-43670951
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Sherman tank, rijden - SoundCloud - Beeld en Geluid.ogg"
+    license_url: "https://creativecommons.org/licenses/by-sa/3.0"
+    source_page: "https://commons.wikimedia.org/wiki/File:Sherman_tank,_rijden_-_SoundCloud_-_Beeld_en_Geluid.ogg"
+    vehicle_class: tracked
+    vehicle_model: "M4 Sherman (variant unspecified)"
+    recording_session: "beeldengeluid_gvn_sherman_passby_43670951"
+    operating_condition: mixed
+    expected_license: "CC BY-SA 3.0"
+    output_path: "targets/tracked/beeldengeluid_gvn_sherman_passby_43670951/sherman_passby.wav"
+    attribution: >-
+      Beeld en Geluid (Nederlands Instituut voor Beeld en Geluid), Sherman tank:
+      rijden, Geluid van Nederland via Wikimedia Commons, CC BY-SA 3.0.
+    notes: >-
+      The source describes an exterior approach from a great distance and pass-by
+      on a concrete track. The file remains excluded from corpus discovery until
+      human auditory review confirms contamination-free operating-state boundaries.
+      Reserve it for the tracked half of the fresh locked evaluation pair.
+    status: approved
+    admitted_to_corpus: false
