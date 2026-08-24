@@ -1,12 +1,13 @@
 # Semantic/classical late-fusion evaluation
 
-Date: 2026-08-22
+Date: 2026-08-22; locked confirmation completed 2026-08-24
 
-Status: strongest leakage-safe real-session category diagnostic so far; Milestone 7
-gate not met
+Status: frozen locked evaluation complete with a negative result; Milestone 7 gate
+not met
 
-Performance claim: **real-only development evaluation on the exact seven-session
-corpus identified below; not an independent final test**
+Performance claim: **the development result applies only to the exact seven-session
+corpus below; the independent locked result applies only to the reviewed Sherman and
+PDSounds sessions and does not establish broad tracked-versus-wheeled performance**
 
 ## Experiment identity
 
@@ -81,11 +82,11 @@ misleading with seven sessions.
 
 | Gate | Requirement | Result | Status |
 |---|---|---:|---|
-| 1 | At least 5 reviewed sessions per class | 4 tracked / 3 wheeled | Fail |
+| 1 | At least 5 reviewed sessions per class | Frozen development: 4 tracked / 3 wheeled; currently admitted: 3 / 4 | Fail |
 | 2 | Nested mean balanced accuracy at least 75% | 77.35% | **Pass** |
 | 3 | Mean recall at least 70% for both classes | 77.42% / 77.28% | **Pass** |
 | 4 | No held-out session below 50% window recall | Minimum 22.22% / 29.41% | Fail |
-| 5 | Newly admitted locked test pair | None | Fail |
+| 5 | Confirmation on a newly admitted locked pair | 49.69% balanced accuracy; Sherman session misclassified | Fail |
 
 This is the first leakage-safe development run to pass gates 2 and 3. It does not
 authorize Milestone 7 because a stronger mean cannot compensate for catastrophic
@@ -102,7 +103,7 @@ A deployable rule is now frozen before any confirmation pair is admitted:
 | Frozen checkpoint | `frozen_fusion_model.pt` |
 | Checkpoint SHA-256 | `8be2081987124dfce5abe59fb973a81c05188cd681a2924a27f67681814e9e6e` |
 | Selected global wheeled threshold | `0.25` |
-| Status | `frozen_awaiting_locked_evaluation` |
+| Status | `locked_evaluation_complete` |
 
 The global threshold was selected across the same 12 leave-session-pair-out
 development folds, then both five-member probe ensembles were refitted on all 271
@@ -117,23 +118,62 @@ recording session, source ID, original media URL, normalized-source hash, and ra
 hash. `scripts/evaluate_locked_fusion.py` requires exactly one provenance-complete
 unseen session per class, rejects any protected overlap, validates the PANN checkpoint
 and both feature definitions, writes the split and window predictions, and refuses to
-overwrite a completed locked result. This closes the procedural gap for gate 5; it
-does not satisfy the gate until real new data are evaluated once.
+overwrite a completed locked result. It was run exactly once on the pair below.
+
+## Fresh locked confirmation
+
+The frozen model was evaluated without retraining, threshold tuning, or inspection of
+locked predictions during corpus preparation.
+
+| Field | Value |
+|---|---|
+| Run | `runs/m6_locked_pair_sherman_pdsounds_v1` |
+| Evaluator code commit recorded by the run | `4e5f8fe6436ff5f3af334ed76b7781301b2ff51f` |
+| Reviewed-source catalog commit | `e931882` |
+| Locked dataset/manifest SHA-256 | `23229121344ff45c549a9641362f34f99a936d52cf193341a1b8ebcc85b0e5f6` |
+| Locked pair | Sherman pass-by, 25-90 s; PDSounds car startup/idle/driving, 14.5-41.5 s |
+| Test support | 87 two-second windows: 64 tracked / 23 wheeled |
+| Test domain | `real development -> fresh locked real session pair` |
+| Frozen model SHA-256 | `8be2081987124dfce5abe59fb973a81c05188cd681a2924a27f67681814e9e6e` |
+| Frozen wheeled threshold | `0.25` |
+| Random seed | 42 |
+| Provenance overlap | Zero for session, source ID, source URL, normalized hash, and raw hash |
+| Metrics artifact SHA-256 | `c482253cd61f649b802a346f1a052d730fe69af9bc5c284cc1668262eb3a841b` |
+
+| Locked metric | Result |
+|---|---:|
+| Accuracy | 50.57% |
+| Balanced accuracy | **49.69%** |
+| Macro F1 | 47.20% |
+| Tracked recall | 51.56% (33/64) |
+| Wheeled recall | 47.83% (11/23) |
+| Confusion matrix, rows/columns `[tracked, wheeled]` | `[[33, 31], [12, 11]]` |
+
+At recording level, the frozen threshold classified both sessions as wheeled. The
+PDSounds car was therefore correct and the Sherman was wrong. Their mean wheeled
+probabilities were 0.2785 and 0.2707 respectively, both just above the frozen 0.25
+threshold. These are thresholding scores, not calibrated probabilities.
+
+This independent result does not confirm the development result: window performance
+is approximately chance and one of two complete sessions fails. The locked run must
+not be repeated or used for post-hoc threshold selection. The historical Sherman is
+a useful out-of-era category shift, but it is not evidence of performance on modern
+diesel or turbine tracked vehicles.
 
 ## Next action
 
 The highest-value action remains new independent data, not a larger classifier:
 
-1. admit at least one reviewed heavy/idle or ordinary pass-by wheeled session and
-   one independently recorded moving tracked session;
-2. keep one newly admitted tracked/wheeled pair locked while the fusion rule and
-   threshold policy are frozen;
-3. rerun the nested development protocol on the expanded remainder;
-4. evaluate the frozen policy once on the locked pair;
-5. proceed to hierarchical/open-set work only if all five gates pass.
+1. preserve this locked result unchanged and do not tune against it;
+2. expand to at least five reviewed sessions per class, emphasizing clean modern
+   tracked diesel and turbine platforms across idle, approach, pass-by, and departure;
+3. remove rejected or unreviewed source intervals from the next development corpus;
+4. preregister a new development protocol and reserve a different future pair before
+   fitting another category model;
+5. proceed to hierarchical/open-set work only if all five gates pass on the new
+   protocol.
 
-Approved Wikimedia candidates remain unavailable through the compliant collector.
-Earlier requests returned HTTP 429; a single Vanwall retry after the cooldown on
-2026-08-22 failed at DNS resolution before download. The collector manifest records
-the latest outcome for each source. No audio from these failed attempts was admitted,
-and no alternate route or rate-limit bypass was used.
+Modern platform family or model prediction remains later-milestone work. Modern
+tracked recordings are nevertheless needed now as category-level transfer coverage;
+otherwise the binary classifier's domain remains historically and acoustically
+underspecified.
