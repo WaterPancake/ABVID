@@ -92,6 +92,11 @@ def discover_target_recordings(root: str | Path) -> list[TargetSource]:
     for audio_path in _audio_paths(root_path):
         relative = audio_path.relative_to(root_path)
         sidecar = _load_sidecar(audio_path)
+        # A normalized artifact may be staged beside admitted recordings while its
+        # rights or content review is still pending.  Explicitly gated files must
+        # never enter augmentation or evaluation through directory discovery.
+        if sidecar.get("admitted_to_corpus") is False:
+            continue
         inferred_class = relative.parts[0] if len(relative.parts) > 1 else None
         inferred_session = relative.parent.name if len(relative.parts) > 2 else relative.stem
         vehicle_class_value = sidecar.get("vehicle_class", inferred_class)

@@ -34,13 +34,15 @@ sources:
         start_seconds: 0.0
         end_seconds: 8.8
         notes: >-
-          Reviewed source-audio spectrogram: vehicle pull-away is active through
-          8.8 seconds; the quieter trailing ambience is excluded.
+          Human auditory review on 2026-08-24 confirmed clean coming-and-going
+          vehicle audio through 8.8 seconds; the quieter trailing ambience is
+          excluded. The source description supports the accelerating label.
     expected_license: "CC BY-SA 3.0"
     output_path: "targets/wheeled/commons_goodwood_festival_of_speed_2009/abarth_205_monza.wav"
     attribution: "Edvvc, Abarth 205 Monza (1950), Wikimedia Commons, CC BY-SA 3.0"
     notes: "15-second recording of a restored 1.1 L four-cylinder car pulling away."
     status: approved
+    admitted_to_corpus: true
 
   - id: target-wheeled-ford-model-t-start
     kind: target
@@ -55,16 +57,21 @@ sources:
       - operating_condition: startup
         start_seconds: 0.0
         end_seconds: 5.8
-        notes: "Reviewed engine-start interval before the steady running state."
+        notes: >-
+          Human auditory review on 2026-08-24 confirmed a clean engine-start
+          interval before the steady running state.
       - operating_condition: idle
         start_seconds: 6.2
         end_seconds: 37.8
-        notes: "Reviewed continuous post-start engine-running interval."
+        notes: >-
+          Human auditory review on 2026-08-24 confirmed clean continuous post-start
+          engine-running audio.
     expected_license: "CC BY 3.0"
     output_path: "targets/wheeled/commons_soundsofchanges_private_collection/ford_model_t_starting.wav"
     attribution: "Kathinka Engels, Ford Model T Tin Lizzy - Starting the Engine, Wikimedia Commons, CC BY 3.0"
     notes: "Video source; collector extracts its first audio stream with ffmpeg."
     status: approved
+    admitted_to_corpus: true
 
   - id: target-wheeled-perseverance-rover-sol-16
     kind: target
@@ -91,19 +98,16 @@ sources:
     vehicle_model: "TR-85M1"
     recording_session: "dvids_romanian_tank_range_2014"
     operating_condition: mixed
-    condition_segments:
-      - operating_condition: mixed
-        start_seconds: 75.0
-        end_seconds: 94.0
-        notes: >-
-          Reviewed against five-second source-video frames and the source-audio
-          spectrogram. This interval contains vehicle maneuvering; ammunition
-          handling, firing, and the closing interview are excluded.
     expected_license: "Public domain"
     output_path: "targets/tracked/dvids_romanian_tank_range_2014/tr85m1_tank_range.wav"
     attribution: "Ellis McDaniels, TR-85M1 - Romanian Tanks, Wikimedia Commons"
-    notes: "2014 public-domain DVIDS video source; collector extracts its first audio stream with ffmpeg."
+    notes: >-
+      Human auditory review on 2026-08-24 found near-silence during the first nine
+      seconds, background speech, small-arms and main-gun-like reports from about
+      70-119 seconds, and foreground speech after 120 seconds. The prior 75-94 second
+      segment is invalidated. No interval is approved for corpus use.
     status: approved
+    admitted_to_corpus: false
 
   - id: background-rain-effib
     kind: background
@@ -187,13 +191,15 @@ sources:
         start_seconds: 0.0
         end_seconds: 90.0
         notes: >-
-          Reviewed active arrival audio against the source description and
-          waveform/spectrogram. The 90.73-98.05 second silent tail is excluded.
+          Provisional active arrival interval derived from the source description
+          and waveform/spectrogram. The 90.73-98.05 second silent tail is excluded;
+          human auditory review remains pending.
     expected_license: "Public domain"
     output_path: "targets/tracked/us_army_armor_cavalry_collection_tankodrome_2023/mpf_testbed.wav"
     attribution: "U.S. Army Armor & Cavalry Collection, Mobile Protected Firepower, Wikimedia Commons (public domain)"
     notes: "Official U.S. Army Armor & Cavalry Collection video; collector extracts the first audio stream."
     status: approved
+    admitted_to_corpus: false
 
   - id: target-tracked-stug-iiig-lappeenranta
     kind: target
@@ -206,16 +212,18 @@ sources:
     operating_condition: decelerating
     condition_segments:
       - operating_condition: decelerating
-        start_seconds: 0.0
+        start_seconds: 15.0
         end_seconds: 25.8
         notes: >-
-          Reviewed continuous active arrival/deceleration interval; bounded below
-          the measured 25.92-second normalized duration.
+          Human auditory review on 2026-08-24 excluded persistent foreground voice
+          during the first 15 seconds and confirmed clean tracked-vehicle audio from
+          15.0-25.8 seconds.
     expected_license: "Public domain"
     output_path: "targets/tracked/commons_lappeenranta_flag_day_reenactment_2014/stug_iiig_arrival.wav"
     attribution: "MKFI, Taistelunäytös Lippujuhlan päivä 2014 16 Stug IIIG, Wikimedia Commons (public domain)"
     notes: "Short tracked-vehicle arrival recording; collector extracts the first audio stream."
     status: approved
+    admitted_to_corpus: true
 
   - id: background-road-traffic-circulation-carrefour
     kind: background
@@ -348,7 +356,8 @@ sources:
       - operating_condition: startup
         start_seconds: 0.0
         end_seconds: 2.5
-        notes: "Reviewed engine-start transient at the beginning of the recording."
+        notes: >-
+          Human auditory review on 2026-08-24 confirmed the engine-start transient.
       - operating_condition: idle
         start_seconds: 2.5
         end_seconds: 14.5
@@ -357,8 +366,9 @@ sources:
         start_seconds: 15.0
         end_seconds: 61.5
         notes: >-
-          Reviewed repeated stationary rev and recovery cycles. Labeled mixed
-          because vehicle speed and acceleration are unavailable.
+          Human auditory review on 2026-08-24 confirmed frequent high-rev engine
+          cycles with otherwise usable audio. Labeled mixed because vehicle speed
+          and acceleration are unavailable.
       - operating_condition: idle
         start_seconds: 61.5
         end_seconds: 66.0
@@ -368,6 +378,7 @@ sources:
     attribution: "lmartins, Maserati GranTurismo S Exhaust, Freesound/Wikimedia Commons, CC BY 4.0"
     notes: "Source describes starting, revving, and idling; time segments require listening review before condition-specific use."
     status: approved
+    admitted_to_corpus: true
 
   - id: target-wheeled-car-cobblestone-pass
     kind: target
@@ -448,12 +459,13 @@ sources:
     operating_condition: unknown
     condition_segments:
       - operating_condition: mixed
-        start_seconds: 5.6
+        start_seconds: 9.0
         end_seconds: 167.0
         notes: >-
-          Reviewed active demonstration interval against the source description,
-          waveform, and spectrogram. Initial 5.54 seconds and final 7.07 seconds
-          are silent and excluded; no unavailable speed/RPM label is inferred.
+          Human auditory review on 2026-08-24 found speech during the first nine
+          seconds immediately before engine startup. The retained 9.0-167.0 second
+          active demonstration interval excludes that speech and the final silent
+          tail; no unavailable speed/RPM label is inferred.
     expected_license: "CC BY-SA 4.0"
     output_path: "targets/tracked/commons_retromobile_amx30_demo_2015/amx30_demo.wav"
     attribution: "Thesupermat, Rétromobile 2015 - Char AMX 30 - 001, Wikimedia Commons, CC BY-SA 4.0"
@@ -461,6 +473,7 @@ sources:
       Own-work recording of an AMX 30 movement demonstration. Retain unknown
       operating condition until vehicle-dominant time intervals are reviewed.
     status: approved
+    admitted_to_corpus: true
 
   - id: candidate-target-tracked-t18-khabarovsk-2015
     kind: target
@@ -520,6 +533,26 @@ sources:
     vehicle_model: null
     recording_session: "pdsounds_194_stephan_car_start_drive_2007_04_26"
     operating_condition: mixed
+    condition_segments:
+      - operating_condition: startup
+        start_seconds: 14.5
+        end_seconds: 17.2
+        notes: >-
+          The source-described ignition/start event begins at the abrupt broadband
+          and low-frequency onset visible in the waveform and low-band spectrogram.
+      - operating_condition: idle
+        start_seconds: 17.2
+        end_seconds: 20.5
+        notes: >-
+          Post-start engine-running interval before the sustained driving region.
+          Retained conservatively as idle pending human auditory confirmation.
+      - operating_condition: mixed
+        start_seconds: 20.5
+        end_seconds: 41.5
+        notes: >-
+          Vehicle-dominant reverse/forward driving region identified from the source
+          description, waveform, and low-band spectrogram. Exact speed, direction,
+          acceleration, and deceleration are not inferred from amplitude alone.
     expected_license: "Public domain"
     output_path: "targets/wheeled/pdsounds_194_stephan_car_start_drive_2007_04_26/starting_car_and_driving.wav"
     attribution: >-
@@ -532,9 +565,12 @@ sources:
       fresh held-out wheeled session unless the locked-pair protocol assigns it
       otherwise.
     status: review_required
+    admitted_to_corpus: false
     review_reason: >-
       Two operator-approved collector invocations on 2026-08-23 resolved the source
       and public-domain metadata but received HTTP 429 during media transfer; the
-      second failure was recorded at 18:09 UTC. Automatic retry is disabled pending a
-      later explicit approval after a substantially longer provider cooldown.
-      Listening review remains required before corpus admission.
+      second failure was recorded at 18:09 UTC. The operator manually downloaded an
+      exact SHA-1 match and it was ingested locally without another network request.
+      Source-description, waveform, and spectrogram review established provisional
+      vehicle-dominant intervals; human auditory confirmation remains required before
+      corpus admission.

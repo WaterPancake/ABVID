@@ -40,6 +40,7 @@ class SourceSpec:
     output_path: str
     status: str
     expected_license: str | None
+    admitted_to_corpus: bool | None = None
     file_title: str | None = None
     archive_identifier: str | None = None
     archive_file: str | None = None
@@ -64,6 +65,9 @@ class SourceSpec:
         output_path = str(value["output_path"])
         if Path(output_path).is_absolute() or ".." in Path(output_path).parts:
             raise ValueError(f"output_path must stay below the collection root: {output_path}")
+        admitted_to_corpus = value.get("admitted_to_corpus")
+        if admitted_to_corpus is not None and not isinstance(admitted_to_corpus, bool):
+            raise ValueError("admitted_to_corpus must be boolean or null")
         return cls(
             id=str(value["id"]),
             kind=str(value["kind"]),
@@ -74,6 +78,7 @@ class SourceSpec:
             expected_license=(
                 None if value.get("expected_license") is None else str(value["expected_license"])
             ),
+            admitted_to_corpus=admitted_to_corpus,
             file_title=(None if value.get("file_title") is None else str(value["file_title"])),
             archive_identifier=(
                 None
@@ -524,6 +529,8 @@ def collect_sources(
                         ],
                     }
                 )
+                if source.admitted_to_corpus is not None:
+                    sidecar["admitted_to_corpus"] = source.admitted_to_corpus
             elif source.kind == "background":
                 sidecar["category"] = source.category
             sidecar_path = output_path.with_suffix(".json")
@@ -615,6 +622,8 @@ def sync_catalog_metadata(
                     ],
                 }
             )
+            if source.admitted_to_corpus is not None:
+                metadata["admitted_to_corpus"] = source.admitted_to_corpus
         elif source.kind == "background":
             metadata["category"] = source.category
         with sidecar_path.open("w", encoding="utf-8") as handle:

@@ -100,10 +100,28 @@ def test_pdsounds_car_candidate_is_regated_after_repeated_rate_limit() -> None:
     assert car.recording_session == "pdsounds_194_stephan_car_start_drive_2007_04_26"
     assert car.expected_license == "Public domain"
     assert car.status == "review_required"
+    assert car.admitted_to_corpus is False
     assert car.review_reason
     assert "Two operator-approved collector invocations" in car.review_reason
     assert "18:09 UTC" in car.review_reason
     assert "HTTP 429" in car.review_reason
+
+
+def test_human_audio_review_updates_target_segments() -> None:
+    _, sources = load_catalog(CATALOG)
+    by_id = {source.id: source for source in sources}
+
+    amx30 = by_id["candidate-target-tracked-retromobile-amx30-2015"]
+    stug = by_id["target-tracked-stug-iiig-lappeenranta"]
+    romanian = by_id["target-tracked-tr85m1-tank-range"]
+
+    assert amx30.condition_segments[0].start_seconds == 9.0
+    assert amx30.admitted_to_corpus is True
+    assert stug.condition_segments[0].start_seconds == 15.0
+    assert stug.admitted_to_corpus is True
+    assert romanian.condition_segments == ()
+    assert romanian.admitted_to_corpus is False
+    assert "No interval is approved for corpus use" in romanian.notes
 
 
 def test_catalog_license_url_fills_missing_provider_metadata(
@@ -158,6 +176,16 @@ def test_catalog_rejects_path_traversal(tmp_path: Path) -> None:
         load_catalog(path)
 
 
+def test_catalog_rejects_non_boolean_corpus_admission(tmp_path: Path) -> None:
+    path = tmp_path / "bad-admission.yaml"
+    path.write_text(
+        """version: 1\ncollection_policy:\n  allowed_licenses: [Public domain]\nsources:\n  - id: bad\n    kind: target\n    provider: direct\n    source_page: https://example.invalid\n    output_path: targets/tracked/session/clip.wav\n    status: approved\n    expected_license: Public domain\n    admitted_to_corpus: yes-please\n""",
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="admitted_to_corpus"):
+        load_catalog(path)
+
+
 def test_sync_catalog_metadata_updates_collected_target_sidecar(tmp_path: Path) -> None:
     _, sources = load_catalog(CATALOG)
     source = next(item for item in sources if item.id == "target-wheeled-abarth-205-goodwood")
@@ -176,3 +204,4 @@ def test_sync_catalog_metadata_updates_collected_target_sidecar(tmp_path: Path) 
     metadata = __import__("json").loads(audio_path.with_suffix(".json").read_text())
     assert metadata["operating_condition"] == "accelerating"
     assert metadata["vehicle_class"] == "wheeled"
+    assert metadata["admitted_to_corpus"] is True

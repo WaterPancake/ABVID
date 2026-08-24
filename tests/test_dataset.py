@@ -7,7 +7,7 @@ import numpy as np
 import soundfile as sf
 
 from vehicle_audio.config import GenerationConfig
-from vehicle_audio.dataset import DatasetGenerator
+from vehicle_audio.dataset import DatasetGenerator, discover_target_recordings
 from vehicle_audio.manifest import REQUIRED_MANIFEST_FIELDS
 
 
@@ -102,6 +102,22 @@ def _test_config() -> GenerationConfig:
             "microphone_response": {"enabled": False},
         }
     )
+
+
+def test_discovery_skips_explicitly_unadmitted_target(tmp_path) -> None:
+    target_root = tmp_path / "targets"
+    admitted = target_root / "tracked" / "admitted" / "clip.wav"
+    pending = target_root / "wheeled" / "pending" / "clip.wav"
+    _write_wave(admitted, np.zeros(800, dtype=np.float32), 8_000)
+    _write_wave(pending, np.zeros(800, dtype=np.float32), 8_000)
+    pending.with_suffix(".json").write_text(
+        json.dumps({"admitted_to_corpus": False}),
+        encoding="utf-8",
+    )
+
+    sources = discover_target_recordings(target_root)
+
+    assert [source.path for source in sources] == [admitted]
 
 
 def _run_generation(inputs_root: Path, output_root: Path, seed: int) -> dict[str, object]:
