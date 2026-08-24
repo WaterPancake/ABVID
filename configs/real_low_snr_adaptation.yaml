@@ -1,0 +1,15 @@
+evaluation_version: 1
+seed: 42
+epochs: 50
+batch_size: 64
+learning_rate: 0.0001
+weight_decay: 0.0001
+channel: 0
+base_state_key: panns_audioset_paired_linear
+training_input: corrupted_real_recordings_with_controlled_low_snr
+split_strategy: leave_one_tracked_and_one_wheeled_recording_session_out
+sample_weighting: equal_class_equal_session_equal_window_within_session
+model_selection: >-
+  No selection on outer folds. Epoch count and optimizer settings copy the prior
+  frozen PANNs probe protocol before this experiment. A final candidate is fit
+  for the same fixed epoch count using every development recording session.
