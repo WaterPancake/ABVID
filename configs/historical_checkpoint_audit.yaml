@@ -1,0 +1,223 @@
+audit_version: 1
+seed: 42
+channel: 0
+selection_policy: >-
+  Predeclared retrospective roster: evaluate every saved method in the latest
+  final checkpoint bundle for each materially distinct Milestone 2-6
+  single-microphone experiment. Preserve the already-run frozen fusion result;
+  do not rerun, retrain, tune thresholds, or select models using this corpus.
+
+models:
+  - id: m2_classical_grouped
+    milestone: 2
+    architecture: classical_logistic_regression
+    kind: standalone
+    checkpoint: runs/m2_classical_grouped_seed42/model.pt
+    training_domain: synthetic -> synthetic
+  - id: m2_cnn_grouped
+    milestone: 2
+    architecture: small_log_mel_cnn
+    kind: standalone
+    checkpoint: runs/m2_cnn_grouped_seed42/model.pt
+    training_domain: synthetic -> synthetic
+
+  - id: m3_classical_unseen_state
+    milestone: 3
+    architecture: classical_logistic_regression
+    kind: standalone
+    checkpoint: runs/m3_classical_unseen_state_seed42/model.pt
+    training_domain: controlled synthetic -> unseen synthetic operating state
+  - id: m3_classical_unseen_environment
+    milestone: 3
+    architecture: classical_logistic_regression
+    kind: standalone
+    checkpoint: runs/m3_classical_unseen_environment_seed42/model.pt
+    training_domain: controlled synthetic -> unseen synthetic environment
+  - id: m3_classical_unseen_vehicle
+    milestone: 3
+    architecture: classical_logistic_regression
+    kind: standalone
+    checkpoint: runs/m3_classical_unseen_vehicle_seed42/model.pt
+    training_domain: controlled synthetic -> unseen synthetic vehicle
+  - id: m3_cnn_unseen_vehicle
+    milestone: 3
+    architecture: small_log_mel_cnn
+    kind: standalone
+    checkpoint: runs/m3_cnn_unseen_vehicle_seed42/model.pt
+    training_domain: controlled synthetic -> unseen synthetic vehicle
+
+  - id: m4_single_mic_1
+    milestone: 4
+    architecture: classical_logistic_regression
+    kind: classical_bundle
+    checkpoint: runs/m4_multichannel_paired_sessions_seed42/models.pt
+    state_key: single_mic_1
+    training_domain: procedural synthetic -> simulated one-microphone synthetic
+
+  - id: m5_synthetic_pretrained
+    milestone: 5
+    architecture: small_log_mel_cnn
+    kind: cnn_bundle
+    checkpoint: runs/m5_factorial_2s_seed42/models.pt
+    state_key: synthetic_pretrained
+    training_domain: synthetic only
+  - id: m5_real_only
+    milestone: 5
+    architecture: small_log_mel_cnn
+    kind: cnn_bundle
+    checkpoint: runs/m5_factorial_2s_seed42/models.pt
+    state_key: real_only
+    training_domain: development real only
+  - id: m5_adaptation_1_percent_real
+    milestone: 5
+    architecture: small_log_mel_cnn
+    kind: cnn_bundle
+    checkpoint: runs/m5_factorial_2s_seed42/models.pt
+    state_key: adaptation_1_percent_real
+    training_domain: synthetic pretraining + 1% development real
+  - id: m5_adaptation_5_percent_real
+    milestone: 5
+    architecture: small_log_mel_cnn
+    kind: cnn_bundle
+    checkpoint: runs/m5_factorial_2s_seed42/models.pt
+    state_key: adaptation_5_percent_real
+    training_domain: synthetic pretraining + 5% development real
+  - id: m5_adaptation_10_percent_real
+    milestone: 5
+    architecture: small_log_mel_cnn
+    kind: cnn_bundle
+    checkpoint: runs/m5_factorial_2s_seed42/models.pt
+    state_key: adaptation_10_percent_real
+    training_domain: synthetic pretraining + 10% development real
+  - id: m5_adaptation_25_percent_real
+    milestone: 5
+    architecture: small_log_mel_cnn
+    kind: cnn_bundle
+    checkpoint: runs/m5_factorial_2s_seed42/models.pt
+    state_key: adaptation_25_percent_real
+    training_domain: synthetic pretraining + 25% development real
+  - id: m5_adaptation_100_percent_real
+    milestone: 5
+    architecture: small_log_mel_cnn
+    kind: cnn_bundle
+    checkpoint: runs/m5_factorial_2s_seed42/models.pt
+    state_key: adaptation_100_percent_real
+    training_domain: synthetic pretraining + 100% development real
+
+  - id: m6_standard_supervised
+    milestone: 6
+    architecture: small_log_mel_cnn
+    kind: invariance_bundle
+    checkpoint: runs/m6_factorial_2s_ablation/seed_42/models.pt
+    state_key: standard_supervised
+    training_domain: clean synthetic supervised
+  - id: m6_augmentation_only
+    milestone: 6
+    architecture: small_log_mel_cnn
+    kind: invariance_bundle
+    checkpoint: runs/m6_factorial_2s_ablation/seed_42/models.pt
+    state_key: augmentation_only
+    training_domain: corrupted synthetic supervised
+  - id: m6_paired_supervised
+    milestone: 6
+    architecture: small_log_mel_cnn
+    kind: invariance_bundle
+    checkpoint: runs/m6_factorial_2s_ablation/seed_42/models.pt
+    state_key: paired_supervised
+    training_domain: paired clean + corrupted synthetic supervised
+  - id: m6_representation_invariance
+    milestone: 6
+    architecture: small_log_mel_cnn
+    kind: invariance_bundle
+    checkpoint: runs/m6_factorial_2s_ablation/seed_42/models.pt
+    state_key: representation_invariance
+    training_domain: paired synthetic + encoder consistency
+  - id: m6_projected_invariance
+    milestone: 6
+    architecture: projected_small_log_mel_cnn
+    kind: invariance_bundle
+    checkpoint: runs/m6_factorial_2s_ablation/seed_42/models.pt
+    state_key: projected_invariance
+    training_domain: paired synthetic + projected consistency
+
+  - id: m6_panns_embedding_corrupted_linear
+    milestone: 6
+    architecture: frozen_panns_embedding_linear_probe
+    kind: panns_bundle
+    checkpoint: runs/m6_panns_audioset_transfer/seed_42/probe_models.pt
+    state_key: panns_embedding_corrupted_linear
+    feature_space: embedding
+    training_domain: corrupted synthetic
+  - id: m6_panns_embedding_paired_linear
+    milestone: 6
+    architecture: frozen_panns_embedding_linear_probe
+    kind: panns_bundle
+    checkpoint: runs/m6_panns_audioset_transfer/seed_42/probe_models.pt
+    state_key: panns_embedding_paired_linear
+    feature_space: embedding
+    training_domain: paired clean + corrupted synthetic
+  - id: m6_panns_audioset_corrupted_linear
+    milestone: 6
+    architecture: frozen_panns_audioset_linear_probe
+    kind: panns_bundle
+    checkpoint: runs/m6_panns_audioset_transfer/seed_42/probe_models.pt
+    state_key: panns_audioset_corrupted_linear
+    feature_space: audioset
+    training_domain: corrupted synthetic
+  - id: m6_panns_audioset_paired_linear
+    milestone: 6
+    architecture: frozen_panns_audioset_linear_probe
+    kind: panns_bundle
+    checkpoint: runs/m6_panns_audioset_transfer/seed_42/probe_models.pt
+    state_key: panns_audioset_paired_linear
+    feature_space: audioset
+    training_domain: paired clean + corrupted synthetic
+  - id: m6_panns_adaptation_1_percent_real
+    milestone: 6
+    architecture: frozen_panns_audioset_linear_probe
+    kind: panns_adaptation_bundle
+    checkpoint: runs/m6_panns_audioset_transfer/seed_42/probe_models.pt
+    state_key: 1_percent_real
+    feature_space: audioset
+    training_domain: paired synthetic + 1% development real
+  - id: m6_panns_adaptation_5_percent_real
+    milestone: 6
+    architecture: frozen_panns_audioset_linear_probe
+    kind: panns_adaptation_bundle
+    checkpoint: runs/m6_panns_audioset_transfer/seed_42/probe_models.pt
+    state_key: 5_percent_real
+    feature_space: audioset
+    training_domain: paired synthetic + 5% development real
+  - id: m6_panns_adaptation_10_percent_real
+    milestone: 6
+    architecture: frozen_panns_audioset_linear_probe
+    kind: panns_adaptation_bundle
+    checkpoint: runs/m6_panns_audioset_transfer/seed_42/probe_models.pt
+    state_key: 10_percent_real
+    feature_space: audioset
+    training_domain: paired synthetic + 10% development real
+  - id: m6_panns_adaptation_25_percent_real
+    milestone: 6
+    architecture: frozen_panns_audioset_linear_probe
+    kind: panns_adaptation_bundle
+    checkpoint: runs/m6_panns_audioset_transfer/seed_42/probe_models.pt
+    state_key: 25_percent_real
+    feature_space: audioset
+    training_domain: paired synthetic + 25% development real
+  - id: m6_panns_adaptation_100_percent_real
+    milestone: 6
+    architecture: frozen_panns_audioset_linear_probe
+    kind: panns_adaptation_bundle
+    checkpoint: runs/m6_panns_audioset_transfer/seed_42/probe_models.pt
+    state_key: 100_percent_real
+    feature_space: audioset
+    training_domain: paired synthetic + 100% development real
+
+  - id: m6_frozen_semantic_classical_fusion
+    milestone: 6
+    architecture: frozen_semantic_classical_probability_fusion
+    kind: preserved_result
+    checkpoint: runs/m6_fusion_frozen_development_v2/frozen_fusion_model.pt
+    metrics: runs/m6_locked_pair_sherman_pdsounds_v1/metrics.json
+    predictions: runs/m6_locked_pair_sherman_pdsounds_v1/window_predictions.csv
+    training_domain: development real; frozen before locked pair
