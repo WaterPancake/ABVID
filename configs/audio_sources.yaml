@@ -617,3 +617,76 @@ sources:
       tracked half of the fresh locked evaluation pair.
     status: approved
     admitted_to_corpus: true
+
+  # Proposed by the OpenClaw curator and explicitly approved by the operator on
+  # 2026-08-24 for download and manual audiovisual review.
+  - id: candidate-target-tracked-abrams-bright-star-2017
+    kind: target
+    provider: direct
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/1709/DOD_104830454/DOD_104830454-1024x576-1769k.mp4"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    source_page: "https://www.dvidshub.net/video/550523/us-army-abrams-tanks-maneuver-exercise-bright-star-2017"
+    vehicle_class: tracked
+    vehicle_model: "M1 Abrams"
+    recording_session: "dvids_bright_star_abrams_mohamed_naguib_2017"
+    operating_condition: mixed
+    expected_license: "Public domain"
+    output_path: "targets/tracked/dvids_bright_star_abrams_mohamed_naguib_2017/m1_abrams_maneuver.wav"
+    attribution: >-
+      John Raven, U.S. Army Abrams tanks maneuver at Exercise Bright Star 2017,
+      DVIDS, public domain.
+    notes: >-
+      Official 4:36 DVIDS B-roll of multiple M1 Abrams tanks maneuvering in Egypt.
+      The catalog uses the official page's 1024x576 CDN rendition to avoid retaining
+      unnecessary video data; the audio must be reviewed for speech, music, wind,
+      other vehicles, range sounds, edits, and usable operating-state boundaries.
+      DVIDS video 550523, VIRIN 170912-F-AY943-5001.
+    status: approved
+    admitted_to_corpus: false
+
+  - id: candidate-target-tracked-t90m-27guards-2021
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:T-90M tanks of the 27th Guards Motorized Rifle Brigade (2021-03-10).webm"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    source_page: "https://commons.wikimedia.org/wiki/File:T-90M_tanks_of_the_27th_Guards_Motorized_Rifle_Brigade_(2021-03-10).webm"
+    vehicle_class: tracked
+    vehicle_model: "T-90M Proryv"
+    recording_session: "commons_milru_t90m_27guards_2021_03_10"
+    operating_condition: mixed
+    expected_license: "CC BY 4.0"
+    output_path: "targets/tracked/commons_milru_t90m_27guards_2021_03_10/t90m_delivery.wav"
+    attribution: >-
+      Mil.ru, T-90M tanks of the 27th Guards Motorized Rifle Brigade, Wikimedia
+      Commons, CC BY 4.0; converted to WAV for research review.
+    notes: >-
+      Thirty-second official recording of eight T-90M tanks delivered to the 27th
+      Guards Motorized Rifle Brigade. Manual review must reject narration/music and
+      retain only visually defensible engine/track-dominant intervals, if any.
+    status: approved
+    admitted_to_corpus: false
+
+  - id: candidate-target-wheeled-jltv-fort-mccoy-2019
+    kind: target
+    provider: direct
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/2010/DOD_108036842/DOD_108036842-1024x576-1769k.mp4"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    source_page: "https://www.dvidshub.net/video/770767/jltv-drivers-training"
+    vehicle_class: wheeled
+    vehicle_model: "Joint Light Tactical Vehicle (JLTV)"
+    recording_session: "dvids_fort_mccoy_jltv_precision_course_2019"
+    operating_condition: mixed
+    expected_license: "Public domain"
+    output_path: "targets/wheeled/dvids_fort_mccoy_jltv_precision_course_2019/jltv_driver_training.wav"
+    attribution: >-
+      Greg Mason, JLTV Drivers Training, Fort McCoy Multimedia Visual Information
+      Branch via DVIDS, public domain.
+    notes: >-
+      Official 6:50 DVIDS driver-training B-roll at Fort McCoy's Precision Driving
+      Course. The catalog uses the official page's 1024x576 CDN rendition to avoid
+      retaining unnecessary video data; manual review must identify vehicle-dominant
+      intervals and exclude instructors, crew speech, wind, other vehicles, repeated
+      takes, edits, and camera-position changes. DVIDS video 770767, VIRIN
+      190806-D-VQ984-1001.
+    status: approved
+    admitted_to_corpus: false

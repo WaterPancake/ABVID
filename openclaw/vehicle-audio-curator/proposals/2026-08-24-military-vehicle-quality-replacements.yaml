@@ -1,0 +1,254 @@
+# Military vehicle quality replacements — 2026-08-24 (proposal only)
+#
+# No media was downloaded for any source below. Each candidate remains
+# review_required until the operator approves its exact source ID and then
+# performs audiovisual review and trimming.
+
+purpose: >-
+  Replace military-vehicle candidates rejected by the operator for insufficient
+  vehicle audio or poor quality, with emphasis on Bradley, T-72, T-80, BMP,
+  BTR-80, and HMMWV sessions. Prefer driving or road-march material over firing
+  exercises and preserve one recording_session for every trim from one source.
+assessment_date: "2026-08-24"
+status: review_required
+method: >-
+  Searched official DVIDS records and Wikimedia Commons file pages, checked the
+  stated vehicle identity, source session, creator, duration, media endpoint, and
+  reuse terms, and rejected obvious simulator, speech-package, firing-dominant,
+  dubious-reupload, or unidentified mixed-vehicle leads. Direct media URLs were
+  checked with metadata-only HTTP requests; their media bodies were not downloaded.
+
+download_gate: >-
+  Do not download any candidate until the operator sends the exact message
+  `approve download: <source-id>`. Use scripts/collect_audio.py after approval;
+  do not hand-download media or bypass a blocked provider endpoint.
+
+dataset_rules:
+  - All trims from one candidate retain its recording_session below.
+  - A source may be assigned to a specific vehicle only for an interval where the vehicle identity is visually defensible.
+  - Speech, music, weapons, radios, other vehicles, wind, and edit boundaries must be reviewed before admission.
+  - Operating states listed as review targets are hypotheses, not labels, until the operator confirms them.
+  - Every candidate is a real-world recording; no procedural or generated audio is proposed.
+
+license_families:
+  dvids_public_domain:
+    license: "Public domain statement on the item page; DVIDS reuse restrictions apply"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    obligations: >-
+      Retain title, creator, unit, DVIDS ID/VIRIN, and provenance; do not imply
+      DoD endorsement; respect privacy/publicity, trademark, and military-mark limits.
+  milru_cc_by_4:
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    obligations: "Credit Mil.ru, link the license, and identify modifications."
+
+review_order:
+  - candidate-target-tracked-t80bvm-driving-readiness-2021
+  - candidate-target-tracked-bmp1-trident-juncture-moveout-2018
+  - candidate-target-tracked-t72-bmp3-102nd-march-2022
+  - candidate-target-tracked-bradley-nato-muddy-maneuver-2025
+  - candidate-target-wheeled-btr80-rapid-trident-2021
+  - candidate-target-wheeled-hmmwv-convoy-drills-okinawa-2020
+  - candidate-target-tracked-bradley-orchard-maneuver-2014
+
+candidates:
+  - source_id: candidate-target-tracked-t80bvm-driving-readiness-2021
+    status: review_required
+    priority: primary
+    kind: target
+    provider: wikimedia_commons
+    mobility_class: tracked
+    vehicle_model: "T-80BVM and MT-LBVMK"
+    vehicle_identity_mixed: true
+    title: "A week of combat readiness passed in the 200th Motorized Rifle Brigade (02-02-2021).webm"
+    creator: "Ministry of Defence of the Russian Federation"
+    source_page: "https://commons.wikimedia.org/wiki/File:A_week_of_combat_readiness_passed_in_the_200th_Motorized_Rifle_Brigade_(02-02-2021).webm"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/c/c8/A_week_of_combat_readiness_passed_in_the_200th_Motorized_Rifle_Brigade_%2802-02-2021%29.webm"
+    license_family: milru_cc_by_4
+    recording_session: commons_milru_200th_t80bvm_mtlb_driving_2021_02_02
+    session_evidence: "Official Mil.ru driving exercise; 200th Motorized Rifle Brigade; 2021-02-02"
+    format: "WebM VP9/Vorbis; 41,657,517 bytes"
+    duration_seconds: 71.003
+    operating_condition: difficult_terrain_driving
+    potential_states_to_review: [idle, moving, acceleration, deceleration, pass_by]
+    attribution: "Mil.ru, 200th Motorized Rifle Brigade combat-readiness driving, CC BY 4.0; trimmed/converted if applicable."
+    review_risks: >-
+      The official description explicitly says T-80BVM and MT-LBVMK crews drive
+      difficult terrain, both individually and as a unit. It is therefore a strong
+      tracked-driving lead but not a single-model source; retain T-80BVM labels only
+      where the pictured vehicle is unambiguous. Check narration, music, and edits.
+
+  - source_id: candidate-target-tracked-bmp1-trident-juncture-moveout-2018
+    status: review_required
+    priority: primary
+    kind: target
+    provider: dvids
+    mobility_class: tracked
+    vehicle_model: "BMP-1"
+    title: "TRIDENT JUNCTURE 2018 - Polish tank and fighting vehicle and British engineering company during training maneuvers near Elval, Norway"
+    creator: "NATO / Allied Joint Force Command Naples"
+    source_page: "https://www.dvidshub.net/video/637281/trident-juncture-2018-polish-tank-and-fighting-vehicle-and-british-engineering-company-during-training-maneuvers-near-elval-norway"
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/1811/DOD_106180083/DOD_106180083-1024x576-1769k.mp4"
+    license_family: dvids_public_domain
+    recording_session: dvids_nato_trident_juncture_bmp1_elval_2018
+    session_evidence: "DVIDS video 637281; VIRIN 181101-F-ZZ999-426; 2018-11-01; Norway"
+    format: "MP4; official 1024x576 rendition; 54,084,777 bytes"
+    duration_seconds: 225
+    operating_condition: maintenance_refuel_and_move_out
+    operator_review_interval: "00:02:00.47-00:02:35.10"
+    potential_states_to_review: [idle, engine_start_or_rev, move_out, acceleration]
+    attribution: "NATO, Trident Juncture 2018 Polish BMP-1 footage, DVIDS, public domain."
+    review_risks: >-
+      The official shot list identifies BMP-1 maintenance/refueling at 02:00.47,
+      BMP-1 movement beginning at 02:10.44, and T-72 footage beginning at 02:35.10.
+      Listen for nearby personnel and exclude the surrounding camp/truck material.
+
+  - source_id: candidate-target-tracked-t72-bmp3-102nd-march-2022
+    status: review_required
+    priority: primary_with_mixed_identity
+    kind: target
+    provider: wikimedia_commons
+    mobility_class: tracked
+    vehicle_model: "T-72B3 mod. 2016 and BMP-3"
+    vehicle_identity_mixed: true
+    title: "102nd Motorized Rifle Regiment marching to the training ground (2022-01-26).webm"
+    creator: "Ministry of Defence of the Russian Federation"
+    source_page: "https://commons.wikimedia.org/wiki/File:102nd_Motorized_Rifle_Regiment_marching_to_the_training_ground_(2022-01-26).webm"
+    direct_url: "https://upload.wikimedia.org/wikipedia/commons/6/65/102nd_Motorized_Rifle_Regiment_marching_to_the_training_ground_%282022-01-26%29.webm"
+    license_family: milru_cc_by_4
+    recording_session: commons_milru_102nd_march_training_ground_2022_01_26
+    session_evidence: "Official Mil.ru 102nd Motorized Rifle Regiment march; 2022-01-26; Rostov Oblast"
+    format: "WebM VP9/Vorbis; 107,086,837 bytes"
+    duration_seconds: 148.636
+    operating_condition: road_march
+    potential_states_to_review: [moving, approach, pass_by, receding, acceleration, deceleration]
+    attribution: "Mil.ru, 102nd Motorized Rifle Regiment march to training ground, CC BY 4.0; trimmed/converted if applicable."
+    review_risks: >-
+      Commons identifies both T-72B3 mod. 2016 and BMP-3 in this road-march source.
+      Treat it as one session and label model-specific intervals only with visual
+      confirmation. Check narration, music, other convoy vehicles, and montage cuts.
+
+  - source_id: candidate-target-tracked-bradley-nato-muddy-maneuver-2025
+    status: review_required
+    priority: primary_with_narrow_interval
+    kind: target
+    provider: dvids
+    mobility_class: tracked
+    vehicle_model: "M2 Bradley"
+    title: "NATO Allies demonstrate their readiness through live-fire training in Poland (B-ROLL)"
+    creator: "Natochannel"
+    source_page: "https://www.dvidshub.net/video/972401/nato-allies-demonstrate-their-readiness-through-live-fire-training-poland-b-roll"
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/2508/DOD_111204052/DOD_111204052.mp4"
+    license_family: dvids_public_domain
+    recording_session: dvids_nato_bradley_bemowo_livefire_2025
+    session_evidence: "DVIDS video 972401; VIRIN 250731-O-D0483-1001; 2025-07-14; Poland"
+    format: "MP4 original; 498,659,973 bytes"
+    duration_seconds: 431
+    operating_condition: muddy_terrain_maneuver
+    operator_review_intervals:
+      - "00:00-00:42 (Bradleys maneuver; before first documented weapons segment)"
+      - "03:39-03:45 (Bradley maneuver; narrow alternate)"
+    potential_states_to_review: [moving, acceleration, deceleration, pass_by]
+    attribution: "Natochannel, NATO Allies demonstrate their readiness through live-fire training in Poland, DVIDS, public domain."
+    review_risks: >-
+      The overall source contains gunfire and interviews, but its official shot list
+      isolates Bradley maneuvering at 00:00-00:42 before the first firing segment.
+      Download is large because the official page exposes only the original MP4.
+      Reject any interval contaminated by weapons, speech, or other vehicles.
+
+  - source_id: candidate-target-wheeled-btr80-rapid-trident-2021
+    status: review_required
+    priority: primary_with_high_review_risk
+    kind: target
+    provider: dvids
+    mobility_class: wheeled
+    vehicle_model: "BTR-80"
+    title: "NATO allies and partner countries conduct a Combined Arms Rehearsal, and Ukrainian Ground Forces train on anti-sabotage (B-Roll)"
+    creator: "Sgt. Hayden Hallman and Spc. Preston Hammon"
+    source_page: "https://www.dvidshub.net/video/815457/nato-allies-and-partner-countries-conduct-combined-arms-rehearsal-and-ukrainian-ground-forces-train-anti-sabotage-b-roll"
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/2109/DOD_108595311/DOD_108595311-1024x576-1769k.mp4"
+    license_family: dvids_public_domain
+    recording_session: dvids_rapid_trident_btr80_yavoriv_2021
+    session_evidence: "DVIDS video 815457; VIRIN 210927-A-NY675-536; 2021-09-27; Yavoriv"
+    format: "MP4; official 1024x576 rendition; 104,652,614 bytes"
+    duration_seconds: 440
+    operating_condition: anti_sabotage_training
+    potential_states_to_review: [idle, moving, acceleration, deceleration, pass_by]
+    attribution: "Hayden Hallman and Preston Hammon, Rapid Trident 2021 BTR-80 B-roll, DVIDS, public domain."
+    review_risks: >-
+      The official description explicitly identifies Ukrainian BTR-80 training, but
+      the combined-arms setting may include commands, dismounts, weapons, and other
+      vehicles. Admit only visually confirmed, engine-dominant BTR-80 intervals.
+
+  - source_id: candidate-target-wheeled-hmmwv-convoy-drills-okinawa-2020
+    status: review_required
+    priority: primary
+    kind: target
+    provider: dvids
+    mobility_class: wheeled
+    vehicle_model: "HMMWV"
+    title: "Experienced Drivers Only | 9th Engineer Support Battalion conducts convoy drills"
+    creator: "Cpl. Ryan Harvey"
+    source_page: "https://www.dvidshub.net/video/760822/experienced-drivers-only-9th-engineer-support-battalion-conducts-convoy-drills"
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/2007/DOD_107908274/DOD_107908274-1024x576-1769k.mp4"
+    license_family: dvids_public_domain
+    recording_session: dvids_hmmwv_convoy_drills_okinawa_2020
+    session_evidence: "DVIDS video 760822; VIRIN 200514-M-SX657-0002; 2020-05-14; Okinawa"
+    format: "MP4; official 1024x576 rendition; 60,121,141 bytes"
+    duration_seconds: 257
+    operating_condition: convoy_drill_and_timed_motor_pool_setup
+    potential_states_to_review: [idle, moving, acceleration, deceleration, stop_start]
+    attribution: "Ryan Harvey, 9th Engineer Support Battalion convoy drills, DVIDS, public domain."
+    review_risks: >-
+      DVIDS tags the source HMMWV, but the timed motor-pool setup can include people,
+      equipment handling, and other vehicles. Check every candidate interval visually
+      and aurally; exclude speech, simulated IED activity, and ambiguous engines.
+
+  - source_id: candidate-target-tracked-bradley-orchard-maneuver-2014
+    status: review_required
+    priority: alternate
+    kind: target
+    provider: dvids
+    mobility_class: tracked
+    vehicle_model: "M2 Bradley and M1A2 Abrams"
+    vehicle_identity_mixed: true
+    title: "M2 Bradley Fighting Vehicles Tango With Opposing Forces (OFPOR) At Annual Training"
+    creator: "Sgt. Aaron Ricca"
+    source_page: "https://www.dvidshub.net/video/357693/m2-bradley-fighting-vehicles-tango-with-opposing-forces-ofpor-annual-training"
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/1408/DOD_101916264/DOD_101916264-1024x576-1769k.mp4"
+    license_family: dvids_public_domain
+    recording_session: dvids_orchard_bradley_abrams_maneuver_2014
+    session_evidence: "DVIDS video 357693; VIRIN 140823-A-VA638-002; 2014-08-23; Idaho"
+    format: "MP4; official 1024x576 rendition; 18,804,957 bytes"
+    duration_seconds: 80
+    operating_condition: tactical_maneuver
+    potential_states_to_review: [moving, acceleration, deceleration, pass_by]
+    attribution: "Aaron Ricca, M2 Bradley Fighting Vehicles Tango With Opposing Forces, DVIDS, public domain."
+    review_risks: >-
+      The source explicitly mixes Bradleys and Abrams and has no official shot list.
+      It is a compact alternate, but model-specific labels require visual review and
+      ambiguous overlap between the two tracked types must be excluded.
+
+remaining_gaps:
+  - >-
+    No new clean, standalone BMP-2 recording with authoritative provenance was found.
+    Search results were either the previously rejected T-80U/BMP-2 source or mixed,
+    firing-heavy exercises, so BMP-2 remains open.
+  - >-
+    The T-72/BMP-3 road march and T-80BVM/MT-LBVMK driving session are mixed-identity
+    sources. Standalone second sessions are still desirable for vehicle-held-out tests.
+  - >-
+    Idle, acceleration, and deceleration coverage cannot be counted until the operator
+    reviews and timestamps those states in the downloaded recordings.
+
+discarded_leads:
+  - lead: "201st Russian Military Base exercise in Tajikistan"
+    reason: "BMP-2/BTR-82A/T-72B1/artillery mix with live fire; not a clean replacement."
+  - lead: "Practical actions episode / generic BMP-2 combined-arms clips"
+    reason: "Firing-heavy montage with ambiguous model-specific audio."
+  - lead: "U.S. Army Humvees driving around Baghdad, Iraq.webm"
+    reason: "Reddit-derived reupload has weaker provenance than the DVIDS alternatives."
+  - lead: "HMMWV egress or convoy simulators"
+    reason: "Trainer/simulator audio is not a real HMMWV engine recording."
+  - lead: "Strykers and BWP-1s"
+    reason: "Only 35 seconds and mixes wheeled Strykers with tracked BWP-1s."
