@@ -654,6 +654,13 @@ sources:
     vehicle_model: "T-90M Proryv"
     recording_session: "commons_milru_t90m_27guards_2021_03_10"
     operating_condition: mixed
+    condition_segments:
+      - operating_condition: mixed
+        start_seconds: 0.0
+        end_seconds: 25.0
+        notes: >-
+          Human audiovisual review on 2026-08-24 confirmed a moving T-90M.
+          The label remains mixed because speed and acceleration are unavailable.
     expected_license: "CC BY 4.0"
     output_path: "targets/tracked/commons_milru_t90m_27guards_2021_03_10/t90m_delivery.wav"
     attribution: >-
@@ -661,10 +668,11 @@ sources:
       Commons, CC BY 4.0; converted to WAV for research review.
     notes: >-
       Thirty-second official recording of eight T-90M tanks delivered to the 27th
-      Guards Motorized Rifle Brigade. Manual review must reject narration/music and
-      retain only visually defensible engine/track-dominant intervals, if any.
+      Guards Motorized Rifle Brigade. Human audiovisual review retained 00:00-00:25
+      as moving T-90M audio, conservatively excluded 00:25-00:26, and rejected
+      00:26-end as silence. No speech, music, or weapons were present.
     status: approved
-    admitted_to_corpus: false
+    admitted_to_corpus: true
 
   - id: candidate-target-wheeled-jltv-fort-mccoy-2019
     kind: target
@@ -703,6 +711,24 @@ sources:
     vehicle_model: "T-80BVM and MT-LBVMK"
     recording_session: "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02"
     operating_condition: mixed
+    condition_segments:
+      - operating_condition: mixed
+        start_seconds: 0.0
+        end_seconds: 23.0
+        notes: >-
+          Human audiovisual review on 2026-08-24 identified a moving T-80BVM.
+          The label remains mixed because speed and acceleration are unavailable.
+      - operating_condition: idle
+        start_seconds: 25.0
+        end_seconds: 41.0
+        notes: >-
+          Human audiovisual review on 2026-08-24 identified an idling MT-LBVMK.
+      - operating_condition: mixed
+        start_seconds: 42.0
+        end_seconds: 64.0
+        notes: >-
+          Human audiovisual review on 2026-08-24 identified a moving MT-LBVMK.
+          The label remains mixed because speed and acceleration are unavailable.
     expected_license: "CC BY 4.0"
     output_path: "targets/tracked/commons_milru_200th_t80bvm_mtlb_driving_2021_02_02/t80bvm_mtlb_driving.wav"
     attribution: >-
@@ -710,11 +736,13 @@ sources:
       Commons, CC BY 4.0; converted to WAV for research review.
     notes: >-
       Official 1:11 recording of T-80BVM and MT-LBVMK crews driving difficult
-      terrain. The source is mixed-identity: retain T-80BVM labels only where the
-      pictured vehicle is unambiguous, and exclude speech, music, weapons, other
-      vehicles, and montage transitions.
+      terrain. Human audiovisual review retained 00:00-00:23 as moving T-80BVM,
+      00:25-00:41 as idling MT-LBVMK, and 00:42-01:04 as moving MT-LBVMK. Boundary
+      gaps remain excluded conservatively; 01:05-end is silence. No speech, music,
+      or weapons were present. Per-segment vehicle identity is preserved in notes
+      because the current segment schema labels operating condition but not model.
     status: approved
-    admitted_to_corpus: false
+    admitted_to_corpus: true
 
   - id: candidate-target-tracked-bmp1-trident-juncture-moveout-2018
     kind: target
