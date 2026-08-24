@@ -20,6 +20,7 @@ data/impulse_responses/*
 data/generated/*
 data/synthetic_targets/*
 data/real_eval*/
+data/real_development*/
 !data/targets/.gitkeep
 !data/backgrounds/.gitkeep
 !data/impulse_responses/.gitkeep
