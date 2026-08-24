@@ -187,7 +187,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             batch_size=args.batch_size,
             overwrite=args.overwrite,
         )
-        print(json.dumps(result["result"], indent=2, sort_keys=True))
+        summary = {
+            key: value
+            for key, value in result["result"].items()
+            if key != "windows"
+        }
+        summary["window_predictions_saved_to"] = str(args.output)
+        print(json.dumps(summary, indent=2, sort_keys=True))
         return 0
     raise AssertionError(f"unhandled command: {args.command}")
 
