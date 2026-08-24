@@ -3,16 +3,15 @@
 ## Status
 
 Complete on 2026-08-24 for development use. This work implements the first
-three agreed improvements:
+four agreed improvements:
 
 1. reject events with insufficient audible audio before classification;
 2. aggregate overlapping windows across an event;
 3. adapt the classifier using more low-SNR examples from real vehicle sources.
+4. add and evaluate a modern tracked-vehicle recording.
 
-The fourth improvement, adding modern tracked recordings, is at the mandatory
-human content-review gate. The fifth, separate vehicle-presence and mobility
-classification evaluation, remains pinned until labeled vehicle-absent audio is
-available.
+The fifth improvement, separate vehicle-presence and mobility-classification
+evaluation, remains pinned until labeled vehicle-absent audio is available.
 
 ## Data correction and development corpus
 
@@ -185,39 +184,166 @@ detector and separate detector/classifier metrics require labeled
 vehicle-absent recordings. Adding metric plumbing without those negatives would
 produce a misleading evaluation, so that work remains pinned.
 
-## Modern tracked acquisition gate
+## Modern MPF source and refreshed experiment
 
-The Mobile Protected Firepower testbed recording is already downloaded at
-`data/targets/tracked/us_army_armor_cavalry_collection_tankodrome_2023/mpf_testbed.wav`.
-It is modern, public domain, and provisionally segmented from 0 to 90 seconds,
-but it is deliberately excluded from the corpus pending human auditory review.
-The reviewer must identify vehicle-dominant intervals, speech/music/gunfire or
-other confounds, and recognizable operating states. No new source was admitted
-or downloaded by bypassing the curator's source-specific approval gate.
+Human auditory review admitted the public-domain 2023 Mobile Protected
+Firepower testbed recording as a fourth independent tracked session. The labels
+preserve the review literally and do not invent speed, RPM, acceleration, or
+deceleration values:
+
+| Interval | Label | Review observation |
+|---|---|---|
+| 0:00-0:32 | idle | idle vehicle sound |
+| 0:32-0:50 | mixed | moving; exact dynamic state unavailable |
+| 0:51-1:10 | unknown | mostly engine sound; motion state unavailable |
+| 1:11-1:30 | mixed | squeaky sound consistent with tracks |
+| 1:30-end | excluded | silence |
+
+The canonical catalog and local sidecar now mark these as human-reviewed
+segments and admit the source. The one-second gaps at 0:50-0:51 and 1:10-1:11
+are not silently assigned to either adjacent condition.
+
+### Pre-admission frozen result
+
+Before MPF entered training or gate calibration, the previously frozen v1
+all-development-session probe and its fixed `-15 dB` gate were applied once to
+the complete MPF file. This is a native-real, unseen-modern-source check—not a
+synthetic corruption result. It retained 91/97 windows and correctly returned
+tracked with probability 59.01%.
+
+Fully contained overlapping windows show that the result is condition
+dependent:
+
+| Reviewed interval | Windows | Mean tracked probability | Tracked argmax windows |
+|---|---:|---:|---:|
+| idle | 31 | 71.73% | 26/31 |
+| moving, exact state unknown | 17 | 18.21% | 3/17 |
+| engine sound, motion unknown | 18 | 50.08% | 9/18 |
+| squeaky tracks | 18 | 96.15% | 18/18 |
+
+The model recognizes the overt tracked-motion cue much more reliably than the
+generic moving/engine intervals. These overlapping windows are correlated and
+come from one recording, so they diagnose this source rather than estimate a
+population operating-state accuracy.
+
+### Versioned corpora
+
+`data/real_development_v4` now has 325 native windows: 201 tracked and 124
+wheeled, with four independent recording sessions per class. Sixty-four windows
+come from MPF: 24 idle, 27 mixed, and 13 unknown. The audit reports complete
+provenance/content review and no blockers. Manifest SHA-256:
+`3789bed5d3fbee511c66eba3e51347891b628a02dc9707f5cbb43e0dbb59cbd4`.
+
+The refreshed low-SNR corpus contains 1,600 paired examples: 804 tracked and
+796 wheeled. A new `class_session_condition_balanced` strategy samples class,
+then recording session, then reviewed condition; sessions receive 180-222
+examples rather than MPF being over-sampled merely because it has four segment
+annotations. One exact-silence background crop was deterministically rejected
+and replaced on the second attempt. The maximum absolute SNR error is
+`5.057e-07 dB`. Manifest SHA-256:
+`3fa4777c404133d9d01e6e0bef0c4a78d7f1801a0b9bb749e1ee00a9b76e0e3d`.
+
+```bash
+.venv/bin/python -m vehicle_audio.cli prepare-real \
+  --config configs/real_corpus.yaml \
+  --targets data/targets \
+  --output data/real_development_v4
+
+.venv/bin/python -m vehicle_audio.cli generate \
+  --config configs/real_low_snr_session_balanced.yaml \
+  --targets data/targets \
+  --backgrounds data/backgrounds \
+  --output data/generated/real_low_snr_v2_seed42 \
+  --num-samples 1600 \
+  --seed 42
+```
+
+### Eight-session source-held-out adaptation
+
+The unchanged 50-epoch adaptation protocol now has 16 outer folds: every
+Cartesian pair of one held-out tracked and one held-out wheeled source. MPF is
+never present in training for any fold used to score MPF.
+
+Test domain: **controlled low-SNR augmentation of held-out real recording
+sessions**.
+
+| Method | Accuracy | Balanced accuracy | Macro F1 | Tracked recall | Wheeled recall | Sessions correct |
+|---|---:|---:|---:|---:|---:|---:|
+| frozen probe | 46.00% | 46.04% | 45.71% | 38.56% | 53.52% | 3/8 |
+| source-held-out adaptation | 63.94% | 63.91% | 63.80% | 69.78% | 58.04% | 6/8 |
+
+MPF is correct while held out, with mean tracked probability 66.12%. Sherman
+remains misclassified at 40.29% tracked, and the Model T remains misclassified
+at 47.24% wheeled. Adapted balanced accuracy by SNR is 59.28% at -10 dB,
+62.09% at -5 dB, 68.48% at 0 dB, 64.61% at 5 dB, and 65.05% at 10 dB.
+
+The v2 adapted balanced accuracy is 1.58 percentage points below v1's 65.48%,
+but this is not an apples-to-apples regression: v2 adds an unseen vehicle and
+session, changes the sampling distribution to session-balanced, and evaluates
+eight rather than seven sessions. The useful controlled conclusion is that v2
+still improves its own frozen baseline by 17.87 points and raises tracked
+recall by 31.22 points.
+
+```bash
+.venv/bin/python scripts/evaluate_low_snr_adaptation.py \
+  --config configs/real_low_snr_adaptation.yaml \
+  --manifest data/generated/real_low_snr_v2_seed42/manifest.jsonl \
+  --base-probe-bundle runs/m6_panns_audioset_transfer/seed_42/probe_models.pt \
+  --panns-checkpoint .artifacts/models/panns/Cnn14_mAP=0.431.pth \
+  --output runs/real_low_snr_adaptation_v2_seed42
+```
+
+### Refreshed audibility calibration
+
+The predeclared threshold search selected `-18 dB` on source-held-out native
+development predictions. It retains 284/325 windows (87.38%), with 71.83%
+active-window balanced accuracy, 74.23% tracked recall, and 69.42% wheeled
+recall. Event aggregation gets 7/8 sessions correct (87.5% session-balanced
+accuracy) with no abstentions. MPF is correct at 60.85% tracked; Sherman becomes
+correct at 78.32% tracked; Model T remains the sole failed session.
+
+```bash
+.venv/bin/python scripts/calibrate_audibility_gate.py \
+  --config configs/audibility_gate_calibration.yaml \
+  --native-manifest data/real_development_v4/real_manifest.jsonl \
+  --adaptation-metrics runs/real_low_snr_adaptation_v2_seed42/metrics.json \
+  --adaptation-models runs/real_low_snr_adaptation_v2_seed42/models.pt \
+  --panns-checkpoint .artifacts/models/panns/Cnn14_mAP=0.431.pth \
+  --output runs/audibility_gate_calibration_v2
+```
+
+This is still development calibration, not a locked external result. The final
+v2 all-session model contains MPF training data and therefore has no independent
+MPF score.
 
 ## Artifacts and reproducibility
 
 Implementation commits:
 
 - `73dc31038512d2f1d4219f08c877b5e3965fb2c5`: event inference and low-SNR adaptation;
-- `88ff0955a6e957ed7fc7ff9c3eb62cdbde434c0b`: source-held-out gate calibration.
+- `88ff0955a6e957ed7fc7ff9c3eb62cdbde434c0b`: source-held-out gate calibration;
+- `38857ff8b389fe5f4c908a7233bb15c4b4a65cdf`: MPF admission,
+  session-balanced sampling, and deterministic silent-background retry.
 
 Important artifact SHA-256 values:
 
 | Artifact | SHA-256 |
 |---|---|
-| adaptation metrics | `3c82543f7755563ce2a334e9ed455ab13ca4c1919c5133e89f5f988263917610` |
-| adaptation models | `584bde5e3ad35d70d7acadbaa8b6dc756c04f82cc02cdc2307ed44906ba5c550` |
-| adaptation splits | `432582ac62daedc66ccd8070822185133dcbd1b76556bb1d45179146202d4b84` |
-| adaptation predictions | `9a4eb377819656e5a5969acf714b10270ab8234d62a1deaf818211f450952575` |
-| gate calibration | `6902d1185763ce1157799c26a73a102e6ee523f7ffb0866a14953ccb66b90de5` |
-| selected gate config | `17d368f7a902ccdc1820b595837ce785adc7724ec1cccc4575b4e733a4326653` |
+| v1 adaptation metrics | `3c82543f7755563ce2a334e9ed455ab13ca4c1919c5133e89f5f988263917610` |
+| v1 adaptation models | `584bde5e3ad35d70d7acadbaa8b6dc756c04f82cc02cdc2307ed44906ba5c550` |
+| v1 gate calibration | `6902d1185763ce1157799c26a73a102e6ee523f7ffb0866a14953ccb66b90de5` |
+| pre-admission MPF inference | `5a38c55df97dd762aa9c9bdbe6e5990a21b2a4a54e8d7191d3e512fbf848741a` |
+| v2 adaptation metrics | `71504495d9e655d55118ea50faca20f930268a420b8624d2365d0643b4f88555` |
+| v2 adaptation models | `0bb8ff91d43cd52382b6e2ea589aec560b36e449b1969e655e2f8b12103d5c61` |
+| v2 adaptation splits | `841206ee05741d751fafe962f9b90f249be7348cdf4a830de18f0bbeb6cd5590` |
+| v2 adaptation predictions | `6c934fd8f6f2ff8785259bdcac7177887c561be461767f8e6cd0336d52b6312e` |
+| v2 gate calibration | `2ee669e6b8842b1da04c6f563885db8cad700543ef7008f3af9260c3960c369b` |
+| v2 selected gate config | `4a34dd908b9a08060ede9c91efd4250c41d8c2c8c6c9b7ad150a88d7247aa3ab` |
 
-Limitations remain substantial: there are only seven development source
-sessions; the low-SNR observations are synthetic corruptions; threshold
-calibration and adaptation use development sources; source vehicle, era, site,
-and recording method are not controlled; and no fresh modern tracked source has
-yet been admitted for an independent test.
+Limitations remain substantial: there are only eight development source
+sessions; MPF is the only modern tracked session; the low-SNR observations are
+synthetic corruptions; threshold calibration and adaptation use development
+sources; and vehicle, era, site, and recording method are not controlled.
 
-Validation: all 87 repository tests pass. Both full-file inference smoke tests
-wrote per-window JSON artifacts while printing only the compact event summary.
+Validation: all 90 repository tests pass. Full-file inference writes detailed
+per-window JSON while printing only the compact event summary.
