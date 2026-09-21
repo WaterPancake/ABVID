@@ -1,0 +1,14 @@
+{
+  "embedding_results.json": "0261962bf7dc0d2731667a457656a85694f3c5d254443c67a769be2c390dbe32",
+  "experiment.json": "73cb6d5df21b834287ae3915db5fd2eacfb7009494319826543503646e5be10a",
+  "native_embedding2048/experiment.json": "55a6eb3c2f7712731a60fad075f1282e1562518073539087b6b6a64ea9a0cf20",
+  "native_embedding2048/metrics.json": "62e517424ec66b5f0a86f3bd92c0218fc6db955e883c6c6fee6110e65d59f49f",
+  "native_embedding2048/models.pt": "13a6cbfeced092f21bc2efc8af3fece649dc3385f0200d4b1509b0a5e176cf38",
+  "native_embedding2048/splits.json": "dae865091d61392c7a0a9a971921c8720510e9e9dcd134cd83486978b785a9cf",
+  "native_embedding2048/summary.json": "7f9b3174b7683f185ff4d195b6ff632e3ff61de832e7c7371eb7ca0419b78608",
+  "native_semantic35/experiment.json": "37500129980d8ecb8454490c86080a2827ea72c587ab8dc8a80400e70bb0fa74",
+  "native_semantic35/metrics.json": "bb38f13ea7d99fdb9284c8c8c369865376365798aa03db0e04ccae692612463d",
+  "native_semantic35/models.pt": "93e53788bfc906d57b29a3820f55fb36b0892d69fca197f1a30e3c4a7b4226c1",
+  "native_semantic35/splits.json": "dae865091d61392c7a0a9a971921c8720510e9e9dcd134cd83486978b785a9cf",
+  "native_semantic35/summary.json": "2a2fb9cdba59d3ddc5b567d3f49ad75e71d2b8a5907f0708ee0a13e59ffa19cc"
+}

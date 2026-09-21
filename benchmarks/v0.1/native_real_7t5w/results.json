@@ -1,0 +1,61 @@
+{
+  "benchmark_id": "abvid-benchmark-v0.1",
+  "dataset_version": "e013532104c209e3c8f6906bb3c9daa3c46c2d6fb2e9fed82a65f4d2699a42c4",
+  "development_gates": {
+    "mean_balanced_accuracy_at_least_0_75": false,
+    "mean_recall_each_class_at_least_0_70": false,
+    "minimum_heldout_session_recall_at_least_0_50": false,
+    "minimum_sessions_each_class_at_least_5": true
+  },
+  "git_commit": "0d242c6d76ff036747f89576ee15d5f7399f5891",
+  "git_worktree_dirty": true,
+  "models": {
+    "classical_regularization_ensemble": {
+      "balanced_accuracy_mean": 0.4523701382727004,
+      "balanced_accuracy_sample_standard_deviation": 0.20285983806105828,
+      "both_heldout_sessions_correct_rate": 0.14285714285714285,
+      "metrics_sha256": "e98b6b820e6e33e97372fcbcbd77ccce81053eccd4a7d7c042a99fa255772fcc",
+      "tracked_recall_mean": 0.685837215320911,
+      "wheeled_recall_mean": 0.2189030612244898,
+      "worst_tracked_session_context_recall": 0.0,
+      "worst_wheeled_session_context_recall": 0.0
+    },
+    "semantic_panns_regularization_ensemble": {
+      "balanced_accuracy_mean": 0.5340345866607512,
+      "balanced_accuracy_sample_standard_deviation": 0.15725347774528617,
+      "both_heldout_sessions_correct_rate": 0.2,
+      "metrics_sha256": "7ec913dd049b1b0d41c2d9c7214097b4de4089981334fa7d6a5c275c184f6d4b",
+      "tracked_recall_mean": 0.8103778467908903,
+      "wheeled_recall_mean": 0.2576913265306122,
+      "worst_tracked_session_context_recall": 0.5,
+      "worst_wheeled_session_context_recall": 0.0
+    },
+    "semantic_classical_equal_fusion_primary": {
+      "balanced_accuracy_mean": 0.39699284605146407,
+      "balanced_accuracy_sample_standard_deviation": 0.14072548932131201,
+      "both_heldout_sessions_correct_rate": 0.0,
+      "metrics_sha256": "56e0fea3d725ca1dd073d3c8260a28c579088f0cddaa4d20e41de298fd7007ac",
+      "tracked_recall_mean": 0.5198317805383023,
+      "wheeled_recall_mean": 0.2741539115646259,
+      "worst_tracked_session_context_recall": 0.0,
+      "worst_wheeled_session_context_recall": 0.0
+    }
+  },
+  "outer_fold_count": 35,
+  "primary_model": "semantic_classical_equal_fusion_primary",
+  "protocol_sha256": "51b8b87e8a44b0eb5a1cfa243394859a106184b21672289a73299a76c45a52fa",
+  "protocol_status": "complete_development_gates_failed",
+  "random_seed": 42,
+  "session_level_uncertainty": {
+    "method": "stratified nonparametric bootstrap over per-session mean recalls",
+    "primary_fusion_95_percentile_interval": {
+      "balanced_accuracy": [0.2866606588287489, 0.5121875577676723],
+      "tracked_recall": [0.3774404761904762, 0.6523822463768116],
+      "wheeled_recall": [0.11211734693877551, 0.4767984693877551]
+    },
+    "replicates": 10000,
+    "seed": 42,
+    "used_for_model_selection": false
+  },
+  "test_domain": "real -> real nested unseen recording-session pairs"
+}

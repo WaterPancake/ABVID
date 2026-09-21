@@ -22,9 +22,17 @@ project's milestone order:
 1. deterministic audio augmentation;
 2. tracked-versus-wheeled classification;
 3. controlled synthetic vehicle sources;
-4. later work in multichannel acoustics and synthetic-to-real transfer.
+4. multichannel simulation, localization, and beamforming;
+5. real-world transfer protocols and their negative results;
+6. noise-invariant representation learning, pretrained encoders, and leakage-safe
+   session evaluation.
 
-The default pace is **10 weeks at 5–7 hours per week**. If time is limited, complete
+Milestones 1-6 are implemented and documented in this repository. The open question,
+guarded by the Milestone 7 gate, is whether a development run clears the criteria
+required before hierarchical and open-set classification can begin. Later milestones
+remain architectural guidance only.
+
+The default pace is **15 weeks at 5–7 hours per week**. If time is limited, complete
 the items marked **Core** and postpone the optional material.
 
 ## How to use this guide
@@ -44,6 +52,37 @@ Do not measure progress by how many pages you read. Measure it by whether you ca
 - recognize an invalid experiment;
 - explain the project's assumptions and limitations clearly.
 
+## Codebase map
+
+Every milestone follows the same pattern. Use this table to navigate from a concept
+to the file that implements or evaluates it. Entry points are runnable commands or
+`scripts/*.py`; the evaluation logic lives in `src/vehicle_audio/*_evaluation.py`.
+
+| Concept | Entry point | Config | Source | Tests | Report |
+|---|---|---|---|---|---|
+| Augmentation engine | `python -m vehicle_audio.cli generate` | `configs/default.yaml` | `src/vehicle_audio/{augment,mixing,audio,dataset,manifest}.py` | `tests/test_{augment,mixing,audio,dataset,manifest}.py` | `docs/milestones_1_3_report.md` |
+| Classical/CNN baselines | `scripts/train_baseline.py` | — | `src/vehicle_audio/baseline.py` | `tests/test_baseline.py` | `docs/milestones_1_3_report.md` |
+| Procedural sources | `python -m vehicle_audio.cli synthesize-sources` | `configs/procedural_vehicles.yaml` | `src/vehicle_audio/source_simulation.py` | `tests/test_source_simulation.py` | `docs/milestones_1_3_report.md` |
+| Microphone array | `python -m vehicle_audio.cli generate-array` | `configs/multichannel.yaml` | `src/vehicle_audio/{multichannel,array_dataset}.py` | `tests/test_multichannel.py` | `docs/milestone4_report.md` |
+| Localization/beamforming | `scripts/evaluate_multichannel.py` | — | `src/vehicle_audio/multichannel_evaluation.py` | — | `docs/milestone4_report.md` |
+| Real corpus preparation | `python -m vehicle_audio.cli prepare-real` | `configs/real_corpus.yaml` | `src/vehicle_audio/real_corpus.py` | `tests/test_real_corpus.py` | `docs/milestone5_status.md` |
+| Transfer evaluation | `scripts/evaluate_transfer.py` | — | `src/vehicle_audio/transfer_evaluation.py` | `tests/test_transfer_evaluation.py` | `docs/milestone5_status.md` |
+| Invariance training | `scripts/evaluate_invariance.py` | — | `src/vehicle_audio/invariance_evaluation.py` | `tests/test_invariance_evaluation.py` | `docs/milestone6_report.md` |
+| Seed aggregation | `scripts/aggregate_invariance.py` | — | `src/vehicle_audio/invariance_aggregation.py` | `tests/test_invariance_aggregation.py` | `docs/milestone6_improvement_checkpoint.md` |
+| Pretrained PANNs | `scripts/evaluate_pretrained.py` | — | `src/vehicle_audio/pretrained_evaluation.py` | `tests/test_pretrained_evaluation.py` | `docs/milestone6_pretrained_transfer_report.md` |
+| Semantic session eval | `scripts/evaluate_semantic_sessions.py` | — | `src/vehicle_audio/semantic_session_evaluation.py` | `tests/test_semantic_session_evaluation.py` | `docs/milestone6_semantic_session_report.md` |
+| Fusion session eval | `scripts/evaluate_fusion_sessions.py` | — | `src/vehicle_audio/fusion_session_evaluation.py` | `tests/test_fusion_session_evaluation.py` | `docs/milestone6_fusion_session_report.md` |
+
+Repository conventions to notice as you work:
+
+- configurations live in `configs/`, entry points in `scripts/`, and evaluation logic
+  in `src/vehicle_audio/*_evaluation.py`;
+- every experiment writes `experiment.json`, `splits.json`, model checkpoints,
+  `metrics.json`, and CSV/plot summaries under `runs/<milestone>_<name>_seed<seed>/`;
+- `data/generated/` holds paired `clean.wav` + `corrupted.wav` events with
+  `manifest.jsonl`; `data/real_eval_v2/` holds the reviewed native-real windows;
+- machine-readable milestone reports live in `docs/`.
+
 ## Target level of understanding
 
 At the end of this plan, you should be able to explain:
@@ -57,6 +96,13 @@ At the end of this plan, you should be able to explain:
 - how engine RPM produces harmonic orders;
 - why an unseen-vehicle test is different from a random test split;
 - what domain randomization can and cannot establish;
+- how a microphone array localizes a source and why more channels are not always
+  better for classification;
+- why invariance training can help in-distribution yet fail to transfer to real audio;
+- what a leakage-safe nested session evaluation is and why thresholds are selected
+  on inner folds only;
+- why an external pretrained encoder is not a strict synthetic-only baseline;
+- what the Milestone 7 gate requires before hierarchical or open-set work;
 - which ABVID recordings are real and which observations or sources are synthetic.
 
 # Prerequisite check
@@ -67,12 +113,12 @@ complete.
 
 ## Minimum mathematics
 
-- [ ] Rearrange algebraic equations.
-- [ ] Work with powers, roots, exponentials, and base-10 logarithms.
-- [ ] Recognize sine and cosine waves.
-- [ ] Understand vectors, matrices, means, and variance.
-- [ ] Understand derivatives as local rates of change.
-- [ ] Interpret probability as a number between 0 and 1.
+- [x] Rearrange algebraic equations.
+- [x] Work with powers, roots, exponentials, and base-10 logarithms.
+- [x] Recognize sine and cosine waves.
+- [x] Understand vectors, matrices, means, and variance.
+- [x] Understand derivatives as local rates of change.
+- [x] Interpret probability as a number between 0 and 1.
 
 If several items are unfamiliar, use the free companion site for
 [Mathematics for Machine Learning](https://mml-book.github.io/). Prioritize:
@@ -276,7 +322,7 @@ always follows an inverse-square law.
 
 ## Optional practical source
 
-[Pyroomacoustics room-simulation documentation](https://pyroomacoustics.readthedocs.io/en/stable/pyroomacoustics.room.html) shows how sources, microphones, and room impulse responses are represented in a simulator. Treat it as preparation for later milestones, not as a replacement for understanding the equations.
+[Pyroomacoustics room-simulation documentation](https://pyroomacoustics.readthedocs.io/en/stable/pyroomacoustics.room.html) shows how sources, microphones, and room impulse responses are represented in a simulator. Treat it as preparation for the Week 11 microphone-array material, not as a replacement for understanding the equations.
 
 ## Repository exercise
 
@@ -557,6 +603,243 @@ Prepare a five-minute explanation with this structure:
 
 > If a model reports 90% confidence, what observation would show that this confidence is calibrated?
 
+# Week 11 — Microphone arrays, direction of arrival, and beamforming (Milestone 4)
+
+## Outcomes
+
+You should understand:
+
+- uniform linear array geometry and the broadside-referenced azimuth convention;
+- the far-field plane-wave assumption and inter-microphone arrival delay;
+- fractional delay and why sample-quantized delay is not sufficient;
+- GCC-PHAT as a phase-only weighted cross-correlation and why that weighting is robust;
+- SRP-PHAT as a search over candidate source directions;
+- delay-and-sum beamforming and what it does to the signal-to-noise ratio;
+- angular error, and why a linear array is ambiguous outside the front half-plane.
+
+## Core sources
+
+1. [Knapp and Carter, "The generalized correlation method for estimation of time delay" (1976)](https://ui.adsabs.harvard.edu/abs/1976ITASS..24..320K/abstract) — the origin of GCC-PHAT.
+2. [DiBiase, "A High-Accuracy, Low-Latency Technique for Talker Localization in Reverberant Environments Using Microphone Arrays" (2000)](https://www.semanticscholar.org/paper/4e3c7d012c9312c177b740db3dcf3838e5d78e8a) — the SRP-PHAT method.
+3. Revisit the [pyroomacoustics room-simulation documentation](https://pyroomacoustics.readthedocs.io/en/stable/pyroomacoustics.room.html) from Week 4 and notice how microphone positions are represented.
+4. Read the results and limitation sections of [`docs/milestone4_report.md`](../docs/milestone4_report.md).
+
+## Key equations
+
+The repo measures azimuth from array broadside: `0` degrees is positive y and
+positive angles rotate toward positive x, giving a direction unit vector
+`u = (sin θ, cos θ, 0)`. For a plane wave, the arrival delay at microphone `i`
+relative to microphone 0 is:
+
+$$
+\tau_i = -\frac{p_i \cdot u}{c}
+$$
+
+where `p_i` is the microphone position and `c` is the speed of sound (343 m/s in
+the code). GCC-PHAT estimates the delay between two channels from the phase-only
+cross-spectrum:
+
+$$
+\hat R(\tau)=\int \frac{X_1(\omega) X_2^*(\omega)}{|X_1(\omega) X_2^*(\omega)|} e^{j\omega\tau}\,d\omega
+\qquad
+\hat\tau = \arg\max_\tau \hat R(\tau)
+$$
+
+## Repository exercise
+
+Read the array simulation and estimators in [`src/vehicle_audio/multichannel.py`](../src/vehicle_audio/multichannel.py):
+
+- [ ] Verify that `azimuth_unit_vector` matches the broadside convention above.
+- [ ] Derive the delay formula from `far_field_arrival_delays_seconds` and confirm the sign convention.
+- [ ] Explain why `fractional_delay` interpolates rather than rounding to integer samples.
+- [ ] Compare the weighting in `gcc_phat_delay_samples` with the plain cross-correlation case.
+- [ ] State the assumption behind `delay_and_sum_beamform` and what it trades off.
+
+Run the multichannel tests, which are self-contained and need no audio corpus:
+
+```bash
+uv run pytest tests/test_multichannel.py -q
+```
+
+Then open `runs/m4_multichannel_paired_sessions_seed42/metrics.json` and
+[`docs/milestone4_report.md`](../docs/milestone4_report.md), and verify by hand:
+
+- [ ] Recompute balanced accuracy from the single-microphone confusion matrix `[[84, 0], [13, 71]]` and confirm 92.26%.
+- [ ] Confirm the aggregate ordering: 2-mic feature fusion beat 4-mic beamforming for classification.
+- [ ] Confirm that 4 microphones localized better than 2 (mean angular error 9.00° vs 22.22° for GCC-PHAT).
+- [ ] Reconcile the two: why can more microphones help localization but not strictly help classification?
+
+## Explain aloud
+
+> Why is a four-microphone uniform linear array restricted to the unambiguous front half-plane `(-90, 90)`?
+
+> Why does GCC-PHAT generally beat plain cross-correlation in noise and reverberation?
+
+# Week 12 — Real-world transfer and the sim-to-real protocol (Milestone 5)
+
+## Outcomes
+
+You should understand:
+
+- why native-real windows come from one explicitly selected channel with provenance;
+- the fails-closed corpus audit and why it refuses to proceed on incomplete data;
+- the three transfer protocols: real-only, synthetic-only, and synthetic plus a
+  fraction of real training data;
+- why the held-out recording session is the test unit, not the window;
+- learning curves and what would count as closing the sim-to-real gap;
+- how to interpret a negative result: source/session overfitting versus category learning.
+
+## Core sources
+
+1. Re-read the cross-milestone experiment rules and the dataset leakage rules in [`AGENTS.md`](../AGENTS.md) with this week's questions in mind.
+2. Read [`docs/milestone5_status.md`](../docs/milestone5_status.md) in full, including the split, hashes, and limitations.
+3. Revisit the Week 9 domain-randomization paper and note what it does **not** establish about real-world transfer.
+
+## Repository exercise
+
+- [ ] Read `audit_real_manifest` in [`src/vehicle_audio/real_corpus.py`](../src/vehicle_audio/real_corpus.py) and list every condition that makes the audit fail closed.
+- [ ] Read `validate_transfer_protocol` and `stratified_fraction_indices` in [`src/vehicle_audio/transfer_evaluation.py`](../src/vehicle_audio/transfer_evaluation.py) and state how the 1/5/10/25% real fractions are stratified.
+- [ ] Run the self-contained transfer tests:
+
+```bash
+uv run pytest tests/test_real_corpus.py tests/test_transfer_evaluation.py -q
+```
+
+- [ ] Open `runs/m5_transfer_seed42/metrics.json` and the learning-curve plot, and confirm the headline numbers: real-only 10.2% and synthetic-only 32.8% balanced accuracy on the fixed real test set.
+- [ ] Explain why every model misses the held-out wheeled session even though the synthetic-only model is the best of the three on real audio.
+
+## Explain aloud
+
+> If a model scores 95% on synthetic-to-synthetic but 30% on real-to-real, what exactly did it learn?
+
+> What would a convincing sim-to-real transfer result look like, given the corpus constraints described in the report?
+
+# Week 13 — Noise-invariant representation learning (Milestone 6, part 1)
+
+## Outcomes
+
+You should understand:
+
+- the paired clean/corrupted examples produced by Milestone 1 and the invariance objective;
+- the difference between augmentation-only training and explicit consistency training;
+- positive, hard-positive (same vehicle, different state), and hard-negative (different vehicle) pairs;
+- a combined objective of class-weighted cross-entropy, cosine consistency, and a cosine triplet margin;
+- the projection head and why leaving the classifier encoder free matters;
+- nuisance partitions (held-out noise category, held-out geometry, microphone response);
+- why repeated training seeds must share a fixed split seed before they may be aggregated.
+
+## Core sources
+
+1. [FaceNet: A Unified Embedding for Face Recognition and Clustering](https://arxiv.org/abs/1503.03832) — the triplet-margin idea used in the invariance objective.
+2. [A Simple Framework for Contrastive Learning of Visual Representations (SimCLR)](https://arxiv.org/abs/2002.05709) — broader context for learning invariant embeddings.
+3. Read [`docs/milestone6_report.md`](../docs/milestone6_report.md) and [`docs/milestone6_improvement_checkpoint.md`](../docs/milestone6_improvement_checkpoint.md).
+
+## Key equation
+
+The triplet-margin objective in the code pushes an anchor `a` closer to a positive
+`p` than to a negative `n` by at least a margin `m`:
+
+$$
+L_{\text{triplet}}=\max\left(0,\;d(a,p)-d(a,n)+m\right)
+$$
+
+where `d` is cosine distance. The total training objective combines this with
+class-weighted cross-entropy and a clean/corrupted cosine consistency term; read
+`evaluate_invariance.py` for the exact weights (`--consistency-weight`,
+`--hard-positive-weight`, `--hard-negative-weight`, `--triplet-margin`).
+
+## Repository exercise
+
+- [ ] Read `hard_positive_partner_indices` and `hard_negative_partner_indices` in [`src/vehicle_audio/invariance_evaluation.py`](../src/vehicle_audio/invariance_evaluation.py) and state which metadata makes a partner a "hard" pair.
+- [ ] Read `build_nuisance_partitions` and list which conditions are held out of training.
+- [ ] Read `aggregate_invariance_runs` in [`src/vehicle_audio/invariance_aggregation.py`](../src/vehicle_audio/invariance_aggregation.py) and note which fields must match before runs are combined.
+- [ ] Run the invariance tests:
+
+```bash
+uv run pytest tests/test_invariance_evaluation.py tests/test_invariance_aggregation.py -q
+```
+
+**Predict, then verify.** Before reading the results, write down your prediction:
+will invariance training transfer to the fixed native-real sessions better or worse
+than augmentation-only training, and why? Then open `docs/milestone6_report.md` and
+reconcile your answer with the seed-42 numbers (invariance training raised synthetic
+all-corruption balanced accuracy from 77.7% to 78.9% and embedding cosine similarity
+from 0.845 to 0.916, but real balanced accuracy fell to 12.5% versus 29.0% for
+clean-only and 48.4% for augmentation-only, with 0% recall on the held-out wheeled
+session).
+
+## Explain aloud
+
+> Why can making `z_clean ≈ z_corrupted` help in-distribution accuracy yet hurt transfer to real audio?
+
+> Why is a hard negative stronger evidence than an easy one, and what metadata does the repo use to build hard negatives?
+
+# Week 14 — Pretrained encoders and leakage-safe session evaluation (Milestone 6, part 2)
+
+## Outcomes
+
+You should understand:
+
+- external pretraining (PANNs on AudioSet) and why it is not a strict synthetic-only baseline;
+- a frozen encoder with a linear probe versus fine-tuning;
+- the 2,048-dimensional embedding versus the 527 AudioSet outputs as representations;
+- nested leave-session-pair-out evaluation and why regularization must be selected only on inner folds;
+- semantic regularization, equal-weight ensembles, and per-fold decision thresholds;
+- the Milestone 7 gate and why a strong mean alone does not clear it.
+
+## Core sources
+
+1. [PANNs: Large-Scale Pretrained Audio Neural Networks for Audio Pattern Recognition](https://arxiv.org/abs/1912.10211).
+2. Read [`docs/milestone6_pretrained_transfer_report.md`](../docs/milestone6_pretrained_transfer_report.md), [`docs/milestone6_semantic_session_report.md`](../docs/milestone6_semantic_session_report.md), and [`docs/milestone6_fusion_session_report.md`](../docs/milestone6_fusion_session_report.md).
+
+## Repository exercise
+
+- [ ] Read the five Milestone 7 gate criteria at the end of [`docs/milestone6_fusion_session_report.md`](../docs/milestone6_fusion_session_report.md) and state why 77.35% nested mean balanced accuracy passes gates 2 and 3 but not gates 1, 4, and 5.
+- [ ] Read `nested_leave_session_pair_out_fusion` and `_fused_probabilities` in [`src/vehicle_audio/fusion_session_evaluation.py`](../src/vehicle_audio/fusion_session_evaluation.py) and describe what one outer fold excludes.
+- [ ] Open `runs/m6_fusion_nested_sessions/metrics.json` and find the Ford Model T wheeled-recall collapse (0–14.71% in several contexts). State what this implies about the "wheeled" category at the session level.
+- [ ] Run the self-contained session tests:
+
+```bash
+uv run pytest tests/test_semantic_session_evaluation.py tests/test_fusion_session_evaluation.py tests/test_pretrained_evaluation.py -q
+```
+
+## Explain aloud
+
+> Why must the wheeled decision threshold be selected inside each outer fold rather than once on the whole corpus?
+
+> Why does a 77% mean balanced accuracy not authorize Milestone 7 when one held-out session sits near 22% recall?
+
+# Week 15 — Capstone: designing the Milestone 7 experiment
+
+## Outcomes
+
+You should be able to:
+
+- state the hierarchical taxonomy and its reliability ordering
+  (vehicle present → tracked/wheeled → family → model);
+- define open-set evaluation: known-class accuracy, unknown detection rate,
+  false-known rate, and confidence calibration;
+- explain why UNKNOWN must be an allowed answer rather than a forced prediction;
+- design a discriminating experiment rather than reusing the current corpus.
+
+## Core sources
+
+1. Re-read the Milestone 7 section and the research priority list in [`AGENTS.md`](../AGENTS.md).
+2. Re-read the gate assessment in [`docs/milestone6_fusion_session_report.md`](../docs/milestone6_fusion_session_report.md).
+
+## Capstone exercise
+
+- [ ] Design an experiment that would clear all five Milestone 7 gate criteria. Specify the corpus changes, the split, and the metrics you would report.
+- [ ] Identify which hierarchy levels the current fusion run supports and which it does not, using the session-level numbers from Week 14.
+- [ ] Write a short protocol for measuring unknown detection and false-known rate using vehicle models excluded from training.
+- [ ] State which conclusions each of your proposed splits would and would not support.
+
+## Explain aloud
+
+> What is the difference between an "unknown vehicle" and an "unseen operating state"?
+
+> Design the smallest experiment that would distinguish "the model knows the wheeled category" from "the model memorized three wheeled recordings."
+
 # Equation reference
 
 ## Decibels
@@ -634,6 +917,18 @@ You should be able to define each term in one or two sentences.
 - [ ] RT60
 - [ ] clipping
 - [ ] compression
+- [ ] uniform linear array
+- [ ] broadside
+- [ ] azimuth
+- [ ] far field
+- [ ] plane wave
+- [ ] fractional delay
+- [ ] time difference of arrival (TDOA)
+- [ ] GCC-PHAT
+- [ ] SRP-PHAT
+- [ ] beamforming
+- [ ] delay-and-sum
+- [ ] angular error
 
 ## Audio features and ML
 
@@ -650,6 +945,16 @@ You should be able to define each term in one or two sentences.
 - [ ] optimizer
 - [ ] checkpoint
 - [ ] calibration
+- [ ] embedding
+- [ ] cosine distance
+- [ ] linear probe
+- [ ] frozen encoder
+- [ ] external pretraining
+- [ ] triplet margin
+- [ ] hard positive
+- [ ] hard negative
+- [ ] projection head
+- [ ] invariance
 
 ## Experimental design
 
@@ -667,6 +972,17 @@ You should be able to define each term in one or two sentences.
 - [ ] synthetic-to-synthetic
 - [ ] real-to-real
 - [ ] synthetic-to-real
+- [ ] nested cross-validation
+- [ ] leave-session-pair-out
+- [ ] inner fold
+- [ ] outer fold
+- [ ] ensemble
+- [ ] decision threshold
+- [ ] learning curve
+- [ ] open-set classification
+- [ ] unknown detection
+- [ ] false-known rate
+- [ ] gate criteria
 
 # Questions you should be ready to answer
 
@@ -683,6 +999,15 @@ You should be able to define each term in one or two sentences.
 - [ ] What alternative confounders might explain the same result?
 - [ ] What would constitute evidence of unseen-vehicle generalization?
 - [ ] What would constitute evidence of synthetic-to-real transfer?
+- [ ] Why is a linear array restricted to the front half-plane, and how is azimuth measured in this repo?
+- [ ] Why did two-microphone feature fusion beat four-microphone beamforming for classification?
+- [ ] What does the Milestone 5 negative result demonstrate about synthetic-to-real transfer?
+- [ ] What is the difference between augmentation-only training and explicit consistency training?
+- [ ] Why can invariance training help in-distribution yet hurt real transfer?
+- [ ] Why is a PANNs-based model not a strict synthetic-only baseline?
+- [ ] Why must regularization and decision thresholds be selected on inner folds only?
+- [ ] What are the five Milestone 7 gate criteria, and why does 77% mean balanced accuracy not suffice?
+- [ ] What is the difference between an unknown vehicle and an unseen operating state?
 
 # Optional deeper resources
 
@@ -696,6 +1021,9 @@ Use these after completing the core plan:
 # Completion criterion
 
 The plan is complete when you can give a 10-minute project explanation, answer the
-questions above, derive the SNR scaling equation, inspect a split for leakage, and
+questions above, derive the SNR scaling equation, inspect a split for leakage,
 connect the principal DSP and classifier equations to their implementations in the
-repository.
+repository, and explain the Milestone 4-6 results (array localization and
+classification, the sim-to-real negative result, and the invariance findings) with
+their limitations. The capstone is finished when you can also design the experiment
+that would clear the Milestone 7 gate.

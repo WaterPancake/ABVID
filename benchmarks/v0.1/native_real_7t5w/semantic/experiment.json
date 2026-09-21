@@ -1,0 +1,172 @@
+{
+  "configuration": {
+    "encoder_trainable": false,
+    "ensemble_rule": "equal_mean_of_probabilities_across_all_regularization_candidates",
+    "models": [
+      "nested_selected_logistic_regression",
+      "regularization_probability_ensemble"
+    ],
+    "regularization_c_candidates": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "sample_weighting": "equal_class_equal_session_equal_window_within_session",
+    "scikit_learn_version": "1.9.0",
+    "seed": 42,
+    "selection_metric": "inner_pair_mean_balanced_accuracy",
+    "semantic_audioset_features": [
+      {
+        "index": 135,
+        "name": "Rattle"
+      },
+      {
+        "index": 300,
+        "name": "Vehicle"
+      },
+      {
+        "index": 301,
+        "name": "Boat, Water vehicle"
+      },
+      {
+        "index": 306,
+        "name": "Motor vehicle (road)"
+      },
+      {
+        "index": 307,
+        "name": "Car"
+      },
+      {
+        "index": 308,
+        "name": "Vehicle horn, car horn, honking"
+      },
+      {
+        "index": 309,
+        "name": "Toot"
+      },
+      {
+        "index": 310,
+        "name": "Car alarm"
+      },
+      {
+        "index": 311,
+        "name": "Power windows, electric windows"
+      },
+      {
+        "index": 312,
+        "name": "Skidding"
+      },
+      {
+        "index": 313,
+        "name": "Tire squeal"
+      },
+      {
+        "index": 314,
+        "name": "Car passing by"
+      },
+      {
+        "index": 315,
+        "name": "Race car, auto racing"
+      },
+      {
+        "index": 316,
+        "name": "Truck"
+      },
+      {
+        "index": 317,
+        "name": "Air brake"
+      },
+      {
+        "index": 318,
+        "name": "Air horn, truck horn"
+      },
+      {
+        "index": 320,
+        "name": "Ice cream truck, ice cream van"
+      },
+      {
+        "index": 321,
+        "name": "Bus"
+      },
+      {
+        "index": 322,
+        "name": "Emergency vehicle"
+      },
+      {
+        "index": 326,
+        "name": "Motorcycle"
+      },
+      {
+        "index": 328,
+        "name": "Rail transport"
+      },
+      {
+        "index": 329,
+        "name": "Train"
+      },
+      {
+        "index": 330,
+        "name": "Train whistle"
+      },
+      {
+        "index": 331,
+        "name": "Train horn"
+      },
+      {
+        "index": 332,
+        "name": "Railroad car, train wagon"
+      },
+      {
+        "index": 333,
+        "name": "Train wheels squealing"
+      },
+      {
+        "index": 343,
+        "name": "Engine"
+      },
+      {
+        "index": 344,
+        "name": "Light engine (high frequency)"
+      },
+      {
+        "index": 348,
+        "name": "Medium engine (mid frequency)"
+      },
+      {
+        "index": 349,
+        "name": "Heavy engine (low frequency)"
+      },
+      {
+        "index": 350,
+        "name": "Engine knocking"
+      },
+      {
+        "index": 351,
+        "name": "Engine starting"
+      },
+      {
+        "index": 352,
+        "name": "Idling"
+      },
+      {
+        "index": 353,
+        "name": "Accelerating, revving, vroom"
+      },
+      {
+        "index": 489,
+        "name": "Clatter"
+      }
+    ],
+    "semantic_session_evaluation_version": 2
+  },
+  "dataset_version": "e013532104c209e3c8f6906bb3c9daa3c46c2d6fb2e9fed82a65f4d2699a42c4",
+  "git_commit": "0d242c6d76ff036747f89576ee15d5f7399f5891",
+  "metrics": "metrics.json",
+  "model_checkpoint": "semantic_probe_models.pt",
+  "protocol_status": "complete",
+  "random_seed": 42,
+  "test_domain": "real -> real nested unseen recording-session pairs",
+  "train_test_split": "splits.json"
+}

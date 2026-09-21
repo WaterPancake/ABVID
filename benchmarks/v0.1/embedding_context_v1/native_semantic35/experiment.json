@@ -1,0 +1,74 @@
+{
+  "artifact_sha256": {
+    "metrics.json": "bb38f13ea7d99fdb9284c8c8c369865376365798aa03db0e04ccae692612463d",
+    "models.pt": "93e53788bfc906d57b29a3820f55fb36b0892d69fca197f1a30e3c4a7b4226c1",
+    "splits.json": "dae865091d61392c7a0a9a971921c8720510e9e9dcd134cd83486978b785a9cf",
+    "summary.json": "2a2fb9cdba59d3ddc5b567d3f49ad75e71d2b8a5907f0708ee0a13e59ffa19cc"
+  },
+  "configuration": {
+    "bandwidth_ablation_sample_rate": 32000,
+    "batch_size": 8,
+    "blas_threads": 1,
+    "bootstrap_repetitions": 10000,
+    "c_values": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "channel": 0,
+    "checkpoint": ".artifacts/models/panns/Cnn14_mAP=0.431.pth",
+    "context_sets": [
+      {
+        "durations": [
+          2,
+          4
+        ],
+        "expected_sessions": {
+          "tracked": 7,
+          "wheeled": 5
+        },
+        "max_seconds": 4
+      },
+      {
+        "durations": [
+          2,
+          4,
+          8
+        ],
+        "expected_sessions": {
+          "tracked": 6,
+          "wheeled": 5
+        },
+        "max_seconds": 8
+      }
+    ],
+    "domain": "real_to_real_native_unseen_session",
+    "matching": "native_window_center_within_single_reviewed_condition_interval",
+    "native_manifest": "data/benchmark_v0_1_native_real_7t5w/real_manifest.jsonl",
+    "native_manifest_sha256": "e013532104c209e3c8f6906bb3c9daa3c46c2d6fb2e9fed82a65f4d2699a42c4",
+    "primary_head": "fixed_regularization_probability_ensemble",
+    "representations": [
+      "semantic35",
+      "embedding2048"
+    ],
+    "sample_rate": 16000,
+    "secondary_head": "inner_selected_regularization",
+    "seed": 42,
+    "threshold": 0.5,
+    "torch_threads": 4,
+    "version": "embedding_context_v1"
+  },
+  "dataset_sha256": "a3bb6ac50d29589b7c857492a0fd88160972e835f0eae529ec6d45324109e1fd",
+  "domain": "real_to_real_native_unseen_session",
+  "elapsed_seconds": 7.030670792009914,
+  "feature_sha256": "e577e5bde4ed82b16e9e9d847ca40fe66d326236ceaa349dab8680fdfd01e045",
+  "feature_shape": [
+    593,
+    35
+  ],
+  "parent_experiment": "../experiment.json",
+  "record_count": 593,
+  "seed": 42
+}

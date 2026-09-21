@@ -1,0 +1,69 @@
+protocol_version: 1
+benchmark_id: abvid-benchmark-v0.1
+track: native_real
+status: preregistered_before_7t5w_evaluation
+date: "2026-09-20"
+seed: 42
+test_domain: real -> real nested unseen recording-session pairs
+
+dataset:
+  targets_root: data/targets
+  output_root: data/benchmark_v0_1_native_real_7t5w
+  source_catalog: configs/audio_sources.yaml
+  role_rule: admitted_to_corpus_true
+  group_field: recording_session
+  required_sessions_per_class: 5
+  sample_rate: 16000
+  window_seconds: 2.0
+  hop_seconds: 1.0
+  channel: 0
+  max_windows_per_session: 64
+  minimum_rms: 0.0
+
+protected_sources:
+  consumed_locked:
+    - candidate-target-tracked-sherman-passby-gvn-43670951
+    - candidate-target-wheeled-car-start-drive-pdsounds-194
+  future_confirmation:
+    - candidate-target-tracked-t90m-27guards-2021
+    - candidate-target-wheeled-jltv-fort-mccoy-2019
+
+evaluation:
+  outer_split: leave_one_tracked_and_one_wheeled_recording_session_out
+  inner_split: leave_one_tracked_and_one_wheeled_recording_session_out
+  sample_weighting: equal_class_equal_session_equal_window_within_session
+  regularization_c_candidates: [0.001, 0.01, 0.1, 1.0, 10.0]
+  wheeled_threshold_candidates: [0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6]
+  primary_model: equal_probability_semantic_classical_regularization_ensembles
+  comparators:
+    - classical_mfcc_spectral_logistic_ensemble
+    - semantic_panns_audioset_logistic_ensemble
+  semantic_features: fixed_35_vehicle_engine_audioset_outputs
+  fusion_weights:
+    semantic: 0.5
+    classical: 0.5
+  threshold_selection_metric: inner_pair_mean_balanced_accuracy
+
+development_acceptance_gates:
+  minimum_sessions_per_class: 5
+  minimum_mean_balanced_accuracy: 0.75
+  minimum_mean_recall_per_class: 0.70
+  minimum_heldout_session_window_recall: 0.50
+
+reporting:
+  - accuracy
+  - balanced_accuracy
+  - macro_precision
+  - macro_recall
+  - macro_f1
+  - confusion_matrix
+  - per_class_recall
+  - per_session_recall
+  - worst_session_recall
+  - outer_fold_distribution
+  - session_level_uncertainty
+
+confirmation_rule: >-
+  Do not inspect T90M or JLTV predictions. Only after all four development gates
+  pass may preprocessing, checkpoint, aggregation, and decision threshold be
+  frozen for one evaluation of the reserved pair.

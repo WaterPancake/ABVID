@@ -82,7 +82,7 @@ misleading with seven sessions.
 
 | Gate | Requirement | Result | Status |
 |---|---|---:|---|
-| 1 | At least 5 reviewed sessions per class | Frozen development: 4 tracked / 3 wheeled; currently admitted: 3 / 4 | Fail |
+| 1 | At least 5 reviewed sessions per class | Frozen development: 4 tracked / 3 wheeled; current catalog/local discovery: 7 tracked / 5 wheeled | **Pass for current corpus count** |
 | 2 | Nested mean balanced accuracy at least 75% | 77.35% | **Pass** |
 | 3 | Mean recall at least 70% for both classes | 77.42% / 77.28% | **Pass** |
 | 4 | No held-out session below 50% window recall | Minimum 22.22% / 29.41% | Fail |
@@ -91,6 +91,11 @@ misleading with seven sessions.
 This is the first leakage-safe development run to pass gates 2 and 3. It does not
 authorize Milestone 7 because a stronger mean cannot compensate for catastrophic
 individual sessions or the missing corpus and confirmation requirements.
+
+The refreshed 7/5 Benchmark v0.1 evaluation supersedes this table for the current
+corpus. Its primary fusion scored 39.70% mean balanced accuracy, 51.98% tracked
+recall, and 27.42% wheeled recall, failing gates 2-4. See
+[`benchmark_v0_1_native_real_results.md`](benchmark_v0_1_native_real_results.md).
 
 ## Frozen confirmation protocol
 
@@ -165,8 +170,8 @@ diesel or turbine tracked vehicles.
 The highest-value action remains new independent data, not a larger classifier:
 
 1. preserve this locked result unchanged and do not tune against it;
-2. expand to at least five reviewed sessions per class, emphasizing clean modern
-   tracked diesel and turbine platforms across idle, approach, pass-by, and departure;
+2. expand to at least five reviewed development sessions per class, prioritizing
+   independent heavy wheeled vehicles while retaining the current tracked coverage;
 3. remove rejected or unreviewed source intervals from the next development corpus;
 4. preregister a new development protocol and reserve a different future pair before
    fitting another category model;

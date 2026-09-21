@@ -1,0 +1,26 @@
+version: 1
+decision_date: "2026-09-20"
+decision: exclude_from_active_training_and_evaluation
+reason: Operator requested parking startup segments; preserve recordings and review history.
+historical_benchmarks: unchanged
+raw_audio: retained_without_modification
+scope: admitted_development_sources_only
+intervals:
+  - source_id: target-wheeled-ford-model-t-start
+    recording_session: commons_soundsofchanges_private_collection
+    operating_condition: startup
+    start_seconds: 6.0
+    end_seconds: 14.0
+    original_review: Human audiovisual review on 2026-08-28 confirmed the engine-start interval from 00:06 through 00:14.
+  - source_id: target-wheeled-maserati-granturismo-exhaust
+    recording_session: freesound_lmartins_maserati_granturismo_2019
+    operating_condition: startup
+    start_seconds: 0.0
+    end_seconds: 2.5
+    original_review: Human auditory review on 2026-08-24 confirmed the engine-start transient.
+  - source_id: candidate-target-tracked-retromobile-amx30-2015
+    recording_session: commons_retromobile_amx30_demo_2015
+    operating_condition: startup
+    start_seconds: 9.0
+    end_seconds: 40.0
+    original_review: Human audiovisual review on 2026-09-18 classified 00:09-00:40 as AMX-30 startup.

@@ -1,0 +1,969 @@
+{
+  "aggregation": "equal original background within condition, equal session within class, equal classes",
+  "results_sha256": "1fd56ed262d9d0d5137e6fff882a8e5810c5cff0e3b4ed81c48e4c8325059593",
+  "rows": [
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.4566550823227842,
+      "condition": 30,
+      "delta_ba_vs_native": 0.004284944050083783,
+      "descriptive_session_bootstrap_ba_95": [
+        0.30578160430838996,
+        0.622664516939022
+      ],
+      "model": "classical",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        9.415437370600624e-05,
+        0.0092312925170068
+      ],
+      "per_class_recall": {
+        "tracked": 0.693070652173913,
+        "wheeled": 0.22023951247165535
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.5377504498176082,
+      "condition": 30,
+      "delta_ba_vs_native": 0.0037158631568569023,
+      "descriptive_session_bootstrap_ba_95": [
+        0.42766240418268764,
+        0.685245676667406
+      ],
+      "model": "semantic",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.0011526545400768376,
+        0.009184227268806109
+      ],
+      "per_class_recall": {
+        "tracked": 0.8157871808143549,
+        "wheeled": 0.2597137188208617
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.40601076481317167,
+      "condition": 30,
+      "delta_ba_vs_native": 0.0090179187617076,
+      "descriptive_session_bootstrap_ba_95": [
+        0.30203179301611943,
+        0.522148251873213
+      ],
+      "model": "fusion",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        0.002343965665976516,
+        0.01645855285048802
+      ],
+      "per_class_recall": {
+        "tracked": 0.5323900103519669,
+        "wheeled": 0.27963151927437646
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.4664969991619836,
+      "condition": 20,
+      "delta_ba_vs_native": 0.014126860889283221,
+      "descriptive_session_bootstrap_ba_95": [
+        0.3175217822636301,
+        0.6294174923592625
+      ],
+      "model": "classical",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        0.002294665964211761,
+        0.02720636692176866
+      ],
+      "per_class_recall": {
+        "tracked": 0.7173576604554865,
+        "wheeled": 0.2156363378684807
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.5372184942817706,
+      "condition": 20,
+      "delta_ba_vs_native": 0.0031839076210192774,
+      "descriptive_session_bootstrap_ba_95": [
+        0.42695645241792374,
+        0.6870825862047717
+      ],
+      "model": "semantic",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.006867890725130624,
+        0.014264526643990935
+      ],
+      "per_class_recall": {
+        "tracked": 0.8134661835748791,
+        "wheeled": 0.26097080498866215
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.4210468426501035,
+      "condition": 20,
+      "delta_ba_vs_native": 0.024053996598639438,
+      "descriptive_session_bootstrap_ba_95": [
+        0.31613537892512084,
+        0.5357562597049687
+      ],
+      "model": "fusion",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        0.009066609977324275,
+        0.03980045351473924
+      ],
+      "per_class_recall": {
+        "tracked": 0.5546631297446515,
+        "wheeled": 0.2874305555555555
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.5098298395445136,
+      "condition": 10,
+      "delta_ba_vs_native": 0.05745970127181316,
+      "descriptive_session_bootstrap_ba_95": [
+        0.357877403135167,
+        0.672151268115942
+      ],
+      "model": "classical",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        0.01452706068840583,
+        0.1119747023809523
+      ],
+      "per_class_recall": {
+        "tracked": 0.7631418219461699,
+        "wheeled": 0.25651785714285713
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.5258949521837721,
+      "condition": 10,
+      "delta_ba_vs_native": -0.008139634476979185,
+      "descriptive_session_bootstrap_ba_95": [
+        0.43657650596470476,
+        0.6469208991114562
+      ],
+      "model": "semantic",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.042415697710243505,
+        0.026320665267918764
+      ],
+      "per_class_recall": {
+        "tracked": 0.8346385438233265,
+        "wheeled": 0.2171513605442177
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.4559663992408558,
+      "condition": 10,
+      "delta_ba_vs_native": 0.058973553189391736,
+      "descriptive_session_bootstrap_ba_95": [
+        0.34062708656832297,
+        0.5765212377070394
+      ],
+      "model": "fusion",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        0.017363834664300477,
+        0.1137538172877847
+      ],
+      "per_class_recall": {
+        "tracked": 0.6138474810213941,
+        "wheeled": 0.29808531746031747
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.5294646862368136,
+      "condition": 5,
+      "delta_ba_vs_native": 0.07709454796411325,
+      "descriptive_session_bootstrap_ba_95": [
+        0.37485489453933746,
+        0.6874127731255544
+      ],
+      "model": "classical",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.005022582538450196,
+        0.19384204623878531
+      ],
+      "per_class_recall": {
+        "tracked": 0.7660878191856454,
+        "wheeled": 0.2928415532879819
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.5166337622005324,
+      "condition": 5,
+      "delta_ba_vs_native": -0.017400824460218955,
+      "descriptive_session_bootstrap_ba_95": [
+        0.4422640760561471,
+        0.6179059865794143
+      ],
+      "model": "semantic",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.07395696616508919,
+        0.03709912316375827
+      ],
+      "per_class_recall": {
+        "tracked": 0.8517525017253277,
+        "wheeled": 0.18151502267573696
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.47079805654145723,
+      "condition": 5,
+      "delta_ba_vs_native": 0.07380521048999317,
+      "descriptive_session_bootstrap_ba_95": [
+        0.34351407451567584,
+        0.6089557153024252
+      ],
+      "model": "fusion",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        0.004078451579907327,
+        0.16967425964951194
+      ],
+      "per_class_recall": {
+        "tracked": 0.6348529158040028,
+        "wheeled": 0.3067431972789116
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.51599859509021,
+      "condition": 0,
+      "delta_ba_vs_native": 0.06362845681750956,
+      "descriptive_session_bootstrap_ba_95": [
+        0.38623875841097305,
+        0.6525670782805876
+      ],
+      "model": "classical",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.05215195824706695,
+        0.19565519862836417
+      ],
+      "per_class_recall": {
+        "tracked": 0.7506267253278123,
+        "wheeled": 0.28137046485260775
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.5228112060041408,
+      "condition": 0,
+      "delta_ba_vs_native": -0.011223380656610549,
+      "descriptive_session_bootstrap_ba_95": [
+        0.46093688304126,
+        0.5988589344252193
+      ],
+      "model": "semantic",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.0894289080215419,
+        0.05117005031179141
+      ],
+      "per_class_recall": {
+        "tracked": 0.8923684437543133,
+        "wheeled": 0.15325396825396825
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.4793166161392093,
+      "condition": 0,
+      "delta_ba_vs_native": 0.08232377008774522,
+      "descriptive_session_bootstrap_ba_95": [
+        0.35557158801020405,
+        0.6174769098762692
+      ],
+      "model": "fusion",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.004858996814305432,
+        0.19021781955535824
+      ],
+      "per_class_recall": {
+        "tracked": 0.6506457039337474,
+        "wheeled": 0.30798752834467114
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.49283015380065065,
+      "condition": -5,
+      "delta_ba_vs_native": 0.040460015527950255,
+      "descriptive_session_bootstrap_ba_95": [
+        0.41712221174701763,
+        0.5706311495612737
+      ],
+      "model": "classical",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.09023076259489304,
+        0.1588810440389923
+      ],
+      "per_class_recall": {
+        "tracked": 0.7452195479641132,
+        "wheeled": 0.24044075963718817
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.5194873003549246,
+      "condition": -5,
+      "delta_ba_vs_native": -0.01454728630582669,
+      "descriptive_session_bootstrap_ba_95": [
+        0.47801971957261163,
+        0.5615621926759835
+      ],
+      "model": "semantic",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.13642994167775802,
+        0.07413785908385095
+      ],
+      "per_class_recall": {
+        "tracked": 0.9248589544513459,
+        "wheeled": 0.11411564625850339
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.49038179039731833,
+      "condition": -5,
+      "delta_ba_vs_native": 0.09338894434585426,
+      "descriptive_session_bootstrap_ba_95": [
+        0.3939516900510204,
+        0.5969732435546683
+      ],
+      "model": "fusion",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.004326286447550089,
+        0.19245432040569846
+      ],
+      "per_class_recall": {
+        "tracked": 0.6741847826086956,
+        "wheeled": 0.306578798185941
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.5041689773735581,
+      "condition": -10,
+      "delta_ba_vs_native": 0.05179883910085775,
+      "descriptive_session_bootstrap_ba_95": [
+        0.45940175336438926,
+        0.5477800530538302
+      ],
+      "model": "classical",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.09154724933451643,
+        0.18734911777210878
+      ],
+      "per_class_recall": {
+        "tracked": 0.7622877846790891,
+        "wheeled": 0.24605017006802724
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.5076206805185842,
+      "condition": -10,
+      "delta_ba_vs_native": -0.0264139061421671,
+      "descriptive_session_bootstrap_ba_95": [
+        0.4806667583247067,
+        0.5327800738501922
+      ],
+      "model": "semantic",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.1672118240412106,
+        0.0779982461734694
+      ],
+      "per_class_recall": {
+        "tracked": 0.9352286059351277,
+        "wheeled": 0.08001275510204081
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 3,
+      "balanced_accuracy": 0.48997926525682745,
+      "condition": -10,
+      "delta_ba_vs_native": 0.09298641920536338,
+      "descriptive_session_bootstrap_ba_95": [
+        0.39370071262200534,
+        0.5845265900744355
+      ],
+      "model": "fusion",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.019186971618357494,
+        0.20451145186335398
+      ],
+      "per_class_recall": {
+        "tracked": 0.6863134057971015,
+        "wheeled": 0.29364512471655335
+      },
+      "role": "environmental_noise"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.4518788819875776,
+      "condition": 30,
+      "delta_ba_vs_native": -0.0004912562851228097,
+      "descriptive_session_bootstrap_ba_95": [
+        0.301179220737208,
+        0.6179706563331855
+      ],
+      "model": "classical",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.005380749038745933,
+        0.004151785714285718
+      ],
+      "per_class_recall": {
+        "tracked": 0.6879244306418218,
+        "wheeled": 0.21583333333333332
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.5352082409050577,
+      "condition": 30,
+      "delta_ba_vs_native": 0.0011736542443063769,
+      "descriptive_session_bootstrap_ba_95": [
+        0.4167025403911565,
+        0.6923924966725821
+      ],
+      "model": "semantic",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.00820315734989647,
+        0.0098304865424431
+      ],
+      "per_class_recall": {
+        "tracked": 0.8042727743271222,
+        "wheeled": 0.2661437074829932
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.40270519077196093,
+      "condition": 30,
+      "delta_ba_vs_native": 0.005712344720496865,
+      "descriptive_session_bootstrap_ba_95": [
+        0.29826557185374153,
+        0.5222364869860987
+      ],
+      "model": "fusion",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.006211180124223631,
+        0.01848131793478255
+      ],
+      "per_class_recall": {
+        "tracked": 0.5214350414078675,
+        "wheeled": 0.2839753401360544
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.46187888198757765,
+      "condition": 20,
+      "delta_ba_vs_native": 0.009508743714877255,
+      "descriptive_session_bootstrap_ba_95": [
+        0.31587213010204085,
+        0.6241040234028391
+      ],
+      "model": "classical",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.001981477373558113,
+        0.02238095238095234
+      ],
+      "per_class_recall": {
+        "tracked": 0.7059006211180124,
+        "wheeled": 0.21785714285714283
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.5272486875184856,
+      "condition": 20,
+      "delta_ba_vs_native": -0.006785899142265683,
+      "descriptive_session_bootstrap_ba_95": [
+        0.4047447385204082,
+        0.6876898153283052
+      ],
+      "model": "semantic",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.026716064958592113,
+        0.010910051112836447
+      ],
+      "per_class_recall": {
+        "tracked": 0.7882983954451346,
+        "wheeled": 0.2661989795918367
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.40582113280094645,
+      "condition": 20,
+      "delta_ba_vs_native": 0.008828286749482384,
+      "descriptive_session_bootstrap_ba_95": [
+        0.30186639030612245,
+        0.5259441271073646
+      ],
+      "model": "fusion",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.010219332298136655,
+        0.029226756599378862
+      ],
+      "per_class_recall": {
+        "tracked": 0.5257026397515527,
+        "wheeled": 0.2859396258503401
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.4782993197278911,
+      "condition": 10,
+      "delta_ba_vs_native": 0.025929181455190686,
+      "descriptive_session_bootstrap_ba_95": [
+        0.34317766794217686,
+        0.6372184311224489
+      ],
+      "model": "classical",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.005421068563294894,
+        0.06112316529872815
+      ],
+      "per_class_recall": {
+        "tracked": 0.7424999999999999,
+        "wheeled": 0.21409863945578228
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.5255791555752736,
+      "condition": 10,
+      "delta_ba_vs_native": -0.00845543108547775,
+      "descriptive_session_bootstrap_ba_95": [
+        0.4188370535714286,
+        0.6759920211291037
+      ],
+      "model": "semantic",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.02829944912747705,
+        0.009400383115202617
+      ],
+      "per_class_recall": {
+        "tracked": 0.8041770186335403,
+        "wheeled": 0.2469812925170068
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.4314087917775806,
+      "condition": 10,
+      "delta_ba_vs_native": 0.03441594572611656,
+      "descriptive_session_bootstrap_ba_95": [
+        0.32675207270408163,
+        0.5548760536823425
+      ],
+      "model": "fusion",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        0.003493060947204959,
+        0.07138725136793843
+      ],
+      "per_class_recall": {
+        "tracked": 0.5629153726708075,
+        "wheeled": 0.29990221088435376
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.5077017709257615,
+      "condition": 5,
+      "delta_ba_vs_native": 0.055331632653061125,
+      "descriptive_session_bootstrap_ba_95": [
+        0.3784280145482106,
+        0.6565824044291629
+      ],
+      "model": "classical",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        0.006249627976190482,
+        0.10917256590136051
+      ],
+      "per_class_recall": {
+        "tracked": 0.7748253105590062,
+        "wheeled": 0.24057823129251696
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.5259625480627034,
+      "condition": 5,
+      "delta_ba_vs_native": -0.008072038598047948,
+      "descriptive_session_bootstrap_ba_95": [
+        0.43263588342945875,
+        0.6594833143855369
+      ],
+      "model": "semantic",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.03865977844942324,
+        0.024288133595829643
+      ],
+      "per_class_recall": {
+        "tracked": 0.8368103002070394,
+        "wheeled": 0.21511479591836732
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.4638173802129547,
+      "condition": 5,
+      "delta_ba_vs_native": 0.06682453416149065,
+      "descriptive_session_bootstrap_ba_95": [
+        0.34759559394409945,
+        0.5888169989463177
+      ],
+      "model": "fusion",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        0.02013378299689439,
+        0.12214164402173906
+      ],
+      "per_class_recall": {
+        "tracked": 0.6092546583850932,
+        "wheeled": 0.3183801020408163
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.49615821872227145,
+      "condition": 0,
+      "delta_ba_vs_native": 0.043788080449571054,
+      "descriptive_session_bootstrap_ba_95": [
+        0.3926007653061224,
+        0.6078361315993788
+      ],
+      "model": "classical",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.036514837048950075,
+        0.1298560591356107
+      ],
+      "per_class_recall": {
+        "tracked": 0.7790256211180123,
+        "wheeled": 0.21329081632653057
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.5123957409050577,
+      "condition": 0,
+      "delta_ba_vs_native": -0.021638845755693636,
+      "descriptive_session_bootstrap_ba_95": [
+        0.4309150329968944,
+        0.6190202487244898
+      ],
+      "model": "semantic",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.0742411777210884,
+        0.027757805567879337
+      ],
+      "per_class_recall": {
+        "tracked": 0.8532906314699794,
+        "wheeled": 0.17150085034013604
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.4707178904170364,
+      "condition": 0,
+      "delta_ba_vs_native": 0.07372504436557231,
+      "descriptive_session_bootstrap_ba_95": [
+        0.34889385767894115,
+        0.5994618848898254
+      ],
+      "model": "fusion",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        0.01118088675687665,
+        0.14608723149585912
+      ],
+      "per_class_recall": {
+        "tracked": 0.6453856107660456,
+        "wheeled": 0.2960501700680272
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.47318184338952973,
+      "condition": -5,
+      "delta_ba_vs_native": 0.020811705116829338,
+      "descriptive_session_bootstrap_ba_95": [
+        0.4068620184486838,
+        0.5419800817065956
+      ],
+      "model": "classical",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.10024719942324758,
+        0.13925611181972763
+      ],
+      "per_class_recall": {
+        "tracked": 0.793106884057971,
+        "wheeled": 0.1532568027210884
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.4938781980183377,
+      "condition": -5,
+      "delta_ba_vs_native": -0.04015638864241361,
+      "descriptive_session_bootstrap_ba_95": [
+        0.44450207270408154,
+        0.5503630605774918
+      ],
+      "model": "semantic",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.14135440929089024,
+        0.03529003992901509
+      ],
+      "per_class_recall": {
+        "tracked": 0.871281055900621,
+        "wheeled": 0.1164753401360544
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.4542457852706299,
+      "condition": -5,
+      "delta_ba_vs_native": 0.057252939219165855,
+      "descriptive_session_bootstrap_ba_95": [
+        0.35207270408163266,
+        0.5667079982808341
+      ],
+      "model": "fusion",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.002276138716356102,
+        0.13009654364463175
+      ],
+      "per_class_recall": {
+        "tracked": 0.6562551759834367,
+        "wheeled": 0.2522363945578231
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.46689893892339546,
+      "condition": -10,
+      "delta_ba_vs_native": 0.014528800650695062,
+      "descriptive_session_bootstrap_ba_95": [
+        0.4138249593315587,
+        0.5174443835958296
+      ],
+      "model": "classical",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.14284285113501924,
+        0.17177056760204076
+      ],
+      "per_class_recall": {
+        "tracked": 0.8011193064182195,
+        "wheeled": 0.13267857142857142
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.496292979148181,
+      "condition": -10,
+      "delta_ba_vs_native": -0.03774160751257033,
+      "descriptive_session_bootstrap_ba_95": [
+        0.46340934403652767,
+        0.5297906014307896
+      ],
+      "model": "semantic",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.18005566492901504,
+        0.06399815836660751
+      ],
+      "per_class_recall": {
+        "tracked": 0.9156004140786749,
+        "wheeled": 0.07698554421768707
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 1,
+      "balanced_accuracy": 0.45750979739721964,
+      "condition": -10,
+      "delta_ba_vs_native": 0.060516951345755576,
+      "descriptive_session_bootstrap_ba_95": [
+        0.3631329234139308,
+        0.5563649414929013
+      ],
+      "model": "fusion",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.01153387034161492,
+        0.1483908352743271
+      ],
+      "per_class_recall": {
+        "tracked": 0.6872942546583849,
+        "wheeled": 0.22772534013605444
+      },
+      "role": "competing_vehicle_interference"
+    },
+    {
+      "background_count": 0,
+      "balanced_accuracy": 0.37950781943212064,
+      "condition": "simulated_low_frequency_attenuation",
+      "delta_ba_vs_native": -0.07286231884057975,
+      "descriptive_session_bootstrap_ba_95": [
+        0.21316299957482993,
+        0.5701697283532977
+      ],
+      "model": "classical",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.14515903671251112,
+        -0.011741057564330054
+      ],
+      "per_class_recall": {
+        "tracked": 0.5181780538302277,
+        "wheeled": 0.2408375850340136
+      },
+      "role": "simulated_microphone_response"
+    },
+    {
+      "background_count": 0,
+      "balanced_accuracy": 0.5204981884057971,
+      "condition": "simulated_low_frequency_attenuation",
+      "delta_ba_vs_native": -0.01353639825495423,
+      "descriptive_session_bootstrap_ba_95": [
+        0.39285143310041415,
+        0.6756683095792664
+      ],
+      "model": "semantic",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.0522832164115646,
+        0.024047304791481823
+      ],
+      "per_class_recall": {
+        "tracked": 0.7659963768115942,
+        "wheeled": 0.275
+      },
+      "role": "simulated_microphone_response"
+    },
+    {
+      "background_count": 0,
+      "balanced_accuracy": 0.3600065624075718,
+      "condition": "simulated_low_frequency_attenuation",
+      "delta_ba_vs_native": -0.03698628364389228,
+      "descriptive_session_bootstrap_ba_95": [
+        0.24919892644557823,
+        0.4807426843019817
+      ],
+      "model": "fusion",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.09019299948240166,
+        0.012240295031055904
+      ],
+      "per_class_recall": {
+        "tracked": 0.4098770703933748,
+        "wheeled": 0.3101360544217687
+      },
+      "role": "simulated_microphone_response"
+    },
+    {
+      "background_count": 0,
+      "balanced_accuracy": 0.3756958000591541,
+      "condition": "simulated_high_frequency_rolloff",
+      "delta_ba_vs_native": -0.0766743382135463,
+      "descriptive_session_bootstrap_ba_95": [
+        0.24366097308488613,
+        0.5149943110396332
+      ],
+      "model": "classical",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.11961770509834375,
+        -0.03270493659420291
+      ],
+      "per_class_recall": {
+        "tracked": 0.5047036749482402,
+        "wheeled": 0.246687925170068
+      },
+      "role": "simulated_microphone_response"
+    },
+    {
+      "background_count": 0,
+      "balanced_accuracy": 0.5157554162969537,
+      "condition": "simulated_high_frequency_rolloff",
+      "delta_ba_vs_native": -0.01827917036379767,
+      "descriptive_session_bootstrap_ba_95": [
+        0.4168672360248447,
+        0.6358595829636202
+      ],
+      "model": "semantic",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.060648384353741425,
+        0.021367963897515545
+      ],
+      "per_class_recall": {
+        "tracked": 0.7805201863354039,
+        "wheeled": 0.2509906462585034
+      },
+      "role": "simulated_microphone_response"
+    },
+    {
+      "background_count": 0,
+      "balanced_accuracy": 0.3900659013605442,
+      "condition": "simulated_high_frequency_rolloff",
+      "delta_ba_vs_native": -0.006926944690919867,
+      "descriptive_session_bootstrap_ba_95": [
+        0.28437255527210886,
+        0.4992375637755102
+      ],
+      "model": "fusion",
+      "paired_descriptive_session_bootstrap_delta_ba_95": [
+        -0.04632503558488616,
+        0.02852761756876662
+      ],
+      "per_class_recall": {
+        "tracked": 0.43086309523809524,
+        "wheeled": 0.34926870748299316
+      },
+      "role": "simulated_microphone_response"
+    }
+  ],
+  "seed": 42,
+  "summarizer_sha256": "611a94f6ffb6d029dcea66d28385bd88e4364276d3b0b6ae7d85922fbeb149b2",
+  "uncertainty_scope": "12 original vehicle sessions only; no refit or new-background uncertainty"
+}

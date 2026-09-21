@@ -1,0 +1,76 @@
+{
+  "artifact_sha256": {
+    "metrics.json": "a6616fb738f9c61e057c443a689e34e8a756c695f70d1340ffc6f06ecffa987b",
+    "models.pt": "18a758d97f02a95999da5725bc7799d11491be8c3943ef7c52676a00f16c3f02",
+    "splits.json": "a42b63c358df8ab577596320007808f6bd49c6ebdc0ad9661d29b25662bb60fe",
+    "summary.json": "5f8f4496e4cdd5dd645e5b40dc5a55375da4e555bd42f07ea476faad911da5b4"
+  },
+  "configuration": {
+    "batch_size": 8,
+    "blas_threads": 1,
+    "c_values": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "checkpoint": ".artifacts/models/panns/Cnn14_mAP=0.431.pth",
+    "dataset": {
+      "channel": 0,
+      "hop_seconds": 1.0,
+      "max_windows_per_session": null,
+      "minimum_rms": 0.0,
+      "sample_rate": 16000,
+      "window_seconds": 2.0
+    },
+    "domain": "real_to_real_native_unseen_session",
+    "excluded_operating_conditions": [
+      "startup"
+    ],
+    "filter": "second_order_butterworth_forward_backward_window_local",
+    "gain_limit_db": 12,
+    "grid": {
+      "highpass_hz": [
+        0,
+        30,
+        50,
+        80
+      ],
+      "remove_dc": [
+        false,
+        true
+      ],
+      "rms_dbfs": [
+        null,
+        -26,
+        -20
+      ]
+    },
+    "peak_limit": 0.99,
+    "primary_representation": "semantic35",
+    "secondary_representation": "classical53",
+    "seed": 42,
+    "selection": "joint_inner_preprocessing_and_regularization",
+    "silence_rms": 1e-08,
+    "threshold": 0.5,
+    "torch_threads": 4,
+    "version": "preprocessing_grid_v1"
+  },
+  "dataset_sha256": "ecc549997aa06fedf1d6480ea9039d21565555b62dff434f72803063dc0c24c2",
+  "domain": "real_to_real_native_unseen_session",
+  "elapsed_seconds": 8.268330249993596,
+  "feature_sha256": "d5c090ab0afc8984e4774e72e73e1052f68b9ac02768a1f49760671e23c76a3e",
+  "feature_shape": [
+    785,
+    53
+  ],
+  "parent_experiment": "../../../experiment.json",
+  "preprocessing": {
+    "highpass_hz": 80,
+    "remove_dc": true,
+    "rms_dbfs": -20
+  },
+  "record_count": 785,
+  "seed": 42
+}

@@ -1,0 +1,82 @@
+# Proposal only. No media was downloaded and neither source is admitted.
+purpose: >-
+  Add independent heavy military-wheeled recording sessions to reduce the current
+  passenger-car/context confound and close the 5-session-per-class development gate.
+assessment_date: "2026-09-20"
+selection_rule: >-
+  Prefer authoritative raw B-roll centered on one identified wheeled platform, from
+  a location/date/session absent from the catalog. Reuse status must be stated on the
+  source page. Actual acoustic usability and segment labels remain operator decisions.
+
+candidates:
+  - source_id: candidate-target-wheeled-hmmwv-m1151-training-2014
+    status: review_required
+    priority: 1
+    provider: dvids
+    mobility_class: wheeled
+    vehicle_model: "M1151 Up-Armored HMMWV"
+    title: "Humvee Training B-roll"
+    creator: "Staff Sgt. Richard Stowell"
+    source_page: "https://www.dvidshub.net/video/329602/humvee-training-b-roll"
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/1404/DOD_101347588/DOD_101347588-720x406-800k.mp4"
+    license: "Public domain; DVIDS usage restrictions apply"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    recording_session: dvids_m1151_driver_training_jbmdl_2014_04_03
+    session_evidence: >-
+      DVIDS video 329602; VIRIN 140403-Z-CA120-002; recorded 2014-04-03 at Joint
+      Base McGuire-Dix-Lakehurst, New Jersey; filename DOD_101347588.
+    duration_seconds: 263
+    selected_rendition_bytes: 28974830
+    potential_states_to_review: [startup, idle, accelerating, steady_speed, decelerating]
+    strengths: >-
+      Named HMMWV variant, driver-licensing setting, ground camera, independent
+      session, and manageable official rendition.
+    review_risks: >-
+      No official shot list. Reject instruction, speech, music, equipment handling,
+      repeated edits, and other or visually ambiguous vehicles.
+    approval_phrase: "approve download: candidate-target-wheeled-hmmwv-m1151-training-2014"
+
+  - source_id: candidate-target-wheeled-m1126-stryker-convoy-pinon-2024
+    status: review_required
+    priority: 2
+    provider: dvids
+    mobility_class: wheeled
+    vehicle_model: "M1126 Stryker Infantry Carrier Vehicle"
+    title: "Pinon Canyon Maneuver Site B-Roll Package"
+    creator: "Pfc. Jonathan Reyes"
+    source_page: "https://www.dvidshub.net/video/937004/pinon-canyon-maneuver-site-b-roll-package"
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/2409/DOD_110569349/DOD_110569349.mp4"
+    license: "Public domain; DVIDS usage restrictions apply"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    recording_session: dvids_m1126_pinon_canyon_convoy_2024_09_04
+    session_evidence: >-
+      DVIDS video 937004; VIRIN 240904-A-LV856-1001; official page dated
+      2024-09-04 at Fort Carson/Pinon Canyon, Colorado; filename DOD_110569349.
+    duration_seconds: 263
+    selected_rendition_bytes: 321873153
+    potential_states_to_review: [idle, accelerating, steady_speed, decelerating]
+    strengths: >-
+      Modern eight-wheeled armored platform, convoy movement, independently recorded
+      session, and a source description explicitly identifying M1126 vehicles.
+    review_risks: >-
+      The source may contain distant or aerial shots with weak/no engine audio,
+      music, speech, montage edits, or mixed camera positions. Keep only visually
+      identified, microphone-grounded engine/road intervals. The verified rendition
+      is large.
+    approval_phrase: "approve download: candidate-target-wheeled-m1126-stryker-convoy-pinon-2024"
+
+fallbacks_not_added_to_catalog:
+  - source_page: "https://commons.wikimedia.org/wiki/File:WWS_TractorUrsusC342driving.ogg"
+    vehicle_model: "Ursus C 342 wheeled tractor"
+    license: "CC BY 4.0"
+    reason: >-
+      Ninety-one-second field recording of a heavy diesel wheeled vehicle from a
+      distinct museum session. Useful acoustic diversity if either military source
+      fails review, but it does not reduce the military/civilian context confound as
+      directly as the primary candidates.
+  - source_page: "https://commons.wikimedia.org/wiki/File:WWS_JohnDeereTractor.ogg"
+    vehicle_model: "John Deere 5820 wheeled tractor"
+    license: "CC BY 4.0"
+    reason: >-
+      Twenty-nine-second idle/drive recording from a different WWS partner, venue,
+      date, and vehicle. Keep as a second fallback after listening review.

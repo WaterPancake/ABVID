@@ -1,0 +1,13 @@
+{
+  "background_crops_constant_across_snr": true,
+  "conditions": 30,
+  "corrupted_waveforms_reproduced_exactly": 17790,
+  "folds_per_condition": 35,
+  "held_out_prediction_membership_verified": true,
+  "maximum_absolute_snr_error_db": 5.177976971637577e-07,
+  "native_windows_rebuilt_from_hash_verified_sources": 593,
+  "protected_source_overlap": [],
+  "results_sha256": "1fd56ed262d9d0d5137e6fff882a8e5810c5cff0e3b4ed81c48e4c8325059593",
+  "saved_probe_predictions_reproduced_exactly": true,
+  "verifier_sha256": "8856d7a8251f6111ba354268d7b2a5a39f66d74b33fbfdd4cab0641b011d41dd"
+}

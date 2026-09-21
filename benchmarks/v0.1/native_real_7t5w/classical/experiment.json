@@ -1,0 +1,40 @@
+{
+  "configuration": {
+    "channel": 0,
+    "classical_feature_config": {
+      "f_max": 8000.0,
+      "f_min": 20.0,
+      "hop_length": 256,
+      "n_fft": 1024,
+      "n_mels": 64,
+      "n_mfcc": 20,
+      "sample_rate": 16000
+    },
+    "classical_feature_implementation_version": 2,
+    "classical_session_evaluation_version": 1,
+    "ensemble_rule": "equal_mean_of_probabilities_across_all_regularization_candidates",
+    "models": [
+      "nested_selected_logistic_regression",
+      "regularization_probability_ensemble"
+    ],
+    "regularization_c_candidates": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "sample_weighting": "equal_class_equal_session_equal_window_within_session",
+    "scikit_learn_version": "1.9.0",
+    "seed": 42,
+    "selection_metric": "inner_pair_mean_balanced_accuracy"
+  },
+  "dataset_version": "e013532104c209e3c8f6906bb3c9daa3c46c2d6fb2e9fed82a65f4d2699a42c4",
+  "git_commit": "0d242c6d76ff036747f89576ee15d5f7399f5891",
+  "metrics": "metrics.json",
+  "model_checkpoint": "classical_probe_models.pt",
+  "protocol_status": "complete",
+  "random_seed": 42,
+  "test_domain": "real -> real nested unseen recording-session pairs",
+  "train_test_split": "splits.json"
+}

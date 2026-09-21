@@ -93,7 +93,9 @@ def _sessions_by_class(
         vehicle_class = str(record.get("vehicle_class"))
         session = str(record.get("recording_session", ""))
         if vehicle_class not in grouped:
-            raise ValueError(f"unexpected vehicle class at record {index}: {vehicle_class}")
+            raise ValueError(
+                f"unexpected vehicle class at record {index}: {vehicle_class}"
+            )
         if not session:
             raise ValueError(f"record {index} has no recording_session")
         grouped[vehicle_class].setdefault(session, []).append(index)
@@ -306,6 +308,7 @@ def nested_leave_session_pair_out(
     *,
     c_values: Sequence[float] = (0.001, 0.01, 0.1, 1.0, 10.0),
     seed: int = 42,
+    cache_fits: bool = False,
 ) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
     """Run nested leave-one-tracked/one-wheeled-session-out evaluation."""
 
@@ -330,6 +333,23 @@ def nested_leave_session_pair_out(
     if not np.array_equal(label_array, expected_labels):
         raise ValueError("feature-cache labels do not align with the real manifest")
 
+    # A fitted probe depends only on its training partition, C and seed, not on
+    # which of the excluded sessions is called outer test vs inner validation.
+    # Cache only within this invocation: never share scalers across feature sets.
+    fit_cache: dict[tuple[tuple[int, ...], float], Any] = {}
+
+    def fit_probe(features, labels, records, indices, regularization_c, seed):
+        key = (tuple(sorted(indices)), float(regularization_c))
+        if not cache_fits:
+            return _fit_probe(
+                features, labels, records, indices, regularization_c, seed
+            )
+        if key not in fit_cache:
+            fit_cache[key] = _fit_probe(
+                features, labels, records, indices, regularization_c, seed
+            )
+        return fit_cache[key]
+
     folds: list[dict[str, Any]] = []
     model_states: dict[str, Any] = {}
     split_folds: list[dict[str, Any]] = []
@@ -353,11 +373,11 @@ def nested_leave_session_pair_out(
                 inner_scores: list[dict[str, Any]] = []
                 for inner_tracked in remaining["tracked"]:
                     for inner_wheeled in remaining["wheeled"]:
-                        inner_validation = set(sessions["tracked"][inner_tracked]) | set(
-                            sessions["wheeled"][inner_wheeled]
-                        )
+                        inner_validation = set(
+                            sessions["tracked"][inner_tracked]
+                        ) | set(sessions["wheeled"][inner_wheeled])
                         inner_train = all_indices - outer_test - inner_validation
-                        scaler, model, _ = _fit_probe(
+                        scaler, model, _ = fit_probe(
                             feature_array,
                             label_array,
                             records,
@@ -397,7 +417,7 @@ def nested_leave_session_pair_out(
                 ),
             )
             outer_train = all_indices - outer_test
-            scaler, model, state = _fit_probe(
+            scaler, model, state = fit_probe(
                 feature_array,
                 label_array,
                 records,
@@ -423,7 +443,7 @@ def nested_leave_session_pair_out(
             ensemble_probes: list[tuple[Any, Any]] = []
             ensemble_states: dict[str, dict[str, torch.Tensor]] = {}
             for regularization_c in candidates:
-                ensemble_scaler, ensemble_model, ensemble_state = _fit_probe(
+                ensemble_scaler, ensemble_model, ensemble_state = fit_probe(
                     feature_array,
                     label_array,
                     records,
@@ -496,8 +516,7 @@ def nested_leave_session_pair_out(
                         for index in sorted(outer_train)
                     ],
                     "test_sample_ids": [
-                        str(records[index]["sample_id"])
-                        for index in sorted(outer_test)
+                        str(records[index]["sample_id"]) for index in sorted(outer_test)
                     ],
                 }
             )
@@ -517,11 +536,15 @@ def nested_leave_session_pair_out(
         "group_field": "recording_session",
         "folds": split_folds,
     }
-    return {
-        "folds": folds,
-        "aggregate": aggregate,
-        "regularization_ensemble_aggregate": ensemble_aggregate,
-    }, model_states, split_payload
+    return (
+        {
+            "folds": folds,
+            "aggregate": aggregate,
+            "regularization_ensemble_aggregate": ensemble_aggregate,
+        },
+        model_states,
+        split_payload,
+    )
 
 
 def _load_semantic_features(
@@ -588,8 +611,7 @@ def evaluate_semantic_sessions(
         ],
         "encoder_trainable": False,
         "semantic_audioset_features": [
-            {"index": index, "name": name}
-            for index, name in SEMANTIC_AUDIOSET_FEATURES
+            {"index": index, "name": name} for index, name in SEMANTIC_AUDIOSET_FEATURES
         ],
         "regularization_c_candidates": [float(value) for value in c_values],
         "selection_metric": "inner_pair_mean_balanced_accuracy",
@@ -658,28 +680,22 @@ def evaluate_semantic_sessions(
             "selected_regularization_c": fold["selected_regularization_c"],
             "selected_balanced_accuracy": fold["metrics"]["balanced_accuracy"],
             "selected_macro_f1": fold["metrics"]["macro_f1"],
-            "selected_tracked_recall": fold["metrics"]["per_class_recall"][
-                "tracked"
-            ],
-            "selected_wheeled_recall": fold["metrics"]["per_class_recall"][
-                "wheeled"
-            ],
+            "selected_tracked_recall": fold["metrics"]["per_class_recall"]["tracked"],
+            "selected_wheeled_recall": fold["metrics"]["per_class_recall"]["wheeled"],
             "selected_both_sessions_correct": all(
                 prediction["correct"]
                 for prediction in fold["session_predictions"].values()
             ),
-            "ensemble_balanced_accuracy": fold[
-                "regularization_ensemble_metrics"
-            ]["balanced_accuracy"],
-            "ensemble_macro_f1": fold["regularization_ensemble_metrics"][
-                "macro_f1"
+            "ensemble_balanced_accuracy": fold["regularization_ensemble_metrics"][
+                "balanced_accuracy"
             ],
-            "ensemble_tracked_recall": fold[
-                "regularization_ensemble_metrics"
-            ]["per_class_recall"]["tracked"],
-            "ensemble_wheeled_recall": fold[
-                "regularization_ensemble_metrics"
-            ]["per_class_recall"]["wheeled"],
+            "ensemble_macro_f1": fold["regularization_ensemble_metrics"]["macro_f1"],
+            "ensemble_tracked_recall": fold["regularization_ensemble_metrics"][
+                "per_class_recall"
+            ]["tracked"],
+            "ensemble_wheeled_recall": fold["regularization_ensemble_metrics"][
+                "per_class_recall"
+            ]["wheeled"],
             "ensemble_both_sessions_correct": all(
                 prediction["correct"]
                 for prediction in fold[
@@ -719,9 +735,7 @@ def evaluate_semantic_sessions(
     )
     axis.axhline(
         float(
-            results["regularization_ensemble_aggregate"]["balanced_accuracy"][
-                "mean"
-            ]
+            results["regularization_ensemble_aggregate"]["balanced_accuracy"]["mean"]
         ),
         color="tab:orange",
         linestyle="--",
@@ -748,7 +762,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--feature-cache", type=Path, required=True)
     parser.add_argument("--checkpoint", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--regularization-c", type=float, action="append", dest="c_values")
+    parser.add_argument(
+        "--regularization-c", type=float, action="append", dest="c_values"
+    )
     parser.add_argument("--seed", type=int, default=42)
     return parser
 
@@ -760,7 +776,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         args.feature_cache,
         args.checkpoint,
         args.output,
-        c_values=(0.001, 0.01, 0.1, 1.0, 10.0) if args.c_values is None else args.c_values,
+        c_values=(0.001, 0.01, 0.1, 1.0, 10.0)
+        if args.c_values is None
+        else args.c_values,
         seed=args.seed,
     )
     print(
@@ -774,12 +792,12 @@ def main(argv: Sequence[str] | None = None) -> int:
                     "per_class_recall": results["aggregate"]["per_class_recall"],
                 },
                 "regularization_ensemble": {
-                    "balanced_accuracy": results[
-                        "regularization_ensemble_aggregate"
-                    ]["balanced_accuracy"],
-                    "per_class_recall": results[
-                        "regularization_ensemble_aggregate"
-                    ]["per_class_recall"],
+                    "balanced_accuracy": results["regularization_ensemble_aggregate"][
+                        "balanced_accuracy"
+                    ],
+                    "per_class_recall": results["regularization_ensemble_aggregate"][
+                        "per_class_recall"
+                    ],
                 },
             },
             indent=2,

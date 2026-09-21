@@ -1,0 +1,16 @@
+{
+  "protected_overlap": [],
+  "regenerated_preprocessing_windows": 18840,
+  "saved_head_fold_replays": 3500,
+  "script_sha256": "708b1addc8949d3acfa68d5bca75526285519b3508d482536c0368bc61b10d02",
+  "selection_rule": "inner validation only; outer maximum is exploratory",
+  "source_hashes": "unchanged",
+  "startup_overlap": [],
+  "unchanged_frontend_check": {
+    "common_window_count": 572,
+    "max_absolute_difference": {
+      "embedding2048": 1.627206802368164e-05,
+      "semantic35": 3.039836883544922e-06
+    }
+  }
+}

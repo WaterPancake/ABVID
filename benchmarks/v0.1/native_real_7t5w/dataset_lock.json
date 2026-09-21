@@ -1,0 +1,138 @@
+{
+  "benchmark_id": "abvid-benchmark-v0.1",
+  "catalog_sha256": "abd2125c703c4fda675f121bcf96c746255cfb06a580c7d59079a2d2165aa20c",
+  "class_window_counts": {
+    "tracked": 370,
+    "wheeled": 223
+  },
+  "configuration": {
+    "channel": 0,
+    "hop_seconds": 1.0,
+    "max_windows_per_session": 64,
+    "minimum_rms": 0.0,
+    "sample_rate": 16000,
+    "window_seconds": 2.0
+  },
+  "dataset_version": "e013532104c209e3c8f6906bb3c9daa3c46c2d6fb2e9fed82a65f4d2699a42c4",
+  "git_commit": "0d242c6d76ff036747f89576ee15d5f7399f5891",
+  "git_worktree_dirty": true,
+  "manifest_path": "data/benchmark_v0_1_native_real_7t5w/real_manifest.jsonl",
+  "manifest_sha256": "e013532104c209e3c8f6906bb3c9daa3c46c2d6fb2e9fed82a65f4d2699a42c4",
+  "observation_count": 593,
+  "protected_source_overlap": [],
+  "recording_session_counts": {
+    "tracked": 7,
+    "wheeled": 5
+  },
+  "sessions": [
+    {
+      "license": "Public domain",
+      "normalized_source_sha256": "5dff99759c763b89b2cbee749d129db33c66e07e79b6d157ee633d2bef6cb7a1",
+      "raw_sha256": "b3605f6dcc8248e97143a7c7baac2a20653d52d7bc69684f6617617423fa5cd3",
+      "recording_session": "commons_lappeenranta_flag_day_reenactment_2014",
+      "source_id": "target-tracked-stug-iiig-lappeenranta",
+      "vehicle_class": "tracked",
+      "window_count": 8
+    },
+    {
+      "license": "CC BY 4.0",
+      "normalized_source_sha256": "68f1ec7dd105bfa767713ac552327701a0efe5f5a845051a4da3010f175dfb15",
+      "raw_sha256": "9256f8a9e2364fffa4eb0908b029cf33a06c7d839105f4d7389243f2cc99df9d",
+      "recording_session": "commons_milru_102nd_march_training_ground_2022_01_26",
+      "source_id": "candidate-target-tracked-t72-bmp3-102nd-march-2022",
+      "vehicle_class": "tracked",
+      "window_count": 64
+    },
+    {
+      "license": "CC BY 4.0",
+      "normalized_source_sha256": "b3c3867eaf4143e0d6d4ec78b37cdf61fda0d330a96e191ba4973120400a9683",
+      "raw_sha256": "a65a812ec1c23d9ea4033b3bf8712099a4031b12332798bdb17641dad9ccfe18",
+      "recording_session": "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02",
+      "source_id": "candidate-target-tracked-t80bvm-driving-readiness-2021",
+      "vehicle_class": "tracked",
+      "window_count": 60
+    },
+    {
+      "license": "CC BY-SA 4.0",
+      "normalized_source_sha256": "64331aeb6658657bf1a78b461dd6afaf74b8c357dd064e4f2158b91122e7dafd",
+      "raw_sha256": "554e4baf7101c4ae76f25d390374235d5fc36915ecb24bec8a44aac475f8f36c",
+      "recording_session": "commons_retromobile_amx30_demo_2015",
+      "source_id": "candidate-target-tracked-retromobile-amx30-2015",
+      "vehicle_class": "tracked",
+      "window_count": 64
+    },
+    {
+      "license": "Public domain",
+      "normalized_source_sha256": "44d3e389e4420d23511abf6fb47ac7dfe00835ab02c38e0b528c77ebc5400f77",
+      "raw_sha256": "2419e9a6ce8d89d615158e5c054e6f27cee959b390b1b0b95cf797653c075039",
+      "recording_session": "dvids_bright_star_abrams_mohamed_naguib_2017",
+      "source_id": "candidate-target-tracked-abrams-bright-star-2017",
+      "vehicle_class": "tracked",
+      "window_count": 46
+    },
+    {
+      "license": "Public domain",
+      "normalized_source_sha256": "786246f4f910ef93426a2b8a5840c8a15cf5a591f178c9220526caf4472c82f9",
+      "raw_sha256": "8dc0355fe1fa14be6a0c3abdada371a3abbbd038eddb596d1dea5847950ab338",
+      "recording_session": "dvids_nato_bradley_bemowo_livefire_2025",
+      "source_id": "candidate-target-tracked-bradley-nato-muddy-maneuver-2025",
+      "vehicle_class": "tracked",
+      "window_count": 64
+    },
+    {
+      "license": "Public domain",
+      "normalized_source_sha256": "7759462554d8a2c82310a4ab9de5a57b6e4a3d55634df9840208ad7af63a5cdf",
+      "raw_sha256": "b3844f5940b5cbd09c2de0be86933c8c5ffbec22c394dbc66b0653397d5060dc",
+      "recording_session": "us_army_armor_cavalry_collection_tankodrome_2023",
+      "source_id": "target-tracked-mpf-firepower",
+      "vehicle_class": "tracked",
+      "window_count": 64
+    },
+    {
+      "license": "CC BY-SA 3.0",
+      "normalized_source_sha256": "7debb52ff2ebc2bb5519091d5836e35b85a847b1e80b35aac3d8b92f277e60c5",
+      "raw_sha256": "c0eb22e591b39b1d7ddd2164d10cec5e6a825d9fbe81acfd9f08747f9e6c0b55",
+      "recording_session": "commons_goodwood_festival_of_speed_2009",
+      "source_id": "target-wheeled-abarth-205-goodwood",
+      "vehicle_class": "wheeled",
+      "window_count": 7
+    },
+    {
+      "license": "CC BY 3.0",
+      "normalized_source_sha256": "8147827c50479c03abf1faf0456625f6caf992e069c03dbbbb643ebaec7d7e11",
+      "raw_sha256": "6b24429e60b5e6b744964c05c2f43d4be8fd689ef2d8737dfd3682e076cdeb77",
+      "recording_session": "commons_soundsofchanges_private_collection",
+      "source_id": "target-wheeled-ford-model-t-start",
+      "vehicle_class": "wheeled",
+      "window_count": 28
+    },
+    {
+      "license": "Public domain",
+      "normalized_source_sha256": "db5813729896a082cf50f65e7c9fdb825b58c58aaf23606eac81c8b83cb1deea",
+      "raw_sha256": "2fc8cdf721ecc3cfd32849668e72b82cdc8440ae8b86fadb84025971e4f4033b",
+      "recording_session": "dvids_m1126_pinon_canyon_convoy_2024_09_04",
+      "source_id": "candidate-target-wheeled-m1126-stryker-convoy-pinon-2024",
+      "vehicle_class": "wheeled",
+      "window_count": 64
+    },
+    {
+      "license": "Public domain",
+      "normalized_source_sha256": "7970717b481cd2983ac29168fdce563cf97584098ba67a53c588d2282c40c063",
+      "raw_sha256": "edf8cf6ed4684a4496cf4f19adcfe0abf9ba3deadfdbd5f40a784eb2451863bf",
+      "recording_session": "dvids_m1151_driver_training_jbmdl_2014_04_03",
+      "source_id": "candidate-target-wheeled-hmmwv-m1151-training-2014",
+      "vehicle_class": "wheeled",
+      "window_count": 64
+    },
+    {
+      "license": "CC BY 4.0",
+      "normalized_source_sha256": "e0310d254cbfb21826558d159032025fa0e69ff9e4becc97c6303acea7cd7078",
+      "raw_sha256": "7027c8744b18965a5a78aaa7249f00f92ebd438e56fd489388ca93f2ae6e2d88",
+      "recording_session": "freesound_lmartins_maserati_granturismo_2019",
+      "source_id": "target-wheeled-maserati-granturismo-exhaust",
+      "vehicle_class": "wheeled",
+      "window_count": 60
+    }
+  ],
+  "test_domain": "real -> real nested unseen recording-session pairs"
+}

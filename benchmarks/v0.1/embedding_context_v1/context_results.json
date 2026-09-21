@@ -1,0 +1,1835 @@
+{
+  "matched4": {
+    "counts": {
+      "tracked": 7,
+      "wheeled": 5
+    },
+    "durations": {
+      "2": {
+        "embedding2048": {
+          "ensemble": {
+            "balanced_accuracy": 0.4423808566599354,
+            "recall": {
+              "tracked": 0.780222280557995,
+              "wheeled": 0.10453943276187568
+            },
+            "session_bootstrap_95_percent": [
+              0.3842149763830258,
+              0.507099614252924
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.05714285714285715,
+                "minimum_recall": 0.0
+              },
+              "commons_lappeenranta_flag_day_reenactment_2014": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 1.0,
+                "minimum_recall": 1.0
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7358490566037735,
+                "minimum_recall": 0.5660377358490566
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.588679245283019,
+                "minimum_recall": 0.41509433962264153
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7563636363636365,
+                "minimum_recall": 0.6727272727272727
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.011904761904761904,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8777777777777777,
+                "minimum_recall": 0.8055555555555556
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.020050125313283207,
+                "minimum_recall": 0.0
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.2664835164835165,
+                "minimum_recall": 0.21153846153846154
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7157894736842104,
+                "minimum_recall": 0.6666666666666666
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.16711590296495957,
+                "minimum_recall": 0.11320754716981132
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7870967741935484,
+                "minimum_recall": 0.7096774193548387
+              }
+            },
+            "worst_session_context_recall": 0.0
+          },
+          "selected": {
+            "balanced_accuracy": 0.42790038920905116,
+            "recall": {
+              "tracked": 0.7535593802928909,
+              "wheeled": 0.10224139812521145
+            },
+            "session_bootstrap_95_percent": [
+              0.37012759296038833,
+              0.4919870376621986
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.08571428571428573,
+                "minimum_recall": 0.0
+              },
+              "commons_lappeenranta_flag_day_reenactment_2014": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 1.0,
+                "minimum_recall": 1.0
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.6981132075471698,
+                "minimum_recall": 0.4339622641509434
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.569811320754717,
+                "minimum_recall": 0.37735849056603776
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.76,
+                "minimum_recall": 0.6909090909090909
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.017857142857142856,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8444444444444444,
+                "minimum_recall": 0.8055555555555556
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.015037593984962405,
+                "minimum_recall": 0.0
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.23626373626373628,
+                "minimum_recall": 0.15384615384615385
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.631578947368421,
+                "minimum_recall": 0.40350877192982454
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.15633423180592992,
+                "minimum_recall": 0.07547169811320754
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.770967741935484,
+                "minimum_recall": 0.6935483870967742
+              }
+            },
+            "worst_session_context_recall": 0.0
+          }
+        },
+        "semantic35": {
+          "ensemble": {
+            "balanced_accuracy": 0.541143145045506,
+            "recall": {
+              "tracked": 0.7951356849860869,
+              "wheeled": 0.28715060510492485
+            },
+            "session_bootstrap_95_percent": [
+              0.4250051130730649,
+              0.6906727007238346
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.37142857142857144,
+                "minimum_recall": 0.2
+              },
+              "commons_lappeenranta_flag_day_reenactment_2014": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.65,
+                "minimum_recall": 0.25
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9433962264150944,
+                "minimum_recall": 0.9245283018867925
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8528301886792453,
+                "minimum_recall": 0.7924528301886793
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.6763636363636364,
+                "minimum_recall": 0.5636363636363636
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.09523809523809523,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9055555555555556,
+                "minimum_recall": 0.8611111111111112
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.040100250626566414,
+                "minimum_recall": 0.03508771929824561
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.09340659340659341,
+                "minimum_recall": 0.07692307692307693
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7087719298245614,
+                "minimum_recall": 0.6491228070175439
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.8355795148247979,
+                "minimum_recall": 0.660377358490566
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8290322580645162,
+                "minimum_recall": 0.7419354838709677
+              }
+            },
+            "worst_session_context_recall": 0.0
+          },
+          "selected": {
+            "balanced_accuracy": 0.5628873433002594,
+            "recall": {
+              "tracked": 0.8110110721944018,
+              "wheeled": 0.3147636144061169
+            },
+            "session_bootstrap_95_percent": [
+              0.44425073511394264,
+              0.7113052391463914
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.39999999999999997,
+                "minimum_recall": 0.4
+              },
+              "commons_lappeenranta_flag_day_reenactment_2014": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9,
+                "minimum_recall": 0.75
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9433962264150944,
+                "minimum_recall": 0.9245283018867925
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8226415094339623,
+                "minimum_recall": 0.6981132075471698
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.6581818181818181,
+                "minimum_recall": 0.5454545454545454
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.09523809523809523,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9333333333333332,
+                "minimum_recall": 0.8888888888888888
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.042606516290726815,
+                "minimum_recall": 0.03508771929824561
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.1923076923076923,
+                "minimum_recall": 0.07692307692307693
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.6421052631578947,
+                "minimum_recall": 0.5087719298245614
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.84366576819407,
+                "minimum_recall": 0.6792452830188679
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7774193548387096,
+                "minimum_recall": 0.7419354838709677
+              }
+            },
+            "worst_session_context_recall": 0.0
+          }
+        }
+      },
+      "4": {
+        "embedding2048": {
+          "ensemble": {
+            "balanced_accuracy": 0.43189573671426507,
+            "recall": {
+              "tracked": 0.7571372107762536,
+              "wheeled": 0.10665426265227655
+            },
+            "session_bootstrap_95_percent": [
+              0.3700832981215465,
+              0.5002151218113234
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.2571428571428572,
+                "minimum_recall": 0.2
+              },
+              "commons_lappeenranta_flag_day_reenactment_2014": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 1.0,
+                "minimum_recall": 1.0
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.909433962264151,
+                "minimum_recall": 0.7924528301886793
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.6037735849056605,
+                "minimum_recall": 0.5094339622641509
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.6727272727272727,
+                "minimum_recall": 0.6
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7277777777777777,
+                "minimum_recall": 0.6388888888888888
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.05764411027568922,
+                "minimum_recall": 0.03508771929824561
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.1510989010989011,
+                "minimum_recall": 0.07692307692307693
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7894736842105263,
+                "minimum_recall": 0.7017543859649122
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.0673854447439353,
+                "minimum_recall": 0.0
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.5967741935483871,
+                "minimum_recall": 0.45161290322580644
+              }
+            },
+            "worst_session_context_recall": 0.0
+          },
+          "selected": {
+            "balanced_accuracy": 0.41901838825093785,
+            "recall": {
+              "tracked": 0.7262765159084472,
+              "wheeled": 0.1117602605934284
+            },
+            "session_bootstrap_95_percent": [
+              0.36252442968230447,
+              0.486359583102818
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.2857142857142857,
+                "minimum_recall": 0.0
+              },
+              "commons_lappeenranta_flag_day_reenactment_2014": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 1.0,
+                "minimum_recall": 1.0
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7509433962264151,
+                "minimum_recall": 0.5094339622641509
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.6226415094339622,
+                "minimum_recall": 0.5094339622641509
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.650909090909091,
+                "minimum_recall": 0.5636363636363636
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.005952380952380952,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7111111111111111,
+                "minimum_recall": 0.5833333333333334
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.03258145363408521,
+                "minimum_recall": 0.017543859649122806
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.14560439560439561,
+                "minimum_recall": 0.038461538461538464
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7192982456140351,
+                "minimum_recall": 0.47368421052631576
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.0889487870619946,
+                "minimum_recall": 0.0
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.6290322580645161,
+                "minimum_recall": 0.41935483870967744
+              }
+            },
+            "worst_session_context_recall": 0.0
+          }
+        },
+        "semantic35": {
+          "ensemble": {
+            "balanced_accuracy": 0.5040028224650386,
+            "recall": {
+              "tracked": 0.8074863859699046,
+              "wheeled": 0.20051925896017259
+            },
+            "session_bootstrap_95_percent": [
+              0.39857687946110115,
+              0.6523959797996901
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "commons_lappeenranta_flag_day_reenactment_2014": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7,
+                "minimum_recall": 0.25
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9547169811320755,
+                "minimum_recall": 0.9245283018867925
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8716981132075471,
+                "minimum_recall": 0.7735849056603774
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.5890909090909091,
+                "minimum_recall": 0.41818181818181815
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.09523809523809523,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9,
+                "minimum_recall": 0.8888888888888888
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.012531328320802004,
+                "minimum_recall": 0.0
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.1401098901098901,
+                "minimum_recall": 0.11538461538461539
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8175438596491228,
+                "minimum_recall": 0.7192982456140351
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.7547169811320755,
+                "minimum_recall": 0.20754716981132076
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8193548387096774,
+                "minimum_recall": 0.7419354838709677
+              }
+            },
+            "worst_session_context_recall": 0.0
+          },
+          "selected": {
+            "balanced_accuracy": 0.4781159278801589,
+            "recall": {
+              "tracked": 0.7819092568101121,
+              "wheeled": 0.1743225989502057
+            },
+            "session_bootstrap_95_percent": [
+              0.38790815901592085,
+              0.6160648728231615
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "commons_lappeenranta_flag_day_reenactment_2014": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.75,
+                "minimum_recall": 0.25
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8641509433962264,
+                "minimum_recall": 0.660377358490566
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8226415094339622,
+                "minimum_recall": 0.7358490566037735
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.72,
+                "minimum_recall": 0.4727272727272727
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.861111111111111,
+                "minimum_recall": 0.6944444444444444
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.022556390977443608,
+                "minimum_recall": 0.017543859649122806
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.14285714285714285,
+                "minimum_recall": 0.07692307692307693
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.6877192982456141,
+                "minimum_recall": 0.543859649122807
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 7,
+                "mean_recall": 0.706199460916442,
+                "minimum_recall": 0.20754716981132076
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.767741935483871,
+                "minimum_recall": 0.6774193548387096
+              }
+            },
+            "worst_session_context_recall": 0.0
+          }
+        }
+      }
+    },
+    "excluded_sessions": [],
+    "paired_vs_2s": {
+      "4": {
+        "embedding2048": {
+          "ensemble": {
+            "balanced_accuracy_difference": -0.010485119945670274,
+            "paired_session_bootstrap_95_percent": [
+              -0.07345488902081464,
+              0.056340432201033
+            ]
+          },
+          "selected": {
+            "balanced_accuracy_difference": -0.008882000958113333,
+            "paired_session_bootstrap_95_percent": [
+              -0.061764589075060924,
+              0.049935949730881175
+            ]
+          }
+        },
+        "semantic35": {
+          "ensemble": {
+            "balanced_accuracy_difference": -0.037140322580467386,
+            "paired_session_bootstrap_95_percent": [
+              -0.11285236723977639,
+              0.019935220823959283
+            ]
+          },
+          "selected": {
+            "balanced_accuracy_difference": -0.08477141542010043,
+            "paired_session_bootstrap_95_percent": [
+              -0.15564383711565932,
+              -0.02907424206484413
+            ]
+          }
+        }
+      }
+    },
+    "per_session_windows": {
+      "commons_goodwood_festival_of_speed_2009": 5,
+      "commons_lappeenranta_flag_day_reenactment_2014": 4,
+      "commons_milru_102nd_march_training_ground_2022_01_26": 53,
+      "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": 53,
+      "commons_retromobile_amx30_demo_2015": 55,
+      "commons_soundsofchanges_private_collection": 24,
+      "dvids_bright_star_abrams_mohamed_naguib_2017": 36,
+      "dvids_m1126_pinon_canyon_convoy_2024_09_04": 57,
+      "dvids_m1151_driver_training_jbmdl_2014_04_03": 52,
+      "dvids_nato_bradley_bemowo_livefire_2025": 57,
+      "freesound_lmartins_maserati_granturismo_2019": 53,
+      "us_army_armor_cavalry_collection_tankodrome_2023": 62
+    },
+    "windows": 511
+  },
+  "matched8": {
+    "counts": {
+      "tracked": 6,
+      "wheeled": 5
+    },
+    "durations": {
+      "2": {
+        "embedding2048": {
+          "ensemble": {
+            "balanced_accuracy": 0.5566499929609686,
+            "recall": {
+              "tracked": 0.8177807693661353,
+              "wheeled": 0.29551921655580193
+            },
+            "session_bootstrap_95_percent": [
+              0.425608815726956,
+              0.7403711483299897
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 1.0,
+                "minimum_recall": 1.0
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7866666666666667,
+                "minimum_recall": 0.7333333333333333
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8243902439024391,
+                "minimum_recall": 0.7317073170731707
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7904761904761906,
+                "minimum_recall": 0.6904761904761905
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0625,
+                "minimum_recall": 0.0625
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.95,
+                "minimum_recall": 0.95
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.03252032520325203,
+                "minimum_recall": 0.0
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.3333333333333333,
+                "minimum_recall": 0.24242424242424243
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8318181818181818,
+                "minimum_recall": 0.7954545454545454
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.04924242424242423,
+                "minimum_recall": 0.0
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7233333333333334,
+                "minimum_recall": 0.6
+              }
+            },
+            "worst_session_context_recall": 0.0
+          },
+          "selected": {
+            "balanced_accuracy": 0.5278100033435399,
+            "recall": {
+              "tracked": 0.7970972794143526,
+              "wheeled": 0.2585227272727273
+            },
+            "session_bootstrap_95_percent": [
+              0.40350829725829734,
+              0.7188072361243093
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 1.0,
+                "minimum_recall": 1.0
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7866666666666666,
+                "minimum_recall": 0.7
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8048780487804879,
+                "minimum_recall": 0.5853658536585366
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7761904761904763,
+                "minimum_recall": 0.6666666666666666
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.03125,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9400000000000001,
+                "minimum_recall": 0.9
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.21212121212121207,
+                "minimum_recall": 0.06060606060606061
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7181818181818181,
+                "minimum_recall": 0.45454545454545453
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.04924242424242423,
+                "minimum_recall": 0.0
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7566666666666667,
+                "minimum_recall": 0.6166666666666667
+              }
+            },
+            "worst_session_context_recall": 0.0
+          }
+        },
+        "semantic35": {
+          "ensemble": {
+            "balanced_accuracy": 0.5190913490303735,
+            "recall": {
+              "tracked": 0.8423401259986626,
+              "wheeled": 0.19584257206208427
+            },
+            "session_bootstrap_95_percent": [
+              0.42682382404181185,
+              0.6509689556716995
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8333333333333333,
+                "minimum_recall": 0.7666666666666667
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.902439024390244,
+                "minimum_recall": 0.8536585365853658
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7285714285714285,
+                "minimum_recall": 0.6428571428571429
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.7083333333333334,
+                "minimum_recall": 0.5
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.97,
+                "minimum_recall": 0.95
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.02845528455284553,
+                "minimum_recall": 0.024390243902439025
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.10606060606060606,
+                "minimum_recall": 0.06060606060606061
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7863636363636364,
+                "minimum_recall": 0.6818181818181818
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.13636363636363638,
+                "minimum_recall": 0.022727272727272728
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8333333333333334,
+                "minimum_recall": 0.75
+              }
+            },
+            "worst_session_context_recall": 0.0
+          },
+          "selected": {
+            "balanced_accuracy": 0.4332927709147221,
+            "recall": {
+              "tracked": 0.8168996586069758,
+              "wheeled": 0.049685883222468585
+            },
+            "session_bootstrap_95_percent": [
+              0.3874362527716186,
+              0.4820505358462675
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8333333333333334,
+                "minimum_recall": 0.7
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8878048780487806,
+                "minimum_recall": 0.7560975609756098
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7857142857142857,
+                "minimum_recall": 0.6666666666666666
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.96,
+                "minimum_recall": 0.95
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.032520325203252036,
+                "minimum_recall": 0.0
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.04545454545454545,
+                "minimum_recall": 0.0
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.6545454545454545,
+                "minimum_recall": 0.5227272727272727
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.17045454545454544,
+                "minimum_recall": 0.0
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.78,
+                "minimum_recall": 0.6833333333333333
+              }
+            },
+            "worst_session_context_recall": 0.0
+          }
+        }
+      },
+      "4": {
+        "embedding2048": {
+          "ensemble": {
+            "balanced_accuracy": 0.39660674691162495,
+            "recall": {
+              "tracked": 0.7541644669693451,
+              "wheeled": 0.039049026853904906
+            },
+            "session_bootstrap_95_percent": [
+              0.3637156407278359,
+              0.43286506176750084
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7866666666666667,
+                "minimum_recall": 0.5333333333333333
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.6585365853658537,
+                "minimum_recall": 0.5853658536585366
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7619047619047621,
+                "minimum_recall": 0.6904761904761905
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.74,
+                "minimum_recall": 0.65
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.04878048780487806,
+                "minimum_recall": 0.0
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.14646464646464646,
+                "minimum_recall": 0.06060606060606061
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8545454545454547,
+                "minimum_recall": 0.7727272727272727
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7233333333333334,
+                "minimum_recall": 0.6166666666666667
+              }
+            },
+            "worst_session_context_recall": 0.0
+          },
+          "selected": {
+            "balanced_accuracy": 0.3938460387850632,
+            "recall": {
+              "tracked": 0.7638192024777392,
+              "wheeled": 0.023872875092387287
+            },
+            "session_bootstrap_95_percent": [
+              0.37305312928940976,
+              0.41734187915742793
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.76,
+                "minimum_recall": 0.5
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7024390243902439,
+                "minimum_recall": 0.4878048780487805
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7571428571428571,
+                "minimum_recall": 0.6904761904761905
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8400000000000001,
+                "minimum_recall": 0.75
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.028455284552845527,
+                "minimum_recall": 0.0
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0909090909090909,
+                "minimum_recall": 0.030303030303030304
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.75,
+                "minimum_recall": 0.4772727272727273
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7733333333333333,
+                "minimum_recall": 0.5666666666666667
+              }
+            },
+            "worst_session_context_recall": 0.0
+          }
+        },
+        "semantic35": {
+          "ensemble": {
+            "balanced_accuracy": 0.5600301578502798,
+            "recall": {
+              "tracked": 0.8024374406081723,
+              "wheeled": 0.31762287509238724
+            },
+            "session_bootstrap_95_percent": [
+              0.423921304178545,
+              0.7030454924902333
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8666666666666668,
+                "minimum_recall": 0.7666666666666667
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8487804878048781,
+                "minimum_recall": 0.6829268292682927
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.6285714285714286,
+                "minimum_recall": 0.5238095238095238
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.6354166666666666,
+                "minimum_recall": 0.3125
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9,
+                "minimum_recall": 0.85
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.028455284552845527,
+                "minimum_recall": 0.024390243902439025
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.18181818181818185,
+                "minimum_recall": 0.15151515151515152
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8272727272727274,
+                "minimum_recall": 0.75
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.7424242424242423,
+                "minimum_recall": 0.06818181818181818
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7433333333333334,
+                "minimum_recall": 0.65
+              }
+            },
+            "worst_session_context_recall": 0.0
+          },
+          "selected": {
+            "balanced_accuracy": 0.5203206938725231,
+            "recall": {
+              "tracked": 0.7621599267940731,
+              "wheeled": 0.27848146095097315
+            },
+            "session_bootstrap_95_percent": [
+              0.4094589651963891,
+              0.6401824022014572
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9266666666666667,
+                "minimum_recall": 0.7666666666666667
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8097560975609757,
+                "minimum_recall": 0.6341463414634146
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.6571428571428571,
+                "minimum_recall": 0.5
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.34375,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8,
+                "minimum_recall": 0.6
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.028455284552845527,
+                "minimum_recall": 0.024390243902439025
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.3383838383838384,
+                "minimum_recall": 0.030303030303030304
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7227272727272728,
+                "minimum_recall": 0.5
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.6818181818181818,
+                "minimum_recall": 0.045454545454545456
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.6566666666666667,
+                "minimum_recall": 0.5666666666666667
+              }
+            },
+            "worst_session_context_recall": 0.0
+          }
+        }
+      },
+      "8": {
+        "embedding2048": {
+          "ensemble": {
+            "balanced_accuracy": 0.3535158202231373,
+            "recall": {
+              "tracked": 0.6852036039840917,
+              "wheeled": 0.021828036462182804
+            },
+            "session_bootstrap_95_percent": [
+              0.2799451835427445,
+              0.4301246634463098
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.4066666666666666,
+                "minimum_recall": 0.23333333333333334
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.5658536585365854,
+                "minimum_recall": 0.43902439024390244
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.738095238095238,
+                "minimum_recall": 0.6666666666666666
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9099999999999999,
+                "minimum_recall": 0.8
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.008130081300813009,
+                "minimum_recall": 0.0
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.05555555555555556,
+                "minimum_recall": 0.0
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9272727272727274,
+                "minimum_recall": 0.8181818181818182
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.04545454545454545,
+                "minimum_recall": 0.0
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.5633333333333334,
+                "minimum_recall": 0.43333333333333335
+              }
+            },
+            "worst_session_context_recall": 0.0
+          },
+          "selected": {
+            "balanced_accuracy": 0.36938267694365257,
+            "recall": {
+              "tracked": 0.7264778446485763,
+              "wheeled": 0.01228750923872875
+            },
+            "session_bootstrap_95_percent": [
+              0.3216299757153416,
+              0.4256453032062788
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.5466666666666666,
+                "minimum_recall": 0.23333333333333334
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.648780487804878,
+                "minimum_recall": 0.43902439024390244
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7285714285714286,
+                "minimum_recall": 0.6428571428571429
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.97,
+                "minimum_recall": 0.9
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.012195121951219514,
+                "minimum_recall": 0.0
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.04545454545454545,
+                "minimum_recall": 0.0
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7681818181818182,
+                "minimum_recall": 0.5
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.003787878787878788,
+                "minimum_recall": 0.0
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.6966666666666667,
+                "minimum_recall": 0.4666666666666667
+              }
+            },
+            "worst_session_context_recall": 0.0
+          }
+        },
+        "semantic35": {
+          "ensemble": {
+            "balanced_accuracy": 0.606718315559779,
+            "recall": {
+              "tracked": 0.8832752613240418,
+              "wheeled": 0.3301613697955161
+            },
+            "session_bootstrap_95_percent": [
+              0.4782271011508816,
+              0.7382696762925421
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.86,
+                "minimum_recall": 0.7
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9853658536585366,
+                "minimum_recall": 0.926829268292683
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7476190476190476,
+                "minimum_recall": 0.6190476190476191
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.5416666666666666,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.96,
+                "minimum_recall": 0.85
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.008130081300813009,
+                "minimum_recall": 0.0
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.3585858585858586,
+                "minimum_recall": 0.2727272727272727
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9,
+                "minimum_recall": 0.8636363636363636
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.7424242424242423,
+                "minimum_recall": 0.06818181818181818
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8466666666666667,
+                "minimum_recall": 0.7166666666666667
+              }
+            },
+            "worst_session_context_recall": 0.0
+          },
+          "selected": {
+            "balanced_accuracy": 0.6577314961461302,
+            "recall": {
+              "tracked": 0.8879377397670082,
+              "wheeled": 0.42752525252525253
+            },
+            "session_bootstrap_95_percent": [
+              0.499935680850315,
+              0.813035157762292
+            ],
+            "sessions": {
+              "commons_goodwood_festival_of_speed_2009": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "commons_milru_102nd_march_training_ground_2022_01_26": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9199999999999999,
+                "minimum_recall": 0.6333333333333333
+              },
+              "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9512195121951219,
+                "minimum_recall": 0.8780487804878049
+              },
+              "commons_retromobile_amx30_demo_2015": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.7476190476190476,
+                "minimum_recall": 0.5952380952380952
+              },
+              "commons_soundsofchanges_private_collection": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.5833333333333334,
+                "minimum_recall": 0.0
+              },
+              "dvids_bright_star_abrams_mohamed_naguib_2017": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.9700000000000001,
+                "minimum_recall": 0.95
+              },
+              "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.0,
+                "minimum_recall": 0.0
+              },
+              "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.7626262626262627,
+                "minimum_recall": 0.21212121212121213
+              },
+              "dvids_nato_bradley_bemowo_livefire_2025": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8954545454545455,
+                "minimum_recall": 0.8409090909090909
+              },
+              "freesound_lmartins_maserati_granturismo_2019": {
+                "class": "wheeled",
+                "contexts": 6,
+                "mean_recall": 0.7916666666666666,
+                "minimum_recall": 0.045454545454545456
+              },
+              "us_army_armor_cavalry_collection_tankodrome_2023": {
+                "class": "tracked",
+                "contexts": 5,
+                "mean_recall": 0.8433333333333334,
+                "minimum_recall": 0.7
+              }
+            },
+            "worst_session_context_recall": 0.0
+          }
+        }
+      }
+    },
+    "excluded_sessions": [
+      "commons_lappeenranta_flag_day_reenactment_2014"
+    ],
+    "paired_vs_2s": {
+      "4": {
+        "embedding2048": {
+          "ensemble": {
+            "balanced_accuracy_difference": -0.16004324604934358,
+            "paired_session_bootstrap_95_percent": [
+              -0.3530979987153768,
+              -0.03244206877133707
+            ]
+          },
+          "selected": {
+            "balanced_accuracy_difference": -0.13396396455847676,
+            "paired_session_bootstrap_95_percent": [
+              -0.32977650415302856,
+              -0.015312181043888404
+            ]
+          }
+        },
+        "semantic35": {
+          "ensemble": {
+            "balanced_accuracy_difference": 0.0409388088199064,
+            "paired_session_bootstrap_95_percent": [
+              -0.04252168791574278,
+              0.16808080808080808
+            ]
+          },
+          "selected": {
+            "balanced_accuracy_difference": 0.08702792295780101,
+            "paired_session_bootstrap_95_percent": [
+              -0.011300106355365486,
+              0.18363959719142647
+            ]
+          }
+        }
+      },
+      "8": {
+        "embedding2048": {
+          "ensemble": {
+            "balanced_accuracy_difference": -0.2031341727378313,
+            "paired_session_bootstrap_95_percent": [
+              -0.3931135307781649,
+              -0.05661145316404469
+            ]
+          },
+          "selected": {
+            "balanced_accuracy_difference": -0.15842732639988738,
+            "paired_session_bootstrap_95_percent": [
+              -0.35088627839809244,
+              -0.028351568824129827
+            ]
+          }
+        },
+        "semantic35": {
+          "ensemble": {
+            "balanced_accuracy_difference": 0.08762696652940553,
+            "paired_session_bootstrap_95_percent": [
+              -0.019003123570196748,
+              0.22002989168690387
+            ]
+          },
+          "selected": {
+            "balanced_accuracy_difference": 0.22443872523140818,
+            "paired_session_bootstrap_95_percent": [
+              0.07633803848590433,
+              0.3654565515785027
+            ]
+          }
+        }
+      }
+    },
+    "per_session_windows": {
+      "commons_goodwood_festival_of_speed_2009": 1,
+      "commons_milru_102nd_march_training_ground_2022_01_26": 30,
+      "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": 41,
+      "commons_retromobile_amx30_demo_2015": 42,
+      "commons_soundsofchanges_private_collection": 16,
+      "dvids_bright_star_abrams_mohamed_naguib_2017": 20,
+      "dvids_m1126_pinon_canyon_convoy_2024_09_04": 41,
+      "dvids_m1151_driver_training_jbmdl_2014_04_03": 33,
+      "dvids_nato_bradley_bemowo_livefire_2025": 44,
+      "freesound_lmartins_maserati_granturismo_2019": 44,
+      "us_army_armor_cavalry_collection_tankodrome_2023": 60
+    },
+    "windows": 372
+  }
+}

@@ -1,0 +1,35 @@
+benchmark_version: 1
+benchmark_id: abvid-benchmark-v0.1
+seed: 42
+source_catalog: configs/audio_sources.yaml
+targets_root: data/targets
+
+development:
+  role_rule: admitted_to_corpus_true
+  minimum_sessions_per_class: 5
+  classes: [tracked, wheeled]
+  group_field: recording_session
+
+consumed_locked_source_ids:
+  - candidate-target-tracked-sherman-passby-gvn-43670951
+  - candidate-target-wheeled-car-start-drive-pdsounds-194
+
+future_confirmation_source_ids:
+  - candidate-target-tracked-t90m-27guards-2021
+  - candidate-target-wheeled-jltv-fort-mccoy-2019
+
+tracks:
+  native_real:
+    test_domain: real -> real nested unseen recording-session pairs
+    primary: true
+    status: development_evaluation_complete_gates_failed
+  controlled_corruption:
+    test_domain: held-out real events -> controlled corrupted observations
+    primary: false
+    status: fixed_native_models_evaluated_30_conditions
+    results: benchmarks/v0.1/corruption_7t5w_v1/results.json
+    protocol: docs/benchmark_v0_1_corruption_protocol.md
+  simulated_array:
+    test_domain: procedural synthetic -> simulated multichannel synthetic
+    primary: false
+    status: existing_milestone_4_result

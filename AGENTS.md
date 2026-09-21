@@ -2,9 +2,57 @@
 
 The long-term objective is to develop and evaluate robust passive acoustic vehicle detection and classification under adverse recording conditions.
 
+The immediate objective is **ABVID Benchmark v0.1 with an inspectable audio replay demo**:
+a reproducible, portfolio-ready research artifact built from Milestones 1-6. Packaging
+these existing capabilities does not require passing the Milestone 7 gate and does not
+authorize hierarchical classification or the full Milestone 8 system.
+
 The project should progress incrementally. **Do not skip milestones merely because later work appears more interesting.**
 
 Each milestone should produce a reproducible experiment and documented results before moving forward.
+
+---
+
+# Current Status
+
+Milestones 1-6 are implemented and evaluated: the augmentation engine, baseline classifiers,
+the procedural synthetic corpus, multichannel simulation, real-world transfer, and
+representation-invariance training. The project is at the **Milestone 7 entry gate**.
+
+The critical data constraint is independent, provenance-clean, human-reviewed **recording
+sessions per class**. As of 2026-09-20, the reviewed catalog and local target discovery
+contain **7 tracked / 5 wheeled development sessions**, excluding protected evaluation
+sources. The refreshed 7/5 nested development benchmark is complete: the primary
+fusion scored 39.70% mean balanced accuracy, with 51.98% tracked recall and 27.42%
+wheeled recall, and failed gates 2-4.
+
+Historical real-to-real nested development balanced accuracy was 77.35%, but individual
+sessions fell below the required recall floor. The frozen Sherman/PDSounds confirmation
+was completed on 2026-08-24 and scored 49.69% balanced accuracy on that real session pair;
+it failed confirmation and must not be repeated or treated as an unused test. The roughly
+38% synthetic-to-real result is an observed result under the tested protocols, not a proven
+performance ceiling.
+
+See `docs/milestone6_fusion_session_report.md` for the historical development and completed
+locked results, and `docs/low_snr_audibility_improvement.md` for later development work.
+`docs/milestone6_results_rundown.md` predates the locked result and current admissions;
+reconcile it against versioned artifacts before treating it as a live gate assessment.
+The source catalog and collection manifest are `configs/audio_sources.yaml` and
+`data/collection_manifest.jsonl`. T90M and JLTV remain reserved for a future locked pair;
+JLTV still requires audiovisual segment review.
+
+On 2026-09-20 the operator excluded startup intervals from active training/evaluation;
+raw recordings and review history remain in `configs/archived_startup_intervals.yaml`.
+Historical benchmark snapshots/reels are unchanged and can still contain startup.
+The new uncapped non-startup corpus has 785 two-second windows (486 tracked / 299
+wheeled) across the same 7/5 sessions. Its preprocessing-grid protocol is
+`docs/preprocessing_grid_protocol.md`; compare preprocessing against the unchanged
+control on this new version, not directly against the older capped corpus.
+The completed 24-way grid scored 51.86% mean balanced accuracy for the primary
+PANNs head (77.31% tracked / 26.41% wheeled recall), versus its matched unchanged
+control at 53.73%. The classical comparator improved from 43.23% to 47.26%.
+Both retained a zero-recall held-out case; gates 2-4 remain failed and confirmation
+was not run. Results and artifacts: `docs/preprocessing_grid_results.md`.
 
 ---
 
@@ -570,6 +618,27 @@ specific model
 
 Do not proceed to finer classification unless the preceding level is reliable.
 
+## Entry Gate
+
+Milestone 7 must not begin until all of the following pass on the same versioned
+development corpus and frozen protocol, documented in an updated
+`docs/milestone6_results_rundown.md` with links to the experiment artifacts:
+
+1. at least five independent reviewed development recording sessions per class, excluding
+   reserved evaluation sessions;
+2. nested unseen-session mean balanced accuracy >= 75%;
+3. mean recall >= 70% for both tracked and wheeled;
+4. no held-out session below 50% window recall;
+5. confirmation on a newly admitted locked pair, evaluated exactly once by the frozen rule.
+
+Average performance alone (gates 2-3) is not sufficient: a model that can fail an entire
+unseen recording session is not ready for hierarchical or open-set work.
+
+Historical passes do not carry over to a changed dataset or model. Preregister the next
+development protocol and confirmation acceptance criteria, pass the development gates,
+then freeze the checkpoint, preprocessing, aggregation, and decision rule before running
+the reserved pair exactly once. Do not inspect its predictions during development.
+
 ## Open-Set Evaluation
 
 The system must be allowed to return:
@@ -735,17 +804,52 @@ Do not optimize exact-model identification before demonstrating category-level g
 
 # Immediate Work
 
-Unless explicitly instructed otherwise, Codex should currently work only on:
+The project is at the **Milestone 7 entry gate**; Milestones 1-6 are complete. Do not begin
+Milestone 7 until every gate in the Milestone 7 section passes.
 
-**Milestone 1 — Synthetic Audio Augmentation Engine.**
+## Priority
 
-Later milestones are architectural guidance and should influence interfaces where doing so is inexpensive, but they are **not authorization to implement the entire roadmap at once**.
+- **Make the benchmark the primary deliverable.** Release ABVID Benchmark v0.1 with three
+  separate tracks: native unseen-session real audio, controlled corruption of held-out real
+  audio, and simulated microphone arrays. Compare existing classical, pretrained-audio, and
+  strongest development baselines before adding architectures. Version manifests, reviewed
+  intervals, licenses, split roles, hashes, configurations, seeds, commits, and checkpoints;
+  report per-class, per-session, worst-session results, and session-level uncertainty. Hold
+  out original background recordings when claiming unseen-noise performance. Reconcile
+  historical dataset/model roles and stale reports first; later adaptation used
+  Sherman/PDSounds as development sources, so current exclusion flags cannot retroactively
+  make those checkpoints independent of them. Preserve the original locked result unchanged.
+- **Build an inspectable replay demo.** Let users select reviewed development/demo audio,
+  listen to original and corrupted versions, adjust SNR/background/microphone response, and
+  inspect waveform, spectrogram, window predictions, event aggregation, provenance, model
+  version, annotations, and processing time. Include success and failure cases. A simple 2D
+  interface and an optional explicitly simulated array/localization view are sufficient;
+  defer game-engine integration. Never use reserved recordings for interactive exploration.
+  Label the initial demo as offline replay: the current full-recording peak-relative
+  audibility gate is neither a causal streaming implementation nor a vehicle-presence detector.
+- **Close the independent-session data gate and control confounds.** Finish review of staged
+  sources before seeking replacements. With 7 tracked / 5 wheeled development sessions,
+  the minimum session-count gate is met without consuming the reserved T90M/JLTV pair;
+  finish JLTV review for confirmation only. Continue favoring heavy wheeled
+  vehicles and vary location, device, distance, and operating state so class does not simply
+  encode military versus civilian recording context. Aim beyond the five-session minimum
+  toward roughly ten development sessions per class plus several untouched evaluation
+  sessions per class; this is a collection target, not a reliability guarantee. Rebuild the
+  reviewed development corpus and improve the failed nested gate assessment before frozen
+  confirmation. Collect vehicle-absent scenes before claiming presence detection or false-alarm
+  performance; those capabilities are not prerequisites for packaging the replay benchmark.
+- **Package a portfolio-ready release.** Provide one-command demo startup, a small
+  redistribution-cleared example dataset, reproducible benchmark commands and report,
+  documented model/data limitations, an architecture explanation, and a short demonstration
+  video. Verify installation and the sample workflow, retain regression tests, and show
+  measured runtime on the demonstrated hardware. Keep native-real, controlled-corruption,
+  and simulated-array claims distinct; do not present the release as field-validated vehicle
+  detection, real-array localization, or completed Milestone 7/8 functionality.
 
-After completing Milestone 1:
+## Guardrails
 
-1. run all tests;
-2. generate a small example dataset;
-3. document usage;
-4. summarize implementation decisions;
-5. identify technical debt relevant to Milestone 2;
-6. stop and request review before proceeding.
+- Later milestones remain architectural guidance, not authorization to implement the entire
+  roadmap at once.
+- Keep session-grouped splits and the fail-closed provenance audit on every admission.
+- Always identify the test domain (synthetic-to-synthetic / real-to-real / synthetic-to-real /
+  synthetic + real-to-real) before reporting performance.

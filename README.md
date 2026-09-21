@@ -1,4 +1,4 @@
-# Synthetic Vehicle Acoustic Dataset
+# ABVID passive vehicle-acoustics benchmark
 
 This repository builds deterministic paired audio for the first research question:
 do wheeled and tracked vehicle signatures remain identifiable after realistic
@@ -10,6 +10,37 @@ array baselines, and a first grouped synthetic-to-real experiment. That transfer
 is a negative result on a small reviewed corpus and is not a general tracked-versus-
 wheeled performance claim. Milestone 6 adds a controlled paired-representation
 comparison against clean-only and augmentation-only training.
+
+The current deliverable is **ABVID Benchmark v0.1 plus an inspectable offline replay
+demo**. The benchmark contract, source roles, current gate, and release procedure are
+documented in [`docs/benchmark_v0_1.md`](docs/benchmark_v0_1.md); the demo design is in
+[`docs/replay_demo_plan.md`](docs/replay_demo_plan.md). Milestone 7 remains blocked.
+
+The 7/5 native benchmark now has a
+[failure diagnostic report](docs/benchmark_v0_1_failure_diagnostics.md) and a
+[completed controlled-corruption track](docs/benchmark_v0_1_corruption_results.md):
+30 conditions using real recorded backgrounds and separately simulated microphone
+responses, with fixed held-out-session models. These are development stress tests,
+not evidence of field-ready classification. The
+[recording audit reel](docs/recording_audit_reel.md) supports human review.
+The [current architecture and log-Mel diagnostics](docs/current_model_and_logmel_diagnostics.md)
+explain the two-branch classifier and link to selected held-out examples with audio.
+The [embedding/context follow-up](docs/embedding_context_results.md) compares full
+PANNs embeddings, matched 2/4/8-second context, and direct 32 kHz extraction;
+[preprocessing and model research](docs/audio_preprocessing_model_review.md)
+documents the next controlled options. None of these follow-ups passes the gate.
+Startup is now excluded from active training/evaluation with recordings and review
+history preserved. The [completed 24-way preprocessing grid](docs/preprocessing_grid_results.md)
+uses all 785 eligible windows without a session cap. Nested selection scored 51.86%
+balanced accuracy for PANNs and 47.26% for classical features; the gate remains unmet.
+
+Audit the live catalog roles without training a model:
+
+```bash
+uv run python scripts/audit_benchmark.py \
+  --config configs/benchmark_v0_1.yaml \
+  --targets data/targets
+```
 
 ## Setup
 
@@ -89,12 +120,15 @@ Impulse responses are optional and are discovered recursively below
 
 ### Vetted source collection
 
-`configs/audio_sources.yaml` is a small, reviewable starter catalog. It currently
-contains 14 approved vehicle recordings and 10 approved environmental recordings,
-plus one rights-ambiguous historical tank recording that remains review-gated. The
-catalog records source pages, recording sessions, operating conditions, expected
-licenses, attribution, and output placement. Audio files remain local and are
-ignored by Git.
+`configs/audio_sources.yaml` is a reviewable source catalog. As of 2026-09-20 it
+contains 29 vehicle records and 10 approved environmental recordings. Admission is
+stricter than catalog inclusion: local development discovery currently contains
+7 tracked and 5 wheeled reviewed sessions, while consumed and future locked sources
+remain explicitly excluded. The first refreshed 7/5 native-real benchmark scored
+39.70% mean balanced accuracy for the primary fusion and failed development gates
+2-4. The catalog records source pages, recording sessions,
+operating conditions, expected licenses, attribution, and output placement. Audio
+files remain local and are ignored by Git.
 
 The separate collector resolves current provider metadata, checks the expected
 license exactly, downloads only explicitly selected sources, extracts audio from
@@ -589,7 +623,7 @@ assignment, saves both five-member probe ensembles for every outer fold, and rep
 thresholded metrics without claiming probability calibration. See
 [`docs/milestone6_fusion_session_report.md`](docs/milestone6_fusion_session_report.md).
 
-Freeze the development rule before admitting a confirmation pair:
+The historical seven-session development rule was frozen with:
 
 ```bash
 uv run --extra pretrained --extra inspection python \
@@ -600,23 +634,25 @@ uv run --extra pretrained --extra inspection python \
   --output runs/m6_fusion_frozen_development_v2 --channel 0 --seed 42
 ```
 
-This produces a model-selection artifact, not a test result. It records protected
-development fingerprints and fits the selected rule on all development sessions.
-Once one genuinely new, provenance-complete session per class has been admitted,
-evaluate that pair once with:
+That model-selection artifact was subsequently evaluated exactly once on the
+Sherman/PDSounds pair. It achieved 49.69% balanced accuracy and did not confirm the
+development result. The command below identifies that historical mechanism; do not
+rerun it against Sherman/PDSounds or overwrite its completed artifacts:
 
 ```bash
 uv run --extra pretrained --extra inspection python \
   scripts/evaluate_locked_fusion.py \
-  --locked-manifest data/real_locked_v1/real_manifest.jsonl \
+  --locked-manifest .artifacts/real_locked_pair_sherman_pdsounds_v1/real_manifest.jsonl \
   --frozen-model runs/m6_fusion_frozen_development_v2/frozen_fusion_model.pt \
   --checkpoint .artifacts/models/panns/Cnn14_mAP=0.431.pth \
-  --output runs/m6_fusion_locked_v1 --channel 0
+  --output runs/m6_locked_pair_sherman_pdsounds_v1 --channel 0
 ```
 
 The locked evaluator requires exactly one unseen session per class, rejects overlap
 in session/source/media/hash provenance, validates the frozen feature definitions and
-checkpoint, and refuses to overwrite a completed evaluation.
+checkpoint, and refuses to overwrite a completed evaluation. For Benchmark v0.1,
+first pass the refreshed development gates, freeze a new rule, then evaluate the
+reserved T90M/JLTV pair once. See the benchmark contract for the required ordering.
 
 ## Reproducibility boundary
 
@@ -628,3 +664,12 @@ The seeds and all realized parameters are recorded. Training runs record the man
 hash as the dataset version, the feature implementation version, seed, complete split
 groups, model configuration, checkpoint, metrics, and Git commit when the checkout is
 a Git repository.
+
+## License
+
+Project-authored code and documentation are available under the [MIT License](LICENSE).
+Third-party recordings, videos, pretrained model weights, publications, and other
+externally sourced assets retain their own licenses; the MIT license does not
+relicense them. Source attribution and audio-license metadata are recorded in
+`configs/audio_sources.yaml` and the versioned benchmark manifests. Downloaded
+media and model checkpoints are not included in this repository.

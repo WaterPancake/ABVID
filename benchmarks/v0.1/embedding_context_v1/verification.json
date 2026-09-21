@@ -1,0 +1,4614 @@
+{
+  "checkpoints_local_root": "runs/embedding_context_v1",
+  "checks": [
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "8b13041dbe8743b4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "8b13041dbe8743b4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "035a749aa828e11b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "035a749aa828e11b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "46b747eb68aaa95a",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "46b747eb68aaa95a",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "ce3d66abed556ca3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "ce3d66abed556ca3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "9573cf760552fbc0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "9573cf760552fbc0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "8e70a328e68a9b3c",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "8e70a328e68a9b3c",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "ce7f40c987bff854",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "ce7f40c987bff854",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "99c44e240bfe35d7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "99c44e240bfe35d7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "4abc8622219dbb40",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "4abc8622219dbb40",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "24e04430a0dd9b11",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "24e04430a0dd9b11",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "4d24027431f8e587",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "4d24027431f8e587",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "92c22ce26cf041bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "92c22ce26cf041bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "2805f8609fce6fd9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "2805f8609fce6fd9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "04ac000b8a0f49de",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "04ac000b8a0f49de",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "6fa02e997dce5380",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "6fa02e997dce5380",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "41a6ef178c5290c7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "41a6ef178c5290c7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "e65ae2a7e142b811",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "e65ae2a7e142b811",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "0dabee7be27ad99b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "0dabee7be27ad99b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "5926b113639fcacd",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "5926b113639fcacd",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "d11d9203faecf96f",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "d11d9203faecf96f",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "d3ca895042c1df56",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "d3ca895042c1df56",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "dbfb79834b9f3510",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "dbfb79834b9f3510",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "7994a1c9f927f930",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "7994a1c9f927f930",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "ed7eefbbca4860c8",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "ed7eefbbca4860c8",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "64f26469b0dc8ea0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "64f26469b0dc8ea0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "4db86c60bfa642b9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "4db86c60bfa642b9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "13abf9db76a2a589",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "13abf9db76a2a589",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "26ac417b7e72e4e3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "26ac417b7e72e4e3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "ec9fd0f347f95539",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "ec9fd0f347f95539",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "753a03d116bb49bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "753a03d116bb49bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "cbe7718063929a14",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "cbe7718063929a14",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "a8d848c4dd146115",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "a8d848c4dd146115",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_embedding2048",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "8b13041dbe8743b4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "8b13041dbe8743b4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "035a749aa828e11b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "035a749aa828e11b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "46b747eb68aaa95a",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "46b747eb68aaa95a",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "ce3d66abed556ca3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "ce3d66abed556ca3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "9573cf760552fbc0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "9573cf760552fbc0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "8e70a328e68a9b3c",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "8e70a328e68a9b3c",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "ce7f40c987bff854",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "ce7f40c987bff854",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "99c44e240bfe35d7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "99c44e240bfe35d7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "4abc8622219dbb40",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "4abc8622219dbb40",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "24e04430a0dd9b11",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "24e04430a0dd9b11",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "4d24027431f8e587",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "4d24027431f8e587",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "92c22ce26cf041bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "92c22ce26cf041bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "2805f8609fce6fd9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "2805f8609fce6fd9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "04ac000b8a0f49de",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "04ac000b8a0f49de",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "6fa02e997dce5380",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "6fa02e997dce5380",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "41a6ef178c5290c7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "41a6ef178c5290c7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "e65ae2a7e142b811",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "e65ae2a7e142b811",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "0dabee7be27ad99b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "0dabee7be27ad99b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "5926b113639fcacd",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "5926b113639fcacd",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "d11d9203faecf96f",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "d11d9203faecf96f",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "d3ca895042c1df56",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "d3ca895042c1df56",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "dbfb79834b9f3510",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "dbfb79834b9f3510",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "7994a1c9f927f930",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "7994a1c9f927f930",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "ed7eefbbca4860c8",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "ed7eefbbca4860c8",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "64f26469b0dc8ea0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "64f26469b0dc8ea0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "4db86c60bfa642b9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "4db86c60bfa642b9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "13abf9db76a2a589",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "13abf9db76a2a589",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "26ac417b7e72e4e3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "26ac417b7e72e4e3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "ec9fd0f347f95539",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "ec9fd0f347f95539",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "753a03d116bb49bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "753a03d116bb49bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "cbe7718063929a14",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "cbe7718063929a14",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "a8d848c4dd146115",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "a8d848c4dd146115",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "direct32_semantic35",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "8b13041dbe8743b4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "8b13041dbe8743b4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "035a749aa828e11b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "035a749aa828e11b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "46b747eb68aaa95a",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "46b747eb68aaa95a",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "ce3d66abed556ca3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "ce3d66abed556ca3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "9573cf760552fbc0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "9573cf760552fbc0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "8e70a328e68a9b3c",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "8e70a328e68a9b3c",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "ce7f40c987bff854",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "ce7f40c987bff854",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "99c44e240bfe35d7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "99c44e240bfe35d7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "4abc8622219dbb40",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "4abc8622219dbb40",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "24e04430a0dd9b11",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "24e04430a0dd9b11",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "4d24027431f8e587",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "4d24027431f8e587",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "92c22ce26cf041bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "92c22ce26cf041bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "2805f8609fce6fd9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "2805f8609fce6fd9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "04ac000b8a0f49de",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "04ac000b8a0f49de",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "6fa02e997dce5380",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "6fa02e997dce5380",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "41a6ef178c5290c7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "41a6ef178c5290c7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "e65ae2a7e142b811",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "e65ae2a7e142b811",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "0dabee7be27ad99b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "0dabee7be27ad99b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "5926b113639fcacd",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "5926b113639fcacd",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "d11d9203faecf96f",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "d11d9203faecf96f",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "d3ca895042c1df56",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "d3ca895042c1df56",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "dbfb79834b9f3510",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "dbfb79834b9f3510",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "7994a1c9f927f930",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "7994a1c9f927f930",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "ed7eefbbca4860c8",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "ed7eefbbca4860c8",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "64f26469b0dc8ea0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "64f26469b0dc8ea0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "4db86c60bfa642b9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "4db86c60bfa642b9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "13abf9db76a2a589",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "13abf9db76a2a589",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "26ac417b7e72e4e3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "26ac417b7e72e4e3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "ec9fd0f347f95539",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "ec9fd0f347f95539",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "753a03d116bb49bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "753a03d116bb49bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "cbe7718063929a14",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "cbe7718063929a14",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "a8d848c4dd146115",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "a8d848c4dd146115",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_embedding2048",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "8b13041dbe8743b4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "8b13041dbe8743b4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "035a749aa828e11b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "035a749aa828e11b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "46b747eb68aaa95a",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "46b747eb68aaa95a",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "ce3d66abed556ca3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "ce3d66abed556ca3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "9573cf760552fbc0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "9573cf760552fbc0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "8e70a328e68a9b3c",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "8e70a328e68a9b3c",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "ce7f40c987bff854",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "ce7f40c987bff854",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "99c44e240bfe35d7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "99c44e240bfe35d7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "4abc8622219dbb40",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "4abc8622219dbb40",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "24e04430a0dd9b11",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "24e04430a0dd9b11",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "4d24027431f8e587",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "4d24027431f8e587",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "92c22ce26cf041bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "92c22ce26cf041bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "2805f8609fce6fd9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "2805f8609fce6fd9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "04ac000b8a0f49de",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "04ac000b8a0f49de",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "6fa02e997dce5380",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "6fa02e997dce5380",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "41a6ef178c5290c7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "41a6ef178c5290c7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "e65ae2a7e142b811",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "e65ae2a7e142b811",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "0dabee7be27ad99b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "0dabee7be27ad99b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "5926b113639fcacd",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "5926b113639fcacd",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "d11d9203faecf96f",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "d11d9203faecf96f",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "d3ca895042c1df56",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "d3ca895042c1df56",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "dbfb79834b9f3510",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "dbfb79834b9f3510",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "7994a1c9f927f930",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "7994a1c9f927f930",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "ed7eefbbca4860c8",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "ed7eefbbca4860c8",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "64f26469b0dc8ea0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "64f26469b0dc8ea0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "4db86c60bfa642b9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "4db86c60bfa642b9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "13abf9db76a2a589",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "13abf9db76a2a589",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "26ac417b7e72e4e3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "26ac417b7e72e4e3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "ec9fd0f347f95539",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "ec9fd0f347f95539",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "753a03d116bb49bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "753a03d116bb49bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "cbe7718063929a14",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "cbe7718063929a14",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "a8d848c4dd146115",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "a8d848c4dd146115",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_2s_semantic35",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "8b13041dbe8743b4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "8b13041dbe8743b4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "035a749aa828e11b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "035a749aa828e11b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "46b747eb68aaa95a",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "46b747eb68aaa95a",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "ce3d66abed556ca3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "ce3d66abed556ca3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "9573cf760552fbc0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "9573cf760552fbc0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "8e70a328e68a9b3c",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "8e70a328e68a9b3c",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "ce7f40c987bff854",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "ce7f40c987bff854",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "99c44e240bfe35d7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "99c44e240bfe35d7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "4abc8622219dbb40",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "4abc8622219dbb40",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "24e04430a0dd9b11",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "24e04430a0dd9b11",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "4d24027431f8e587",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "4d24027431f8e587",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "92c22ce26cf041bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "92c22ce26cf041bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "2805f8609fce6fd9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "2805f8609fce6fd9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "04ac000b8a0f49de",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "04ac000b8a0f49de",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "6fa02e997dce5380",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "6fa02e997dce5380",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "41a6ef178c5290c7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "41a6ef178c5290c7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "e65ae2a7e142b811",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "e65ae2a7e142b811",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "0dabee7be27ad99b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "0dabee7be27ad99b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "5926b113639fcacd",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "5926b113639fcacd",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "d11d9203faecf96f",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "d11d9203faecf96f",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "d3ca895042c1df56",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "d3ca895042c1df56",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "dbfb79834b9f3510",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "dbfb79834b9f3510",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "7994a1c9f927f930",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "7994a1c9f927f930",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "ed7eefbbca4860c8",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "ed7eefbbca4860c8",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "64f26469b0dc8ea0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "64f26469b0dc8ea0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "4db86c60bfa642b9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "4db86c60bfa642b9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "13abf9db76a2a589",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "13abf9db76a2a589",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "26ac417b7e72e4e3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "26ac417b7e72e4e3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "ec9fd0f347f95539",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "ec9fd0f347f95539",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "753a03d116bb49bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "753a03d116bb49bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "cbe7718063929a14",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "cbe7718063929a14",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "a8d848c4dd146115",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "a8d848c4dd146115",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_embedding2048",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "8b13041dbe8743b4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "8b13041dbe8743b4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "035a749aa828e11b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "035a749aa828e11b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "46b747eb68aaa95a",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "46b747eb68aaa95a",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "ce3d66abed556ca3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "ce3d66abed556ca3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "9573cf760552fbc0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "9573cf760552fbc0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "8e70a328e68a9b3c",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "8e70a328e68a9b3c",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "ce7f40c987bff854",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "ce7f40c987bff854",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "99c44e240bfe35d7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "99c44e240bfe35d7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "4abc8622219dbb40",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "4abc8622219dbb40",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "24e04430a0dd9b11",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "24e04430a0dd9b11",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "4d24027431f8e587",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "4d24027431f8e587",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "92c22ce26cf041bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "92c22ce26cf041bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "2805f8609fce6fd9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "2805f8609fce6fd9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "04ac000b8a0f49de",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "04ac000b8a0f49de",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "6fa02e997dce5380",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "6fa02e997dce5380",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "41a6ef178c5290c7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "41a6ef178c5290c7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "e65ae2a7e142b811",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "e65ae2a7e142b811",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "0dabee7be27ad99b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "0dabee7be27ad99b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "5926b113639fcacd",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "5926b113639fcacd",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "d11d9203faecf96f",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "d11d9203faecf96f",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "d3ca895042c1df56",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "d3ca895042c1df56",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "dbfb79834b9f3510",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "dbfb79834b9f3510",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "7994a1c9f927f930",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "7994a1c9f927f930",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "ed7eefbbca4860c8",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "ed7eefbbca4860c8",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "64f26469b0dc8ea0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "64f26469b0dc8ea0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "4db86c60bfa642b9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "4db86c60bfa642b9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "13abf9db76a2a589",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "13abf9db76a2a589",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "26ac417b7e72e4e3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "26ac417b7e72e4e3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "ec9fd0f347f95539",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "ec9fd0f347f95539",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "753a03d116bb49bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "753a03d116bb49bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "cbe7718063929a14",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "cbe7718063929a14",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "a8d848c4dd146115",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "a8d848c4dd146115",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched4_4s_semantic35",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "8e70a328e68a9b3c",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "8e70a328e68a9b3c",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "ce7f40c987bff854",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "ce7f40c987bff854",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "99c44e240bfe35d7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "99c44e240bfe35d7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "4abc8622219dbb40",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "4abc8622219dbb40",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "24e04430a0dd9b11",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "24e04430a0dd9b11",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "4d24027431f8e587",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "4d24027431f8e587",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "92c22ce26cf041bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "92c22ce26cf041bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "2805f8609fce6fd9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "2805f8609fce6fd9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "04ac000b8a0f49de",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "04ac000b8a0f49de",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "6fa02e997dce5380",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "6fa02e997dce5380",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "41a6ef178c5290c7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "41a6ef178c5290c7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "e65ae2a7e142b811",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "e65ae2a7e142b811",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "0dabee7be27ad99b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "0dabee7be27ad99b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "5926b113639fcacd",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "5926b113639fcacd",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "d11d9203faecf96f",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "d11d9203faecf96f",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "d3ca895042c1df56",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "d3ca895042c1df56",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "dbfb79834b9f3510",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "dbfb79834b9f3510",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "7994a1c9f927f930",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "7994a1c9f927f930",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "ed7eefbbca4860c8",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "ed7eefbbca4860c8",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "64f26469b0dc8ea0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "64f26469b0dc8ea0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "4db86c60bfa642b9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "4db86c60bfa642b9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "13abf9db76a2a589",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "13abf9db76a2a589",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "26ac417b7e72e4e3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "26ac417b7e72e4e3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "ec9fd0f347f95539",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "ec9fd0f347f95539",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "753a03d116bb49bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "753a03d116bb49bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "cbe7718063929a14",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "cbe7718063929a14",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "a8d848c4dd146115",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "a8d848c4dd146115",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_embedding2048",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "8e70a328e68a9b3c",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "8e70a328e68a9b3c",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "ce7f40c987bff854",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "ce7f40c987bff854",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "99c44e240bfe35d7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "99c44e240bfe35d7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "4abc8622219dbb40",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "4abc8622219dbb40",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "24e04430a0dd9b11",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "24e04430a0dd9b11",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "4d24027431f8e587",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "4d24027431f8e587",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "92c22ce26cf041bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "92c22ce26cf041bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "2805f8609fce6fd9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "2805f8609fce6fd9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "04ac000b8a0f49de",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "04ac000b8a0f49de",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "6fa02e997dce5380",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "6fa02e997dce5380",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "41a6ef178c5290c7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "41a6ef178c5290c7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "e65ae2a7e142b811",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "e65ae2a7e142b811",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "0dabee7be27ad99b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "0dabee7be27ad99b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "5926b113639fcacd",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "5926b113639fcacd",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "d11d9203faecf96f",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "d11d9203faecf96f",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "d3ca895042c1df56",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "d3ca895042c1df56",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "dbfb79834b9f3510",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "dbfb79834b9f3510",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "7994a1c9f927f930",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "7994a1c9f927f930",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "ed7eefbbca4860c8",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "ed7eefbbca4860c8",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "64f26469b0dc8ea0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "64f26469b0dc8ea0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "4db86c60bfa642b9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "4db86c60bfa642b9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "13abf9db76a2a589",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "13abf9db76a2a589",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "26ac417b7e72e4e3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "26ac417b7e72e4e3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "ec9fd0f347f95539",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "ec9fd0f347f95539",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "753a03d116bb49bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "753a03d116bb49bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "cbe7718063929a14",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "cbe7718063929a14",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "a8d848c4dd146115",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "a8d848c4dd146115",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_2s_semantic35",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "8e70a328e68a9b3c",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "8e70a328e68a9b3c",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "ce7f40c987bff854",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "ce7f40c987bff854",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "99c44e240bfe35d7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "99c44e240bfe35d7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "4abc8622219dbb40",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "4abc8622219dbb40",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "24e04430a0dd9b11",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "24e04430a0dd9b11",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "4d24027431f8e587",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "4d24027431f8e587",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "92c22ce26cf041bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "92c22ce26cf041bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "2805f8609fce6fd9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "2805f8609fce6fd9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "04ac000b8a0f49de",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "04ac000b8a0f49de",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "6fa02e997dce5380",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "6fa02e997dce5380",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "41a6ef178c5290c7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "41a6ef178c5290c7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "e65ae2a7e142b811",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "e65ae2a7e142b811",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "0dabee7be27ad99b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "0dabee7be27ad99b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "5926b113639fcacd",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "5926b113639fcacd",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "d11d9203faecf96f",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "d11d9203faecf96f",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "d3ca895042c1df56",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "d3ca895042c1df56",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "dbfb79834b9f3510",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "dbfb79834b9f3510",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "7994a1c9f927f930",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "7994a1c9f927f930",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "ed7eefbbca4860c8",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "ed7eefbbca4860c8",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "64f26469b0dc8ea0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "64f26469b0dc8ea0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "4db86c60bfa642b9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "4db86c60bfa642b9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "13abf9db76a2a589",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "13abf9db76a2a589",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "26ac417b7e72e4e3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "26ac417b7e72e4e3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "ec9fd0f347f95539",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "ec9fd0f347f95539",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "753a03d116bb49bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "753a03d116bb49bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "cbe7718063929a14",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "cbe7718063929a14",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "a8d848c4dd146115",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "a8d848c4dd146115",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_embedding2048",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "8e70a328e68a9b3c",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "8e70a328e68a9b3c",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "ce7f40c987bff854",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "ce7f40c987bff854",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "99c44e240bfe35d7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "99c44e240bfe35d7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "4abc8622219dbb40",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "4abc8622219dbb40",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "24e04430a0dd9b11",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "24e04430a0dd9b11",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "4d24027431f8e587",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "4d24027431f8e587",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "92c22ce26cf041bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "92c22ce26cf041bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "2805f8609fce6fd9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "2805f8609fce6fd9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "04ac000b8a0f49de",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "04ac000b8a0f49de",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "6fa02e997dce5380",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "6fa02e997dce5380",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "41a6ef178c5290c7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "41a6ef178c5290c7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "e65ae2a7e142b811",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "e65ae2a7e142b811",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "0dabee7be27ad99b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "0dabee7be27ad99b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "5926b113639fcacd",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "5926b113639fcacd",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "d11d9203faecf96f",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "d11d9203faecf96f",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "d3ca895042c1df56",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "d3ca895042c1df56",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "dbfb79834b9f3510",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "dbfb79834b9f3510",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "7994a1c9f927f930",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "7994a1c9f927f930",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "ed7eefbbca4860c8",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "ed7eefbbca4860c8",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "64f26469b0dc8ea0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "64f26469b0dc8ea0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "4db86c60bfa642b9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "4db86c60bfa642b9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "13abf9db76a2a589",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "13abf9db76a2a589",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "26ac417b7e72e4e3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "26ac417b7e72e4e3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "ec9fd0f347f95539",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "ec9fd0f347f95539",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "753a03d116bb49bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "753a03d116bb49bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "cbe7718063929a14",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "cbe7718063929a14",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "a8d848c4dd146115",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "a8d848c4dd146115",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_4s_semantic35",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "8e70a328e68a9b3c",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "8e70a328e68a9b3c",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "ce7f40c987bff854",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "ce7f40c987bff854",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "99c44e240bfe35d7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "99c44e240bfe35d7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "4abc8622219dbb40",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "4abc8622219dbb40",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "24e04430a0dd9b11",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "24e04430a0dd9b11",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "4d24027431f8e587",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "4d24027431f8e587",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "92c22ce26cf041bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "92c22ce26cf041bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "2805f8609fce6fd9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "2805f8609fce6fd9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "04ac000b8a0f49de",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "04ac000b8a0f49de",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "6fa02e997dce5380",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "6fa02e997dce5380",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "41a6ef178c5290c7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "41a6ef178c5290c7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "e65ae2a7e142b811",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "e65ae2a7e142b811",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "0dabee7be27ad99b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "0dabee7be27ad99b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "5926b113639fcacd",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "5926b113639fcacd",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "d11d9203faecf96f",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "d11d9203faecf96f",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "d3ca895042c1df56",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "d3ca895042c1df56",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "dbfb79834b9f3510",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "dbfb79834b9f3510",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "7994a1c9f927f930",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "7994a1c9f927f930",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "ed7eefbbca4860c8",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "ed7eefbbca4860c8",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "64f26469b0dc8ea0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "64f26469b0dc8ea0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "4db86c60bfa642b9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "4db86c60bfa642b9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "13abf9db76a2a589",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "13abf9db76a2a589",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "26ac417b7e72e4e3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "26ac417b7e72e4e3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "ec9fd0f347f95539",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "ec9fd0f347f95539",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "753a03d116bb49bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "753a03d116bb49bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "cbe7718063929a14",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "cbe7718063929a14",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "a8d848c4dd146115",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "a8d848c4dd146115",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_embedding2048",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "8e70a328e68a9b3c",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "8e70a328e68a9b3c",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "ce7f40c987bff854",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "ce7f40c987bff854",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "99c44e240bfe35d7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "99c44e240bfe35d7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "4abc8622219dbb40",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "4abc8622219dbb40",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "24e04430a0dd9b11",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "24e04430a0dd9b11",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "4d24027431f8e587",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "4d24027431f8e587",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "92c22ce26cf041bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "92c22ce26cf041bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "2805f8609fce6fd9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "2805f8609fce6fd9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "04ac000b8a0f49de",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "04ac000b8a0f49de",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "6fa02e997dce5380",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "6fa02e997dce5380",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "41a6ef178c5290c7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "41a6ef178c5290c7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "e65ae2a7e142b811",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "e65ae2a7e142b811",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "0dabee7be27ad99b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "0dabee7be27ad99b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "5926b113639fcacd",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "5926b113639fcacd",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "d11d9203faecf96f",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "d11d9203faecf96f",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "d3ca895042c1df56",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "d3ca895042c1df56",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "dbfb79834b9f3510",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "dbfb79834b9f3510",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "7994a1c9f927f930",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "7994a1c9f927f930",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "ed7eefbbca4860c8",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "ed7eefbbca4860c8",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "64f26469b0dc8ea0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "64f26469b0dc8ea0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "4db86c60bfa642b9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "4db86c60bfa642b9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "13abf9db76a2a589",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "13abf9db76a2a589",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "26ac417b7e72e4e3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "26ac417b7e72e4e3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "ec9fd0f347f95539",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "ec9fd0f347f95539",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "753a03d116bb49bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "753a03d116bb49bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "cbe7718063929a14",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "cbe7718063929a14",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "a8d848c4dd146115",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "a8d848c4dd146115",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "matched8_8s_semantic35",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "8b13041dbe8743b4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "8b13041dbe8743b4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "035a749aa828e11b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "035a749aa828e11b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "46b747eb68aaa95a",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "46b747eb68aaa95a",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "ce3d66abed556ca3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "ce3d66abed556ca3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "9573cf760552fbc0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "9573cf760552fbc0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "8e70a328e68a9b3c",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "8e70a328e68a9b3c",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "ce7f40c987bff854",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "ce7f40c987bff854",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "99c44e240bfe35d7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "99c44e240bfe35d7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "4abc8622219dbb40",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "4abc8622219dbb40",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "24e04430a0dd9b11",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "24e04430a0dd9b11",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "4d24027431f8e587",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "4d24027431f8e587",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "92c22ce26cf041bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "92c22ce26cf041bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "2805f8609fce6fd9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "2805f8609fce6fd9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "04ac000b8a0f49de",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "04ac000b8a0f49de",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "6fa02e997dce5380",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "6fa02e997dce5380",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "41a6ef178c5290c7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "41a6ef178c5290c7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "e65ae2a7e142b811",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "e65ae2a7e142b811",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "0dabee7be27ad99b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "0dabee7be27ad99b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "5926b113639fcacd",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "5926b113639fcacd",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "d11d9203faecf96f",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "d11d9203faecf96f",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "d3ca895042c1df56",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "d3ca895042c1df56",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "dbfb79834b9f3510",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "dbfb79834b9f3510",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "7994a1c9f927f930",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "7994a1c9f927f930",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "ed7eefbbca4860c8",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "ed7eefbbca4860c8",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "64f26469b0dc8ea0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "64f26469b0dc8ea0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "4db86c60bfa642b9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "4db86c60bfa642b9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "13abf9db76a2a589",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "13abf9db76a2a589",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "26ac417b7e72e4e3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "26ac417b7e72e4e3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "ec9fd0f347f95539",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "ec9fd0f347f95539",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "753a03d116bb49bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "753a03d116bb49bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "cbe7718063929a14",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "cbe7718063929a14",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "a8d848c4dd146115",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "a8d848c4dd146115",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_embedding2048",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "8b13041dbe8743b4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "8b13041dbe8743b4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "035a749aa828e11b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "035a749aa828e11b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "46b747eb68aaa95a",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "46b747eb68aaa95a",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "ce3d66abed556ca3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "ce3d66abed556ca3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "9573cf760552fbc0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "9573cf760552fbc0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "8e70a328e68a9b3c",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "8e70a328e68a9b3c",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "ce7f40c987bff854",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "ce7f40c987bff854",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "99c44e240bfe35d7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "99c44e240bfe35d7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "4abc8622219dbb40",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "4abc8622219dbb40",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "24e04430a0dd9b11",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "24e04430a0dd9b11",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "4d24027431f8e587",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "4d24027431f8e587",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "92c22ce26cf041bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "92c22ce26cf041bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "2805f8609fce6fd9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "2805f8609fce6fd9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "04ac000b8a0f49de",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "04ac000b8a0f49de",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "6fa02e997dce5380",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "6fa02e997dce5380",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "41a6ef178c5290c7",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "41a6ef178c5290c7",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "e65ae2a7e142b811",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "e65ae2a7e142b811",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "0dabee7be27ad99b",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "0dabee7be27ad99b",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "5926b113639fcacd",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "5926b113639fcacd",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "d11d9203faecf96f",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "d11d9203faecf96f",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "d3ca895042c1df56",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "d3ca895042c1df56",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "dbfb79834b9f3510",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "dbfb79834b9f3510",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "7994a1c9f927f930",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "7994a1c9f927f930",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "ed7eefbbca4860c8",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "ed7eefbbca4860c8",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "64f26469b0dc8ea0",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "64f26469b0dc8ea0",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "ad3c3b1fd58056d4",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "4db86c60bfa642b9",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "4db86c60bfa642b9",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "13abf9db76a2a589",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "13abf9db76a2a589",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "26ac417b7e72e4e3",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "26ac417b7e72e4e3",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "ec9fd0f347f95539",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "ec9fd0f347f95539",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "753a03d116bb49bc",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "753a03d116bb49bc",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "fe8ec5cf4b990d90",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "cbe7718063929a14",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "cbe7718063929a14",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "a8d848c4dd146115",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "a8d848c4dd146115",
+      "head": "nested_selected"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "regularization_ensemble"
+    },
+    {
+      "experiment": "native_semantic35",
+      "fold": "7b8eabc29adfcfbb",
+      "head": "nested_selected"
+    }
+  ],
+  "configuration": "copied experiment.json",
+  "ignored_nonexperimental_metadata": [
+    ".DS_Store"
+  ],
+  "protected_source_overlap": [],
+  "regenerated_source_windows_exact": 1848,
+  "reviewed_interval_bounds": "all pass",
+  "saved_probe_replays": 920,
+  "verifier_sha256": "55e0b73452d88a0caaf1606ff1399efd0a0407aa05363c24ca15830d5cff7b22"
+}

@@ -1,0 +1,2966 @@
+{
+  "code_sha256": {
+    "src/vehicle_audio/__init__.py": "4e0f0b6946c5e8e0e17ce29b247b5f8c9d79be808fc3761b7c5f66252c6ce6ac",
+    "src/vehicle_audio/array_dataset.py": "c598f3f7702f0595a7eee1a1687bb8976a744bbb89a8d461d4761062f0db5835",
+    "src/vehicle_audio/audibility_calibration.py": "7850400d4c487fb7694f7aa5572ffd3e910ef01970bccc585b49527041ddf454",
+    "src/vehicle_audio/audio.py": "6856c1e43de6e433887267a8adcc50af4429b85155e64a5c208e96f98bf5077d",
+    "src/vehicle_audio/augment.py": "7251cd11ea57202857eff3a91b4c1c177db63d88652991c6f8880fa19d9fb05d",
+    "src/vehicle_audio/baseline.py": "b947fea30456481e171938a6eb82ec5e956d377e42c769f78a1ad26bb1402153",
+    "src/vehicle_audio/benchmark.py": "30bf18202e5a859ca921cffa7ad27d91dab943c1b6cd65504689b5838687ab36",
+    "src/vehicle_audio/benchmark_followup.py": "22042f266cf64b4b647475d37d1e2e3165c43346be38828c8d2a7231b1c2d3db",
+    "src/vehicle_audio/classical_session_evaluation.py": "efb6e63d5bd1b240b2ca767e2a6eddb44f13d231c52cd2b780394e8f6ea90e60",
+    "src/vehicle_audio/cli.py": "31cbaef23fc91998ab95bf2704b4af760cb745517d5e01a64020c7da4df84337",
+    "src/vehicle_audio/collection.py": "9986c7bbc79221d42c48b7ee10c51acbad2695c4365aa863a292a7306440ad5c",
+    "src/vehicle_audio/config.py": "85477fd6cea1dcfce1872311435f2d00c8b143aa137347efb58c51789fc1ba20",
+    "src/vehicle_audio/dataset.py": "115819d5e1560a747af52be9c46a511d7c40f14c5771c222993cfdf6205a170c",
+    "src/vehicle_audio/event_inference.py": "35987941c120b1051f65483b8c4caeb27626c2d2dfd047c3af40c955383fe1e0",
+    "src/vehicle_audio/factorial_dataset.py": "608fa35ee51b80998c52c0d3a0b5a9ed18be5b78fa121fca3924ffdf7fb32b84",
+    "src/vehicle_audio/frozen_fusion.py": "a827fbae9fe4e15452be95f0fefd005fbebe7a2142399fca6fcdfe4db65c5d70",
+    "src/vehicle_audio/fusion_session_evaluation.py": "ad97ebaa054336b023c6e874a3123c5ac90199ee4d37ca99dfb8d84cc3cac090",
+    "src/vehicle_audio/historical_checkpoint_audit.py": "d164a0ac268f09689bbca80674a1d5909daee1bedbce0ef092adaeff4babcc34",
+    "src/vehicle_audio/invariance_aggregation.py": "a3597bf0a0fdc8fbfb05be1f7897466e57ad9102265dc17cb6f1b1bbe19ef230",
+    "src/vehicle_audio/invariance_evaluation.py": "1254cd7787021668c7567e0704d27e5820ba5d2aaf4c2b9ecb286124f872c67c",
+    "src/vehicle_audio/locked_fusion_evaluation.py": "d1454ad9d355781851bd65494f26284e12c1c0133f2d6bf7223e075e20148702",
+    "src/vehicle_audio/low_snr_adaptation.py": "39036aa9088c6309b7b5ad94819f19023d9c62303316aa8e253515ac281834a5",
+    "src/vehicle_audio/manifest.py": "3a757620dadf3bbe3d16d3edd6bee4a7d245180d04a04b2635759a3f5c5baeb3",
+    "src/vehicle_audio/metadata.py": "06b955b1ccd00549daadb3845c54d36018545100f64b49df3e8f772f707da6af",
+    "src/vehicle_audio/mixing.py": "2b32336c6ad3e8fa2e353864e33dee8461be1cb219dc15353dab8f1425fbf0bc",
+    "src/vehicle_audio/multichannel.py": "acb04397fbed7b069f22e0d881b25cb69106ecb28b38209852e5c38fa827ae45",
+    "src/vehicle_audio/multichannel_evaluation.py": "bab0fa2ca6365f24e2361c550c5cd675826d863fe67a33148fb26a1398153203",
+    "src/vehicle_audio/pretrained_evaluation.py": "ae3582b075fbaf0ad4cd8baa684892f2dd7ee417f5be655e08c526398cdcb6d9",
+    "src/vehicle_audio/real_corpus.py": "ade4ff7e4d3916486335818191046eba617dab7538dd32a22482857c74ebd836",
+    "src/vehicle_audio/real_panns_features.py": "f9afe6998205abb38f3289a642c5cbdacfee92e9b69c0f8335733abb96132b8f",
+    "src/vehicle_audio/semantic_session_evaluation.py": "879fb3de3941596ea268af1e325c52a65aca99c500fd3807562974f56fd671da",
+    "src/vehicle_audio/source_simulation.py": "50021ca472140daacd1df95d80f792191a205ec427f6995b31dbfdc2e4192e2e",
+    "src/vehicle_audio/transfer_evaluation.py": "0a05069b0addde9945e79f489bd21875bf3d9d58a816b0bc8a2e73d250d74064"
+  },
+  "configuration": {
+    "analysis": "post-hoc diagnostic only",
+    "fixed_fusion_threshold": 0.5
+  },
+  "created_at_utc": "2026-09-20T21:48:14.815167+00:00",
+  "dataset_version": "e013532104c209e3c8f6906bb3c9daa3c46c2d6fb2e9fed82a65f4d2699a42c4",
+  "git_commit": "0d242c6d76ff036747f89576ee15d5f7399f5891",
+  "git_worktree_dirty": true,
+  "input_sha256": {
+    "data/benchmark_v0_1_native_real_7t5w/real_manifest.jsonl": "e013532104c209e3c8f6906bb3c9daa3c46c2d6fb2e9fed82a65f4d2699a42c4",
+    "runs/benchmark_v0_1_native_real_7t5w/classical/classical_probe_models.pt": "ccff5821fed9be93099248959ba3d4f0cebf7db8134b869614157feb0f501bf4",
+    "runs/benchmark_v0_1_native_real_7t5w/classical/experiment.json": "4ba0949f2b44f8b87c5ac90cf45c1e056dfa5f3abf4914f02e7b75171339d6da",
+    "runs/benchmark_v0_1_native_real_7t5w/classical/metrics.json": "e98b6b820e6e33e97372fcbcbd77ccce81053eccd4a7d7c042a99fa255772fcc",
+    "runs/benchmark_v0_1_native_real_7t5w/classical/splits.json": "dae865091d61392c7a0a9a971921c8720510e9e9dcd134cd83486978b785a9cf",
+    "runs/benchmark_v0_1_native_real_7t5w/fusion/experiment.json": "c098064f930504aee79356a707b6c2dc8687b492002f8ab451a333b83f416c99",
+    "runs/benchmark_v0_1_native_real_7t5w/fusion/fusion_probe_models.pt": "a15419e08fa0cb26d06e57b448e8b9185b28ba4241ad6d4deba925a88b340bde",
+    "runs/benchmark_v0_1_native_real_7t5w/fusion/metrics.json": "56e0fea3d725ca1dd073d3c8260a28c579088f0cddaa4d20e41de298fd7007ac",
+    "runs/benchmark_v0_1_native_real_7t5w/fusion/real_classical_features.pt": "914f5ef302dd32742ad62b3bdefd6177c2ee2516e7dc297870c30e6dd61fb8e4",
+    "runs/benchmark_v0_1_native_real_7t5w/fusion/splits.json": "2a6c1a57efe4db6f134539d53ba7a7dd5009d0c59a2adb8c6527c5095f3419d6",
+    "runs/benchmark_v0_1_native_real_7t5w/panns_features.pt": "71a4bbe8c35a56f94fb366e4fbd60c766a25fd7302bf98f80531200a392d4da3",
+    "runs/benchmark_v0_1_native_real_7t5w/semantic/experiment.json": "cd045fdcf56d3e6ebbbd7105a908878f901e9fc699485f4373a035e969123f43",
+    "runs/benchmark_v0_1_native_real_7t5w/semantic/metrics.json": "7ec913dd049b1b0d41c2d9c7214097b4de4089981334fa7d6a5c275c184f6d4b",
+    "runs/benchmark_v0_1_native_real_7t5w/semantic/semantic_probe_models.pt": "8a6110054e9587fb07f627d8ba2bedbb57f7a0672d7e1ad76b30e24fe892eea2",
+    "runs/benchmark_v0_1_native_real_7t5w/semantic/splits.json": "dae865091d61392c7a0a9a971921c8720510e9e9dcd134cd83486978b785a9cf"
+  },
+  "limitations": [
+    "No causal attribution from these observational associations.",
+    "Overlapping windows and pairing contexts are dependent; no window-level significance tests.",
+    "Device, distance and simultaneous vehicle counts are not systematically annotated.",
+    "Mean logit contributions describe individual linear probes, not calibrated probabilities or causal sound components.",
+    "Fixed-0.5 fusion is a post-hoc diagnostic, not a replacement selected model."
+  ],
+  "model_checkpoint": "runs/benchmark_v0_1_native_real_7t5w/fusion/fusion_probe_models.pt",
+  "native_reproduction": "all 35 folds, all three models, exact window recalls",
+  "pair_diagnostics": [
+    {
+      "both_branches_wrong_fraction": 0.13333333333333333,
+      "branch_disagreement_fraction": 0.4,
+      "fold_id": "e2776eac0bfa9092",
+      "inner_ba": 0.4459635416666667,
+      "threshold_flipped_fraction": 0.26666666666666666
+    },
+    {
+      "both_branches_wrong_fraction": 0.75,
+      "branch_disagreement_fraction": 0.08333333333333333,
+      "fold_id": "ecc0bff5efaa8a64",
+      "inner_ba": 0.48059976708074537,
+      "threshold_flipped_fraction": 0.16666666666666666
+    },
+    {
+      "both_branches_wrong_fraction": 0.8611111111111112,
+      "branch_disagreement_fraction": 0.041666666666666664,
+      "fold_id": "2abd8df233cd1a3c",
+      "inner_ba": 0.5906913172877847,
+      "threshold_flipped_fraction": 0.125
+    },
+    {
+      "both_branches_wrong_fraction": 0.7638888888888888,
+      "branch_disagreement_fraction": 0.20833333333333334,
+      "fold_id": "a63a9d5b5916c1dc",
+      "inner_ba": 0.4920177978347136,
+      "threshold_flipped_fraction": 0.20833333333333334
+    },
+    {
+      "both_branches_wrong_fraction": 0.22058823529411764,
+      "branch_disagreement_fraction": 0.7205882352941176,
+      "fold_id": "bfa4b9d143fabef9",
+      "inner_ba": 0.522437214242581,
+      "threshold_flipped_fraction": 0.8529411764705882
+    },
+    {
+      "both_branches_wrong_fraction": 0.04225352112676056,
+      "branch_disagreement_fraction": 0.9154929577464789,
+      "fold_id": "9deeba50142a7a6f",
+      "inner_ba": 0.458203125,
+      "threshold_flipped_fraction": 0.5352112676056338
+    },
+    {
+      "both_branches_wrong_fraction": 0.2391304347826087,
+      "branch_disagreement_fraction": 0.7608695652173914,
+      "fold_id": "3af5d81c7481d674",
+      "inner_ba": 0.5243868346704624,
+      "threshold_flipped_fraction": 0.11956521739130435
+    },
+    {
+      "both_branches_wrong_fraction": 0.4765625,
+      "branch_disagreement_fraction": 0.46875,
+      "fold_id": "de26fc2e409dabaf",
+      "inner_ba": 0.7340566231021395,
+      "threshold_flipped_fraction": 0.0625
+    },
+    {
+      "both_branches_wrong_fraction": 0.4375,
+      "branch_disagreement_fraction": 0.5234375,
+      "fold_id": "dcd1dcd1384bd66b",
+      "inner_ba": 0.5517784355590062,
+      "threshold_flipped_fraction": 0.0859375
+    },
+    {
+      "both_branches_wrong_fraction": 0.11290322580645161,
+      "branch_disagreement_fraction": 0.8306451612903226,
+      "fold_id": "5a446c86f59c3f8f",
+      "inner_ba": 0.5367395078502415,
+      "threshold_flipped_fraction": 0.5161290322580645
+    },
+    {
+      "both_branches_wrong_fraction": 0.04477611940298507,
+      "branch_disagreement_fraction": 0.47761194029850745,
+      "fold_id": "10434c755441fa9a",
+      "inner_ba": 0.4404296875,
+      "threshold_flipped_fraction": 0.1791044776119403
+    },
+    {
+      "both_branches_wrong_fraction": 0.3522727272727273,
+      "branch_disagreement_fraction": 0.3068181818181818,
+      "fold_id": "ab6a29b4e3dd356c",
+      "inner_ba": 0.4853026332815735,
+      "threshold_flipped_fraction": 0.5113636363636364
+    },
+    {
+      "both_branches_wrong_fraction": 0.5,
+      "branch_disagreement_fraction": 0.06451612903225806,
+      "fold_id": "f563a9f598662851",
+      "inner_ba": 0.5655111014061421,
+      "threshold_flipped_fraction": 0.21774193548387097
+    },
+    {
+      "both_branches_wrong_fraction": 0.4274193548387097,
+      "branch_disagreement_fraction": 0.25,
+      "fold_id": "da1e7c3e071fc4c7",
+      "inner_ba": 0.4927580712991719,
+      "threshold_flipped_fraction": 0.08870967741935484
+    },
+    {
+      "both_branches_wrong_fraction": 0.18333333333333332,
+      "branch_disagreement_fraction": 0.6916666666666667,
+      "fold_id": "f33f28420128e147",
+      "inner_ba": 0.5428433941511387,
+      "threshold_flipped_fraction": 0.5416666666666666
+    },
+    {
+      "both_branches_wrong_fraction": 0.1267605633802817,
+      "branch_disagreement_fraction": 0.2676056338028169,
+      "fold_id": "76902234548caeda",
+      "inner_ba": 0.433984375,
+      "threshold_flipped_fraction": 0.15492957746478872
+    },
+    {
+      "both_branches_wrong_fraction": 0.2826086956521739,
+      "branch_disagreement_fraction": 0.21739130434782608,
+      "fold_id": "fa226ee83a2a1321",
+      "inner_ba": 0.44117723969116635,
+      "threshold_flipped_fraction": 0.6521739130434783
+    },
+    {
+      "both_branches_wrong_fraction": 0.484375,
+      "branch_disagreement_fraction": 0.125,
+      "fold_id": "c4a0aa0765aebffe",
+      "inner_ba": 0.5612800045289855,
+      "threshold_flipped_fraction": 0.25
+    },
+    {
+      "both_branches_wrong_fraction": 0.3671875,
+      "branch_disagreement_fraction": 0.3125,
+      "fold_id": "d351512292ff8444",
+      "inner_ba": 0.4914555835921325,
+      "threshold_flipped_fraction": 0.078125
+    },
+    {
+      "both_branches_wrong_fraction": 0.18548387096774194,
+      "branch_disagreement_fraction": 0.5161290322580645,
+      "fold_id": "5326a82bbcb71553",
+      "inner_ba": 0.478548244478951,
+      "threshold_flipped_fraction": 0.7096774193548387
+    },
+    {
+      "both_branches_wrong_fraction": 0.018867924528301886,
+      "branch_disagreement_fraction": 0.16981132075471697,
+      "fold_id": "6508ddeaa2427345",
+      "inner_ba": 0.41302083333333334,
+      "threshold_flipped_fraction": 0.018867924528301886
+    },
+    {
+      "both_branches_wrong_fraction": 0.25675675675675674,
+      "branch_disagreement_fraction": 0.10810810810810811,
+      "fold_id": "2ba13a053a131c2d",
+      "inner_ba": 0.41779823908730157,
+      "threshold_flipped_fraction": 0.7567567567567568
+    },
+    {
+      "both_branches_wrong_fraction": 0.5636363636363636,
+      "branch_disagreement_fraction": 0.045454545454545456,
+      "fold_id": "dd1f2d6b03d754e9",
+      "inner_ba": 0.6186166914682539,
+      "threshold_flipped_fraction": 0.05454545454545454
+    },
+    {
+      "both_branches_wrong_fraction": 0.4818181818181818,
+      "branch_disagreement_fraction": 0.12727272727272726,
+      "fold_id": "33f96ba6e129356b",
+      "inner_ba": 0.4579892113095238,
+      "threshold_flipped_fraction": 0.02727272727272727
+    },
+    {
+      "both_branches_wrong_fraction": 0.09433962264150944,
+      "branch_disagreement_fraction": 0.5,
+      "fold_id": "0df5ad32000f22d0",
+      "inner_ba": 0.4587332589285714,
+      "threshold_flipped_fraction": 0.009433962264150943
+    },
+    {
+      "both_branches_wrong_fraction": 0.04225352112676056,
+      "branch_disagreement_fraction": 0.5070422535211268,
+      "fold_id": "3c344f48ab5b742c",
+      "inner_ba": 0.46021380585748795,
+      "threshold_flipped_fraction": 0.14084507042253522
+    },
+    {
+      "both_branches_wrong_fraction": 0.31521739130434784,
+      "branch_disagreement_fraction": 0.4673913043478261,
+      "fold_id": "382a42fe1c353cb3",
+      "inner_ba": 0.4956285854468599,
+      "threshold_flipped_fraction": 0.30434782608695654
+    },
+    {
+      "both_branches_wrong_fraction": 0.4921875,
+      "branch_disagreement_fraction": 0.25,
+      "fold_id": "16ea11d7c9bfa671",
+      "inner_ba": 0.6193751617494824,
+      "threshold_flipped_fraction": 0.234375
+    },
+    {
+      "both_branches_wrong_fraction": 0.375,
+      "branch_disagreement_fraction": 0.4296875,
+      "fold_id": "a4fdf82655e60566",
+      "inner_ba": 0.5017432550465839,
+      "threshold_flipped_fraction": 0.1875
+    },
+    {
+      "both_branches_wrong_fraction": 0.04838709677419355,
+      "branch_disagreement_fraction": 0.6290322580645161,
+      "fold_id": "fd7ddb8b27fcb46c",
+      "inner_ba": 0.47233544685990336,
+      "threshold_flipped_fraction": 0.7419354838709677
+    },
+    {
+      "both_branches_wrong_fraction": 0.18309859154929578,
+      "branch_disagreement_fraction": 0.39436619718309857,
+      "fold_id": "e371de962ce883aa",
+      "inner_ba": 0.4569227430555556,
+      "threshold_flipped_fraction": 0.14084507042253522
+    },
+    {
+      "both_branches_wrong_fraction": 0.2826086956521739,
+      "branch_disagreement_fraction": 0.358695652173913,
+      "fold_id": "d466898d3c66a77a",
+      "inner_ba": 0.46674498037439616,
+      "threshold_flipped_fraction": 0.41304347826086957
+    },
+    {
+      "both_branches_wrong_fraction": 0.484375,
+      "branch_disagreement_fraction": 0.15625,
+      "fold_id": "e90d878094069528",
+      "inner_ba": 0.5833202585835059,
+      "threshold_flipped_fraction": 0.3203125
+    },
+    {
+      "both_branches_wrong_fraction": 0.3984375,
+      "branch_disagreement_fraction": 0.390625,
+      "fold_id": "eef0e8386761964b",
+      "inner_ba": 0.484827628968254,
+      "threshold_flipped_fraction": 0.171875
+    },
+    {
+      "both_branches_wrong_fraction": 0.07258064516129033,
+      "branch_disagreement_fraction": 0.5725806451612904,
+      "fold_id": "0dcc04bbbd2db092",
+      "inner_ba": 0.46422061011904764,
+      "threshold_flipped_fraction": 0.10483870967741936
+    }
+  ],
+  "protected_source_overlap": [],
+  "random_seed": 42,
+  "sessions": {
+    "commons_goodwood_festival_of_speed_2009": {
+      "acoustics": {
+        "crest_factor": {
+          "maximum": 10.607208251953125,
+          "median": 7.828611850738525,
+          "minimum": 5.65234899520874
+        },
+        "rms_dbfs": {
+          "maximum": -24.07236687110117,
+          "median": -26.996434090849704,
+          "minimum": -33.59224604512913
+        },
+        "rolloff_85_hz": {
+          "maximum": 4498.759765625,
+          "median": 2877.232177734375,
+          "minimum": 1093.0059814453125
+        },
+        "spectral_bandwidth_hz": {
+          "maximum": 1876.5509033203125,
+          "median": 1500.2685546875,
+          "minimum": 842.018798828125
+        },
+        "spectral_centroid_hz": {
+          "maximum": 2449.75,
+          "median": 1339.066650390625,
+          "minimum": 604.8238525390625
+        }
+      },
+      "conditions": {
+        "accelerating": {
+          "classical": 0.7755102040816325,
+          "fusion": 0.16326530612244897,
+          "semantic": 0.30612244897959184,
+          "windows": 7
+        }
+      },
+      "distance": "unknown",
+      "provider": "wikimedia_commons",
+      "recording_device": "unknown",
+      "semantic_logit_contributions": {
+        "toward_tracked": [
+          {
+            "feature": "Race car, auto racing",
+            "mean_contribution": -3.35020697492173
+          },
+          {
+            "feature": "Skidding",
+            "mean_contribution": -2.8871172044915303
+          },
+          {
+            "feature": "Motor vehicle (road)",
+            "mean_contribution": -0.8949175409797067
+          },
+          {
+            "feature": "Railroad car, train wagon",
+            "mean_contribution": -0.6582332451037445
+          },
+          {
+            "feature": "Bus",
+            "mean_contribution": -0.4563629365000743
+          }
+        ],
+        "toward_wheeled": [
+          {
+            "feature": "Tire squeal",
+            "mean_contribution": 3.696662080257972
+          },
+          {
+            "feature": "Accelerating, revving, vroom",
+            "mean_contribution": 2.0601487535148864
+          },
+          {
+            "feature": "Heavy engine (low frequency)",
+            "mean_contribution": 0.7590298103030866
+          },
+          {
+            "feature": "Car",
+            "mean_contribution": 0.5510595916095824
+          },
+          {
+            "feature": "Rattle",
+            "mean_contribution": 0.40334700774537424
+          }
+        ]
+      },
+      "semantic_standardized_features_abs_gt_3_fraction": 0.057725947521865884,
+      "simultaneous_vehicle_count": "not systematically annotated",
+      "source_id": "target-wheeled-abarth-205-goodwood",
+      "source_notes": "15-second recording of a restored 1.1 L four-cylinder car pulling away.",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Abarth_205_Monza_(1950).ogg",
+      "vehicle_class": "wheeled",
+      "vehicle_model": "Abarth 205 Monza",
+      "window_count": 7,
+      "within_session_spearman_vs_fusion_correctness": {
+        "rms_dbfs": -0.13363062095621223,
+        "spectral_bandwidth_hz": 0.26726124191242445,
+        "spectral_centroid_hz": 0.08908708063747481
+      }
+    },
+    "commons_lappeenranta_flag_day_reenactment_2014": {
+      "acoustics": {
+        "crest_factor": {
+          "maximum": 5.175870895385742,
+          "median": 4.024681568145752,
+          "minimum": 3.90375018119812
+        },
+        "rms_dbfs": {
+          "maximum": -14.051138726956934,
+          "median": -14.154112645708768,
+          "minimum": -16.26820565092032
+        },
+        "rolloff_85_hz": {
+          "maximum": 2557.91162109375,
+          "median": 774.8015747070312,
+          "minimum": 620.1636962890625
+        },
+        "spectral_bandwidth_hz": {
+          "maximum": 1418.070556640625,
+          "median": 750.1385498046875,
+          "minimum": 693.6358032226562
+        },
+        "spectral_centroid_hz": {
+          "maximum": 1185.6939697265625,
+          "median": 495.7720184326172,
+          "minimum": 428.76959228515625
+        }
+      },
+      "conditions": {
+        "decelerating": {
+          "classical": 0.8,
+          "fusion": 0.5,
+          "semantic": 1.0,
+          "windows": 2
+        },
+        "steady_speed": {
+          "classical": 0.7333333333333333,
+          "fusion": 0.46666666666666673,
+          "semantic": 0.6666666666666666,
+          "windows": 6
+        }
+      },
+      "distance": "unknown",
+      "provider": "wikimedia_commons",
+      "recording_device": "unknown",
+      "semantic_logit_contributions": {
+        "toward_tracked": [
+          {
+            "feature": "Heavy engine (low frequency)",
+            "mean_contribution": -1.3504711445732949
+          },
+          {
+            "feature": "Accelerating, revving, vroom",
+            "mean_contribution": -0.7395176147842167
+          },
+          {
+            "feature": "Tire squeal",
+            "mean_contribution": -0.29424729284851997
+          },
+          {
+            "feature": "Vehicle horn, car horn, honking",
+            "mean_contribution": -0.23892140940909376
+          },
+          {
+            "feature": "Air brake",
+            "mean_contribution": -0.19890071342631283
+          }
+        ],
+        "toward_wheeled": [
+          {
+            "feature": "Boat, Water vehicle",
+            "mean_contribution": 0.5842517837636183
+          },
+          {
+            "feature": "Engine",
+            "mean_contribution": 0.4118216596861683
+          },
+          {
+            "feature": "Idling",
+            "mean_contribution": 0.27527079846346963
+          },
+          {
+            "feature": "Truck",
+            "mean_contribution": 0.1954470788295959
+          },
+          {
+            "feature": "Rattle",
+            "mean_contribution": 0.1682457332173757
+          }
+        ]
+      },
+      "semantic_standardized_features_abs_gt_3_fraction": 0.008571428571428572,
+      "simultaneous_vehicle_count": "not systematically annotated",
+      "source_id": "target-tracked-stug-iiig-lappeenranta",
+      "source_notes": "Short tracked-vehicle arrival recording; collector extracts the first audio stream.",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Taistelun%C3%A4yt%C3%B6s_Lippujuhlan_p%C3%A4iv%C3%A4_2014_16_Stug_IIIG.webm",
+      "vehicle_class": "tracked",
+      "vehicle_model": "Sturmgesch\u00fctz III Ausf. G",
+      "window_count": 8,
+      "within_session_spearman_vs_fusion_correctness": {
+        "rms_dbfs": 0.49487165930539356,
+        "spectral_bandwidth_hz": -0.16495721976846453,
+        "spectral_centroid_hz": -0.16495721976846453
+      }
+    },
+    "commons_milru_102nd_march_training_ground_2022_01_26": {
+      "acoustics": {
+        "crest_factor": {
+          "maximum": 9.963377952575684,
+          "median": 5.113474369049072,
+          "minimum": 3.761306047439575
+        },
+        "rms_dbfs": {
+          "maximum": -23.82262098899914,
+          "median": -26.48675924406831,
+          "minimum": -37.16357791068642
+        },
+        "rolloff_85_hz": {
+          "maximum": 5694.6923828125,
+          "median": 2774.3675537109375,
+          "minimum": 947.048583984375
+        },
+        "spectral_bandwidth_hz": {
+          "maximum": 2218.05078125,
+          "median": 1293.3726806640625,
+          "minimum": 577.4567260742188
+        },
+        "spectral_centroid_hz": {
+          "maximum": 3243.87353515625,
+          "median": 1579.6326904296875,
+          "minimum": 610.7981567382812
+        }
+      },
+      "conditions": {
+        "idle": {
+          "classical": 0.0,
+          "fusion": 0.08571428571428573,
+          "semantic": 1.0,
+          "windows": 7
+        },
+        "steady_speed": {
+          "classical": 0.08070175438596493,
+          "fusion": 0.17894736842105263,
+          "semantic": 0.943859649122807,
+          "windows": 57
+        }
+      },
+      "distance": "unknown",
+      "provider": "wikimedia_commons",
+      "recording_device": "unknown",
+      "semantic_logit_contributions": {
+        "toward_tracked": [
+          {
+            "feature": "Rattle",
+            "mean_contribution": -1.7322827922327018
+          },
+          {
+            "feature": "Accelerating, revving, vroom",
+            "mean_contribution": -1.2203247039306138
+          },
+          {
+            "feature": "Train",
+            "mean_contribution": -0.48311206293459863
+          },
+          {
+            "feature": "Tire squeal",
+            "mean_contribution": -0.3885109268700687
+          },
+          {
+            "feature": "Rail transport",
+            "mean_contribution": -0.293725364227473
+          }
+        ],
+        "toward_wheeled": [
+          {
+            "feature": "Motor vehicle (road)",
+            "mean_contribution": 0.8782537288930359
+          },
+          {
+            "feature": "Railroad car, train wagon",
+            "mean_contribution": 0.6342846162189133
+          },
+          {
+            "feature": "Heavy engine (low frequency)",
+            "mean_contribution": 0.3280157645637225
+          },
+          {
+            "feature": "Vehicle",
+            "mean_contribution": 0.19454503322126818
+          },
+          {
+            "feature": "Motorcycle",
+            "mean_contribution": 0.18382276408089632
+          }
+        ]
+      },
+      "semantic_standardized_features_abs_gt_3_fraction": 0.024910714285714286,
+      "simultaneous_vehicle_count": "not systematically annotated",
+      "source_id": "candidate-target-tracked-t72-bmp3-102nd-march-2022",
+      "source_notes": "Official 2:29 road-march recording containing both T-72B3 mod. 2016 and BMP-3 vehicles. Human audiovisual review retained only the six listed vehicle-specific intervals and rejected all other material as unrelated vehicles. Every retained trim remains grouped under this one recording session; per-segment vehicle identity is preserved in notes because the segment schema does not expose a model field.",
+      "source_page": "https://commons.wikimedia.org/wiki/File:102nd_Motorized_Rifle_Regiment_marching_to_the_training_ground_(2022-01-26).webm",
+      "vehicle_class": "tracked",
+      "vehicle_model": "T-72B3 mod. 2016 and BMP-3",
+      "window_count": 64,
+      "within_session_spearman_vs_fusion_correctness": {
+        "rms_dbfs": 0.47931098567358454,
+        "spectral_bandwidth_hz": -0.4343646441568898,
+        "spectral_centroid_hz": -0.4045170736502527
+      }
+    },
+    "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+      "acoustics": {
+        "crest_factor": {
+          "maximum": 7.136018753051758,
+          "median": 4.396764516830444,
+          "minimum": 2.660355567932129
+        },
+        "rms_dbfs": {
+          "maximum": -25.02985094331141,
+          "median": -28.638864701686927,
+          "minimum": -31.995111206719645
+        },
+        "rolloff_85_hz": {
+          "maximum": 2521.329345703125,
+          "median": 1269.0972290039062,
+          "minimum": 156.37400817871094
+        },
+        "spectral_bandwidth_hz": {
+          "maximum": 1256.232421875,
+          "median": 827.8740234375,
+          "minimum": 86.93170166015625
+        },
+        "spectral_centroid_hz": {
+          "maximum": 1368.571044921875,
+          "median": 759.0932922363281,
+          "minimum": 116.14665985107422
+        }
+      },
+      "conditions": {
+        "accelerating": {
+          "classical": 0.8869565217391305,
+          "fusion": 0.48695652173913045,
+          "semantic": 0.7913043478260869,
+          "windows": 23
+        },
+        "decelerating": {
+          "classical": 0.6,
+          "fusion": 0.4,
+          "semantic": 0.2,
+          "windows": 1
+        },
+        "mixed": {
+          "classical": 0.2,
+          "fusion": 0.2625,
+          "semantic": 0.8875,
+          "windows": 16
+        },
+        "steady_speed": {
+          "classical": 0.8400000000000001,
+          "fusion": 0.6299999999999999,
+          "semantic": 0.82,
+          "windows": 20
+        }
+      },
+      "distance": "unknown",
+      "provider": "wikimedia_commons",
+      "recording_device": "unknown",
+      "semantic_logit_contributions": {
+        "toward_tracked": [
+          {
+            "feature": "Accelerating, revving, vroom",
+            "mean_contribution": -0.7682143455279253
+          },
+          {
+            "feature": "Tire squeal",
+            "mean_contribution": -0.3492967743677164
+          },
+          {
+            "feature": "Engine",
+            "mean_contribution": -0.30346911336264826
+          },
+          {
+            "feature": "Railroad car, train wagon",
+            "mean_contribution": -0.2491287779914871
+          },
+          {
+            "feature": "Motorcycle",
+            "mean_contribution": -0.22753982782859694
+          }
+        ],
+        "toward_wheeled": [
+          {
+            "feature": "Heavy engine (low frequency)",
+            "mean_contribution": 0.27717638093508024
+          },
+          {
+            "feature": "Train",
+            "mean_contribution": 0.1804325984205905
+          },
+          {
+            "feature": "Rail transport",
+            "mean_contribution": 0.11163661867538281
+          },
+          {
+            "feature": "Train whistle",
+            "mean_contribution": 0.09144411792821222
+          },
+          {
+            "feature": "Race car, auto racing",
+            "mean_contribution": 0.08999973788477522
+          }
+        ]
+      },
+      "semantic_standardized_features_abs_gt_3_fraction": 0.006761904761904762,
+      "simultaneous_vehicle_count": "not systematically annotated",
+      "source_id": "candidate-target-tracked-t80bvm-driving-readiness-2021",
+      "source_notes": "Official 1:11 recording of T-80BVM and MT-LBVMK crews driving difficult terrain. Human audiovisual review classified 00:00-00:24 as accelerating T-80BVM, 00:24-00:41 as mixed-state MT-LBVMK, 00:41-01:02 as steady-speed MT-LBVMK, and 01:03-01:05 as decelerating MT-LBVMK. The 01:02-01:03 boundary gap and 01:05-end remain excluded. No speech, music, or weapons were present. Per-segment vehicle identity is preserved in notes because the current segment schema labels operating condition but not model.",
+      "source_page": "https://commons.wikimedia.org/wiki/File:A_week_of_combat_readiness_passed_in_the_200th_Motorized_Rifle_Brigade_(02-02-2021).webm",
+      "vehicle_class": "tracked",
+      "vehicle_model": "T-80BVM and MT-LBVMK",
+      "window_count": 60,
+      "within_session_spearman_vs_fusion_correctness": {
+        "rms_dbfs": -0.5149059501000116,
+        "spectral_bandwidth_hz": 0.46915717473877483,
+        "spectral_centroid_hz": 0.5150220637430604
+      }
+    },
+    "commons_retromobile_amx30_demo_2015": {
+      "acoustics": {
+        "crest_factor": {
+          "maximum": 9.586726188659668,
+          "median": 4.5182578563690186,
+          "minimum": 3.881274461746216
+        },
+        "rms_dbfs": {
+          "maximum": -15.373322104054088,
+          "median": -17.486661767217655,
+          "minimum": -18.93623526069655
+        },
+        "rolloff_85_hz": {
+          "maximum": 2786.582275390625,
+          "median": 1711.0615234375,
+          "minimum": 942.9563598632812
+        },
+        "spectral_bandwidth_hz": {
+          "maximum": 1346.1534423828125,
+          "median": 946.5387573242188,
+          "minimum": 700.4822998046875
+        },
+        "spectral_centroid_hz": {
+          "maximum": 1532.428955078125,
+          "median": 975.229736328125,
+          "minimum": 526.7923583984375
+        }
+      },
+      "conditions": {
+        "accelerating": {
+          "classical": 0.9333333333333332,
+          "fusion": 0.7333333333333334,
+          "semantic": 0.7666666666666667,
+          "windows": 6
+        },
+        "decelerating": {
+          "classical": 0.8,
+          "fusion": 0.6,
+          "semantic": 1.0,
+          "windows": 1
+        },
+        "idle": {
+          "classical": 0.9,
+          "fusion": 0.5375,
+          "semantic": 0.7125,
+          "windows": 16
+        },
+        "startup": {
+          "classical": 0.9846153846153847,
+          "fusion": 0.46153846153846156,
+          "semantic": 0.9076923076923078,
+          "windows": 13
+        },
+        "steady_speed": {
+          "classical": 0.8142857142857144,
+          "fusion": 0.4642857142857143,
+          "semantic": 0.6428571428571429,
+          "windows": 28
+        }
+      },
+      "distance": "unknown",
+      "provider": "wikimedia_commons",
+      "recording_device": "unknown",
+      "semantic_logit_contributions": {
+        "toward_tracked": [
+          {
+            "feature": "Accelerating, revving, vroom",
+            "mean_contribution": -0.8133436808775611
+          },
+          {
+            "feature": "Train",
+            "mean_contribution": -0.5618788796223985
+          },
+          {
+            "feature": "Air brake",
+            "mean_contribution": -0.40671333024872114
+          },
+          {
+            "feature": "Heavy engine (low frequency)",
+            "mean_contribution": -0.2929122351585594
+          },
+          {
+            "feature": "Rail transport",
+            "mean_contribution": -0.2444216952933993
+          }
+        ],
+        "toward_wheeled": [
+          {
+            "feature": "Railroad car, train wagon",
+            "mean_contribution": 0.7560377633702353
+          },
+          {
+            "feature": "Power windows, electric windows",
+            "mean_contribution": 0.5998282082648014
+          },
+          {
+            "feature": "Rattle",
+            "mean_contribution": 0.4242060776770705
+          },
+          {
+            "feature": "Motorcycle",
+            "mean_contribution": 0.21621207174173307
+          },
+          {
+            "feature": "Bus",
+            "mean_contribution": 0.2017091266457985
+          }
+        ]
+      },
+      "semantic_standardized_features_abs_gt_3_fraction": 0.029642857142857144,
+      "simultaneous_vehicle_count": "not systematically annotated",
+      "source_id": "candidate-target-tracked-retromobile-amx30-2015",
+      "source_notes": "Own-work recording of an AMX-30 movement demonstration. Human audiovisual review retained only the listed startup, idle, acceleration, steady-speed, and deceleration intervals. The first nine seconds and final silent tail are rejected; unlisted boundary gaps remain excluded.",
+      "source_page": "https://commons.wikimedia.org/wiki/File:R%C3%A9tromobile_2015_-_Char_AMX_30_-_001.ogv",
+      "vehicle_class": "tracked",
+      "vehicle_model": "AMX 30",
+      "window_count": 64,
+      "within_session_spearman_vs_fusion_correctness": {
+        "rms_dbfs": -0.004223664449131336,
+        "spectral_bandwidth_hz": 0.2667183761562879,
+        "spectral_centroid_hz": 0.27316248134439114
+      }
+    },
+    "commons_soundsofchanges_private_collection": {
+      "acoustics": {
+        "crest_factor": {
+          "maximum": 7.554368019104004,
+          "median": 5.447275638580322,
+          "minimum": 4.1226487159729
+        },
+        "rms_dbfs": {
+          "maximum": -17.58154285986454,
+          "median": -18.544247796055267,
+          "minimum": -20.096107081250665
+        },
+        "rolloff_85_hz": {
+          "maximum": 3955.853271484375,
+          "median": 3645.957275390625,
+          "minimum": 3476.6865234375
+        },
+        "spectral_bandwidth_hz": {
+          "maximum": 1669.4873046875,
+          "median": 1615.1168823242188,
+          "minimum": 1529.2896728515625
+        },
+        "spectral_centroid_hz": {
+          "maximum": 2348.790283203125,
+          "median": 1979.9657592773438,
+          "minimum": 1812.1953125
+        }
+      },
+      "conditions": {
+        "idle": {
+          "classical": 0.22448979591836732,
+          "fusion": 0.44217687074829926,
+          "semantic": 0.047619047619047616,
+          "windows": 21
+        },
+        "startup": {
+          "classical": 0.02040816326530612,
+          "fusion": 0.2040816326530612,
+          "semantic": 0.02040816326530612,
+          "windows": 7
+        }
+      },
+      "distance": "unknown",
+      "provider": "wikimedia_commons",
+      "recording_device": "unknown",
+      "semantic_logit_contributions": {
+        "toward_tracked": [
+          {
+            "feature": "Engine knocking",
+            "mean_contribution": -2.090001443066629
+          },
+          {
+            "feature": "Light engine (high frequency)",
+            "mean_contribution": -1.7690361531451633
+          },
+          {
+            "feature": "Accelerating, revving, vroom",
+            "mean_contribution": -1.2609505051348968
+          },
+          {
+            "feature": "Railroad car, train wagon",
+            "mean_contribution": -0.49249443341925325
+          },
+          {
+            "feature": "Truck",
+            "mean_contribution": -0.4453673175737473
+          }
+        ],
+        "toward_wheeled": [
+          {
+            "feature": "Motor vehicle (road)",
+            "mean_contribution": 0.8514143608172429
+          },
+          {
+            "feature": "Medium engine (mid frequency)",
+            "mean_contribution": 0.48569711950017475
+          },
+          {
+            "feature": "Idling",
+            "mean_contribution": 0.48244140551814346
+          },
+          {
+            "feature": "Engine",
+            "mean_contribution": 0.4096370249601903
+          },
+          {
+            "feature": "Air brake",
+            "mean_contribution": 0.33914111485868775
+          }
+        ]
+      },
+      "semantic_standardized_features_abs_gt_3_fraction": 0.05991253644314868,
+      "simultaneous_vehicle_count": "not systematically annotated",
+      "source_id": "target-wheeled-ford-model-t-start",
+      "source_notes": "Video source; collector extracts its first audio stream with ffmpeg.",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ford_Model_T_%22Tin_Lizzy%22_-_Starting_the_Engine.webm",
+      "vehicle_class": "wheeled",
+      "vehicle_model": "Ford Model T (1926)",
+      "window_count": 28,
+      "within_session_spearman_vs_fusion_correctness": {
+        "rms_dbfs": -0.33816735869732906,
+        "spectral_bandwidth_hz": 0.041783446297034066,
+        "spectral_centroid_hz": 0.31588285400557753
+      }
+    },
+    "dvids_bright_star_abrams_mohamed_naguib_2017": {
+      "acoustics": {
+        "crest_factor": {
+          "maximum": 6.977005958557129,
+          "median": 4.491868495941162,
+          "minimum": 3.5296013355255127
+        },
+        "rms_dbfs": {
+          "maximum": -15.68594772024953,
+          "median": -18.0014431469047,
+          "minimum": -22.435967951441803
+        },
+        "rolloff_85_hz": {
+          "maximum": 2737.35107421875,
+          "median": 302.2073516845703,
+          "minimum": 170.75892639160156
+        },
+        "spectral_bandwidth_hz": {
+          "maximum": 1420.3865966796875,
+          "median": 323.0897674560547,
+          "minimum": 106.65070343017578
+        },
+        "spectral_centroid_hz": {
+          "maximum": 1341.6361083984375,
+          "median": 234.84455108642578,
+          "minimum": 139.4396209716797
+        }
+      },
+      "conditions": {
+        "accelerating": {
+          "classical": 1.0,
+          "fusion": 0.8,
+          "semantic": 1.0,
+          "windows": 4
+        },
+        "decelerating": {
+          "classical": 1.0,
+          "fusion": 0.7666666666666666,
+          "semantic": 1.0,
+          "windows": 6
+        },
+        "steady_speed": {
+          "classical": 0.9944444444444444,
+          "fusion": 0.8333333333333335,
+          "semantic": 0.9277777777777777,
+          "windows": 36
+        }
+      },
+      "distance": "unknown",
+      "provider": "direct",
+      "recording_device": "unknown",
+      "semantic_logit_contributions": {
+        "toward_tracked": [
+          {
+            "feature": "Accelerating, revving, vroom",
+            "mean_contribution": -0.9507186595574278
+          },
+          {
+            "feature": "Engine",
+            "mean_contribution": -0.3774466326144237
+          },
+          {
+            "feature": "Tire squeal",
+            "mean_contribution": -0.2854217774797537
+          },
+          {
+            "feature": "Train",
+            "mean_contribution": -0.2754037489857151
+          },
+          {
+            "feature": "Medium engine (mid frequency)",
+            "mean_contribution": -0.26497215512929273
+          }
+        ],
+        "toward_wheeled": [
+          {
+            "feature": "Motor vehicle (road)",
+            "mean_contribution": 0.6681800079475687
+          },
+          {
+            "feature": "Railroad car, train wagon",
+            "mean_contribution": 0.45364448005248026
+          },
+          {
+            "feature": "Heavy engine (low frequency)",
+            "mean_contribution": 0.2110179150002745
+          },
+          {
+            "feature": "Air brake",
+            "mean_contribution": 0.1863799888816761
+          },
+          {
+            "feature": "Race car, auto racing",
+            "mean_contribution": 0.10684509490784051
+          }
+        ]
+      },
+      "semantic_standardized_features_abs_gt_3_fraction": 0.014534161490683229,
+      "simultaneous_vehicle_count": "not systematically annotated",
+      "source_id": "candidate-target-tracked-abrams-bright-star-2017",
+      "source_notes": "Official 4:36 DVIDS B-roll of multiple M1 Abrams tanks maneuvering in Egypt. The catalog uses the official page's 1024x576 CDN rendition to avoid retaining unnecessary video data. Human audiovisual review retained only the listed intervals and excluded speech- and wind-dominated portions, except for the explicitly noted wind-affected deceleration interval. Small gaps at the review boundaries remain excluded conservatively. DVIDS video 550523, VIRIN 170912-F-AY943-5001.",
+      "source_page": "https://www.dvidshub.net/video/550523/us-army-abrams-tanks-maneuver-exercise-bright-star-2017",
+      "vehicle_class": "tracked",
+      "vehicle_model": "M1 Abrams",
+      "window_count": 46,
+      "within_session_spearman_vs_fusion_correctness": {
+        "rms_dbfs": 0.3599793182998309,
+        "spectral_bandwidth_hz": 0.22597355947972886,
+        "spectral_centroid_hz": 0.199328682653108
+      }
+    },
+    "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+      "acoustics": {
+        "crest_factor": {
+          "maximum": 7.285131931304932,
+          "median": 3.966903328895569,
+          "minimum": 3.053502321243286
+        },
+        "rms_dbfs": {
+          "maximum": -18.18365919359924,
+          "median": -25.087160813086662,
+          "minimum": -27.17321020957856
+        },
+        "rolloff_85_hz": {
+          "maximum": 1638.888916015625,
+          "median": 821.1805419921875,
+          "minimum": 127.35614776611328
+        },
+        "spectral_bandwidth_hz": {
+          "maximum": 976.1685180664062,
+          "median": 540.5105895996094,
+          "minimum": 152.36538696289062
+        },
+        "spectral_centroid_hz": {
+          "maximum": 959.8649291992188,
+          "median": 415.9325866699219,
+          "minimum": 98.25929260253906
+        }
+      },
+      "conditions": {
+        "accelerating": {
+          "classical": 0.0,
+          "fusion": 0.0,
+          "semantic": 0.0,
+          "windows": 6
+        },
+        "idle": {
+          "classical": 0.0,
+          "fusion": 0.04395604395604395,
+          "semantic": 0.0,
+          "windows": 13
+        },
+        "steady_speed": {
+          "classical": 0.0035714285714285713,
+          "fusion": 0.06428571428571428,
+          "semantic": 0.02857142857142857,
+          "windows": 40
+        },
+        "unknown": {
+          "classical": 0.0,
+          "fusion": 0.34285714285714286,
+          "semantic": 0.17142857142857143,
+          "windows": 5
+        }
+      },
+      "distance": "unknown",
+      "provider": "direct",
+      "recording_device": "unknown",
+      "semantic_logit_contributions": {
+        "toward_tracked": [
+          {
+            "feature": "Air brake",
+            "mean_contribution": -2.360549895518674
+          },
+          {
+            "feature": "Accelerating, revving, vroom",
+            "mean_contribution": -1.0461991278844984
+          },
+          {
+            "feature": "Ice cream truck, ice cream van",
+            "mean_contribution": -0.6936674873741216
+          },
+          {
+            "feature": "Emergency vehicle",
+            "mean_contribution": -0.500201489119255
+          },
+          {
+            "feature": "Tire squeal",
+            "mean_contribution": -0.3849667954807683
+          }
+        ],
+        "toward_wheeled": [
+          {
+            "feature": "Truck",
+            "mean_contribution": 0.8435063249400881
+          },
+          {
+            "feature": "Railroad car, train wagon",
+            "mean_contribution": 0.4835730400731144
+          },
+          {
+            "feature": "Bus",
+            "mean_contribution": 0.4037480872565253
+          },
+          {
+            "feature": "Vehicle horn, car horn, honking",
+            "mean_contribution": 0.3352402462533474
+          },
+          {
+            "feature": "Air horn, truck horn",
+            "mean_contribution": 0.3097976640681828
+          }
+        ]
+      },
+      "semantic_standardized_features_abs_gt_3_fraction": 0.03871173469387755,
+      "simultaneous_vehicle_count": "multiple, exact count unknown",
+      "source_id": "candidate-target-wheeled-m1126-stryker-convoy-pinon-2024",
+      "source_notes": "Official 4:23 B-roll of M1126 vehicles departing Pinon Canyon Maneuver Site for Fort Carson. DVIDS video 937004; VIRIN 240904-A-LV856-1001; filename DOD_110569349. The verified official CDN original is approximately 322 MB. Multiple M1126 Strykers appear together in convoy; this is one recording session and must never be counted as multiple independent data points. Human audiovisual review on 2026-09-20 retained only the listed intervals; the first retained interval has state `unknown` because no condition label was supplied. Every unlisted interval is rejected.",
+      "source_page": "https://www.dvidshub.net/video/937004/pinon-canyon-maneuver-site-b-roll-package",
+      "vehicle_class": "wheeled",
+      "vehicle_model": "M1126 Stryker Infantry Carrier Vehicle",
+      "window_count": 64,
+      "within_session_spearman_vs_fusion_correctness": {
+        "rms_dbfs": -0.022644104368688172,
+        "spectral_bandwidth_hz": -0.18101348661492883,
+        "spectral_centroid_hz": -0.19184781962825503
+      }
+    },
+    "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+      "acoustics": {
+        "crest_factor": {
+          "maximum": 9.433586120605469,
+          "median": 4.573560953140259,
+          "minimum": 3.453840970993042
+        },
+        "rms_dbfs": {
+          "maximum": -20.8733523168984,
+          "median": -30.432798635368385,
+          "minimum": -42.84764123001443
+        },
+        "rolloff_85_hz": {
+          "maximum": 1999.8759765625,
+          "median": 598.5863037109375,
+          "minimum": 302.9513854980469
+        },
+        "spectral_bandwidth_hz": {
+          "maximum": 1094.878662109375,
+          "median": 476.3143768310547,
+          "minimum": 253.98756408691406
+        },
+        "spectral_centroid_hz": {
+          "maximum": 955.26611328125,
+          "median": 385.39930725097656,
+          "minimum": 195.36175537109375
+        }
+      },
+      "conditions": {
+        "accelerating": {
+          "classical": 0.39285714285714285,
+          "fusion": 0.17857142857142855,
+          "semantic": 0.0,
+          "windows": 8
+        },
+        "idle": {
+          "classical": 0.015037593984962405,
+          "fusion": 0.13533834586466165,
+          "semantic": 0.2781954887218045,
+          "windows": 19
+        },
+        "steady_speed": {
+          "classical": 0.14285714285714285,
+          "fusion": 0.10424710424710423,
+          "semantic": 0.023166023166023165,
+          "windows": 37
+        }
+      },
+      "distance": "unknown",
+      "provider": "direct",
+      "recording_device": "unknown",
+      "semantic_logit_contributions": {
+        "toward_tracked": [
+          {
+            "feature": "Accelerating, revving, vroom",
+            "mean_contribution": -1.237524149989444
+          },
+          {
+            "feature": "Engine",
+            "mean_contribution": -0.6245562937958278
+          },
+          {
+            "feature": "Tire squeal",
+            "mean_contribution": -0.363302826513039
+          },
+          {
+            "feature": "Engine knocking",
+            "mean_contribution": -0.2134054914783705
+          },
+          {
+            "feature": "Clatter",
+            "mean_contribution": -0.19926908836612572
+          }
+        ],
+        "toward_wheeled": [
+          {
+            "feature": "Vehicle horn, car horn, honking",
+            "mean_contribution": 0.5257305145216115
+          },
+          {
+            "feature": "Rattle",
+            "mean_contribution": 0.4172193293369846
+          },
+          {
+            "feature": "Heavy engine (low frequency)",
+            "mean_contribution": 0.4129105099006167
+          },
+          {
+            "feature": "Motor vehicle (road)",
+            "mean_contribution": 0.40601447101157984
+          },
+          {
+            "feature": "Motorcycle",
+            "mean_contribution": 0.1443421582096975
+          }
+        ]
+      },
+      "semantic_standardized_features_abs_gt_3_fraction": 0.020471938775510203,
+      "simultaneous_vehicle_count": "not systematically annotated",
+      "source_id": "candidate-target-wheeled-hmmwv-m1151-training-2014",
+      "source_notes": "Official 4:23 driver-licensing B-roll for the up-armored M1151 at Joint Base McGuire-Dix-Lakehurst. DVIDS video 329602; VIRIN 140403-Z-CA120-002; filename DOD_101347588. The selected 720x406 official CDN rendition responded successfully and is approximately 29 MB. Human audiovisual review on 2026-09-20 retained only the listed idle, steady-speed, and accelerating intervals. Every unlisted interval is rejected. The recording remains one session regardless of the number of retained windows.",
+      "source_page": "https://www.dvidshub.net/video/329602/humvee-training-b-roll",
+      "vehicle_class": "wheeled",
+      "vehicle_model": "M1151 Up-Armored HMMWV",
+      "window_count": 64,
+      "within_session_spearman_vs_fusion_correctness": {
+        "rms_dbfs": 0.3148975594886112,
+        "spectral_bandwidth_hz": 0.06760785294340696,
+        "spectral_centroid_hz": 0.030921861342028636
+      }
+    },
+    "dvids_nato_bradley_bemowo_livefire_2025": {
+      "acoustics": {
+        "crest_factor": {
+          "maximum": 7.33811616897583,
+          "median": 3.734461545944214,
+          "minimum": 2.1691877841949463
+        },
+        "rms_dbfs": {
+          "maximum": -7.51020924736856,
+          "median": -13.87672077487178,
+          "minimum": -29.095531482962116
+        },
+        "rolloff_85_hz": {
+          "maximum": 687.0039672851562,
+          "median": 258.86656188964844,
+          "minimum": 139.0128936767578
+        },
+        "spectral_bandwidth_hz": {
+          "maximum": 726.1466064453125,
+          "median": 194.66155242919922,
+          "minimum": 73.87480926513672
+        },
+        "spectral_centroid_hz": {
+          "maximum": 444.0932312011719,
+          "median": 200.30852508544922,
+          "minimum": 143.93948364257812
+        }
+      },
+      "conditions": {
+        "accelerating": {
+          "classical": 1.0,
+          "fusion": 1.0,
+          "semantic": 1.0,
+          "windows": 2
+        },
+        "steady_speed": {
+          "classical": 0.767741935483871,
+          "fusion": 0.532258064516129,
+          "semantic": 0.6419354838709677,
+          "windows": 62
+        }
+      },
+      "distance": "unknown",
+      "provider": "direct",
+      "recording_device": "unknown",
+      "semantic_logit_contributions": {
+        "toward_tracked": [
+          {
+            "feature": "Engine",
+            "mean_contribution": -0.36641955298239054
+          },
+          {
+            "feature": "Motor vehicle (road)",
+            "mean_contribution": -0.3510245944694258
+          },
+          {
+            "feature": "Tire squeal",
+            "mean_contribution": -0.25429696133399043
+          },
+          {
+            "feature": "Engine knocking",
+            "mean_contribution": -0.24502899863281097
+          },
+          {
+            "feature": "Truck",
+            "mean_contribution": -0.17485034341086853
+          }
+        ],
+        "toward_wheeled": [
+          {
+            "feature": "Rattle",
+            "mean_contribution": 0.38761647093762913
+          },
+          {
+            "feature": "Air brake",
+            "mean_contribution": 0.23461372904212713
+          },
+          {
+            "feature": "Railroad car, train wagon",
+            "mean_contribution": 0.18273884127746715
+          },
+          {
+            "feature": "Boat, Water vehicle",
+            "mean_contribution": 0.13079426967086277
+          },
+          {
+            "feature": "Train whistle",
+            "mean_contribution": 0.09780951911240478
+          }
+        ]
+      },
+      "semantic_standardized_features_abs_gt_3_fraction": 0.006339285714285714,
+      "simultaneous_vehicle_count": "not systematically annotated",
+      "source_id": "candidate-target-tracked-bradley-nato-muddy-maneuver-2025",
+      "source_notes": "Human audiovisual review on 2026-09-18 retained the listed M2 Bradley and M1 Abrams intervals. The 00:42-00:48 interval contains an unidentified wheeled vehicle, possibly a HMMWV, and is rejected rather than mislabeled as tracked. All other material is rejected as interview content or non-target footage. Every retained trim remains grouped under this one recording session. The only verified direct endpoint is the 499 MB original MP4. DVIDS video 972401; VIRIN 250731-O-D0483-1001.",
+      "source_page": "https://www.dvidshub.net/video/972401/nato-allies-demonstrate-their-readiness-through-live-fire-training-poland-b-roll",
+      "vehicle_class": "tracked",
+      "vehicle_model": "M2 Bradley and M1 Abrams",
+      "window_count": 64,
+      "within_session_spearman_vs_fusion_correctness": {
+        "rms_dbfs": 0.36567551699791156,
+        "spectral_bandwidth_hz": 0.22574437096223907,
+        "spectral_centroid_hz": 0.1610224204256261
+      }
+    },
+    "freesound_lmartins_maserati_granturismo_2019": {
+      "acoustics": {
+        "crest_factor": {
+          "maximum": 7.104926109313965,
+          "median": 3.9244431257247925,
+          "minimum": 2.475518226623535
+        },
+        "rms_dbfs": {
+          "maximum": -8.64913735443968,
+          "median": -15.282396967059125,
+          "minimum": -25.868585445271634
+        },
+        "rolloff_85_hz": {
+          "maximum": 2107.266845703125,
+          "median": 495.8457336425781,
+          "minimum": 252.23214721679688
+        },
+        "spectral_bandwidth_hz": {
+          "maximum": 913.6423950195312,
+          "median": 226.1492156982422,
+          "minimum": 106.31916046142578
+        },
+        "spectral_centroid_hz": {
+          "maximum": 1218.0958251953125,
+          "median": 358.01824951171875,
+          "minimum": 203.4794464111328
+        }
+      },
+      "conditions": {
+        "idle": {
+          "classical": 0.02040816326530612,
+          "fusion": 0.49999999999999994,
+          "semantic": 0.5306122448979591,
+          "windows": 14
+        },
+        "mixed": {
+          "classical": 0.0031746031746031746,
+          "fusion": 0.6634920634920636,
+          "semantic": 0.8984126984126983,
+          "windows": 45
+        },
+        "startup": {
+          "classical": 0.0,
+          "fusion": 0.7142857142857143,
+          "semantic": 1.0,
+          "windows": 1
+        }
+      },
+      "distance": "unknown",
+      "provider": "wikimedia_commons",
+      "recording_device": "unknown",
+      "semantic_logit_contributions": {
+        "toward_tracked": [
+          {
+            "feature": "Railroad car, train wagon",
+            "mean_contribution": -0.6133207510312513
+          },
+          {
+            "feature": "Truck",
+            "mean_contribution": -0.5256602388492128
+          },
+          {
+            "feature": "Bus",
+            "mean_contribution": -0.4113965561941154
+          },
+          {
+            "feature": "Rattle",
+            "mean_contribution": -0.4024089381323087
+          },
+          {
+            "feature": "Car",
+            "mean_contribution": -0.3714750277613
+          }
+        ],
+        "toward_wheeled": [
+          {
+            "feature": "Accelerating, revving, vroom",
+            "mean_contribution": 4.541245006878645
+          },
+          {
+            "feature": "Heavy engine (low frequency)",
+            "mean_contribution": 0.5623782161606206
+          },
+          {
+            "feature": "Medium engine (mid frequency)",
+            "mean_contribution": 0.4002224206910005
+          },
+          {
+            "feature": "Air brake",
+            "mean_contribution": 0.3214384700512917
+          },
+          {
+            "feature": "Train",
+            "mean_contribution": 0.2959111704818165
+          }
+        ]
+      },
+      "semantic_standardized_features_abs_gt_3_fraction": 0.03693877551020408,
+      "simultaneous_vehicle_count": "not systematically annotated",
+      "source_id": "target-wheeled-maserati-granturismo-exhaust",
+      "source_notes": "Source describes starting, revving, and idling; time segments require listening review before condition-specific use.",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Maserati_GranTurismo_S_Exhaust.ogg",
+      "vehicle_class": "wheeled",
+      "vehicle_model": "Maserati GranTurismo S",
+      "window_count": 60,
+      "within_session_spearman_vs_fusion_correctness": {
+        "rms_dbfs": 0.6189086467178041,
+        "spectral_bandwidth_hz": 0.24735610713034237,
+        "spectral_centroid_hz": 0.43068348353797287
+      }
+    },
+    "us_army_armor_cavalry_collection_tankodrome_2023": {
+      "acoustics": {
+        "crest_factor": {
+          "maximum": 5.482706069946289,
+          "median": 3.8617023229599,
+          "minimum": 2.8654444217681885
+        },
+        "rms_dbfs": {
+          "maximum": -11.466631547856231,
+          "median": -14.84998242675033,
+          "minimum": -21.44416001924168
+        },
+        "rolloff_85_hz": {
+          "maximum": 1105.90283203125,
+          "median": 332.9613037109375,
+          "minimum": 180.0595245361328
+        },
+        "spectral_bandwidth_hz": {
+          "maximum": 1135.363037109375,
+          "median": 693.8446350097656,
+          "minimum": 338.4340515136719
+        },
+        "spectral_centroid_hz": {
+          "maximum": 712.5916137695312,
+          "median": 293.37449645996094,
+          "minimum": 178.9029998779297
+        }
+      },
+      "conditions": {
+        "steady_speed": {
+          "classical": 0.64375,
+          "fusion": 0.64375,
+          "semantic": 0.828125,
+          "windows": 64
+        }
+      },
+      "distance": "unknown",
+      "provider": "wikimedia_commons",
+      "recording_device": "unknown",
+      "semantic_logit_contributions": {
+        "toward_tracked": [
+          {
+            "feature": "Motor vehicle (road)",
+            "mean_contribution": -0.924579311879729
+          },
+          {
+            "feature": "Air brake",
+            "mean_contribution": -0.558029550747124
+          },
+          {
+            "feature": "Motorcycle",
+            "mean_contribution": -0.5231557102769934
+          },
+          {
+            "feature": "Accelerating, revving, vroom",
+            "mean_contribution": -0.33229821378418134
+          },
+          {
+            "feature": "Tire squeal",
+            "mean_contribution": -0.25782766584364836
+          }
+        ],
+        "toward_wheeled": [
+          {
+            "feature": "Bus",
+            "mean_contribution": 0.4228819916616116
+          },
+          {
+            "feature": "Truck",
+            "mean_contribution": 0.38361135294001614
+          },
+          {
+            "feature": "Medium engine (mid frequency)",
+            "mean_contribution": 0.26078614299576613
+          },
+          {
+            "feature": "Train",
+            "mean_contribution": 0.13510325111913588
+          },
+          {
+            "feature": "Car alarm",
+            "mean_contribution": 0.11535246740862756
+          }
+        ]
+      },
+      "semantic_standardized_features_abs_gt_3_fraction": 0.020089285714285712,
+      "simultaneous_vehicle_count": "not systematically annotated",
+      "source_id": "target-tracked-mpf-firepower",
+      "source_notes": "Official U.S. Army Armor & Cavalry Collection video; collector extracts the first audio stream.",
+      "source_page": "https://commons.wikimedia.org/wiki/File:U.S._Army_Armor_%26_Cavalry_Collection_Mobile_Protected_Firepower.webm",
+      "vehicle_class": "tracked",
+      "vehicle_model": "Mobile Protected Firepower testbed",
+      "window_count": 64,
+      "within_session_spearman_vs_fusion_correctness": {
+        "rms_dbfs": 0.05361984391164162,
+        "spectral_bandwidth_hz": -0.2532087640083526,
+        "spectral_centroid_hz": 0.009137863024235613
+      }
+    }
+  },
+  "summary": {
+    "classical": {
+      "balanced_accuracy": 0.4523701382727004,
+      "descriptive_session_bootstrap_ba_95": [
+        0.30139878872744746,
+        0.6184921366644484
+      ],
+      "folds": [
+        {
+          "balanced_accuracy": 0.8035714285714286,
+          "fold_id": "e2776eac0bfa9092",
+          "threshold": 0.5,
+          "tracked_recall": 0.75,
+          "wheeled_recall": 0.8571428571428571
+        },
+        {
+          "balanced_accuracy": 0.42857142857142855,
+          "fold_id": "ecc0bff5efaa8a64",
+          "threshold": 0.5,
+          "tracked_recall": 0.75,
+          "wheeled_recall": 0.10714285714285714
+        },
+        {
+          "balanced_accuracy": 0.5,
+          "fold_id": "2abd8df233cd1a3c",
+          "threshold": 0.5,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.15625,
+          "fold_id": "a63a9d5b5916c1dc",
+          "threshold": 0.5,
+          "tracked_recall": 0.25,
+          "wheeled_recall": 0.0625
+        },
+        {
+          "balanced_accuracy": 0.5,
+          "fold_id": "bfa4b9d143fabef9",
+          "threshold": 0.5,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.515625,
+          "fold_id": "9deeba50142a7a6f",
+          "threshold": 0.5,
+          "tracked_recall": 0.03125,
+          "wheeled_recall": 1.0
+        },
+        {
+          "balanced_accuracy": 0.14285714285714285,
+          "fold_id": "3af5d81c7481d674",
+          "threshold": 0.5,
+          "tracked_recall": 0.0,
+          "wheeled_recall": 0.2857142857142857
+        },
+        {
+          "balanced_accuracy": 0.078125,
+          "fold_id": "de26fc2e409dabaf",
+          "threshold": 0.5,
+          "tracked_recall": 0.140625,
+          "wheeled_recall": 0.015625
+        },
+        {
+          "balanced_accuracy": 0.0859375,
+          "fold_id": "dcd1dcd1384bd66b",
+          "threshold": 0.5,
+          "tracked_recall": 0.09375,
+          "wheeled_recall": 0.078125
+        },
+        {
+          "balanced_accuracy": 0.071875,
+          "fold_id": "5a446c86f59c3f8f",
+          "threshold": 0.5,
+          "tracked_recall": 0.09375,
+          "wheeled_recall": 0.05
+        },
+        {
+          "balanced_accuracy": 0.7869047619047619,
+          "fold_id": "10434c755441fa9a",
+          "threshold": 0.5,
+          "tracked_recall": 0.7166666666666667,
+          "wheeled_recall": 0.8571428571428571
+        },
+        {
+          "balanced_accuracy": 0.3595238095238095,
+          "fold_id": "ab6a29b4e3dd356c",
+          "threshold": 0.5,
+          "tracked_recall": 0.6833333333333333,
+          "wheeled_recall": 0.03571428571428571
+        },
+        {
+          "balanced_accuracy": 0.5,
+          "fold_id": "f563a9f598662851",
+          "threshold": 0.5,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.41302083333333334,
+          "fold_id": "da1e7c3e071fc4c7",
+          "threshold": 0.5,
+          "tracked_recall": 0.7166666666666667,
+          "wheeled_recall": 0.109375
+        },
+        {
+          "balanced_accuracy": 0.15,
+          "fold_id": "f33f28420128e147",
+          "threshold": 0.5,
+          "tracked_recall": 0.3,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.7633928571428572,
+          "fold_id": "76902234548caeda",
+          "threshold": 0.5,
+          "tracked_recall": 0.8125,
+          "wheeled_recall": 0.7142857142857143
+        },
+        {
+          "balanced_accuracy": 0.5189732142857143,
+          "fold_id": "fa226ee83a2a1321",
+          "threshold": 0.5,
+          "tracked_recall": 0.859375,
+          "wheeled_recall": 0.17857142857142858
+        },
+        {
+          "balanced_accuracy": 0.4765625,
+          "fold_id": "c4a0aa0765aebffe",
+          "threshold": 0.5,
+          "tracked_recall": 0.953125,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.5625,
+          "fold_id": "d351512292ff8444",
+          "threshold": 0.5,
+          "tracked_recall": 0.953125,
+          "wheeled_recall": 0.171875
+        },
+        {
+          "balanced_accuracy": 0.4140625,
+          "fold_id": "5326a82bbcb71553",
+          "threshold": 0.5,
+          "tracked_recall": 0.828125,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.8571428571428572,
+          "fold_id": "6508ddeaa2427345",
+          "threshold": 0.5,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.7142857142857143
+        },
+        {
+          "balanced_accuracy": 0.5714285714285714,
+          "fold_id": "2ba13a053a131c2d",
+          "threshold": 0.5,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.14285714285714285
+        },
+        {
+          "balanced_accuracy": 0.4891304347826087,
+          "fold_id": "dd1f2d6b03d754e9",
+          "threshold": 0.5,
+          "tracked_recall": 0.9782608695652174,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.546875,
+          "fold_id": "33f96ba6e129356b",
+          "threshold": 0.5,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.09375
+        },
+        {
+          "balanced_accuracy": 0.5,
+          "fold_id": "0df5ad32000f22d0",
+          "threshold": 0.5,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.7957589285714286,
+          "fold_id": "3c344f48ab5b742c",
+          "threshold": 0.5,
+          "tracked_recall": 0.734375,
+          "wheeled_recall": 0.8571428571428571
+        },
+        {
+          "balanced_accuracy": 0.40513392857142855,
+          "fold_id": "382a42fe1c353cb3",
+          "threshold": 0.5,
+          "tracked_recall": 0.703125,
+          "wheeled_recall": 0.10714285714285714
+        },
+        {
+          "balanced_accuracy": 0.4296875,
+          "fold_id": "16ea11d7c9bfa671",
+          "threshold": 0.5,
+          "tracked_recall": 0.859375,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.4375,
+          "fold_id": "a4fdf82655e60566",
+          "threshold": 0.5,
+          "tracked_recall": 0.6875,
+          "wheeled_recall": 0.1875
+        },
+        {
+          "balanced_accuracy": 0.4453125,
+          "fold_id": "fd7ddb8b27fcb46c",
+          "threshold": 0.5,
+          "tracked_recall": 0.890625,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.4877232142857143,
+          "fold_id": "e371de962ce883aa",
+          "threshold": 0.5,
+          "tracked_recall": 0.546875,
+          "wheeled_recall": 0.42857142857142855
+        },
+        {
+          "balanced_accuracy": 0.5066964285714286,
+          "fold_id": "d466898d3c66a77a",
+          "threshold": 0.5,
+          "tracked_recall": 0.65625,
+          "wheeled_recall": 0.35714285714285715
+        },
+        {
+          "balanced_accuracy": 0.359375,
+          "fold_id": "e90d878094069528",
+          "threshold": 0.5,
+          "tracked_recall": 0.71875,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.3828125,
+          "fold_id": "eef0e8386761964b",
+          "threshold": 0.5,
+          "tracked_recall": 0.515625,
+          "wheeled_recall": 0.25
+        },
+        {
+          "balanced_accuracy": 0.390625,
+          "fold_id": "0dcc04bbbd2db092",
+          "threshold": 0.5,
+          "tracked_recall": 0.78125,
+          "wheeled_recall": 0.0
+        }
+      ],
+      "per_session": {
+        "commons_goodwood_festival_of_speed_2009": {
+          "mean_p_wheeled": 0.6214194859722824,
+          "mean_recall": 0.7755102040816327,
+          "minimum_recall": 0.42857142857142855,
+          "vehicle_class": "wheeled"
+        },
+        "commons_lappeenranta_flag_day_reenactment_2014": {
+          "mean_p_wheeled": 0.3450975364033346,
+          "mean_recall": 0.75,
+          "minimum_recall": 0.25,
+          "vehicle_class": "tracked"
+        },
+        "commons_milru_102nd_march_training_ground_2022_01_26": {
+          "mean_p_wheeled": 0.8589268821985492,
+          "mean_recall": 0.071875,
+          "minimum_recall": 0.0,
+          "vehicle_class": "tracked"
+        },
+        "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+          "mean_p_wheeled": 0.4085066361916727,
+          "mean_recall": 0.6833333333333333,
+          "minimum_recall": 0.3,
+          "vehicle_class": "tracked"
+        },
+        "commons_retromobile_amx30_demo_2015": {
+          "mean_p_wheeled": 0.275555083412521,
+          "mean_recall": 0.88125,
+          "minimum_recall": 0.8125,
+          "vehicle_class": "tracked"
+        },
+        "commons_soundsofchanges_private_collection": {
+          "mean_p_wheeled": 0.3614652873174576,
+          "mean_recall": 0.17346938775510204,
+          "minimum_recall": 0.03571428571428571,
+          "vehicle_class": "wheeled"
+        },
+        "dvids_bright_star_abrams_mohamed_naguib_2017": {
+          "mean_p_wheeled": 0.14991560818201458,
+          "mean_recall": 0.9956521739130434,
+          "minimum_recall": 0.9782608695652174,
+          "vehicle_class": "tracked"
+        },
+        "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+          "mean_p_wheeled": 0.12823441208259734,
+          "mean_recall": 0.002232142857142857,
+          "minimum_recall": 0.0,
+          "vehicle_class": "wheeled"
+        },
+        "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+          "mean_p_wheeled": 0.28913793687107586,
+          "mean_recall": 0.13616071428571427,
+          "minimum_recall": 0.0625,
+          "vehicle_class": "wheeled"
+        },
+        "dvids_nato_bradley_bemowo_livefire_2025": {
+          "mean_p_wheeled": 0.2914871238519342,
+          "mean_recall": 0.775,
+          "minimum_recall": 0.6875,
+          "vehicle_class": "tracked"
+        },
+        "freesound_lmartins_maserati_granturismo_2019": {
+          "mean_p_wheeled": 0.06743732013496555,
+          "mean_recall": 0.0071428571428571435,
+          "minimum_recall": 0.0,
+          "vehicle_class": "wheeled"
+        },
+        "us_army_armor_cavalry_collection_tankodrome_2023": {
+          "mean_p_wheeled": 0.4309328384672509,
+          "mean_recall": 0.64375,
+          "minimum_recall": 0.515625,
+          "vehicle_class": "tracked"
+        }
+      },
+      "tracked_recall": 0.6858372153209109,
+      "wheeled_recall": 0.21890306122448977,
+      "worst_session_context_recall": 0.0
+    },
+    "fusion": {
+      "balanced_accuracy": 0.39699284605146407,
+      "descriptive_session_bootstrap_ba_95": [
+        0.2907950148809524,
+        0.5141433054199941
+      ],
+      "folds": [
+        {
+          "balanced_accuracy": 0.5089285714285714,
+          "fold_id": "e2776eac0bfa9092",
+          "threshold": 0.6,
+          "tracked_recall": 0.875,
+          "wheeled_recall": 0.14285714285714285
+        },
+        {
+          "balanced_accuracy": 0.4017857142857143,
+          "fold_id": "ecc0bff5efaa8a64",
+          "threshold": 0.3,
+          "tracked_recall": 0.625,
+          "wheeled_recall": 0.17857142857142858
+        },
+        {
+          "balanced_accuracy": 0.4296875,
+          "fold_id": "2abd8df233cd1a3c",
+          "threshold": 0.25,
+          "tracked_recall": 0.75,
+          "wheeled_recall": 0.109375
+        },
+        {
+          "balanced_accuracy": 0.1640625,
+          "fold_id": "a63a9d5b5916c1dc",
+          "threshold": 0.4,
+          "tracked_recall": 0.125,
+          "wheeled_recall": 0.203125
+        },
+        {
+          "balanced_accuracy": 0.425,
+          "fold_id": "bfa4b9d143fabef9",
+          "threshold": 0.25,
+          "tracked_recall": 0.0,
+          "wheeled_recall": 0.85
+        },
+        {
+          "balanced_accuracy": 0.43973214285714285,
+          "fold_id": "9deeba50142a7a6f",
+          "threshold": 0.6,
+          "tracked_recall": 0.59375,
+          "wheeled_recall": 0.2857142857142857
+        },
+        {
+          "balanced_accuracy": 0.13058035714285715,
+          "fold_id": "3af5d81c7481d674",
+          "threshold": 0.4,
+          "tracked_recall": 0.046875,
+          "wheeled_recall": 0.21428571428571427
+        },
+        {
+          "balanced_accuracy": 0.0546875,
+          "fold_id": "de26fc2e409dabaf",
+          "threshold": 0.35,
+          "tracked_recall": 0.078125,
+          "wheeled_recall": 0.03125
+        },
+        {
+          "balanced_accuracy": 0.1484375,
+          "fold_id": "dcd1dcd1384bd66b",
+          "threshold": 0.4,
+          "tracked_recall": 0.125,
+          "wheeled_recall": 0.171875
+        },
+        {
+          "balanced_accuracy": 0.48333333333333334,
+          "fold_id": "5a446c86f59c3f8f",
+          "threshold": 0.25,
+          "tracked_recall": 0.0,
+          "wheeled_recall": 0.9666666666666667
+        },
+        {
+          "balanced_accuracy": 0.513095238095238,
+          "fold_id": "10434c755441fa9a",
+          "threshold": 0.6,
+          "tracked_recall": 0.8833333333333333,
+          "wheeled_recall": 0.14285714285714285
+        },
+        {
+          "balanced_accuracy": 0.2285714285714286,
+          "fold_id": "ab6a29b4e3dd356c",
+          "threshold": 0.25,
+          "tracked_recall": 0.1,
+          "wheeled_recall": 0.35714285714285715
+        },
+        {
+          "balanced_accuracy": 0.3880208333333333,
+          "fold_id": "f563a9f598662851",
+          "threshold": 0.25,
+          "tracked_recall": 0.6666666666666666,
+          "wheeled_recall": 0.109375
+        },
+        {
+          "balanced_accuracy": 0.434375,
+          "fold_id": "da1e7c3e071fc4c7",
+          "threshold": 0.4,
+          "tracked_recall": 0.65,
+          "wheeled_recall": 0.21875
+        },
+        {
+          "balanced_accuracy": 0.4166666666666667,
+          "fold_id": "f33f28420128e147",
+          "threshold": 0.3,
+          "tracked_recall": 0.06666666666666667,
+          "wheeled_recall": 0.7666666666666667
+        },
+        {
+          "balanced_accuracy": 0.5011160714285714,
+          "fold_id": "76902234548caeda",
+          "threshold": 0.6,
+          "tracked_recall": 0.859375,
+          "wheeled_recall": 0.14285714285714285
+        },
+        {
+          "balanced_accuracy": 0.44308035714285715,
+          "fold_id": "fa226ee83a2a1321",
+          "threshold": 0.2,
+          "tracked_recall": 0.171875,
+          "wheeled_recall": 0.7142857142857143
+        },
+        {
+          "balanced_accuracy": 0.3203125,
+          "fold_id": "c4a0aa0765aebffe",
+          "threshold": 0.25,
+          "tracked_recall": 0.515625,
+          "wheeled_recall": 0.125
+        },
+        {
+          "balanced_accuracy": 0.46875,
+          "fold_id": "d351512292ff8444",
+          "threshold": 0.6,
+          "tracked_recall": 0.921875,
+          "wheeled_recall": 0.015625
+        },
+        {
+          "balanced_accuracy": 0.4390625,
+          "fold_id": "5326a82bbcb71553",
+          "threshold": 0.2,
+          "tracked_recall": 0.078125,
+          "wheeled_recall": 0.8
+        },
+        {
+          "balanced_accuracy": 0.5714285714285714,
+          "fold_id": "6508ddeaa2427345",
+          "threshold": 0.6,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.14285714285714285
+        },
+        {
+          "balanced_accuracy": 0.4906832298136646,
+          "fold_id": "2ba13a053a131c2d",
+          "threshold": 0.2,
+          "tracked_recall": 0.1956521739130435,
+          "wheeled_recall": 0.7857142857142857
+        },
+        {
+          "balanced_accuracy": 0.47214673913043476,
+          "fold_id": "dd1f2d6b03d754e9",
+          "threshold": 0.35,
+          "tracked_recall": 0.9130434782608695,
+          "wheeled_recall": 0.03125
+        },
+        {
+          "balanced_accuracy": 0.5,
+          "fold_id": "33f96ba6e129356b",
+          "threshold": 0.6,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.5,
+          "fold_id": "0df5ad32000f22d0",
+          "threshold": 0.6,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.5245535714285714,
+          "fold_id": "3c344f48ab5b742c",
+          "threshold": 0.6,
+          "tracked_recall": 0.90625,
+          "wheeled_recall": 0.14285714285714285
+        },
+        {
+          "balanced_accuracy": 0.2075892857142857,
+          "fold_id": "382a42fe1c353cb3",
+          "threshold": 0.35,
+          "tracked_recall": 0.34375,
+          "wheeled_recall": 0.07142857142857142
+        },
+        {
+          "balanced_accuracy": 0.2578125,
+          "fold_id": "16ea11d7c9bfa671",
+          "threshold": 0.3,
+          "tracked_recall": 0.46875,
+          "wheeled_recall": 0.046875
+        },
+        {
+          "balanced_accuracy": 0.4375,
+          "fold_id": "a4fdf82655e60566",
+          "threshold": 0.4,
+          "tracked_recall": 0.625,
+          "wheeled_recall": 0.25
+        },
+        {
+          "balanced_accuracy": 0.6953125,
+          "fold_id": "fd7ddb8b27fcb46c",
+          "threshold": 0.25,
+          "tracked_recall": 0.390625,
+          "wheeled_recall": 1.0
+        },
+        {
+          "balanced_accuracy": 0.4620535714285714,
+          "fold_id": "e371de962ce883aa",
+          "threshold": 0.6,
+          "tracked_recall": 0.78125,
+          "wheeled_recall": 0.14285714285714285
+        },
+        {
+          "balanced_accuracy": 0.2801339285714286,
+          "fold_id": "d466898d3c66a77a",
+          "threshold": 0.3,
+          "tracked_recall": 0.203125,
+          "wheeled_recall": 0.35714285714285715
+        },
+        {
+          "balanced_accuracy": 0.25,
+          "fold_id": "e90d878094069528",
+          "threshold": 0.25,
+          "tracked_recall": 0.421875,
+          "wheeled_recall": 0.078125
+        },
+        {
+          "balanced_accuracy": 0.421875,
+          "fold_id": "eef0e8386761964b",
+          "threshold": 0.6,
+          "tracked_recall": 0.84375,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.484375,
+          "fold_id": "0dcc04bbbd2db092",
+          "threshold": 0.6,
+          "tracked_recall": 0.96875,
+          "wheeled_recall": 0.0
+        }
+      ],
+      "per_session": {
+        "commons_goodwood_festival_of_speed_2009": {
+          "mean_p_wheeled": 0.5065017800968945,
+          "mean_recall": 0.16326530612244894,
+          "minimum_recall": 0.14285714285714285,
+          "vehicle_class": "wheeled"
+        },
+        "commons_lappeenranta_flag_day_reenactment_2014": {
+          "mean_p_wheeled": 0.3676272903385455,
+          "mean_recall": 0.475,
+          "minimum_recall": 0.0,
+          "vehicle_class": "tracked"
+        },
+        "commons_milru_102nd_march_training_ground_2022_01_26": {
+          "mean_p_wheeled": 0.5606259012706514,
+          "mean_recall": 0.16875,
+          "minimum_recall": 0.0,
+          "vehicle_class": "tracked"
+        },
+        "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+          "mean_p_wheeled": 0.37936163250827226,
+          "mean_recall": 0.47333333333333333,
+          "minimum_recall": 0.06666666666666667,
+          "vehicle_class": "tracked"
+        },
+        "commons_retromobile_amx30_demo_2015": {
+          "mean_p_wheeled": 0.3451914798120588,
+          "mean_recall": 0.509375,
+          "minimum_recall": 0.078125,
+          "vehicle_class": "tracked"
+        },
+        "commons_soundsofchanges_private_collection": {
+          "mean_p_wheeled": 0.2555355624510273,
+          "mean_recall": 0.38265306122448983,
+          "minimum_recall": 0.07142857142857142,
+          "vehicle_class": "wheeled"
+        },
+        "dvids_bright_star_abrams_mohamed_naguib_2017": {
+          "mean_p_wheeled": 0.22382525799310185,
+          "mean_recall": 0.8217391304347826,
+          "minimum_recall": 0.1956521739130435,
+          "vehicle_class": "tracked"
+        },
+        "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+          "mean_p_wheeled": 0.1467275059754351,
+          "mean_recall": 0.07589285714285714,
+          "minimum_recall": 0.03125,
+          "vehicle_class": "wheeled"
+        },
+        "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+          "mean_p_wheeled": 0.31527991560029756,
+          "mean_recall": 0.12276785714285714,
+          "minimum_recall": 0.0,
+          "vehicle_class": "wheeled"
+        },
+        "dvids_nato_bradley_bemowo_livefire_2025": {
+          "mean_p_wheeled": 0.36322466742704795,
+          "mean_recall": 0.546875,
+          "minimum_recall": 0.34375,
+          "vehicle_class": "tracked"
+        },
+        "freesound_lmartins_maserati_granturismo_2019": {
+          "mean_p_wheeled": 0.38238299692665173,
+          "mean_recall": 0.6261904761904763,
+          "minimum_recall": 0.0,
+          "vehicle_class": "wheeled"
+        },
+        "us_army_armor_cavalry_collection_tankodrome_2023": {
+          "mean_p_wheeled": 0.38925300904687765,
+          "mean_recall": 0.64375,
+          "minimum_recall": 0.203125,
+          "vehicle_class": "tracked"
+        }
+      },
+      "tracked_recall": 0.5198317805383024,
+      "wheeled_recall": 0.2741539115646259,
+      "worst_session_context_recall": 0.0
+    },
+    "fusion_fixed_0.5": {
+      "balanced_accuracy": 0.41661546140195205,
+      "descriptive_session_bootstrap_ba_95": [
+        0.2953639987244898,
+        0.5356308715062112
+      ],
+      "folds": [
+        {
+          "balanced_accuracy": 0.6607142857142857,
+          "fold_id": "e2776eac0bfa9092",
+          "threshold": 0.5,
+          "tracked_recall": 0.75,
+          "wheeled_recall": 0.5714285714285714
+        },
+        {
+          "balanced_accuracy": 0.375,
+          "fold_id": "ecc0bff5efaa8a64",
+          "threshold": 0.5,
+          "tracked_recall": 0.75,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.5,
+          "fold_id": "2abd8df233cd1a3c",
+          "threshold": 0.5,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.3984375,
+          "fold_id": "a63a9d5b5916c1dc",
+          "threshold": 0.5,
+          "tracked_recall": 0.75,
+          "wheeled_recall": 0.046875
+        },
+        {
+          "balanced_accuracy": 0.4375,
+          "fold_id": "bfa4b9d143fabef9",
+          "threshold": 0.5,
+          "tracked_recall": 0.875,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.45982142857142855,
+          "fold_id": "9deeba50142a7a6f",
+          "threshold": 0.5,
+          "tracked_recall": 0.0625,
+          "wheeled_recall": 0.8571428571428571
+        },
+        {
+          "balanced_accuracy": 0.0625,
+          "fold_id": "3af5d81c7481d674",
+          "threshold": 0.5,
+          "tracked_recall": 0.125,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.0859375,
+          "fold_id": "de26fc2e409dabaf",
+          "threshold": 0.5,
+          "tracked_recall": 0.171875,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.078125,
+          "fold_id": "dcd1dcd1384bd66b",
+          "threshold": 0.5,
+          "tracked_recall": 0.140625,
+          "wheeled_recall": 0.015625
+        },
+        {
+          "balanced_accuracy": 0.12760416666666666,
+          "fold_id": "5a446c86f59c3f8f",
+          "threshold": 0.5,
+          "tracked_recall": 0.171875,
+          "wheeled_recall": 0.08333333333333333
+        },
+        {
+          "balanced_accuracy": 0.5726190476190476,
+          "fold_id": "10434c755441fa9a",
+          "threshold": 0.5,
+          "tracked_recall": 0.7166666666666667,
+          "wheeled_recall": 0.42857142857142855
+        },
+        {
+          "balanced_accuracy": 0.3416666666666667,
+          "fold_id": "ab6a29b4e3dd356c",
+          "threshold": 0.5,
+          "tracked_recall": 0.6833333333333333,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.5,
+          "fold_id": "f563a9f598662851",
+          "threshold": 0.5,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.41302083333333334,
+          "fold_id": "da1e7c3e071fc4c7",
+          "threshold": 0.5,
+          "tracked_recall": 0.7166666666666667,
+          "wheeled_recall": 0.109375
+        },
+        {
+          "balanced_accuracy": 0.19166666666666668,
+          "fold_id": "f33f28420128e147",
+          "threshold": 0.5,
+          "tracked_recall": 0.38333333333333336,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.5736607142857143,
+          "fold_id": "76902234548caeda",
+          "threshold": 0.5,
+          "tracked_recall": 0.71875,
+          "wheeled_recall": 0.42857142857142855
+        },
+        {
+          "balanced_accuracy": 0.3984375,
+          "fold_id": "fa226ee83a2a1321",
+          "threshold": 0.5,
+          "tracked_recall": 0.796875,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.4453125,
+          "fold_id": "c4a0aa0765aebffe",
+          "threshold": 0.5,
+          "tracked_recall": 0.890625,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.453125,
+          "fold_id": "d351512292ff8444",
+          "threshold": 0.5,
+          "tracked_recall": 0.828125,
+          "wheeled_recall": 0.078125
+        },
+        {
+          "balanced_accuracy": 0.36770833333333336,
+          "fold_id": "5326a82bbcb71553",
+          "threshold": 0.5,
+          "tracked_recall": 0.71875,
+          "wheeled_recall": 0.016666666666666666
+        },
+        {
+          "balanced_accuracy": 0.6428571428571428,
+          "fold_id": "6508ddeaa2427345",
+          "threshold": 0.5,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.2857142857142857
+        },
+        {
+          "balanced_accuracy": 0.5535714285714286,
+          "fold_id": "2ba13a053a131c2d",
+          "threshold": 0.5,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.10714285714285714
+        },
+        {
+          "balanced_accuracy": 0.5,
+          "fold_id": "dd1f2d6b03d754e9",
+          "threshold": 0.5,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.5234375,
+          "fold_id": "33f96ba6e129356b",
+          "threshold": 0.5,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.046875
+        },
+        {
+          "balanced_accuracy": 0.4891304347826087,
+          "fold_id": "0df5ad32000f22d0",
+          "threshold": 0.5,
+          "tracked_recall": 0.9782608695652174,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.6841517857142857,
+          "fold_id": "3c344f48ab5b742c",
+          "threshold": 0.5,
+          "tracked_recall": 0.796875,
+          "wheeled_recall": 0.5714285714285714
+        },
+        {
+          "balanced_accuracy": 0.375,
+          "fold_id": "382a42fe1c353cb3",
+          "threshold": 0.5,
+          "tracked_recall": 0.75,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.4453125,
+          "fold_id": "16ea11d7c9bfa671",
+          "threshold": 0.5,
+          "tracked_recall": 0.890625,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.484375,
+          "fold_id": "a4fdf82655e60566",
+          "threshold": 0.5,
+          "tracked_recall": 0.859375,
+          "wheeled_recall": 0.109375
+        },
+        {
+          "balanced_accuracy": 0.4453125,
+          "fold_id": "fd7ddb8b27fcb46c",
+          "threshold": 0.5,
+          "tracked_recall": 0.890625,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.3839285714285714,
+          "fold_id": "e371de962ce883aa",
+          "threshold": 0.5,
+          "tracked_recall": 0.625,
+          "wheeled_recall": 0.14285714285714285
+        },
+        {
+          "balanced_accuracy": 0.34598214285714285,
+          "fold_id": "d466898d3c66a77a",
+          "threshold": 0.5,
+          "tracked_recall": 0.65625,
+          "wheeled_recall": 0.03571428571428571
+        },
+        {
+          "balanced_accuracy": 0.4921875,
+          "fold_id": "e90d878094069528",
+          "threshold": 0.5,
+          "tracked_recall": 0.984375,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.390625,
+          "fold_id": "eef0e8386761964b",
+          "threshold": 0.5,
+          "tracked_recall": 0.640625,
+          "wheeled_recall": 0.140625
+        },
+        {
+          "balanced_accuracy": 0.3828125,
+          "fold_id": "0dcc04bbbd2db092",
+          "threshold": 0.5,
+          "tracked_recall": 0.765625,
+          "wheeled_recall": 0.0
+        }
+      ],
+      "per_session": {
+        "commons_goodwood_festival_of_speed_2009": {
+          "mean_p_wheeled": 0.5065017800968945,
+          "mean_recall": 0.4693877551020407,
+          "minimum_recall": 0.14285714285714285,
+          "vehicle_class": "wheeled"
+        },
+        "commons_lappeenranta_flag_day_reenactment_2014": {
+          "mean_p_wheeled": 0.3676272903385455,
+          "mean_recall": 0.825,
+          "minimum_recall": 0.75,
+          "vehicle_class": "tracked"
+        },
+        "commons_milru_102nd_march_training_ground_2022_01_26": {
+          "mean_p_wheeled": 0.5606259012706514,
+          "mean_recall": 0.134375,
+          "minimum_recall": 0.0625,
+          "vehicle_class": "tracked"
+        },
+        "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+          "mean_p_wheeled": 0.37936163250827226,
+          "mean_recall": 0.7,
+          "minimum_recall": 0.38333333333333336,
+          "vehicle_class": "tracked"
+        },
+        "commons_retromobile_amx30_demo_2015": {
+          "mean_p_wheeled": 0.3451914798120588,
+          "mean_recall": 0.790625,
+          "minimum_recall": 0.71875,
+          "vehicle_class": "tracked"
+        },
+        "commons_soundsofchanges_private_collection": {
+          "mean_p_wheeled": 0.2555355624510273,
+          "mean_recall": 0.02040816326530612,
+          "minimum_recall": 0.0,
+          "vehicle_class": "wheeled"
+        },
+        "dvids_bright_star_abrams_mohamed_naguib_2017": {
+          "mean_p_wheeled": 0.22382525799310185,
+          "mean_recall": 0.9956521739130435,
+          "minimum_recall": 0.9782608695652174,
+          "vehicle_class": "tracked"
+        },
+        "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+          "mean_p_wheeled": 0.1467275059754351,
+          "mean_recall": 0.0,
+          "minimum_recall": 0.0,
+          "vehicle_class": "wheeled"
+        },
+        "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+          "mean_p_wheeled": 0.31527991560029756,
+          "mean_recall": 0.078125,
+          "minimum_recall": 0.015625,
+          "vehicle_class": "wheeled"
+        },
+        "dvids_nato_bradley_bemowo_livefire_2025": {
+          "mean_p_wheeled": 0.36322466742704795,
+          "mean_recall": 0.8375,
+          "minimum_recall": 0.75,
+          "vehicle_class": "tracked"
+        },
+        "freesound_lmartins_maserati_granturismo_2019": {
+          "mean_p_wheeled": 0.38238299692665173,
+          "mean_recall": 0.014285714285714285,
+          "minimum_recall": 0.0,
+          "vehicle_class": "wheeled"
+        },
+        "us_army_armor_cavalry_collection_tankodrome_2023": {
+          "mean_p_wheeled": 0.38925300904687765,
+          "mean_recall": 0.734375,
+          "minimum_recall": 0.625,
+          "vehicle_class": "tracked"
+        }
+      },
+      "tracked_recall": 0.716789596273292,
+      "wheeled_recall": 0.11644132653061225,
+      "worst_session_context_recall": 0.0
+    },
+    "semantic": {
+      "balanced_accuracy": 0.5340345866607513,
+      "descriptive_session_bootstrap_ba_95": [
+        0.4207576461291038,
+        0.6835235276175686
+      ],
+      "folds": [
+        {
+          "balanced_accuracy": 0.5267857142857143,
+          "fold_id": "e2776eac0bfa9092",
+          "threshold": 0.5,
+          "tracked_recall": 0.625,
+          "wheeled_recall": 0.42857142857142855
+        },
+        {
+          "balanced_accuracy": 0.375,
+          "fold_id": "ecc0bff5efaa8a64",
+          "threshold": 0.5,
+          "tracked_recall": 0.75,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.453125,
+          "fold_id": "2abd8df233cd1a3c",
+          "threshold": 0.5,
+          "tracked_recall": 0.875,
+          "wheeled_recall": 0.03125
+        },
+        {
+          "balanced_accuracy": 0.5390625,
+          "fold_id": "a63a9d5b5916c1dc",
+          "threshold": 0.5,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.078125
+        },
+        {
+          "balanced_accuracy": 0.625,
+          "fold_id": "bfa4b9d143fabef9",
+          "threshold": 0.5,
+          "tracked_recall": 0.5,
+          "wheeled_recall": 0.75
+        },
+        {
+          "balanced_accuracy": 0.6116071428571428,
+          "fold_id": "9deeba50142a7a6f",
+          "threshold": 0.5,
+          "tracked_recall": 0.9375,
+          "wheeled_recall": 0.2857142857142857
+        },
+        {
+          "balanced_accuracy": 0.484375,
+          "fold_id": "3af5d81c7481d674",
+          "threshold": 0.5,
+          "tracked_recall": 0.96875,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.5,
+          "fold_id": "de26fc2e409dabaf",
+          "threshold": 0.5,
+          "tracked_recall": 0.96875,
+          "wheeled_recall": 0.03125
+        },
+        {
+          "balanced_accuracy": 0.515625,
+          "fold_id": "dcd1dcd1384bd66b",
+          "threshold": 0.5,
+          "tracked_recall": 0.9375,
+          "wheeled_recall": 0.09375
+        },
+        {
+          "balanced_accuracy": 0.86875,
+          "fold_id": "5a446c86f59c3f8f",
+          "threshold": 0.5,
+          "tracked_recall": 0.9375,
+          "wheeled_recall": 0.8
+        },
+        {
+          "balanced_accuracy": 0.5178571428571428,
+          "fold_id": "10434c755441fa9a",
+          "threshold": 0.5,
+          "tracked_recall": 0.75,
+          "wheeled_recall": 0.2857142857142857
+        },
+        {
+          "balanced_accuracy": 0.375,
+          "fold_id": "ab6a29b4e3dd356c",
+          "threshold": 0.5,
+          "tracked_recall": 0.75,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.465625,
+          "fold_id": "f563a9f598662851",
+          "threshold": 0.5,
+          "tracked_recall": 0.9,
+          "wheeled_recall": 0.03125
+        },
+        {
+          "balanced_accuracy": 0.5046875,
+          "fold_id": "da1e7c3e071fc4c7",
+          "threshold": 0.5,
+          "tracked_recall": 0.9,
+          "wheeled_recall": 0.109375
+        },
+        {
+          "balanced_accuracy": 0.7916666666666667,
+          "fold_id": "f33f28420128e147",
+          "threshold": 0.5,
+          "tracked_recall": 0.7833333333333333,
+          "wheeled_recall": 0.8
+        },
+        {
+          "balanced_accuracy": 0.5658482142857143,
+          "fold_id": "76902234548caeda",
+          "threshold": 0.5,
+          "tracked_recall": 0.703125,
+          "wheeled_recall": 0.42857142857142855
+        },
+        {
+          "balanced_accuracy": 0.40625,
+          "fold_id": "fa226ee83a2a1321",
+          "threshold": 0.5,
+          "tracked_recall": 0.8125,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.4296875,
+          "fold_id": "c4a0aa0765aebffe",
+          "threshold": 0.5,
+          "tracked_recall": 0.828125,
+          "wheeled_recall": 0.03125
+        },
+        {
+          "balanced_accuracy": 0.390625,
+          "fold_id": "d351512292ff8444",
+          "threshold": 0.5,
+          "tracked_recall": 0.640625,
+          "wheeled_recall": 0.140625
+        },
+        {
+          "balanced_accuracy": 0.6859375,
+          "fold_id": "5326a82bbcb71553",
+          "threshold": 0.5,
+          "tracked_recall": 0.671875,
+          "wheeled_recall": 0.7
+        },
+        {
+          "balanced_accuracy": 0.5993788819875776,
+          "fold_id": "6508ddeaa2427345",
+          "threshold": 0.5,
+          "tracked_recall": 0.9130434782608695,
+          "wheeled_recall": 0.2857142857142857
+        },
+        {
+          "balanced_accuracy": 0.6141304347826086,
+          "fold_id": "2ba13a053a131c2d",
+          "threshold": 0.5,
+          "tracked_recall": 0.9782608695652174,
+          "wheeled_recall": 0.25
+        },
+        {
+          "balanced_accuracy": 0.4938858695652174,
+          "fold_id": "dd1f2d6b03d754e9",
+          "threshold": 0.5,
+          "tracked_recall": 0.9565217391304348,
+          "wheeled_recall": 0.03125
+        },
+        {
+          "balanced_accuracy": 0.5064538043478262,
+          "fold_id": "33f96ba6e129356b",
+          "threshold": 0.5,
+          "tracked_recall": 0.9347826086956522,
+          "wheeled_recall": 0.078125
+        },
+        {
+          "balanced_accuracy": 0.8840579710144928,
+          "fold_id": "0df5ad32000f22d0",
+          "threshold": 0.5,
+          "tracked_recall": 0.9347826086956522,
+          "wheeled_recall": 0.8333333333333334
+        },
+        {
+          "balanced_accuracy": 0.49441964285714285,
+          "fold_id": "3c344f48ab5b742c",
+          "threshold": 0.5,
+          "tracked_recall": 0.703125,
+          "wheeled_recall": 0.2857142857142857
+        },
+        {
+          "balanced_accuracy": 0.2734375,
+          "fold_id": "382a42fe1c353cb3",
+          "threshold": 0.5,
+          "tracked_recall": 0.546875,
+          "wheeled_recall": 0.0
+        },
+        {
+          "balanced_accuracy": 0.3359375,
+          "fold_id": "16ea11d7c9bfa671",
+          "threshold": 0.5,
+          "tracked_recall": 0.640625,
+          "wheeled_recall": 0.03125
+        },
+        {
+          "balanced_accuracy": 0.3828125,
+          "fold_id": "a4fdf82655e60566",
+          "threshold": 0.5,
+          "tracked_recall": 0.671875,
+          "wheeled_recall": 0.09375
+        },
+        {
+          "balanced_accuracy": 0.8182291666666667,
+          "fold_id": "fd7ddb8b27fcb46c",
+          "threshold": 0.5,
+          "tracked_recall": 0.703125,
+          "wheeled_recall": 0.9333333333333333
+        },
+        {
+          "balanced_accuracy": 0.4542410714285714,
+          "fold_id": "e371de962ce883aa",
+          "threshold": 0.5,
+          "tracked_recall": 0.765625,
+          "wheeled_recall": 0.14285714285714285
+        },
+        {
+          "balanced_accuracy": 0.37723214285714285,
+          "fold_id": "d466898d3c66a77a",
+          "threshold": 0.5,
+          "tracked_recall": 0.71875,
+          "wheeled_recall": 0.03571428571428571
+        },
+        {
+          "balanced_accuracy": 0.515625,
+          "fold_id": "e90d878094069528",
+          "threshold": 0.5,
+          "tracked_recall": 1.0,
+          "wheeled_recall": 0.03125
+        },
+        {
+          "balanced_accuracy": 0.4296875,
+          "fold_id": "eef0e8386761964b",
+          "threshold": 0.5,
+          "tracked_recall": 0.78125,
+          "wheeled_recall": 0.078125
+        },
+        {
+          "balanced_accuracy": 0.8791666666666667,
+          "fold_id": "0dcc04bbbd2db092",
+          "threshold": 0.5,
+          "tracked_recall": 0.875,
+          "wheeled_recall": 0.8833333333333333
+        }
+      ],
+      "per_session": {
+        "commons_goodwood_festival_of_speed_2009": {
+          "mean_p_wheeled": 0.3915840742215065,
+          "mean_recall": 0.3061224489795918,
+          "minimum_recall": 0.14285714285714285,
+          "vehicle_class": "wheeled"
+        },
+        "commons_lappeenranta_flag_day_reenactment_2014": {
+          "mean_p_wheeled": 0.39015704427375636,
+          "mean_recall": 0.75,
+          "minimum_recall": 0.5,
+          "vehicle_class": "tracked"
+        },
+        "commons_milru_102nd_march_training_ground_2022_01_26": {
+          "mean_p_wheeled": 0.2623249203427535,
+          "mean_recall": 0.95,
+          "minimum_recall": 0.9375,
+          "vehicle_class": "tracked"
+        },
+        "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": {
+          "mean_p_wheeled": 0.35021662882487176,
+          "mean_recall": 0.8166666666666667,
+          "minimum_recall": 0.75,
+          "vehicle_class": "tracked"
+        },
+        "commons_retromobile_amx30_demo_2015": {
+          "mean_p_wheeled": 0.41482787621159645,
+          "mean_recall": 0.73125,
+          "minimum_recall": 0.640625,
+          "vehicle_class": "tracked"
+        },
+        "commons_soundsofchanges_private_collection": {
+          "mean_p_wheeled": 0.149605837584597,
+          "mean_recall": 0.04081632653061224,
+          "minimum_recall": 0.0,
+          "vehicle_class": "wheeled"
+        },
+        "dvids_bright_star_abrams_mohamed_naguib_2017": {
+          "mean_p_wheeled": 0.2977349078041892,
+          "mean_recall": 0.9434782608695652,
+          "minimum_recall": 0.9130434782608695,
+          "vehicle_class": "tracked"
+        },
+        "dvids_m1126_pinon_canyon_convoy_2024_09_04": {
+          "mean_p_wheeled": 0.16522059986827284,
+          "mean_recall": 0.03125,
+          "minimum_recall": 0.03125,
+          "vehicle_class": "wheeled"
+        },
+        "dvids_m1151_driver_training_jbmdl_2014_04_03": {
+          "mean_p_wheeled": 0.34142189432951925,
+          "mean_recall": 0.09598214285714286,
+          "minimum_recall": 0.078125,
+          "vehicle_class": "wheeled"
+        },
+        "dvids_nato_bradley_bemowo_livefire_2025": {
+          "mean_p_wheeled": 0.4349622110021617,
+          "mean_recall": 0.653125,
+          "minimum_recall": 0.546875,
+          "vehicle_class": "tracked"
+        },
+        "freesound_lmartins_maserati_granturismo_2019": {
+          "mean_p_wheeled": 0.697328673718338,
+          "mean_recall": 0.8142857142857142,
+          "minimum_recall": 0.7,
+          "vehicle_class": "wheeled"
+        },
+        "us_army_armor_cavalry_collection_tankodrome_2023": {
+          "mean_p_wheeled": 0.34757317962650447,
+          "mean_recall": 0.828125,
+          "minimum_recall": 0.71875,
+          "vehicle_class": "tracked"
+        }
+      },
+      "tracked_recall": 0.8103778467908903,
+      "wheeled_recall": 0.2576913265306122,
+      "worst_session_context_recall": 0.0
+    }
+  },
+  "test_domain": "real -> real, frozen nested unseen-session development predictions",
+  "threshold_counts": {
+    "0.2": 3,
+    "0.25": 8,
+    "0.3": 4,
+    "0.35": 3,
+    "0.4": 5,
+    "0.6": 12
+  },
+  "train_test_split": "runs/benchmark_v0_1_native_real_7t5w/fusion/splits.json"
+}

@@ -1,0 +1,165 @@
+{
+  "background_holdout_scope": "current ABVID native probes only; historical use and encoder exposure not excluded",
+  "code_sha256": {
+    "src/vehicle_audio/__init__.py": "4e0f0b6946c5e8e0e17ce29b247b5f8c9d79be808fc3761b7c5f66252c6ce6ac",
+    "src/vehicle_audio/array_dataset.py": "c598f3f7702f0595a7eee1a1687bb8976a744bbb89a8d461d4761062f0db5835",
+    "src/vehicle_audio/audibility_calibration.py": "7850400d4c487fb7694f7aa5572ffd3e910ef01970bccc585b49527041ddf454",
+    "src/vehicle_audio/audio.py": "6856c1e43de6e433887267a8adcc50af4429b85155e64a5c208e96f98bf5077d",
+    "src/vehicle_audio/augment.py": "7251cd11ea57202857eff3a91b4c1c177db63d88652991c6f8880fa19d9fb05d",
+    "src/vehicle_audio/baseline.py": "b947fea30456481e171938a6eb82ec5e956d377e42c769f78a1ad26bb1402153",
+    "src/vehicle_audio/benchmark.py": "30bf18202e5a859ca921cffa7ad27d91dab943c1b6cd65504689b5838687ab36",
+    "src/vehicle_audio/benchmark_followup.py": "bef2ac51855eda26296ba1f7ccdd2fc2f99194b4cb37a8771aaa31993b589df2",
+    "src/vehicle_audio/classical_session_evaluation.py": "efb6e63d5bd1b240b2ca767e2a6eddb44f13d231c52cd2b780394e8f6ea90e60",
+    "src/vehicle_audio/cli.py": "31cbaef23fc91998ab95bf2704b4af760cb745517d5e01a64020c7da4df84337",
+    "src/vehicle_audio/collection.py": "9986c7bbc79221d42c48b7ee10c51acbad2695c4365aa863a292a7306440ad5c",
+    "src/vehicle_audio/config.py": "85477fd6cea1dcfce1872311435f2d00c8b143aa137347efb58c51789fc1ba20",
+    "src/vehicle_audio/dataset.py": "115819d5e1560a747af52be9c46a511d7c40f14c5771c222993cfdf6205a170c",
+    "src/vehicle_audio/event_inference.py": "35987941c120b1051f65483b8c4caeb27626c2d2dfd047c3af40c955383fe1e0",
+    "src/vehicle_audio/factorial_dataset.py": "608fa35ee51b80998c52c0d3a0b5a9ed18be5b78fa121fca3924ffdf7fb32b84",
+    "src/vehicle_audio/frozen_fusion.py": "a827fbae9fe4e15452be95f0fefd005fbebe7a2142399fca6fcdfe4db65c5d70",
+    "src/vehicle_audio/fusion_session_evaluation.py": "ad97ebaa054336b023c6e874a3123c5ac90199ee4d37ca99dfb8d84cc3cac090",
+    "src/vehicle_audio/historical_checkpoint_audit.py": "d164a0ac268f09689bbca80674a1d5909daee1bedbce0ef092adaeff4babcc34",
+    "src/vehicle_audio/invariance_aggregation.py": "a3597bf0a0fdc8fbfb05be1f7897466e57ad9102265dc17cb6f1b1bbe19ef230",
+    "src/vehicle_audio/invariance_evaluation.py": "1254cd7787021668c7567e0704d27e5820ba5d2aaf4c2b9ecb286124f872c67c",
+    "src/vehicle_audio/locked_fusion_evaluation.py": "d1454ad9d355781851bd65494f26284e12c1c0133f2d6bf7223e075e20148702",
+    "src/vehicle_audio/low_snr_adaptation.py": "39036aa9088c6309b7b5ad94819f19023d9c62303316aa8e253515ac281834a5",
+    "src/vehicle_audio/manifest.py": "3a757620dadf3bbe3d16d3edd6bee4a7d245180d04a04b2635759a3f5c5baeb3",
+    "src/vehicle_audio/metadata.py": "06b955b1ccd00549daadb3845c54d36018545100f64b49df3e8f772f707da6af",
+    "src/vehicle_audio/mixing.py": "2b32336c6ad3e8fa2e353864e33dee8461be1cb219dc15353dab8f1425fbf0bc",
+    "src/vehicle_audio/multichannel.py": "acb04397fbed7b069f22e0d881b25cb69106ecb28b38209852e5c38fa827ae45",
+    "src/vehicle_audio/multichannel_evaluation.py": "bab0fa2ca6365f24e2361c550c5cd675826d863fe67a33148fb26a1398153203",
+    "src/vehicle_audio/pretrained_evaluation.py": "ae3582b075fbaf0ad4cd8baa684892f2dd7ee417f5be655e08c526398cdcb6d9",
+    "src/vehicle_audio/real_corpus.py": "ade4ff7e4d3916486335818191046eba617dab7538dd32a22482857c74ebd836",
+    "src/vehicle_audio/real_panns_features.py": "f9afe6998205abb38f3289a642c5cbdacfee92e9b69c0f8335733abb96132b8f",
+    "src/vehicle_audio/semantic_session_evaluation.py": "879fb3de3941596ea268af1e325c52a65aca99c500fd3807562974f56fd671da",
+    "src/vehicle_audio/source_simulation.py": "50021ca472140daacd1df95d80f792191a205ec427f6995b31dbfdc2e4192e2e",
+    "src/vehicle_audio/transfer_evaluation.py": "0a05069b0addde9945e79f489bd21875bf3d9d58a816b0bc8a2e73d250d74064"
+  },
+  "completed_at_utc": "2026-09-20T21:58:25.167435+00:00",
+  "condition_count": 30,
+  "configuration": {
+    "background_crop_rule": "sha256(seed, source sample ID, background source ID), shared across SNR levels",
+    "background_training_source_ids": [],
+    "backgrounds": [
+      {
+        "path": "data/backgrounds/rain/internet_archive_aporee_52865_60398.wav",
+        "role": "environmental_noise",
+        "source_id": "background-rain-heavy-aporee"
+      },
+      {
+        "path": "data/backgrounds/rain/commons_caesar_sundbyberg_rain/rain_and_thunder.wav",
+        "role": "environmental_noise",
+        "source_id": "background-rain-thunder"
+      },
+      {
+        "path": "data/backgrounds/animals_insects/commons_stephan_pdsounds_104/birdsong_sunny_day.wav",
+        "role": "environmental_noise",
+        "source_id": "background-birdsong-sunny-day"
+      },
+      {
+        "path": "data/backgrounds/road_traffic/internet_archive_aporee_17410_20263/keelung_traffic.wav",
+        "role": "competing_vehicle_interference",
+        "source_id": "background-road-traffic-keelung-aporee"
+      }
+    ],
+    "benchmark_id": "abvid-benchmark-v0.1-controlled-corruption-7t5w-v1",
+    "channel": 0,
+    "microphone_responses": [
+      {
+        "frequencies_hz": [
+          0,
+          100,
+          500,
+          2000,
+          8000
+        ],
+        "gains_db": [
+          -18,
+          -12,
+          -3,
+          0,
+          0
+        ],
+        "id": "simulated_low_frequency_attenuation"
+      },
+      {
+        "frequencies_hz": [
+          0,
+          500,
+          2000,
+          4000,
+          8000
+        ],
+        "gains_db": [
+          0,
+          0,
+          -3,
+          -12,
+          -24
+        ],
+        "id": "simulated_high_frequency_rolloff"
+      }
+    ],
+    "model_rule": "reuse_each_native_outer_fold_without_refitting_or_threshold_tuning",
+    "native_manifest": "data/benchmark_v0_1_native_real_7t5w/real_manifest.jsonl",
+    "native_manifest_sha256": "e013532104c209e3c8f6906bb3c9daa3c46c2d6fb2e9fed82a65f4d2699a42c4",
+    "native_snapshot": "benchmarks/v0.1/native_real_7t5w",
+    "peak_rule": "common_gain_to_maximum_0.99_only_if_needed_preserving_component_snr",
+    "sample_rate": 16000,
+    "seed": 42,
+    "snr_db": [
+      30,
+      20,
+      10,
+      5,
+      0,
+      -5,
+      -10
+    ],
+    "uncertainty": "descriptive_stratified_session_bootstrap_10000_seed42"
+  },
+  "corrupted_observation_count": 17790,
+  "created_at_utc": "2026-09-20T21:53:14.296961+00:00",
+  "dataset_version": "e013532104c209e3c8f6906bb3c9daa3c46c2d6fb2e9fed82a65f4d2699a42c4",
+  "git_commit": "0d242c6d76ff036747f89576ee15d5f7399f5891",
+  "git_worktree_dirty": true,
+  "hardware": {
+    "machine": "arm64",
+    "node": "MAGI-0",
+    "processor": "arm",
+    "release": "25.6.0",
+    "system": "Darwin",
+    "version": "Darwin Kernel Version 25.6.0: Fri Jul 31 19:16:36 PDT 2026; root:xnu-12377.161.14~5/RELEASE_ARM64_T6030"
+  },
+  "input_sha256": {
+    "data/benchmark_v0_1_native_real_7t5w/real_manifest.jsonl": "e013532104c209e3c8f6906bb3c9daa3c46c2d6fb2e9fed82a65f4d2699a42c4",
+    "runs/benchmark_v0_1_native_real_7t5w/classical/classical_probe_models.pt": "ccff5821fed9be93099248959ba3d4f0cebf7db8134b869614157feb0f501bf4",
+    "runs/benchmark_v0_1_native_real_7t5w/classical/experiment.json": "4ba0949f2b44f8b87c5ac90cf45c1e056dfa5f3abf4914f02e7b75171339d6da",
+    "runs/benchmark_v0_1_native_real_7t5w/classical/metrics.json": "e98b6b820e6e33e97372fcbcbd77ccce81053eccd4a7d7c042a99fa255772fcc",
+    "runs/benchmark_v0_1_native_real_7t5w/classical/splits.json": "dae865091d61392c7a0a9a971921c8720510e9e9dcd134cd83486978b785a9cf",
+    "runs/benchmark_v0_1_native_real_7t5w/fusion/experiment.json": "c098064f930504aee79356a707b6c2dc8687b492002f8ab451a333b83f416c99",
+    "runs/benchmark_v0_1_native_real_7t5w/fusion/fusion_probe_models.pt": "a15419e08fa0cb26d06e57b448e8b9185b28ba4241ad6d4deba925a88b340bde",
+    "runs/benchmark_v0_1_native_real_7t5w/fusion/metrics.json": "56e0fea3d725ca1dd073d3c8260a28c579088f0cddaa4d20e41de298fd7007ac",
+    "runs/benchmark_v0_1_native_real_7t5w/fusion/real_classical_features.pt": "914f5ef302dd32742ad62b3bdefd6177c2ee2516e7dc297870c30e6dd61fb8e4",
+    "runs/benchmark_v0_1_native_real_7t5w/fusion/splits.json": "2a6c1a57efe4db6f134539d53ba7a7dd5009d0c59a2adb8c6527c5095f3419d6",
+    "runs/benchmark_v0_1_native_real_7t5w/panns_features.pt": "71a4bbe8c35a56f94fb366e4fbd60c766a25fd7302bf98f80531200a392d4da3",
+    "runs/benchmark_v0_1_native_real_7t5w/semantic/experiment.json": "cd045fdcf56d3e6ebbbd7105a908878f901e9fc699485f4373a035e969123f43",
+    "runs/benchmark_v0_1_native_real_7t5w/semantic/metrics.json": "7ec913dd049b1b0d41c2d9c7214097b4de4089981334fa7d6a5c275c184f6d4b",
+    "runs/benchmark_v0_1_native_real_7t5w/semantic/semantic_probe_models.pt": "8a6110054e9587fb07f627d8ba2bedbb57f7a0672d7e1ad76b30e24fe892eea2",
+    "runs/benchmark_v0_1_native_real_7t5w/semantic/splits.json": "dae865091d61392c7a0a9a971921c8720510e9e9dcd134cd83486978b785a9cf"
+  },
+  "latest_invocation_seconds": 312.5456817919912,
+  "metrics": "results.json",
+  "model_checkpoint": "runs/benchmark_v0_1_native_real_7t5w/fusion/fusion_probe_models.pt",
+  "native_reproduction": "all 35 folds, all three models, exact window recalls",
+  "numpy_version": "2.4.6",
+  "protected_source_overlap": [],
+  "random_seed": 42,
+  "results_sha256": "1fd56ed262d9d0d5137e6fff882a8e5810c5cff0e3b4ed81c48e4c8325059593",
+  "status": "complete",
+  "sum_condition_runtime_seconds": 309.1752839591354,
+  "test_domain": "real -> held-out real with controlled added recorded background or simulated response",
+  "threads": 4,
+  "torch_version": "2.13.0",
+  "train_test_split": "runs/benchmark_v0_1_native_real_7t5w/fusion/splits.json"
+}

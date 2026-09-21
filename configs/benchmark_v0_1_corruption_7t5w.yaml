@@ -1,0 +1,33 @@
+benchmark_id: abvid-benchmark-v0.1-controlled-corruption-7t5w-v1
+seed: 42
+native_snapshot: benchmarks/v0.1/native_real_7t5w
+native_manifest: data/benchmark_v0_1_native_real_7t5w/real_manifest.jsonl
+native_manifest_sha256: e013532104c209e3c8f6906bb3c9daa3c46c2d6fb2e9fed82a65f4d2699a42c4
+sample_rate: 16000
+channel: 0
+snr_db: [30, 20, 10, 5, 0, -5, -10]
+backgrounds:
+  - path: data/backgrounds/rain/internet_archive_aporee_52865_60398.wav
+    source_id: background-rain-heavy-aporee
+    role: environmental_noise
+  - path: data/backgrounds/rain/commons_caesar_sundbyberg_rain/rain_and_thunder.wav
+    source_id: background-rain-thunder
+    role: environmental_noise
+  - path: data/backgrounds/animals_insects/commons_stephan_pdsounds_104/birdsong_sunny_day.wav
+    source_id: background-birdsong-sunny-day
+    role: environmental_noise
+  - path: data/backgrounds/road_traffic/internet_archive_aporee_17410_20263/keelung_traffic.wav
+    source_id: background-road-traffic-keelung-aporee
+    role: competing_vehicle_interference
+microphone_responses:
+  - id: simulated_low_frequency_attenuation
+    frequencies_hz: [0, 100, 500, 2000, 8000]
+    gains_db: [-18, -12, -3, 0, 0]
+  - id: simulated_high_frequency_rolloff
+    frequencies_hz: [0, 500, 2000, 4000, 8000]
+    gains_db: [0, 0, -3, -12, -24]
+background_crop_rule: sha256(seed, source sample ID, background source ID), shared across SNR levels
+background_training_source_ids: []
+model_rule: reuse_each_native_outer_fold_without_refitting_or_threshold_tuning
+peak_rule: common_gain_to_maximum_0.99_only_if_needed_preserving_component_snr
+uncertainty: descriptive_stratified_session_bootstrap_10000_seed42

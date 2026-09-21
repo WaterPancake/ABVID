@@ -1,0 +1,26 @@
+version: embedding_context_v1
+domain: real_to_real_native_unseen_session
+seed: 42
+native_manifest: data/benchmark_v0_1_native_real_7t5w/real_manifest.jsonl
+native_manifest_sha256: e013532104c209e3c8f6906bb3c9daa3c46c2d6fb2e9fed82a65f4d2699a42c4
+checkpoint: .artifacts/models/panns/Cnn14_mAP=0.431.pth
+sample_rate: 16000
+channel: 0
+bandwidth_ablation_sample_rate: 32000
+c_values: [0.001, 0.01, 0.1, 1.0, 10.0]
+threshold: 0.5
+primary_head: fixed_regularization_probability_ensemble
+secondary_head: inner_selected_regularization
+representations: [semantic35, embedding2048]
+context_sets:
+  - max_seconds: 4
+    durations: [2, 4]
+    expected_sessions: {tracked: 7, wheeled: 5}
+  - max_seconds: 8
+    durations: [2, 4, 8]
+    expected_sessions: {tracked: 6, wheeled: 5}
+matching: native_window_center_within_single_reviewed_condition_interval
+bootstrap_repetitions: 10000
+batch_size: 8
+torch_threads: 4
+blas_threads: 1

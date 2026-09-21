@@ -100,7 +100,7 @@ def test_pdsounds_car_is_admitted_after_exact_ingest_and_human_review() -> None:
     assert car.recording_session == "pdsounds_194_stephan_car_start_drive_2007_04_26"
     assert car.expected_license == "Public domain"
     assert car.status == "approved"
-    assert car.admitted_to_corpus is True
+    assert car.admitted_to_corpus is False
     assert car.review_reason is None
     assert [
         (segment.operating_condition, segment.start_seconds, segment.end_seconds)
@@ -122,7 +122,7 @@ def test_sherman_locked_candidate_has_reviewed_approach_segment() -> None:
     )
 
     assert sherman.status == "approved"
-    assert sherman.admitted_to_corpus is True
+    assert sherman.admitted_to_corpus is False
     assert sherman.provider == "wikimedia_commons"
     assert sherman.expected_license == "CC BY-SA 3.0"
     assert sherman.vehicle_class == "tracked"
@@ -141,14 +141,115 @@ def test_human_audio_review_updates_target_segments() -> None:
     amx30 = by_id["candidate-target-tracked-retromobile-amx30-2015"]
     stug = by_id["target-tracked-stug-iiig-lappeenranta"]
     romanian = by_id["target-tracked-tr85m1-tank-range"]
+    t72_bmp3 = by_id["candidate-target-tracked-t72-bmp3-102nd-march-2022"]
+    bradley_abrams = by_id[
+        "candidate-target-tracked-bradley-nato-muddy-maneuver-2025"
+    ]
+    bmp1 = by_id["candidate-target-tracked-bmp1-trident-juncture-moveout-2018"]
 
-    assert amx30.condition_segments[0].start_seconds == 9.0
+    assert [
+        (segment.operating_condition, segment.start_seconds, segment.end_seconds)
+        for segment in amx30.condition_segments
+    ] == [
+        ("idle", 41.0, 49.0),
+        ("accelerating", 50.0, 65.0),
+        ("idle", 66.0, 95.0),
+        ("steady_speed", 95.0, 115.0),
+        ("decelerating", 116.0, 120.0),
+        ("steady_speed", 120.0, 131.0),
+        ("steady_speed", 131.0, 167.0),
+    ]
     assert amx30.admitted_to_corpus is True
-    assert stug.condition_segments[0].start_seconds == 15.0
+    assert [
+        (segment.operating_condition, segment.start_seconds, segment.end_seconds)
+        for segment in stug.condition_segments
+    ] == [
+        ("steady_speed", 14.0, 21.0),
+        ("decelerating", 22.0, 25.0),
+    ]
     assert stug.admitted_to_corpus is True
     assert romanian.condition_segments == ()
     assert romanian.admitted_to_corpus is False
     assert "No interval is approved for corpus use" in romanian.notes
+    assert [
+        (segment.operating_condition, segment.start_seconds, segment.end_seconds)
+        for segment in t72_bmp3.condition_segments
+    ] == [
+        ("idle", 36.0, 45.0),
+        ("steady_speed", 46.0, 54.0),
+        ("steady_speed", 55.0, 67.0),
+        ("steady_speed", 81.0, 97.0),
+        ("steady_speed", 98.0, 121.0),
+        ("steady_speed", 122.0, 129.0),
+    ]
+    assert t72_bmp3.admitted_to_corpus is True
+    assert bradley_abrams.vehicle_model == "M2 Bradley and M1 Abrams"
+    assert [
+        (segment.operating_condition, segment.start_seconds, segment.end_seconds)
+        for segment in bradley_abrams.condition_segments
+    ] == [
+        ("steady_speed", 0.0, 41.0),
+        ("steady_speed", 112.0, 152.0),
+        ("accelerating", 153.0, 157.0),
+        ("steady_speed", 158.0, 165.0),
+        ("steady_speed", 218.0, 224.0),
+        ("steady_speed", 225.0, 233.0),
+    ]
+    assert bradley_abrams.admitted_to_corpus is True
+    assert bmp1.condition_segments == ()
+    assert bmp1.admitted_to_corpus is False
+    assert "rejected the complete recording" in bmp1.notes
+
+
+def test_reviewed_hmmwv_and_stryker_are_admitted() -> None:
+    _, sources = load_catalog(CATALOG)
+    by_id = {source.id: source for source in sources}
+
+    hmmwv = by_id["candidate-target-wheeled-hmmwv-m1151-training-2014"]
+    assert hmmwv.vehicle_class == "wheeled"
+    assert hmmwv.vehicle_model == "M1151 Up-Armored HMMWV"
+    assert hmmwv.recording_session == "dvids_m1151_driver_training_jbmdl_2014_04_03"
+    assert hmmwv.expected_license == "Public domain"
+    assert hmmwv.status == "approved"
+    assert hmmwv.admitted_to_corpus is True
+    assert hmmwv.review_reason is None
+    assert [
+        (segment.operating_condition, segment.start_seconds, segment.end_seconds)
+        for segment in hmmwv.condition_segments
+    ] == [
+        ("idle", 15.0, 36.0),
+        ("steady_speed", 37.0, 47.0),
+        ("steady_speed", 50.0, 81.0),
+        ("accelerating", 130.0, 137.0),
+        ("accelerating", 147.0, 150.0),
+        ("steady_speed", 160.0, 167.0),
+        ("accelerating", 170.0, 172.0),
+        ("idle", 250.0, 255.0),
+    ]
+
+    stryker = by_id["candidate-target-wheeled-m1126-stryker-convoy-pinon-2024"]
+    assert stryker.vehicle_class == "wheeled"
+    assert stryker.vehicle_model == "M1126 Stryker Infantry Carrier Vehicle"
+    assert stryker.recording_session == "dvids_m1126_pinon_canyon_convoy_2024_09_04"
+    assert stryker.expected_license == "Public domain"
+    assert stryker.status == "approved"
+    assert stryker.admitted_to_corpus is True
+    assert stryker.review_reason is None
+    assert [
+        (segment.operating_condition, segment.start_seconds, segment.end_seconds)
+        for segment in stryker.condition_segments
+    ] == [
+        ("unknown", 5.0, 16.0),
+        ("idle", 17.0, 35.0),
+        ("steady_speed", 36.0, 58.0),
+        ("accelerating", 62.0, 70.0),
+        ("steady_speed", 72.0, 93.0),
+        ("steady_speed", 105.0, 110.0),
+        ("accelerating", 153.0, 161.0),
+        ("idle", 177.0, 189.0),
+        ("steady_speed", 195.0, 233.0),
+    ]
+    assert "Multiple M1126 Strykers appear together in convoy" in stryker.notes
 
 
 def test_catalog_license_url_fills_missing_provider_metadata(

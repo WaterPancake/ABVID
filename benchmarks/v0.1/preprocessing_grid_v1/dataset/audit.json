@@ -1,0 +1,76 @@
+{
+  "archived_startup_seconds": 41.5,
+  "audit": {
+    "blocking_reasons": [],
+    "class_counts": {
+      "tracked": 486,
+      "wheeled": 299
+    },
+    "content_review_complete": true,
+    "full_protocol_ready": true,
+    "minimum_sessions_per_class": 5,
+    "missing_provenance_source_ids": [],
+    "observation_count": 785,
+    "provenance_complete": true,
+    "real_corpus_version": 1,
+    "recording_session_counts": {
+      "tracked": 7,
+      "wheeled": 5
+    },
+    "recording_sessions_by_class": {
+      "tracked": [
+        "commons_lappeenranta_flag_day_reenactment_2014",
+        "commons_milru_102nd_march_training_ground_2022_01_26",
+        "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02",
+        "commons_retromobile_amx30_demo_2015",
+        "dvids_bright_star_abrams_mohamed_naguib_2017",
+        "dvids_nato_bradley_bemowo_livefire_2025",
+        "us_army_armor_cavalry_collection_tankodrome_2023"
+      ],
+      "wheeled": [
+        "commons_goodwood_festival_of_speed_2009",
+        "commons_soundsofchanges_private_collection",
+        "dvids_m1126_pinon_canyon_convoy_2024_09_04",
+        "dvids_m1151_driver_training_jbmdl_2014_04_03",
+        "freesound_lmartins_maserati_granturismo_2019"
+      ]
+    },
+    "session_split_ready": true,
+    "synthetic_to_real_smoke_ready": true,
+    "unreviewed_source_ids": []
+  },
+  "manifest_sha256": "c705cc95ef506cbd0ad4d504e53a5cc8fcae71baca63355d9b6b54c24ba81359",
+  "protected_overlap": [],
+  "sessions": {
+    "tracked": 7,
+    "wheeled": 5
+  },
+  "startup_overlap": [],
+  "windows": 785,
+  "windows_by_class": {
+    "tracked": 486,
+    "wheeled": 299
+  },
+  "windows_by_condition": {
+    "accelerating": 74,
+    "decelerating": 12,
+    "idle": 130,
+    "mixed": 61,
+    "steady_speed": 498,
+    "unknown": 10
+  },
+  "windows_by_session": {
+    "commons_goodwood_festival_of_speed_2009": 7,
+    "commons_lappeenranta_flag_day_reenactment_2014": 8,
+    "commons_milru_102nd_march_training_ground_2022_01_26": 69,
+    "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02": 60,
+    "commons_retromobile_amx30_demo_2015": 116,
+    "commons_soundsofchanges_private_collection": 21,
+    "dvids_bright_star_abrams_mohamed_naguib_2017": 46,
+    "dvids_m1126_pinon_canyon_convoy_2024_09_04": 134,
+    "dvids_m1151_driver_training_jbmdl_2014_04_03": 78,
+    "dvids_nato_bradley_bemowo_livefire_2025": 100,
+    "freesound_lmartins_maserati_granturismo_2019": 59,
+    "us_army_armor_cavalry_collection_tankodrome_2023": 87
+  }
+}

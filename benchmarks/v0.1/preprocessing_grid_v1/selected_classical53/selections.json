@@ -1,0 +1,212 @@
+[
+  {
+    "fold_id": "8b13041dbe8743b4",
+    "inner_score": 0.37400682468276003,
+    "pipeline": "dc0_hp30_rmsoff",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "035a749aa828e11b",
+    "inner_score": 0.3925133869672289,
+    "pipeline": "dc0_hp0_rmsoff",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "46b747eb68aaa95a",
+    "inner_score": 0.650078306131593,
+    "pipeline": "dc1_hp30_rms-20",
+    "regularization_c": 10.0
+  },
+  {
+    "fold_id": "ce3d66abed556ca3",
+    "inner_score": 0.5517838550962614,
+    "pipeline": "dc0_hp30_rms-20",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "9573cf760552fbc0",
+    "inner_score": 0.5830672604829836,
+    "pipeline": "dc0_hp30_rmsoff",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "8e70a328e68a9b3c",
+    "inner_score": 0.47598561093977876,
+    "pipeline": "dc1_hp0_rms-20",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "ce7f40c987bff854",
+    "inner_score": 0.49420205794427485,
+    "pipeline": "dc0_hp80_rmsoff",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "99c44e240bfe35d7",
+    "inner_score": 0.7556216500072432,
+    "pipeline": "dc0_hp80_rms-20",
+    "regularization_c": 0.1
+  },
+  {
+    "fold_id": "4abc8622219dbb40",
+    "inner_score": 0.6534552954954648,
+    "pipeline": "dc1_hp0_rms-20",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "24e04430a0dd9b11",
+    "inner_score": 0.6610447150457766,
+    "pipeline": "dc0_hp80_rmsoff",
+    "regularization_c": 0.1
+  },
+  {
+    "fold_id": "4d24027431f8e587",
+    "inner_score": 0.40442953394141046,
+    "pipeline": "dc0_hp80_rmsoff",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "92c22ce26cf041bc",
+    "inner_score": 0.4383018797840377,
+    "pipeline": "dc0_hp30_rmsoff",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "2805f8609fce6fd9",
+    "inner_score": 0.6380857443612428,
+    "pipeline": "dc0_hp30_rms-20",
+    "regularization_c": 10.0
+  },
+  {
+    "fold_id": "04ac000b8a0f49de",
+    "inner_score": 0.5333084350681802,
+    "pipeline": "dc0_hp80_rms-20",
+    "regularization_c": 0.1
+  },
+  {
+    "fold_id": "6fa02e997dce5380",
+    "inner_score": 0.6451799659871557,
+    "pipeline": "dc0_hp30_rmsoff",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "41a6ef178c5290c7",
+    "inner_score": 0.37320803385142487,
+    "pipeline": "dc0_hp80_rmsoff",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "e65ae2a7e142b811",
+    "inner_score": 0.3770893811166774,
+    "pipeline": "dc0_hp30_rmsoff",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "0dabee7be27ad99b",
+    "inner_score": 0.614358172556253,
+    "pipeline": "dc0_hp30_rms-20",
+    "regularization_c": 0.1
+  },
+  {
+    "fold_id": "5926b113639fcacd",
+    "inner_score": 0.5272272695608485,
+    "pipeline": "dc0_hp30_rms-20",
+    "regularization_c": 0.001
+  },
+  {
+    "fold_id": "d11d9203faecf96f",
+    "inner_score": 0.5595359698437917,
+    "pipeline": "dc0_hp30_rmsoff",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "d3ca895042c1df56",
+    "inner_score": 0.3646794847725877,
+    "pipeline": "dc0_hp80_rmsoff",
+    "regularization_c": 0.001
+  },
+  {
+    "fold_id": "dbfb79834b9f3510",
+    "inner_score": 0.3771346311924977,
+    "pipeline": "dc0_hp0_rmsoff",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "7994a1c9f927f930",
+    "inner_score": 0.6496064605157066,
+    "pipeline": "dc1_hp30_rms-20",
+    "regularization_c": 10.0
+  },
+  {
+    "fold_id": "ed7eefbbca4860c8",
+    "inner_score": 0.5007547565502962,
+    "pipeline": "dc0_hp80_rms-20",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "64f26469b0dc8ea0",
+    "inner_score": 0.5478086063919546,
+    "pipeline": "dc0_hp30_rmsoff",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "ad3c3b1fd58056d4",
+    "inner_score": 0.40236453043391773,
+    "pipeline": "dc0_hp80_rmsoff",
+    "regularization_c": 0.001
+  },
+  {
+    "fold_id": "4db86c60bfa642b9",
+    "inner_score": 0.41182158648272976,
+    "pipeline": "dc0_hp0_rmsoff",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "13abf9db76a2a589",
+    "inner_score": 0.6723072425438271,
+    "pipeline": "dc0_hp30_rms-20",
+    "regularization_c": 10.0
+  },
+  {
+    "fold_id": "26ac417b7e72e4e3",
+    "inner_score": 0.5239218049214915,
+    "pipeline": "dc0_hp30_rms-26",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "ec9fd0f347f95539",
+    "inner_score": 0.5865125684724747,
+    "pipeline": "dc0_hp50_rmsoff",
+    "regularization_c": 0.1
+  },
+  {
+    "fold_id": "753a03d116bb49bc",
+    "inner_score": 0.3989540695271628,
+    "pipeline": "dc0_hp80_rmsoff",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "fe8ec5cf4b990d90",
+    "inner_score": 0.4153738309334233,
+    "pipeline": "dc0_hp0_rms-20",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "cbe7718063929a14",
+    "inner_score": 0.6715084302912026,
+    "pipeline": "dc0_hp80_rms-20",
+    "regularization_c": 1.0
+  },
+  {
+    "fold_id": "a8d848c4dd146115",
+    "inner_score": 0.5470661393272802,
+    "pipeline": "dc0_hp50_rms-20",
+    "regularization_c": 0.01
+  },
+  {
+    "fold_id": "7b8eabc29adfcfbb",
+    "inner_score": 0.5873255465458594,
+    "pipeline": "dc0_hp30_rms-20",
+    "regularization_c": 0.01
+  }
+]

@@ -1,0 +1,28 @@
+version: preprocessing_grid_v1
+domain: real_to_real_native_unseen_session
+seed: 42
+dataset:
+  sample_rate: 16000
+  window_seconds: 2.0
+  hop_seconds: 1.0
+  channel: 0
+  max_windows_per_session: null
+  minimum_rms: 0.0
+excluded_operating_conditions: [startup]
+grid:
+  remove_dc: [false, true]
+  highpass_hz: [0, 30, 50, 80]
+  rms_dbfs: [null, -26, -20]
+filter: second_order_butterworth_forward_backward_window_local
+gain_limit_db: 12
+peak_limit: 0.99
+silence_rms: 0.00000001
+c_values: [0.001, 0.01, 0.1, 1.0, 10.0]
+threshold: 0.5
+primary_representation: semantic35
+secondary_representation: classical53
+selection: joint_inner_preprocessing_and_regularization
+checkpoint: .artifacts/models/panns/Cnn14_mAP=0.431.pth
+torch_threads: 4
+blas_threads: 1
+batch_size: 8

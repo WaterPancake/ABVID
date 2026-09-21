@@ -1,0 +1,1083 @@
+# Human-reviewed source catalog for the first vehicle-audio collection.
+# The collector resolves provider metadata at download time and refuses licenses
+# outside collection_policy.allowed_licenses.
+version: 2
+collection_policy:
+  allowed_licenses:
+    - CC0
+    - Public domain
+    - CC BY 3.0
+    - CC BY 4.0
+    - CC BY-SA 3.0
+    - CC BY-SA 4.0
+  provider: wikimedia_commons
+  providers:
+    - wikimedia_commons
+    - internet_archive
+    - direct
+  review_note: >-
+    These licenses permit redistribution of the source audio, subject to the
+    listed attribution/share-alike obligations. Verify project redistribution
+    terms before releasing a derived corpus.
+sources:
+  - id: target-wheeled-abarth-205-goodwood
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Abarth 205 Monza (1950).ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Abarth_205_Monza_(1950).ogg"
+    vehicle_class: wheeled
+    vehicle_model: "Abarth 205 Monza"
+    recording_session: "commons_goodwood_festival_of_speed_2009"
+    operating_condition: accelerating
+    condition_segments:
+      - operating_condition: accelerating
+        start_seconds: 0.0
+        end_seconds: 8.8
+        notes: >-
+          Human auditory review on 2026-08-24 confirmed clean coming-and-going
+          vehicle audio through 8.8 seconds; the quieter trailing ambience is
+          excluded. The source description supports the accelerating label.
+    expected_license: "CC BY-SA 3.0"
+    output_path: "targets/wheeled/commons_goodwood_festival_of_speed_2009/abarth_205_monza.wav"
+    attribution: "Edvvc, Abarth 205 Monza (1950), Wikimedia Commons, CC BY-SA 3.0"
+    notes: "15-second recording of a restored 1.1 L four-cylinder car pulling away."
+    status: approved
+    admitted_to_corpus: true
+
+  - id: target-wheeled-ford-model-t-start
+    kind: target
+    provider: wikimedia_commons
+    file_title: 'File:Ford Model T "Tin Lizzy" - Starting the Engine.webm'
+    source_page: 'https://commons.wikimedia.org/wiki/File:Ford_Model_T_%22Tin_Lizzy%22_-_Starting_the_Engine.webm'
+    vehicle_class: wheeled
+    vehicle_model: "Ford Model T (1926)"
+    recording_session: "commons_soundsofchanges_private_collection"
+    operating_condition: mixed
+    condition_segments:
+      - operating_condition: startup
+        start_seconds: 6.0
+        end_seconds: 14.0
+        notes: >-
+          Human audiovisual review on 2026-08-28 confirmed the engine-start
+          interval from 00:06 through 00:14.
+      - operating_condition: idle
+        start_seconds: 15.0
+        end_seconds: 37.8
+        notes: >-
+          Human audiovisual review on 2026-08-28 confirmed idle engine audio from
+          00:15 through the end of the collected recording.
+    expected_license: "CC BY 3.0"
+    output_path: "targets/wheeled/commons_soundsofchanges_private_collection/ford_model_t_starting.wav"
+    attribution: "Kathinka Engels, Ford Model T Tin Lizzy - Starting the Engine, Wikimedia Commons, CC BY 3.0"
+    notes: "Video source; collector extracts its first audio stream with ffmpeg."
+    status: approved
+    admitted_to_corpus: true
+
+  - id: target-wheeled-perseverance-rover-sol-16
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Sounds of Perseverance Mars rover driving.oga"
+    source_page: "https://commons.wikimedia.org/wiki/File:Sounds_of_Perseverance_Mars_rover_driving.oga"
+    vehicle_class: wheeled
+    vehicle_model: "Perseverance Mars rover"
+    recording_session: "nasa_perseverance_sol_16_2021"
+    operating_condition: steady_speed
+    expected_license: "Public domain"
+    output_path: "targets/wheeled/nasa_perseverance_sol_16_2021/perseverance_rover_driving.wav"
+    attribution: "NASA/JPL-Caltech, Sounds of Perseverance Mars rover driving, Wikimedia Commons"
+    notes: "NASA rover wheel/suspension recording; technically a wheeled, not tracked, vehicle."
+    status: approved
+
+  - id: target-tracked-tr85m1-tank-range
+    kind: target
+    provider: direct
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/1406/DOD_101745211/DOD_101745211-720x406-800k.mp4"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    source_page: "https://www.dvidshub.net/video/343966/romanian-tanks"
+    vehicle_class: tracked
+    vehicle_model: "TR-85M1"
+    recording_session: "dvids_romanian_tank_range_2014"
+    operating_condition: mixed
+    expected_license: "Public domain"
+    output_path: "targets/tracked/dvids_romanian_tank_range_2014/tr85m1_tank_range.wav"
+    attribution: "Ellis McDaniels, TR-85M1 - Romanian Tanks, Wikimedia Commons"
+    notes: >-
+      Human auditory review on 2026-08-24 found near-silence during the first nine
+      seconds, background speech, small-arms and main-gun-like reports from about
+      70-119 seconds, and foreground speech after 120 seconds. The prior 75-94 second
+      segment is invalidated. No interval is approved for corpus use.
+    status: approved
+    admitted_to_corpus: false
+
+  - id: background-rain-effib
+    kind: background
+    provider: wikimedia_commons
+    file_title: "File:Sound of rain.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Sound_of_rain.ogg"
+    category: rain
+    expected_license: "CC BY-SA 3.0"
+    output_path: "backgrounds/rain/commons_effib_sound_of_rain.wav"
+    attribution: "Effib, Sound of rain, Wikimedia Commons, CC BY-SA 3.0"
+    notes: "26-second field recording."
+    status: approved
+
+  - id: background-forest-nille
+    kind: background
+    provider: wikimedia_commons
+    file_title: "File:20090610 0 ambience.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:20090610_0_ambience.ogg"
+    category: generic environmental ambience
+    expected_license: "Public domain"
+    output_path: "backgrounds/generic_environmental_ambience/commons_nille_forest_ambience.wav"
+    attribution: "nille, 20090610 0 ambience, Wikimedia Commons (public domain)"
+    notes: "Forest ambience with birds, insects, and wind; originally from PDSounds record 707."
+    status: approved
+
+  - id: background-rain-heavy-aporee
+    kind: background
+    provider: internet_archive
+    archive_identifier: aporee_52865_60398
+    archive_file: 27121GarageRainBirds.mp3
+    source_page: "https://archive.org/details/aporee_52865_60398"
+    category: rain
+    expected_license: "Public domain"
+    output_path: "backgrounds/rain/internet_archive_aporee_52865_60398.wav"
+    attribution: "david.j.pitt, Heavy Rain, Malvern Wells, Internet Archive (public domain mark)"
+    notes: "Internet Archive item; this provider is cataloged for the next collector revision."
+    status: approved
+    review_reason: "The collector rechecks the item-level public-domain mark at download time."
+
+  - id: background-road-traffic-keelung-aporee
+    kind: background
+    provider: internet_archive
+    archive_identifier: aporee_17410_20263
+    archive_file: Soundmap2012062456.mp3
+    source_page: "https://archive.org/details/aporee_17410_20263"
+    category: road traffic
+    expected_license: "CC BY 3.0"
+    output_path: "backgrounds/road_traffic/internet_archive_aporee_17410_20263/keelung_traffic.wav"
+    attribution: "Wu Tsan-Cheng, Keelung, Taiwan - Traffic noise, Internet Archive, CC BY 3.0"
+    notes: "Radio aporee soundmap field recording from Keelung City, Taiwan."
+    status: approved
+
+  - id: target-tracked-tank-78rpm
+    kind: target
+    provider: internet_archive
+    archive_identifier: "78_1-tank-stars-and-idles-shifts-gears-and-off-2-tank-approaching-and-stopping_gbia0410053a"
+    source_page: "https://archive.org/details/78_1-tank-stars-and-idles-shifts-gears-and-off-2-tank-approaching-and-stopping_gbia0410053a"
+    vehicle_class: tracked
+    vehicle_model: null
+    recording_session: "internet_archive_78rpm_gbia0410053a"
+    operating_condition: mixed
+    expected_license: null
+    output_path: "targets/tracked/internet_archive_78rpm_gbia0410053a/tank_78rpm.wav"
+    attribution: "Internet Archive, George Blood 78rpm digitization"
+    notes: "Historically relevant tank recording, but not automatically collectible until item rights are explicit."
+    status: review_required
+    review_reason: "Internet Archive metadata does not expose a clear reusable license. Do not download for redistribution without legal review."
+
+  # Approved during the first OpenClaw discovery review on 2026-08-18.
+  - id: target-tracked-mpf-firepower
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:U.S. Army Armor & Cavalry Collection Mobile Protected Firepower.webm"
+    source_page: "https://commons.wikimedia.org/wiki/File:U.S._Army_Armor_%26_Cavalry_Collection_Mobile_Protected_Firepower.webm"
+    vehicle_class: tracked
+    vehicle_model: "Mobile Protected Firepower testbed"
+    recording_session: "us_army_armor_cavalry_collection_tankodrome_2023"
+    operating_condition: steady_speed
+    condition_segments:
+      - operating_condition: steady_speed
+        start_seconds: 0.0
+        end_seconds: 88.0
+        notes: >-
+          Human audiovisual review on 2026-08-28 classified 00:00-01:28 as
+          steady-speed vehicle movement. The remainder is excluded.
+    expected_license: "Public domain"
+    output_path: "targets/tracked/us_army_armor_cavalry_collection_tankodrome_2023/mpf_testbed.wav"
+    attribution: "U.S. Army Armor & Cavalry Collection, Mobile Protected Firepower, Wikimedia Commons (public domain)"
+    notes: "Official U.S. Army Armor & Cavalry Collection video; collector extracts the first audio stream."
+    status: approved
+    admitted_to_corpus: true
+
+  - id: target-tracked-stug-iiig-lappeenranta
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Taistelunäytös Lippujuhlan päivä 2014 16 Stug IIIG.webm"
+    source_page: "https://commons.wikimedia.org/wiki/File:Taistelun%C3%A4yt%C3%B6s_Lippujuhlan_p%C3%A4iv%C3%A4_2014_16_Stug_IIIG.webm"
+    vehicle_class: tracked
+    vehicle_model: "Sturmgeschütz III Ausf. G"
+    recording_session: "commons_lappeenranta_flag_day_reenactment_2014"
+    operating_condition: mixed
+    condition_segments:
+      - operating_condition: steady_speed
+        start_seconds: 14.0
+        end_seconds: 21.0
+        notes: >-
+          Human audiovisual review on 2026-08-28 classified 00:14-00:21 as
+          steady-speed StuG III movement after rejecting foreground speech.
+      - operating_condition: decelerating
+        start_seconds: 22.0
+        end_seconds: 25.0
+        notes: >-
+          Human audiovisual review on 2026-08-28 classified 00:22-00:25 as
+          decelerating StuG III movement. Audio through 00:13 is rejected for
+          foreground speech; unlisted boundary gaps remain excluded.
+    expected_license: "Public domain"
+    output_path: "targets/tracked/commons_lappeenranta_flag_day_reenactment_2014/stug_iiig_arrival.wav"
+    attribution: "MKFI, Taistelunäytös Lippujuhlan päivä 2014 16 Stug IIIG, Wikimedia Commons (public domain)"
+    notes: "Short tracked-vehicle arrival recording; collector extracts the first audio stream."
+    status: approved
+    admitted_to_corpus: true
+
+  - id: background-road-traffic-circulation-carrefour
+    kind: background
+    provider: wikimedia_commons
+    file_title: "File:Circulation carrefour.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Circulation_carrefour.ogg"
+    category: road traffic
+    expected_license: "CC BY-SA 3.0"
+    output_path: "backgrounds/road_traffic/commons_toulouse_crossroad_2007_08/circulation_carrefour.wav"
+    attribution: "Luk, Circulation carrefour, Wikimedia Commons, CC BY-SA 3.0"
+    notes: "Traffic field recording at a Toulouse crossroad; retain attribution/share-alike obligations."
+    status: approved
+
+  - id: background-wind-fisterra
+    kind: background
+    provider: wikimedia_commons
+    file_title: "File:Vento fisterra.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Vento_fisterra.ogg"
+    category: wind
+    expected_license: "Public domain"
+    output_path: "backgrounds/wind/escoitar_fisterra_2006/vento_fisterra.wav"
+    attribution: "Escoitar.org, Vento fisterra, Wikimedia Commons (public domain)"
+    notes: "Field recording of wind at Fisterra, Galicia."
+    status: approved
+
+  - id: background-machinery-excavator-gravel
+    kind: background
+    provider: wikimedia_commons
+    file_title: "File:A small orange excavator shoveling gravel.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:A_small_orange_excavator_shoveling_gravel.ogg"
+    category: machinery
+    expected_license: "CC BY-SA 3.0"
+    output_path: "backgrounds/machinery/commons_excavator_gravel_2007_10_20/excavator_gravel.wav"
+    attribution: "T. Voekler, A small orange excavator shoveling gravel, Wikimedia Commons, CC BY-SA 3.0"
+    notes: "Machinery background, not a tracked target label."
+    status: approved
+
+  - id: background-construction-site
+    kind: background
+    provider: wikimedia_commons
+    file_title: "File:Construction.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Construction.ogg"
+    category: construction
+    expected_license: "Public domain"
+    output_path: "backgrounds/construction/commons_dsw4_construction_site/construction.wav"
+    attribution: "Dsw4, Construction, Wikimedia Commons (public domain)"
+    notes: "Shotgun-microphone field recording of a construction site."
+    status: approved
+
+  - id: background-rain-thunder
+    kind: background
+    provider: wikimedia_commons
+    file_title: "File:Rain and thunder.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Rain_and_thunder.ogg"
+    category: rain
+    expected_license: "Public domain"
+    output_path: "backgrounds/rain/commons_caesar_sundbyberg_rain/rain_and_thunder.wav"
+    attribution: "User:Caesar, Rain and thunder, Wikimedia Commons (public domain)"
+    notes: "Rain and thunder recorded in Sundbyberg, Stockholm, Sweden."
+    status: approved
+
+  - id: background-birdsong-sunny-day
+    kind: background
+    provider: wikimedia_commons
+    file_title: "File:Birdsong mild sunny day.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Birdsong_mild_sunny_day.ogg"
+    category: animals/insects
+    expected_license: "Public domain"
+    output_path: "backgrounds/animals_insects/commons_stephan_pdsounds_104/birdsong_sunny_day.wav"
+    attribution: "stephan, Birdsong mild sunny day, Wikimedia Commons (public domain)"
+    notes: "37-second PDSounds field recording of birds and mild breeze."
+    status: approved
+
+  # Condition-focused vehicle additions reviewed on 2026-08-18.
+  - id: target-wheeled-vanwall-1957-goodwood-2010
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Vanwall (1957).ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Vanwall_(1957).ogg"
+    vehicle_class: wheeled
+    vehicle_model: "Vanwall (1957)"
+    recording_session: "commons_goodwood_festival_of_speed_2010"
+    operating_condition: accelerating
+    expected_license: "CC BY-SA 3.0"
+    output_path: "targets/wheeled/commons_goodwood_festival_of_speed_2010/vanwall_1957_pulling_away.wav"
+    attribution: "Edvvc, Vanwall (1957), Wikimedia Commons, CC BY-SA 3.0"
+    notes: "Vehicle pulling away from the Goodwood hillclimb start; condition is explicitly described by the source."
+    status: approved
+
+  - id: target-wheeled-porsche-911r-goodwood-2009
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Porsche 911R (1967).ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Porsche_911R_(1967).ogg"
+    vehicle_class: wheeled
+    vehicle_model: "Porsche 911 R (1967)"
+    recording_session: "commons_goodwood_festival_of_speed_2009"
+    operating_condition: accelerating
+    expected_license: "CC BY-SA 3.0"
+    output_path: "targets/wheeled/commons_goodwood_festival_of_speed_2009/porsche_911r_pulling_away.wav"
+    attribution: "Edvvc, Porsche 911R (1967), Wikimedia Commons, CC BY-SA 3.0"
+    notes: "Vehicle pulling away from the Goodwood hillclimb start; same event session as the Abarth source."
+    status: approved
+
+  - id: target-wheeled-sauber-mercedes-c11-goodwood-2009
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Sauber-Mercedes C11 (1990).ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Sauber-Mercedes_C11_(1990).ogg"
+    vehicle_class: wheeled
+    vehicle_model: "Sauber-Mercedes C11 (1990)"
+    recording_session: "commons_goodwood_festival_of_speed_2009"
+    operating_condition: accelerating
+    expected_license: "CC BY-SA 3.0"
+    output_path: "targets/wheeled/commons_goodwood_festival_of_speed_2009/sauber_mercedes_c11_pulling_away.wav"
+    attribution: "Edvvc, Sauber-Mercedes C11 (1990), Wikimedia Commons, CC BY-SA 3.0"
+    notes: "Vehicle pulling away from the Goodwood hillclimb start; same event session as the Abarth source."
+    status: approved
+
+  - id: target-wheeled-maserati-granturismo-exhaust
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Maserati GranTurismo S Exhaust.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Maserati_GranTurismo_S_Exhaust.ogg"
+    vehicle_class: wheeled
+    vehicle_model: "Maserati GranTurismo S"
+    recording_session: "freesound_lmartins_maserati_granturismo_2019"
+    operating_condition: mixed
+    condition_segments:
+      - operating_condition: startup
+        start_seconds: 0.0
+        end_seconds: 2.5
+        notes: >-
+          Human auditory review on 2026-08-24 confirmed the engine-start transient.
+      - operating_condition: idle
+        start_seconds: 2.5
+        end_seconds: 14.5
+        notes: "Reviewed low-amplitude steady engine interval after startup."
+      - operating_condition: mixed
+        start_seconds: 15.0
+        end_seconds: 61.5
+        notes: >-
+          Human auditory review on 2026-08-24 confirmed frequent high-rev engine
+          cycles with otherwise usable audio. Labeled mixed because vehicle speed
+          and acceleration are unavailable.
+      - operating_condition: idle
+        start_seconds: 61.5
+        end_seconds: 66.0
+        notes: "Reviewed final low-amplitude engine-running interval."
+    expected_license: "CC BY 4.0"
+    output_path: "targets/wheeled/freesound_lmartins_maserati_granturismo_2019/maserati_start_rev_idle.wav"
+    attribution: "lmartins, Maserati GranTurismo S Exhaust, Freesound/Wikimedia Commons, CC BY 4.0"
+    notes: "Source describes starting, revving, and idling; time segments require listening review before condition-specific use."
+    status: approved
+    admitted_to_corpus: true
+
+  - id: target-wheeled-car-cobblestone-pass
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Car on cobblestone.ogg"
+    source_page: "https://commons.wikimedia.org/wiki/File:Car_on_cobblestone.ogg"
+    vehicle_class: wheeled
+    vehicle_model: null
+    recording_session: "pdsounds_mastermesh_car_cobblestone_2008"
+    operating_condition: steady_speed
+    expected_license: "Public domain"
+    output_path: "targets/wheeled/pdsounds_mastermesh_car_cobblestone_2008/car_passing.wav"
+    attribution: "mastermesh, Car on Cobblestone, PDSounds/Wikimedia Commons (public domain)"
+    notes: "Single car driving past on a cobblestone street."
+    status: approved
+
+  - id: target-wheeled-cars-night-stopping
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Cars Passing by at Night.webm"
+    source_page: "https://commons.wikimedia.org/wiki/File:Cars_Passing_by_at_Night.webm"
+    vehicle_class: wheeled
+    vehicle_model: null
+    recording_session: "commons_cologne_night_traffic_light_2024"
+    operating_condition: mixed
+    expected_license: "CC BY-SA 4.0"
+    output_path: "targets/wheeled/commons_cologne_night_traffic_light_2024/cars_passing_and_stopping.wav"
+    attribution: "Maximilian Schönherr, Cars Passing by at Night, Wikimedia Commons, CC BY-SA 4.0"
+    notes: "Cars pass and stop at a traffic light; time segments require audiovisual review before deceleration-specific use."
+    status: approved
+
+  - id: target-tracked-tiger131-engine-start
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Tiger Engine Start.webm"
+    source_page: "https://commons.wikimedia.org/wiki/File:Tiger_Engine_Start.webm"
+    vehicle_class: tracked
+    vehicle_model: "Tiger 131"
+    recording_session: "commons_tiger131_engine_start_2017"
+    operating_condition: startup
+    expected_license: "CC0"
+    output_path: "targets/tracked/commons_tiger131_engine_start_2017/tiger131_engine_start.wav"
+    attribution: "Unknown author, Tiger 131 Engine Start, Wikimedia Commons, CC0"
+    notes: "Stationary tracked-vehicle engine startup; inspect post-start interval for an idle segment."
+    status: review_required
+    review_reason: >-
+      The Commons file is CC0, but its author is unknown and it was imported from
+      YouTube. Require an explicit operator provenance decision before collection.
+
+  - id: target-tracked-bae-mpf-arrival
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:BAE MPF Testbed arrives at ACC.webm"
+    source_page: "https://commons.wikimedia.org/wiki/File:BAE_MPF_Testbed_arrives_at_ACC.webm"
+    vehicle_class: tracked
+    vehicle_model: "BAE Mobile Protected Firepower testbed"
+    recording_session: "us_army_armor_cavalry_collection_tankodrome_2023"
+    operating_condition: decelerating
+    expected_license: "Public domain"
+    output_path: "targets/tracked/us_army_armor_cavalry_collection_tankodrome_2023/bae_mpf_arrival.wav"
+    attribution: "U.S. Army Armor & Cavalry Collection, BAE MPF Testbed arrives at ACC, public domain"
+    notes: >-
+      Alternate platform copy of target-tracked-mpf-firepower from the same
+      2023-01-25 Tankodrome arrival. It must remain in the same recording_session
+      and does not count as an independent source session. Segment boundaries
+      require audiovisual review.
+    status: approved
+
+  # Approved by the operator for the Milestone 5 acquisition batch on 2026-08-20.
+  - id: candidate-target-tracked-retromobile-amx30-2015
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Rétromobile 2015 - Char AMX 30 - 001.ogv"
+    source_page: "https://commons.wikimedia.org/wiki/File:R%C3%A9tromobile_2015_-_Char_AMX_30_-_001.ogv"
+    vehicle_class: tracked
+    vehicle_model: "AMX 30"
+    recording_session: "commons_retromobile_amx30_demo_2015"
+    operating_condition: mixed
+    condition_segments:
+      - operating_condition: startup
+        start_seconds: 9.0
+        end_seconds: 40.0
+        notes: >-
+          Human audiovisual review on 2026-09-18 classified 00:09-00:40 as AMX-30
+          startup.
+      - operating_condition: idle
+        start_seconds: 41.0
+        end_seconds: 49.0
+        notes: >-
+          Human audiovisual review classified 00:41-00:49 as AMX-30 idle.
+      - operating_condition: accelerating
+        start_seconds: 50.0
+        end_seconds: 65.0
+        notes: >-
+          Human audiovisual review classified 00:50-01:05 as AMX-30 acceleration.
+      - operating_condition: idle
+        start_seconds: 66.0
+        end_seconds: 95.0
+        notes: >-
+          Human audiovisual review classified 01:06-01:35 as AMX-30 idle.
+      - operating_condition: steady_speed
+        start_seconds: 95.0
+        end_seconds: 115.0
+        notes: >-
+          Human audiovisual review classified 01:35-01:55 as steady-speed AMX-30
+          movement.
+      - operating_condition: decelerating
+        start_seconds: 116.0
+        end_seconds: 120.0
+        notes: >-
+          Human audiovisual review classified 01:56-02:00 as AMX-30 deceleration.
+      - operating_condition: steady_speed
+        start_seconds: 120.0
+        end_seconds: 131.0
+        notes: >-
+          Human audiovisual review classified 02:00-02:11 as steady-speed AMX-30
+          movement.
+      - operating_condition: steady_speed
+        start_seconds: 131.0
+        end_seconds: 167.0
+        notes: >-
+          Human audiovisual review on 2026-09-18 classified 02:11-02:47 as
+          steady-speed AMX-30 movement.
+    expected_license: "CC BY-SA 4.0"
+    output_path: "targets/tracked/commons_retromobile_amx30_demo_2015/amx30_demo.wav"
+    attribution: "Thesupermat, Rétromobile 2015 - Char AMX 30 - 001, Wikimedia Commons, CC BY-SA 4.0"
+    notes: >-
+      Own-work recording of an AMX-30 movement demonstration. Human audiovisual
+      review retained only the listed startup, idle, acceleration, steady-speed,
+      and deceleration intervals. The first nine seconds and final silent tail are
+      rejected; unlisted boundary gaps remain excluded.
+    status: approved
+    admitted_to_corpus: true
+
+  - id: candidate-target-tracked-t18-khabarovsk-2015
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Танк Т-18 из Уссурийска в Хабаровске 7 мая 2015.ogv"
+    source_page: "https://commons.wikimedia.org/wiki/File:%D0%A2%D0%B0%D0%BD%D0%BA_%D0%A2-18_%D0%B8%D0%B7_%D0%A3%D1%81%D1%81%D1%83%D1%80%D0%B8%D0%B9%D1%81%D0%BA%D0%B0_%D0%B2_%D0%A5%D0%B0%D0%B1%D0%B0%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B5_7_%D0%BC%D0%B0%D1%8F_2015.ogv"
+    vehicle_class: tracked
+    vehicle_model: "T-18 / MS-1"
+    recording_session: "rw_russia_t18_khabarovsk_2015"
+    operating_condition: unknown
+    expected_license: "CC BY-SA 4.0"
+    output_path: "targets/tracked/rw_russia_t18_khabarovsk_2015/t18_khabarovsk.wav"
+    attribution: "Andshel, Танк Т-18 из Уссурийска в Хабаровске 7 мая 2015, Wikimedia Commons, CC BY-SA 4.0"
+    notes: >-
+      Own-work recording of a moving T-18 / MS-1. Retain unknown operating
+      condition until vehicle-dominant time intervals and background content are
+      reviewed.
+    status: approved
+
+  # Official DVIDS alternative to the Wikimedia-only wheeled acquisition queue.
+  # Cataloged on 2026-08-22 and explicitly approved by the operator on 2026-08-23.
+  - id: candidate-target-wheeled-humvee-southern-strike-2022
+    kind: target
+    provider: direct
+    direct_url: "https://www.dvidshub.net/download/videofile/8309579"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    source_page: "https://www.dvidshub.net/video/842870/156-crg-southern-strike-2022-humvee-driving-training"
+    vehicle_class: wheeled
+    vehicle_model: "High Mobility Multipurpose Wheeled Vehicle (Humvee)"
+    recording_session: "dvids_southern_strike_humvee_driving_2022"
+    operating_condition: mixed
+    expected_license: "Public domain"
+    output_path: "targets/wheeled/dvids_southern_strike_humvee_driving_2022/humvee_driving_training.wav"
+    attribution: >-
+      Eliezer Soto, 156 CRG - Southern Strike 2022: Humvee driving training,
+      DVIDS, public domain.
+    notes: >-
+      Official 90-second DVIDS driving-training B-roll. After collection, audiovisual
+      review must identify vehicle-dominant operating-state segments before corpus use.
+    status: review_required
+    review_reason: >-
+      Operator explicitly approved one collection attempt on 2026-08-23. That attempt
+      returned HTTP 403 from the official download endpoint, so automatic retry is
+      disabled pending a reviewed access path. The DVIDS page states public domain,
+      but DVIDS usage restrictions still apply; the page also has a byline/rank
+      inconsistency. Audiovisual review remains required before corpus admission.
+
+  # Proposed by the OpenClaw curator and explicitly approved by the operator on
+  # 2026-08-23 as an independent wheeled held-out candidate.
+  - id: candidate-target-wheeled-car-start-drive-pdsounds-194
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Starting a car and driving.ogg"
+    license_url: "https://commons.wikimedia.org/wiki/Template:PD-author"
+    source_page: "https://commons.wikimedia.org/wiki/File:Starting_a_car_and_driving.ogg"
+    vehicle_class: wheeled
+    vehicle_model: null
+    recording_session: "pdsounds_194_stephan_car_start_drive_2007_04_26"
+    operating_condition: mixed
+    condition_segments:
+      - operating_condition: startup
+        start_seconds: 14.5
+        end_seconds: 17.2
+        notes: >-
+          Human auditory review on 2026-08-24 confirmed the engine-start interval.
+      - operating_condition: idle
+        start_seconds: 17.2
+        end_seconds: 20.5
+        notes: >-
+          Human auditory review on 2026-08-24 confirmed the post-start idle interval.
+      - operating_condition: mixed
+        start_seconds: 20.5
+        end_seconds: 41.5
+        notes: >-
+          Human auditory review on 2026-08-24 confirmed the vehicle-dominant driving
+          interval. Exact speed, direction, acceleration, and deceleration are not
+          inferred from amplitude alone.
+    expected_license: "Public domain"
+    output_path: "targets/wheeled/pdsounds_194_stephan_car_start_drive_2007_04_26/starting_car_and_driving.wav"
+    attribution: >-
+      stephan, Starting a car and driving, PDSounds record 194 via Wikimedia
+      Commons, public domain.
+    notes: >-
+      Forty-five-second single-subject recording covering entry, startup, reversing,
+      gear changes, and forward driving. Human auditory review confirmed no speech
+      and approved the listed operating-state boundaries. The manually downloaded
+      file exactly matched the cataloged Wikimedia SHA-1 before local normalization.
+      This source was consumed as the wheeled half of the completed locked-pair
+      evaluation. Exclude it from all future training, validation, model selection,
+      and exploratory evaluation.
+    status: approved
+    admitted_to_corpus: false
+
+  # Proposed by the OpenClaw curator and explicitly approved by the operator on
+  # 2026-08-24 as the tracked candidate for the fresh locked evaluation pair.
+  - id: candidate-target-tracked-sherman-passby-gvn-43670951
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:Sherman tank, rijden - SoundCloud - Beeld en Geluid.ogg"
+    license_url: "https://creativecommons.org/licenses/by-sa/3.0"
+    source_page: "https://commons.wikimedia.org/wiki/File:Sherman_tank,_rijden_-_SoundCloud_-_Beeld_en_Geluid.ogg"
+    vehicle_class: tracked
+    vehicle_model: "M4 Sherman (variant unspecified)"
+    recording_session: "beeldengeluid_gvn_sherman_passby_43670951"
+    operating_condition: mixed
+    condition_segments:
+      - operating_condition: mixed
+        start_seconds: 25.0
+        end_seconds: 90.0
+        notes: >-
+          Human auditory review on 2026-08-24 confirmed the tank-dominant approach
+          from 25 seconds until it fades at about 90 seconds. Exact speed and
+          acceleration are unavailable, so the interval remains labeled mixed.
+    expected_license: "CC BY-SA 3.0"
+    output_path: "targets/tracked/beeldengeluid_gvn_sherman_passby_43670951/sherman_passby.wav"
+    attribution: >-
+      Beeld en Geluid (Nederlands Instituut voor Beeld en Geluid), Sherman tank:
+      rijden, Geluid van Nederland via Wikimedia Commons, CC BY-SA 3.0.
+    notes: >-
+      The source describes an exterior approach from a great distance and pass-by
+      on a concrete track. Human auditory review approved the 25-90 second interval.
+      This historical M4 Sherman is useful for unseen tracked-category transfer but
+      does not establish performance on modern tracked vehicles. This source was
+      consumed as the tracked half of the completed locked-pair evaluation. Exclude
+      it from all future training, validation, model selection, and exploratory
+      evaluation.
+    status: approved
+    admitted_to_corpus: false
+
+  # Proposed by the OpenClaw curator and explicitly approved by the operator on
+  # 2026-08-24 for download and manual audiovisual review.
+  - id: candidate-target-tracked-abrams-bright-star-2017
+    kind: target
+    provider: direct
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/1709/DOD_104830454/DOD_104830454-1024x576-1769k.mp4"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    source_page: "https://www.dvidshub.net/video/550523/us-army-abrams-tanks-maneuver-exercise-bright-star-2017"
+    vehicle_class: tracked
+    vehicle_model: "M1 Abrams"
+    recording_session: "dvids_bright_star_abrams_mohamed_naguib_2017"
+    operating_condition: mixed
+    condition_segments:
+      - operating_condition: steady_speed
+        start_seconds: 12.0
+        end_seconds: 29.0
+        notes: >-
+          Human audiovisual review on 2026-08-28 classified 00:12-00:29 as
+          steady-speed M1 Abrams movement.
+      - operating_condition: decelerating
+        start_seconds: 137.0
+        end_seconds: 144.0
+        notes: >-
+          Human audiovisual review on 2026-08-28 classified 02:17-02:24 as
+          decelerating M1 Abrams movement and noted audible wind.
+      - operating_condition: accelerating
+        start_seconds: 155.0
+        end_seconds: 160.0
+        notes: >-
+          Human audiovisual review on 2026-08-28 classified 02:35-02:40 as
+          accelerating M1 Abrams movement.
+      - operating_condition: steady_speed
+        start_seconds: 161.0
+        end_seconds: 166.0
+        notes: >-
+          Human audiovisual review on 2026-08-28 classified 02:41-02:46 as
+          steady-speed M1 Abrams movement.
+      - operating_condition: steady_speed
+        start_seconds: 225.0
+        end_seconds: 242.0
+        notes: >-
+          Human audiovisual review on 2026-08-28 classified 03:45-04:02 as
+          steady-speed M1 Abrams movement.
+    expected_license: "Public domain"
+    output_path: "targets/tracked/dvids_bright_star_abrams_mohamed_naguib_2017/m1_abrams_maneuver.wav"
+    attribution: >-
+      John Raven, U.S. Army Abrams tanks maneuver at Exercise Bright Star 2017,
+      DVIDS, public domain.
+    notes: >-
+      Official 4:36 DVIDS B-roll of multiple M1 Abrams tanks maneuvering in Egypt.
+      The catalog uses the official page's 1024x576 CDN rendition to avoid retaining
+      unnecessary video data. Human audiovisual review retained only the listed
+      intervals and excluded speech- and wind-dominated portions, except for the
+      explicitly noted wind-affected deceleration interval. Small gaps at the review
+      boundaries remain excluded conservatively.
+      DVIDS video 550523, VIRIN 170912-F-AY943-5001.
+    status: approved
+    admitted_to_corpus: true
+
+  - id: candidate-target-tracked-t90m-27guards-2021
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:T-90M tanks of the 27th Guards Motorized Rifle Brigade (2021-03-10).webm"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    source_page: "https://commons.wikimedia.org/wiki/File:T-90M_tanks_of_the_27th_Guards_Motorized_Rifle_Brigade_(2021-03-10).webm"
+    vehicle_class: tracked
+    vehicle_model: "T-90M Proryv"
+    recording_session: "commons_milru_t90m_27guards_2021_03_10"
+    operating_condition: steady_speed
+    condition_segments:
+      - operating_condition: steady_speed
+        start_seconds: 0.0
+        end_seconds: 24.0
+        notes: >-
+          Human audiovisual review on 2026-08-28 classified 00:00-00:24 as
+          steady-speed T-90M movement. The remainder is silent and rejected.
+    expected_license: "CC BY 4.0"
+    output_path: "targets/tracked/commons_milru_t90m_27guards_2021_03_10/t90m_delivery.wav"
+    attribution: >-
+      Mil.ru, T-90M tanks of the 27th Guards Motorized Rifle Brigade, Wikimedia
+      Commons, CC BY 4.0; converted to WAV for research review.
+    notes: >-
+      Thirty-second official recording of eight T-90M tanks delivered to the 27th
+      Guards Motorized Rifle Brigade. Human audiovisual review retained 00:00-00:24
+      as steady-speed T-90M audio and rejected 00:24-end as silence. No speech,
+      music, or weapons were present. Reserve this session as the tracked half of a
+      future locked evaluation pair; do not use it for training, validation, model
+      selection, or exploratory evaluation.
+    status: approved
+    admitted_to_corpus: false
+
+  - id: candidate-target-wheeled-jltv-fort-mccoy-2019
+    kind: target
+    provider: direct
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/2010/DOD_108036842/DOD_108036842-1024x576-1769k.mp4"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    source_page: "https://www.dvidshub.net/video/770767/jltv-drivers-training"
+    vehicle_class: wheeled
+    vehicle_model: "Joint Light Tactical Vehicle (JLTV)"
+    recording_session: "dvids_fort_mccoy_jltv_precision_course_2019"
+    operating_condition: mixed
+    expected_license: "Public domain"
+    output_path: "targets/wheeled/dvids_fort_mccoy_jltv_precision_course_2019/jltv_driver_training.wav"
+    attribution: >-
+      Greg Mason, JLTV Drivers Training, Fort McCoy Multimedia Visual Information
+      Branch via DVIDS, public domain.
+    notes: >-
+      Official 6:50 DVIDS driver-training B-roll at Fort McCoy's Precision Driving
+      Course. The catalog uses the official page's 1024x576 CDN rendition to avoid
+      retaining unnecessary video data; manual review must identify vehicle-dominant
+      intervals and exclude instructors, crew speech, wind, other vehicles, repeated
+      takes, edits, and camera-position changes. DVIDS video 770767, VIRIN
+      190806-D-VQ984-1001. Reserve reviewed intervals as the wheeled half of the same
+      future locked evaluation pair; do not use them for training, validation, model
+      selection, or exploratory evaluation.
+    status: approved
+    admitted_to_corpus: false
+
+  # Proposed by the OpenClaw curator and explicitly approved by the operator on
+  # 2026-08-24 for download and manual audiovisual review.
+  - id: candidate-target-tracked-t80bvm-driving-readiness-2021
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:A week of combat readiness passed in the 200th Motorized Rifle Brigade (02-02-2021).webm"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    source_page: "https://commons.wikimedia.org/wiki/File:A_week_of_combat_readiness_passed_in_the_200th_Motorized_Rifle_Brigade_(02-02-2021).webm"
+    vehicle_class: tracked
+    vehicle_model: "T-80BVM and MT-LBVMK"
+    recording_session: "commons_milru_200th_t80bvm_mtlb_driving_2021_02_02"
+    operating_condition: mixed
+    condition_segments:
+      - operating_condition: accelerating
+        start_seconds: 0.0
+        end_seconds: 24.0
+        notes: >-
+          Human audiovisual review on 2026-08-28 classified 00:00-00:24 as an
+          accelerating T-80BVM.
+      - operating_condition: mixed
+        start_seconds: 24.0
+        end_seconds: 41.0
+        notes: >-
+          Human audiovisual review on 2026-08-28 identified an MT-LBVMK from
+          00:24-00:41, but the exact operating state remains mixed.
+      - operating_condition: steady_speed
+        start_seconds: 41.0
+        end_seconds: 62.0
+        notes: >-
+          Human audiovisual review on 2026-08-28 classified 00:41-01:02 as
+          steady-speed MT-LBVMK movement.
+      - operating_condition: decelerating
+        start_seconds: 63.0
+        end_seconds: 65.0
+        notes: >-
+          Human audiovisual review on 2026-08-28 classified 01:03-01:05 as
+          decelerating MT-LBVMK movement.
+    expected_license: "CC BY 4.0"
+    output_path: "targets/tracked/commons_milru_200th_t80bvm_mtlb_driving_2021_02_02/t80bvm_mtlb_driving.wav"
+    attribution: >-
+      Mil.ru, 200th Motorized Rifle Brigade combat-readiness driving, Wikimedia
+      Commons, CC BY 4.0; converted to WAV for research review.
+    notes: >-
+      Official 1:11 recording of T-80BVM and MT-LBVMK crews driving difficult
+      terrain. Human audiovisual review classified 00:00-00:24 as accelerating
+      T-80BVM, 00:24-00:41 as mixed-state MT-LBVMK, 00:41-01:02 as steady-speed
+      MT-LBVMK, and 01:03-01:05 as decelerating MT-LBVMK. The 01:02-01:03 boundary
+      gap and 01:05-end remain excluded. No speech, music, or weapons were present.
+      Per-segment vehicle identity is preserved in notes because the current segment
+      schema labels operating condition but not model.
+    status: approved
+    admitted_to_corpus: true
+
+  - id: candidate-target-tracked-bmp1-trident-juncture-moveout-2018
+    kind: target
+    provider: direct
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/1811/DOD_106180083/DOD_106180083-1024x576-1769k.mp4"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    source_page: "https://www.dvidshub.net/video/637281/trident-juncture-2018-polish-tank-and-fighting-vehicle-and-british-engineering-company-during-training-maneuvers-near-elval-norway"
+    vehicle_class: tracked
+    vehicle_model: "BMP-1"
+    recording_session: "dvids_nato_trident_juncture_bmp1_elval_2018"
+    operating_condition: unknown
+    expected_license: "Public domain"
+    output_path: "targets/tracked/dvids_nato_trident_juncture_bmp1_elval_2018/bmp1_moveout_review.wav"
+    attribution: >-
+      NATO, Trident Juncture 2018 Polish BMP-1 footage, DVIDS, public domain.
+    notes: >-
+      Official shot list identifies BMP-1 maintenance/refueling at 02:00.47,
+      movement beginning at 02:10.44, and T-72 footage beginning at 02:35.10.
+      Human audiovisual review on 2026-09-18 rejected the complete recording for
+      poor audio quality. No interval is approved for corpus use. DVIDS video
+      637281; VIRIN 181101-F-ZZ999-426.
+    status: approved
+    admitted_to_corpus: false
+
+  - id: candidate-target-tracked-t72-bmp3-102nd-march-2022
+    kind: target
+    provider: wikimedia_commons
+    file_title: "File:102nd Motorized Rifle Regiment marching to the training ground (2022-01-26).webm"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    source_page: "https://commons.wikimedia.org/wiki/File:102nd_Motorized_Rifle_Regiment_marching_to_the_training_ground_(2022-01-26).webm"
+    vehicle_class: tracked
+    vehicle_model: "T-72B3 mod. 2016 and BMP-3"
+    recording_session: "commons_milru_102nd_march_training_ground_2022_01_26"
+    operating_condition: mixed
+    condition_segments:
+      - operating_condition: idle
+        start_seconds: 36.0
+        end_seconds: 45.0
+        notes: >-
+          Human audiovisual review on 2026-09-18 identified an idling T-72B3.
+      - operating_condition: steady_speed
+        start_seconds: 46.0
+        end_seconds: 54.0
+        notes: >-
+          Human audiovisual review identified steady-speed T-72B3 movement.
+      - operating_condition: steady_speed
+        start_seconds: 55.0
+        end_seconds: 67.0
+        notes: >-
+          Human audiovisual review identified steady-speed BMP-3 movement.
+      - operating_condition: steady_speed
+        start_seconds: 81.0
+        end_seconds: 97.0
+        notes: >-
+          Human audiovisual review identified steady-speed BMP-3 movement.
+      - operating_condition: steady_speed
+        start_seconds: 98.0
+        end_seconds: 121.0
+        notes: >-
+          Human audiovisual review identified steady-speed T-72B3 movement.
+      - operating_condition: steady_speed
+        start_seconds: 122.0
+        end_seconds: 129.0
+        notes: >-
+          Human audiovisual review identified steady-speed BMP-3 movement.
+    expected_license: "CC BY 4.0"
+    output_path: "targets/tracked/commons_milru_102nd_march_training_ground_2022_01_26/t72_bmp3_road_march.wav"
+    attribution: >-
+      Mil.ru, 102nd Motorized Rifle Regiment march to training ground, Wikimedia
+      Commons, CC BY 4.0; converted to WAV for research review.
+    notes: >-
+      Official 2:29 road-march recording containing both T-72B3 mod. 2016 and
+      BMP-3 vehicles. Human audiovisual review retained only the six listed
+      vehicle-specific intervals and rejected all other material as unrelated
+      vehicles. Every retained trim remains grouped under this one recording
+      session; per-segment vehicle identity is preserved in notes because the
+      segment schema does not expose a model field.
+    status: approved
+    admitted_to_corpus: true
+
+  - id: candidate-target-tracked-bradley-nato-muddy-maneuver-2025
+    kind: target
+    provider: direct
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/2508/DOD_111204052/DOD_111204052.mp4"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    source_page: "https://www.dvidshub.net/video/972401/nato-allies-demonstrate-their-readiness-through-live-fire-training-poland-b-roll"
+    vehicle_class: tracked
+    vehicle_model: "M2 Bradley and M1 Abrams"
+    recording_session: "dvids_nato_bradley_bemowo_livefire_2025"
+    operating_condition: mixed
+    condition_segments:
+      - operating_condition: steady_speed
+        start_seconds: 0.0
+        end_seconds: 41.0
+        notes: >-
+          Human audiovisual review on 2026-09-18 identified steady-speed M2 Bradley
+          movement.
+      - operating_condition: steady_speed
+        start_seconds: 112.0
+        end_seconds: 152.0
+        notes: >-
+          Human audiovisual review identified steady-speed M1 Abrams movement.
+      - operating_condition: accelerating
+        start_seconds: 153.0
+        end_seconds: 157.0
+        notes: >-
+          Human audiovisual review identified an accelerating M1 Abrams.
+      - operating_condition: steady_speed
+        start_seconds: 158.0
+        end_seconds: 165.0
+        notes: >-
+          Human audiovisual review identified steady-speed M1 Abrams movement.
+      - operating_condition: steady_speed
+        start_seconds: 218.0
+        end_seconds: 224.0
+        notes: >-
+          Human audiovisual review identified steady-speed M2 Bradley movement.
+      - operating_condition: steady_speed
+        start_seconds: 225.0
+        end_seconds: 233.0
+        notes: >-
+          Human audiovisual review identified steady-speed M1 Abrams movement.
+    expected_license: "Public domain"
+    output_path: "targets/tracked/dvids_nato_bradley_bemowo_livefire_2025/bradley_muddy_maneuver_review.wav"
+    attribution: >-
+      Natochannel, NATO Allies demonstrate their readiness through live-fire
+      training in Poland, DVIDS, public domain.
+    notes: >-
+      Human audiovisual review on 2026-09-18 retained the listed M2 Bradley and M1
+      Abrams intervals. The 00:42-00:48 interval contains an unidentified wheeled
+      vehicle, possibly a HMMWV, and is rejected rather than mislabeled as tracked.
+      All other material is rejected as interview content or non-target footage.
+      Every retained trim remains grouped under this one recording session. The
+      only verified direct endpoint is the 499 MB original MP4. DVIDS video 972401;
+      VIRIN 250731-O-D0483-1001.
+    status: approved
+    admitted_to_corpus: true
+
+  # New independent heavy-wheeled development candidates found on 2026-09-20.
+  # They are cataloged for operator review only and remain excluded from every
+  # corpus until the operator approves collection and supplies reviewed intervals.
+  - id: candidate-target-wheeled-hmmwv-m1151-training-2014
+    kind: target
+    provider: direct
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/1404/DOD_101347588/DOD_101347588-720x406-800k.mp4"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    source_page: "https://www.dvidshub.net/video/329602/humvee-training-b-roll"
+    vehicle_class: wheeled
+    vehicle_model: "M1151 Up-Armored HMMWV"
+    recording_session: "dvids_m1151_driver_training_jbmdl_2014_04_03"
+    operating_condition: mixed
+    condition_segments:
+      - operating_condition: idle
+        start_seconds: 15.0
+        end_seconds: 36.0
+        notes: "Human audiovisual review identified an idling M1151 HMMWV."
+      - operating_condition: steady_speed
+        start_seconds: 37.0
+        end_seconds: 47.0
+        notes: "Human audiovisual review identified steady-speed M1151 movement."
+      - operating_condition: steady_speed
+        start_seconds: 50.0
+        end_seconds: 81.0
+        notes: "Human audiovisual review identified steady-speed M1151 movement."
+      - operating_condition: accelerating
+        start_seconds: 130.0
+        end_seconds: 137.0
+        notes: "Human audiovisual review identified M1151 acceleration."
+      - operating_condition: accelerating
+        start_seconds: 147.0
+        end_seconds: 150.0
+        notes: "Human audiovisual review identified M1151 acceleration."
+      - operating_condition: steady_speed
+        start_seconds: 160.0
+        end_seconds: 167.0
+        notes: "Human audiovisual review identified steady-speed M1151 movement."
+      - operating_condition: accelerating
+        start_seconds: 170.0
+        end_seconds: 172.0
+        notes: "Human audiovisual review identified M1151 acceleration."
+      - operating_condition: idle
+        start_seconds: 250.0
+        end_seconds: 255.0
+        notes: "Human audiovisual review identified an idling M1151 HMMWV."
+    expected_license: "Public domain"
+    output_path: "targets/wheeled/dvids_m1151_driver_training_jbmdl_2014_04_03/hmmwv_m1151_training.wav"
+    attribution: >-
+      Richard Stowell, Humvee Training B-roll, 128th Mobile Public Affairs
+      Detachment via DVIDS, public domain.
+    notes: >-
+      Official 4:23 driver-licensing B-roll for the up-armored M1151 at Joint Base
+      McGuire-Dix-Lakehurst. DVIDS video 329602; VIRIN 140403-Z-CA120-002;
+      filename DOD_101347588. The selected 720x406 official CDN rendition responded
+      successfully and is approximately 29 MB. Human audiovisual review on
+      2026-09-20 retained only the listed idle, steady-speed, and accelerating
+      intervals. Every unlisted interval is rejected. The recording remains one
+      session regardless of the number of retained windows.
+    status: approved
+    admitted_to_corpus: true
+
+  - id: candidate-target-wheeled-m1126-stryker-convoy-pinon-2024
+    kind: target
+    provider: direct
+    direct_url: "https://d34w7g4gy10iej.cloudfront.net/video/2409/DOD_110569349/DOD_110569349.mp4"
+    license_url: "https://www.dvidshub.net/about/copyright"
+    source_page: "https://www.dvidshub.net/video/937004/pinon-canyon-maneuver-site-b-roll-package"
+    vehicle_class: wheeled
+    vehicle_model: "M1126 Stryker Infantry Carrier Vehicle"
+    recording_session: "dvids_m1126_pinon_canyon_convoy_2024_09_04"
+    operating_condition: steady_speed
+    condition_segments:
+      - operating_condition: unknown
+        start_seconds: 5.0
+        end_seconds: 16.0
+        notes: >-
+          Human audiovisual review retained this M1126 convoy interval but did
+          not assign a supported operating state.
+      - operating_condition: idle
+        start_seconds: 17.0
+        end_seconds: 35.0
+        notes: "Human audiovisual review identified idling M1126 Strykers."
+      - operating_condition: steady_speed
+        start_seconds: 36.0
+        end_seconds: 58.0
+        notes: "Human audiovisual review identified steady-speed M1126 convoy movement."
+      - operating_condition: accelerating
+        start_seconds: 62.0
+        end_seconds: 70.0
+        notes: "Human audiovisual review identified M1126 convoy acceleration."
+      - operating_condition: steady_speed
+        start_seconds: 72.0
+        end_seconds: 93.0
+        notes: "Human audiovisual review identified steady-speed M1126 convoy movement."
+      - operating_condition: steady_speed
+        start_seconds: 105.0
+        end_seconds: 110.0
+        notes: "Human audiovisual review identified steady-speed M1126 convoy movement."
+      - operating_condition: accelerating
+        start_seconds: 153.0
+        end_seconds: 161.0
+        notes: "Human audiovisual review identified M1126 convoy acceleration."
+      - operating_condition: idle
+        start_seconds: 177.0
+        end_seconds: 189.0
+        notes: "Human audiovisual review identified idling M1126 Strykers."
+      - operating_condition: steady_speed
+        start_seconds: 195.0
+        end_seconds: 233.0
+        notes: "Human audiovisual review identified steady-speed M1126 convoy movement."
+    expected_license: "Public domain"
+    output_path: "targets/wheeled/dvids_m1126_pinon_canyon_convoy_2024_09_04/m1126_stryker_convoy.wav"
+    attribution: >-
+      Jonathan Reyes, Pinon Canyon Maneuver Site B-Roll Package, 4th Infantry
+      Division Public Affairs Office via DVIDS, public domain.
+    notes: >-
+      Official 4:23 B-roll of M1126 vehicles departing Pinon Canyon Maneuver Site
+      for Fort Carson. DVIDS video 937004; VIRIN 240904-A-LV856-1001; filename
+      DOD_110569349. The verified official CDN original is approximately 322 MB.
+      Multiple M1126 Strykers appear together in convoy; this is one recording
+      session and must never be counted as multiple independent data points.
+      Human audiovisual review on 2026-09-20 retained only the listed intervals;
+      the first retained interval has state `unknown` because no condition label
+      was supplied. Every unlisted interval is rejected.
+    status: approved
+    admitted_to_corpus: true
