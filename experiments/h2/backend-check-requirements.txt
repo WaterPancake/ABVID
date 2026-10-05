@@ -1,0 +1,4 @@
+# Isolated numeric checks only; not the final H2 execution environment.
+numpy==1.26.4
+scipy==1.17.1
+matplotlib==3.11.1

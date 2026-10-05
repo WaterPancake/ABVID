@@ -1,0 +1,179 @@
+{
+  "calibration_audit_sha256": "db840ffbf308d2d7bcda128ffcea186274e3a2b176f58b7f578b28b8d40414c0",
+  "classes": {
+    "car": {
+      "band_L1": {
+        "improved": 154,
+        "median_after": 0.018539211947796605,
+        "median_before": 0.033282504833158116
+      },
+      "envelope_RMSE": {
+        "improved": 51,
+        "median_after": 0.042263423342021586,
+        "median_before": 0.041385955532248095
+      },
+      "flags": {
+        "calibrated_mixture_boundary": 7,
+        "spacing_unidentified_after_noise_dominant_calibration": 40
+      },
+      "log_spectrum_RMSE": {
+        "improved": 190,
+        "median_after": 0.15524383621368587,
+        "median_before": 0.27004127014119056
+      },
+      "median_best_objective": 0.012234349735081196,
+      "median_calibrated_fraction": 0.12610846757888794,
+      "median_initial_fraction": 0.16035428643226624,
+      "median_initial_objective": 0.03724007122218609,
+      "modulation_L1": {
+        "improved": 73,
+        "median_after": 0.0036244636665544506,
+        "median_before": 0.0034057455375284705
+      },
+      "parents": 190
+    },
+    "truck": {
+      "band_L1": {
+        "improved": 154,
+        "median_after": 0.01868744591987421,
+        "median_before": 0.028044054322195644
+      },
+      "envelope_RMSE": {
+        "improved": 63,
+        "median_after": 0.04271878244055008,
+        "median_before": 0.04188444276141833
+      },
+      "flags": {
+        "calibrated_mixture_boundary": 7,
+        "spacing_unidentified_after_noise_dominant_calibration": 27
+      },
+      "log_spectrum_RMSE": {
+        "improved": 190,
+        "median_after": 0.15601836902393756,
+        "median_before": 0.25122615618590244
+      },
+      "median_best_objective": 0.012280009221285582,
+      "median_calibrated_fraction": 0.13603252172470093,
+      "median_initial_fraction": 0.16034285724163055,
+      "median_initial_objective": 0.03212355449795723,
+      "modulation_L1": {
+        "improved": 71,
+        "median_after": 0.003463794744583795,
+        "median_before": 0.003388584216671246
+      },
+      "parents": 190
+    }
+  },
+  "code_sha256": "fb18841bca6a3e828c669e2f5d248d58c362c5ebaacfa5c38de4f7e4f8b85a0c",
+  "elapsed_seconds": 160.16884504200425,
+  "examples": [
+    {
+      "common_gain": 0.16648066260208594,
+      "file_id": "009c968b71ee56b8e46e7225061e7d9b496bfcf21466420eb782e32bac11bf63",
+      "files": {
+        "observed.wav": "02757e8ee554eb1d5d88b2f1318c9434d6a961adcd8efd18217f98e85bee65ac",
+        "parameters.json": "e82ac0dfbd5504db6d83ceeeb5f8d040d4efe9a7485f2644db6ebba307a131fc",
+        "spectrum16.wav": "e88bc3c3a6ee60d9b2aef54f70225b6fb5e4522fd3fbf89ff08eb81c2645ae1e",
+        "temporal41_lifted.wav": "c230e13841e0910a4f082b9eb016b96276c8191697a43183571c2b9ffc5026b6"
+      }
+    },
+    {
+      "common_gain": 0.15863800414468132,
+      "file_id": "01406419169a6f4a0efb4eae17506534a6b0468e33904cedcd9bea4dfb6abd19",
+      "files": {
+        "observed.wav": "2949adc49654c51e1d7e7f1ffefb28d63b6cd7a0fdd12fb43c06590fb71a960e",
+        "parameters.json": "81521d842020da92ad11f10933542ac1937a8e418802534d426ed8a332b50e62",
+        "spectrum16.wav": "7868702ec536d64087edd373cd46866bbc8bb994c681b6d29bc524e931ca1392",
+        "temporal41_lifted.wav": "ef36323c3db8fb2e04ef9ed6faf72de200b8bd68b3f5dcd5ec0b8bf018c5ee98"
+      }
+    },
+    {
+      "common_gain": 0.17466497685154336,
+      "file_id": "01448ea299b9d7e776498deef614a3945cdd4bdc15e3ec05224282125cd7fd31",
+      "files": {
+        "observed.wav": "058e0e95a90e6c28579521c62c2aa3e2d2e759f0ce165853084bdcef7ca70c34",
+        "parameters.json": "dfa064848e46e909f7fc9b7fd4f301afd3fc709c8fd45e22dfa50685cb9a36c7",
+        "spectrum16.wav": "8cf54558553a92c687f5b3658cd9093f63c997482f96a5b17b2da4c0990c5d0c",
+        "temporal41_lifted.wav": "183b0eafa6cc17560493f75e3a683b953c21653c38765cfe37b5c32c00d9eaed"
+      }
+    },
+    {
+      "common_gain": 0.15883112464200513,
+      "file_id": "01b0d682c8bd4b9718e82a4a89dfcc81b56c17267efa7dd61b6534fa95203edd",
+      "files": {
+        "observed.wav": "8ef38ec9a79edcb474337f13ddea64bbe7e5da441239ecd4836b2d464576c3a5",
+        "parameters.json": "509d8b93ab5e213d7148e423d3518971789fc494e34fc17edd22700495284a78",
+        "spectrum16.wav": "b8e2d5695d6fc65b8de186940faeee80d8986f2b4cfa57954762ebca1b414476",
+        "temporal41_lifted.wav": "df0cc5b5731be468ee77cc945fd86b5f3eda03c92e366bda24f13502ead3bbc3"
+      }
+    },
+    {
+      "common_gain": 0.1850738276929302,
+      "file_id": "0382eb2ae4c357a68a36ecacd6dd87b17e693655ec0561f567c56d77c626eb62",
+      "files": {
+        "observed.wav": "e16a79bf90766d2185bb603289e05cc24feb9b5e44176d1809f26868159d9bb9",
+        "parameters.json": "21b0329f284412b64a79b2dcc62dde3701405696622510b7e91829c534911099",
+        "spectrum16.wav": "2e0e96221c8f280e6720d4a2c5303046e34b7983b764d3e1a547a46827c04326",
+        "temporal41_lifted.wav": "a126300b3f58461e69cdb9d89e453d7821d738f0467d0689b1207e82f221e496"
+      }
+    },
+    {
+      "common_gain": 0.13633042597373235,
+      "file_id": "038e5b69683974d6f00015de4565c6dc328748e6ade4e6e7ff4ff3b27f76dc4d",
+      "files": {
+        "observed.wav": "a543cf74786f84b3a6af00bf49f862248983aed75f757f80991c5f06177425e0",
+        "parameters.json": "b9841a14cebe1f18d39f1442b8e3bbf615f9b107c3625db61e6aaf08e81c1e4c",
+        "spectrum16.wav": "50e9c15538e803a18692593ab10e355a9d9578c1914469c3d534bd3c5234071b",
+        "temporal41_lifted.wav": "b4de782e6edfab8cf55cec2b834dd6d8ddf64044b6151716a2e80c5dc426e8f7"
+      }
+    },
+    {
+      "common_gain": 0.20576664635468844,
+      "file_id": "08bb787339078bb269d473ae83725a6bce051af500a012eeeb205cebcdf7fd7d",
+      "files": {
+        "observed.wav": "200cc7c7e4360a4baf6ba6b2b115c33fefc2edec63f7653d2e4a8a76b3a5a069",
+        "parameters.json": "dc59cd21e4cb3f2c94571e5a2c8a38377c70db691abbfb37646b75306906adfe",
+        "spectrum16.wav": "9c479fbfd08aa041eb6d7b645ce5776844f58a1fca6d30ee1a47c0f8d2431e9f",
+        "temporal41_lifted.wav": "124b0a69dada6e20bdabbc5e7cbe3d953645b75573bfa447db4cbf445755e676"
+      }
+    },
+    {
+      "common_gain": 0.2032154086326246,
+      "file_id": "0bb5a4e9ab6a72f25fd5ae5aaaa7c1fc027ec2868d91dacb117eb24511c0d83b",
+      "files": {
+        "observed.wav": "30dc2f7765e2328da3f08dfead324d91fbbbf5eaf69ece051306a78e195a36ac",
+        "parameters.json": "4b814c56429ba6fa32ab9deba543fdf64c88ea9c4508a9e1a32f7f69ffb0ac47",
+        "spectrum16.wav": "c389c278fdcadf73b1efd013812118dd3b04a19fbd172760e87ecb1cceb0d2b0",
+        "temporal41_lifted.wav": "69dc658d83ae565cfe65eaee997cf7dd2805315d7c3c304eee77767d0102c169"
+      }
+    },
+    {
+      "common_gain": 0.15282428479291688,
+      "file_id": "0c42001b702d373b6bcd6de3dde3d401d9ed7d3d66f32a545757d8478e3b7eff",
+      "files": {
+        "observed.wav": "4c17f3cff4af39c1a7e3e54ca9f71bac0042997512ad52180873565138bc74c1",
+        "parameters.json": "b2d0281642e546cc705c3d2274c57f58caf5d597e4158c19a5f60b2c5f2c3d2f",
+        "spectrum16.wav": "26565d35007ea00aa87ae8798527877e835e9101e5ce0fd80f7abcedf6f01719",
+        "temporal41_lifted.wav": "4a4ba6ad703db9c8f34737403e61a6547d6982e7074d0abcfa3931f75e4051b7"
+      }
+    },
+    {
+      "common_gain": 0.19455905000463863,
+      "file_id": "121116c5cb0790455e74274d52af4ec27ecaf65b1f95f1dc021bd003cf84dd6f",
+      "files": {
+        "observed.wav": "a1d1310d41dfe3941451ad08287e5e18fe6777d98d024ebfcc153b83e9050c4f",
+        "parameters.json": "dd6e3cd511743fff5d43cf52287828492aaccbc1d1f6cf030f618f5331ed0d38",
+        "spectrum16.wav": "4d6a334a26395833f2ad098ce1b504e12980e91217d545da3dc6d3dcbad67205",
+        "temporal41_lifted.wav": "eadac8225e6a251b2caa223c4d9b8b1aec799ac6d42ba2e56da0bd22d4b5b54c"
+      }
+    }
+  ],
+  "gallery_sha256": "5efe134885edd982809da12160bfd143005d14f7b26e4c487dde53ae08560898",
+  "outer_access": false,
+  "plot_sha256": "74b9669307cf702261957c1d2c0fcbe62ee06d22f7cff2a480550e098826db18",
+  "raw_source_audio_opened": false,
+  "records_sha256": "9c0cfcffe13bf38ca8f16ab36736533501977d2e3d8d0c9b4a6af8c8e635174d",
+  "saved_training_audio_read": true,
+  "source_audit_sha256": "c81a4ec348469e6cc1822580d0bd25be488b9f3b2a59fd3b0b59edc0a961c7d4",
+  "source_summary_sha256": "2208e0234a737d50fdaa70817da586f965ea43f465643f166e5eb4f4e92740d4"
+}

@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "all_per_parent_records_exact": true,
+  "all_class_statistics_exact": true,
+  "previous_artifact": "CAST/improvement/diagnostics/smooth8_component_allocation",
+  "only_metadata_label_corrected": true
+}

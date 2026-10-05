@@ -1,0 +1,18 @@
+{
+  "protocol_id": "h1_common_budget_v1.3",
+  "classes": ["car", "truck"],
+  "admission": {"manifest": "experiments/admission/results/provenance_20261002_v1_3_1/admitted.jsonl"},
+  "budget": {"rule": "largest_common", "examples_per_class": 190},
+  "seeds": [42, 123, 456, 789, 1024],
+  "split": {"method": "leave_one_connected_IDMT_group_out", "validation": null, "target_role": "exposed_development", "final_test": null},
+  "preprocessing": {"intermediate_rate_hz": 8000, "sample_rate_hz": 16000, "samples": 32000, "window": "center", "channels": "arithmetic_mean", "gain_normalization": false, "resampler": "scipy_resample_poly", "window_beta": 5.0},
+  "representations": ["BEATs768", "MFCC26"],
+  "encoder": {"checkpoint": ".artifacts/models/beats/BEATs_iter3_plus_AS2M.pt", "checkpoint_sha256": "d43cbfad4d7b56381c061d7a24774f908d4d94c72961f6eb1d9090ff18cd8d34", "upstream_commit": "732d834db70ee0fc3886b4bcbcfb4ce7fb829be2", "frozen": true},
+  "mfcc": {"n_mfcc": 13, "n_fft": 400, "hop_length": 160, "n_mels": 40, "fmin": 0.0, "fmax": 8000.0, "center": true, "power": 2.0, "window": "hann", "pad_mode": "constant", "mel_norm": "slaney", "htk": false, "top_db": 80, "dct_type": 2, "dct_norm": "ortho", "pooling": "mean_and_population_std"},
+  "classifier": {"type": "StandardScaler_LogisticRegression", "C": 1.0, "solver": "lbfgs", "tol": 0.000001, "max_iter": 5000, "class_weight": null, "fit_intercept": true},
+  "arms": ["real", "procedural", "audioldm", "real_repeated", "real_plus_procedural", "real_plus_audioldm"],
+  "uncertainty": {"method": "paired_group_and_selection_bootstrap_conditional_on_fits", "draws": 10000, "seed": 314159},
+  "practical_gap_macro_f1": 0.05,
+  "augmentation": null,
+  "hardware": {"device": "cpu", "torch_threads": 4, "blas_threads": 1, "batch_size": 8}
+}

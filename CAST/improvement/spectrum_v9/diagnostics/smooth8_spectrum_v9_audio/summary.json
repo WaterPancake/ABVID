@@ -1,0 +1,179 @@
+{
+  "calibration_audit_sha256": "dc5d295c364dc54c93f5232459968328aaebea50b86638d94d9a7a85af209bb7",
+  "classes": {
+    "car": {
+      "band_L1": {
+        "improved": 190,
+        "median_after": 0.03301288250487913,
+        "median_before": 0.1275138323634133
+      },
+      "envelope_RMSE": {
+        "improved": 93,
+        "median_after": 0.09178044542682029,
+        "median_before": 0.09208038626825699
+      },
+      "flags": {
+        "calibrated_mixture_boundary": 2,
+        "spacing_unidentified_after_noise_dominant_calibration": 13
+      },
+      "log_spectrum_RMSE": {
+        "improved": 190,
+        "median_after": 0.2677444646511077,
+        "median_before": 0.33518910313290096
+      },
+      "median_best_objective": 0.03699379414319992,
+      "median_calibrated_fraction": 0.16035428643226624,
+      "median_initial_fraction": 0.15640189764208265,
+      "median_initial_objective": 0.07889063283801079,
+      "modulation_L1": {
+        "improved": 89,
+        "median_after": 0.005838635014285155,
+        "median_before": 0.005852741626140516
+      },
+      "parents": 190
+    },
+    "truck": {
+      "band_L1": {
+        "improved": 189,
+        "median_after": 0.0278081756452569,
+        "median_before": 0.10826958939413514
+      },
+      "envelope_RMSE": {
+        "improved": 81,
+        "median_after": 0.09172088199324427,
+        "median_before": 0.09158305038996961
+      },
+      "flags": {
+        "calibrated_mixture_boundary": 3,
+        "spacing_unidentified_after_noise_dominant_calibration": 16
+      },
+      "log_spectrum_RMSE": {
+        "improved": 190,
+        "median_after": 0.2512861939841248,
+        "median_before": 0.3193016140582493
+      },
+      "median_best_objective": 0.032099394127726555,
+      "median_calibrated_fraction": 0.16034285724163055,
+      "median_initial_fraction": 0.16381322856922867,
+      "median_initial_objective": 0.06761402264237404,
+      "modulation_L1": {
+        "improved": 96,
+        "median_after": 0.00569505063723977,
+        "median_before": 0.005696362309346772
+      },
+      "parents": 190
+    }
+  },
+  "code_sha256": "c2579a06544f477289191e590c91cc97ef7930a75aa9973f6b409beed371a707",
+  "elapsed_seconds": 28.588493333008955,
+  "examples": [
+    {
+      "common_gain": 0.1687878292136522,
+      "file_id": "009c968b71ee56b8e46e7225061e7d9b496bfcf21466420eb782e32bac11bf63",
+      "files": {
+        "observed.wav": "d2bc73e7da944dad16f51e6df3586c988d68a3ae91b1f046f33ba12be884bbdc",
+        "parameters.json": "8307f4f28ded4aedaad2780f569c24967d253616fb15b1e8ae162b46b95deeab",
+        "spectrum_calibrated.wav": "16be77a704fa6b50e56a2d87423b297468b7c31a9eb5108ef8ba4bb869f024f6",
+        "v8_reference.wav": "d0ac5b7d377cf9ed6ca7add700974dbc6abccc66cae01beee0f9b20d5b0f3d33"
+      }
+    },
+    {
+      "common_gain": 0.1678882750655253,
+      "file_id": "01406419169a6f4a0efb4eae17506534a6b0468e33904cedcd9bea4dfb6abd19",
+      "files": {
+        "observed.wav": "4bd61643ff4c617ab7861c297083c06a0696a585135a01d60fcb31a8fb53152d",
+        "parameters.json": "335b27d20d5f83b53ffda8f719021a507a8645fef610c007d1c6d55a68ea6299",
+        "spectrum_calibrated.wav": "01304618f7e76eef3d1a28afe492970bab0606a24462a38b5b6ca29baf9e1c12",
+        "v8_reference.wav": "36d757f8d357ae5af064cd0c4ac944de390651dc78624caa487bc3a7ce86e842"
+      }
+    },
+    {
+      "common_gain": 0.1889383103255271,
+      "file_id": "01448ea299b9d7e776498deef614a3945cdd4bdc15e3ec05224282125cd7fd31",
+      "files": {
+        "observed.wav": "4f77ac63bb5676195ccdd9c2750548ccecab5f1f454fd4bbf736e8cc1e757cb1",
+        "parameters.json": "b3411c8a7ae1a4a1ef9bc1eb6d104926095f78c250e08f02c2eeb575c8b5f1a3",
+        "spectrum_calibrated.wav": "07ee1e79c2d0b1aa8313f4560ef7b9693572bcc44e2b818d3ebf7a33203bab60",
+        "v8_reference.wav": "9cf24a5c42514dc8ee923e34744a1f44dac919dc1646f1d96f81bf44a914e413"
+      }
+    },
+    {
+      "common_gain": 0.14929689828321197,
+      "file_id": "01b0d682c8bd4b9718e82a4a89dfcc81b56c17267efa7dd61b6534fa95203edd",
+      "files": {
+        "observed.wav": "fdad8daf7ed6c74602abc70e6a39ba5419c9f8a0d1b50cfb8d4f645f6af6422c",
+        "parameters.json": "9ed8eea7fd95f9d8a9d5ccf5cc3604fd58486bc7ab3ef35fcf5a5d850ce40870",
+        "spectrum_calibrated.wav": "cf43cde623d228d0915836b3a2c8477a06a15745004a83040dc43db80713e387",
+        "v8_reference.wav": "bf724b7182621230b7f69aa3b87e262b93fbf08de8a1370acb8556a1f656d3af"
+      }
+    },
+    {
+      "common_gain": 0.18183545994013822,
+      "file_id": "0382eb2ae4c357a68a36ecacd6dd87b17e693655ec0561f567c56d77c626eb62",
+      "files": {
+        "observed.wav": "e30c9ec5c50c6aef36243b121f3b80713734a1dbba4f7810eccee4ac09ce7e63",
+        "parameters.json": "0d1ac74b3bbc3ca0d1c4c4f22333c24bef42a79f27dcfe0a650e18332413b739",
+        "spectrum_calibrated.wav": "dd3f0c158b78692cb95e89fab51ad77310a9c4291142021de995b59057d48210",
+        "v8_reference.wav": "54dd2484545c1a9f2b2a1129541126bf46c36932317ca543f4fa6fdb78e671c2"
+      }
+    },
+    {
+      "common_gain": 0.1307618621124332,
+      "file_id": "038e5b69683974d6f00015de4565c6dc328748e6ade4e6e7ff4ff3b27f76dc4d",
+      "files": {
+        "observed.wav": "fce7cf26e579d8164aed733a82a89f1511bd5dd099271a223c01519bb995cc75",
+        "parameters.json": "05e45b3c6ccb1e63f9a67c720d7b16128383e9003871766bd3a8fd4ae3e42207",
+        "spectrum_calibrated.wav": "741147f9fbe895cff6a787248a45d0cda363af2a7fddc03703fb4ab3be2600a3",
+        "v8_reference.wav": "a1a6d09bc494fda661444617c63e0349d56ff8c37d0927888100e15fd54f8b38"
+      }
+    },
+    {
+      "common_gain": 0.20432481039162212,
+      "file_id": "08bb787339078bb269d473ae83725a6bce051af500a012eeeb205cebcdf7fd7d",
+      "files": {
+        "observed.wav": "204602964fd97410a7d7fed25b438dc3c17784c50d247ff0074c3522facb2073",
+        "parameters.json": "5142e1cecd95a8ed3df76d9a6f0ed917113cb955ed8c85ac9c551c2f6661c9ed",
+        "spectrum_calibrated.wav": "7180cc5d8040c51ae2363c62b44495c26574849da129e72adaad1bfb0b6795dd",
+        "v8_reference.wav": "07971158623d09ae61c52fcb9f2fd16774fc73c1fe5bb8fcd275208953d28ff5"
+      }
+    },
+    {
+      "common_gain": 0.18556314142898084,
+      "file_id": "0bb5a4e9ab6a72f25fd5ae5aaaa7c1fc027ec2868d91dacb117eb24511c0d83b",
+      "files": {
+        "observed.wav": "57e14de1381d4c6d55336b7e368e86ed974ac5842e0927cec14638dcc143fa9a",
+        "parameters.json": "97bf7fe97388acca6d96cf100ac6e01a2e9a00d6a31b721adac2759af965bccd",
+        "spectrum_calibrated.wav": "febc09d6e224e332297f91276d642504209dfe6363b88c32dc851377badc47a3",
+        "v8_reference.wav": "47812452e3ad10b0f6de67850e24221e3942aef7dd703f868d6ccf119992a721"
+      }
+    },
+    {
+      "common_gain": 0.1599662771544181,
+      "file_id": "0c42001b702d373b6bcd6de3dde3d401d9ed7d3d66f32a545757d8478e3b7eff",
+      "files": {
+        "observed.wav": "771861f270c40873562882f904a53267112adc1b3147487e7161e77e597f2be9",
+        "parameters.json": "774025ec210ec0c39952dfca63f870b790ef0a939e8c61513188cae2d503e265",
+        "spectrum_calibrated.wav": "67018240fd6070678dbdc8c91da827ca30a44c158a7a0156def229b994a14553",
+        "v8_reference.wav": "a994e04168ada562a5cc48e6aa85165c969b136cd7fb565d1836d5bf9743a360"
+      }
+    },
+    {
+      "common_gain": 0.1977783403170935,
+      "file_id": "121116c5cb0790455e74274d52af4ec27ecaf65b1f95f1dc021bd003cf84dd6f",
+      "files": {
+        "observed.wav": "a5ac7582ae55bd1935bf5700962d69ac59ea7eb28ecc9c739ce13ff471c0a5ec",
+        "parameters.json": "ae19a711a9c43589c95591cbc2968b76939e4087c6eac3c379b5900dc2c9e288",
+        "spectrum_calibrated.wav": "c1863a4f2d2780d77dfb5dd291cfb7fcd505177585522fc018528f28f494ffb3",
+        "v8_reference.wav": "d237e8e2dc4fbb59d48db092baac2c82416a58ef66a7426fb98b54997d3824b8"
+      }
+    }
+  ],
+  "gallery_sha256": "a866f95de40f0b21855d3b04e507086dfa210218f3a624cffd0744e8e26ec9d2",
+  "outer_access": false,
+  "plot_sha256": "821c68d012ef81eb90519abdeb40cceaad936aeebd1843b299485ef7740c882c",
+  "raw_source_audio_opened": false,
+  "records_sha256": "b7c823ad7801c37435f0596d59f278c12bcf9ef3f5f0e80e4a42f4af36c3566f",
+  "saved_training_audio_read": true,
+  "source_audit_sha256": "fa24a14766105c7a90f9c2408312565cfc2d02af7a7cc3cd8ea2e2f499944a8e",
+  "source_summary_sha256": "f7934380d2bfe389ba7371da47371ba229db7d3d8f76e69c456f46456e8d0da3"
+}

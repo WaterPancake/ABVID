@@ -1,0 +1,235 @@
+{
+  "main": {
+    "id": "737cbf242c1e2c09",
+    "type": "split",
+    "children": [
+      {
+        "id": "aa56608140beb13b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "24431f2eadd494b3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "notes/Think DSP - Digital Signal Processing in Python.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Think DSP - Digital Signal Processing in Python"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d2a8bf0f1db5ed3e",
+    "type": "split",
+    "children": [
+      {
+        "id": "44a79122575a1b51",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0e892ccca8d0502f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "435873d87b87e20d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "9fe856b5e1d85927",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "a9ea7a662f0ebac9",
+    "type": "split",
+    "children": [
+      {
+        "id": "b07481ad7a31240f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f1f73bc85b41e3fc",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "notes/ABVID.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "c2aaff2faa74b53f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "notes/ABVID.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "5a42e430dd0634df",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "4fea6a72a023de43",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "334907afb2713361",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "notes/ABVID.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "24431f2eadd494b3",
+  "lastOpenFiles": [
+    "audio_segment_review.md",
+    "notes/Reading Plan - 14 Weeks.md",
+    "low_snr_audibility_improvement.md",
+    "notes/condensed-guide/05 - Real-World Transfer.md",
+    "notes/condensed-guide/04 - Multichannel & Beamforming.md",
+    "notes/condensed-guide/03 - Vehicle Acoustics & Synthetic Data.md",
+    "notes/condensed-guide/02 - Features & Classification.md",
+    "notes/condensed-guide/01 - Signal Fundamentals.md",
+    "historical_checkpoint_audit_sherman_pdsounds_v1.md",
+    "required_reading.md",
+    "paper_synthetic_to_real_transfer.md",
+    "notes/mit-6.003-signals-systems/05 - Filters & Frequency Response.md",
+    "notes/mit-6.003-signals-systems/06 - 6.003 to ABVID.md",
+    "notes/mit-6.003-signals-systems/MIT 6.003 Signals and Systems.md",
+    "notes/mit-6.003-signals-systems/01 - Signals & Systems.md",
+    "notes/mit-6.003-signals-systems/02 - LTI Systems & Convolution.md",
+    "notes/mit-6.003-signals-systems/03 - Fourier Analysis.md",
+    "notes/Think DSP - Digital Signal Processing in Python.md",
+    "notes/mit-6.551j-acoustics/06 - 6.551J to ABVID.md",
+    "notes/mit-6.551j-acoustics/MIT 6.551J Acoustics of Speech and Hearing.md",
+    "notes/mit-6.551j-acoustics/06 - Maps to ABVID.md",
+    "notes/mit-6.551j-acoustics/05 - Microphones and Transducers.md",
+    "notes/mit-6.551j-acoustics/04 - Localization and Diffraction.md",
+    "notes/mit-6.551j-acoustics/03 - Sources and Arrays.md",
+    "notes/mit-6.551j-acoustics/02 - Waves Plane and Spherical.md",
+    "notes/mit-6.551j-acoustics/01 - Sound Measurement.md",
+    "notes/mit-6.551j-acoustics/assets/itd_azimuth.png",
+    "notes/mit-6.551j-acoustics/assets/standing_wave.png",
+    "notes/mit-6.551j-acoustics/assets/array_directivity.png",
+    "notes/mit-6.551j-acoustics/assets/wavelength_frequency.png",
+    "notes/mit-6.551j-acoustics/assets/inverse_square.png",
+    "notes/mit-6.003-signals-systems/assets/spectrogram_stft.png",
+    "notes/mit-6.003-signals-systems/assets/filter_shapes.png",
+    "notes/mit-6.003-signals-systems/assets/db_scale.png",
+    "notes/mit-6.551j-acoustics/assets",
+    "notes/mit-6.551j-acoustics",
+    "notes/mit-6.003-signals-systems/assets/aliasing.png",
+    "notes/mit-6.003-signals-systems/assets",
+    "notes/mit-6.003-signals-systems",
+    "thinkdsp.pdf"
+  ]
+}

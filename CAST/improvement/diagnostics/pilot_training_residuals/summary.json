@@ -1,0 +1,121 @@
+{
+  "classes": {
+    "car": {
+      "band_energy_L1_error": {
+        "median": 0.2649554943513183,
+        "p90": 0.4327146386115033
+      },
+      "baseline_check_loss": {
+        "maximum": 1.8323839902877808,
+        "median": 1.716113805770874,
+        "p90": 1.8110441207885741
+      },
+      "boundary_hits": {
+        "spacing_hz": 2
+      },
+      "check_loss": {
+        "maximum": 1.4391230344772339,
+        "median": 1.3729453086853027,
+        "p90": 1.4304101467132568
+      },
+      "count": 25,
+      "envelope_rmse": {
+        "median": 0.11681191664240989,
+        "p90": 0.15121098442450664
+      },
+      "fit_seconds": {
+        "maximum": 32.732600125003955,
+        "median": 30.28924637500313,
+        "p90": 32.424493141801214
+      },
+      "groups": {
+        "connected_654b5df57ec64387": 5,
+        "connected_667018ac7661cccb": 5,
+        "connected_72766641e1daf436": 5,
+        "connected_b00d69ddbb66d0fe": 5,
+        "connected_c6148cf0cafb5753": 5
+      },
+      "modulation_L1_error": {
+        "median": 0.31314280032893677,
+        "p90": 0.3949441965448413
+      },
+      "scientific_flags": {
+        "equally_good_starts_disagree": 22,
+        "no_resolvable_harmonic_salience": 1,
+        "spacing_unidentified_noise_dominant": 1
+      },
+      "spectral_relative_magnitude_error": {
+        "median": 0.22061392943497418,
+        "p90": 0.2467136312496397
+      },
+      "systematic_examples": {
+        "best": "0cc6a64bd68077e4a00744d06ac57c2ab1a7b175570d1730e1be7556829b2a52",
+        "median": "0bb5a4e9ab6a72f25fd5ae5aaaa7c1fc027ec2868d91dacb117eb24511c0d83b",
+        "worst": "18fad0f82513a67a6b20cefbf5e1903b34f5bc49d81beab1904a2acf9afb41a1"
+      }
+    },
+    "truck": {
+      "band_energy_L1_error": {
+        "median": 0.25625594883536057,
+        "p90": 0.3611321111369309
+      },
+      "baseline_check_loss": {
+        "maximum": 2.0343542098999023,
+        "median": 1.741476058959961,
+        "p90": 1.9339993476867676
+      },
+      "boundary_hits": {
+        "noise_weights": 1
+      },
+      "check_loss": {
+        "maximum": 1.3988336324691772,
+        "median": 1.352879524230957,
+        "p90": 1.3943771839141845
+      },
+      "count": 25,
+      "envelope_rmse": {
+        "median": 0.10567073282973116,
+        "p90": 0.13554159399025678
+      },
+      "fit_seconds": {
+        "maximum": 33.14285974999075,
+        "median": 30.055755291992682,
+        "p90": 32.46155564959918
+      },
+      "groups": {
+        "connected_654b5df57ec64387": 5,
+        "connected_667018ac7661cccb": 5,
+        "connected_72766641e1daf436": 5,
+        "connected_b00d69ddbb66d0fe": 5,
+        "connected_c6148cf0cafb5753": 5
+      },
+      "modulation_L1_error": {
+        "median": 0.27336904187796396,
+        "p90": 0.4236893394753212
+      },
+      "scientific_flags": {
+        "equally_good_starts_disagree": 20,
+        "harmonic_order_ambiguity": 1,
+        "spacing_unidentified_noise_dominant": 1
+      },
+      "spectral_relative_magnitude_error": {
+        "median": 0.20383806158845202,
+        "p90": 0.25726911921258144
+      },
+      "systematic_examples": {
+        "best": "1f9de56485fead299bb08192d5aea9a0d23732277be5c905f51662793576c684",
+        "median": "1409b9ae9ab8ec5fdd940b0c48f6bf04b67928078604df808ab31d772a3d1cc0",
+        "worst": "100358a6cb5a1d67e4b96b68e1f6eea71bcfee26270e8734b48b09e4517cea51"
+      }
+    }
+  },
+  "code_sha256": "94bd68fac83fccf7470a20d9902cc45c140d29230ed9fb4a4c7b04c19378e668",
+  "fit_audit_sha256": "f4f8ce3008fc67b9272d58f006dc0dc368a349171e8ec6852551208383f51ca2",
+  "fit_run": "CAST/improvement/runs/cast_smooth8_v1_20261004_r1",
+  "interpretation": "Paired source reconstruction; no independent generation or generalization claim",
+  "outer_held_access": false,
+  "plot_sha256": "c46f89861f3447338087f26327e87fd5a540ecdabab27c49d43e70fe1bc89b9a",
+  "residuals_sha256": "28d86a01227f65b0464b1a976c21f69b8fa63cf66b30a5eb5bb0fc5f1908eaf4",
+  "scope": "pilot",
+  "seconds": 28.032013459000154
+}

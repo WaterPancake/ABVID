@@ -1,0 +1,6 @@
+{
+  "field": "real_audio_opened",
+  "issue": "Ambiguous false value: this analysis reads saved real-derived training original/reconstructed WAVs through the verified bank loader. It opens no raw dataset path.",
+  "correction": "Use explicit raw_source_audio_opened=false and saved_training_audio_read=true in the successor diagnostic.",
+  "numerical_results_affected": false
+}

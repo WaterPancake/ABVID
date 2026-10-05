@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-10-05T03:27:11.667238+00:00",
+  "technical_workflow_complete": true,
+  "numeric_goal_complete": false,
+  "tests_passed": 278,
+  "source_records_replayed": 22500,
+  "source_scores_recomputed": 450,
+  "reference_scores_exact": 150,
+  "outer_records_replayed": 1500,
+  "raw_held_descriptors_replayed": 570,
+  "report_links_verified": 109,
+  "audio_review_links_verified": 62,
+  "audio_review_artifact_hashes_verified": 61,
+  "audio_review_examples": 10,
+  "outer_review_links_verified": 19,
+  "outer_review_artifact_hashes_verified": 3,
+  "outer_review_examples": 8,
+  "source_and_outer_figures_visually_reviewed": true,
+  "scientific_artifacts_unmodified": true,
+  "historical_hashes_unchanged": {
+    "CAST/runs/cast_pilot_v0_20261004/verification.json": "41965045cb9ba0a843503f76b663656d12b63cc2065a201c895c5aa138cade3c",
+    "CAST/runs/cast_pilot_v0_20261004/lock.json": "e37f3393e99ff5d83e0248e7f02de93cd6fa6f77409c6c3a927f81a9f649290d",
+    "CAST/generalization/runs/cast_generalization_v0_20261004_r1/verification.json": "0a77ccdd17e933f935d4851b2e39febcca9977b3df7b75af86424b44897f83eb",
+    "CAST/generalization/runs/cast_generalization_v0_20261004_r1/scores.json": "49309770bb2019a89904aca0c3dcc51b307f1d22727763f2b158279a2826152a"
+  },
+  "reproduction_shell_syntax_and_invalid_ids_checked": true,
+  "stages_executed_individually": true,
+  "next_protocol_only": "CAST/improvement/width_v15/PROTOCOL.md",
+  "files": {
+    "reports/CAST_improvement.md": "d3b782785ad240df3ed76422aba9a26426bbabb8a3e8e0b128d82e884ba1c5e0",
+    "CAST/improvement/README.md": "581609c2ef75e4e7b79fa264b997fd7db6fd59e0f8195273ddba738ad5985406",
+    "CAST/improvement/context_v14/README.md": "4512f4ae21f540f15690002a490c316f5e2ffb34523e4e11a0ae5e4343198516",
+    "CAST/improvement/context_v14/reproduce.sh": "2c80e8a533ae941b5e2ac2889770492a3add0e7b7b39f12fc54197cd6b135444",
+    "CAST/improvement/context_v14/reproduce_outer.sh": "56f818bac7b3073a1f05aec2a7f78fa4fa6681104be6ea04b9cf3ebbbfb51b26",
+    "CAST/improvement/context_v14/evaluations/group_context_v14_full_source/summary.json": "9775d80ee6542b0b5f7ab9ea8ac710e4beb336bf3ba432e25f4aa89104167d0d",
+    "CAST/improvement/context_v14/evaluations/group_context_v14_full_source/audit_verification.json": "d18dfbb513e90a7718af3655e81f34d0774f9e32096a8a2cebe9c679a1df8727",
+    "CAST/improvement/context_v14/evaluations/context_v14_outer_development/scores.json": "1db0dfa3ae2e302984770d4f6186959f28938f6a888638846011e863b5635bdc",
+    "CAST/improvement/context_v14/evaluations/context_v14_outer_development/verification.json": "fa4ef2d69dbd90633057dece84698eec1d0a6b3b2121fb53e25b7793f33f47f7",
+    "CAST/improvement/context_v14/diagnostics/group_context_v14_audio/summary.json": "f3e2c745f90fd550b468ff6362c5f5a259210b9f62a7a7122617e44b4e248747",
+    "CAST/improvement/context_v14/diagnostics/group_context_v14_figures/summary.json": "57740eb108736eb113c2b3e7140d95841d062cabfbf43e98e7623c7cf0f7caf6",
+    "CAST/improvement/context_v14/diagnostics/context_v14_outer_review/summary.json": "7d34bd065e8988c4a03e883533b3ff73ba803f5a02a62b42b590ec0c027c62c3"
+  }
+}

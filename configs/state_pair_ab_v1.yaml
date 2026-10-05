@@ -1,0 +1,32 @@
+experiment_id: state_pair_ab_v1
+domain: real -> real within-session cross-state diagnostic
+benchmark_eligible: false
+operator_approval_date: '2026-09-21'
+operator_approval: Allow diagnostic-only exception
+manifest_sha256: c705cc95ef506cbd0ad4d504e53a5cc8fcae71baca63355d9b6b54c24ba81359
+seed: 42
+C: 1.0
+threshold: 0.5
+max_iter: 5000
+solver: lbfgs
+blas_threads: 1
+representations: [beats768, panns_embedding2048, panns_semantic35]
+directions:
+  - [idle, steady_speed]
+  - [steady_speed, idle]
+pairs:
+  - id: amx30_hmmwv
+    role: primary_cross_class
+    members:
+      - {source_id: candidate-target-tracked-retromobile-amx30-2015, model: AMX-30}
+      - {source_id: candidate-target-wheeled-hmmwv-m1151-training-2014, model: M1151 HMMWV}
+  - id: amx30_t72b3
+    role: secondary_tracked_pair
+    members:
+      - {source_id: candidate-target-tracked-retromobile-amx30-2015, model: AMX-30}
+      - {source_id: candidate-target-tracked-t72-bmp3-102nd-march-2022, model: T-72B3}
+  - id: hmmwv_stryker
+    role: secondary_wheeled_pair_convoy
+    members:
+      - {source_id: candidate-target-wheeled-hmmwv-m1151-training-2014, model: M1151 HMMWV}
+      - {source_id: candidate-target-wheeled-m1126-stryker-convoy-pinon-2024, model: M1126 Stryker convoy}

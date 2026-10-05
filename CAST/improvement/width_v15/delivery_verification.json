@@ -1,0 +1,80 @@
+{
+  "created_utc": "2026-10-05T04:14:41.083405+00:00",
+  "technical_workflow_complete": true,
+  "numeric_goal_complete": true,
+  "tests_passed": 306,
+  "source_records_replayed": 30000,
+  "source_scores_recomputed": 600,
+  "reference_scores_exact": 150,
+  "outer_records_replayed": 1500,
+  "raw_held_descriptors_replayed": 570,
+  "all_candidates_and_seeds_retained": true,
+  "new_fitting": false,
+  "selected_width": 1.1,
+  "source_selection_gate_strengthened_not_relaxed": true,
+  "outer_acceptance_unchanged": {
+    "coverage_each_class": 0.8,
+    "family_spread": [
+      0.5,
+      2.0
+    ],
+    "relative_W1_gain_each_control_each_class": 0.025
+  },
+  "outer_coverage": {
+    "car": 0.8201909368635437,
+    "truck": 0.8128599683544305
+  },
+  "outer_gains": {
+    "car": {
+      "marginals": 0.1229549215089224,
+      "prototype": 0.20946039365798041
+    },
+    "truck": {
+      "marginals": 0.1720678913969167,
+      "prototype": 0.24048346482225857
+    }
+  },
+  "markdown_links_verified": {
+    "reports/CAST_improvement.md": 122,
+    "CAST/improvement/README.md": 15,
+    "CAST/improvement/width_v15/README.md": 5
+  },
+  "audio_review_links_verified": 72,
+  "audio_review_artifact_hashes_verified": 71,
+  "audio_review_examples": 10,
+  "audio_review_waveforms": 60,
+  "outer_review_links_verified": 19,
+  "outer_review_artifact_hashes_verified": 3,
+  "outer_review_examples": 8,
+  "source_and_outer_figures_visually_reviewed": true,
+  "scientific_artifacts_unmodified": true,
+  "historical_hashes_unchanged": {
+    "CAST/runs/cast_pilot_v0_20261004/verification.json": "41965045cb9ba0a843503f76b663656d12b63cc2065a201c895c5aa138cade3c",
+    "CAST/runs/cast_pilot_v0_20261004/lock.json": "e37f3393e99ff5d83e0248e7f02de93cd6fa6f77409c6c3a927f81a9f649290d",
+    "CAST/generalization/runs/cast_generalization_v0_20261004_r1/verification.json": "0a77ccdd17e933f935d4851b2e39febcca9977b3df7b75af86424b44897f83eb",
+    "CAST/generalization/runs/cast_generalization_v0_20261004_r1/scores.json": "49309770bb2019a89904aca0c3dcc51b307f1d22727763f2b158279a2826152a"
+  },
+  "historical_v12_v13_v14_report_snapshots_verified": true,
+  "reproduction_shell_syntax_and_invalid_ids_checked": true,
+  "stages_executed_individually": true,
+  "fresh_independent_confirmation": false,
+  "classification_transfer_tested": false,
+  "files": {
+    "reports/CAST_improvement.md": "6a285195a770c54c1c74448a310999c6d4bc17178693e00023a8bc8448058c44",
+    "CAST/improvement/README.md": "e5adf4f730a362f754ddf7dc71999c677d16077c0032b5ccf2366b3a5c41ba73",
+    "CAST/improvement/width_v15/README.md": "b8de89cae247a687c452f4666db97c03c2002ddd8e1ea3fba51dbb0c8f15798d",
+    "CAST/improvement/width_v15/PROTOCOL.md": "e6bb876264061d16887355cb642f441b4a37c8b628d28dcf85740fde62a8d6e9",
+    "CAST/improvement/width_v15/reproduce.sh": "41c9145551fb2316f10c083ff14e0ebfa20eee4b200c699954f5dccc1b3d631a",
+    "CAST/improvement/width_v15/reproduce_outer.sh": "88244819ee5e9b9a7edf3d32fc6d6f68246c147d2b6419a52d3b300ecd521490",
+    "CAST/improvement/width_v15/evaluations/context_width_v15_full_source/summary.json": "7b093f8e457f60b7b7b67db9cfb2a594d2588e756d67be1423c544df942f4d1c",
+    "CAST/improvement/width_v15/evaluations/context_width_v15_full_source/audit_verification.json": "4e5a64512a931717f8e13a7728d97b5d4622a8a699d467cc609e8dbaabd56d26",
+    "CAST/improvement/width_v15/evaluations/context_width_v15_full_source/progression_decision.json": "1a51f1756bd489c5d6ccd4c95f6db1845228ca987273341bb194e54c311014df",
+    "CAST/improvement/width_v15/evaluations/width_v15_outer_development/scores.json": "27909bbe70fb167ee700b3de5123ad80333e88cd543723fa40eca5a2bfd34cce",
+    "CAST/improvement/width_v15/evaluations/width_v15_outer_development/verification.json": "081ca118a71e00398671b0ff977a34476c469dfb9d6b8fb0631a141e83896bdd",
+    "CAST/improvement/width_v15/evaluations/width_v15_outer_development/failure.json": "4a32ed3554419eabbc9adbaa5bb1baf1a2ef9bb90b95c0446a88dec4b67f5084",
+    "CAST/improvement/width_v15/evaluations/width_v15_outer_development/timing.json": "d2460978fb552124d2d008096d85c40cb73a5eec4998720f83301ee6c1902475",
+    "CAST/improvement/width_v15/diagnostics/context_width_v15_audio/summary.json": "bc152f5b46780dec6301ebd2a003e4f871579e73e33e7004732b1f74269120bb",
+    "CAST/improvement/width_v15/diagnostics/context_width_v15_figures_r1/summary.json": "14f0d71855c50b98a7cbe251fd9f681141ee4e7cc8ab3b69253e645a22bb2c9e",
+    "CAST/improvement/width_v15/diagnostics/width_v15_outer_review/summary.json": "81dc4418da578a361f4788f512007f2073e00306e5563a9d550014b89bdd1cb7"
+  }
+}

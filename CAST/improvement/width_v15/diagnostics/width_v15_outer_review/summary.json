@@ -1,0 +1,145 @@
+{
+  "code_sha256": "5f22b54eec4f94952bec9afb81bb3f5494a9010d4374c9c6404166d7bf89cbf1",
+  "evaluation": "CAST/improvement/width_v15/evaluations/width_v15_outer_development",
+  "examples": [
+    {
+      "class": "car",
+      "file_id": "001e5c55121e946f9b4cb7d58ff1303e225313ad5f5895e5766d9af18beab9da",
+      "path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/held/001e5c55121e946f9b4cb7d58ff1303e225313ad5f5895e5766d9af18beab9da/playback.wav",
+      "role": "held_original",
+      "sha256": "8a7c8fb2b687aad13e6b4eb2e5d9a1a03516b1ddb1dabb7eb7cc70ff4b6999a5"
+    },
+    {
+      "class": "car",
+      "index": 0,
+      "path": "CAST/improvement/width_v15/evaluations/width_v15_outer_development/generated/joint/42/car/0000/playback.wav",
+      "role": "joint",
+      "seed": 42,
+      "sha256": "4ee6f65ca7929f69d4c9bba7de9b307ee7b94e28cab9cbcb4b0e03e4b5162f07"
+    },
+    {
+      "class": "car",
+      "index": 0,
+      "path": "CAST/improvement/width_v15/evaluations/width_v15_outer_development/generated/marginals/42/car/0000/playback.wav",
+      "role": "marginals",
+      "seed": 42,
+      "sha256": "814bf0e427bff6d991ab123fc177bb79c88ce19d2c11863b04183ccec889e3cd"
+    },
+    {
+      "class": "car",
+      "index": 0,
+      "path": "CAST/improvement/width_v15/evaluations/width_v15_outer_development/generated/prototype/42/car/0000/playback.wav",
+      "role": "prototype",
+      "seed": 42,
+      "sha256": "791ddcd466616d4b7723141085dd89e27c4380c351a29e7e98a7dd6590b1ffaa"
+    },
+    {
+      "class": "truck",
+      "file_id": "04340d0f666225da3459598fddf6a7953ebed5385648e4e9b3c3c4a1ce21e2b7",
+      "path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/held/04340d0f666225da3459598fddf6a7953ebed5385648e4e9b3c3c4a1ce21e2b7/playback.wav",
+      "role": "held_original",
+      "sha256": "8274eef532611b7f21c2115bb575eeb9192c05b055cbd80cd6eeba92f6f72a71"
+    },
+    {
+      "class": "truck",
+      "index": 0,
+      "path": "CAST/improvement/width_v15/evaluations/width_v15_outer_development/generated/joint/42/truck/0000/playback.wav",
+      "role": "joint",
+      "seed": 42,
+      "sha256": "848d9e917462b36b58f3c4cd398efdd921e4696883ea15ae15881280fd05dd41"
+    },
+    {
+      "class": "truck",
+      "index": 0,
+      "path": "CAST/improvement/width_v15/evaluations/width_v15_outer_development/generated/marginals/42/truck/0000/playback.wav",
+      "role": "marginals",
+      "seed": 42,
+      "sha256": "d602f0621b3844c8a89d22f4532ba7a1b037203929d3db723d5800b09a83f1a5"
+    },
+    {
+      "class": "truck",
+      "index": 0,
+      "path": "CAST/improvement/width_v15/evaluations/width_v15_outer_development/generated/prototype/42/truck/0000/playback.wav",
+      "role": "prototype",
+      "seed": 42,
+      "sha256": "d6a30aac4fc4745309944825ab727781057d22d4f5f71770a1bcbae6db60501f"
+    }
+  ],
+  "files": {
+    "index.html": "229f82b47ed7176068e2d861046473cf7bb80b5bcbef0e591fd42507abb11346",
+    "outer_comparison.png": "fff541dedc62b58dad4f24c4c2baa36668d6f21090e2b1e0a703c5d9e0273b52",
+    "outer_families.png": "8b0318aa853636809a790a7866be6f8934aee496ccaea350a1ec3521db7add0c"
+  },
+  "goal_passed": true,
+  "held_groups": 1,
+  "scores_sha256": "27909bbe70fb167ee700b3de5123ad80333e88cd543723fa40eca5a2bfd34cce",
+  "seconds": 1.3379253750026692,
+  "seed_range_is_not_group_uncertainty": true,
+  "seed_ranges": {
+    "car": {
+      "joint": {
+        "W1": {
+          "max": 0.8329349032847407,
+          "min": 0.5904620407898297
+        },
+        "coverage": {
+          "max": 0.8702472632382892,
+          "min": 0.7925789205702648
+        }
+      },
+      "marginals": {
+        "W1": {
+          "max": 0.8635562021891452,
+          "min": 0.7760064040123943
+        },
+        "coverage": {
+          "max": 0.7262379073319755,
+          "min": 0.6677841776985743
+        }
+      },
+      "prototype": {
+        "W1": {
+          "max": 0.9127222491667739,
+          "min": 0.9077335897801501
+        },
+        "coverage": {
+          "max": 0.24105142566191448,
+          "min": 0.23408541242362527
+        }
+      }
+    },
+    "truck": {
+      "joint": {
+        "W1": {
+          "max": 0.7476469871073219,
+          "min": 0.5942608807379088
+        },
+        "coverage": {
+          "max": 0.8214299841772152,
+          "min": 0.8029865506329115
+        }
+      },
+      "marginals": {
+        "W1": {
+          "max": 0.8648723747042304,
+          "min": 0.7523871176004799
+        },
+        "coverage": {
+          "max": 0.7116594145569621,
+          "min": 0.6676127373417721
+        }
+      },
+      "prototype": {
+        "W1": {
+          "max": 0.8883418472569439,
+          "min": 0.8831058969148474
+        },
+        "coverage": {
+          "max": 0.2599980221518987,
+          "min": 0.2496835443037975
+        }
+      }
+    }
+  },
+  "verification_sha256": "081ca118a71e00398671b0ff977a34476c469dfb9d6b8fb0631a141e83896bdd"
+}

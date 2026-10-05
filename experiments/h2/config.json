@@ -1,0 +1,351 @@
+{
+  "augmentation": null,
+  "budget": {
+    "train_events_per_class": 190,
+    "train_templates_per_class": 19,
+    "trajectories_per_template": 10,
+    "validation_events_per_class": 50,
+    "validation_templates_per_class": 5,
+    "waveform_noise_and_phases": "fixed_per_template_shared_across_trajectories_and_factors"
+  },
+  "cells": {
+    "F00": {
+      "path": "P0",
+      "source": "S0"
+    },
+    "F01": {
+      "path": "P1",
+      "source": "S0"
+    },
+    "F10": {
+      "path": "P0",
+      "source": "S1"
+    },
+    "F11": {
+      "path": "P1",
+      "source": "S1"
+    }
+  },
+  "classes": {
+    "car": 0,
+    "truck": 1
+  },
+  "classifier": {
+    "C": 1.0,
+    "class_weight": null,
+    "fit_intercept": true,
+    "max_iter": 5000,
+    "penalty": "l2",
+    "solver": "lbfgs",
+    "tol": 1e-06,
+    "type": "StandardScaler_LogisticRegression"
+  },
+  "classifier_scope": "fresh_training_only_scaler_and_head_per_cell_seed_representation",
+  "domain": "controlled_synthetic_to_MELAUDIS_real_exposed_development",
+  "encoder": {
+    "checkpoint": ".artifacts/models/beats/BEATs_iter3_plus_AS2M.pt",
+    "checkpoint_sha256": "d43cbfad4d7b56381c061d7a24774f908d4d94c72961f6eb1d9090ff18cd8d34",
+    "frozen": true,
+    "upstream_commit": "732d834db70ee0fc3886b4bcbcfb4ce7fb829be2"
+  },
+  "environment": {
+    "background": null,
+    "snr_db": null,
+    "weather_randomization": false,
+    "wind": null
+  },
+  "estimands": {
+    "class_recall_nonloss_margin": 0.0,
+    "contradict_directional_dominance": "upper_95_CI_D<=0",
+    "falsify_practical_margin": "upper_95_CI_D<0.03",
+    "interaction": "Q11-Q10-Q01+Q00",
+    "path": "((Q01-Q00)+(Q11-Q10))/2",
+    "practical_D": 0.03,
+    "primary": "D=mean_seed(delta_S-delta_P)=mean_seed(Q10-Q01),Q=full_target_macro_f1",
+    "source": "((Q10-Q00)+(Q11-Q01))/2",
+    "support_practical_dominance": "lower_95_CI_D>=0.03 and lower_95_CI_delta_S>0",
+    "useful_source_requirement": "lower_95_CI_delta_S>0"
+  },
+  "excluded_classes": [
+    "motorcycle"
+  ],
+  "execution_versions_reference": {
+    "librosa": "0.11.0",
+    "numpy": "1.26.4",
+    "python": "3.11.13",
+    "scikit-learn": "1.4.2",
+    "scipy": "1.17.1",
+    "soundfile": "0.13.1",
+    "torch": "2.11.0",
+    "torchaudio": "2.11.0"
+  },
+  "failure_policy": {
+    "nonfinite_zero_or_backend_error": "stop_complete_bank_no_fallback",
+    "peak_violation": "reject_both_classes_all_four_cells_for_geometry_slot;stop_complete_bank_no_redraw",
+    "reason": "preserve_precommitted_latents_and_class_path_pairing;amend_before_target_if_validation_fails",
+    "retry_limit": 0
+  },
+  "feature_dtype_for_heads": "float64",
+  "freeze_id": "source_path_20261004_v1",
+  "hardware": {
+    "batch_size": 8,
+    "blas_threads": 1,
+    "device": "cpu",
+    "torch_threads": 4
+  },
+  "hyperparameter_selection": null,
+  "implementation_status": {
+    "environment_lock_sha256": null,
+    "ready_for_target_evaluation": false,
+    "renderer_patch_sha256": null,
+    "source_adapter_sha256": null,
+    "validation_report_sha256": null,
+    "waveform_manifest_sha256": null
+  },
+  "mfcc": {
+    "center": true,
+    "dct_norm": "ortho",
+    "dct_type": 2,
+    "fmax": 8000.0,
+    "fmin": 0.0,
+    "hop_length": 160,
+    "htk": false,
+    "mel_norm": "slaney",
+    "n_fft": 400,
+    "n_mels": 40,
+    "n_mfcc": 13,
+    "pad_mode": "constant",
+    "pooling": "mean_and_population_std",
+    "power": 2.0,
+    "top_db": 80,
+    "window": "hann"
+  },
+  "positive_rule": "p_truck_strictly_greater_than_threshold",
+  "preprocessing": {
+    "channels": "arithmetic_mean",
+    "gain_normalization": false,
+    "intermediate_rate_hz": 8000,
+    "resampler": "scipy_resample_poly",
+    "sample_rate_hz": 16000,
+    "samples": 32000,
+    "window": "center",
+    "window_beta": 5.0
+  },
+  "primary_representation": "BEATs768",
+  "propagation": {
+    "P0": {
+      "include_air_absorption": false,
+      "include_reflection": false
+    },
+    "P1": {
+      "include_air_absorption": true,
+      "include_reflection": true
+    },
+    "backend_contract": "pyroadacoustics_H2_R1_required_repairs_not_implemented",
+    "closest_source_time_s": 5.0,
+    "crop_center": "5+sqrt(d*d+0.7*0.7)/(331.3*sqrt(1+20/273.15))",
+    "crop_samples": 16000,
+    "crop_start": "floor((crop_center-1)*8000+0.5)",
+    "directions": [
+      -1,
+      1
+    ],
+    "interpolation": "Sinc",
+    "mic_directivity": "omnidirectional",
+    "mic_xyz_m": [
+      0,
+      0,
+      1.2
+    ],
+    "pressure_atm": 1.0,
+    "range_m": [
+      5,
+      50
+    ],
+    "reference_commit": "642f95ea83417b662906712c5902d7b7dd665092",
+    "reference_is_executable_candidate": false,
+    "relative_humidity_percent": 50.0,
+    "road_material_integer": 20000,
+    "road_material_physical_units": null,
+    "source_directivity": "omnidirectional",
+    "source_height_m": 0.5,
+    "source_speed_independent_of_rpm": true,
+    "speed_kmh": [
+      30,
+      90
+    ],
+    "temperature_C": 20.0,
+    "trajectory": "[d,direction*(speed_kmh/3.6)*(n/8000-5),0.5], n=0..79999",
+    "trajectory_construction": "exact_sample_grid_adapter_override_required"
+  },
+  "protocol_id": "h2_source_path_v1",
+  "real_label_validation": false,
+  "receiver_normalization": {
+    "floor_rms": 1e-12,
+    "interval": "same_16000_sample_8k_crop",
+    "peak_limit_after_resampling": 0.98,
+    "rms_dbfs": -26.0,
+    "scalar_only": true
+  },
+  "representations": [
+    "BEATs768",
+    "MFCC26"
+  ],
+  "rng": {
+    "algorithm": "numpy.Generator(PCG64)",
+    "geometry_class_key": null,
+    "numpy_version": "1.26.4",
+    "seed_derivation": "int(sha256(compact_JSON_array([protocol_id,replicate_seed,role,stream,class_or_null,template_index,trajectory_index_or_null])).hexdigest()[:16],16)",
+    "stream_separation": [
+      "base_parameters",
+      "engine_phases",
+      "tire_noise",
+      "exhaust_noise",
+      "exhaust_phases",
+      "S1_parameters",
+      "geometry"
+    ]
+  },
+  "roadmap_stage": "E4-E5",
+  "runtime_policy": "30_preselected_paired_synthetic_only_timing_slots_before_bulk_render;no_target_inference;no_budget_change_without_version_amendment",
+  "seeds": [
+    42,
+    123,
+    456,
+    789,
+    1024
+  ],
+  "sensor": {
+    "channels": 1,
+    "clipping": false,
+    "compression": null,
+    "noise": null,
+    "response": "ideal_identity"
+  },
+  "source": {
+    "S1": {
+      "component_gain_db": [
+        -3,
+        3
+      ],
+      "components": [
+        "engine",
+        "tire",
+        "exhaust_if_present"
+      ],
+      "engine_rolloff_offset_db_per_order": [
+        -1,
+        1
+      ],
+      "frequency_fractional_amplitude": [
+        0,
+        0.02
+      ],
+      "frequency_modulation_hz": [
+        0.5,
+        2.0
+      ],
+      "phase_rad": [
+        0,
+        6.283185307179586
+      ]
+    },
+    "am_depth": [
+      0.05,
+      0.15
+    ],
+    "am_frequency": "base_firing_hz/2",
+    "car": {
+      "cylinders": 4,
+      "harmonics": 8,
+      "rolloff_db_per_order": 4.0,
+      "rpm": [
+        1500,
+        4000
+      ],
+      "stroke": 4,
+      "tire_center_hz": [
+        900,
+        1100
+      ],
+      "tire_width_hz": [
+        600,
+        1000
+      ]
+    },
+    "dtype": "float64",
+    "duration_s": 10.0,
+    "empirically_calibrated": false,
+    "gain_floor_rms": 1e-12,
+    "phase_integration": "theta[0]=phase; theta[n]=phase+2*pi/fs*sum(f0[k],k=0..n-1); harmonic_h_uses_h_times_integrated_base_plus_its_original_phase",
+    "physical_vehicle_identity": null,
+    "rate_hz": 8000,
+    "reference": "evidence/p02/_2_genSyntheticData.py",
+    "reference_sha256": "01e177684b9204d36b0410ad6bd42a26aeda3f73fadd498aa812c6e7457b7c0e",
+    "rms_interval_s": [
+      4.0,
+      6.0
+    ],
+    "rms_target": 0.1,
+    "samples": 80000,
+    "truck": {
+      "cylinders": 6,
+      "harmonics": 12,
+      "rolloff_db_per_order": 2.5,
+      "rpm": [
+        1000,
+        2200
+      ],
+      "stroke": 4,
+      "tire_center_hz": [
+        700,
+        900
+      ],
+      "tire_width_hz": [
+        800,
+        1200
+      ],
+      "weights": {
+        "engine": [
+          0.35,
+          0.45
+        ],
+        "exhaust": [
+          0.2,
+          0.3
+        ],
+        "tire": [
+          0.2,
+          0.3
+        ]
+      }
+    }
+  },
+  "status": "design_frozen_execution_not_started",
+  "target": {
+    "cache_reuse": "only_if_input_and_representation_hashes_match;no_target_statistics_fit",
+    "conservative_groups": 4,
+    "counts": {
+      "car": 7810,
+      "truck": 256
+    },
+    "feature_cache": "experiments/h1/cache/h1_common_budget_v1.3",
+    "h1_lock": "experiments/h1/frozen/h1_common_budget_v1.3/lock.json",
+    "h1_lock_sha256": "3e427a2f4ee084ecdd4102dd3a9863a55cc06496abdb9688258ec26cbaaf901e",
+    "ids": "exact_h1_lock_target_ids",
+    "role": "previously_exposed_development",
+    "untouched_final_test": null
+  },
+  "threshold": 0.5,
+  "uncertainty": {
+    "bank_draws": 5,
+    "bootstrap_windows": false,
+    "confidence": 0.95,
+    "draws": 10000,
+    "method": "paired_target_group_and_synthetic_bank_bootstrap_conditional_on_fits",
+    "quantile_method": "linear",
+    "seed": 314159,
+    "target_group_draws": 4
+  },
+  "validation_role": "synthetic_template_holdout_diagnostic_only_no_selection"
+}

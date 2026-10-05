@@ -1,0 +1,232 @@
+{
+  "code_sha256": "9d6a7a790130659ea394898775e969262357e21cc0a452524aa1e3bd0ed41eb9",
+  "counts_note": "Five real source groups; seeds are not new recording sessions",
+  "fold_order": [
+    "connected_654b5df57ec64387",
+    "connected_667018ac7661cccb",
+    "connected_72766641e1daf436",
+    "connected_b00d69ddbb66d0fe",
+    "connected_c6148cf0cafb5753"
+  ],
+  "fold_results": [
+    {
+      "W1": 0.6114968568269439,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.8006866776315789,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.7420687723856628,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.7957976973684211,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.42569766417751154,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.9010279605263157,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.5783211340275779,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.8635197368421054,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.4450362074703257,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.8703865131578947,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.6906977374074115,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.6918955592105263,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.7706063932249443,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.6754605263157896,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.4886997096779545,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.7945600328947368,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.6637878406485579,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.7455962171052631,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.49434110825743127,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.7661924342105264,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.7537941211248063,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.2714884868421053,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.8638066426271319,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.22965871710526314,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.5278901129428307,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.31060855263157894,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.6692333496107536,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.28018503289473684,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.6151555575156584,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.2808059210526316,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.5186981631661398,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.86107421875,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.6409903773208426,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.8591183035714286,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.4230851626505504,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.8738409090909091,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.6682109214758117,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.86528125,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.36247703257415237,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.8817272727272727,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.6685886998675694,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.7275390625000001,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.7119678873961655,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.7591183035714286,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.5098103493904834,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.7900198863636364,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.6961126127582057,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.806890625,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.5251431765269565,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.7750625,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.7514248445056517,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.26502232142857146,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.7583672908219279,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.29213169642857145,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.5894966800050929,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.30493181818181825,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.6688496371806593,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.2695,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.6421246236679288,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.29358522727272734,
+      "fold": "connected_c6148cf0cafb5753"
+    }
+  ],
+  "outer_held_access": false,
+  "plot_hashes": {
+    "source_comparison.png": "fa39e9e8ffbf943ea12c2ab7eed54051a2cb69a764790cf377b32d438f1a40b9",
+    "source_families_groups.png": "1323c16b615ec4c14d5280a01d5f154022cf45469233436f20d4cd8e2412748f"
+  },
+  "selected": "spectrotemporal_context_T1",
+  "source_evaluation": "CAST/improvement/context_v14/evaluations/group_context_v14_full_source",
+  "source_passed": true,
+  "source_summary_sha256": "9775d80ee6542b0b5f7ab9ea8ac710e4beb336bf3ba432e25f4aa89104167d0d"
+}

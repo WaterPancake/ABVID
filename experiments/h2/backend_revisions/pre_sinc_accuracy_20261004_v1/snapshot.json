@@ -1,0 +1,18 @@
+{
+  "status": "unadmitted propagation draft before 31-tap Sinc accuracy correction",
+  "related_failed_probe": "experiments/h2/results/physics_probe_20261004_v1/report.json",
+  "files": {
+    "LICENSE": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
+    "README.md": "4b8916170e836d6f81983c87d2ff841104c5a27f00ada83dc454b6f0105f4feb",
+    "UPSTREAM.json": "b33bd5576726129679a150a1312b099aa1440a2d56a4a0ef861fbb1bb222128f",
+    "physics_probe.py": "0579cea8f42229bacf19b0662f164f0b5733189026008671bbdaa4961e19955b",
+    "pyroadacoustics/__init__.py": "df23aee7fa65e579a2e64f64a273faaae8cdd81d20b9b0554da73036af78f3fb",
+    "pyroadacoustics/delayLine.py": "76f5dd08d268e64b187492e6340a870c64345a7e9f23d50bb760299a0e333259",
+    "pyroadacoustics/environment.py": "b5b9cabc7165530f89ab2fad5a83e74ee08aba063938f39e600041f34bf7b6d8",
+    "pyroadacoustics/material.py": "8dab6eaa74613c95a59731ea6ae091e3d332cdfaf6004aa63ed1819bb6459669",
+    "pyroadacoustics/materials.json": "b49f0777a33d02feea0215e3408473d5821cc6eabd765d91af07898326bd309e",
+    "pyroadacoustics/microphoneArray.py": "944213710d336686cc60e5c7dc08284de457551ac37e29337c9f3197fdfa7f91",
+    "pyroadacoustics/simulatorManager.py": "5cdbe7909bdefe5a73af6c763d29cf371870a784a9c2dccd1950c5703f495663",
+    "pyroadacoustics/soundSource.py": "489b980ac12a70435fa61acca4caa1ba0f4c98ce767d69102851e54af2d501e1"
+  }
+}

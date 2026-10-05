@@ -1,0 +1,23 @@
+{
+  "protocol_id": "attenuation_latency_20261004_v1",
+  "parent_protocol_id": "ground_air_collapse_20261004_v1",
+  "cells": ["A0L0", "A1L0", "A0L1", "A1L1"],
+  "new_cells": ["A1L0", "A0L1"],
+  "parent_cell_mapping": {"A0L0": "G1A0", "A1L1": "G1A1"},
+  "ground": true,
+  "source_levels": ["S0", "S1"],
+  "seeds": [42, 123, 456, 789, 1024],
+  "representations": ["BEATs768", "MFCC26"],
+  "classes": {"car": 0, "truck": 1},
+  "primary": "native BEATs mean_S latency_minus_attenuation macro_f1 = Q_A0L1 - Q_A1L0",
+  "practical_margin": 0.03,
+  "bootstrap": {"draws": 10000, "seed": 314159, "groups": 4, "banks": 5},
+  "fir": {"taps": 11, "center": 5, "amplitude_only_operator": "sum_k h[n,k] * x[n+5-k]", "delay_only_operator": "x[n-5]", "boundary": "zero outside complete ten-second source grid"},
+  "target_variants": ["native", "matched"],
+  "target_role": "previously_exposed_development",
+  "target_tuning": false,
+  "save_full_new_renders": false,
+  "full_render_integrity": "float64 complete-waveform SHA-256 plus exact fresh-process replay; retain all float32 model observations",
+  "failure_policy": "stop complete paired bank; no redraw, clipping or selective exclusion",
+  "hardware": {"render_workers": 4, "torch_threads": 4, "blas_threads": 1, "batch_size": 8, "device": "cpu"}
+}

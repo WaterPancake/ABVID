@@ -1,0 +1,383 @@
+{
+  "AI4TEN": {
+    "class_source_counts": {
+      "synthetic/audioldm/car": 201,
+      "synthetic/audioldm/motorcycle": 200,
+      "synthetic/audioldm/truck": 200,
+      "synthetic/pyroadacoustics/car": 5000,
+      "synthetic/pyroadacoustics/motorcycle": 5000,
+      "synthetic/pyroadacoustics/truck": 5000
+    },
+    "feature_array_headers": {
+      "X_test.npy": {
+        "dtype": "float32",
+        "fortran_order": false,
+        "shape": [
+          1019,
+          216,
+          120,
+          1
+        ],
+        "values_read": false
+      },
+      "scaler_mean.npy": {
+        "dtype": "float64",
+        "fortran_order": false,
+        "shape": [
+          120
+        ],
+        "values_read": false
+      },
+      "scaler_scale.npy": {
+        "dtype": "float64",
+        "fortran_order": false,
+        "shape": [
+          120
+        ],
+        "values_read": false
+      },
+      "y_test.npy": {
+        "dtype": "int32",
+        "fortran_order": false,
+        "shape": [
+          1019
+        ],
+        "values_read": false
+      }
+    },
+    "feature_metadata": {
+      "X_test_shape": [
+        1019,
+        216,
+        120,
+        1
+      ],
+      "X_train_shape": [
+        1006,
+        216,
+        120,
+        1
+      ],
+      "balancing": "class_weights",
+      "classes": [
+        "car",
+        "truck",
+        "motorcycle"
+      ],
+      "config_name": "exp1_real_only",
+      "description": "Baseline: train on real KVSD, test on DATASEC+MAVD",
+      "feature_config": {
+        "clip_duration": 5.0,
+        "feature_type": "MFCC + delta + delta-delta",
+        "hop_length": 512,
+        "n_fft": 2048,
+        "n_mels": 128,
+        "n_mfcc": 40,
+        "normalization": "StandardScaler (fit on train)",
+        "sample_rate": 22050
+      },
+      "test_class_distribution": {
+        "car": 703,
+        "motorcycle": 241,
+        "truck": 75
+      },
+      "test_source": "DATASEC + MAVD (real)",
+      "timestamp": "2026-04-29T14:01:34.301075",
+      "train_class_distribution": {
+        "car": 204,
+        "motorcycle": 537,
+        "truck": 265
+      },
+      "train_source": "KVSD (real)"
+    },
+    "generation_sidecars_present": false,
+    "headers": {
+      "counts": [
+        {
+          "channels": 1,
+          "count": 601,
+          "frames": 81952,
+          "sample_rate_hz": 16000,
+          "subtype": "PCM_16"
+        },
+        {
+          "channels": 1,
+          "count": 15000,
+          "frames": 110250,
+          "sample_rate_hz": 22050,
+          "subtype": "PCM_16"
+        }
+      ],
+      "errors": [],
+      "waveform_samples_read": false
+    },
+    "models_present": false,
+    "non_audio_files": [
+      "README.md",
+      "data/LINKS_TO_REAL_DATA.txt",
+      "data/features/X_test.npy",
+      "data/features/metadata.json",
+      "data/features/scaler_mean.npy",
+      "data/features/scaler_scale.npy",
+      "data/features/y_test.npy",
+      "requirements.txt"
+    ],
+    "readiness": "synthetic audio and historical feature arrays present; provided tree lacks CNN snapshots/code split package and source-template/run provenance. E2-P and strict E2-B not admitted.",
+    "wav_count": 15601
+  },
+  "IDMT": {
+    "SE_semantic_sensor_diagnostic_not_admitted": {
+      "Fraunhofer-IDMT|2019-10-22": {
+        "C": 302,
+        "M": 3,
+        "T": 10
+      },
+      "Fraunhofer-IDMT|2019-10-23": {
+        "C": 254,
+        "M": 2,
+        "T": 14
+      },
+      "Hohenwarte|2020-08-29": {
+        "M": 246
+      },
+      "Langewiesener-Strasse|2019-11-18": {
+        "C": 824,
+        "T": 146
+      },
+      "Langewiesener-Strasse|2019-11-19": {
+        "C": 1365,
+        "T": 152
+      },
+      "Schleusinger-Allee|2019-11-12": {
+        "C": 491,
+        "T": 79
+      },
+      "Schleusinger-Allee|2019-11-13": {
+        "C": 666,
+        "T": 110
+      }
+    },
+    "actual_wav_files": 17506,
+    "class_mic_channel_counts": {
+      "B/ME/CH12": 53,
+      "B/SE/CH34": 53,
+      "C/ME/CH12": 3902,
+      "C/SE/CH34": 3902,
+      "M/ME/CH12": 179,
+      "M/SE/CH12": 246,
+      "M/SE/CH34": 5,
+      "T/ME/CH12": 511,
+      "T/SE/CH34": 511
+    },
+    "duplicate_list_entries": 0,
+    "frozen_partition_group_counts": {
+      "test": 1,
+      "train": 5,
+      "validation": 1
+    },
+    "headers": {
+      "counts": [
+        {
+          "channels": 2,
+          "count": 13904,
+          "frames": 96000,
+          "sample_rate_hz": 48000,
+          "subtype": "FLOAT"
+        },
+        {
+          "channels": 2,
+          "count": 3602,
+          "frames": 96001,
+          "sample_rate_hz": 48000,
+          "subtype": "FLOAT"
+        }
+      ],
+      "errors": [],
+      "waveform_samples_read": false
+    },
+    "listed_files": 17506,
+    "missing": [],
+    "original_recording_timestamp_groups": 23,
+    "readiness": "blocked: contradictory sensor/channel selector; insufficient motorcycle support across independent site/date groups; frozen group allocation fails validation/test floors",
+    "site_date_groups": 7,
+    "strict_protocol_SE_CH12_counts": {
+      "M": 246
+    },
+    "unlisted": [],
+    "unparsed_filenames": []
+  },
+  "MELAUDIS": {
+    "archive_listing_sha256": "06a25e40e1222ca43c45b0e11d18ca8e84af38629836589f4d2f85864cca3ec7",
+    "archive_members": 13691,
+    "archives": {
+      "MELAUDIS_ BG.rar": {
+        "bytes": 549590504,
+        "expected_md5": "1b1cfe39b364dd34d32ba5c864561baa",
+        "matches": true,
+        "md5": "1b1cfe39b364dd34d32ba5c864561baa"
+      },
+      "MELAUDIS_Vehicles.rar": {
+        "bytes": 3174997550,
+        "expected_md5": "0bf2cf3ad13436ec8bf060b378508252",
+        "matches": true,
+        "md5": "0bf2cf3ad13436ec8bf060b378508252"
+      }
+    },
+    "candidate_counts": {
+      "car": 7854,
+      "motorcycle": 238,
+      "truck": 256
+    },
+    "candidate_direction_counts": {
+      "car/LR": 2634,
+      "car/RL": 5220,
+      "motorcycle/LR": 70,
+      "motorcycle/RL": 168,
+      "truck/LR": 74,
+      "truck/RL": 182
+    },
+    "candidate_filter": "FF AND exact 1V-Car/1V-Truck/1V-MC label; filename metadata only",
+    "candidate_group_counts": {
+      "Fitzroy1|2024-02-09": {
+        "car": 426,
+        "motorcycle": 4,
+        "truck": 1
+      },
+      "Hoddle1|2023-11-08": {
+        "car": 1072,
+        "motorcycle": 11,
+        "truck": 17
+      },
+      "Lygon1|2023-09-05": {
+        "car": 476,
+        "motorcycle": 52,
+        "truck": 7
+      },
+      "Lygon2|2023-09-05": {
+        "motorcycle": 6
+      },
+      "Lygon2|2023-09-06": {
+        "car": 429,
+        "motorcycle": 44,
+        "truck": 11
+      },
+      "Nicholson1|2024-01-17": {
+        "car": 626,
+        "motorcycle": 6,
+        "truck": 36
+      },
+      "Nicholson2|2024-01-16": {
+        "car": 468,
+        "motorcycle": 7,
+        "truck": 32
+      },
+      "Rathdowne1|2023-10-11": {
+        "car": 682,
+        "motorcycle": 9,
+        "truck": 38
+      },
+      "Rathdowne2|2023-10-11": {
+        "car": 689,
+        "motorcycle": 9,
+        "truck": 24
+      },
+      "Rathdowne3|2023-10-15": {
+        "car": 615,
+        "motorcycle": 13,
+        "truck": 27
+      },
+      "Rathdowne4|2023-10-15": {
+        "car": 353,
+        "motorcycle": 14,
+        "truck": 18
+      },
+      "Swanston10|2023-08-05": {
+        "car": 247,
+        "motorcycle": 14,
+        "truck": 3
+      },
+      "Swanston1|2023-08-01": {
+        "car": 97,
+        "motorcycle": 1,
+        "truck": 3
+      },
+      "Swanston2|2023-08-01": {
+        "car": 327,
+        "motorcycle": 7,
+        "truck": 5
+      },
+      "Swanston3|2023-08-01": {
+        "car": 224,
+        "motorcycle": 5,
+        "truck": 3
+      },
+      "Swanston4|2023-08-02": {
+        "car": 129,
+        "motorcycle": 6
+      },
+      "Swanston5|2023-08-02": {
+        "car": 60,
+        "motorcycle": 2
+      },
+      "Swanston6|2023-08-04": {
+        "car": 324,
+        "motorcycle": 4,
+        "truck": 4
+      },
+      "Swanston7|2023-08-04": {
+        "car": 387,
+        "motorcycle": 9,
+        "truck": 6
+      },
+      "Swanston8|2023-08-04": {
+        "car": 154,
+        "motorcycle": 10,
+        "truck": 16
+      },
+      "Swanston9|2023-08-04": {
+        "car": 69,
+        "motorcycle": 2,
+        "truck": 5
+      },
+      "Swanston9|2023-08-05": {
+        "motorcycle": 3
+      }
+    },
+    "candidate_location_date_groups": 22,
+    "candidate_total": 8348,
+    "duplicate_member_paths": 0,
+    "raw_audio_extracted": false,
+    "readiness": "present, archive checksums pass; candidate label support only. Audio headers, semantic site aliases, duplicate events and final role manifests not audited.",
+    "traffic_states": {
+      "FF": 10178,
+      "TJF": 209,
+      "TJN": 3281
+    },
+    "unparsed_filenames": [],
+    "wav_members": 13668,
+    "waveform_samples_read": false
+  },
+  "audit_date": "2026-09-28",
+  "audit_script_sha256": "34dd110eec0360fdac4167d7230f9685d96640603e10949ef367cbbbbeceed02",
+  "dataset_root": "dataset",
+  "experiment_execution": false,
+  "full_admission_complete": false,
+  "input_document_sha256": {
+    "dataset/AI4TEN/README.md": "a0045abb6c906678895c003af4535bddaa3e2ce14ef84cb6f879a9bd9cef32a5",
+    "dataset/AI4TEN/data/features/metadata.json": "775d32545c818069cf21261c755fbb8851308a44347183cf762577d9b7a0c534",
+    "dataset/IDMT_Traffic/annotation/idmt_traffic_all.txt": "febdc3b72f7ad13869ba479dba939bd374d7f07894dd1f150dbb348dddd6089e",
+    "dataset/IDMT_Traffic/annotation/import_idmt_traffic_dataset.py": "797cb8c2b6c910634937ea05dce3b4c6e39975419ad8391aa75e8979298f3f2b",
+    "dataset/IDMT_Traffic/readme.md": "ff56d81c51b41272844b3178847b93be32267bc93e7cab82ff025d3edff5b9d7",
+    "experiments/DATASET_PROTOCOL.md": "444cc7ef074e6b76514ca12d7baaa80543de812c35e92f9a9c0eb161a0e80cf5",
+    "experiments/EXPERIMENTAL_PROTOCOL.md": "b588ec7a91f9f0f1b8100f6fd180f292b6d494907bb67113f4c4029f4e091710"
+  },
+  "limitations": [
+    "No full per-WAV SHA256 or decoded-audio duplicate audit.",
+    "No RMS, spectral, feature, prediction or listening analysis.",
+    "Header readability does not certify sample-payload integrity or nonzero signals.",
+    "Filename metadata are provider labels; not independently verified physical vehicle identities.",
+    "No split-role manifests assigned, no protocol files amended and no model experiments implemented."
+  ],
+  "protocol_id": "sim_components_v1.0",
+  "scope": "Read-only metadata, archive inventory/checksums and WAV/NPY headers. No acoustic features, model execution, target listening, split assignment or original-data modifications."
+}

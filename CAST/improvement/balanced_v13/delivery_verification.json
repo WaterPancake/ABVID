@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-10-05T02:41:57.678762+00:00",
+  "technical_workflow_complete": true,
+  "numeric_goal_complete": false,
+  "tests_passed": 259,
+  "source_records_replayed": 15000,
+  "source_scores_recomputed": 300,
+  "reference_scores_exact": 150,
+  "new_outer_evaluation_executed": false,
+  "progression_decision_sha256": "6652cdcbcd4f25e3c02eebf922722d9a66fc996a79f223252c7fef741020fbb1",
+  "report_links_verified": 98,
+  "audio_review_links_verified": 73,
+  "audio_review_artifact_hashes_verified": 71,
+  "audio_review_examples": 10,
+  "source_figures_visually_reviewed": true,
+  "scientific_artifacts_unmodified": true,
+  "historical_hashes_unchanged": {
+    "CAST/runs/cast_pilot_v0_20261004/verification.json": "41965045cb9ba0a843503f76b663656d12b63cc2065a201c895c5aa138cade3c",
+    "CAST/runs/cast_pilot_v0_20261004/lock.json": "e37f3393e99ff5d83e0248e7f02de93cd6fa6f77409c6c3a927f81a9f649290d",
+    "CAST/generalization/runs/cast_generalization_v0_20261004_r1/verification.json": "0a77ccdd17e933f935d4851b2e39febcca9977b3df7b75af86424b44897f83eb",
+    "CAST/generalization/runs/cast_generalization_v0_20261004_r1/scores.json": "49309770bb2019a89904aca0c3dcc51b307f1d22727763f2b158279a2826152a"
+  },
+  "v12_outer_unchanged": true,
+  "v12_historical_report_snapshot_verified": true,
+  "reproduction_shell_syntax_and_invalid_ids_checked": true,
+  "stages_executed_individually": true,
+  "next_protocol_only": "CAST/improvement/context_v14/PROTOCOL.md",
+  "files": {
+    "reports/CAST_improvement.md": "1d46bb30c360f9424cbcc55b159cb9aeadb83a531c140e2ea5f900c400788f23",
+    "CAST/improvement/README.md": "4708098c4eb07f4e6c75fcad024228392ca2be0a79762c321cc4381895ceb683",
+    "CAST/improvement/balanced_v13/README.md": "2fcf26860d7b7836f528662f1b95a8e7470fe4b989f74602fd73a4cff818ed87",
+    "CAST/improvement/balanced_v13/reproduce.sh": "ec09d98050f261337cae5a1694d0e6654fadeafb3f3c0b5830f6bbd6c96e9961",
+    "CAST/improvement/balanced_v13/reproduce_outer.sh": "0ae3315029b5b8bb1869332b20f6c9a296dbdb7552d84f73d16d17a52346521c",
+    "CAST/improvement/balanced_v13/evaluations/group_balanced_v13_full_source/summary.json": "a501935f51bc8f67dd2ccd21808f3dbfe06141dde4246f5472fc6bf5755eafc6",
+    "CAST/improvement/balanced_v13/evaluations/group_balanced_v13_full_source/audit_verification.json": "02cc49d0d44aed593f87f4670b312141b8d336fd1a4b2bdc4880b15c3caf9d8d",
+    "CAST/improvement/balanced_v13/diagnostics/group_balanced_v13_audio/summary.json": "c0597c7f732e264241e101c776af1dd405cb56dda12545a50793b7f53ebf05a4",
+    "CAST/improvement/balanced_v13/diagnostics/group_balanced_v13_figures/summary.json": "674ff61049e1626b348fa337fb35ce391b40cdecc25e66e34f1b101dbb7e0029"
+  }
+}

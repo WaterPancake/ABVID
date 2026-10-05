@@ -1,0 +1,216 @@
+{
+  "main": {
+    "id": "4e70a750623535dd",
+    "type": "split",
+    "children": [
+      {
+        "id": "3936e48667c73069",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6b840df578ea077b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "condensed-guide/01 - Signal Fundamentals.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01 - Signal Fundamentals"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6ea0704258babd77",
+    "type": "split",
+    "children": [
+      {
+        "id": "7f65e38bace066b8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4f71f19b7ddfde7e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "06e9f51ddf5f9900",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "fa40512ee8939d48",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "ffde7d2356339971",
+    "type": "split",
+    "children": [
+      {
+        "id": "fcb8c42e2509d545",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "beef30f34e54dd4f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "ABVID.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "6fe56faeccf6b1fc",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "ABVID.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "3d72fee8595f07f2",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "b6a753cc17624aa7",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "de07a4fa51c84b35",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "ABVID.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "6b840df578ea077b",
+  "lastOpenFiles": [
+    "condensed-guide/02 - Features & Classification.md",
+    "condensed-guide/01 - Signal Fundamentals.md",
+    "Think DSP - Digital Signal Processing in Python.md",
+    "condensed-guide/08 - Equation Reference.md",
+    "condensed-guide/07 - Milestone 7 & Open Set.md",
+    "condensed-guide/06 - Invariance & Session Eval.md",
+    "condensed-guide/05 - Real-World Transfer.md",
+    "condensed-guide/04 - Multichannel & Beamforming.md",
+    "condensed-guide/03 - Vehicle Acoustics & Synthetic Data.md",
+    "condensed-guide/README.md",
+    "condensed-guide/assets/m6_fusion_gate.png",
+    "condensed-guide/assets/m6_stage_b_synth_vs_real.png",
+    "condensed-guide/assets/m6_stage_a_comparison.png",
+    "condensed-guide/assets/m5_transfer_barchart.png",
+    "condensed-guide/assets/m4_confusion_matrices.png",
+    "condensed-guide/assets/m4_localization_vs_snr.png",
+    "condensed-guide/assets/m4_classification_vs_snr.png",
+    "condensed-guide/assets/m2_accuracy_vs_snr.png",
+    "condensed-guide/assets",
+    "condensed-guide",
+    "ABVID.md"
+  ]
+}

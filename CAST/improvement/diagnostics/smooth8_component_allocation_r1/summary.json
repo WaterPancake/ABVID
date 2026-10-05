@@ -1,0 +1,77 @@
+{
+  "classes": {
+    "car": {
+      "count": 190,
+      "median_fitted_harmonic_fraction": 0.3351578265428543,
+      "offsets": {
+        "-1.0": {
+          "group_median_absolute_band_L1_reduction": {
+            "connected_654b5df57ec64387": 0.06019346124210054,
+            "connected_667018ac7661cccb": 0.09483553427573782,
+            "connected_72766641e1daf436": 0.08346983919532865,
+            "connected_b00d69ddbb66d0fe": 0.1222131016840401,
+            "connected_c6148cf0cafb5753": 0.10560519875134577
+          },
+          "improved": 161,
+          "median_absolute_band_L1_reduction": 0.09216049574124364,
+          "skipped": 0,
+          "used": 190
+        },
+        "-2.0": {
+          "group_median_absolute_band_L1_reduction": {
+            "connected_654b5df57ec64387": 0.04277365375155029,
+            "connected_667018ac7661cccb": -0.019462467856680557,
+            "connected_72766641e1daf436": 0.03502687693763082,
+            "connected_b00d69ddbb66d0fe": 0.03968253618012714,
+            "connected_c6148cf0cafb5753": 0.02661262504919272
+          },
+          "improved": 110,
+          "median_absolute_band_L1_reduction": 0.02929497813561112,
+          "skipped": 0,
+          "used": 190
+        }
+      }
+    },
+    "truck": {
+      "count": 190,
+      "median_fitted_harmonic_fraction": 0.3466911017894745,
+      "offsets": {
+        "-1.0": {
+          "group_median_absolute_band_L1_reduction": {
+            "connected_654b5df57ec64387": 0.05408625435016202,
+            "connected_667018ac7661cccb": 0.11130692048849826,
+            "connected_72766641e1daf436": 0.10699763295061776,
+            "connected_b00d69ddbb66d0fe": 0.10751326585965347,
+            "connected_c6148cf0cafb5753": 0.10923438720415207
+          },
+          "improved": 165,
+          "median_absolute_band_L1_reduction": 0.09069614030458834,
+          "skipped": 0,
+          "used": 190
+        },
+        "-2.0": {
+          "group_median_absolute_band_L1_reduction": {
+            "connected_654b5df57ec64387": -0.005751981019598146,
+            "connected_667018ac7661cccb": -0.10368500468845811,
+            "connected_72766641e1daf436": 0.01679373008478574,
+            "connected_b00d69ddbb66d0fe": -0.10535348993366947,
+            "connected_c6148cf0cafb5753": 0.025176730266796843
+          },
+          "improved": 95,
+          "median_absolute_band_L1_reduction": 0.0003966922159756234,
+          "skipped": 0,
+          "used": 190
+        }
+      }
+    }
+  },
+  "code_sha256": "a1737df55f818a80d13c0a05e8342789e3a1b1732fe33f438b17b992cde297c9",
+  "fit_audit_sha256": "9bfe3e396dcf2980e77f5e9034e125e97d59fcfa309d46774c663f81d0c890d3",
+  "fit_run": "CAST/improvement/runs/cast_smooth8_v1_20261004_r1",
+  "limitation": "Approximate saved-component scaling; bound cases retained as skipped, no generated or held coverage claim",
+  "outer_access": false,
+  "raw_source_audio_opened": false,
+  "records_sha256": "11046a9610569c54daa428c1efe0a4f8fa874dfadf990dd510cf403dc34a7910",
+  "saved_training_audio_read": true,
+  "seconds": 4.390501916990615
+}

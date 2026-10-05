@@ -34,6 +34,18 @@ history preserved. The [completed 24-way preprocessing grid](docs/preprocessing_
 uses all 785 eligible windows without a session cap. Nested selection scored 51.86%
 balanced accuracy for PANNs and 47.26% for classical features; the gate remains unmet.
 
+The [frozen BEATs comparison](docs/beats_comparison_results.md) is complete on that
+same non-startup corpus: 57.05% balanced accuracy versus 53.73% for its matched PANNs
+semantic control, with only 35.08% wheeled recall. The gain is uncertain and the gate
+still fails. A [28-trial blind listening pilot](docs/blind_listening_pilot.md) is ready
+for actual human responses, and [five fresh wheeled video candidates](docs/review_candidates_2026_09_20.md)
+are queued for review (not downloaded or admitted).
+
+The [fixed-vehicle idle/moving diagnostic](docs/state_pair_ab_results.md) tests
+AMX-30/HMMWV, AMX-30/T-72B3 and HMMWV/Stryker using frozen features. Its explicit
+operator-approved within-session split exception makes these exploratory results,
+not independent validation or milestone evidence; normal benchmark guards remain intact.
+
 Audit the live catalog roles without training a model:
 
 ```bash

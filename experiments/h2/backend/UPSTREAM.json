@@ -1,0 +1,18 @@
+{
+  "license": "GPL-3.0",
+  "reference": "experiments/h2/evidence/pyroadacoustics",
+  "status": "execution_r1_numerically_validated_full_H2_completed_and_verified",
+  "upstream_commit": "642f95ea83417b662906712c5902d7b7dd665092",
+  "upstream_repository": "https://github.com/steDamiano/pyroadacoustics",
+  "upstream_sha256": {
+    "LICENSE": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
+    "pyroadacoustics/__init__.py": "df23aee7fa65e579a2e64f64a273faaae8cdd81d20b9b0554da73036af78f3fb",
+    "pyroadacoustics/delayLine.py": "8359ec744a37a69cdeca957a88955b839cfcedd685afb61377f8de900a722942",
+    "pyroadacoustics/environment.py": "b5b9cabc7165530f89ab2fad5a83e74ee08aba063938f39e600041f34bf7b6d8",
+    "pyroadacoustics/material.py": "8dab6eaa74613c95a59731ea6ae091e3d332cdfaf6004aa63ed1819bb6459669",
+    "pyroadacoustics/materials.json": "b49f0777a33d02feea0215e3408473d5821cc6eabd765d91af07898326bd309e",
+    "pyroadacoustics/microphoneArray.py": "944213710d336686cc60e5c7dc08284de457551ac37e29337c9f3197fdfa7f91",
+    "pyroadacoustics/simulatorManager.py": "1ee9048f84d3bf5667301b6ab80e71e0990593f9548c42580d404bbe40d66ee0",
+    "pyroadacoustics/soundSource.py": "489b980ac12a70435fa61acca4caa1ba0f4c98ce767d69102851e54af2d501e1"
+  }
+}

@@ -18,7 +18,7 @@ that frozen 7/5 baseline; neither changes the failed native gate assessment.
 The Sherman/PDSounds locked evaluation was completed on 2026-08-24 and failed; it is
 documented in [`milestone6_fusion_session_report.md`](milestone6_fusion_session_report.md).
 
-### Current non-startup preprocessing-grid gate assessment (2026-09-20)
+### Non-startup preprocessing-grid gate assessment (2026-09-20)
 
 The operator parked startup intervals while preserving recordings and history.
 The new uncapped 785-window development corpus still has 7 tracked / 5 wheeled
@@ -40,6 +40,28 @@ See [full results/protocol](preprocessing_grid_results.md),
 [versioned artifacts](../benchmarks/v0.1/preprocessing_grid_v1/README.md), and
 [verification](../benchmarks/v0.1/preprocessing_grid_v1/verification.json).
 Milestone 7 remains blocked; benchmark/demo packaging may continue.
+
+### Latest frozen BEATs follow-up (2026-09-20)
+
+On the identical 785-window development corpus and session-pair splits, frozen BEATs
+with an inner-selected logistic head scored 57.05% BA, 79.01% tracked recall, 35.08%
+wheeled recall, and 0% minimum session/context recall. Its matched unprocessed PANNs
+semantic comparator scored 53.73% BA; the +3.32-point paired difference has a wide
+descriptive session-bootstrap interval of −17.56 to +23.03 points.
+
+| Gate | BEATs follow-up result |
+|---|---|
+| At least five reviewed sessions per class | Pass: 7 tracked / 5 wheeled |
+| Mean balanced accuracy ≥75% | Fail: 57.05% |
+| Both recalls ≥70% | Fail: wheeled 35.08% |
+| Every held-out session recall ≥50% | Fail: minimum 0% |
+| New frozen confirmation | Not attempted; reserved pair untouched |
+
+See [results and limitations](beats_comparison_results.md),
+[preregistered protocol](beats_comparison_protocol.md), and
+[versioned metrics](../benchmarks/v0.1/beats_comparison_v2/results.json).
+This is a separate development experiment, not promotion of the strongest observed
+model or permission to run confirmation. Human listening results remain pending.
 
 ## Executive summary
 

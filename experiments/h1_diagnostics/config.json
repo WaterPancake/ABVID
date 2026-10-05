@@ -1,0 +1,32 @@
+{
+  "protocol_id": "h1_source_diagnostics_v1",
+  "domain": "IDMT_real_to_IDMT_real_only",
+  "seeds": [42, 123, 456, 789, 1024],
+  "classes": ["car", "truck"],
+  "representations": ["BEATs768", "MFCC26"],
+  "reference_h1_lock": "experiments/h1/frozen/h1_common_budget_v1.3/lock.json",
+  "reference_h1_lock_sha256": "3e427a2f4ee084ecdd4102dd3a9863a55cc06496abdb9688258ec26cbaaf901e",
+  "baseline_profile": "core8_2s",
+  "baseline_examples_per_class": 190,
+  "feature_profiles": {
+    "core8_2s": {"intermediate_rate_hz": 8000, "sample_rate_hz": 16000, "samples": 32000, "window_beta": 5.0},
+    "native16_2s": {"intermediate_rate_hz": 16000, "sample_rate_hz": 16000, "samples": 32000, "window_beta": 5.0},
+    "core8_1s": {"intermediate_rate_hz": 8000, "sample_rate_hz": 16000, "samples": 16000, "window_beta": 5.0}
+  },
+  "learning_curve_examples_per_class": [25, 50, 100, 190, 300, 359],
+  "learning_curve_C_rules": ["fixed_C_1", "constant_mean_loss_penalty_C_190_over_N"],
+  "nested_C_grid": [0.01, 0.1, 1.0],
+  "C_selection": {"metric": "mean_inner_group_macro_f1_at_threshold_0.5", "tie_break": "smaller_C"},
+  "threshold_grid": [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95],
+  "threshold_selection": {"C": 1.0, "metric": "mean_inner_group_macro_f1", "tie_break": "closest_to_0.5_then_smaller", "positive_rule": "p_truck_strictly_greater_than_threshold"},
+  "outer_splits": "same_six_IDMT_connected_groups_as_H1",
+  "inner_splits": "leave_one_of_five_remaining_groups_out; 190_per_class_from_four_groups",
+  "location_check": "leave_one_of_three_sites_out;190_per_class_from_other_two_sites;no_tuning",
+  "bootstrap": {"draws": 10000, "seed": 314159, "primary_cluster": "six_recording_groups", "sensitivity_cluster": "three_sites", "conditional_on_fits": true},
+  "practical_effect_macro_f1": 0.03,
+  "hardware": {"device": "cpu", "torch_threads": 4, "blas_threads": 1, "batch_size": 8},
+  "target_use": "none; no new target feature access, inference or tuning",
+  "augmentation": null,
+  "encoder_trainable": false,
+  "longer_context": "unavailable; released_IDMT_events_are_about_2_seconds"
+}

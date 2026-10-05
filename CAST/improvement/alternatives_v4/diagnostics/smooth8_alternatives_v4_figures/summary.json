@@ -1,0 +1,232 @@
+{
+  "code_sha256": "df5f90b7c8892c6354579677841c9d9071548cc27ec48bf42dcadef3806ec5b5",
+  "counts_note": "Five real source groups; seeds are not new recording sessions",
+  "fold_order": [
+    "connected_654b5df57ec64387",
+    "connected_667018ac7661cccb",
+    "connected_72766641e1daf436",
+    "connected_b00d69ddbb66d0fe",
+    "connected_c6148cf0cafb5753"
+  ],
+  "fold_results": [
+    {
+      "W1": 0.8107739546813043,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.7399671052631579,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.5710895015473156,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.829453125,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.6081825906474927,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.852717927631579,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.4699224520599284,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.8921011513157893,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.6130930868352966,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.8273684210526315,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.769121797556357,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.6444202302631579,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.6324879177970291,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.7532154605263159,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.49930220482408655,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.7883799342105264,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.47706862759761126,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.8098231907894737,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.5493530660201585,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.755641447368421,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.9060788711267598,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.2503618421052632,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.8034211419017966,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.25103207236842107,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.6632527465251101,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.30859375,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.6259871958348453,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.2955633223684211,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.7473056713556989,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.2826726973684211,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.7642421998764339,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.749375,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.5180411458816963,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.826171875,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.5855605761575149,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.8096647727272728,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.5781457408917181,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.8875,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.591658759405895,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.8168749999999999,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.7168228467513021,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.6769335937499998,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.5652508730146584,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.7631919642857143,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.5002289932181097,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.7694090909090909,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.5776280899504049,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.8520468749999999,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.525404477856198,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.7589374999999999,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.8404702893415952,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.25924665178571427,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.7507011823583836,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.28263392857142855,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.7059355403765524,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.28894034090909093,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.6762162635967542,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.28025,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.7392817987736591,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.2784431818181818,
+      "fold": "connected_c6148cf0cafb5753"
+    }
+  ],
+  "outer_held_access": false,
+  "plot_hashes": {
+    "source_comparison.png": "edca4aad355f27c6fa7f725f4bbc6e0382e3da997238db0a2be450c3859a5cba",
+    "source_families_groups.png": "b7e82d50b8e00bdb4bbe0286c59fb522031ecc5900ab462c5f0236e7727675d9"
+  },
+  "selected": "equivalent_fits_T1",
+  "source_evaluation": "CAST/improvement/alternatives_v4/evaluations/smooth8_alternatives_v4_full_source",
+  "source_passed": false,
+  "source_summary_sha256": "781c9d4271fec753176f8afcb62b7d0e7b6daeb122c01f2ae77067be7a9c8093"
+}

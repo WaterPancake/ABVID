@@ -1,0 +1,26 @@
+{
+  "status": "verified",
+  "all_files": 46775,
+  "candidates": 22873,
+  "excluded": 23902,
+  "class_counts": {
+    "AI4TEN_audioldm": {
+      "car": 197,
+      "truck": 196
+    },
+    "AI4TEN_pyroadacoustics": {
+      "car": 5000,
+      "truck": 5000
+    },
+    "IDMT": {
+      "car": 3902,
+      "truck": 511
+    },
+    "MELAUDIS": {
+      "car": 7811,
+      "truck": 256
+    }
+  },
+  "artifact_hashes": 14,
+  "no_split_or_training_admission": true
+}

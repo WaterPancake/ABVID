@@ -1,0 +1,6 @@
+{
+  "source": "reports/CAST_improvement.md",
+  "sha256": "d3b782785ad240df3ed76422aba9a26426bbabb8a3e8e0b128d82e884ba1c5e0",
+  "delivery_verification_sha256": "278d8a6515776eb5dcec0d07a1a06d7917bdc1822cf5535c754f10a436f3d420",
+  "purpose": "Preserve the exact report bytes referenced by v14 delivery while the live development report evolves."
+}

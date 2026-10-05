@@ -1,0 +1,9 @@
+{
+  "created_utc": "2026-10-05T03:21:49.811223+00:00",
+  "protocol_sha256": "e6bb876264061d16887355cb642f441b4a37c8b628d28dcf85740fde62a8d6e9",
+  "implementation_started": false,
+  "source_generation_started": false,
+  "outer_generation_started": false,
+  "v14_outer_preliminary_coverage_already_known": true,
+  "basis": "v14 audited source-fold coverage and preexisting matched-control results; no outer descriptor or parameter used to define transform"
+}

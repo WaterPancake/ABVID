@@ -1,0 +1,169 @@
+{
+  "classes": {
+    "car": {
+      "flags": {
+        "calibrated_mixture_boundary": 12,
+        "spacing_unidentified_after_noise_dominant_calibration": 33
+      },
+      "identifiable": 190,
+      "median_calibrated_expected_squared_error": 0.003599188944839209,
+      "median_calibrated_fraction": 0.15640189764208265,
+      "median_original_expected_squared_error": 0.016514499430990637,
+      "median_original_fraction": 0.3351578265428543,
+      "parents": 190
+    },
+    "truck": {
+      "flags": {
+        "calibrated_mixture_boundary": 5,
+        "spacing_unidentified_after_noise_dominant_calibration": 15
+      },
+      "identifiable": 190,
+      "median_calibrated_expected_squared_error": 0.0024641642189303465,
+      "median_calibrated_fraction": 0.16381322856922867,
+      "median_original_expected_squared_error": 0.015984772880167926,
+      "median_original_fraction": 0.3466911017894745,
+      "parents": 190
+    }
+  },
+  "code_sha256": "56df66102363d1e469bfca02829245694830fdf0e90440222b4bc96161975129",
+  "elapsed_seconds": 9.034416750000673,
+  "examples": [
+    {
+      "calibration_sha256": "4b513ac8deb17320048b446a278b8d03edb00a05bb9736da0cc70c758783f272",
+      "class": "car",
+      "common_shape_playback_gain": 0.1678882750655253,
+      "file_id": "01406419169a6f4a0efb4eae17506534a6b0468e33904cedcd9bea4dfb6abd19",
+      "files": {
+        "calibrated.wav": "e3d43946cbaca35bfda5f0e4326af05f09957941e313f10ea1bc7ad85d2ee2bf",
+        "observed.wav": "03f47b124974eb869e3a3176848c44ea7f8cd05be5712239f798169e4cd0d216",
+        "original_fit.wav": "5564417987b8d25224ad3b4752835aa432dcb5a8462e475eb531085a4d1eac90",
+        "parameters.json": "1b19826417085cef493737ac97a6484d4c1c2092e3d9a53ecc84ee326a1c0c98"
+      },
+      "group": "connected_654b5df57ec64387"
+    },
+    {
+      "calibration_sha256": "a621fb75eb5f6aebc4ed68b95429f934c15e2a0518ac618bd22bcb1f5b025d6d",
+      "class": "car",
+      "common_shape_playback_gain": 0.1977783403170935,
+      "file_id": "121116c5cb0790455e74274d52af4ec27ecaf65b1f95f1dc021bd003cf84dd6f",
+      "files": {
+        "calibrated.wav": "b0f9b7ad08b3ece2012232bdb5264838101f9119e990404889da593e88adc558",
+        "observed.wav": "5f1c830a35a30daaa1fa47541da8b279309b07501cdfe253e848d6d632a9d96b",
+        "original_fit.wav": "2c2e7883f60704a303230535bcab56af85ad3e2083b007713d156ca084a75f2a",
+        "parameters.json": "de54682bce5487d3ef6e8919ac41c5877037fb891c4d3d20c1b7da340eea18af"
+      },
+      "group": "connected_667018ac7661cccb"
+    },
+    {
+      "calibration_sha256": "1ccd6ec21dbf09780212c552798235a4034550a034c7f2bf598acb9a3e85bcb1",
+      "class": "car",
+      "common_shape_playback_gain": 0.15524833257383025,
+      "file_id": "01b0d682c8bd4b9718e82a4a89dfcc81b56c17267efa7dd61b6534fa95203edd",
+      "files": {
+        "calibrated.wav": "f9ee38cafbb6089f57071e96023b0af288a7d308128192953b09a479e67be78b",
+        "observed.wav": "6ad109000765196f239f8e55b00a4eed4be2a66a14566de06f5d178accb8e493",
+        "original_fit.wav": "8a95ff7b33a76566b1653c51ee1d96e7e1cf74aa2bcfcc6ebcfa187dd9013685",
+        "parameters.json": "7d3e705cae696a2df75d3896cf596277d78b73ecf7d7d1cacdea6920476dea14"
+      },
+      "group": "connected_72766641e1daf436"
+    },
+    {
+      "calibration_sha256": "86076ca8f2a5c874709c0126f221ca1c43b71d6052fcd1d42a3c41e6c0718cc1",
+      "class": "car",
+      "common_shape_playback_gain": 0.20929854168207457,
+      "file_id": "0bb5a4e9ab6a72f25fd5ae5aaaa7c1fc027ec2868d91dacb117eb24511c0d83b",
+      "files": {
+        "calibrated.wav": "19e06bcdab1090fc36b76dca8e1b5309e2715545997a009bb81b7ea989e3ae39",
+        "observed.wav": "587b322c33b90f34d02b70d53724d287d6fbeccb33034f8ab03b5939eb76e156",
+        "original_fit.wav": "3a7f173f704671dcfc2538ad7a88e153b1fe852b7081a4afaa9e40a77c6c979f",
+        "parameters.json": "66fe0c2370a3199d93ad53afe1b8a320c53531058a10f09dfcb585414f15972d"
+      },
+      "group": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "calibration_sha256": "0f325c7fac22f7e5a866ef58153096e53db48a23b0de6cd1ba17a6e385200b9f",
+      "class": "car",
+      "common_shape_playback_gain": 0.1599662771544181,
+      "file_id": "0c42001b702d373b6bcd6de3dde3d401d9ed7d3d66f32a545757d8478e3b7eff",
+      "files": {
+        "calibrated.wav": "1eb5627b2745c1b64fe81caf08253b3e922cc8018d0f313237022fcddd9b06d6",
+        "observed.wav": "07961423305bfaebfb46966fd5e83608307651030838d7af14d2fa58d23068b5",
+        "original_fit.wav": "38b465c8e13c80314df64778ccaa72cfdf4294108259c0b54ce77ae890d8c41c",
+        "parameters.json": "eb2ab22402dcfd72453ea9e79f57c9a7e195c15869478ddc19778238efc7515f"
+      },
+      "group": "connected_c6148cf0cafb5753"
+    },
+    {
+      "calibration_sha256": "0b72c8575815ef58a96ef93ec1aab9d18ee84d045a67bc55cb5b31dcfda5a982",
+      "class": "truck",
+      "common_shape_playback_gain": 0.19198520467638458,
+      "file_id": "0382eb2ae4c357a68a36ecacd6dd87b17e693655ec0561f567c56d77c626eb62",
+      "files": {
+        "calibrated.wav": "5d668413f7a516001ff0c78037708b0ec5cbd49862715cf5500e7515ec167f9b",
+        "observed.wav": "b21edd298f13d9b15f6df53758fa3a19014f79059f73b078e1d8b59e0caf917f",
+        "original_fit.wav": "31919303b0af8dac14c3b2e81e520390170eaf859f3d02f74c413d1ce511ad12",
+        "parameters.json": "db3e67f478efa9421670a7ace14a332aec9d153bfbaa6f96e75073891c8deedf"
+      },
+      "group": "connected_654b5df57ec64387"
+    },
+    {
+      "calibration_sha256": "476189a5c81b45e762f6e42b7d055d812cfea300ea43a85745901f0a1c540d84",
+      "class": "truck",
+      "common_shape_playback_gain": 0.20625734980870697,
+      "file_id": "08bb787339078bb269d473ae83725a6bce051af500a012eeeb205cebcdf7fd7d",
+      "files": {
+        "calibrated.wav": "f872652ffe50df3c32346bff905c0e32fe45136df566b9509b3dd4e37a479b10",
+        "observed.wav": "c106d475ed728170bb838677265dde85bc9a56654d1949703e55e9a93f151f0b",
+        "original_fit.wav": "f8dfd2a1000c194a4fa77dde0308fa36d768179bcff31e2a519f73c229102ac7",
+        "parameters.json": "9ad20bcaf26e658f69bdad5c3cfa3dadac96e78e21fad4c0342b02e309ca15fc"
+      },
+      "group": "connected_667018ac7661cccb"
+    },
+    {
+      "calibration_sha256": "93415edb4677bca623d20f3ebc6d1c6fd46a1a8e8a45c6ea3a412a82a1336a48",
+      "class": "truck",
+      "common_shape_playback_gain": 0.1687878292136522,
+      "file_id": "009c968b71ee56b8e46e7225061e7d9b496bfcf21466420eb782e32bac11bf63",
+      "files": {
+        "calibrated.wav": "7792003caf525e53d0d8ee0224f8f54b39ad0a4f90e8d76bbaebcbea0720cad7",
+        "observed.wav": "8dfccc19805e33ee0a99b7edd102310d4ad81b325777be602eac06f61c2633fb",
+        "original_fit.wav": "9b53db3fb968df44d4b4d9649cd0cbb946d67c8c7f71ab1c2afeb13d45ff2c47",
+        "parameters.json": "2c51e5795303035a544d486d305522ba3f7f008ea6022dadb041e3d5c2cbb517"
+      },
+      "group": "connected_72766641e1daf436"
+    },
+    {
+      "calibration_sha256": "cb2654e8afd7338d188f113c7505b22320fe6a6554207518826446213a996899",
+      "class": "truck",
+      "common_shape_playback_gain": 0.19008240839276824,
+      "file_id": "01448ea299b9d7e776498deef614a3945cdd4bdc15e3ec05224282125cd7fd31",
+      "files": {
+        "calibrated.wav": "3d6c64512441f233b4e7268a7c31de47e4ad2da5a683cdfa76503c48fcd33f43",
+        "observed.wav": "2003a3bc43d6d480d9cf482d7f7c200466423d0e191306ddc02e616778eee4bf",
+        "original_fit.wav": "447384768f4a24e7df54132535125e0e2c673d8e000eb1518d14612b00de6c7b",
+        "parameters.json": "06de22b5265c6bfdeb159cc2a7d29112fa1d2788c4f8722c4f1a5d3fc27f2e43"
+      },
+      "group": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "calibration_sha256": "1e881c332ee0d56783751d514489995e70e7c77578faa1fbfd4fb3d26cd22b56",
+      "class": "truck",
+      "common_shape_playback_gain": 0.13380172238888627,
+      "file_id": "038e5b69683974d6f00015de4565c6dc328748e6ade4e6e7ff4ff3b27f76dc4d",
+      "files": {
+        "calibrated.wav": "f2919cd16bc9d49c5af6a5e63adf5d00635643994a32f387061ca528be790a16",
+        "observed.wav": "2e5b6c0e72c357933ad5882e50e8a2789ba0d20b09590573b36ab54e1971dfdf",
+        "original_fit.wav": "849c39cf1d1d26d5109298f8d5b9f0c1dd14c25e1fd62580ef654580cba91c6c",
+        "parameters.json": "a957c4b2b589b5187c55e0997f45ec92abef7367df06762df9e77c29108c8703"
+      },
+      "group": "connected_c6148cf0cafb5753"
+    }
+  ],
+  "gallery_sha256": "913c562c36c47285043ad57d9f55c81718de90ba1c0d1bb860803ea416bdc701",
+  "outer_access": false,
+  "plot_sha256": "bb90f56d367b015c05312c518c00a251f42b85b936071842c1dd56147b30a0f2",
+  "raw_source_audio_opened": false,
+  "saved_training_audio_read": true,
+  "source_audit_sha256": "d5cc9d63f93c1dcd4e4b260c81dc127dac0bee6cd934be7452141a470880ee05",
+  "source_summary_sha256": "b8ae148583d45245e4712c3efacd9e02543a41c8507338060b447b0400347b36"
+}

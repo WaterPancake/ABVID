@@ -1,0 +1,407 @@
+{
+  "audit_sha256": "20e32f51681c3ec7b44cd80f60f15fe5bcbc9f8cf1300a6bf01d848cf039931e",
+  "candidates": [
+    {
+      "classes": {
+        "car": {
+          "W1": 0.5963141704028548,
+          "coverage": 0.6556620065789474,
+          "gains": {
+            "marginals": 0.0034233737606371717,
+            "prototype": 0.19125487137438124
+          },
+          "passes": {
+            "coverage": false,
+            "gain": false,
+            "spread": true
+          }
+        },
+        "truck": {
+          "W1": 0.5922443757083299,
+          "coverage": 0.651729484577922,
+          "gains": {
+            "marginals": 0.0059948525012281095,
+            "prototype": 0.18335008927529506
+          },
+          "passes": {
+            "coverage": false,
+            "gain": false,
+            "spread": true
+          }
+        }
+      },
+      "envelope_temperature": 1.0,
+      "passes": false,
+      "spectral_temperature": 0.5
+    },
+    {
+      "classes": {
+        "car": {
+          "W1": 0.5969440712336679,
+          "coverage": 0.6874202302631578,
+          "gains": {
+            "marginals": -0.008523434796563478,
+            "prototype": 0.19008010121917873
+          },
+          "passes": {
+            "coverage": false,
+            "gain": false,
+            "spread": true
+          }
+        },
+        "truck": {
+          "W1": 0.5915895592237396,
+          "coverage": 0.6832383624188312,
+          "gains": {
+            "marginals": -0.004342364549427824,
+            "prototype": 0.1836555416757446
+          },
+          "passes": {
+            "coverage": false,
+            "gain": false,
+            "spread": true
+          }
+        }
+      },
+      "envelope_temperature": 1.25,
+      "passes": false,
+      "spectral_temperature": 0.5
+    },
+    {
+      "classes": {
+        "car": {
+          "W1": 0.60822409186204,
+          "coverage": 0.7079786184210525,
+          "gains": {
+            "marginals": -0.023397025129012983,
+            "prototype": 0.1748854617920762
+          },
+          "passes": {
+            "coverage": false,
+            "gain": false,
+            "spread": true
+          }
+        },
+        "truck": {
+          "W1": 0.5991745293032805,
+          "coverage": 0.7032531858766236,
+          "gains": {
+            "marginals": -0.01743250812713515,
+            "prototype": 0.1728691730321592
+          },
+          "passes": {
+            "coverage": false,
+            "gain": false,
+            "spread": true
+          }
+        }
+      },
+      "envelope_temperature": 1.5,
+      "passes": false,
+      "spectral_temperature": 0.5
+    },
+    {
+      "classes": {
+        "car": {
+          "W1": 0.592241366601638,
+          "coverage": 0.7178166118421052,
+          "gains": {
+            "marginals": -0.006892438748659746,
+            "prototype": 0.1964081583389493
+          },
+          "passes": {
+            "coverage": false,
+            "gain": false,
+            "spread": true
+          }
+        },
+        "truck": {
+          "W1": 0.5862750860751685,
+          "coverage": 0.7149177049512988,
+          "gains": {
+            "marginals": 0.0007534957723784874,
+            "prototype": 0.19144808138282943
+          },
+          "passes": {
+            "coverage": false,
+            "gain": false,
+            "spread": true
+          }
+        }
+      },
+      "envelope_temperature": 1.0,
+      "passes": false,
+      "spectral_temperature": 0.65
+    },
+    {
+      "classes": {
+        "car": {
+          "W1": 0.5932344061590428,
+          "coverage": 0.747560855263158,
+          "gains": {
+            "marginals": -0.019677519110795405,
+            "prototype": 0.19473910246278903
+          },
+          "passes": {
+            "coverage": false,
+            "gain": false,
+            "spread": true
+          }
+        },
+        "truck": {
+          "W1": 0.5857971691995112,
+          "coverage": 0.7457707081980519,
+          "gains": {
+            "marginals": -0.009845303040973974,
+            "prototype": 0.1915104228868526
+          },
+          "passes": {
+            "coverage": false,
+            "gain": false,
+            "spread": true
+          }
+        }
+      },
+      "envelope_temperature": 1.25,
+      "passes": false,
+      "spectral_temperature": 0.65
+    },
+    {
+      "classes": {
+        "car": {
+          "W1": 0.6047074029802794,
+          "coverage": 0.7670304276315789,
+          "gains": {
+            "marginals": -0.03491212210885375,
+            "prototype": 0.17929201949810503
+          },
+          "passes": {
+            "coverage": false,
+            "gain": false,
+            "spread": true
+          }
+        },
+        "truck": {
+          "W1": 0.5936277207660825,
+          "coverage": 0.7654290888798703,
+          "gains": {
+            "marginals": -0.023153270553150085,
+            "prototype": 0.18038835046772173
+          },
+          "passes": {
+            "coverage": false,
+            "gain": false,
+            "spread": true
+          }
+        }
+      },
+      "envelope_temperature": 1.5,
+      "passes": false,
+      "spectral_temperature": 0.65
+    },
+    {
+      "classes": {
+        "car": {
+          "W1": 0.5967544391877658,
+          "coverage": 0.768111019736842,
+          "gains": {
+            "marginals": -0.02076317558696328,
+            "prototype": 0.18591289401581745
+          },
+          "passes": {
+            "coverage": false,
+            "gain": false,
+            "spread": true
+          }
+        },
+        "truck": {
+          "W1": 0.589435502264412,
+          "coverage": 0.759940422077922,
+          "gains": {
+            "marginals": -0.008161442663552121,
+            "prototype": 0.18814533075184092
+          },
+          "passes": {
+            "coverage": false,
+            "gain": false,
+            "spread": true
+          }
+        }
+      },
+      "envelope_temperature": 1.0,
+      "passes": false,
+      "spectral_temperature": 0.8
+    },
+    {
+      "classes": {
+        "car": {
+          "W1": 0.5981244112699059,
+          "coverage": 0.7981842105263158,
+          "gains": {
+            "marginals": -0.03400105931880648,
+            "prototype": 0.1837161761959445
+          },
+          "passes": {
+            "coverage": false,
+            "gain": false,
+            "spread": true
+          }
+        },
+        "truck": {
+          "W1": 0.5892459107481358,
+          "coverage": 0.7899779220779222,
+          "gains": {
+            "marginals": -0.01884913853275072,
+            "prototype": 0.18778375935597846
+          },
+          "passes": {
+            "coverage": false,
+            "gain": false,
+            "spread": true
+          }
+        }
+      },
+      "envelope_temperature": 1.25,
+      "passes": false,
+      "spectral_temperature": 0.8
+    },
+    {
+      "classes": {
+        "car": {
+          "W1": 0.610162355007315,
+          "coverage": 0.8173199013157896,
+          "gains": {
+            "marginals": -0.049776897763819994,
+            "prototype": 0.16740612156188017
+          },
+          "passes": {
+            "coverage": true,
+            "gain": false,
+            "spread": true
+          }
+        },
+        "truck": {
+          "W1": 0.5975542036001171,
+          "coverage": 0.8095221387987014,
+          "gains": {
+            "marginals": -0.03215193692688523,
+            "prototype": 0.17597689360045177
+          },
+          "passes": {
+            "coverage": true,
+            "gain": false,
+            "spread": true
+          }
+        }
+      },
+      "envelope_temperature": 1.5,
+      "passes": false,
+      "spectral_temperature": 0.8
+    },
+    {
+      "classes": {
+        "car": {
+          "W1": 0.619466990137074,
+          "coverage": 0.8167574013157893,
+          "gains": {
+            "marginals": -0.05951998525262869,
+            "prototype": 0.16065900309702918
+          },
+          "passes": {
+            "coverage": true,
+            "gain": false,
+            "spread": true
+          }
+        },
+        "truck": {
+          "W1": 0.6112553246370276,
+          "coverage": 0.807769642857143,
+          "gains": {
+            "marginals": -0.03852624823304862,
+            "prototype": 0.1539242195343915
+          },
+          "passes": {
+            "coverage": true,
+            "gain": false,
+            "spread": true
+          }
+        }
+      },
+      "envelope_temperature": 1.0,
+      "passes": false,
+      "spectral_temperature": 1.0
+    },
+    {
+      "classes": {
+        "car": {
+          "W1": 0.6212026089808733,
+          "coverage": 0.8458445723684211,
+          "gains": {
+            "marginals": -0.06859906761164325,
+            "prototype": 0.15566079205247008
+          },
+          "passes": {
+            "coverage": true,
+            "gain": false,
+            "spread": true
+          }
+        },
+        "truck": {
+          "W1": 0.6114151499565017,
+          "coverage": 0.836291000405844,
+          "gains": {
+            "marginals": -0.0440848312399742,
+            "prototype": 0.1525163990765016
+          },
+          "passes": {
+            "coverage": true,
+            "gain": false,
+            "spread": true
+          }
+        }
+      },
+      "envelope_temperature": 1.25,
+      "passes": false,
+      "spectral_temperature": 1.0
+    },
+    {
+      "classes": {
+        "car": {
+          "W1": 0.6335233095817433,
+          "coverage": 0.8647754934210528,
+          "gains": {
+            "marginals": -0.08384639832961094,
+            "prototype": 0.1390312604774382
+          },
+          "passes": {
+            "coverage": true,
+            "gain": false,
+            "spread": true
+          }
+        },
+        "truck": {
+          "W1": 0.6200317854317403,
+          "coverage": 0.8545282568993506,
+          "gains": {
+            "marginals": -0.05738021843761221,
+            "prototype": 0.1402183802104886
+          },
+          "passes": {
+            "coverage": true,
+            "gain": false,
+            "spread": true
+          }
+        }
+      },
+      "envelope_temperature": 1.5,
+      "passes": false,
+      "spectral_temperature": 1.0
+    }
+  ],
+  "code_sha256": "67b02d003b3ace82476eaefaa4ef2b30e4ef53578adb8c174c34593e4ecc7fc9",
+  "outer_held_access": false,
+  "plot_sha256": "b87d5cc7ea49962e810e1615a71da18722a9262acdcc00c369c8e571ea1571c5",
+  "selected": "smooth8_s0.8_e1_T1",
+  "selected_passes": false,
+  "source_summary_sha256": "980a70fe649cf8db044b015c561eb0678fdc8fb06db95bd218abde2f6d9c2306"
+}

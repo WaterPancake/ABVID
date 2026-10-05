@@ -12,6 +12,7 @@ dist/
 *.egg-info/
 .artifacts/
 runs/
+/openclaw/
 
 # Audio corpora and generated artifacts are local-only.
 data/targets/*

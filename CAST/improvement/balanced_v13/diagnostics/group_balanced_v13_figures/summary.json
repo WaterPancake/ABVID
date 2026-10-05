@@ -1,0 +1,232 @@
+{
+  "code_sha256": "ebf128b281572eb54031c661d22fcd9c33ecd108a1285eccb698c534379e82bd",
+  "counts_note": "Five real source groups; seeds are not new recording sessions",
+  "fold_order": [
+    "connected_654b5df57ec64387",
+    "connected_667018ac7661cccb",
+    "connected_72766641e1daf436",
+    "connected_b00d69ddbb66d0fe",
+    "connected_c6148cf0cafb5753"
+  ],
+  "fold_results": [
+    {
+      "W1": 0.6106430040671684,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.8057236842105263,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.7444016826309809,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.7964555921052632,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.426612255753422,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.9053495065789473,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.5778497849373263,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.860016447368421,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.44629673219680804,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.8697080592105262,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.6898830912402365,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.6934169407894737,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.7719480186114162,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.6763733552631579,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.48266408228419755,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.800982730263158,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.6618979463065893,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.7494942434210526,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.4961284477064212,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.7576644736842105,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.7557422872888596,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.2622985197368421,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.8648796654460229,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.23075246710526315,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.5297802297490893,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.30629111842105267,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.6689146104596766,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.28002878289473687,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.6156895303729633,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.27874177631578945,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.5184144697361315,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.8642633928571428,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.6372584068632171,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.8599330357142858,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.4275667727535655,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.8744886363636363,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.66757672035246,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.878015625,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.36929445032364194,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.8799943181818183,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.6731191677648438,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.7317745535714285,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.7122599649564785,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.7623883928571428,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.5147095283049267,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.7967670454545456,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.6955978552547917,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.8045312500000001,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.5240170305794745,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.7772954545454545,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.7519422543514573,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.2626255580357143,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.7571346228691891,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.2901004464285714,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.5909905484198897,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.3025397727272727,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.667749576148369,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.275296875,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.6420903392797921,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.29247443181818183,
+      "fold": "connected_c6148cf0cafb5753"
+    }
+  ],
+  "outer_held_access": false,
+  "plot_hashes": {
+    "source_comparison.png": "016486df64d5e7ba6d907df7a3134305db50c80227086baf5b9fc3de8636f847",
+    "source_families_groups.png": "515fe7919de952a87371d3af8db30f9e344327f3507dfaede2d71449bce7624a"
+  },
+  "selected": "group_predictive_T1",
+  "source_evaluation": "CAST/improvement/balanced_v13/evaluations/group_balanced_v13_full_source",
+  "source_passed": true,
+  "source_summary_sha256": "a501935f51bc8f67dd2ccd21808f3dbfe06141dde4246f5472fc6bf5755eafc6"
+}

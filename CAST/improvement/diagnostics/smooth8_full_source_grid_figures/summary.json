@@ -1,0 +1,232 @@
+{
+  "code_sha256": "94bd68fac83fccf7470a20d9902cc45c140d29230ed9fb4a4c7b04c19378e668",
+  "counts_note": "Five real source groups; seeds are not new recording sessions",
+  "fold_order": [
+    "connected_654b5df57ec64387",
+    "connected_667018ac7661cccb",
+    "connected_72766641e1daf436",
+    "connected_b00d69ddbb66d0fe",
+    "connected_c6148cf0cafb5753"
+  ],
+  "fold_results": [
+    {
+      "W1": 0.8249269072098151,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.7221957236842105,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.5671499432895113,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.8199177631578948,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.618897560359599,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.8419243421052631,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.4680783531656846,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.8886677631578948,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.6182821866607598,
+      "arm": "joint",
+      "class": "car",
+      "coverage": 0.8110814144736844,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.7934747911059938,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.6286595394736841,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.576803870824229,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.7570230263157894,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.5169934792463385,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.7771792763157894,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.4480776002655471,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.8293050986842105,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.5879881793115525,
+      "arm": "marginals",
+      "class": "car",
+      "coverage": 0.7293503289473684,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.9063121335669976,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.22682154605263158,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.7820247546117745,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.24305509868421055,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.6513941056490793,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.2851151315789474,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.6071036774240727,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.28538240131578946,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.7433639037182284,
+      "arm": "prototype",
+      "class": "car",
+      "coverage": 0.2588815789473684,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.7732969842575305,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.7391741071428573,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.5126381761573502,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.8141741071428571,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.5925151549380882,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.804034090909091,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.5754482236258284,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.87321875,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.6023780842063404,
+      "arm": "joint",
+      "class": "truck",
+      "coverage": 0.808247159090909,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.7739124470039878,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.6341210937499999,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.5175984789694266,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.75828125,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.5439213831735825,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.7387897727272728,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.5502545858131123,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.8379375000000001,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.5572109166119096,
+      "arm": "marginals",
+      "class": "truck",
+      "coverage": 0.733909090909091,
+      "fold": "connected_c6148cf0cafb5753"
+    },
+    {
+      "W1": 0.8752681624668133,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.2222935267857143,
+      "fold": "connected_654b5df57ec64387"
+    },
+    {
+      "W1": 0.6918260271108074,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.26796875,
+      "fold": "connected_667018ac7661cccb"
+    },
+    {
+      "W1": 0.7048914334592316,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.2600681818181818,
+      "fold": "connected_72766641e1daf436"
+    },
+    {
+      "W1": 0.6017602324661828,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.27760937500000005,
+      "fold": "connected_b00d69ddbb66d0fe"
+    },
+    {
+      "W1": 0.738550694935061,
+      "arm": "prototype",
+      "class": "truck",
+      "coverage": 0.2506931818181818,
+      "fold": "connected_c6148cf0cafb5753"
+    }
+  ],
+  "outer_held_access": false,
+  "plot_hashes": {
+    "source_comparison.png": "74f341802f0293bbb54314f252c6b23444ee54f3d371b8dc5c6aae5e1b2eaa8a",
+    "source_families_groups.png": "199ac29ba6fdf3efacfeae4f30312c0005dd7cc1dda9c7e3aa972b72200951a5"
+  },
+  "selected": "smooth8_T1",
+  "source_evaluation": "CAST/improvement/evaluations/smooth8_full_source_grid",
+  "source_passed": false,
+  "source_summary_sha256": "89fad95aea82e7008c4dc23dd7900d38366533e5f573b055a57df69833676f38"
+}
