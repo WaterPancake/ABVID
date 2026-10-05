@@ -7,7 +7,7 @@
 - **Checks:** nine targeted tests and nine unchanged upstream SimulatorManager tests pass. All 179 angle rows match direct equations; 32 complete-filter cases cover eight angles × four distances, maximum absolute coefficient error about `1.11e-16`. Original defect is detected; the Material-object branch and direct-only artificial output match the reference exactly. Tiny repeated-filter roundoff is handled by explicit numerical tolerances; full waveform-hash determinism remains a future gate.
 - **Provenance:** verification v2 applies the saved patch to a fresh reference and reproduces backend bytes. V1's numerical checks passed but its diff writer mishandled the original missing final newline; that artifact is retained with a QA note. The backend implementation is the same in both checks. All 8,257 historical/encoder artifacts and the H2 metadata freeze verify unchanged; check dependencies were isolated with uv.
 - **Remaining work:** spreading must implement the declared total-path law and pass rigid-plane/image-source checks before RMS normalization; common-c, exact source/trajectory adapters and full physics/corpus locks also remain. No dataset collection, downloads or manual work from the user are required for the local spreading correction and analytic tests.
-- **Evidence:** [repair explanation and commands](experiments/h2/backend/README.md), [verification v2](experiments/h2/results/ground_indexing_20261004_v2/verification.json), [patch](experiments/h2/results/ground_indexing_20261004_v2/ground_indexing.patch). Source dominance and military milestone gates remain unchanged.
+- **Evidence:** [repair explanation and commands](vendor/pyroadacoustics/README.md), [verification v2](reports/ARTIFACT_INDEX.md#artifact-4f8ff924317a), [patch](reports/ARTIFACT_INDEX.md#artifact-4e726558a1ca). Source dominance and military milestone gates remain unchanged.
 
 ## H2 — Source × propagation design and metadata freeze
 
@@ -18,7 +18,7 @@
 - **Audit finding:** the previously selected upstream renderer's integer-ground branch overwrites its angle table; reflected propagation multiplies1/a and1/b instead of the intended image-path1/(a+b). Additional exact-trajectory/common-c controls are specified. These are inspected code findings and a physical-contract discrepancy, not measured acoustic errors. The unchanged reference is ineligible for H2 execution; a documented repair and physical validation are required before generation/target scoring.
 - **Verification:** eight metadata failure-mode tests pass; all frozen manifests regenerate identically and match class/role/pairing/budget requirements; target IDs and metadata exactly match H1;8,257 historical/encoder artifacts unchanged. No waveform/model validation is claimed by these checks.
 - **Decision:** design is frozen; next implement the explicit source adapter and renderer repairs, pass synthetic-only tests, then freeze the executable environment/corpus before fitting/scoring. Preserve R0/H1/diagnostic results and military gates; no major roadmap change.
-- **Evidence:** [H2 protocol/commands](experiments/h2/README.md), [backend audit](experiments/h2/BACKEND_AUDIT.md), [lock](experiments/h2/frozen/source_path_20261004_v1/lock.json), [verification](experiments/h2/results/source_path_20261004_v1/verification.json). Lock SHA256: `fc73981fe6350cb3384079634677887b4a1ca7b78558fb2806c02515ee5ef8d0`.
+- **Evidence:** [H2 protocol/commands](experiments/h2_simulation/REPLAY.md), [backend audit](experiments/h2_simulation/notes/BACKEND_AUDIT.md), [lock](reports/ARTIFACT_INDEX.md#artifact-9ec4cd50dcc9), [verification](reports/ARTIFACT_INDEX.md#artifact-ee1645f76b00). Lock SHA256: `fc73981fe6350cb3384079634677887b4a1ca7b78558fb2806c02515ee5ef8d0`.
 
 ## H1 follow-up — Completed regularization transfer sensitivity
 
@@ -29,7 +29,7 @@
 - **Failures/limits:** absolute worst group/class recall remains 4.63% BEATs and 0% MFCC. Four uneven conservative target groups and overlapping source fits limit bootstrap coverage. The largest group contains 6,477/8,066 events; one group has one truck. The source-minus-target F1 gaps do not shrink. Candidate C selection has additional source-validation label access; target remains exposed development data.
 - **Verification/runtime:** 7 pre-run tests passed; 107 pipelines, 120 source/target evaluations, 480 target-group scores, all scaler statistics/probabilities/metrics/bootstrap samples and 60 reconstructed source-only C choices independently verified. All 60 original H1 target arrays replay exactly; 8,079 protected artifacts unchanged. M3 Pro CPU: prediction/scoring/bootstrap 29.13 s, verification 26.42 s; no GPU/downloads.
 - **Decision:** close this bounded check. Retain H1 and regularization as a documented sensitivity; no automatic replacement or further target-driven C/threshold sweep. Prepare the existing source × propagation factorial's source/backend/trajectory manifests and common head/bandwidth controls before implementation. Source dominance remains untested; military gates are unchanged.
-- **Evidence:** [results and factorial preparation](reports/H1_regularization_transfer.md), [protocol/commands](experiments/h1_transfer_sensitivity/README.md), [frozen lock](experiments/h1_transfer_sensitivity/frozen/regularization_transfer_20261004_v1/lock.json), [verification](experiments/h1_transfer_sensitivity/results/regularization_transfer_20261004_v1/verification.json).
+- **Evidence:** [results and factorial preparation](reports/H1_regularization_transfer.md), [protocol/commands](experiments/h1_baselines/transfer_sensitivity/README.md), [frozen lock](reports/ARTIFACT_INDEX.md#artifact-4ead9b529d90), [verification](reports/ARTIFACT_INDEX.md#artifact-56d2b5d77ecf).
 
 ## H1 follow-up — Completed source-only diagnostic pass
 
@@ -42,7 +42,7 @@
 - **D5:** Entire-site holdout lowers F1 53.08→42.86% BEATs and 56.23→44.77% MFCC. Paired changes −10.21 [−17.46,−3.23] and −11.46 [−18.91,−4.84]; three-site block intervals also exclude zero. Location is entangled with fleet/state, posted limits, road conditions and acquisition context, and training groups fall from five to four. No causal propagation attribution follows.
 - **Verification/runtime:** 8 protocol boundary tests plus two artificial encoder checks; all 1,757 scalers/heads, 1,080 outer/900 inner evaluations and 60 nested choices independently checked. All 60 original H1 source probability arrays replay exactly; 798 protected H1 files unchanged. M3 Pro CPU: extraction 345.54 s, fits/scoring/bootstrap 56.16 s, verification 26.27 s (rounded; exact JSON authoritative).
 - **Decision:** preserve H1. Keep class recall, BA, ranking and worst-group results beside F1; retain MFCC and matched-bandwidth controls. A separately frozen transfer sensitivity is needed before promoting any diagnostic setting. Source-versus-propagation dominance remains untested; H2–H5 and military gates are unchanged.
-- **Evidence:** [individual findings](reports/H1_source_diagnostics.md), [protocol/commands](experiments/h1_diagnostics/README.md), [lock](experiments/h1_diagnostics/frozen/source_diagnostics_20261003_v1/lock.json), [verification](experiments/h1_diagnostics/results/source_diagnostics_20261003_v1/verification.json).
+- **Evidence:** [individual findings](reports/H1_source_diagnostics.md), [protocol/commands](experiments/h1_baselines/source_diagnostics/README.md), [lock](reports/ARTIFACT_INDEX.md#artifact-3bf6b0e3155d), [verification](reports/ARTIFACT_INDEX.md#artifact-6864b4cfa236).
 
 ## H1 — Largest common budget and completed minimum baselines
 
@@ -56,7 +56,7 @@
 - **Verification:** 18 admission + 7 H1 + 2 existing adapter tests pass; all 260 model/prediction hashes, confusion/F1/BA results, known group boundaries and train-only scaler means independently verified. Selected fixed-position predictions replay exactly within numerical tolerance. Adapter only decoupled SHA256 from plotting imports.
 - **Runtime:** M3 Pro CPU, 18 GiB; provenance 63.18 s, BEATs/MFCC extraction 383.07 s, fixed fits/predictions/bootstrap 33.15 s. No cloud/GPU/audio redistribution.
 - **Decision:** minimum H1 E0/E1/E2 and MFCC E3 complete. AST/new CNN/conventional augmentation/full-real sensitivity are explicit unrun extensions. E4–E9 remain unimplemented. No author contact or extra user download is needed for the completed scope.
-- **Evidence:** [H1 results](reports/H1_baseline_results.md), [audit](reports/dataset_admission_provenance.md), [protocol](experiments/EXPERIMENTAL_PROTOCOL.md), [lock](experiments/h1/frozen/h1_common_budget_v1.3/lock.json), [independent verification](experiments/h1/results/H1_20261002/verification.json). Git HEAD plus dirty status and executed-source hashes are retained; prior R0 and military results are unchanged.
+- **Evidence:** [H1 results](reports/H1_baseline_results.md), [audit](reports/dataset_admission_provenance.md), [protocol](experiments/EXPERIMENTAL_PROTOCOL.md), [lock](reports/ARTIFACT_INDEX.md#artifact-884f21ce4e24), [independent verification](reports/ARTIFACT_INDEX.md#artifact-5c3533e5d819). Git HEAD plus dirty status and executed-source hashes are retained; prior R0 and military results are unchanged.
 
 
 ## Civilian admission steps 1–2 — Full integrity and class/channel audit
@@ -69,14 +69,14 @@
 - **Interpretation/limitations:** provider labels are not independent human content review; file counts do not equal independent sessions; same-label and near-duplicate/provenance work remains. AudioLDM no longer supports the proposed 200 unique training examples/class without a future budget/data amendment. No padding, relabelling or repeated examples were used to meet a quota.
 - **Validation:** thirteen failure-mode regression tests passed; the separate verifier checked coverage, hashes, pair links, class/channel rules, conflict quarantine and null split roles. Current full scan runtime: 148.83 seconds, macOS arm64 CPU; peak RAM not measured.
 - **Decision:** steps 1–2 complete. Continue with provenance/overlap and synthetic lineage only as subsequent work; H1 and the future split/budget freeze remain deferred.
-- **Evidence:** [admission report](reports/dataset_admission_integrity.md), [summary](experiments/admission/results/integrity_20261002_v1_2_1/summary.json), [manifest verification](experiments/admission/verification_20261002_v1_2_1.json), [updated dataset protocol](experiments/DATASET_PROTOCOL.md).
+- **Evidence:** [admission report](reports/dataset_admission_integrity.md), [summary](reports/ARTIFACT_INDEX.md#artifact-e3dd6a1c2104), [manifest verification](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/experiments/admission/verification_20261002_v1_2_1.json), [updated dataset protocol](experiments/DATASET_PROTOCOL.md).
 
 ## R0 — Published checkpoint replay and release audit
 
 - **Experiment:** `R0_20260929`; P01 transformer/CNN and P02 synthetic-to-real paper reproduction on original tasks and evaluation definitions.
 - **Date:** 2026-09-29, following the preserved September 28 replay.
 - **Hypothesis/check:** the large BEATs-family replay discrepancy arises from NumPy RNG consumption during inference before balanced sampling. This was derived from source inspection and checked before comparison, not found through a seed search.
-- **Config:** released model declarations/checkpoints; CPU float32; four threads; no fitting. BEATs evaluator seed 42, original batch size 16, twelve uniform RNG draws per full-domain batch. Config, versions, code/weight/input hashes: [corrected replay](experiments/reproduction/results/R0_20260929/P01_BEATs_rng/replay.json).
+- **Config:** released model declarations/checkpoints; CPU float32; four threads; no fitting. BEATs evaluator seed 42, original batch size 16, twelve uniform RNG draws per full-domain batch. Config, versions, code/weight/input hashes: [corrected replay](reports/ARTIFACT_INDEX.md#artifact-3dc99b7bd228).
 - **Dataset split:** original P01 five-class IDMT CH12 training reference, CH34 and MELAUDIS evaluation; 50/class balanced subsets. Original P02 three-class full DATASEC+MAVD test features, 1,019 rows. No custom split was assigned.
 - **Seeds:** published evaluation seed 42; 11,004 RNG draws before MELAUDIS selection and 6,600 before CH34 selection. P02 supplied checkpoint matrices match archived seed 789/run 3; training was not rerun.
 - **Result:** P01 9/10 model/domain matrices match exactly; P02 all eight full-test matrices match. ArcFace CH34 F1 0.738561 versus archived 0.7330 remains unresolved, with one net truck-count shift. Thirty archived table-row arithmetic checks are recorded; a congestion confidence-rounding discrepancy remains explicit.
@@ -84,4 +84,13 @@
 - **Failure modes:** original waveform identity remains approximate; ArcFace batch-context checks do not explain its residual. P02 lacks `soundclass_v1` and exact balanced-subset indices. Some checkpoint labels disagree with saved `best_run`. No absent metadata was guessed.
 - **Decision:** close the current-release checkpoint-audit pass with a partial-reproduction disposition; preserve failed and successful artifacts. Do not start the new experimental ladder or choose our training splits.
 - **Next experiment:** no new experiment scheduled. Recover missing original inputs/sampling/training provenance if available before claiming complete retraining or resolving the remaining exact-replay discrepancy.
-- **Evidence:** [report](reports/published_reproduction_status.md), [R0 result ledger](experiments/reproduction/results/R0_20260929/R0_result_ledger.json). The ledger records commit `0d242c6d76ff036747f89576ee15d5f7399f5891` plus script/input hashes; the working tree was dirty.
+- **Evidence:** [report](reports/published_reproduction_status.md), [R0 result ledger](reports/ARTIFACT_INDEX.md#artifact-4317fa516d8f). The ledger records commit `0d242c6d76ff036747f89576ee15d5f7399f5891` plus script/input hashes; the working tree was dirty.
+
+
+## 2026-10-05 — Repository organization only
+
+Reorganized the active project around admission, R0/H1/H2 and CAST. Preserved the
+original working tree externally and its research source in Git history; moved
+shared numeric code to `src/abvid`. No new scientific run or target evaluation.
+See [the refactor report](reports/REFACTOR.md) for exact numerical parity, tests,
+storage locations and historical replay boundaries.

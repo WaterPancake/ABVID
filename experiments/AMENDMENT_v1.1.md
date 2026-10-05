@@ -1,10 +1,14 @@
+> Historical protocol/command reference. Commands retain their original paths
+> and run from `ABVID_ARCHIVE_ROOT`, not from the reorganized code checkout.
+> See the [experiment registry](README.md).
+
 # Protocol amendment v1.1: car/truck and corrected IDMT sensor selection
 
 Date: 2026-09-28. Active protocol: `sim_components_v1.1`.
 
 The user requested correcting channel selection and leaving motorcycle out of training for now. This amendment defines a closed-set **car versus truck** core task. It excludes motorcycle from core validation and testing as well: retaining an untrained third class would require a different, open-set experiment. Raw dataset files remain unchanged. No experiment is implemented or run.
 
-The updated specifications are [EXPERIMENTAL_PROTOCOL.md](EXPERIMENTAL_PROTOCOL.md), [DATASET_PROTOCOL.md](DATASET_PROTOCOL.md) and [EXPERIMENT_MATRIX.csv](EXPERIMENT_MATRIX.csv). The previous three documents are preserved byte-for-byte in [archive/sim_components_v1.0](archive/sim_components_v1.0/README.md), with SHA256 checksums. The literature review and original [metadata audit JSON](dataset_readiness_audit.json) remain historical evidence, not current split manifests.
+The updated specifications are [EXPERIMENTAL_PROTOCOL.md](EXPERIMENTAL_PROTOCOL.md), [DATASET_PROTOCOL.md](DATASET_PROTOCOL.md) and [EXPERIMENT_MATRIX.csv](EXPERIMENT_MATRIX.csv). The previous three documents are preserved byte-for-byte in [archive/sim_components_v1.0](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/experiments/archive/sim_components_v1.0/README.md), with SHA256 checksums. The literature review and original [metadata audit JSON](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/experiments/dataset_readiness_audit.json) remain historical evidence, not current split manifests.
 
 ## Changes
 
@@ -21,7 +25,7 @@ The updated specifications are [EXPERIMENTAL_PROTOCOL.md](EXPERIMENTAL_PROTOCOL.
 | Metrics | Core macro-F1 and balanced accuracy cover two classes. Brier is the event mean of the sum of squared errors across both class probabilities. All confidence-interval and support rules remain unchanged. |
 | Published CNN replay | E2-P-R/S remain frozen historical **three-class** replays under `civilian3_published_v1`. No new training, output deletion or test-row removal. Their scores are not subtracted from binary-core scores. |
 
-Evidence for channel selection is the supplied [IDMT README, File naming convention](../dataset/IDMT_Traffic/readme.md), the provider [metadata script docstring](../dataset/IDMT_Traffic/annotation/import_idmt_traffic_dataset.py), and the [readiness audit](../reports/dataset_readiness_audit.md). Channel identifiers denote original stereo pairs; microphone identity comes from the separate `SE` token. The two waveform columns in an `SE_CH34` file represent original channels 3 and 4, not a reason to select a different file.
+Evidence for channel selection is the supplied [IDMT README, File naming convention](../reports/ARTIFACT_INDEX.md#artifact-c7112509e13e), the provider [metadata script docstring](../reports/ARTIFACT_INDEX.md#artifact-0eb8559945a9), and the [readiness audit](../reports/dataset_readiness_audit.md). Channel identifiers denote original stereo pairs; microphone identity comes from the separate `SE` token. The two waveform columns in an `SE_CH34` file represent original channels 3 and 4, not a reason to select a different file.
 
 ## Metadata check and remaining split constraint
 

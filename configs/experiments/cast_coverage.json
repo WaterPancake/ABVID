@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "cast_coverage",
+  "phase": "source_coverage",
+  "description": "CAST observation-model coverage; transfer remains untested",
+  "contract": {
+    "path": "archive:CAST/improvement/width_v15/PROTOCOL.md",
+    "sha256": "e6bb876264061d16887355cb642f441b4a37c8b628d28dcf85740fde62a8d6e9"
+  },
+  "execution": {
+    "mode": "frozen_replay",
+    "environment": "cast",
+    "script": "archive:CAST/improvement/src/cast_improvement/width_evaluation.py",
+    "script_sha256": "7d346defcd9f7c677a226715db1533e0d5ba404a8c5c477e68416aeb1a359b0c",
+    "arguments": [
+      "--help"
+    ],
+    "module": "cast_improvement.width_evaluation"
+  },
+  "reports": []
+}

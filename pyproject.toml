@@ -3,34 +3,40 @@ requires = ["hatchling>=1.25"]
 build-backend = "hatchling.build"
 
 [project]
-name = "vehicle-audio"
-version = "0.1.0"
-description = "Reproducible synthetic vehicle-acoustic dataset generation"
+name = "abvid"
+version = "0.2.0"
+description = "Vehicle acoustic simulation, source coverage and transfer research"
 readme = "README.md"
-license = "MIT"
-license-files = ["LICENSE"]
-requires-python = ">=3.11"
-dependencies = [
-  "numpy>=1.26",
-  "PyYAML>=6.0",
-  "scipy>=1.11",
-  "soundfile>=0.12",
-  "torch>=2.2",
-  "torchaudio>=2.2",
-]
+license = "MIT AND GPL-3.0-only"
+license-files = ["LICENSE", "vendor/pyroadacoustics/LICENSE"]
+requires-python = ">=3.11,<3.12"
+dependencies = ["numpy>=1.26,<3", "scipy==1.17.1", "soundfile>=0.13,<0.15"]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0"]
-inspection = ["matplotlib>=3.8"]
-pretrained = ["panns-inference==0.1.1", "scikit-learn==1.9.0"]
+cast = [
+  "numpy==2.4.6", "soundfile==0.14.0", "torch==2.13.0",
+  "matplotlib==3.11.1",
+]
+baseline = [
+  "numpy==1.26.4", "soundfile==0.13.1", "torch==2.11.0",
+  "torchaudio==2.11.0", "scikit-learn==1.4.2", "librosa==0.11.0",
+  "numba==0.67.0", "matplotlib==3.11.1", "PyYAML==6.0.3",
+]
+
+[dependency-groups]
+dev = ["pytest==9.1.1"]
 
 [project.scripts]
-vehicle-audio = "vehicle_audio.cli:main"
+abvid = "abvid.cli:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/vehicle_audio"]
+packages = ["src/abvid"]
 
 [tool.pytest.ini_options]
 addopts = "-q"
 testpaths = ["tests"]
 pythonpath = ["src"]
+markers = ["archive: requires the locally preserved artifact bundle"]
+
+[tool.uv]
+conflicts = [[{ extra = "cast" }, { extra = "baseline" }]]

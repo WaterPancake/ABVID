@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "h2_simulation",
+  "phase": "simulation",
+  "description": "Source/path and propagation mechanism controls",
+  "contract": {
+    "path": "archive:experiments/h2/config.json",
+    "sha256": "8962457e89e0c92dd1830f5479c085d5a9edc4cfeca4cd0fdd9303cd29d2156d"
+  },
+  "execution": {
+    "mode": "frozen_replay",
+    "environment": "reproduction",
+    "script": "archive:experiments/h2/test_ground_indexing.py",
+    "script_sha256": "dece0b845264eb97a37917e5c740f77be02b8a7aa2454fb34f7b97ceac5d662e",
+    "arguments": [],
+    "module": null
+  },
+  "reports": [
+    "repo:reports/H2_source_path_results.md",
+    "repo:reports/H2_ground_air_collapse.md",
+    "repo:reports/H2_air_latency_control.md"
+  ]
+}

@@ -136,7 +136,7 @@ not assigned engine/ground/sensor meanings.
 
 This inspection was added after the factorial result; it does not add predictions,
 refit heads or change frozen code. The protocol had already specified that air
-included finite-FIR latency. The [renderer](../experiments/h2/renderer.py)
+included finite-FIR latency. The [renderer](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/experiments/h2/renderer.py)
 constructs symmetric 11-tap filters and applies one to the direct route and one
 to each reflected leg. Each has a five-sample static group delay: direct gets
 five samples, reflected gets ten, introducing **0.625 ms of extra relative delay
@@ -168,7 +168,7 @@ source-versus-propagation hypothesis remains open beyond these interventions.
 
 ## Population, controls and limits
 
-The [frozen protocol](../experiments/h2_mechanisms/PROTOCOL.md) fixes 240 base
+The [frozen protocol](../experiments/h2_simulation/ground_air/PROTOCOL.md) fixes 240 base
 templates, 480 dry sources, 1,200 paired geometries, two source levels and four
 paths: 19,200 joined observations, half new. Each head uses 190 training events
 per class from 19 templates/class and 50 validation events/class from five
@@ -421,18 +421,18 @@ Measured on Apple M3 Pro, 18 GiB RAM: four render workers, four Torch CPU thread
 
 The audit preserved 22,316 parent H2 files and 8,257 historical files. Prediction replay error is zero; 504 primary/secondary F1, balanced-accuracy and truck-rate intervals were independently reconstructed from integer confusion counts.
 
-- [Protocol](../experiments/h2_mechanisms/PROTOCOL.md)
-- [Configuration](../experiments/h2_mechanisms/config.json)
-- [Design lock](../experiments/h2_mechanisms/frozen/ground_air_collapse_20261004_v1/lock.json)
-- [Execution lock](../experiments/h2_mechanisms/execution/ground_air_collapse_20261004_v1/lock.json)
-- [Complete waveform replay](../experiments/h2_mechanisms/corpus/ground_air_collapse_20261004_v1/verification.json)
-- [Model lock](../experiments/h2_mechanisms/models/ground_air_collapse_20261004_v1/lock.json)
-- [Independent result audit](../experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/verification.json)
-- [Statistics and decisions](../experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/statistics.json)
-- [Every target/class/group result](../experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/evaluations.json)
-- [Every cross-path check](../experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/cross_path_validation.json)
-- [Every synthetic gain check](../experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/validation_gain.json)
-- [Per-head feature/score diagnostics](../experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/collapse_diagnostics.json)
-- [Waveform and diagnostic summaries](../experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/diagnostic_summaries.json)
-- [Post-result air-filter phase inspection](../experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/air_filter_phase_inspection.json)
-- [Commands](../experiments/h2_mechanisms/README.md)
+- [Protocol](../experiments/h2_simulation/ground_air/PROTOCOL.md)
+- [Configuration](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/experiments/h2_mechanisms/config.json)
+- [Design lock](ARTIFACT_INDEX.md#artifact-be3bdf720cef)
+- [Execution lock](ARTIFACT_INDEX.md#artifact-f01626f94016)
+- [Complete waveform replay](ARTIFACT_INDEX.md#artifact-65e2d859b70c)
+- [Model lock](ARTIFACT_INDEX.md#artifact-58cb24470782)
+- [Independent result audit](ARTIFACT_INDEX.md#artifact-3a71b28096f0)
+- [Statistics and decisions](ARTIFACT_INDEX.md#artifact-26e392bd8782)
+- [Every target/class/group result](ARTIFACT_INDEX.md#artifact-343022888f7c)
+- [Every cross-path check](ARTIFACT_INDEX.md#artifact-ea85d9afcc2c)
+- [Every synthetic gain check](ARTIFACT_INDEX.md#artifact-00c8cbb7ecd7)
+- [Per-head feature/score diagnostics](ARTIFACT_INDEX.md#artifact-dda600f5bd63)
+- [Waveform and diagnostic summaries](ARTIFACT_INDEX.md#artifact-ae2fb7a878db)
+- [Post-result air-filter phase inspection](ARTIFACT_INDEX.md#artifact-011c6afca1c8)
+- [Commands](../experiments/h2_simulation/ground_air/README.md)

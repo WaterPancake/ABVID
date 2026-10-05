@@ -1,0 +1,10 @@
+{
+  "profile": "cast",
+  "comparison": "working_refactor_vs_preserved_original",
+  "numerical_definitions_unchanged": 160,
+  "exact_waveform_pairs": 18,
+  "exact_v15_population_draws": 48,
+  "exact_population_statistics": true,
+  "passed": true,
+  "elapsed_s": 4.640539583997452
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "admission",
+  "phase": "admission",
+  "description": "Integrity and provenance before grouping/splits",
+  "contract": {
+    "path": "archive:experiments/DATASET_PROTOCOL.md",
+    "sha256": "1d4d52c1eb86c9bf0d4313a2b3c6f3cbdd92d7f91858c36c48b312f8b7c51f9d"
+  },
+  "execution": {
+    "mode": "frozen_replay",
+    "environment": "reproduction",
+    "script": "archive:experiments/admission/test_audit_integrity.py",
+    "script_sha256": "9e007894c89c2dbf4cf9363421953d876c372f4833217d4a9a37e4f0e8f575ec",
+    "arguments": [],
+    "module": null
+  },
+  "reports": [
+    "repo:reports/dataset_admission_integrity.md",
+    "repo:reports/dataset_admission_provenance.md"
+  ]
+}

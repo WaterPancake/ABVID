@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "h1_baselines",
+  "phase": "baseline",
+  "description": "Within-domain, cross-dataset and released synthetic baselines",
+  "contract": {
+    "path": "archive:experiments/h1/config.json",
+    "sha256": "bbe6b0be3a11143d422036253ef4c65045f96ebd9f7c2495dcdac67a4afd52d3"
+  },
+  "execution": {
+    "mode": "frozen_replay",
+    "environment": "reproduction",
+    "script": "archive:experiments/h1/test_h1.py",
+    "script_sha256": "5a1a22644e27eca1f0f6c9287de64076dc3b38421d76c2f8fecf7609d629a132",
+    "arguments": [],
+    "module": null
+  },
+  "reports": [
+    "repo:reports/H1_baseline_results.md"
+  ]
+}

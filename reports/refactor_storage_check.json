@@ -1,0 +1,12 @@
+{
+  "profile": "storage",
+  "comparison": "working_refactor_vs_preserved_original",
+  "numerical_definitions_unchanged": 160,
+  "unchanged_archived_source_files": 704,
+  "original_git_tracked_diff_unchanged": true,
+  "frozen_CAST_allowlist_hash_checks": 50,
+  "resolved_admitted_audio_paths": 22861,
+  "missing_paths": 0,
+  "passed": true,
+  "elapsed_s": 1.2350385419995291
+}

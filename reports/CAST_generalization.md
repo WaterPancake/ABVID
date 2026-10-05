@@ -12,9 +12,9 @@ From the ABVID root, with a fresh run ID:
 bash CAST/generalization/run.sh workflow --run-id cast_generalization_reproduction_01
 ```
 
-Completed run: `cast_generalization_v0_20261004_r1`. Reverify without changing artifacts: `bash CAST/generalization/run.sh verify --run-id cast_generalization_v0_20261004_r1`. The parent CAST environment is used read-only; see [extension README](../CAST/generalization/README.md) for prerequisites. The workflow refuses overwrites and requires the original pilot and source hashes.
+Completed run: `cast_generalization_v0_20261004_r1`. Reverify without changing artifacts: `bash CAST/generalization/run.sh verify --run-id cast_generalization_v0_20261004_r1`. The parent CAST environment is used read-only; see [extension README](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/generalization/README.md) for prerequisites. The workflow refuses overwrites and requires the original pilot and source hashes.
 
-[Frozen protocol](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/PROTOCOL.md) · [resolved configuration](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/config.resolved.json) · [lock](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/lock.json) · [source snapshot](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/snapshot.json) · [parameter bank](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/parameter_bank.jsonl) · [sampling schedule](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/sampling_schedule.jsonl) · [scores and per-coordinate tails](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/scores.json) · [audio gallery](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/index.html)
+[Frozen protocol](ARTIFACT_INDEX.md#artifact-c9745da53bf0) · [resolved configuration](ARTIFACT_INDEX.md#artifact-aa0cba02a9ce) · [lock](ARTIFACT_INDEX.md#artifact-5415312a652a) · [source snapshot](ARTIFACT_INDEX.md#artifact-d727b82c6209) · [parameter bank](ARTIFACT_INDEX.md#artifact-cb565a509616) · [sampling schedule](ARTIFACT_INDEX.md#artifact-044b3a02556d) · [scores and per-coordinate tails](ARTIFACT_INDEX.md#artifact-3073209715cf) · [audio gallery](ARTIFACT_INDEX.md#artifact-919d8276f7b6)
 
 ## Frozen method and access
 
@@ -22,9 +22,9 @@ The 50 pilot fits are the only parameter donors: 25 per class, five per class/gr
 
 The renderer and pilot fits are unchanged. Separately namespaced sampling streams are independent of fitting/checking streams. All generated clips, descriptors, sampling choices, training-only scales and hashes were frozen before the first held-audio access receipt. Held audio does not select examples, controls, latent parameters, scales, stopping rules or seeds. No nearest-example selection or held latent fitting is performed.
 
-Engineering replay disclosure: the initial run `cast_generalization_v0_20261004` processed all held clips, then its verifier stopped because Finder changed `.DS_Store`. That run and its original pre-access freeze are preserved. This run excludes only Finder presentation metadata from the artifact inventory, with a regression test protecting all experiment files. The sampler, score definitions, criteria, configuration and selection schedule are unchanged. It is a repair/replay of the original preregistered evaluation, not new held-out confirmation. See [implementation decisions](../CAST/generalization/DECISIONS.md).
+Engineering replay disclosure: the initial run `cast_generalization_v0_20261004` processed all held clips, then its verifier stopped because Finder changed `.DS_Store`. That run and its original pre-access freeze are preserved. This run excludes only Finder presentation metadata from the artifact inventory, with a regression test protecting all experiment files. The sampler, score definitions, criteria, configuration and selection schedule are unchanged. It is a repair/replay of the original preregistered evaluation, not new held-out confirmation. See [implementation decisions](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/generalization/DECISIONS.md).
 
-Held group `connected_4001f06f57cfeee7`: Schleusinger-Allee, 2019-11-12; 491 cars and 79 trucks. This site also appears in the training bank on another date. Exact H1 fold-0 test IDs and linked ancestry are checked against the immutable source-only manifest. [Held access receipt](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/held_access_receipt.json) follows [completed train-only generation](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/generation.complete.json). All selected records were retained; zero replacements.
+Held group `connected_4001f06f57cfeee7`: Schleusinger-Allee, 2019-11-12; 491 cars and 79 trucks. This site also appears in the training bank on another date. Exact H1 fold-0 test IDs and linked ancestry are checked against the immutable source-only manifest. [Held access receipt](ARTIFACT_INDEX.md#artifact-33ff9285f30d) follows [completed train-only generation](ARTIFACT_INDEX.md#artifact-d8031a6aea28). All selected records were retained; zero replacements.
 
 The four equally weighted descriptor families are 64 log spectral proportions over 0–4 kHz, eight broad-band energy proportions, forty 50-ms envelope values, and twenty 0.5–10-Hz modulation magnitudes. Each coordinate's empirical Wasserstein-1 distance is divided by its frozen training-real SD with declared floors; coordinate means are averaged within families, then across families. Lower is better. This tests marginal distributions, not joint support or perceptual realism.
 
@@ -43,7 +43,7 @@ Coverage is the mean fraction of held values inside generated marginal 5th–95t
 | truck | marginals | 0.8106 | 0.7727–0.8852 | 62.3% |
 | truck | 25 training-real reference | 0.6081 | one fixed set | 74.3% |
 
-![Distance, coverage and spread](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/coverage.png)
+![Distance, coverage and spread](ARTIFACT_INDEX.md#artifact-b829435f5d51)
 
 | Class | Joint gain vs prototype | Joint gain vs marginals | ≥5% gains | ≥80% coverage | All spread ratios 0.5–2 |
 |---|---:|---:|---|---|---|
@@ -57,9 +57,9 @@ These thresholds were declared before held access as exploratory engineering ade
 | car | 1.211 | 1.424 | 0.668 | 0.688 |
 | truck | 0.962 | 0.908 | 0.738 | 0.825 |
 
-Spread is the ratio of mean coordinate SDs after train-only scaling. Less than one means under-dispersion. [Full numerical scores](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/scores.json) retain each family's distances, lower/upper tail misses, every coordinate's p05/median/p95 and zero-spread counts, for every seed. Class-balanced macro distances: joint 0.8787, marginals 0.9246, prototype 1.0550. There is only one evaluated group, so group and worst-group results are identical.
+Spread is the ratio of mean coordinate SDs after train-only scaling. Less than one means under-dispersion. [Full numerical scores](ARTIFACT_INDEX.md#artifact-3073209715cf) retain each family's distances, lower/upper tail misses, every coordinate's p05/median/p95 and zero-spread counts, for every seed. Class-balanced macro distances: joint 0.8787, marginals 0.9246, prototype 1.0550. There is only one evaluated group, so group and worst-group results are identical.
 
-![Spectral, temporal and modulation distributions](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/descriptors.png)
+![Spectral, temporal and modulation distributions](ARTIFACT_INDEX.md#artifact-0fa88dbb22d1)
 
 ## Ancestry and diversity
 
@@ -78,9 +78,9 @@ Joint outputs replay a finite bank of at most 25 complete vectors per class; new
 
 ## Runtime, failures and verification
 
-CPU only, one Torch thread, macOS-26.6.2-arm64-arm-64bit. End-to-end through verification: **30.88 s**. Generation: 7.90 s for 3,000 synthesized audio seconds; held preprocessing/descriptors: 4.13 s for 1,140 audio seconds. This excludes the already completed 813.51-s calibration pilot. Process peak RSS: 0.557 GiB (lifetime high-water mark). [Timing/environment](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/timing.json).
+CPU only, one Torch thread, macOS-26.6.2-arm64-arm-64bit. End-to-end through verification: **30.88 s**. Generation: 7.90 s for 3,000 synthesized audio seconds; held preprocessing/descriptors: 4.13 s for 1,140 audio seconds. This excludes the already completed 813.51-s calibration pilot. Process peak RSS: 0.557 GiB (lifetime high-water mark). [Timing/environment](ARTIFACT_INDEX.md#artifact-3de7e8605685).
 
-[Test gate](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/tests.log) passed. [Verification](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/verification.json): 1500 generated waves and sampling decisions replayed exactly; 570 originals rehashed and preprocessing/descriptors replayed exactly; scores recomputed; all parent-run artifacts and the tracked ABVID diff unchanged. [Failure records](../CAST/generalization/runs/cast_generalization_v0_20261004_r1/failures.json): 570/570 held observations completed, zero numerical/input failures, zero dropped/replaced recordings. The scientific adequacy outcome above is independent of this technical pass.
+[Test gate](ARTIFACT_INDEX.md#artifact-c7c234e027ae) passed. [Verification](ARTIFACT_INDEX.md#artifact-b176ee1b2b34): 1500 generated waves and sampling decisions replayed exactly; 570 originals rehashed and preprocessing/descriptors replayed exactly; scores recomputed; all parent-run artifacts and the tracked ABVID diff unchanged. [Failure records](ARTIFACT_INDEX.md#artifact-7244290d32ae): 570/570 held observations completed, zero numerical/input failures, zero dropped/replaced recordings. The scientific adequacy outcome above is independent of this technical pass.
 
 ## Limitations and next decision
 
@@ -102,4 +102,4 @@ The engineering replay preserved the original configuration, renderer config, pa
 
 The successful workflow took **30.88 seconds through verification**, excluding report rendering and the existing 813.51-second calibration pilot. It used 0.557 GiB peak RSS through verification. No method or threshold was revised after inspecting held scores. Existing pilot files, source implementation and tracked ABVID changes are unchanged. This delivery stops at the CAST-4 acoustic diagnostic; classification transfer remains untested.
 
-See [delivery checks](../CAST/generalization/DELIVERY_CHECKS.json) for replay, link and preservation evidence. The immutable run-local report and original failure record are preserved.
+See [delivery checks](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/generalization/DELIVERY_CHECKS.json) for replay, link and preservation evidence. The immutable run-local report and original failure record are preserved.

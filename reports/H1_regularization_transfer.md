@@ -6,9 +6,9 @@
 
 ## Frozen comparison and evidence
 
-- [Frozen protocol](../experiments/h1_transfer_sensitivity/frozen/regularization_transfer_20261004_v1/PROTOCOL.md), [configuration](../experiments/h1_transfer_sensitivity/frozen/regularization_transfer_20261004_v1/config.json), [lock and hashes](../experiments/h1_transfer_sensitivity/frozen/regularization_transfer_20261004_v1/lock.json).
-- [Exact saved models and training IDs](../experiments/h1_transfer_sensitivity/frozen/regularization_transfer_20261004_v1/model_references.json), [all per-model/group scores](../experiments/h1_transfer_sensitivity/results/regularization_transfer_20261004_v1/evaluations.json), [aggregates and paired intervals](../experiments/h1_transfer_sensitivity/results/regularization_transfer_20261004_v1/summary.json), [independent verification](../experiments/h1_transfer_sensitivity/results/regularization_transfer_20261004_v1/verification.json).
-- [Commands](../experiments/h1_transfer_sensitivity/README.md), [previous source-only diagnostics](H1_source_diagnostics.md), [unchanged H1](H1_baseline_results.md).
+- [Frozen protocol](ARTIFACT_INDEX.md#artifact-2572e9986419), [configuration](ARTIFACT_INDEX.md#artifact-93be0dcdce18), [lock and hashes](ARTIFACT_INDEX.md#artifact-4ead9b529d90).
+- [Exact saved models and training IDs](ARTIFACT_INDEX.md#artifact-50dee2f08c8d), [all per-model/group scores](ARTIFACT_INDEX.md#artifact-7df0ffd25f11), [aggregates and paired intervals](ARTIFACT_INDEX.md#artifact-08d7cf7753ba), [independent verification](ARTIFACT_INDEX.md#artifact-56d2b5d77ecf).
+- [Commands](../experiments/h1_baselines/transfer_sensitivity/README.md), [previous source-only diagnostics](H1_source_diagnostics.md), [unchanged H1](H1_baseline_results.md).
 
 Reuse the 190/class IDMT selections, six outer groups and five seeds, two-second mean-channel native→8 kHz→16 kHz observations, frozen BEATs768/MFCC26, and threshold .5. The reference uses C=1; the candidate reuses each saved outer head with C selected previously by five inner IDMT groups. BEATs selected .01 in 26/30 cases and .1 in four; MFCC selected .01/.1/1 in 3/14/13 cases. No new choices, fitting, extraction, augmentation, threshold adjustment or bandwidth changes occurred.
 

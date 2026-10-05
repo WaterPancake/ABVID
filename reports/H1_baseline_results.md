@@ -6,10 +6,10 @@
 
 ## Evidence and frozen scope
 
-- [Executed protocol](../experiments/h1/frozen/h1_common_budget_v1.3/EXPERIMENTAL_PROTOCOL.md), [exact file selections and lock](../experiments/h1/frozen/h1_common_budget_v1.3/lock.json), [canonical configuration](../experiments/h1/frozen/h1_common_budget_v1.3/config.json).
+- [Executed protocol](ARTIFACT_INDEX.md#artifact-0e3678c5ed62), [exact file selections and lock](ARTIFACT_INDEX.md#artifact-884f21ce4e24), [canonical configuration](ARTIFACT_INDEX.md#artifact-4c1be1b0afbd).
 - [Qualified admission and missing metadata](dataset_admission_provenance.md).
-- [Complete metrics and per-fit/group records](../experiments/h1/results/H1_20261002/metrics.json), [run summary/hashes](../experiments/h1/results/H1_20261002/summary.json), [independent verification](../experiments/h1/results/H1_20261002/verification.json).
-- [Commands](../experiments/h1/README.md), [pre-fit prose clarification](../experiments/h1/documentation_clarifications.md). Frozen document snapshots remain unchanged.
+- [Complete metrics and per-fit/group records](ARTIFACT_INDEX.md#artifact-fec2538f04ed), [run summary/hashes](ARTIFACT_INDEX.md#artifact-6b412e9fcddb), [independent verification](ARTIFACT_INDEX.md#artifact-5c3533e5d819).
+- [Commands](../experiments/h1_baselines/REPLAY.md), [pre-fit prose clarification](../experiments/h1_baselines/notes/documentation_clarifications.md). Frozen document snapshots remain unchanged.
 
 The same E0 fitted scaler/head is evaluated on its held-out IDMT group and on all admitted MELAUDIS excerpts. No validation, hyperparameter search, threshold tuning, target statistics, best-seed selection or score-based exclusions occur. Raw audio, R0 results and military evaluation sources are unchanged. No simulator interventions or encoder training were performed.
 

@@ -1,8 +1,12 @@
+> Repository layout updated 2026-10-05. Original experiment paths below refer
+> to the preserved archive; see [structure](../docs/STRUCTURE.md) and the current experiment registry.
+> Scientific settings, dataset roles and completed results are unchanged.
+
 # H1 experimental protocol: measure the gaps
 
-Protocol `h1_common_budget_v1.3`, 2026-10-02. **Execution update:** the minimum BEATs/MFCC H1 run is complete and verified; see [results](../reports/H1_baseline_results.md). The [pre-fit snapshot](h1/frozen/h1_common_budget_v1.3/EXPERIMENTAL_PROTOCOL.md) preserves the freeze unchanged. The user authorized completion of admission, the largest common budget and H1 execution. This explicitly replaces the infeasible numerical design in `sim_components_v1.1`. [Previous documents and checksums](archive/pre_h1_v1.3/) preserve that design. Historical R0 results are unchanged.
+Protocol `h1_common_budget_v1.3`, 2026-10-02. **Execution update:** the minimum BEATs/MFCC H1 run is complete and verified; see [results](../reports/H1_baseline_results.md). The [pre-fit snapshot](../reports/ARTIFACT_INDEX.md#artifact-0e3678c5ed62) preserves the freeze unchanged. The user authorized completion of admission, the largest common budget and H1 execution. This explicitly replaces the infeasible numerical design in `sim_components_v1.1`. [Previous documents and checksums](../reports/ARTIFACT_INDEX.md#artifact-2d685a84b22a) preserve that design. Historical R0 results are unchanged.
 
-**Research question:** which simulation components determine transfer to real vehicle audio using pretrained representations? **Working hypothesis:** source mismatch contributes more than propagation mismatch. H1 measures the gaps; it cannot attribute them to either mechanism. The separately frozen source × propagation experiment E4–E5 is now [complete as H2](../reports/H2_source_path_results.md); its [own protocol](h2/PROTOCOL.md) and execution locks govern that run. This document retains the H1 contract. No new simulator, encoder training, military benchmark or reserved military recording was part of H1.
+**Research question:** which simulation components determine transfer to real vehicle audio using pretrained representations? **Working hypothesis:** source mismatch contributes more than propagation mismatch. H1 measures the gaps; it cannot attribute them to either mechanism. The separately frozen source × propagation experiment E4–E5 is now [complete as H2](../reports/H2_source_path_results.md); its [own protocol](h2_simulation/notes/PROTOCOL.md) and execution locks govern that run. This document retains the H1 contract. No new simulator, encoder training, military benchmark or reserved military recording was part of H1.
 
 ## 1. Frozen design and budget
 
@@ -18,7 +22,7 @@ The former 200 training/class, 50 synthetic validation/class, ≥20 evaluation/c
 
 ## 2. Exact data, grouping and leakage controls
 
-The authoritative admission is [provenance v1.3.1](admission/results/provenance_20261002_v1_3_1/summary.json), following integrity v1.2.1. Release identities, class mapping, unknown metadata and exclusions are specified in [DATASET_PROTOCOL.md](DATASET_PROTOCOL.md).
+The authoritative admission is [provenance v1.3.1](../reports/ARTIFACT_INDEX.md#artifact-8c9a6948fa0b), following integrity v1.2.1. Release identities, class mapping, unknown metadata and exclusions are specified in [DATASET_PROTOCOL.md](DATASET_PROTOCOL.md).
 
 | Corpus | Cars | Trucks | Role and grouping |
 |---|---:|---:|---|
@@ -98,7 +102,7 @@ Expected: positive domain and synthetic-training gaps, without assuming either. 
 
 ## 6. One canonical configuration format
 
-[config.json](h1/config.json) is the single machine-readable JSON schema used by all H1 rows. It records protocol_id, ordered classes, admission manifest/hash, largest-common budget, seeds, split/validation/target exposure/final-test roles, preprocessing, representations, pinned encoder, MFCC settings, classifier, arms, augmentation, bootstrap and hardware. `freeze.py` adds exact selected file IDs, fold membership, manifest/config/document hashes, package versions, Git HEAD and dirty status to lock.json. Each fitted-model record adds representation, arm, fold, selection seed, train/test IDs, fitted scaler/head and prediction hashes. No unresolved placeholder is accepted in an executed lock. No implicit parameter search is allowed.
+[config.json](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/experiments/h1/config.json) is the single machine-readable JSON schema used by all H1 rows. It records protocol_id, ordered classes, admission manifest/hash, largest-common budget, seeds, split/validation/target exposure/final-test roles, preprocessing, representations, pinned encoder, MFCC settings, classifier, arms, augmentation, bootstrap and hardware. `freeze.py` adds exact selected file IDs, fold membership, manifest/config/document hashes, package versions, Git HEAD and dirty status to lock.json. Each fitted-model record adds representation, arm, fold, selection seed, train/test IDs, fitted scaler/head and prediction hashes. No unresolved placeholder is accepted in an executed lock. No implicit parameter search is allowed.
 
 Preserve executed source snapshots and hashes because this workspace has uncommitted work. Verify source and model hashes, feature ordering and group separation. Existing result directories are never overwritten. Save all predictions, not just a best run. Model selection and target exclusions remain prohibited after target scoring.
 

@@ -31,7 +31,7 @@ criteria, not classification accuracy.
 
 ## Method, data and preservation
 
-The new implementation is isolated under [CAST/improvement](../CAST/improvement).
+The new implementation is isolated under [CAST/improvement](ARTIFACT_INDEX.md#artifact-e0be74f2b6f6).
 Smooth8 replaces the original hard noise bands with continuous interpolation of
 log power at eight fixed frequency centers. It retains eight harmonics, three
 harmonic-spacing knots, five envelope knots, the original four-start/300-step
@@ -52,8 +52,8 @@ first new outer comparison in this improvement work; its access receipt records
 the exact transition after generation and source verification. MELAUDIS, mixed H1 caches, military/reserved
 audio, supplied synthetic banks, original datasets, splits, environments and
 baseline artifacts are unchanged. The source access contract and decisions are
-in [PROTOCOL.md](../CAST/improvement/PROTOCOL.md) and
-[RESEARCH_LOG.md](../CAST/improvement/RESEARCH_LOG.md).
+in [PROTOCOL.md](../experiments/cast_coverage/protocols/improvement/PROTOCOL.md) and
+[RESEARCH_LOG.md](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/RESEARCH_LOG.md).
 
 ## Completed reconstruction evidence
 
@@ -72,12 +72,12 @@ reconstruction results.
 
 Ambiguity remains substantial: equally good starts disagree in **42/50** fits
 (22 cars, 20 trucks). Median band-energy L1 residuals are 0.265 car and 0.256
-truck. The [training residual plot](../CAST/improvement/diagnostics/pilot_training_residuals/training_residuals.png)
+truck. The [training residual plot](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/diagnostics/pilot_training_residuals/training_residuals.png)
 shows remaining spectral mismatch around 1 kHz and modest temporal/modulation
 residuals. These findings motivate targeted model checks; they do not identify
 the underlying vehicle physics.
 
-The [local audio review](../CAST/improvement/diagnostics/pilot_audio_review/index.html)
+The [local audio review](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/diagnostics/pilot_audio_review/index.html)
 links all fits and displays 15 systematic examples: best/median/worst checking
 loss plus the first input ID in each class/group. Original and reconstructed
 audio share a playback gain, and all alternative starts, diagnostics, parameters,
@@ -91,8 +91,8 @@ checking start passed replay. Median checking losses are 1.375286 car and
 1.371373 truck; median reductions versus each clip's best unoptimized checking
 start are 20.05% and 21.60%. Equally good starts disagree in **345/380** fits
 (174 car, 171 truck), reinforcing the lack of physical identifiability. The
-full [fit summary](../CAST/improvement/runs/cast_smooth8_v1_20261004_r1/fit_full_summary.json)
-and [replay audit](../CAST/improvement/runs/cast_smooth8_v1_20261004_r1/fit_full_verification.json)
+full [fit summary](ARTIFACT_INDEX.md#artifact-994ba582ae8e)
+and [replay audit](ARTIFACT_INDEX.md#artifact-a478a4ba28af)
 retain all records.
 
 ## Source-group generation evidence
@@ -129,9 +129,9 @@ raises coverage but worsens distance. Temperature 1.25 violates the car band
 spread bound; 1.5 violates spectral/band spread bounds in both classes and
 loses to both controls. Temperature 1 ranks best under the fixed rule. Its 150
 score records reproduce the earlier experiment exactly. See the
-[comparison plot](../CAST/improvement/diagnostics/pilot_temperature_comparison/source_comparison.png),
-[group/family plot](../CAST/improvement/diagnostics/pilot_temperature_comparison/source_families_groups.png)
-and [machine-readable failure](../CAST/improvement/evaluations/smooth8_pilot_temperature_grid/scientific_failure.json).
+[comparison plot](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/diagnostics/pilot_temperature_comparison/source_comparison.png),
+[group/family plot](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/diagnostics/pilot_temperature_comparison/source_families_groups.png)
+and [machine-readable failure](ARTIFACT_INDEX.md#artifact-224f92e3683c).
 
 The full-bank source grid is also complete and audited:
 
@@ -146,16 +146,16 @@ Temperature 1 again ranks best, with W1 0.619467 car and 0.611255 truck. It
 beats the prototype by 16.07% and 15.39%, but fails against independent
 marginals. All four candidates fail the combined source criteria, so the
 continuation correctly stopped without reading outer descriptors. This result
-is preserved in the [full source summary](../CAST/improvement/evaluations/smooth8_full_source_grid/summary.json),
-[failure record](../CAST/improvement/evaluations/smooth8_full_source_grid/scientific_failure.json)
-and [figures](../CAST/improvement/diagnostics/smooth8_full_source_grid_figures/source_comparison.png).
-The [full audio review](../CAST/improvement/diagnostics/smooth8_full_source_grid_audio/index.html)
+is preserved in the [full source summary](ARTIFACT_INDEX.md#artifact-26b7a300acff),
+[failure record](ARTIFACT_INDEX.md#artifact-24f8dbdda98a)
+and [figures](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/diagnostics/smooth8_full_source_grid_figures/source_comparison.png).
+The [full audio review](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/diagnostics/smooth8_full_source_grid_audio/index.html)
 links all 380 fitted parents.
 
 At temperature 1, full-source spectral/band spread ratios are 1.39/1.61 car
 and 1.28/1.48 truck, while envelope/modulation ratios are 0.96/0.81 and
 0.97/0.83. This supports testing separate spread controls before refitting a
-larger renderer. [Prior v2](../CAST/improvement/prior_v2/PROTOCOL.md) freezes
+larger renderer. [Prior v2](../experiments/cast_coverage/protocols/improvement/prior_v2/PROTOCOL.md) freezes
 twelve combinations: spectral temperature [0.5, 0.65, 0.8, 1.0] and envelope
 temperature [1.0, 1.25, 1.5]. Every matched arm receives the same transformed
 donor bank, with class centers and descriptor scales fitted inside each source
@@ -168,12 +168,12 @@ candidate reaches 81.73%/80.95% coverage but still loses by 4.98%/3.22% against
 marginals. The 0.5/1.0 candidate gives small positive marginal gains,
 0.34%/0.60%, but coverage drops to 65.57%/65.17%. The tested spread adjustments
 therefore do not solve both requirements. See the
-[complete grid](../CAST/improvement/diagnostics/smooth8_block_v2_source_figures/source_grid.png),
-[summary](../CAST/improvement/evaluations/smooth8_block_v2_full_source/summary.json)
-and [exact audit](../CAST/improvement/evaluations/smooth8_block_v2_full_source/audit_verification.json).
+[complete grid](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/diagnostics/smooth8_block_v2_source_figures/source_grid.png),
+[summary](ARTIFACT_INDEX.md#artifact-a50900a84079)
+and [exact audit](ARTIFACT_INDEX.md#artifact-55a2841906f9).
 The identity setting reproduces all 150 corresponding v1 score records exactly.
 
-The fixed [capacity revision](../CAST/improvement/capacity_v3/PROTOCOL.md)
+The fixed [capacity revision](../experiments/cast_coverage/protocols/improvement/capacity_v3/PROTOCOL.md)
 increases spectral controls from eight to sixteen and envelope knots from five
 to nine. Persistent source reconstruction residuals motivate this combined
 resolution test; it does not isolate the contribution of each change. Its
@@ -185,9 +185,9 @@ alternative-start replay. Forty-nine improve on smooth8; median paired checking
 loss reductions are 0.759% car and 0.857% truck. One car becomes 0.182% worse.
 Spectral, band and envelope median errors improve in both classes, but truck
 modulation error worsens. Forty-three of fifty fits retain disagreeing nearly
-equal starts. See the [paired plots](../CAST/improvement/capacity_v3/diagnostics/capacity16x9_pilot_source_paired/paired_reconstruction.png),
-[residuals](../CAST/improvement/capacity_v3/diagnostics/capacity16x9_pilot_source_residuals/training_residuals.png)
-and [audio review](../CAST/improvement/capacity_v3/diagnostics/capacity16x9_pilot_source_audio/index.html).
+equal starts. See the [paired plots](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/capacity_v3/diagnostics/capacity16x9_pilot_source_paired/paired_reconstruction.png),
+[residuals](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/capacity_v3/diagnostics/capacity16x9_pilot_source_residuals/training_residuals.png)
+and [audio review](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/capacity_v3/diagnostics/capacity16x9_pilot_source_audio/index.html).
 All 291 audio-review links were checked; it contains 30 players and all fifty fits.
 
 | Fixed pilot renderer | Car W1 | Truck W1 | Car coverage | Truck coverage | Car gain vs marginals | Truck gain vs marginals |
@@ -199,8 +199,8 @@ The larger renderer improves absolute source W1 and coverage, but fails the
 margin. The unchanged maximum-shortfall rule ranks smooth8 first; both fail.
 All 15,000 samples and 300 scores passed exact replay, and all 150 smooth8
 scores exactly reproduce the earlier pilot comparison. The
-[source plot](../CAST/improvement/capacity_v3/diagnostics/capacity16x9_pilot_source_figures/source_comparison.png)
-and [audit](../CAST/improvement/capacity_v3/evaluations/capacity16x9_pilot_source/audit_verification.json)
+[source plot](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/capacity_v3/diagnostics/capacity16x9_pilot_source_figures/source_comparison.png)
+and [audit](ARTIFACT_INDEX.md#artifact-1b803ae0827a)
 preserve this result. No full capacity-v3 expansion or outer comparison ran.
 
 The subsequent source-only hypothesis retained nearly equal fitted alternatives.
@@ -211,17 +211,17 @@ not independent recordings or a calibrated Bayesian posterior. A matched
 complete-vector versus independent-scalar comparison must use the same
 alternatives and equal group/parent weighting in every arm.
 
-That [fixed comparison](../CAST/improvement/alternatives_v4/PROTOCOL.md) is now
+That [fixed comparison](../experiments/cast_coverage/protocols/improvement/alternatives_v4/PROTOCOL.md) is now
 complete and fails. The alternative mixture slightly improves joint W1 to
 0.614612 car and 0.607530 truck, with coverage 82.832%/81.792%. Gains against
 the prototype are 17.965%/18.180%, but gains against marginals are
 **-4.978%/-5.279%**. All 15,000 samples and 300 scores pass exact replay; the
 150 winner-only scores exactly reproduce v1. See the
-[figure](../CAST/improvement/alternatives_v4/diagnostics/smooth8_alternatives_v4_figures/source_comparison.png)
-and [audit](../CAST/improvement/alternatives_v4/evaluations/smooth8_alternatives_v4_full_source/audit_verification.json).
+[figure](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/alternatives_v4/diagnostics/smooth8_alternatives_v4_figures/source_comparison.png)
+and [audit](ARTIFACT_INDEX.md#artifact-80170fc97d31).
 At that stage there was no passing source candidate or new outer comparison.
 
-The [source-only calibration](../CAST/improvement/calibration_v5/PROTOCOL.md)
+The [source-only calibration](../experiments/cast_coverage/protocols/improvement/calibration_v5/PROTOCOL.md)
 tests the consistent paired spectral bias across training groups. It estimates
 group-balanced observed/reconstructed band-power ratios inside each training
 fold, bounds the correction, and applies it to every arm's same noise-control
@@ -231,12 +231,12 @@ temperature one. All eight candidates fail. The unchanged source ranking
 selects the uncorrected temperature-0.8 case. At temperature one, correction
 reduces W1 to 0.604041 car and 0.597586 truck and gives coverage
 82.024%/81.261%, but marginal gains worsen to -6.378%/-4.486%.
-The [complete grid](../CAST/improvement/calibration_v5/diagnostics/smooth8_bias_v5_figures/source_grid.png)
-and [audit](../CAST/improvement/calibration_v5/evaluations/smooth8_bias_v5_full_source/audit_verification.json)
+The [complete grid](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/calibration_v5/diagnostics/smooth8_bias_v5_figures/source_grid.png)
+and [audit](ARTIFACT_INDEX.md#artifact-ce155f1d0315)
 retain all cases. All 60,000 sample replays and 1,200 scores passed; the 600
 zero-correction scores exactly reproduce prior v2. No outer comparison ran.
 
-The subsequent [component diagnostic](../CAST/improvement/diagnostics/smooth8_component_allocation_r1/summary.json)
+The subsequent [component diagnostic](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/diagnostics/smooth8_component_allocation_r1/summary.json)
 examines effective harmonic/noise allocation. Scaling saved components with a
 harmonic logit offset of -1 reduces same-parent band-L1 error in 161/190 cars
 and 165/190 trucks, with positive median improvement in every class/group.
@@ -246,27 +246,27 @@ fits nor supplies a held score. Its initial ambiguous audio-access metadata
 label is preserved with an erratum; the corrected r1 distinguishes saved
 training-waveform reads from raw dataset reads, with identical numerical results.
 
-[Mixture v6](../CAST/improvement/mixture_v6/PROTOCOL.md) tested six fixed
+[Mixture v6](../experiments/cast_coverage/protocols/improvement/mixture_v6/PROTOCOL.md) tested six fixed
 cases: spectral temperature 0.65/0.8/1.0 and harmonic-logit offset 0/-1. Every
 case failed. The selected unit-temperature, offset -1 case reduces W1 by
 7.8% car and 9.4% truck relative to unadjusted joint sampling, reaching
 0.571374/0.553647. Coverage is 79.896%/78.888%; gains against the prototype
 are 19.831%/21.191%, while gains against marginals remain -1.962%/-0.459%.
-The [grid](../CAST/improvement/mixture_v6/diagnostics/smooth8_mixture_v6_figures/source_grid.png)
-and [exact audit](../CAST/improvement/mixture_v6/evaluations/smooth8_mixture_v6_full_source/audit_verification.json)
+The [grid](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/mixture_v6/diagnostics/smooth8_mixture_v6_figures/source_grid.png)
+and [exact audit](ARTIFACT_INDEX.md#artifact-93dce04ed761)
 retain the failure. All 45,000 samples and 900 scores replay exactly; all
 450 zero-offset reference scores match prior v2. No outer comparison ran.
 
-The [per-parent mixture calibration](../CAST/improvement/parent_mixture_v7/PROTOCOL.md)
+The [per-parent mixture calibration](../experiments/cast_coverage/protocols/improvement/parent_mixture_v7/PROTOCOL.md)
 is complete and also fails. It changes one coordinate per training parent using
 saved component powers and observed band proportions. Its selected bank gives
 W1 0.573288/0.560044, coverage **80.426%/79.698%**, prototype gains
 19.595%/20.448%, and marginal gains **-1.650%/-0.438%** (car/truck).
 All 380 calibrations and 15,000 sample records replay exactly, with 300 scores
 recomputed and 150 original-bank scores identical to v1. See the
-[source comparison](../CAST/improvement/parent_mixture_v7/diagnostics/smooth8_parent_mixture_v7_figures/source_comparison.png),
-[calibration and audio review](../CAST/improvement/parent_mixture_v7/diagnostics/smooth8_parent_mixture_v7_audio/index.html)
-and [audit](../CAST/improvement/parent_mixture_v7/evaluations/smooth8_parent_mixture_v7_full_source/audit_verification.json).
+[source comparison](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/parent_mixture_v7/diagnostics/smooth8_parent_mixture_v7_figures/source_comparison.png),
+[calibration and audio review](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/parent_mixture_v7/diagnostics/smooth8_parent_mixture_v7_audio/index.html)
+and [audit](ARTIFACT_INDEX.md#artifact-4624ab49fbb5).
 
 Median effective harmonic fractions fall from 0.335 to 0.156 for cars and
 0.347 to 0.164 for trucks. Twelve cars/five trucks reach a boundary, while
@@ -276,7 +276,7 @@ vectors, so their old checking losses cannot validate the new bank independently
 Original fits remain unchanged. Ten audio examples follow first-ID-per-class/group
 selection, independent of fit quality.
 
-The [direct-envelope experiment](../CAST/improvement/envelope_v8/PROTOCOL.md)
+The [direct-envelope experiment](../experiments/cast_coverage/protocols/improvement/envelope_v8/PROTOCOL.md)
 is now complete. It calibrates the five existing envelope knots to observed
 loudness trajectories, preserving their bounds and each parent's mean amplitude
 gauge. There were zero solver failures and one truck envelope boundary hit;
@@ -293,9 +293,9 @@ and 168/190 trucks. This is calibration reconstruction, not independent validati
 The second candidate ranks first and passes both coverage and spread checks,
 but fails the marginal-control margin. Truck absolute W1 worsens despite better
 same-parent reconstruction. All 150 mixture-only scores exactly reproduce v7.
-The [source figure](../CAST/improvement/envelope_v8/diagnostics/smooth8_envelope_v8_figures/source_comparison.png),
-[same-parent residuals/audio](../CAST/improvement/envelope_v8/diagnostics/smooth8_envelope_v8_audio_r1/index.html)
-and [exact audit](../CAST/improvement/envelope_v8/evaluations/smooth8_envelope_v8_full_source/audit_verification.json)
+The [source figure](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/envelope_v8/diagnostics/smooth8_envelope_v8_figures/source_comparison.png),
+[same-parent residuals/audio](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/envelope_v8/diagnostics/smooth8_envelope_v8_audio_r1/index.html)
+and [exact audit](ARTIFACT_INDEX.md#artifact-d683e7091cb9)
 retain this result. The audio review uses the first sorted ID in each class/group,
 independent of quality, and links ten examples with three matched players each.
 
@@ -309,7 +309,7 @@ the modulation comparison. Further work should diagnose these residuals before
 freezing another model revision. A passing source candidate is still required
 before another outer development comparison.
 
-The [joint expected-spectrum calibration](../CAST/improvement/spectrum_v9/PROTOCOL.md)
+The [joint expected-spectrum calibration](../experiments/cast_coverage/protocols/improvement/spectrum_v9/PROTOCOL.md)
 fits each parent's noise weights and mixture together, preserving v8's envelope
 and the original harmonic spacing/weights. It uses separate component Welch
 powers and ignores the stochastic cross term. All 190 numerical/provenance
@@ -323,19 +323,19 @@ Actual same-parent log-spectrum RMSE improves for all 380 parents: medians
 cars and 189/190 trucks, with medians 0.12751→0.03301 and 0.10827→0.02781.
 Temporal residuals have mixed results. These are calibration reconstructions;
 the original checking streams are calibration inputs, not independent validation.
-See the [audio/residual review](../CAST/improvement/spectrum_v9/diagnostics/smooth8_spectrum_v9_audio/index.html).
+See the [audio/residual review](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/spectrum_v9/diagnostics/smooth8_spectrum_v9_audio/index.html).
 
 The 192-test source gate passed, but both candidates fail scientifically.
 V9 W1 is 0.562936/0.560583 and coverage 80.494%/81.438%; gains against the
 prototype are 19.902%/18.401%, while gains against marginals are
 **-1.408%/-2.387%**. The unchanged rule selects v8. All 15,000 samples and
 300 scores replay exactly in 127.32 s; all 150 v8 scores are unchanged. See
-the [comparison](../CAST/improvement/spectrum_v9/diagnostics/smooth8_spectrum_v9_figures/source_comparison.png)
-and [audit](../CAST/improvement/spectrum_v9/evaluations/smooth8_spectrum_v9_full_source/audit_verification.json).
-The [bank run](../CAST/improvement/spectrum_v9/runs/cast_spectrum_v9_20261004)
+the [comparison](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/spectrum_v9/diagnostics/smooth8_spectrum_v9_figures/source_comparison.png)
+and [audit](ARTIFACT_INDEX.md#artifact-7ac94809016c).
+The [bank run](ARTIFACT_INDEX.md#artifact-8a91ad977a91)
 retains every history, parameter vector, ancestry record and reconstruction.
 
-The next [temporal-resolution comparison](../CAST/improvement/temporal_v10/PROTOCOL.md)
+The next [temporal-resolution comparison](../experiments/cast_coverage/protocols/improvement/temporal_v10/PROTOCOL.md)
 uses 41 envelope controls at the existing 50 ms frame boundaries, initialized
 by the exact nested five-knot curve. A fixed curvature penalty limits rapid
 oscillation; original bounds and mean-amplitude gauge remain. V8 and v9 are
@@ -362,13 +362,13 @@ comparison establishes universal generator superiority. No metric, quantile,
 split, sample budget, class/group weight or acceptance threshold changed.
 
 The source gate passed 203 tests; all 205 tests including outer guards pass in
-the [complete test record](../CAST/improvement/temporal_v10/outer_gate/tests.xml).
-The [source summary](../CAST/improvement/temporal_v10/evaluations/smooth8_temporal_v10_full_source/summary.json)
-and [complete audit](../CAST/improvement/temporal_v10/evaluations/smooth8_temporal_v10_full_source/audit_verification.json)
+the [complete test record](ARTIFACT_INDEX.md#artifact-83deacb9696d).
+The [source summary](ARTIFACT_INDEX.md#artifact-be7ae0c95a49)
+and [complete audit](ARTIFACT_INDEX.md#artifact-3d5b41394411)
 record 22,500 exact sample replays, 380 rederived local calibrations and 450
 recomputed scores. All 300 v8/v9 reference scores remain unchanged. The fixed
-source ranking selects temporal41. The [source plots](../CAST/improvement/temporal_v10/diagnostics/smooth8_temporal_v10_figures/source_comparison.png)
-and [audio/residual review](../CAST/improvement/temporal_v10/diagnostics/smooth8_temporal_v10_audio/index.html)
+source ranking selects temporal41. The [source plots](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/temporal_v10/diagnostics/smooth8_temporal_v10_figures/source_comparison.png)
+and [audio/residual review](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/temporal_v10/diagnostics/smooth8_temporal_v10_audio/index.html)
 retain ten systematic examples. Same-parent envelope RMSE improves for all 380
 parents (medians 0.09178→0.04139 car, 0.09172→0.04188 truck); modulation L1
 improves for 184/190 in each class. Three envelopes reach their bounds; no
@@ -381,8 +381,8 @@ After the source pass and full audit, the selected bank/configuration and all
 outer descriptor cache. Every generated waveform, parameter choice, stream,
 ancestor and descriptor replays exactly. Every raw held recording was
 reprocessed, all scores independently recomputed, and historical artifacts and
-tracked ABVID edits checked unchanged. See the [verification](../CAST/improvement/temporal_v10/evaluations/temporal_v10_outer_development/verification.json)
-and [generation/access chronology](../CAST/improvement/temporal_v10/evaluations/temporal_v10_outer_development/held_access_receipt.json).
+tracked ABVID edits checked unchanged. See the [verification](ARTIFACT_INDEX.md#artifact-2ab37d62f76f)
+and [generation/access chronology](ARTIFACT_INDEX.md#artifact-5cd58dfefc0b).
 
 | Outer development measure | Car | Truck | Requirement |
 |---|---:|---:|---:|
@@ -392,11 +392,11 @@ and [generation/access chronology](../CAST/improvement/temporal_v10/evaluations/
 | Relative W1 gain vs matched marginals | 11.885% | 8.731% | >=2.5% each |
 | Joint family spread, minimum–maximum | 0.774–1.226 | 0.856–1.017 | [0.5,2] |
 
-The retained [scientific failure record](../CAST/improvement/temporal_v10/evaluations/temporal_v10_outer_development/failure.json)
+The retained [scientific failure record](ARTIFACT_INDEX.md#artifact-6f1ef206f24c)
 reports both coverage failures, zero numerical failures and zero dropped
 records. Coverage remains short by 2.788 and 4.429 percentage points. Absolute
 joint W1 improves from the original 0.953320/0.804047; the matched independent
-controls also change with the new representation. The [outer plots and audio review](../CAST/improvement/temporal_v10/diagnostics/temporal_v10_outer_review/index.html)
+controls also change with the new representation. The [outer plots and audio review](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/temporal_v10/diagnostics/temporal_v10_outer_review/index.html)
 show fixed first-ID originals and seed-42/index-0 generated examples. Generated
 audio is an unconditional draw, not a reconstruction of its neighboring held
 example. Five generation seeds measure sampler variability; they are not five
@@ -406,12 +406,12 @@ physical-vehicle independence, cross-dataset transfer or classification quality.
 The next source-only hypothesis is sixteen nested spectral controls, motivated
 by the still-large spectral/band source W1 (about 0.72–0.77, versus modulation
 0.21–0.22). It preserves temporal41, all eight analysis bands and every criterion.
-See [v11 protocol](../CAST/improvement/resolution_v11/PROTOCOL.md). Outer aggregate
+See [v11 protocol](../experiments/cast_coverage/protocols/improvement/resolution_v11/PROTOCOL.md). Outer aggregate
 exposure is disclosed; no held residuals, parameters, EQ or descriptor scales
 enter this next calibration or selection. All 224 tests passed before v11 calibration.
 All 380 parents completed without numerical failures in 147.73 s; median
 paired expected-objective reductions are 66.64% car / 59.66% truck. The
-[bank](../CAST/improvement/resolution_v11/runs/cast_resolution_v11_20261005)
+[bank](ARTIFACT_INDEX.md#artifact-775560e181d8)
 retains every optimization history and 760 reconstruction WAVs. All 380 optimizations and 760 WAV sample arrays replay exactly in 132.92 s.
 The unchanged source rule selects spectrum16: W1 0.548904/0.549782,
 coverage 84.119%/84.571%, prototype gains 20.490%/19.437%, and matched
@@ -419,12 +419,12 @@ marginal gains 10.028%/8.340%. All family spreads pass. Joint W1 improves
 only 1.02% car / 0.60% truck against temporal41 despite the much larger
 calibration-objective reductions. Both matched marginal W1 scores also improve;
 this incremental pass is not caused by worsening that control. The
-[source summary](../CAST/improvement/resolution_v11/evaluations/smooth16_temporal41_v11_full_source/summary.json)
-retains both candidates. The [full source audit](../CAST/improvement/resolution_v11/evaluations/smooth16_temporal41_v11_full_source/audit_verification.json)
+[source summary](ARTIFACT_INDEX.md#artifact-ca994c2c8d8a)
+retains both candidates. The [full source audit](ARTIFACT_INDEX.md#artifact-ccb2caa73583)
 passed all 15,000 generated records and 300 scores in 255.74 s; all 150
 temporal41 reference scores are exact. Both source figures were generated and the
-[coverage/margin plot](../CAST/improvement/resolution_v11/diagnostics/smooth16_temporal41_v11_figures/source_comparison.png)
-was visually inspected. The [local audio/residual review](../CAST/improvement/resolution_v11/diagnostics/smooth16_temporal41_v11_audio/index.html)
+[coverage/margin plot](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/resolution_v11/diagnostics/smooth16_temporal41_v11_figures/source_comparison.png)
+was visually inspected. The [local audio/residual review](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/resolution_v11/diagnostics/smooth16_temporal41_v11_audio/index.html)
 contains ten first-ID examples, common playback gains and complete parameters.
 All 41 links and 40 example artifact hashes were checked. Actual reconstruction
 log-spectrum RMSE improves for all 380 parents: medians 0.27004→0.15524 car
@@ -437,7 +437,7 @@ No failure or ambiguity was discarded.
 
 The newly selected candidate was separately frozen after source replay. Its
 1,500 generated waveforms and sidecars were complete before held-descriptor
-access. The [complete outer verification](../CAST/improvement/resolution_v11/evaluations/resolution_v11_outer_development/verification.json)
+access. The [complete outer verification](ARTIFACT_INDEX.md#artifact-f2a6697b51a9)
 replayed every generated sample, reprocessed all 570 raw held recordings,
 recomputed scores and checked all ancestry plus historical/ABVID preservation.
 
@@ -449,11 +449,11 @@ recomputed scores and checked all ancestry plus historical/ABVID preservation.
 | Relative W1 gain vs matched marginals | 9.271% | 9.604% | >=2.5% each |
 | Joint family spread, minimum–maximum | 0.777–1.225 | 0.857–1.046 | [0.5,2] |
 
-Both coverage criteria fail. The [failure record](../CAST/improvement/resolution_v11/evaluations/resolution_v11_outer_development/failure.json)
+Both coverage criteria fail. The [failure record](ARTIFACT_INDEX.md#artifact-f71f97ff69c4)
 retains these failures, zero numerical failures and zero dropped records.
 Relative to temporal41, coverage rises only 0.771 car / 0.483 truck percentage
 points; car W1 improves slightly, while truck W1 worsens. The
-[outer plots and audio review](../CAST/improvement/resolution_v11/diagnostics/resolution_v11_outer_review_r1/index.html)
+[outer plots and audio review](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/resolution_v11/diagnostics/resolution_v11_outer_review_r1/index.html)
 use fixed first-ID originals and seed-42/index-0 generated draws. They are
 unpaired examples, not held-waveform reconstructions.
 
@@ -468,15 +468,15 @@ This v11 result left the goal scientifically unmet.
 
 ## Source-group prior v12
 
-A [source-only variance diagnostic](../CAST/improvement/diagnostics/spectral16_source_group_variation/summary.json)
+A [source-only variance diagnostic](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/diagnostics/spectral16_source_group_variation/summary.json)
 attributes 27–39% of spectral/band descriptor variance and 8–15% of temporal
 variance to differences between group means. Its
-[plot](../CAST/improvement/diagnostics/spectral16_source_group_variation/group_variance.png)
+[plot](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/diagnostics/spectral16_source_group_variation/group_variance.png)
 uses equal source-group and parent weights. These descriptive components
 include finite-parent sampling noise and do not identify causal recording
 effects or independent physical vehicles.
 
-The fixed [v12 protocol](../CAST/improvement/group_v12/PROTOCOL.md) keeps all
+The fixed [v12 protocol](../experiments/cast_coverage/protocols/improvement/group_v12/PROTOCOL.md) keeps all
 380 v11 fits and the renderer unchanged. It compares exact v11 sampling,
 recombination of full within-group residual vectors and group mean shifts,
 and symmetric group shifts scaled by sqrt((G+1)/(G-1)). G is the training
@@ -504,9 +504,9 @@ The class-balanced absolute joint W1 reduction is only about 1.23%.
 
 All 241 tests passed before generation. A pre-freeze numerical endpoint
 rounding defect was fixed without relaxing the test; see the
-[implementation record](../CAST/improvement/group_v12/implementation_defects.json).
-The [complete source results](../CAST/improvement/group_v12/evaluations/spectrum16_group_v12_full_source/summary.json)
-retain all candidates. [Full replay](../CAST/improvement/group_v12/evaluations/spectrum16_group_v12_full_source/audit_verification.json)
+[implementation record](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/group_v12/implementation_defects.json).
+The [complete source results](ARTIFACT_INDEX.md#artifact-8d7d5f760f51)
+retain all candidates. [Full replay](ARTIFACT_INDEX.md#artifact-57d5b1e14b4e)
 passed for all 22,500 samples, 450 scores and fold-specific prior statistics.
 All 150 v11 reference scores remain exact. Source generation/scoring took
 283.48 s after 73.96 s of upstream verification; replay took 337.70 s. The
@@ -530,23 +530,23 @@ Both classes still fail coverage. Marginal gains 11.641%/17.534%, prototype
 gains 22.544%/26.619%, and every joint family spread pass. Relative to v11,
 coverage rises by 1.376 pp car and 2.943 pp truck; absolute joint W1 improves
 slightly in both classes. No sample is dropped. The
-[complete scores](../CAST/improvement/group_v12/evaluations/group_v12_outer_development/scores.json),
-[failure record](../CAST/improvement/group_v12/evaluations/group_v12_outer_development/failure.json),
-[frozen group statistics](../CAST/improvement/group_v12/evaluations/group_v12_outer_development/group_effect_statistics.json)
-and [full replay verification](../CAST/improvement/group_v12/evaluations/group_v12_outer_development/verification.json)
+[complete scores](ARTIFACT_INDEX.md#artifact-5009b0be63d3),
+[failure record](ARTIFACT_INDEX.md#artifact-782fffa5e18e),
+[frozen group statistics](ARTIFACT_INDEX.md#artifact-a3c252d406f9)
+and [full replay verification](ARTIFACT_INDEX.md#artifact-4ed740be76ee)
 retain the result and all numerical/provenance evidence.
 
-The [source comparison](../CAST/improvement/group_v12/diagnostics/spectrum16_group_v12_figures/source_comparison.png)
-and [group/family plot](../CAST/improvement/group_v12/diagnostics/spectrum16_group_v12_figures/source_families_groups.png)
-show all candidates. The [source audio review](../CAST/improvement/group_v12/diagnostics/spectrum16_group_v12_audio/index.html)
+The [source comparison](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/group_v12/diagnostics/spectrum16_group_v12_figures/source_comparison.png)
+and [group/family plot](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/group_v12/diagnostics/spectrum16_group_v12_figures/source_families_groups.png)
+show all candidates. The [source audio review](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/group_v12/diagnostics/spectrum16_group_v12_audio/index.html)
 contains ten fixed matched examples, with original parents, fitted reconstructions
 and three generated draws; all 62 links and 61 artifact hashes pass verification.
-The [outer review](../CAST/improvement/group_v12/diagnostics/group_v12_outer_review/index.html)
+The [outer review](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/group_v12/diagnostics/group_v12_outer_review/index.html)
 shows fixed held originals and unconditional generated examples, not held refits.
 No independent vehicle/session generalization or classification result is claimed.
 
 The next source-only diagnostic examines finite sampling at the unchanged
-50-example budget. Its [saved results](../CAST/improvement/diagnostics/group_v12_source_seed_variation/summary.json)
+50-example budget. Its [saved results](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/diagnostics/group_v12_source_seed_variation/summary.json)
 show within-fold coverage seed SD averaging 3.175 pp car / 2.532 pp truck.
 Random source-group counts span 7–20 / 7–22 instead of the expected 12.5 per
 inner-fold group. Phase/noise variation is also present, so these numbers do
@@ -555,7 +555,7 @@ hypothesis; no future gain is assumed and no outer descriptors inform it.
 
 ## Balanced finite sampling v13
 
-The fixed [balanced-sampling protocol](../CAST/improvement/balanced_v13/PROTOCOL.md)
+The fixed [balanced-sampling protocol](../experiments/cast_coverage/protocols/improvement/balanced_v13/PROTOCOL.md)
 changes allocation of the same 50 draws: balance source-group counts, balance
 parent use inside each selected group, and independently balance virtual-child
 indices. The marginal arm gets independent plans per coordinate. The parameter
@@ -572,14 +572,14 @@ sampling worsens joint W1 in both classes and the class-balanced mean by 2.18%
 (0.554397 versus 0.542591). Prototype scores are identical. The result does
 not support replacing the sampler, and **no new outer evaluation runs**.
 All candidates are retained in the
-[source summary](../CAST/improvement/balanced_v13/evaluations/group_balanced_v13_full_source/summary.json).
-All 259 tests passed before generation. The [full replay](../CAST/improvement/balanced_v13/evaluations/group_balanced_v13_full_source/audit_verification.json)
+[source summary](ARTIFACT_INDEX.md#artifact-297a68fbc6dd).
+All 259 tests passed before generation. The [full replay](ARTIFACT_INDEX.md#artifact-b0415f611d4a)
 passed for all 15,000 samples, 300 scores and allocation plans, with all 150
-v12 reference scores exact. The [progression decision](../CAST/improvement/balanced_v13/evaluations/group_balanced_v13_full_source/progression_decision.json)
+v12 reference scores exact. The [progression decision](ARTIFACT_INDEX.md#artifact-08fea1c6f82f)
 retains the reference and prohibits another outer check. The verified outer
-result after this comparison was v12. The [source comparison](../CAST/improvement/balanced_v13/diagnostics/group_balanced_v13_figures/source_comparison.png),
-[group/family plot](../CAST/improvement/balanced_v13/diagnostics/group_balanced_v13_figures/source_families_groups.png)
-and [fixed audio review](../CAST/improvement/balanced_v13/diagnostics/group_balanced_v13_audio/index.html)
+result after this comparison was v12. The [source comparison](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/balanced_v13/diagnostics/group_balanced_v13_figures/source_comparison.png),
+[group/family plot](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/balanced_v13/diagnostics/group_balanced_v13_figures/source_families_groups.png)
+and [fixed audio review](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/balanced_v13/diagnostics/group_balanced_v13_audio/index.html)
 preserve the rejected variant. All 73 review links and 71 artifact hashes
 pass verification. The ten cards explicitly identify separate residual parents
 for the two allocation strategies; each card has six audio clips with one
@@ -587,7 +587,7 @@ common playback gain. No unchanged-parent pairing is implied.
 
 ## Scoped group effects v14
 
-The [preregistered scope comparison](../CAST/improvement/context_v14/PROTOCOL.md)
+The [preregistered scope comparison](../experiments/cast_coverage/protocols/improvement/context_v14/PROTOCOL.md)
 preserves the original donor, virtual-child, phase and noise streams while
 testing which fitted controls receive the v12 group transformation. Source
 group variation is appreciably stronger in noise controls than harmonic
@@ -612,25 +612,25 @@ prototypes 18.288%/23.365%. This is a small source improvement, not a
 demonstration that outer coverage has improved. The worst source-fold mean
 car coverage is still 79.580%, despite the higher overall mean.
 
-The [source results](../CAST/improvement/context_v14/evaluations/group_context_v14_full_source/summary.json)
+The [source results](ARTIFACT_INDEX.md#artifact-49f86f8fff9c)
 retain every candidate. All 278 tests pass, including 19 new numerical,
-ancestry and access checks. The [complete replay](../CAST/improvement/context_v14/evaluations/group_context_v14_full_source/audit_verification.json)
+ancestry and access checks. The [complete replay](ARTIFACT_INDEX.md#artifact-02de625e87b4)
 passes for all 22,500 generated records and 450 scores, all 380 parent inputs,
 frozen group statistics and training-only scales. All 150 v12 reference scores
 are exact. Restored harmonic controls avoid 335 car / 154 truck spacing
 projections across the source folds; original parent ambiguity and boundary
 flags remain intact. Repeated virtual children are not independent recordings.
 
-The [source comparison plot](../CAST/improvement/context_v14/diagnostics/group_context_v14_figures/source_comparison.png),
-[family/group plot](../CAST/improvement/context_v14/diagnostics/group_context_v14_figures/source_families_groups.png)
-and [ten fixed audio cards](../CAST/improvement/context_v14/diagnostics/group_context_v14_audio/index.html)
+The [source comparison plot](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/context_v14/diagnostics/group_context_v14_figures/source_comparison.png),
+[family/group plot](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/context_v14/diagnostics/group_context_v14_figures/source_families_groups.png)
+and [ten fixed audio cards](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/context_v14/diagnostics/group_context_v14_audio/index.html)
 retain all three variants. Both plots were visually checked. All 62 audio
 review links, 61 artifact hashes and 50 waveform exports were verified.
 
-The [progression decision](../CAST/improvement/context_v14/evaluations/group_context_v14_full_source/progression_decision.json)
+The [progression decision](ARTIFACT_INDEX.md#artifact-773a5fb13ca9)
 permitted a separately frozen outer development comparison. All 1,500
 waveforms were generated before reading held descriptors. The verified
-[scores](../CAST/improvement/context_v14/evaluations/context_v14_outer_development/scores.json)
+[scores](ARTIFACT_INDEX.md#artifact-de16224ca966)
 fail coverage in both classes:
 
 | Class | Joint W1 | Joint coverage | Gain vs marginals | Gain vs prototype |
@@ -641,16 +641,16 @@ fail coverage in both classes:
 Both gains and all joint family spreads pass. Compared with v12, coverage
 falls by 0.510 percentage points for cars and 0.272 for trucks; the small
 source W1 improvement did not solve outer coverage. V12 remained the best
-verified outer coverage result at this stage. The [full outer replay](../CAST/improvement/context_v14/evaluations/context_v14_outer_development/verification.json)
+verified outer coverage result at this stage. The [full outer replay](ARTIFACT_INDEX.md#artifact-a3ced447b81b)
 passes for all 1,500 generated waveforms and 570 raw held descriptors, every
 score, source-selected statistics and complete training ancestry. The
-[fixed outer review](../CAST/improvement/context_v14/diagnostics/context_v14_outer_review/index.html)
+[fixed outer review](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/context_v14/diagnostics/context_v14_outer_review/index.html)
 shows both classes and all three arms. This scientific failure is retained
 unchanged, without a new fit, discarded example or revised threshold.
 
 ## Source-fold width calibration v15
 
-A [new source-fold protocol](../CAST/improvement/width_v15/PROTOCOL.md) was
+A [new source-fold protocol](../experiments/cast_coverage/protocols/improvement/width_v15/PROTOCOL.md) was
 preregistered before implementation or generation. It tests four fixed widths of the source-selected
 noise/mix/envelope population and adds a requirement that every source fold's
 mean coverage reach 80% in each class. All existing source criteria and actual
@@ -678,7 +678,7 @@ renderer capacity or measured vehicle physics.
 | T=1.25 | 89.958% | 91.643% | 87.133% | 90.545% | 0.626211 | Pass | Pass |
 | T=1.5 | 92.091% | 93.176% | 91.061% | 91.622% | 0.756869 | Fail | Pass |
 
-The [complete source results](../CAST/improvement/width_v15/evaluations/context_width_v15_full_source/summary.json)
+The [complete source results](ARTIFACT_INDEX.md#artifact-8aebe39a941d)
 expose the trade-off. T=1.1 improves mean coverage by 2.618/2.498 percentage
 points and clears the weakest source folds, while class-balanced mean W1
 is 5.047% worse than T=1. Its car/truck gains against matched marginals are
@@ -695,15 +695,15 @@ parent flags are retained separately. No parent or generated sample is removed.
 These are repeated virtual-coordinate counts, not independent recordings or
 counts of failed fits. No width is selected using an outer descriptor or fit.
 
-The [full source audit](../CAST/improvement/width_v15/evaluations/context_width_v15_full_source/audit_verification.json)
+The [full source audit](ARTIFACT_INDEX.md#artifact-8bcc9fb8a7ac)
 replays all 30,000 generated records and 600 scores, all 380 parent inputs,
-every prior statistic and training-only scale. The [reference check](../CAST/improvement/width_v15/evaluations/context_width_v15_full_source/identity_replication.json)
-verifies all 150 T=1 v14 scores exactly. The [source decision](../CAST/improvement/width_v15/evaluations/context_width_v15_full_source/progression_decision.json)
+every prior statistic and training-only scale. The [reference check](ARTIFACT_INDEX.md#artifact-4c89f79cdf51)
+verifies all 150 T=1 v14 scores exactly. The [source decision](ARTIFACT_INDEX.md#artifact-314a10ae60d4)
 permits only the selected T=1.1 candidate for the next outer comparison.
 
-The [source coverage/margin plot](../CAST/improvement/width_v15/diagnostics/context_width_v15_figures_r1/source_comparison.png)
-shows both the mean and minimum-fold coverage. The [family/group plot](../CAST/improvement/width_v15/diagnostics/context_width_v15_figures_r1/source_families_groups.png)
-and [ten fixed audio cards](../CAST/improvement/width_v15/diagnostics/context_width_v15_audio/index.html)
+The [source coverage/margin plot](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/width_v15/diagnostics/context_width_v15_figures_r1/source_comparison.png)
+shows both the mean and minimum-fold coverage. The [family/group plot](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/width_v15/diagnostics/context_width_v15_figures_r1/source_families_groups.png)
+and [ten fixed audio cards](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/width_v15/diagnostics/context_width_v15_audio/index.html)
 expose all four widths. All 60 audio exports, 72 links and 71 artifact hashes
 were verified. A presentation-only revision moved the legend above the bars;
 both original and revised figures are retained and scientific inputs are unchanged.
@@ -712,13 +712,13 @@ both original and revised figures are retained and scientific inputs are unchang
 
 The source-selected **T=1.1** population was frozen before generating all
 1,500 waveforms and then reading the same 570 held observations. The
-[access receipt](../CAST/improvement/width_v15/evaluations/width_v15_outer_development/held_access_receipt.json)
+[access receipt](ARTIFACT_INDEX.md#artifact-0bd0f4678a98)
 records that order. No held recording is fitted and no width is chosen from
-its scores. The [complete results](../CAST/improvement/width_v15/evaluations/width_v15_outer_development/scores.json)
-meet every unchanged numerical criterion. The [full replay](../CAST/improvement/width_v15/evaluations/width_v15_outer_development/verification.json)
+its scores. The [complete results](ARTIFACT_INDEX.md#artifact-58f77e77073a)
+meet every unchanged numerical criterion. The [full replay](ARTIFACT_INDEX.md#artifact-ebb3a8c3410c)
 passes for all 1,500 generated waveforms and all 570 raw held descriptors,
 with scores, source selection, group statistics and training ancestry
-recomputed. The [failure record](../CAST/improvement/width_v15/evaluations/width_v15_outer_development/failure.json)
+recomputed. The [failure record](ARTIFACT_INDEX.md#artifact-6380f2389597)
 records no numerical failure, zero dropped records and a scientific pass.
 
 | Class | Arm | W1 | Mean marginal coverage |
@@ -764,7 +764,7 @@ The single outer group has been repeatedly exposed during development.
 There is no new-site, new-vehicle, classification-transfer or field-validation
 claim, and the 69-coordinate marginal control remains representation dependent.
 
-The [outer review](../CAST/improvement/width_v15/diagnostics/width_v15_outer_review/index.html)
+The [outer review](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/width_v15/diagnostics/width_v15_outer_review/index.html)
 provides eight fixed audio examples, both comparison plots, fitted-parameter
 ancestry, playback gains, scores, failures and replay evidence. Generated
 examples are unconditional draws, not fits to those held originals. Original
@@ -777,12 +777,12 @@ The latest complete numerical/provenance suite has 205 passing tests. There
 were 176 passing tests at the v8 source freeze.
 It had 113 passing tests at the capacity source
 freeze and 122 at the equivalent-fit source freeze, recorded in the latter's
-[test log](../CAST/improvement/alternatives_v4/evaluations/smooth8_alternatives_v4_full_source/tests.log).
+[test log](ARTIFACT_INDEX.md#artifact-0bf945d3e073).
 Added checks enforce
 class-specific thresholds, reject duplicated or missing generated schedules,
 and reject failed source candidates before any held access.
 
-The [pilot fit audit](../CAST/improvement/runs/cast_smooth8_v1_20261004_r1/fit_pilot_verification.json)
+The [pilot fit audit](ARTIFACT_INDEX.md#artifact-fca2520c0e8c)
 reprocessed all 50 raw inputs, replayed every saved waveform and component,
 and recomputed all fitted and initial checking starts with the unchanged 1e-5
 loss tolerance. The three completed source experiments passed exact donor,
@@ -900,16 +900,16 @@ fitting, audits fits and source selection, and creates plots/audio review. It
 refuses outer access when source selection fails and returns nonzero for a
 verified scientific failure. The wrapper's syntax and invalid-ID handling are
 checked; the current experiment executes its stages individually. Detailed
-commands are in [README.md](../CAST/improvement/README.md).
+commands are in [README.md](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/README.md).
 
 The capacity pilot workflow is also reproducible with
 `bash CAST/improvement/capacity_v3/reproduce.sh NEW_RUN_ID 4`; see its
-[instructions](../CAST/improvement/capacity_v3/README.md). The current run used
+[instructions](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/capacity_v3/README.md). The current run used
 the same stages individually and the analysis continuation completed all seven
 commands, returning the scientific-failure code 3.
 
 The completed temporal source workflow is documented in
-[temporal-v10 README](../CAST/improvement/temporal_v10/README.md):
+[temporal-v10 README](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/temporal_v10/README.md):
 
 ```sh
 bash CAST/improvement/temporal_v10/reproduce.sh NEW_SOURCE_ID
@@ -933,7 +933,7 @@ All unsuccessful candidates are preserved. No classifier, cross-dataset
 transfer or independent physical-vehicle generalization is claimed.
 
 The v11 full workflow, including calibration, all audits and the conditional
-outer development comparison, is documented in [resolution-v11 README](../CAST/improvement/resolution_v11/README.md):
+outer development comparison, is documented in [resolution-v11 README](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/resolution_v11/README.md):
 
 ```sh
 bash CAST/improvement/resolution_v11/reproduce_outer.sh NEW_RUN_ID NEW_OUTER_ID
@@ -946,7 +946,7 @@ current result used these exact stages individually; shell syntax and invalid-ID
 rejection passed. Original CAST pilot/generalization commands remain unchanged.
 
 The latest completed group-prior workflow, with unchanged v11 fitted ancestors,
-is documented in [group-v12 README](../CAST/improvement/group_v12/README.md):
+is documented in [group-v12 README](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/group_v12/README.md):
 
 ```sh
 bash CAST/improvement/group_v12/reproduce_outer.sh NEW_SOURCE_ID NEW_OUTER_ID
@@ -965,12 +965,12 @@ The subsequent balanced-sampling comparison is reproduced with:
 bash CAST/improvement/balanced_v13/reproduce_outer.sh NEW_SOURCE_ID NEW_OUTER_ID
 ```
 
-Its [instructions](../CAST/improvement/balanced_v13/README.md) describe the
+Its [instructions](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/balanced_v13/README.md) describe the
 unchanged population and frozen allocation plans. On the observed result,
 it returns code 3 after source replay and presentation because v12 is retained;
 no new outer directory or held access is created. The actual source and audit
 stages were executed individually, with shell syntax and invalid-ID handling
-checked. The subsequent [scoped group-effects workflow](../CAST/improvement/context_v14/README.md)
+checked. The subsequent [scoped group-effects workflow](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/CAST/improvement/context_v14/README.md)
 is reproduced with:
 
 ```sh
@@ -983,7 +983,7 @@ generation, verification and presentation are conditional on that decision.
 The current run executes these same stages individually; shell syntax and
 invalid-ID rejection are checked.
 
-The current width-calibration workflow has its own [instructions](../CAST/improvement/width_v15/README.md):
+The current width-calibration workflow has its own [instructions](../experiments/cast_coverage/REPLAY.md):
 
 ```sh
 bash CAST/improvement/width_v15/reproduce_outer.sh NEW_SOURCE_ID NEW_OUTER_ID

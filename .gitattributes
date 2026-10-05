@@ -1,0 +1,3 @@
+# Preserve pinned third-party bytes, including original license CRLF.
+vendor/** -text -whitespace
+src/abvid/_vendor/** -text -whitespace

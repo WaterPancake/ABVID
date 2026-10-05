@@ -1,0 +1,14 @@
+{
+  "profile": "baseline",
+  "comparison": "working_refactor_vs_preserved_original",
+  "numerical_definitions_unchanged": 160,
+  "exact_observation": true,
+  "exact_mfcc": true,
+  "exact_source_waveforms": 2,
+  "exact_path_component_arrays": 4,
+  "exact_metric_dictionary": true,
+  "target_access": false,
+  "training_runs": 0,
+  "passed": true,
+  "elapsed_s": 10.661433417000808
+}

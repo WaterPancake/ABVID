@@ -1,0 +1,1 @@
+"""ABVID data components."""

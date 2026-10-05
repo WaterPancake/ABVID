@@ -4,7 +4,7 @@
 
 ## Disposition
 
-The previous [integrity report](dataset_admission_integrity.md) remains historical evidence for steps 1–2. The new [audit summary](../experiments/admission/results/provenance_20261002_v1_3_1/summary.json), [executed rules](../experiments/admission/results/provenance_20261002_v1_3_1/rules_before_audit.json), [group map](../experiments/admission/results/provenance_20261002_v1_3_1/groups.json) and [admitted manifest](../experiments/admission/results/provenance_20261002_v1_3_1/admitted.jsonl) resolve known links and declare the remaining limitations.
+The previous [integrity report](dataset_admission_integrity.md) remains historical evidence for steps 1–2. The new [audit summary](ARTIFACT_INDEX.md#artifact-8c9a6948fa0b), [executed rules](ARTIFACT_INDEX.md#artifact-063389af6155), [group map](ARTIFACT_INDEX.md#artifact-d2eddf544d99) and [admitted manifest](ARTIFACT_INDEX.md#artifact-76215e0623b7) resolve known links and declare the remaining limitations.
 
 | Corpus | Retained car | Retained truck | H1 role |
 |---|---:|---:|---|
@@ -23,7 +23,7 @@ A bounded, class-independent search retrieved aligned center-window neighbors us
 
 The audit records 5,852 overlapping-time components. Merely overlapping windows are linked, not automatically treated as label errors or as the same physical vehicle. Interval positions follow provider semantics: IDMT centered sample offsets within a candidate recording, MELAUDIS event-clock tokens within a same-location/date axis. Invalid clock tokens were already quarantined without guessed repairs.
 
-Additional exclusions beyond v1.2.1: **11 AudioLDM car/truck excerpts** belong to equivalent-waveform groups carrying conflicting vehicle annotations; **one MELAUDIS car** is a same-label duplicate. The exact groups and retained/excluded file IDs are in [duplicate_components.json](../experiments/admission/results/provenance_20261002_v1_3_1/duplicate_components.json) and [additional_exclusions.jsonl](../experiments/admission/results/provenance_20261002_v1_3_1/additional_exclusions.jsonl). No class was corrected by guessing. AudioLDM car 0201 remains retained.
+Additional exclusions beyond v1.2.1: **11 AudioLDM car/truck excerpts** belong to equivalent-waveform groups carrying conflicting vehicle annotations; **one MELAUDIS car** is a same-label duplicate. The exact groups and retained/excluded file IDs are in [duplicate_components.json](ARTIFACT_INDEX.md#artifact-31242aae68e0) and [additional_exclusions.jsonl](ARTIFACT_INDEX.md#artifact-eafad5bfad22). No class was corrected by guessing. AudioLDM car 0201 remains retained.
 
 ## Groups and uncertainty
 
@@ -46,7 +46,7 @@ Only four conservative target groups remain, and one dominates event count. Grou
 
 The MELAUDIS descriptor documents manual event annotations in Excel, segmentation from parent video audio (Data Annotation and Dataset Building, Figure 4), and mono/stereo filename device annotations (Data Features). The [current Figshare listing](https://api.figshare.com/v2/articles/27115870) contains only the two RAR archives; no parent-video map or event workbook is supplied. The original [descriptor](https://www.nature.com/articles/s41597-025-04689-3) supports the metadata meanings, not our inferred grouping policy. Provider iPhone6/iPhone12 annotations are kept separately from measured WAV channel count.
 
-The local P02 release's `_2_genSyntheticData.py` permits a renderer fallback and derives per-file seeds from Python hash; source code alone cannot recover the actual released runs. No complete per-WAV prompt, source/template, seed, run or backend sidecars were found. [Metadata/code hash inventory](../experiments/admission/results/provenance_20261002_v1_3_1/synthetic_metadata_inventory.json) and saved provider file listings document coverage. No new synthesis was run.
+The local P02 release's `_2_genSyntheticData.py` permits a renderer fallback and derives per-file seeds from Python hash; source code alone cannot recover the actual released runs. No complete per-WAV prompt, source/template, seed, run or backend sidecars were found. [Metadata/code hash inventory](ARTIFACT_INDEX.md#artifact-eed9788a5870) and saved provider file listings document coverage. No new synthesis was run.
 
 Useful optional future requests: original MELAUDIS Excel event annotations, filename-to-parent-video/audio map and recording start/end/device logs; synthetic per-WAV prompt/seed/source-asset/run/backend manifest. The user has supplied the public downloads. No further fetch or author request is needed for this qualified H1; no author was contacted. Missing metadata still blocks source-family generalization or backend-specific causal claims.
 

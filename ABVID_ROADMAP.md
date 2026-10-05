@@ -1,3 +1,7 @@
+> Repository layout updated 2026-10-05. Original experiment paths below refer
+> to the preserved archive; see [structure](docs/STRUCTURE.md) and the current experiment registry.
+> Scientific settings, dataset roles and completed results are unchanged.
+
 # Passive Acoustic Vehicle Recognition --- Research Roadmap
 
 **Focus:** deep learning, domain robustness, and sim-to-real transfer
@@ -465,12 +469,12 @@ Avoid directories full of `final_v3_REAL` nonsense.
     Report class recall, balanced accuracy, ranking and worst-group results
     alongside macro-F1; a threshold-only F1 gain is not better representation
     learning. The larger source-only budget does not replace H1's 190/class.
-4.  Use the [frozen H2 source × propagation design](experiments/h2/README.md):
+4.  Use the [frozen H2 source × propagation design](experiments/h2_simulation/REPLAY.md):
     four paired cells, 190 training events/class, five seeds, fixed C=1 and
     frozen BEATs/MFCC. Source, geometry and target-role manifests are checked;
     no IDMT validation-label selection enters the synthetic arms.
 5.  Preserve the [completed H2 result](reports/H2_source_path_results.md) and
-    [independent audit](experiments/h2/results/source_path_20261004_r1/verification.json).
+    [independent audit](reports/ARTIFACT_INDEX.md#artifact-70e853936c31).
     The repaired renderer passed full replay, and all 40 heads were locked before
     scoring. The declared path intervention helped BEATs more than the declared
     source intervention; it did not establish reliable recognition or real-road

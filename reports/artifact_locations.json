@@ -1,0 +1,1949 @@
+[
+  {
+    "original_path": "ABVID Lit Review/markdown-ver/AI4TEN: Fine-Tuning Pre-Trained Audio Transformers (BEATs, AST) for Cross-Dataset Acoustic Vehicle Classification with Domain Adaptation /AI4TEN: Fine-Tuning Pre-Trained Audio Transformers (BEATs, AST) for Cross-Dataset Acoustic Vehicle Classification with Domain Adaptation .md",
+    "archive_reference": "archive:ABVID Lit Review/markdown-ver/AI4TEN: Fine-Tuning Pre-Trained Audio Transformers (BEATs, AST) for Cross-Dataset Acoustic Vehicle Classification with Domain Adaptation /AI4TEN: Fine-Tuning Pre-Trained Audio Transformers (BEATs, AST) for Cross-Dataset Acoustic Vehicle Classification with Domain Adaptation .md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 81280,
+    "sha256": "14e00f4636f44dfe42f92f1bb7e0122e26799639fea22bc49b3bad7003112d92"
+  },
+  {
+    "original_path": "ABVID Lit Review/markdown-ver/AI4TEN: Synthetic-to-Real Transfer for Acoustic Vehicle Classification Using Physics-Based and AI-Generated Training Data/AI4TEN: Synthetic-to-Real Transfer for Acoustic Vehicle Classification Using Physics-Based and AI-Generated Training Data.md",
+    "archive_reference": "archive:ABVID Lit Review/markdown-ver/AI4TEN: Synthetic-to-Real Transfer for Acoustic Vehicle Classification Using Physics-Based and AI-Generated Training Data/AI4TEN: Synthetic-to-Real Transfer for Acoustic Vehicle Classification Using Physics-Based and AI-Generated Training Data.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 97285,
+    "sha256": "e52e24478dc08caa971d5d1ac367d8f6a3d909550a918dd3e07b62ba9f6e4f65"
+  },
+  {
+    "original_path": "ABVID Lit Review/markdown-ver/AUDIO FEATURE EXTRACTION FOR VEHICLE ENGINE NOISE CLASSIFICATION/AUDIO FEATURE EXTRACTION FOR VEHICLE ENGINE NOISE CLASSIFICATION.md",
+    "archive_reference": "archive:ABVID Lit Review/markdown-ver/AUDIO FEATURE EXTRACTION FOR VEHICLE ENGINE NOISE CLASSIFICATION/AUDIO FEATURE EXTRACTION FOR VEHICLE ENGINE NOISE CLASSIFICATION.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 23485,
+    "sha256": "35d6757eca8b00bf2957243bd1da7610e9040393ced194f56b2c432e4d3fb294"
+  },
+  {
+    "original_path": "ABVID Lit Review/markdown-ver/Acoustic and seismic signals of heavy military vehicles for co-operative verification/Acoustic and seismic signals of heavy military vehicles for co-operative verification.md",
+    "archive_reference": "archive:ABVID Lit Review/markdown-ver/Acoustic and seismic signals of heavy military vehicles for co-operative verification/Acoustic and seismic signals of heavy military vehicles for co-operative verification.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 88155,
+    "sha256": "055a17ffb234e3e36c8b3a31cf0c222134fd23a694814a9760410603d9bf1de9"
+  },
+  {
+    "original_path": "ABVID Lit Review/markdown-ver/Acoustic\u2013seismic detection and classification of military vehicles\u2014developing tools for disarmament and peace-keeping/Acoustic\u2013seismic detection and classification of military vehicles\u2014developing tools for disarmament and peace-keeping.md",
+    "archive_reference": "archive:ABVID Lit Review/markdown-ver/Acoustic\u2013seismic detection and classification of military vehicles\u2014developing tools for disarmament and peace-keeping/Acoustic\u2013seismic detection and classification of military vehicles\u2014developing tools for disarmament and peace-keeping.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 56716,
+    "sha256": "4857d9826423a2dd90024bb59f5c12628389471db89edc62b6f5112653954e04"
+  },
+  {
+    "original_path": "ABVID Lit Review/markdown-ver/AudioLDM: Text-to-Audio Generation with Latent Diffusion Models/AudioLDM: Text-to-Audio Generation with Latent Diffusion Models.md",
+    "archive_reference": "archive:ABVID Lit Review/markdown-ver/AudioLDM: Text-to-Audio Generation with Latent Diffusion Models/AudioLDM: Text-to-Audio Generation with Latent Diffusion Models.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 87230,
+    "sha256": "d2fab21124bb898a749ca7cac92ca2a04ea5dc9c69243746a6a1022468725b02"
+  },
+  {
+    "original_path": "ABVID Lit Review/markdown-ver/BEATs: Audio Pre-Training with Acoustic Tokenizers/BEATs: Audio Pre-Training with Acoustic Tokenizers.md",
+    "archive_reference": "archive:ABVID Lit Review/markdown-ver/BEATs: Audio Pre-Training with Acoustic Tokenizers/BEATs: Audio Pre-Training with Acoustic Tokenizers.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 78204,
+    "sha256": "b8f7a21ee96cb5709dca39388e57e9f6c0d929e646a65a429d88a5337c8b3570"
+  },
+  {
+    "original_path": "ABVID Lit Review/markdown-ver/Classification of Battlefield Ground Vehicles Using Acoustic Features and Fuzzy Logic Rule-Based Classifiers/Classification of Battlefield Ground Vehicles Using Acoustic Features and Fuzzy Logic Rule-Based Classifiers.md",
+    "archive_reference": "archive:ABVID Lit Review/markdown-ver/Classification of Battlefield Ground Vehicles Using Acoustic Features and Fuzzy Logic Rule-Based Classifiers/Classification of Battlefield Ground Vehicles Using Acoustic Features and Fuzzy Logic Rule-Based Classifiers.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 100240,
+    "sha256": "2f5142624b0733a505bafc96d1a2a24c3f0a191bf81ae4e51795da55e689d3d4"
+  },
+  {
+    "original_path": "ABVID Lit Review/markdown-ver/Classification of Military Ground Vehicles Using Time Domain Harmonics\u2019 Amplitudes/Classification of Military Ground Vehicles Using Time Domain Harmonics\u2019 Amplitudes.md",
+    "archive_reference": "archive:ABVID Lit Review/markdown-ver/Classification of Military Ground Vehicles Using Time Domain Harmonics\u2019 Amplitudes/Classification of Military Ground Vehicles Using Time Domain Harmonics\u2019 Amplitudes.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 65142,
+    "sha256": "dee3ed2a07e0855ab8d5d4b49e8258358bb4b1fd46b708be2b5241afa97cd950"
+  },
+  {
+    "original_path": "ABVID Lit Review/markdown-ver/Classifier designs for binary classifications of ground vehicles/Classifier designs for binary classifications of ground vehicles.md",
+    "archive_reference": "archive:ABVID Lit Review/markdown-ver/Classifier designs for binary classifications of ground vehicles/Classifier designs for binary classifications of ground vehicles.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 48175,
+    "sha256": "e5cb47055e2557d8b78ed343698a6802e96a8b8023cdb7dcb8dd43fd5ffe15f2"
+  },
+  {
+    "original_path": "ABVID Lit Review/markdown-ver/Engine Speed\u2013Independent Acoustic Signature for Vehicles/Engine Speed\u2013Independent Acoustic Signature for Vehicles.md",
+    "archive_reference": "archive:ABVID Lit Review/markdown-ver/Engine Speed\u2013Independent Acoustic Signature for Vehicles/Engine Speed\u2013Independent Acoustic Signature for Vehicles.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 34464,
+    "sha256": "b89b69b6b09a0484bc9d90941d8d9fb18556c7d5de2e4fe28385ba499bf92876"
+  },
+  {
+    "original_path": "ABVID Lit Review/markdown-ver/Improving acoustic vehicle classification by information fusion/Improving acoustic vehicle classification by information fusion.md",
+    "archive_reference": "archive:ABVID Lit Review/markdown-ver/Improving acoustic vehicle classification by information fusion/Improving acoustic vehicle classification by information fusion.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 72696,
+    "sha256": "f26d5a00dfb6907be9a4105073f374ef991efacdaab76574a424572dacaae020"
+  },
+  {
+    "original_path": "ABVID Lit Review/markdown-ver/Innovations in Defence Support Systems \u2013 1/Innovations in Defence Support Systems \u2013 1.md",
+    "archive_reference": "archive:ABVID Lit Review/markdown-ver/Innovations in Defence Support Systems \u2013 1/Innovations in Defence Support Systems \u2013 1.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 521953,
+    "sha256": "c6f0d6674a520c2b5dd847bb51fcf7d211e710b53f2c8b0b717f87f6194249ba"
+  },
+  {
+    "original_path": "ABVID Lit Review/markdown-ver/SYNTHETIC TRAINING SET GENERATION USING TEXT-TO-AUDIO MODELS FOR ENVIRONMENTAL SOUND CLASSIFICATION/SYNTHETIC TRAINING SET GENERATION USING TEXT-TO-AUDIO MODELS FOR ENVIRONMENTAL SOUND CLASSIFICATION.md",
+    "archive_reference": "archive:ABVID Lit Review/markdown-ver/SYNTHETIC TRAINING SET GENERATION USING TEXT-TO-AUDIO MODELS FOR ENVIRONMENTAL SOUND CLASSIFICATION/SYNTHETIC TRAINING SET GENERATION USING TEXT-TO-AUDIO MODELS FOR ENVIRONMENTAL SOUND CLASSIFICATION.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 28334,
+    "sha256": "c568fd7a708e80366db8fe0bb7cd39ade5b3710f87de4638f2b777c8f15a65c1"
+  },
+  {
+    "original_path": "ABVID Lit Review/markdown-ver/Spectral features for audio based vehicle and engine classification/Spectral features for audio based vehicle and engine classification.md",
+    "archive_reference": "archive:ABVID Lit Review/markdown-ver/Spectral features for audio based vehicle and engine classification/Spectral features for audio based vehicle and engine classification.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 82028,
+    "sha256": "dbe4acbaa03882ebac33a45afba1a11f26d7fedfdc9cf903c21ab4cd439e7702"
+  },
+  {
+    "original_path": "ABVID Lit Review/markdown-ver/Unsupervised adversarial domain adaptation for acoustic scene classification/Unsupervised adversarial domain adaptation for acoustic scene classification.md",
+    "archive_reference": "archive:ABVID Lit Review/markdown-ver/Unsupervised adversarial domain adaptation for acoustic scene classification/Unsupervised adversarial domain adaptation for acoustic scene classification.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 33590,
+    "sha256": "9d1525f862944b2596b4c271f6905cf73f8d0249deac76376cd0129bffb30d70"
+  },
+  {
+    "original_path": "ABVID Lit Review/pdf-ver/AI4TEN: Fine-Tuning Pre-Trained Audio Transformers (BEATs, AST) for Cross-Dataset Acoustic Vehicle Classification with Domain Adaptation .pdf",
+    "archive_reference": "archive:ABVID Lit Review/pdf-ver/AI4TEN: Fine-Tuning Pre-Trained Audio Transformers (BEATs, AST) for Cross-Dataset Acoustic Vehicle Classification with Domain Adaptation .pdf",
+    "exists": true,
+    "kind": "file",
+    "bytes": 19046239
+  },
+  {
+    "original_path": "ABVID Lit Review/pdf-ver/AI4TEN: Synthetic-to-Real Transfer for Acoustic Vehicle Classification Using Physics-Based and AI-Generated Training Data.pdf",
+    "archive_reference": "archive:ABVID Lit Review/pdf-ver/AI4TEN: Synthetic-to-Real Transfer for Acoustic Vehicle Classification Using Physics-Based and AI-Generated Training Data.pdf",
+    "exists": true,
+    "kind": "file",
+    "bytes": 17213324
+  },
+  {
+    "original_path": "ABVID Lit Review/pdf-ver/AUDIO FEATURE EXTRACTION FOR VEHICLE ENGINE NOISE CLASSIFICATION.pdf",
+    "archive_reference": "archive:ABVID Lit Review/pdf-ver/AUDIO FEATURE EXTRACTION FOR VEHICLE ENGINE NOISE CLASSIFICATION.pdf",
+    "exists": true,
+    "kind": "file",
+    "bytes": 141784,
+    "sha256": "912c9d098b77abdc38c29aa9011bb897e5a8f0530e2edd7c565a48603637c08b"
+  },
+  {
+    "original_path": "ABVID Lit Review/pdf-ver/Acoustic and seismic signals of heavy military vehicles for co-operative verification.pdf",
+    "archive_reference": "archive:ABVID Lit Review/pdf-ver/Acoustic and seismic signals of heavy military vehicles for co-operative verification.pdf",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1096941,
+    "sha256": "0c60efc61e1f102de2b1ccd96167ddb6ce3a73f98111cc0500112999c3280925"
+  },
+  {
+    "original_path": "ABVID Lit Review/pdf-ver/Acoustic\u2013seismic detection and classification of military vehicles\u2014developing tools for disarmament and peace-keeping.pdf",
+    "archive_reference": "archive:ABVID Lit Review/pdf-ver/Acoustic\u2013seismic detection and classification of military vehicles\u2014developing tools for disarmament and peace-keeping.pdf",
+    "exists": true,
+    "kind": "file",
+    "bytes": 461353,
+    "sha256": "638552d4f7b34ccd17f24b99ac65eb940c278b78c0498996f6dd40e0c5dd4e09"
+  },
+  {
+    "original_path": "ABVID Lit Review/pdf-ver/AudioLDM: Text-to-Audio Generation with Latent Diffusion Models.pdf",
+    "archive_reference": "archive:ABVID Lit Review/pdf-ver/AudioLDM: Text-to-Audio Generation with Latent Diffusion Models.pdf",
+    "exists": true,
+    "kind": "file",
+    "bytes": 26718782
+  },
+  {
+    "original_path": "ABVID Lit Review/pdf-ver/BEATs: Audio Pre-Training with Acoustic Tokenizers.pdf",
+    "archive_reference": "archive:ABVID Lit Review/pdf-ver/BEATs: Audio Pre-Training with Acoustic Tokenizers.pdf",
+    "exists": true,
+    "kind": "file",
+    "bytes": 12437469
+  },
+  {
+    "original_path": "ABVID Lit Review/pdf-ver/Classification of Battlefield Ground Vehicles Using Acoustic Features and Fuzzy Logic Rule-Based Classifiers.pdf",
+    "archive_reference": "archive:ABVID Lit Review/pdf-ver/Classification of Battlefield Ground Vehicles Using Acoustic Features and Fuzzy Logic Rule-Based Classifiers.pdf",
+    "exists": true,
+    "kind": "file",
+    "bytes": 748644,
+    "sha256": "8e8cd8897a705286d7055b189f1c86428ec5e7a0472a19178d23b72dd5a02fa6"
+  },
+  {
+    "original_path": "ABVID Lit Review/pdf-ver/Classification of Military Ground Vehicles Using Time Domain Harmonics\u2019 Amplitudes.pdf",
+    "archive_reference": "archive:ABVID Lit Review/pdf-ver/Classification of Military Ground Vehicles Using Time Domain Harmonics\u2019 Amplitudes.pdf",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1127739,
+    "sha256": "7efd34478730afffeab5f6f8e978c6bfd2e88453eec24aef9a8ea8dbcca8cb02"
+  },
+  {
+    "original_path": "ABVID Lit Review/pdf-ver/Classifier designs for binary classifications of ground vehicles.pdf",
+    "archive_reference": "archive:ABVID Lit Review/pdf-ver/Classifier designs for binary classifications of ground vehicles.pdf",
+    "exists": true,
+    "kind": "file",
+    "bytes": 701702,
+    "sha256": "f4a7e675a445da156ab5c4b761197e2d778cf8dee2da2784ae3119a45de49e71"
+  },
+  {
+    "original_path": "ABVID Lit Review/pdf-ver/Engine Speed\u2013Independent Acoustic Signature for Vehicles.pdf",
+    "archive_reference": "archive:ABVID Lit Review/pdf-ver/Engine Speed\u2013Independent Acoustic Signature for Vehicles.pdf",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1164070,
+    "sha256": "b5e9aed51751274f9596e5c6244ae536f6db9c06a2919d215b003570fd3f2a23"
+  },
+  {
+    "original_path": "ABVID Lit Review/pdf-ver/Improving acoustic vehicle classification by information fusion.pdf",
+    "archive_reference": "archive:ABVID Lit Review/pdf-ver/Improving acoustic vehicle classification by information fusion.pdf",
+    "exists": true,
+    "kind": "file",
+    "bytes": 674963,
+    "sha256": "f612af2c64d26c21c977982d8245690940bfea62788a79aa903579f909bd2c25"
+  },
+  {
+    "original_path": "ABVID Lit Review/pdf-ver/Innovations in Defence Support Systems \u2013 1.pdf",
+    "archive_reference": "archive:ABVID Lit Review/pdf-ver/Innovations in Defence Support Systems \u2013 1.pdf",
+    "exists": true,
+    "kind": "file",
+    "bytes": 4797663
+  },
+  {
+    "original_path": "ABVID Lit Review/pdf-ver/SYNTHETIC TRAINING SET GENERATION USING TEXT-TO-AUDIO MODELS FOR ENVIRONMENTAL SOUND CLASSIFICATION.pdf",
+    "archive_reference": "archive:ABVID Lit Review/pdf-ver/SYNTHETIC TRAINING SET GENERATION USING TEXT-TO-AUDIO MODELS FOR ENVIRONMENTAL SOUND CLASSIFICATION.pdf",
+    "exists": true,
+    "kind": "file",
+    "bytes": 278761,
+    "sha256": "2cf7f3a20fc78fb0882a715cd6656e776476cf551c9550b517b4beed1b114b9e"
+  },
+  {
+    "original_path": "ABVID Lit Review/pdf-ver/Spectral features for audio based vehicle and engine classification.pdf",
+    "archive_reference": "archive:ABVID Lit Review/pdf-ver/Spectral features for audio based vehicle and engine classification.pdf",
+    "exists": true,
+    "kind": "file",
+    "bytes": 3655469
+  },
+  {
+    "original_path": "ABVID Lit Review/pdf-ver/Unsupervised adversarial domain adaptation for acoustic scene classification.pdf",
+    "archive_reference": "archive:ABVID Lit Review/pdf-ver/Unsupervised adversarial domain adaptation for acoustic scene classification.pdf",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1327916,
+    "sha256": "431570d282a8b98b9faefbee0d197a137beb4e522b916b08ddf2eb267d59e9d4"
+  },
+  {
+    "original_path": "CAST/development/DECISIONS.md",
+    "archive_reference": "archive:CAST/development/DECISIONS.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 4512,
+    "sha256": "d6277024b9b74308557ac7e0ff87d1c46f3f04539819d7f4d90a5369dd0ff881"
+  },
+  {
+    "original_path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/PROTOCOL.md",
+    "archive_reference": "archive:CAST/generalization/runs/cast_generalization_v0_20261004_r1/PROTOCOL.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 7379,
+    "sha256": "1d61e945c1c3eed0579c9b5c1fa52e834bfe7e0e5b0a6cab00bc6d5ecf700004"
+  },
+  {
+    "original_path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/config.resolved.json",
+    "archive_reference": "archive:CAST/generalization/runs/cast_generalization_v0_20261004_r1/config.resolved.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1527,
+    "sha256": "d392491743dab1bf9c6d8df626f350dd8bb17886b319e998e64d60f95c63b398"
+  },
+  {
+    "original_path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/coverage.png",
+    "archive_reference": "archive:CAST/generalization/runs/cast_generalization_v0_20261004_r1/coverage.png",
+    "exists": true,
+    "kind": "file",
+    "bytes": 240792,
+    "sha256": "7eb89445d49014c9a1977b09594152de1517becf8452005e2fa71711887b4be4"
+  },
+  {
+    "original_path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/descriptors.png",
+    "archive_reference": "archive:CAST/generalization/runs/cast_generalization_v0_20261004_r1/descriptors.png",
+    "exists": true,
+    "kind": "file",
+    "bytes": 546910,
+    "sha256": "3b17fdcf8e01e388cafba55b55653c664b5cbdb2b11a96083a43cbf54d4a65a3"
+  },
+  {
+    "original_path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/failures.json",
+    "archive_reference": "archive:CAST/generalization/runs/cast_generalization_v0_20261004_r1/failures.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 88,
+    "sha256": "fe52f65044283327bd491cccaf4ad701e3f0fc764e85c701ffaf53007afd9818"
+  },
+  {
+    "original_path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/generation.complete.json",
+    "archive_reference": "archive:CAST/generalization/runs/cast_generalization_v0_20261004_r1/generation.complete.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 492382,
+    "sha256": "a6eff6ca44f067bb361d58994117ee73bc931b10f26dd8fbdd86ed5e295c36b3"
+  },
+  {
+    "original_path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/held_access_receipt.json",
+    "archive_reference": "archive:CAST/generalization/runs/cast_generalization_v0_20261004_r1/held_access_receipt.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 437,
+    "sha256": "f14a7b13c3806b55769d04f2ab192fb50fb7a6a8dd89aca272505ebfa7e2a4bb"
+  },
+  {
+    "original_path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/index.html",
+    "archive_reference": "archive:CAST/generalization/runs/cast_generalization_v0_20261004_r1/index.html",
+    "exists": true,
+    "kind": "file",
+    "bytes": 504180,
+    "sha256": "cdc7f75b89f781c0f147fa174fe6467359a24abaa06a63a60bcda37eb8a8c890"
+  },
+  {
+    "original_path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/lock.json",
+    "archive_reference": "archive:CAST/generalization/runs/cast_generalization_v0_20261004_r1/lock.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 3099,
+    "sha256": "88da0c22052266158c0429b898db3c9a097902d7bced621b0dae765504ca5a2f"
+  },
+  {
+    "original_path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/parameter_bank.jsonl",
+    "archive_reference": "archive:CAST/generalization/runs/cast_generalization_v0_20261004_r1/parameter_bank.jsonl",
+    "exists": true,
+    "kind": "file",
+    "bytes": 216207,
+    "sha256": "e1bdf438778fa2e8b3c1b027c4f56d4685ec07caad1f9b8f1243a0031bb2e040"
+  },
+  {
+    "original_path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/sampling_schedule.jsonl",
+    "archive_reference": "archive:CAST/generalization/runs/cast_generalization_v0_20261004_r1/sampling_schedule.jsonl",
+    "exists": true,
+    "kind": "file",
+    "bytes": 9025094
+  },
+  {
+    "original_path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/scores.json",
+    "archive_reference": "archive:CAST/generalization/runs/cast_generalization_v0_20261004_r1/scores.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1351110,
+    "sha256": "49309770bb2019a89904aca0c3dcc51b307f1d22727763f2b158279a2826152a"
+  },
+  {
+    "original_path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/snapshot.json",
+    "archive_reference": "archive:CAST/generalization/runs/cast_generalization_v0_20261004_r1/snapshot.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 7926,
+    "sha256": "f7cd83b9f62026193385191c17c42e34965a6e8b0744340e61cf4e47e1b81af3"
+  },
+  {
+    "original_path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/tests.log",
+    "archive_reference": "archive:CAST/generalization/runs/cast_generalization_v0_20261004_r1/tests.log",
+    "exists": true,
+    "kind": "file",
+    "bytes": 80,
+    "sha256": "9ee20c71942e691226904f5b10ee3ec2cbef509fceddb28ac17de8dc7e2e5b55"
+  },
+  {
+    "original_path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/timing.json",
+    "archive_reference": "archive:CAST/generalization/runs/cast_generalization_v0_20261004_r1/timing.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 856,
+    "sha256": "9ea9cf95ebf88ef29f2d30d98030194a1e7a401c3ca674d5c150f47958d8b441"
+  },
+  {
+    "original_path": "CAST/generalization/runs/cast_generalization_v0_20261004_r1/verification.json",
+    "archive_reference": "archive:CAST/generalization/runs/cast_generalization_v0_20261004_r1/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 395,
+    "sha256": "0a77ccdd17e933f935d4851b2e39febcca9977b3df7b75af86424b44897f83eb"
+  },
+  {
+    "original_path": "CAST/improvement",
+    "archive_reference": "archive:CAST/improvement",
+    "exists": true,
+    "kind": "directory"
+  },
+  {
+    "original_path": "CAST/improvement/alternatives_v4/evaluations/smooth8_alternatives_v4_full_source/audit_verification.json",
+    "archive_reference": "archive:CAST/improvement/alternatives_v4/evaluations/smooth8_alternatives_v4_full_source/audit_verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 728,
+    "sha256": "92c3926a5fee8e44f2aaeec3690bd80a74a95fea9e4493af0f36d58c6c991226"
+  },
+  {
+    "original_path": "CAST/improvement/alternatives_v4/evaluations/smooth8_alternatives_v4_full_source/tests.log",
+    "archive_reference": "archive:CAST/improvement/alternatives_v4/evaluations/smooth8_alternatives_v4_full_source/tests.log",
+    "exists": true,
+    "kind": "file",
+    "bytes": 160,
+    "sha256": "c39c75a1517c9bc2577383d9c8de4cb7548a87730eb339ae362646c1847b8a4f"
+  },
+  {
+    "original_path": "CAST/improvement/balanced_v13/evaluations/group_balanced_v13_full_source/audit_verification.json",
+    "archive_reference": "archive:CAST/improvement/balanced_v13/evaluations/group_balanced_v13_full_source/audit_verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 867,
+    "sha256": "02cc49d0d44aed593f87f4670b312141b8d336fd1a4b2bdc4880b15c3caf9d8d"
+  },
+  {
+    "original_path": "CAST/improvement/balanced_v13/evaluations/group_balanced_v13_full_source/progression_decision.json",
+    "archive_reference": "archive:CAST/improvement/balanced_v13/evaluations/group_balanced_v13_full_source/progression_decision.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 460,
+    "sha256": "6652cdcbcd4f25e3c02eebf922722d9a66fc996a79f223252c7fef741020fbb1"
+  },
+  {
+    "original_path": "CAST/improvement/balanced_v13/evaluations/group_balanced_v13_full_source/summary.json",
+    "archive_reference": "archive:CAST/improvement/balanced_v13/evaluations/group_balanced_v13_full_source/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 6610,
+    "sha256": "a501935f51bc8f67dd2ccd21808f3dbfe06141dde4246f5472fc6bf5755eafc6"
+  },
+  {
+    "original_path": "CAST/improvement/calibration_v5/evaluations/smooth8_bias_v5_full_source/audit_verification.json",
+    "archive_reference": "archive:CAST/improvement/calibration_v5/evaluations/smooth8_bias_v5_full_source/audit_verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 518,
+    "sha256": "bc14b1241c3552d2a7f460942967c65c859ae0e1422d844020faf0445d9c6955"
+  },
+  {
+    "original_path": "CAST/improvement/capacity_v3/evaluations/capacity16x9_pilot_source/audit_verification.json",
+    "archive_reference": "archive:CAST/improvement/capacity_v3/evaluations/capacity16x9_pilot_source/audit_verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 529,
+    "sha256": "59cc7c95f492dab4c44dc73b9170b8e3fb68dc2652f07178b986a4b73b592ee4"
+  },
+  {
+    "original_path": "CAST/improvement/context_v14/evaluations/context_v14_outer_development/scores.json",
+    "archive_reference": "archive:CAST/improvement/context_v14/evaluations/context_v14_outer_development/scores.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1160417,
+    "sha256": "1db0dfa3ae2e302984770d4f6186959f28938f6a888638846011e863b5635bdc"
+  },
+  {
+    "original_path": "CAST/improvement/context_v14/evaluations/context_v14_outer_development/verification.json",
+    "archive_reference": "archive:CAST/improvement/context_v14/evaluations/context_v14_outer_development/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 420,
+    "sha256": "fa4ef2d69dbd90633057dece84698eec1d0a6b3b2121fb53e25b7793f33f47f7"
+  },
+  {
+    "original_path": "CAST/improvement/context_v14/evaluations/group_context_v14_full_source/audit_verification.json",
+    "archive_reference": "archive:CAST/improvement/context_v14/evaluations/group_context_v14_full_source/audit_verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 867,
+    "sha256": "d18dfbb513e90a7718af3655e81f34d0774f9e32096a8a2cebe9c679a1df8727"
+  },
+  {
+    "original_path": "CAST/improvement/context_v14/evaluations/group_context_v14_full_source/progression_decision.json",
+    "archive_reference": "archive:CAST/improvement/context_v14/evaluations/group_context_v14_full_source/progression_decision.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 413,
+    "sha256": "efc73feb84f0b793ec60b67caad83227eca412531c1778344a7f158feffc4ba4"
+  },
+  {
+    "original_path": "CAST/improvement/context_v14/evaluations/group_context_v14_full_source/summary.json",
+    "archive_reference": "archive:CAST/improvement/context_v14/evaluations/group_context_v14_full_source/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 9703,
+    "sha256": "9775d80ee6542b0b5f7ab9ea8ac710e4beb336bf3ba432e25f4aa89104167d0d"
+  },
+  {
+    "original_path": "CAST/improvement/envelope_v8/evaluations/smooth8_envelope_v8_full_source/audit_verification.json",
+    "archive_reference": "archive:CAST/improvement/envelope_v8/evaluations/smooth8_envelope_v8_full_source/audit_verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 590,
+    "sha256": "61f560bf081c2e8e3fd35cd4ee18356eaa5564f6176c66d48d8df09a05c707b4"
+  },
+  {
+    "original_path": "CAST/improvement/evaluations/smooth8_block_v2_full_source/audit_verification.json",
+    "archive_reference": "archive:CAST/improvement/evaluations/smooth8_block_v2_full_source/audit_verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 517,
+    "sha256": "20e32f51681c3ec7b44cd80f60f15fe5bcbc9f8cf1300a6bf01d848cf039931e"
+  },
+  {
+    "original_path": "CAST/improvement/evaluations/smooth8_block_v2_full_source/summary.json",
+    "archive_reference": "archive:CAST/improvement/evaluations/smooth8_block_v2_full_source/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 38823,
+    "sha256": "980a70fe649cf8db044b015c561eb0678fdc8fb06db95bd218abde2f6d9c2306"
+  },
+  {
+    "original_path": "CAST/improvement/evaluations/smooth8_full_source_grid/scientific_failure.json",
+    "archive_reference": "archive:CAST/improvement/evaluations/smooth8_full_source_grid/scientific_failure.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1231,
+    "sha256": "08b9f2865ac5be7c5830f98c72004771e6954725bf3baa599caca58975e42815"
+  },
+  {
+    "original_path": "CAST/improvement/evaluations/smooth8_full_source_grid/summary.json",
+    "archive_reference": "archive:CAST/improvement/evaluations/smooth8_full_source_grid/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 12764,
+    "sha256": "89fad95aea82e7008c4dc23dd7900d38366533e5f573b055a57df69833676f38"
+  },
+  {
+    "original_path": "CAST/improvement/evaluations/smooth8_pilot_temperature_grid/scientific_failure.json",
+    "archive_reference": "archive:CAST/improvement/evaluations/smooth8_pilot_temperature_grid/scientific_failure.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1238,
+    "sha256": "c326c33370f4d1c6af6fa0fee43d1852c8fc98ba5fac433426617dff40de3d64"
+  },
+  {
+    "original_path": "CAST/improvement/group_v12/evaluations/group_v12_outer_development/failure.json",
+    "archive_reference": "archive:CAST/improvement/group_v12/evaluations/group_v12_outer_development/failure.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 292,
+    "sha256": "f4028fe0c493194a3579352bbbc31e01bae2d5ee5563d57cd071cfda2075f43c"
+  },
+  {
+    "original_path": "CAST/improvement/group_v12/evaluations/group_v12_outer_development/group_effect_statistics.json",
+    "archive_reference": "archive:CAST/improvement/group_v12/evaluations/group_v12_outer_development/group_effect_statistics.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 166388,
+    "sha256": "a6e276537fe1eb703ce3ed6319deb34ff48afa12ef8e39e2ec25bf8d770b2f7b"
+  },
+  {
+    "original_path": "CAST/improvement/group_v12/evaluations/group_v12_outer_development/scores.json",
+    "archive_reference": "archive:CAST/improvement/group_v12/evaluations/group_v12_outer_development/scores.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1160126,
+    "sha256": "01471c1262904ed97f1f233582d3fdfad7a528a2d7be5c6a89215ff14ee41e3e"
+  },
+  {
+    "original_path": "CAST/improvement/group_v12/evaluations/group_v12_outer_development/verification.json",
+    "archive_reference": "archive:CAST/improvement/group_v12/evaluations/group_v12_outer_development/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 419,
+    "sha256": "aea8483eb3614fc2e168cb2f08221a7baf53e5e09505b5b4a1035b092c4072db"
+  },
+  {
+    "original_path": "CAST/improvement/group_v12/evaluations/spectrum16_group_v12_full_source/audit_verification.json",
+    "archive_reference": "archive:CAST/improvement/group_v12/evaluations/spectrum16_group_v12_full_source/audit_verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 866,
+    "sha256": "c343d53407e2343122af1a3e384ba44b6c2e949013d739cc08405f344eb840c5"
+  },
+  {
+    "original_path": "CAST/improvement/group_v12/evaluations/spectrum16_group_v12_full_source/summary.json",
+    "archive_reference": "archive:CAST/improvement/group_v12/evaluations/spectrum16_group_v12_full_source/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 9666,
+    "sha256": "170fa81c3dd2a3562e6e9f15dce8d9d1fc4c25500f0e3b24734325a20a4b7893"
+  },
+  {
+    "original_path": "CAST/improvement/mixture_v6/evaluations/smooth8_mixture_v6_full_source/audit_verification.json",
+    "archive_reference": "archive:CAST/improvement/mixture_v6/evaluations/smooth8_mixture_v6_full_source/audit_verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 516,
+    "sha256": "595741d0c452a7a716d978c83cc538116763b89318d7dfcc46414a61cd65dd30"
+  },
+  {
+    "original_path": "CAST/improvement/parent_mixture_v7/evaluations/smooth8_parent_mixture_v7_full_source/audit_verification.json",
+    "archive_reference": "archive:CAST/improvement/parent_mixture_v7/evaluations/smooth8_parent_mixture_v7_full_source/audit_verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 590,
+    "sha256": "d5cc9d63f93c1dcd4e4b260c81dc127dac0bee6cd934be7452141a470880ee05"
+  },
+  {
+    "original_path": "CAST/improvement/resolution_v11/evaluations/resolution_v11_outer_development/failure.json",
+    "archive_reference": "archive:CAST/improvement/resolution_v11/evaluations/resolution_v11_outer_development/failure.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 292,
+    "sha256": "f4028fe0c493194a3579352bbbc31e01bae2d5ee5563d57cd071cfda2075f43c"
+  },
+  {
+    "original_path": "CAST/improvement/resolution_v11/evaluations/resolution_v11_outer_development/verification.json",
+    "archive_reference": "archive:CAST/improvement/resolution_v11/evaluations/resolution_v11_outer_development/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 373,
+    "sha256": "b5ee1c0ed6d8b798030e138e7f9f5897be7f2f424d4167dbb9f562e646a24d01"
+  },
+  {
+    "original_path": "CAST/improvement/resolution_v11/evaluations/smooth16_temporal41_v11_full_source/audit_verification.json",
+    "archive_reference": "archive:CAST/improvement/resolution_v11/evaluations/smooth16_temporal41_v11_full_source/audit_verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 706,
+    "sha256": "c81a4ec348469e6cc1822580d0bd25be488b9f3b2a59fd3b0b59edc0a961c7d4"
+  },
+  {
+    "original_path": "CAST/improvement/resolution_v11/evaluations/smooth16_temporal41_v11_full_source/summary.json",
+    "archive_reference": "archive:CAST/improvement/resolution_v11/evaluations/smooth16_temporal41_v11_full_source/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 6575,
+    "sha256": "2208e0234a737d50fdaa70817da586f965ea43f465643f166e5eb4f4e92740d4"
+  },
+  {
+    "original_path": "CAST/improvement/resolution_v11/runs/cast_resolution_v11_20261005",
+    "archive_reference": "archive:CAST/improvement/resolution_v11/runs/cast_resolution_v11_20261005",
+    "exists": true,
+    "kind": "directory"
+  },
+  {
+    "original_path": "CAST/improvement/runs/cast_smooth8_v1_20261004_r1/fit_full_summary.json",
+    "archive_reference": "archive:CAST/improvement/runs/cast_smooth8_v1_20261004_r1/fit_full_summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 627920,
+    "sha256": "4e97ace625869e6f2e453448709762ec1bba6a913bccf55fca101da9f7e15063"
+  },
+  {
+    "original_path": "CAST/improvement/runs/cast_smooth8_v1_20261004_r1/fit_full_verification.json",
+    "archive_reference": "archive:CAST/improvement/runs/cast_smooth8_v1_20261004_r1/fit_full_verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 145476,
+    "sha256": "9bfe3e396dcf2980e77f5e9034e125e97d59fcfa309d46774c663f81d0c890d3"
+  },
+  {
+    "original_path": "CAST/improvement/runs/cast_smooth8_v1_20261004_r1/fit_pilot_verification.json",
+    "archive_reference": "archive:CAST/improvement/runs/cast_smooth8_v1_20261004_r1/fit_pilot_verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 19742,
+    "sha256": "f4f8ce3008fc67b9272d58f006dc0dc368a349171e8ec6852551208383f51ca2"
+  },
+  {
+    "original_path": "CAST/improvement/spectrum_v9/evaluations/smooth8_spectrum_v9_full_source/audit_verification.json",
+    "archive_reference": "archive:CAST/improvement/spectrum_v9/evaluations/smooth8_spectrum_v9_full_source/audit_verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 706,
+    "sha256": "fa24a14766105c7a90f9c2408312565cfc2d02af7a7cc3cd8ea2e2f499944a8e"
+  },
+  {
+    "original_path": "CAST/improvement/spectrum_v9/runs/cast_spectrum_v9_20261004",
+    "archive_reference": "archive:CAST/improvement/spectrum_v9/runs/cast_spectrum_v9_20261004",
+    "exists": true,
+    "kind": "directory"
+  },
+  {
+    "original_path": "CAST/improvement/temporal_v10/evaluations/smooth8_temporal_v10_full_source/audit_verification.json",
+    "archive_reference": "archive:CAST/improvement/temporal_v10/evaluations/smooth8_temporal_v10_full_source/audit_verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 591,
+    "sha256": "1e36ca7bcfbe65a96f3c563ec06d3aacbcbc48e1830513b3fdb8d92554ed3cbc"
+  },
+  {
+    "original_path": "CAST/improvement/temporal_v10/evaluations/smooth8_temporal_v10_full_source/summary.json",
+    "archive_reference": "archive:CAST/improvement/temporal_v10/evaluations/smooth8_temporal_v10_full_source/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 9708,
+    "sha256": "1cb3964771655e4a1f4e510dc643ba952484e4b8b35b383a41436f20094f79a5"
+  },
+  {
+    "original_path": "CAST/improvement/temporal_v10/evaluations/temporal_v10_outer_development/failure.json",
+    "archive_reference": "archive:CAST/improvement/temporal_v10/evaluations/temporal_v10_outer_development/failure.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 292,
+    "sha256": "f4028fe0c493194a3579352bbbc31e01bae2d5ee5563d57cd071cfda2075f43c"
+  },
+  {
+    "original_path": "CAST/improvement/temporal_v10/evaluations/temporal_v10_outer_development/held_access_receipt.json",
+    "archive_reference": "archive:CAST/improvement/temporal_v10/evaluations/temporal_v10_outer_development/held_access_receipt.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 375,
+    "sha256": "8aa49b2a084c5440698cb8335d18677da201da98dd41835821fa84bd8a1a7426"
+  },
+  {
+    "original_path": "CAST/improvement/temporal_v10/evaluations/temporal_v10_outer_development/verification.json",
+    "archive_reference": "archive:CAST/improvement/temporal_v10/evaluations/temporal_v10_outer_development/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 372,
+    "sha256": "fdec0385ce748b51baf52fe4380a28a8e547c1bcd2cec817e8897c02e17cad82"
+  },
+  {
+    "original_path": "CAST/improvement/temporal_v10/outer_gate/tests.xml",
+    "archive_reference": "archive:CAST/improvement/temporal_v10/outer_gate/tests.xml",
+    "exists": true,
+    "kind": "file",
+    "bytes": 30616,
+    "sha256": "a914057e1034aef3bcaa525e25a2a79704cec8508d81e13f22157f2c9f4dc8e6"
+  },
+  {
+    "original_path": "CAST/improvement/width_v15/evaluations/context_width_v15_full_source/audit_verification.json",
+    "archive_reference": "archive:CAST/improvement/width_v15/evaluations/context_width_v15_full_source/audit_verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 866,
+    "sha256": "4e5a64512a931717f8e13a7728d97b5d4622a8a699d467cc609e8dbaabd56d26"
+  },
+  {
+    "original_path": "CAST/improvement/width_v15/evaluations/context_width_v15_full_source/identity_replication.json",
+    "archive_reference": "archive:CAST/improvement/width_v15/evaluations/context_width_v15_full_source/identity_replication.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 235,
+    "sha256": "a13e5add41f9b6ebc1cff2549bc40ee8e25dcd13d0c6f26fdb80b1326aed92e1"
+  },
+  {
+    "original_path": "CAST/improvement/width_v15/evaluations/context_width_v15_full_source/progression_decision.json",
+    "archive_reference": "archive:CAST/improvement/width_v15/evaluations/context_width_v15_full_source/progression_decision.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 495,
+    "sha256": "1a51f1756bd489c5d6ccd4c95f6db1845228ca987273341bb194e54c311014df"
+  },
+  {
+    "original_path": "CAST/improvement/width_v15/evaluations/context_width_v15_full_source/summary.json",
+    "archive_reference": "archive:CAST/improvement/width_v15/evaluations/context_width_v15_full_source/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 17058,
+    "sha256": "7b093f8e457f60b7b7b67db9cfb2a594d2588e756d67be1423c544df942f4d1c"
+  },
+  {
+    "original_path": "CAST/improvement/width_v15/evaluations/width_v15_outer_development/failure.json",
+    "archive_reference": "archive:CAST/improvement/width_v15/evaluations/width_v15_outer_development/failure.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 289,
+    "sha256": "4a32ed3554419eabbc9adbaa5bb1baf1a2ef9bb90b95c0446a88dec4b67f5084"
+  },
+  {
+    "original_path": "CAST/improvement/width_v15/evaluations/width_v15_outer_development/held_access_receipt.json",
+    "archive_reference": "archive:CAST/improvement/width_v15/evaluations/width_v15_outer_development/held_access_receipt.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 375,
+    "sha256": "c306200b60082da288a57707e1d9ec8279bd69140fe990bff5955858293a9cf2"
+  },
+  {
+    "original_path": "CAST/improvement/width_v15/evaluations/width_v15_outer_development/scores.json",
+    "archive_reference": "archive:CAST/improvement/width_v15/evaluations/width_v15_outer_development/scores.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1160350,
+    "sha256": "27909bbe70fb167ee700b3de5123ad80333e88cd543723fa40eca5a2bfd34cce"
+  },
+  {
+    "original_path": "CAST/improvement/width_v15/evaluations/width_v15_outer_development/verification.json",
+    "archive_reference": "archive:CAST/improvement/width_v15/evaluations/width_v15_outer_development/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 418,
+    "sha256": "081ca118a71e00398671b0ff977a34476c469dfb9d6b8fb0631a141e83896bdd"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/aggregate.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/aggregate.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 4456,
+    "sha256": "18270b75eaafa73f1e0d7f1d302bae71887d8cd9d80e0c354a3999f16876dbfe"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/config.resolved.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/config.resolved.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 6466,
+    "sha256": "dc561af7eee5fcc7277c46b5093f46054ebcda3ae94640a95e31cbf28bff1b4f"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/index.html",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/index.html",
+    "exists": true,
+    "kind": "file",
+    "bytes": 50412,
+    "sha256": "4f0264f425c0071fcf3f288de4b461c9e1d891b58e768811aeae87739f159512"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/lock.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/lock.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 5695,
+    "sha256": "e37f3393e99ff5d83e0248e7f02de93cd6fa6f77409c6c3a927f81a9f649290d"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/01406419169a6f4a0efb4eae17506534a6b0468e33904cedcd9bea4dfb6abd19/diagnostics.png",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/01406419169a6f4a0efb4eae17506534a6b0468e33904cedcd9bea4dfb6abd19/diagnostics.png",
+    "exists": true,
+    "kind": "file",
+    "bytes": 479012,
+    "sha256": "875f36bfaba8a70ab4b4c5008c8ca4dcfa365374a9b16fd99f503a2eda88e09d"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/01406419169a6f4a0efb4eae17506534a6b0468e33904cedcd9bea4dfb6abd19/failure.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/01406419169a6f4a0efb4eae17506534a6b0468e33904cedcd9bea4dfb6abd19/failure.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 163,
+    "sha256": "5ae3ec4b723fd1f09b29515a30dab8febfcdd79e44e1ad19370af1c93f0c019f"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/01406419169a6f4a0efb4eae17506534a6b0468e33904cedcd9bea4dfb6abd19/original_playback.wav",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/01406419169a6f4a0efb4eae17506534a6b0468e33904cedcd9bea4dfb6abd19/original_playback.wav",
+    "exists": true,
+    "kind": "file",
+    "bytes": 128080,
+    "sha256": "82044b01b2c67bb9c18eb8aa88d51410e0275076edd41da5ceebd7cedafbbf59"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/01406419169a6f4a0efb4eae17506534a6b0468e33904cedcd9bea4dfb6abd19/parameters.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/01406419169a6f4a0efb4eae17506534a6b0468e33904cedcd9bea4dfb6abd19/parameters.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 6143,
+    "sha256": "6400a36037f3593d190882fff7508d206d16b58ec846be279a3810e4a93a8cad"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/01406419169a6f4a0efb4eae17506534a6b0468e33904cedcd9bea4dfb6abd19/reconstructed_playback.wav",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/01406419169a6f4a0efb4eae17506534a6b0468e33904cedcd9bea4dfb6abd19/reconstructed_playback.wav",
+    "exists": true,
+    "kind": "file",
+    "bytes": 128080,
+    "sha256": "fa2eb6ab6c333c441d5cc11339426af86d756e13674f631c363483ff4cbff9ca"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/0382eb2ae4c357a68a36ecacd6dd87b17e693655ec0561f567c56d77c626eb62/diagnostics.png",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/0382eb2ae4c357a68a36ecacd6dd87b17e693655ec0561f567c56d77c626eb62/diagnostics.png",
+    "exists": true,
+    "kind": "file",
+    "bytes": 485803,
+    "sha256": "c18947fd7402b59248b26a1fb74b287ed6ac11ab8b0ee496066fd348af9d1908"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/0382eb2ae4c357a68a36ecacd6dd87b17e693655ec0561f567c56d77c626eb62/failure.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/0382eb2ae4c357a68a36ecacd6dd87b17e693655ec0561f567c56d77c626eb62/failure.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 206,
+    "sha256": "031c1d4dce6b542a51d5fa72cfe599f2ff4bcab7e9f4d85bbf1e804fb2c50424"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/0382eb2ae4c357a68a36ecacd6dd87b17e693655ec0561f567c56d77c626eb62/original_playback.wav",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/0382eb2ae4c357a68a36ecacd6dd87b17e693655ec0561f567c56d77c626eb62/original_playback.wav",
+    "exists": true,
+    "kind": "file",
+    "bytes": 128080,
+    "sha256": "c096b43c08565fe085dea546c40b7d882bddc5a5193a0b2ff73268913c67c22d"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/0382eb2ae4c357a68a36ecacd6dd87b17e693655ec0561f567c56d77c626eb62/parameters.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/0382eb2ae4c357a68a36ecacd6dd87b17e693655ec0561f567c56d77c626eb62/parameters.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 6140,
+    "sha256": "c469c7ce2e64089dda84dfbf2f7f55d5833dafeb9dfc10387d475f6bde7488a3"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/0382eb2ae4c357a68a36ecacd6dd87b17e693655ec0561f567c56d77c626eb62/reconstructed_playback.wav",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/0382eb2ae4c357a68a36ecacd6dd87b17e693655ec0561f567c56d77c626eb62/reconstructed_playback.wav",
+    "exists": true,
+    "kind": "file",
+    "bytes": 128080,
+    "sha256": "a6a4d02d11d596444a8b8c308b17dca64c9a9e1c8875bdd8d44107d4c3cc0f9a"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/0cc6a64bd68077e4a00744d06ac57c2ab1a7b175570d1730e1be7556829b2a52/diagnostics.png",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/0cc6a64bd68077e4a00744d06ac57c2ab1a7b175570d1730e1be7556829b2a52/diagnostics.png",
+    "exists": true,
+    "kind": "file",
+    "bytes": 516406,
+    "sha256": "a625cf502e16abeaf28e10437a162a06cb4bf450296378b5308a139fb60f7948"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/0cc6a64bd68077e4a00744d06ac57c2ab1a7b175570d1730e1be7556829b2a52/failure.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/0cc6a64bd68077e4a00744d06ac57c2ab1a7b175570d1730e1be7556829b2a52/failure.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 125,
+    "sha256": "a60809059a72be8319f43b109709aca137cf9b91b8d0f858f4d330cbd06e31cd"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/0cc6a64bd68077e4a00744d06ac57c2ab1a7b175570d1730e1be7556829b2a52/original_playback.wav",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/0cc6a64bd68077e4a00744d06ac57c2ab1a7b175570d1730e1be7556829b2a52/original_playback.wav",
+    "exists": true,
+    "kind": "file",
+    "bytes": 128080,
+    "sha256": "5fd9d307dc37908bab21b1a2a452a52be2138ce640d892fa044cd278f7101362"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/0cc6a64bd68077e4a00744d06ac57c2ab1a7b175570d1730e1be7556829b2a52/parameters.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/0cc6a64bd68077e4a00744d06ac57c2ab1a7b175570d1730e1be7556829b2a52/parameters.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 6145,
+    "sha256": "8a74d2552c405e78d9127b318987900a435094b7403f18433d7a4134bf64ea96"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/0cc6a64bd68077e4a00744d06ac57c2ab1a7b175570d1730e1be7556829b2a52/reconstructed_playback.wav",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/0cc6a64bd68077e4a00744d06ac57c2ab1a7b175570d1730e1be7556829b2a52/reconstructed_playback.wav",
+    "exists": true,
+    "kind": "file",
+    "bytes": 128080,
+    "sha256": "6e6db2e624c55656e364d65fb1af3580b87f4b964bcea903032ac8543df4658f"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/1463f3c4180442191d63ca903d3d967b9ef60a4d895e9ffab8c6ea1253aa91fe/diagnostics.png",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/1463f3c4180442191d63ca903d3d967b9ef60a4d895e9ffab8c6ea1253aa91fe/diagnostics.png",
+    "exists": true,
+    "kind": "file",
+    "bytes": 481184,
+    "sha256": "d3c57834dafd6af87da9db9a284bb397408b9d408c7648568eb48c91cf87d124"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/1463f3c4180442191d63ca903d3d967b9ef60a4d895e9ffab8c6ea1253aa91fe/failure.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/1463f3c4180442191d63ca903d3d967b9ef60a4d895e9ffab8c6ea1253aa91fe/failure.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 163,
+    "sha256": "5ae3ec4b723fd1f09b29515a30dab8febfcdd79e44e1ad19370af1c93f0c019f"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/1463f3c4180442191d63ca903d3d967b9ef60a4d895e9ffab8c6ea1253aa91fe/original_playback.wav",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/1463f3c4180442191d63ca903d3d967b9ef60a4d895e9ffab8c6ea1253aa91fe/original_playback.wav",
+    "exists": true,
+    "kind": "file",
+    "bytes": 128080,
+    "sha256": "37e673c176ff63797f93a6688587564530c18bee7db06dc84e825db00504d1d8"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/1463f3c4180442191d63ca903d3d967b9ef60a4d895e9ffab8c6ea1253aa91fe/parameters.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/1463f3c4180442191d63ca903d3d967b9ef60a4d895e9ffab8c6ea1253aa91fe/parameters.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 6158,
+    "sha256": "f043c9b3224a3255c7b4300539fc57de394c20b2c6f3072d3356ebf07a6dfc28"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/1463f3c4180442191d63ca903d3d967b9ef60a4d895e9ffab8c6ea1253aa91fe/reconstructed_playback.wav",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/1463f3c4180442191d63ca903d3d967b9ef60a4d895e9ffab8c6ea1253aa91fe/reconstructed_playback.wav",
+    "exists": true,
+    "kind": "file",
+    "bytes": 128080,
+    "sha256": "bbabd90cc1099d86b5465d26accb4c1175085f863fcae601a08409a1f7b5430d"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/194e49a4e85c98d0d9f2f7896004c7207128182340e17acd25ef78b69b769f28/diagnostics.png",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/194e49a4e85c98d0d9f2f7896004c7207128182340e17acd25ef78b69b769f28/diagnostics.png",
+    "exists": true,
+    "kind": "file",
+    "bytes": 476905,
+    "sha256": "cf347632ff9a05860b33492ac0977f772b2bec72ff6dc15621a5cd17550bfe8f"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/194e49a4e85c98d0d9f2f7896004c7207128182340e17acd25ef78b69b769f28/failure.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/194e49a4e85c98d0d9f2f7896004c7207128182340e17acd25ef78b69b769f28/failure.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 163,
+    "sha256": "5ae3ec4b723fd1f09b29515a30dab8febfcdd79e44e1ad19370af1c93f0c019f"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/194e49a4e85c98d0d9f2f7896004c7207128182340e17acd25ef78b69b769f28/original_playback.wav",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/194e49a4e85c98d0d9f2f7896004c7207128182340e17acd25ef78b69b769f28/original_playback.wav",
+    "exists": true,
+    "kind": "file",
+    "bytes": 128080,
+    "sha256": "0e7db96f9bb1a6fde9e992e3f1d2736ec99f1eb4fd19b7c5848532304895786d"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/194e49a4e85c98d0d9f2f7896004c7207128182340e17acd25ef78b69b769f28/parameters.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/194e49a4e85c98d0d9f2f7896004c7207128182340e17acd25ef78b69b769f28/parameters.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 6139,
+    "sha256": "3f493a5d3de8aa49d9f9114dcb6d9ea95f15e4ac61833108b3e6f9e7b18ee5ab"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/194e49a4e85c98d0d9f2f7896004c7207128182340e17acd25ef78b69b769f28/reconstructed_playback.wav",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/194e49a4e85c98d0d9f2f7896004c7207128182340e17acd25ef78b69b769f28/reconstructed_playback.wav",
+    "exists": true,
+    "kind": "file",
+    "bytes": 128080,
+    "sha256": "cd54b71bed6585c84f4751d0cb877515d603912734deafb79ba9d451aef0d854"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/runtime_projection.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/runtime_projection.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 203,
+    "sha256": "678c1dacd4e51b1976465fa67b280f64217e7b369b48859e4cf53fe9efa774c8"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/pilot/summary.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/pilot/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 83593,
+    "sha256": "b8b542e8127ef21579d946f967a96fbc43d77c6f20da83703f9d2aa7d8e8cca6"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/selected_manifest.jsonl",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/selected_manifest.jsonl",
+    "exists": true,
+    "kind": "file",
+    "bytes": 163349,
+    "sha256": "16c1eeaa3af427780835c7944c69c432535bb07c35b3ea339873b105a70a2ffd"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/snapshot.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/snapshot.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 6587,
+    "sha256": "2f758f22c5e54d7019b0d67553a70578355a4eab5c313c63a7bd723e9a214e3e"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/synthetic/acceptance_preregistered.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/synthetic/acceptance_preregistered.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 4374,
+    "sha256": "7fa91a8db00cfdd416ba2586a000317d335a32dc75939df1a1c5c755243552db"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/synthetic/summary.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/synthetic/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 4551,
+    "sha256": "63fe2aaf955fe3fee331473cb9ca3ad5da795f45be2947f8b295da567cc18573"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/tests.log",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/tests.log",
+    "exists": true,
+    "kind": "file",
+    "bytes": 80,
+    "sha256": "b71db6006ecc410f6085db2500759568a2da5d0cdf2fd3f7165307654085abe2"
+  },
+  {
+    "original_path": "CAST/runs/cast_pilot_v0_20261004/verification.json",
+    "archive_reference": "archive:CAST/runs/cast_pilot_v0_20261004/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 10622,
+    "sha256": "41965045cb9ba0a843503f76b663656d12b63cc2065a201c895c5aa138cade3c"
+  },
+  {
+    "original_path": "dataset/AI4TEN/README.md",
+    "archive_reference": "archive:dataset/AI4TEN/README.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 4260,
+    "sha256": "a0045abb6c906678895c003af4535bddaa3e2ce14ef84cb6f879a9bd9cef32a5"
+  },
+  {
+    "original_path": "dataset/AI4TEN/data/features/metadata.json",
+    "archive_reference": "archive:dataset/AI4TEN/data/features/metadata.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 929,
+    "sha256": "775d32545c818069cf21261c755fbb8851308a44347183cf762577d9b7a0c534"
+  },
+  {
+    "original_path": "dataset/IDMT_Traffic/annotation/import_idmt_traffic_dataset.py",
+    "archive_reference": "archive:dataset/IDMT_Traffic/annotation/import_idmt_traffic_dataset.py",
+    "exists": true,
+    "kind": "file",
+    "bytes": 3884,
+    "sha256": "797cb8c2b6c910634937ea05dce3b4c6e39975419ad8391aa75e8979298f3f2b"
+  },
+  {
+    "original_path": "dataset/IDMT_Traffic/readme.md",
+    "archive_reference": "archive:dataset/IDMT_Traffic/readme.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 2470,
+    "sha256": "ff56d81c51b41272844b3178847b93be32267bc93e7cab82ff025d3edff5b9d7"
+  },
+  {
+    "original_path": "experiments/admission/results/integrity_20261002/summary.json",
+    "archive_reference": "archive:experiments/admission/results/integrity_20261002/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 10167,
+    "sha256": "2bc071055efa1cb4d708d3f2865f48078e27a9bae13d56a0234d540deb870d6c"
+  },
+  {
+    "original_path": "experiments/admission/results/integrity_20261002_v1_2_1/all_files.jsonl",
+    "archive_reference": "archive:experiments/admission/results/integrity_20261002_v1_2_1/all_files.jsonl",
+    "exists": true,
+    "kind": "file",
+    "bytes": 124402944
+  },
+  {
+    "original_path": "experiments/admission/results/integrity_20261002_v1_2_1/audioldm_extra_car.json",
+    "archive_reference": "archive:experiments/admission/results/integrity_20261002_v1_2_1/audioldm_extra_car.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 2881,
+    "sha256": "0152ed2bf113a4719412649a863fcee9fc5115a490512fe8a838845678df72ec"
+  },
+  {
+    "original_path": "experiments/admission/results/integrity_20261002_v1_2_1/car_truck_candidates.jsonl",
+    "archive_reference": "archive:experiments/admission/results/integrity_20261002_v1_2_1/car_truck_candidates.jsonl",
+    "exists": true,
+    "kind": "file",
+    "bytes": 59063697
+  },
+  {
+    "original_path": "experiments/admission/results/integrity_20261002_v1_2_1/exact_equality_groups.json",
+    "archive_reference": "archive:experiments/admission/results/integrity_20261002_v1_2_1/exact_equality_groups.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 15133,
+    "sha256": "3c8e5fba127dad9e0e6d668b9c970342fd636756d4e9d14d3e61abebf4430d0f"
+  },
+  {
+    "original_path": "experiments/admission/results/integrity_20261002_v1_2_1/exclusions.jsonl",
+    "archive_reference": "archive:experiments/admission/results/integrity_20261002_v1_2_1/exclusions.jsonl",
+    "exists": true,
+    "kind": "file",
+    "bytes": 65339247
+  },
+  {
+    "original_path": "experiments/admission/results/integrity_20261002_v1_2_1/idmt_pair_links.jsonl",
+    "archive_reference": "archive:experiments/admission/results/integrity_20261002_v1_2_1/idmt_pair_links.jsonl",
+    "exists": true,
+    "kind": "file",
+    "bytes": 2577227
+  },
+  {
+    "original_path": "experiments/admission/results/integrity_20261002_v1_2_1/label_conflict_groups.json",
+    "archive_reference": "archive:experiments/admission/results/integrity_20261002_v1_2_1/label_conflict_groups.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 2831,
+    "sha256": "f4ad13d6829d120e32eadc22aa0935a176978a7cd7dfce6c8f31c892268a9481"
+  },
+  {
+    "original_path": "experiments/admission/results/integrity_20261002_v1_2_1/summary.json",
+    "archive_reference": "archive:experiments/admission/results/integrity_20261002_v1_2_1/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 10873,
+    "sha256": "28e4c69f2bb673ee3252b21464f35ae66059f96371ea484f4e62e6cf4f1284c6"
+  },
+  {
+    "original_path": "experiments/admission/results/provenance_20261002_v1_3_1/additional_exclusions.jsonl",
+    "archive_reference": "archive:experiments/admission/results/provenance_20261002_v1_3_1/additional_exclusions.jsonl",
+    "exists": true,
+    "kind": "file",
+    "bytes": 2710,
+    "sha256": "e652be068020492e5cee198012b026641985b9524a5b2dcd8a1af42ea20deade"
+  },
+  {
+    "original_path": "experiments/admission/results/provenance_20261002_v1_3_1/admitted.jsonl",
+    "archive_reference": "archive:experiments/admission/results/provenance_20261002_v1_3_1/admitted.jsonl",
+    "exists": true,
+    "kind": "file",
+    "bytes": 75133614
+  },
+  {
+    "original_path": "experiments/admission/results/provenance_20261002_v1_3_1/duplicate_components.json",
+    "archive_reference": "archive:experiments/admission/results/provenance_20261002_v1_3_1/duplicate_components.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 14350,
+    "sha256": "6fdc070db0d783f25471d10968be273dd11ccd85fc1410336490cd6929309f50"
+  },
+  {
+    "original_path": "experiments/admission/results/provenance_20261002_v1_3_1/groups.json",
+    "archive_reference": "archive:experiments/admission/results/provenance_20261002_v1_3_1/groups.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 3424,
+    "sha256": "8270f7635e956c7c1c7a5800a2fd1de8bb68082501dffb511643b4b3f4a399d7"
+  },
+  {
+    "original_path": "experiments/admission/results/provenance_20261002_v1_3_1/rules_before_audit.json",
+    "archive_reference": "archive:experiments/admission/results/provenance_20261002_v1_3_1/rules_before_audit.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 840,
+    "sha256": "1888cf33a23e95938dd4f8721f09633d03776c25eb09ee2b3eb9ba0a323e105d"
+  },
+  {
+    "original_path": "experiments/admission/results/provenance_20261002_v1_3_1/summary.json",
+    "archive_reference": "archive:experiments/admission/results/provenance_20261002_v1_3_1/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 4069,
+    "sha256": "c800a262af5422f25f5010bd86a9c182e2b0ba01aa6ef4c82818c605f87a9879"
+  },
+  {
+    "original_path": "experiments/admission/results/provenance_20261002_v1_3_1/synthetic_metadata_inventory.json",
+    "archive_reference": "archive:experiments/admission/results/provenance_20261002_v1_3_1/synthetic_metadata_inventory.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 5678,
+    "sha256": "2b3e1bab6a613ea4ed16e09209001b4b51f211814961ae51850323b24020c174"
+  },
+  {
+    "original_path": "experiments/archive/pre_h1_v1.3",
+    "archive_reference": "archive:experiments/archive/pre_h1_v1.3",
+    "exists": true,
+    "kind": "directory"
+  },
+  {
+    "original_path": "experiments/h1/frozen/h1_common_budget_v1.3/EXPERIMENTAL_PROTOCOL.md",
+    "archive_reference": "archive:experiments/h1/frozen/h1_common_budget_v1.3/EXPERIMENTAL_PROTOCOL.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 14765,
+    "sha256": "591e7d928dc0e633f52773a9ae83d45afd96a7fde63f2afe1693f4cd9a238367"
+  },
+  {
+    "original_path": "experiments/h1/frozen/h1_common_budget_v1.3/config.json",
+    "archive_reference": "archive:experiments/h1/frozen/h1_common_budget_v1.3/config.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 2182,
+    "sha256": "81783da5dcc135e92c80862d92a4a8da3cf4ae8af36704cd53e51c7291159191"
+  },
+  {
+    "original_path": "experiments/h1/frozen/h1_common_budget_v1.3/lock.json",
+    "archive_reference": "archive:experiments/h1/frozen/h1_common_budget_v1.3/lock.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 3155464
+  },
+  {
+    "original_path": "experiments/h1/results/H1_20261002/metrics.json",
+    "archive_reference": "archive:experiments/h1/results/H1_20261002/metrics.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 14133475
+  },
+  {
+    "original_path": "experiments/h1/results/H1_20261002/summary.json",
+    "archive_reference": "archive:experiments/h1/results/H1_20261002/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 101999,
+    "sha256": "71f2901a56ed49297e81353885f611dcdbe4623e7ee808b86dc2cc4c475a5bd3"
+  },
+  {
+    "original_path": "experiments/h1/results/H1_20261002/verification.json",
+    "archive_reference": "archive:experiments/h1/results/H1_20261002/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 430,
+    "sha256": "94a8ea696c5224d131b1005e7ab522d71c084d03084c918ecb051c4ec9f640d7"
+  },
+  {
+    "original_path": "experiments/h1_diagnostics/frozen/source_diagnostics_20261003_v1/PROTOCOL.md",
+    "archive_reference": "archive:experiments/h1_diagnostics/frozen/source_diagnostics_20261003_v1/PROTOCOL.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 9744,
+    "sha256": "bebacb049dfeba3213a97b551d9a78184287b166b3f17ff4a5798e6f4655284e"
+  },
+  {
+    "original_path": "experiments/h1_diagnostics/frozen/source_diagnostics_20261003_v1/config.json",
+    "archive_reference": "archive:experiments/h1_diagnostics/frozen/source_diagnostics_20261003_v1/config.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 3344,
+    "sha256": "2470e08d3ec2b09ed33b352d2909a88a8c15c92c1d414850c32fd1115fb7b821"
+  },
+  {
+    "original_path": "experiments/h1_diagnostics/frozen/source_diagnostics_20261003_v1/lock.json",
+    "archive_reference": "archive:experiments/h1_diagnostics/frozen/source_diagnostics_20261003_v1/lock.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 12494327
+  },
+  {
+    "original_path": "experiments/h1_diagnostics/frozen/source_diagnostics_20261003_v1/source_manifest.jsonl",
+    "archive_reference": "archive:experiments/h1_diagnostics/frozen/source_diagnostics_20261003_v1/source_manifest.jsonl",
+    "exists": true,
+    "kind": "file",
+    "bytes": 15219292
+  },
+  {
+    "original_path": "experiments/h1_diagnostics/results/source_diagnostics_20261003_v1/evaluations.json",
+    "archive_reference": "archive:experiments/h1_diagnostics/results/source_diagnostics_20261003_v1/evaluations.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1747288,
+    "sha256": "fb5707138ca9abc253baf24cef54f418914bb4460be43dd2d7ad7f6fef39ad1a"
+  },
+  {
+    "original_path": "experiments/h1_diagnostics/results/source_diagnostics_20261003_v1/selections.json",
+    "archive_reference": "archive:experiments/h1_diagnostics/results/source_diagnostics_20261003_v1/selections.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 58005,
+    "sha256": "954adb15b2809cd14cb943aa6af8caa1b1c2848e6db15cfc55cae639af777d98"
+  },
+  {
+    "original_path": "experiments/h1_diagnostics/results/source_diagnostics_20261003_v1/summary.json",
+    "archive_reference": "archive:experiments/h1_diagnostics/results/source_diagnostics_20261003_v1/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 511253,
+    "sha256": "36e7e8af2ae4c071c6bb3d9827c7a8081c1fbd5c7210ede2cc4c7b476023c446"
+  },
+  {
+    "original_path": "experiments/h1_diagnostics/results/source_diagnostics_20261003_v1/verification.json",
+    "archive_reference": "archive:experiments/h1_diagnostics/results/source_diagnostics_20261003_v1/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 609,
+    "sha256": "3e9b756368ee9eb1808383566c4ea551b011d9970d2b2757e7a9800c69051d6b"
+  },
+  {
+    "original_path": "experiments/h1_transfer_sensitivity/frozen/regularization_transfer_20261004_v1/PROTOCOL.md",
+    "archive_reference": "archive:experiments/h1_transfer_sensitivity/frozen/regularization_transfer_20261004_v1/PROTOCOL.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 7528,
+    "sha256": "745db0c5de27978a5f1697963ba70cc9ecebd00baec464e2b7f847b1f708dd51"
+  },
+  {
+    "original_path": "experiments/h1_transfer_sensitivity/frozen/regularization_transfer_20261004_v1/config.json",
+    "archive_reference": "archive:experiments/h1_transfer_sensitivity/frozen/regularization_transfer_20261004_v1/config.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 3407,
+    "sha256": "ed07fb7f4609d6a9e3309553cf78fbffddf79aa59fee4ce5b8030fa838547235"
+  },
+  {
+    "original_path": "experiments/h1_transfer_sensitivity/frozen/regularization_transfer_20261004_v1/lock.json",
+    "archive_reference": "archive:experiments/h1_transfer_sensitivity/frozen/regularization_transfer_20261004_v1/lock.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 2866985
+  },
+  {
+    "original_path": "experiments/h1_transfer_sensitivity/frozen/regularization_transfer_20261004_v1/model_references.json",
+    "archive_reference": "archive:experiments/h1_transfer_sensitivity/frozen/regularization_transfer_20261004_v1/model_references.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 9991472
+  },
+  {
+    "original_path": "experiments/h1_transfer_sensitivity/results/regularization_transfer_20261004_v1/evaluations.json",
+    "archive_reference": "archive:experiments/h1_transfer_sensitivity/results/regularization_transfer_20261004_v1/evaluations.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 10679102
+  },
+  {
+    "original_path": "experiments/h1_transfer_sensitivity/results/regularization_transfer_20261004_v1/summary.json",
+    "archive_reference": "archive:experiments/h1_transfer_sensitivity/results/regularization_transfer_20261004_v1/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 72941,
+    "sha256": "6d19699097d84ea52522ec9b9ec6b320f1c203dc4b3783e572f393d0eff77ec3"
+  },
+  {
+    "original_path": "experiments/h1_transfer_sensitivity/results/regularization_transfer_20261004_v1/verification.json",
+    "archive_reference": "archive:experiments/h1_transfer_sensitivity/results/regularization_transfer_20261004_v1/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 750,
+    "sha256": "5bb5c4f53b6e237a0b34982ee4ccf374c5d8df8c0a867baa78a943939e7858a4"
+  },
+  {
+    "original_path": "experiments/h2/backend_revisions/indexing_20261004_v1",
+    "archive_reference": "archive:experiments/h2/backend_revisions/indexing_20261004_v1",
+    "exists": true,
+    "kind": "directory"
+  },
+  {
+    "original_path": "experiments/h2/cache/source_path_20261004_r1/summary.json",
+    "archive_reference": "archive:experiments/h2/cache/source_path_20261004_r1/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 386740,
+    "sha256": "2c7119ac64fa1b8e88cd1ab8d64285bb40addf8cabad2ecf46177d4dbbc28ba0"
+  },
+  {
+    "original_path": "experiments/h2/corpus/source_path_20261004_r1/observation_manifest.jsonl",
+    "archive_reference": "archive:experiments/h2/corpus/source_path_20261004_r1/observation_manifest.jsonl",
+    "exists": true,
+    "kind": "file",
+    "bytes": 13826956
+  },
+  {
+    "original_path": "experiments/h2/corpus/source_path_20261004_r1/verification.json",
+    "archive_reference": "archive:experiments/h2/corpus/source_path_20261004_r1/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 711,
+    "sha256": "78a3bb67263f49f3ceec9314a7f8315738c920a06d48a9d11dbcbefb0f2cdac5"
+  },
+  {
+    "original_path": "experiments/h2/evidence/p02/RELEASE_README.md",
+    "archive_reference": "archive:experiments/h2/evidence/p02/RELEASE_README.md",
+    "exists": true,
+    "kind": "file",
+    "bytes": 4260,
+    "sha256": "a0045abb6c906678895c003af4535bddaa3e2ce14ef84cb6f879a9bd9cef32a5"
+  },
+  {
+    "original_path": "experiments/h2/evidence/p02/_2_genSyntheticData.py",
+    "archive_reference": "archive:experiments/h2/evidence/p02/_2_genSyntheticData.py",
+    "exists": true,
+    "kind": "file",
+    "bytes": 20907,
+    "sha256": "01e177684b9204d36b0410ad6bd42a26aeda3f73fadd498aa812c6e7457b7c0e"
+  },
+  {
+    "original_path": "experiments/h2/evidence/pyroadacoustics/LICENSE",
+    "archive_reference": "archive:experiments/h2/evidence/pyroadacoustics/LICENSE",
+    "exists": true,
+    "kind": "file",
+    "bytes": 35823,
+    "sha256": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809"
+  },
+  {
+    "original_path": "experiments/h2/evidence/pyroadacoustics/pyproject.toml",
+    "archive_reference": "archive:experiments/h2/evidence/pyroadacoustics/pyproject.toml",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1399,
+    "sha256": "123279174411a3cca945796dd63cf1fe029296fcd931736bc66bfa6aa5068770"
+  },
+  {
+    "original_path": "experiments/h2/evidence/pyroadacoustics/pyroadacoustics/environment.py",
+    "archive_reference": "archive:experiments/h2/evidence/pyroadacoustics/pyroadacoustics/environment.py",
+    "exists": true,
+    "kind": "file",
+    "bytes": 27106,
+    "sha256": "b5b9cabc7165530f89ab2fad5a83e74ee08aba063938f39e600041f34bf7b6d8"
+  },
+  {
+    "original_path": "experiments/h2/evidence/pyroadacoustics/pyroadacoustics/simulatorManager.py",
+    "archive_reference": "archive:experiments/h2/evidence/pyroadacoustics/pyroadacoustics/simulatorManager.py",
+    "exists": true,
+    "kind": "file",
+    "bytes": 36401,
+    "sha256": "1ee9048f84d3bf5667301b6ab80e71e0990593f9548c42580d404bbe40d66ee0"
+  },
+  {
+    "original_path": "experiments/h2/evidence/pyroadacoustics/pyroadacoustics/soundSource.py",
+    "archive_reference": "archive:experiments/h2/evidence/pyroadacoustics/pyroadacoustics/soundSource.py",
+    "exists": true,
+    "kind": "file",
+    "bytes": 7453,
+    "sha256": "489b980ac12a70435fa61acca4caa1ba0f4c98ce767d69102851e54af2d501e1"
+  },
+  {
+    "original_path": "experiments/h2/execution/source_path_20261004_r1/lock.json",
+    "archive_reference": "archive:experiments/h2/execution/source_path_20261004_r1/lock.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 11803,
+    "sha256": "ef935e5f29940d9691ccac681c4661fb21b4fd366dd3a61cf5ede8c8ef461cd1"
+  },
+  {
+    "original_path": "experiments/h2/frozen/source_path_20261004_v1",
+    "archive_reference": "archive:experiments/h2/frozen/source_path_20261004_v1",
+    "exists": true,
+    "kind": "directory"
+  },
+  {
+    "original_path": "experiments/h2/frozen/source_path_20261004_v1/lock.json",
+    "archive_reference": "archive:experiments/h2/frozen/source_path_20261004_v1/lock.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 10004,
+    "sha256": "fc73981fe6350cb3384079634677887b4a1ca7b78558fb2806c02515ee5ef8d0"
+  },
+  {
+    "original_path": "experiments/h2/models/source_path_20261004_r1/model_lock.json",
+    "archive_reference": "archive:experiments/h2/models/source_path_20261004_r1/model_lock.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 9455,
+    "sha256": "81c735fe99a9ece37227f7e5b92682d9a2a7c3da8259e37d1c776adf7f62b96d"
+  },
+  {
+    "original_path": "experiments/h2/results/ground_indexing_20261004_v2/ground_indexing.patch",
+    "archive_reference": "archive:experiments/h2/results/ground_indexing_20261004_v2/ground_indexing.patch",
+    "exists": true,
+    "kind": "file",
+    "bytes": 2077,
+    "sha256": "9b9e661f8b4c11cae166a4d58e19de14ab801e3d3d2e329655ce66d447c98789"
+  },
+  {
+    "original_path": "experiments/h2/results/ground_indexing_20261004_v2/verification.json",
+    "archive_reference": "archive:experiments/h2/results/ground_indexing_20261004_v2/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 6687,
+    "sha256": "87fae451adc7777d2081dd071c0b462dc6840e05f3cbc4838fc8537c1e06eb0c"
+  },
+  {
+    "original_path": "experiments/h2/results/ground_indexing_20261004_v3/verification.json",
+    "archive_reference": "archive:experiments/h2/results/ground_indexing_20261004_v3/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 8248,
+    "sha256": "13a7b0eedd1c95d75dcf7356f054a499d84d31fee357b3feaedc03698b5b771b"
+  },
+  {
+    "original_path": "experiments/h2/results/physics_probe_20261004_v1/report.json",
+    "archive_reference": "archive:experiments/h2/results/physics_probe_20261004_v1/report.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 7450,
+    "sha256": "c533794c70fbd1ed5be4d4fe111182203d584f8fa491c583d2240a4638e2c5f3"
+  },
+  {
+    "original_path": "experiments/h2/results/physics_probe_20261004_v2/report.json",
+    "archive_reference": "archive:experiments/h2/results/physics_probe_20261004_v2/report.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 8378,
+    "sha256": "0c63032a3ee867dce5977e08eadf50934646886708835adf8e77d9c7e05cfd89"
+  },
+  {
+    "original_path": "experiments/h2/results/renderer_validation_20261004_v2/report.json",
+    "archive_reference": "archive:experiments/h2/results/renderer_validation_20261004_v2/report.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 52670,
+    "sha256": "e538b1fde9aa5de48dbdfc734c946fccc4cacad5f9b7852816cdd695de95f0f4"
+  },
+  {
+    "original_path": "experiments/h2/results/source_path_20261004_r1/bootstrap_indices.npz",
+    "archive_reference": "archive:experiments/h2/results/source_path_20261004_r1/bootstrap_indices.npz",
+    "exists": true,
+    "kind": "file",
+    "bytes": 49116,
+    "sha256": "6712c5c303712610fa11da9a4400f2a0b40510dafdcc705aeb02668737be0b98"
+  },
+  {
+    "original_path": "experiments/h2/results/source_path_20261004_r1/evaluations.json",
+    "archive_reference": "archive:experiments/h2/results/source_path_20261004_r1/evaluations.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 176783,
+    "sha256": "f1ece1b56089dc8090dc7aa96ac4887ec27f4dcdd7d5170e661a1d8a2d7d5f7e"
+  },
+  {
+    "original_path": "experiments/h2/results/source_path_20261004_r1/statistics.json",
+    "archive_reference": "archive:experiments/h2/results/source_path_20261004_r1/statistics.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 67700,
+    "sha256": "47a7122bac58a60094295661a84c93cd387cddb72acbbcb92956bcd6a680a6d4"
+  },
+  {
+    "original_path": "experiments/h2/results/source_path_20261004_r1/target_predictions.npz",
+    "archive_reference": "archive:experiments/h2/results/source_path_20261004_r1/target_predictions.npz",
+    "exists": true,
+    "kind": "file",
+    "bytes": 2635535
+  },
+  {
+    "original_path": "experiments/h2/results/source_path_20261004_r1/verification.json",
+    "archive_reference": "archive:experiments/h2/results/source_path_20261004_r1/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 829,
+    "sha256": "ef9d851af63ec10d31f8d8d31810ece6b0a0ab9633f8d0504d608f65dcc7a86d"
+  },
+  {
+    "original_path": "experiments/h2/results/source_path_20261004_v1/verification.json",
+    "archive_reference": "archive:experiments/h2/results/source_path_20261004_v1/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 835,
+    "sha256": "0dd02847b918feb65e3dbef0cbc42aba9b8a24ff620e56840af741e7c93047c0"
+  },
+  {
+    "original_path": "experiments/h2_air_latency/cache/attenuation_latency_20261004_v1/summary.json",
+    "archive_reference": "archive:experiments/h2_air_latency/cache/attenuation_latency_20261004_v1/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 2135,
+    "sha256": "61760a148aabea871dd7ed5c6c213bf65e22746a0afe480982c91f2b898815ae"
+  },
+  {
+    "original_path": "experiments/h2_air_latency/corpus/attenuation_latency_20261004_v1/observations.jsonl",
+    "archive_reference": "archive:experiments/h2_air_latency/corpus/attenuation_latency_20261004_v1/observations.jsonl",
+    "exists": true,
+    "kind": "file",
+    "bytes": 10543337
+  },
+  {
+    "original_path": "experiments/h2_air_latency/corpus/attenuation_latency_20261004_v1/summary.json",
+    "archive_reference": "archive:experiments/h2_air_latency/corpus/attenuation_latency_20261004_v1/summary.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 730,
+    "sha256": "0bb350f47c1e23c75e9fdb8eb7fa8e7fbcb80e11e160039b344cc132e42f0d52"
+  },
+  {
+    "original_path": "experiments/h2_air_latency/corpus/attenuation_latency_20261004_v1/verification.json",
+    "archive_reference": "archive:experiments/h2_air_latency/corpus/attenuation_latency_20261004_v1/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 426,
+    "sha256": "3152c585a8b94780ad60c56afaf963b188f6c50a035e3058926a2b285a6161d1"
+  },
+  {
+    "original_path": "experiments/h2_air_latency/execution/attenuation_latency_20261004_v1/lock.json",
+    "archive_reference": "archive:experiments/h2_air_latency/execution/attenuation_latency_20261004_v1/lock.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 2134,
+    "sha256": "091bd320a3946af3e558e2cdd2033faa4287de58cd3de0ed3dd420bd18093d23"
+  },
+  {
+    "original_path": "experiments/h2_air_latency/frozen/attenuation_latency_20261004_v1/lock.json",
+    "archive_reference": "archive:experiments/h2_air_latency/frozen/attenuation_latency_20261004_v1/lock.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1159,
+    "sha256": "8f3e5d64333627dfa9338592463c9ee208b7266c80c4bf598c568b904108ca4f"
+  },
+  {
+    "original_path": "experiments/h2_air_latency/models/attenuation_latency_20261004_v1/fits.json",
+    "archive_reference": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/fits.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1883311,
+    "sha256": "9b04718a6f5a61ebd20077c9afae1c242fe56634f6dee47691c738310a8a5d79"
+  },
+  {
+    "original_path": "experiments/h2_air_latency/models/attenuation_latency_20261004_v1/lock.json",
+    "archive_reference": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/lock.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 14244,
+    "sha256": "badcf1f10884e96bd639dd1226b2513a04953042bb9df0c7844d98226bd09c76"
+  },
+  {
+    "original_path": "experiments/h2_air_latency/results/attenuation_latency_20261004_v1/bootstrap_indices.npz",
+    "archive_reference": "archive:experiments/h2_air_latency/results/attenuation_latency_20261004_v1/bootstrap_indices.npz",
+    "exists": true,
+    "kind": "file",
+    "bytes": 49116,
+    "sha256": "6712c5c303712610fa11da9a4400f2a0b40510dafdcc705aeb02668737be0b98"
+  },
+  {
+    "original_path": "experiments/h2_air_latency/results/attenuation_latency_20261004_v1/bootstrap_samples.npz",
+    "archive_reference": "archive:experiments/h2_air_latency/results/attenuation_latency_20261004_v1/bootstrap_samples.npz",
+    "exists": true,
+    "kind": "file",
+    "bytes": 89300874
+  },
+  {
+    "original_path": "experiments/h2_air_latency/results/attenuation_latency_20261004_v1/cross_cell_validation.json",
+    "archive_reference": "archive:experiments/h2_air_latency/results/attenuation_latency_20261004_v1/cross_cell_validation.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 284065,
+    "sha256": "314de4f5ae0ab22f429ef4318a2e8736592192d30b65bfdc5d54341ea5eaaad4"
+  },
+  {
+    "original_path": "experiments/h2_air_latency/results/attenuation_latency_20261004_v1/evaluations.json",
+    "archive_reference": "archive:experiments/h2_air_latency/results/attenuation_latency_20261004_v1/evaluations.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 745872,
+    "sha256": "eec87a75ccfaaeef090465529158853b59f7132fb471b3b8772fae889797d533"
+  },
+  {
+    "original_path": "experiments/h2_air_latency/results/attenuation_latency_20261004_v1/report_facts.json",
+    "archive_reference": "archive:experiments/h2_air_latency/results/attenuation_latency_20261004_v1/report_facts.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 978037,
+    "sha256": "11cc3d9db2f51624c295ff161f9d46e8d53624b66981179d0a68f0aa74049af1"
+  },
+  {
+    "original_path": "experiments/h2_air_latency/results/attenuation_latency_20261004_v1/report_generation.json",
+    "archive_reference": "archive:experiments/h2_air_latency/results/attenuation_latency_20261004_v1/report_generation.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1447,
+    "sha256": "eec94a2adc02ad60fa81f123298411d1a11b1ad12dd643918816ad1fdf02cad0"
+  },
+  {
+    "original_path": "experiments/h2_air_latency/results/attenuation_latency_20261004_v1/statistics.json",
+    "archive_reference": "archive:experiments/h2_air_latency/results/attenuation_latency_20261004_v1/statistics.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 551503,
+    "sha256": "55953963ef6b1b2a057150d6340e2640a12d6d042e4b4aee11095b6204ad8844"
+  },
+  {
+    "original_path": "experiments/h2_air_latency/results/attenuation_latency_20261004_v1/target_predictions.npz",
+    "archive_reference": "archive:experiments/h2_air_latency/results/attenuation_latency_20261004_v1/target_predictions.npz",
+    "exists": true,
+    "kind": "file",
+    "bytes": 9675809
+  },
+  {
+    "original_path": "experiments/h2_air_latency/results/attenuation_latency_20261004_v1/verification.json",
+    "archive_reference": "archive:experiments/h2_air_latency/results/attenuation_latency_20261004_v1/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1299,
+    "sha256": "3afb879c142823737147ddd7fac8b1656efa34da8710262cd53cb36129258515"
+  },
+  {
+    "original_path": "experiments/h2_air_latency/results/pilot_v1/verification.json",
+    "archive_reference": "archive:experiments/h2_air_latency/results/pilot_v1/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 403,
+    "sha256": "57b6815d5bba2a7d02a2be6da30f0ae9c9b3f2d501c9cf7523704211ea4a96c1"
+  },
+  {
+    "original_path": "experiments/h2_air_latency/results/renderer_validation_v1/report.json",
+    "archive_reference": "archive:experiments/h2_air_latency/results/renderer_validation_v1/report.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 21256,
+    "sha256": "7786ea1ad9d00cf42b3024b2359975c19ca03e5df69f74ebee7db7f55a98c94b"
+  },
+  {
+    "original_path": "experiments/h2_mechanisms/corpus/ground_air_collapse_20261004_v1/verification.json",
+    "archive_reference": "archive:experiments/h2_mechanisms/corpus/ground_air_collapse_20261004_v1/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 389,
+    "sha256": "94466f61352cb031f7a01f80d02c0db8e5adbaa729a680b661f06cbec520b37d"
+  },
+  {
+    "original_path": "experiments/h2_mechanisms/execution/ground_air_collapse_20261004_v1/lock.json",
+    "archive_reference": "archive:experiments/h2_mechanisms/execution/ground_air_collapse_20261004_v1/lock.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1926,
+    "sha256": "3718bba7d10150fbd51d2a34669fcba9ab1419c9e03fe78db1674469c5957ddb"
+  },
+  {
+    "original_path": "experiments/h2_mechanisms/frozen/ground_air_collapse_20261004_v1/lock.json",
+    "archive_reference": "archive:experiments/h2_mechanisms/frozen/ground_air_collapse_20261004_v1/lock.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1034,
+    "sha256": "cd82088fd8e4cb6c96e96d8ae3f9c95775055277dae8c211a1b53ab0f327db14"
+  },
+  {
+    "original_path": "experiments/h2_mechanisms/models/ground_air_collapse_20261004_v1/lock.json",
+    "archive_reference": "archive:experiments/h2_mechanisms/models/ground_air_collapse_20261004_v1/lock.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 14328,
+    "sha256": "fed32ce2323effae23ca68f742f569d7d1a184275bff02c44803d9e3f8cb906c"
+  },
+  {
+    "original_path": "experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/air_filter_phase_inspection.json",
+    "archive_reference": "archive:experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/air_filter_phase_inspection.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 8011,
+    "sha256": "8d85824dfbdc7e20925e71fcb25fb02b2a7b9c97d0a02cf34d7665fc6e0b0458"
+  },
+  {
+    "original_path": "experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/collapse_diagnostics.json",
+    "archive_reference": "archive:experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/collapse_diagnostics.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 9073998
+  },
+  {
+    "original_path": "experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/cross_path_validation.json",
+    "archive_reference": "archive:experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/cross_path_validation.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 287641,
+    "sha256": "bb8188df73da1742645fdf7bfbff694912450ccbf1318d777a277ab956215696"
+  },
+  {
+    "original_path": "experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/diagnostic_summaries.json",
+    "archive_reference": "archive:experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/diagnostic_summaries.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 745467,
+    "sha256": "25ed9dcddd840382ecfd3f12289362cf6644e67b1f2dd814081b5fc0409471dc"
+  },
+  {
+    "original_path": "experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/evaluations.json",
+    "archive_reference": "archive:experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/evaluations.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 753107,
+    "sha256": "8ddd70d089c68d2d435ad4498baff7117228d6a41497296af54b0bb34738ed6c"
+  },
+  {
+    "original_path": "experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/statistics.json",
+    "archive_reference": "archive:experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/statistics.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 500899,
+    "sha256": "d9d3cd81e5b8d09d5160010ae465f7e00f35b2669781507e89294f03b495342b"
+  },
+  {
+    "original_path": "experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/validation_gain.json",
+    "archive_reference": "archive:experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/validation_gain.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 401890,
+    "sha256": "1ae57ff5e654f8fd814d1a4ffc6dfc1993e51eee13e4473e8f5db19a6d909f71"
+  },
+  {
+    "original_path": "experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/verification.json",
+    "archive_reference": "archive:experiments/h2_mechanisms/results/ground_air_collapse_20261004_v1/verification.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 1131,
+    "sha256": "351d66c20b35ab91385f609a6744c41312d1ed6d39b2406e954f0e9a9a472e1e"
+  },
+  {
+    "original_path": "experiments/reproduction/results/P01_AST_compatibility/replay.json",
+    "archive_reference": "archive:experiments/reproduction/results/P01_AST_compatibility/replay.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 3429,
+    "sha256": "d9c9ab0157553ba6d91a746911462caddaf7195331f169fe63439e208b1f6875"
+  },
+  {
+    "original_path": "experiments/reproduction/results/P01_CNN/replay.json",
+    "archive_reference": "archive:experiments/reproduction/results/P01_CNN/replay.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 4756,
+    "sha256": "dc05cfa70019f05924fa78b387bbc6d1dc5d0d747f4bfd3ed56830f8bd0864f5"
+  },
+  {
+    "original_path": "experiments/reproduction/results/P01_balanced_row_candidates.json",
+    "archive_reference": "archive:experiments/reproduction/results/P01_balanced_row_candidates.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 165283,
+    "sha256": "d6118bed6ddc4a983651a4821d9c5414707f5ee65987c98a00340e83c319283e"
+  },
+  {
+    "original_path": "experiments/reproduction/results/P01_row_validation.json",
+    "archive_reference": "archive:experiments/reproduction/results/P01_row_validation.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 374918,
+    "sha256": "e3f4fc9da85b46b9ad4a63ef66dc93d859733e2944143687afc7646b75fc5f25"
+  },
+  {
+    "original_path": "experiments/reproduction/results/P02/replay.json",
+    "archive_reference": "archive:experiments/reproduction/results/P02/replay.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 214628,
+    "sha256": "ad5f5b4a40163cc4e1c362e1e1f6a41a36b74637955f3aaefc440e8a507bb8c7"
+  },
+  {
+    "original_path": "experiments/reproduction/results/R0_20260929/P01_BEATs_rng/arcface_boundary_diagnostic.json",
+    "archive_reference": "archive:experiments/reproduction/results/R0_20260929/P01_BEATs_rng/arcface_boundary_diagnostic.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 2469,
+    "sha256": "d73d85ac2be804eb042c345eea04c97fc776c5e196c79c0348da5411d8b8818d"
+  },
+  {
+    "original_path": "experiments/reproduction/results/R0_20260929/P01_BEATs_rng/input_validation.json",
+    "archive_reference": "archive:experiments/reproduction/results/R0_20260929/P01_BEATs_rng/input_validation.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 403133,
+    "sha256": "5e1eea098b547489298e3fee18907a40d1b3c725d56eefe0bfd03776c3dffb0b"
+  },
+  {
+    "original_path": "experiments/reproduction/results/R0_20260929/P01_BEATs_rng/replay.json",
+    "archive_reference": "archive:experiments/reproduction/results/R0_20260929/P01_BEATs_rng/replay.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 15392,
+    "sha256": "7a4e56f83bea8aa2c9052bcdd042f5c4045982326f1148485962c794b36bcef6"
+  },
+  {
+    "original_path": "experiments/reproduction/results/R0_20260929/P01_BEATs_rng/sampling_manifest.json",
+    "archive_reference": "archive:experiments/reproduction/results/R0_20260929/P01_BEATs_rng/sampling_manifest.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 190693,
+    "sha256": "a29ee4ef8bbf164d6a731dc0f3eda9fd5e594184f013e82644fb309319e2cd02"
+  },
+  {
+    "original_path": "experiments/reproduction/results/R0_20260929/R0_result_ledger.json",
+    "archive_reference": "archive:experiments/reproduction/results/R0_20260929/R0_result_ledger.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 33527,
+    "sha256": "34ea0691c0cc901d3e323042501e590d4bfbee7192e3ff58faa49a7d5c341747"
+  },
+  {
+    "original_path": "experiments/reproduction/results/reproduction_audit.json",
+    "archive_reference": "archive:experiments/reproduction/results/reproduction_audit.json",
+    "exists": true,
+    "kind": "file",
+    "bytes": 12204,
+    "sha256": "77bb97a1494aaf8934c0d974e22933863ddc82e572e6d50e58dab85acaf9eb92"
+  }
+]

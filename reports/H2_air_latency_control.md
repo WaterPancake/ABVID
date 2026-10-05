@@ -178,8 +178,8 @@ geometry, the latency intervention includes its placement relative to varying
 geometry and ground filtering. It is not solely a static phase experiment.
 All interventions retain the same ground filter, geometric delays and spreading.
 
-The [protocol](../experiments/h2_air_latency/PROTOCOL.md) and
-[configuration](../experiments/h2_air_latency/config.json) were frozen before
+The [protocol](../experiments/h2_simulation/air_latency/PROTOCOL.md) and
+[configuration](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/experiments/h2_air_latency/config.json) were frozen before
 generation of either new arm. Known endpoint results motivated the control; this
 is an adaptive development investigation, not blind preregistration or independent
 confirmation. No historical renderer or result was overwritten.
@@ -500,14 +500,14 @@ the uncommitted execution code. Design lock SHA-256:
 Execution lock SHA-256:
 `091bd320a3946af3e558e2cdd2033faa4287de58cd3de0ed3dd420bd18093d23`.
 
-- [Frozen populations, design and parent inventory](../experiments/h2_air_latency/frozen/attenuation_latency_20261004_v1/lock.json) and [execution lock](../experiments/h2_air_latency/execution/attenuation_latency_20261004_v1/lock.json).
-- [Renderer admission checks](../experiments/h2_air_latency/results/renderer_validation_v1/report.json) and [paired pilot replay](../experiments/h2_air_latency/results/pilot_v1/verification.json).
-- [New observation manifest and full-render hashes](../experiments/h2_air_latency/corpus/attenuation_latency_20261004_v1/observations.jsonl), [generation summary](../experiments/h2_air_latency/corpus/attenuation_latency_20261004_v1/summary.json) and [complete replay](../experiments/h2_air_latency/corpus/attenuation_latency_20261004_v1/verification.json).
-- [Feature provenance](../experiments/h2_air_latency/cache/attenuation_latency_20261004_v1/summary.json), [all head records](../experiments/h2_air_latency/models/attenuation_latency_20261004_v1/fits.json) and [pre-evaluation model lock](../experiments/h2_air_latency/models/attenuation_latency_20261004_v1/lock.json).
-- [All target/class/group metrics](../experiments/h2_air_latency/results/attenuation_latency_20261004_v1/evaluations.json), [all cross-cell validation metrics](../experiments/h2_air_latency/results/attenuation_latency_20261004_v1/cross_cell_validation.json) and [every target probability](../experiments/h2_air_latency/results/attenuation_latency_20261004_v1/target_predictions.npz).
-- [Every interval and decision](../experiments/h2_air_latency/results/attenuation_latency_20261004_v1/statistics.json), [paired bootstrap indices](../experiments/h2_air_latency/results/attenuation_latency_20261004_v1/bootstrap_indices.npz) and [bootstrap samples](../experiments/h2_air_latency/results/attenuation_latency_20261004_v1/bootstrap_samples.npz).
-- [Independent audit](../experiments/h2_air_latency/results/attenuation_latency_20261004_v1/verification.json), [report facts](../experiments/h2_air_latency/results/attenuation_latency_20261004_v1/report_facts.json) and [figure/table generation hashes](../experiments/h2_air_latency/results/attenuation_latency_20261004_v1/report_generation.json).
-- [Commands and implementation](../experiments/h2_air_latency/README.md), [preserved ground/air and collapse study](H2_ground_air_collapse.md) and [preserved original source/path study](H2_source_path_results.md).
+- [Frozen populations, design and parent inventory](ARTIFACT_INDEX.md#artifact-22a6f57d3f03) and [execution lock](ARTIFACT_INDEX.md#artifact-82baf2de7ee6).
+- [Renderer admission checks](ARTIFACT_INDEX.md#artifact-1f0dd6af5a27) and [paired pilot replay](ARTIFACT_INDEX.md#artifact-e11e522d9782).
+- [New observation manifest and full-render hashes](ARTIFACT_INDEX.md#artifact-31de7aca0167), [generation summary](ARTIFACT_INDEX.md#artifact-dfd9da25ec1e) and [complete replay](ARTIFACT_INDEX.md#artifact-1734b093e627).
+- [Feature provenance](ARTIFACT_INDEX.md#artifact-e7ba3e492129), [all head records](ARTIFACT_INDEX.md#artifact-8d0f9930071d) and [pre-evaluation model lock](ARTIFACT_INDEX.md#artifact-a4cf0c1e0dee).
+- [All target/class/group metrics](ARTIFACT_INDEX.md#artifact-ff878594932a), [all cross-cell validation metrics](ARTIFACT_INDEX.md#artifact-1a34875e328d) and [every target probability](ARTIFACT_INDEX.md#artifact-02825c1c778e).
+- [Every interval and decision](ARTIFACT_INDEX.md#artifact-e531e97502b0), [paired bootstrap indices](ARTIFACT_INDEX.md#artifact-7a24f14d0149) and [bootstrap samples](ARTIFACT_INDEX.md#artifact-24f9d2acc6af).
+- [Independent audit](ARTIFACT_INDEX.md#artifact-f59375af8dfa), [report facts](ARTIFACT_INDEX.md#artifact-267fab3a388c) and [figure/table generation hashes](ARTIFACT_INDEX.md#artifact-b4e76e19085c).
+- [Commands and implementation](../experiments/h2_simulation/air_latency/README.md), [preserved ground/air and collapse study](H2_ground_air_collapse.md) and [preserved original source/path study](H2_source_path_results.md).
 
 The three scientific figures are retained in both PNG and SVG. The displayed
 PNGs were visually inspected; the SVGs come from the same plotted data and figure

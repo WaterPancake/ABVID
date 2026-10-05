@@ -1,0 +1,682 @@
+[
+  {
+    "original": "CAST/src/cast/artifacts.py",
+    "original_sha256": "13daad277595e4cad76443a2fa3f8e78d14350d4b3c02964f8328fdb04551fc3",
+    "current": "src/abvid/cast/artifacts.py",
+    "symbols": [
+      "Objective",
+      "Path",
+      "Renderer",
+      "descriptors",
+      "diagnose",
+      "digest",
+      "normalize",
+      "np",
+      "plot",
+      "save",
+      "save_fit",
+      "sf",
+      "sha",
+      "shape",
+      "stft",
+      "tensors",
+      "torch",
+      "validate_controls",
+      "welch"
+    ]
+  },
+  {
+    "original": "CAST/src/cast/audio.py",
+    "original_sha256": "d5cbff61133be6a85e5f040d2b6663221bdf3b7838dcdaf324c58bace41c40b6",
+    "current": "src/abvid/cast/audio.py",
+    "symbols": [
+      "gcd",
+      "normalize",
+      "np",
+      "observation",
+      "resample_poly",
+      "shape",
+      "torch"
+    ]
+  },
+  {
+    "original": "CAST/src/cast/config.py",
+    "original_sha256": "1deff227c55706771906e1e69ae5b5892d93c54bd3a405fcee186e82b524ed75",
+    "current": "src/abvid/cast/config.py",
+    "symbols": [
+      "Path",
+      "ROOT",
+      "SPEC",
+      "canonical",
+      "configuration",
+      "deepcopy",
+      "digest",
+      "hashlib",
+      "json",
+      "save",
+      "sha",
+      "validate"
+    ]
+  },
+  {
+    "original": "CAST/src/cast/fit.py",
+    "original_sha256": "c7e4afe32a9041b175b86a46442fad205027b5390e6b7a1a68f701390882fcdd",
+    "current": "src/abvid/cast/fit.py",
+    "symbols": [
+      "Objective",
+      "Parameters",
+      "Renderer",
+      "fit",
+      "initialize",
+      "np",
+      "seed_for",
+      "serialize",
+      "shape",
+      "time",
+      "torch"
+    ]
+  },
+  {
+    "original": "CAST/src/cast/renderer.py",
+    "original_sha256": "e592a53d3bd10a2ed673b453955bf30fc07f92a7825a9ef8d5defab891cc536a",
+    "current": "src/abvid/cast/renderer.py",
+    "symbols": [
+      "F",
+      "Parameters",
+      "Renderer",
+      "canonical",
+      "firwin",
+      "hashlib",
+      "interpolate",
+      "math",
+      "np",
+      "oscillator",
+      "seed_for",
+      "serialize",
+      "shape",
+      "tensors",
+      "torch",
+      "validate_controls"
+    ]
+  },
+  {
+    "original": "CAST/src/cast/synthetic.py",
+    "original_sha256": "4e660a2142bad5e6d4fc10e85540163a0971321c96e7741549d4e98b40e14eb3",
+    "current": "src/abvid/cast/synthetic.py",
+    "symbols": [
+      "fixtures"
+    ]
+  },
+  {
+    "original": "CAST/generalization/src/cast_generalization/method.py",
+    "original_sha256": "e7ac96c3bdd3366769e20dd32f20b53c239b1154d904527a6eba012b556183e2",
+    "current": "src/abvid/cast/coverage.py",
+    "symbols": [
+      "KEYS",
+      "Renderer",
+      "SIZES",
+      "canonical",
+      "compare",
+      "copy",
+      "describe",
+      "descriptors",
+      "digest",
+      "draw_seed",
+      "hashlib",
+      "np",
+      "pack",
+      "render",
+      "sample",
+      "scales",
+      "seed_for",
+      "shape",
+      "stack",
+      "tensors",
+      "torch",
+      "unpack",
+      "validate_controls",
+      "wasserstein_distance"
+    ]
+  },
+  {
+    "original": "CAST/generalization/src/cast_generalization/pipeline.py",
+    "original_sha256": "271d146f1b1e17ddf4e0d5b9bdf9ff26bcc889b25523cc25be3d53978878c0e4",
+    "current": "src/abvid/provenance/io.py",
+    "symbols": [
+      "Path",
+      "json",
+      "read",
+      "readl"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/alternative_prior.py",
+    "original_sha256": "d513c08840b2d16b25f083afbc01f50a9590ec113beb8db1e7280520c9e3d411",
+    "current": "src/abvid/cast/population/alternative_prior.py",
+    "symbols": [
+      "MODES",
+      "alternative_seed",
+      "canonical",
+      "deepcopy",
+      "eligible_starts",
+      "hashlib",
+      "np",
+      "pack",
+      "sample",
+      "unpack",
+      "validate_controls",
+      "winner_sample"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/balanced_prior.py",
+    "original_sha256": "ff9cfc6610cc6a025995ae431373ab2cc0fd4584f1de6b8f899fa909a6a12754",
+    "current": "src/abvid/cast/population/balanced_prior.py",
+    "symbols": [
+      "BalancedPrior",
+      "GroupPrior",
+      "KEYS",
+      "MODES",
+      "SIZES",
+      "balanced_indices",
+      "canonical",
+      "deepcopy",
+      "digest",
+      "hashlib",
+      "np",
+      "pack",
+      "unpack",
+      "validate_controls"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/block_prior.py",
+    "original_sha256": "c38da42f51f34ed39b36f45661c50bfaa254252173cff18c75d2e06a9edabdf2",
+    "current": "src/abvid/cast/population/block_prior.py",
+    "symbols": [
+      "ENVELOPE",
+      "GRID",
+      "SPECTRAL",
+      "deepcopy",
+      "draw",
+      "inverse",
+      "method_id",
+      "np",
+      "product",
+      "sample",
+      "transform_bank",
+      "transformed",
+      "validate_controls"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/calibration_prior.py",
+    "original_sha256": "21357d81aa6ce323a3642968c131800d9e446b39e3a292bb9a7d0b08815010cf",
+    "current": "src/abvid/cast/population/calibration_prior.py",
+    "symbols": [
+      "GRID",
+      "deepcopy",
+      "method_id",
+      "np",
+      "product",
+      "temper",
+      "transform_bank",
+      "validate_controls"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/capacity_engine.py",
+    "original_sha256": "187011ce58d81fe0d1f80dd90ce321355ed4789dcc03b909c4e0fed6f98e507b",
+    "current": "src/abvid/cast/population/capacity_engine.py",
+    "symbols": [
+      "CapacityRenderer",
+      "SmoothRenderer",
+      "deepcopy",
+      "lift_controls",
+      "linear_basis",
+      "model_config",
+      "np",
+      "smooth_config",
+      "torch",
+      "validate_controls"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/context_prior.py",
+    "original_sha256": "0616553b4be7a16972c6f501ccf7cf5f44a530fd5c2f5d23253ae1a1c33e51f2",
+    "current": "src/abvid/cast/population/context_prior.py",
+    "symbols": [
+      "ContextPrior",
+      "Counter",
+      "GroupPrior",
+      "KEYS",
+      "MODES",
+      "RESTORED",
+      "deepcopy",
+      "digest",
+      "np",
+      "pack",
+      "unpack",
+      "validate_controls"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/data.py",
+    "original_sha256": "b68bdb13eb58e536c7a0c7af90238f7f506d5caf912d2b87b6f40163ce014d65",
+    "current": "tests/cast/archive_inputs.py",
+    "symbols": [
+      "PILOT",
+      "PREVIOUS",
+      "ROOT",
+      "read",
+      "readl"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/engine.py",
+    "original_sha256": "78af0f34dd24e784601ac7ada639c9e88c69ec2457642cdcbc16e4adafa0a070",
+    "current": "src/abvid/cast/population/engine.py",
+    "symbols": [
+      "Renderer",
+      "SmoothRenderer",
+      "configuration",
+      "interpolate",
+      "linear_basis",
+      "model_config",
+      "np",
+      "oscillator",
+      "seed_for",
+      "shape",
+      "torch"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/envelope_prior.py",
+    "original_sha256": "d86586ffcb3ca9ad609355be2adc456d9146dbe8afcb9e6e39ca9bf536c811d9",
+    "current": "src/abvid/cast/population/envelope_prior.py",
+    "symbols": [
+      "MODES",
+      "calibrate",
+      "deepcopy",
+      "derive_bank",
+      "digest",
+      "draw",
+      "frame_basis",
+      "minimize",
+      "mixture_draw",
+      "np",
+      "validate_controls"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/evaluate.py",
+    "original_sha256": "c8392b087645c89350f89db0e06dd864ec4fcb092d0855a2613ac63c47e19f1a",
+    "current": "src/abvid/cast/population/evaluate.py",
+    "symbols": [
+      "SmoothRenderer",
+      "aggregate",
+      "deepcopy",
+      "inverse",
+      "np",
+      "render_v0",
+      "rendered",
+      "seed_for",
+      "shape",
+      "temper",
+      "tensors",
+      "torch",
+      "transformed",
+      "validate_controls"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/group_prior.py",
+    "original_sha256": "d3d6d9a1d196b5550212b33fdc57cd5784cbbc23c757b9ecc1da39dfa8c69825",
+    "current": "src/abvid/cast/population/group_prior.py",
+    "symbols": [
+      "Counter",
+      "GroupPrior",
+      "MODES",
+      "canonical",
+      "deepcopy",
+      "digest",
+      "hashlib",
+      "inverse",
+      "np",
+      "pack",
+      "previous_draw",
+      "transformed",
+      "unpack",
+      "validate_ancestry",
+      "validate_controls"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/mixture_prior.py",
+    "original_sha256": "4989ed845502b8945515f22feec788056674b57e5d554951cad384400e76a44b",
+    "current": "src/abvid/cast/population/mixture_prior.py",
+    "symbols": [
+      "GRID",
+      "deepcopy",
+      "method_id",
+      "np",
+      "product",
+      "temper",
+      "transform_bank",
+      "validate_controls"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/parent_mixture_bank.py",
+    "original_sha256": "e1596fd19994b52e94597a87f738e3cc1c7fd67e3523644300c1979d4b28e5ad",
+    "current": "src/abvid/cast/population/parent_mixture_bank.py",
+    "symbols": [
+      "MODES",
+      "calibrate",
+      "component_power",
+      "deepcopy",
+      "derive_bank",
+      "derived_row",
+      "digest",
+      "draw",
+      "np",
+      "sample",
+      "sha",
+      "validate_controls",
+      "welch"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/parent_mixture_prior.py",
+    "original_sha256": "df883f935276c6a483a54773c10e3ed2cc2bcbd4a10ee74a20b70b1bff4a21a4",
+    "current": "src/abvid/cast/population/parent_mixture_prior.py",
+    "symbols": [
+      "calibrate",
+      "np"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/resolution_bank.py",
+    "original_sha256": "637d5bc31212aff062059168d256e1c2e0be191b938775ee44c8d28370065a27",
+    "current": "src/abvid/cast/population/resolution_bank.py",
+    "symbols": [
+      "MODES",
+      "deepcopy",
+      "digest",
+      "draw",
+      "fit",
+      "fit_record",
+      "lift_controls",
+      "previous_draw",
+      "sample",
+      "validate_ancestry"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/resolution_calibration.py",
+    "original_sha256": "42407e3c5cf38344829b44693177eefe6f53ac88f6b224ba9740262e794d3cf8",
+    "current": "src/abvid/cast/population/resolution_calibration.py",
+    "symbols": [
+      "ExpectedSpectrum",
+      "SETTINGS",
+      "SmoothRenderer",
+      "deepcopy",
+      "digest",
+      "fit",
+      "interpolate",
+      "np",
+      "shape",
+      "tensors",
+      "torch",
+      "validate_controls",
+      "welch_power"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/resolution_evaluation.py",
+    "original_sha256": "ab1db9cff59596115aa2e5dee607ca2466ccdda7c15f884a64ac83c4102da66b",
+    "current": "src/abvid/cast/population/resolution_evaluation.py",
+    "symbols": [
+      "MODES",
+      "ResolutionRenderer",
+      "render",
+      "seed_for",
+      "shape",
+      "smooth_rendered",
+      "tensors",
+      "torch"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/resolution_model.py",
+    "original_sha256": "809eef46aa2c5fe56481ba73b478ac928efac83a227c483c5353f034519b89e8",
+    "current": "src/abvid/cast/population/resolution_model.py",
+    "symbols": [
+      "CapacityRenderer",
+      "ResolutionRenderer",
+      "capacity_config",
+      "deepcopy",
+      "lift_controls",
+      "model_config",
+      "np",
+      "validate_controls"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/resolution_sampling.py",
+    "original_sha256": "94ca3df2ab2799ce6b096e1d0e5ff144918cac4d8eb06bb89c528c800ef03771",
+    "current": "src/abvid/cast/population/resolution_sampling.py",
+    "symbols": [
+      "KEYS",
+      "SIZES",
+      "canonical",
+      "copy",
+      "draw_seed",
+      "hashlib",
+      "np",
+      "pack",
+      "sample",
+      "unpack",
+      "validate_controls"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/spectrum_bank.py",
+    "original_sha256": "2cbc0d27b2737f4153d3fbc6298f05a9aaa156abf545c5dda28709b46d203f3e",
+    "current": "src/abvid/cast/population/spectrum_bank.py",
+    "symbols": [
+      "MODES",
+      "deepcopy",
+      "digest",
+      "draw",
+      "fit",
+      "fit_record",
+      "previous_draw",
+      "sample",
+      "validate_ancestry"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/spectrum_calibration.py",
+    "original_sha256": "59e68d7308795b4973a93be398a51a373891fb50b379c70afb5e71e022dd752c",
+    "current": "src/abvid/cast/population/spectrum_calibration.py",
+    "symbols": [
+      "ExpectedSpectrum",
+      "SETTINGS",
+      "SmoothRenderer",
+      "deepcopy",
+      "digest",
+      "fit",
+      "interpolate",
+      "np",
+      "shape",
+      "tensors",
+      "torch",
+      "validate_controls",
+      "welch_power"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/temporal_prior.py",
+    "original_sha256": "892f55a54319e8892fdca201a88d55bebf84499737ce169f0e11d3d245601779",
+    "current": "src/abvid/cast/population/temporal_prior.py",
+    "symbols": [
+      "COUNT",
+      "MODES",
+      "SMOOTHNESS",
+      "calibrate",
+      "deepcopy",
+      "derive_bank",
+      "digest",
+      "draw",
+      "frame_basis",
+      "lift",
+      "minimize",
+      "model_config",
+      "np",
+      "old_config",
+      "previous_draw",
+      "validate_controls"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/temporal_sampling.py",
+    "original_sha256": "10e039e1690bdee43e02bbf52c52a9309ee5c09aa1e44f4ec096087ce37fc7fe",
+    "current": "src/abvid/cast/population/temporal_sampling.py",
+    "symbols": [
+      "KEYS",
+      "SIZES",
+      "canonical",
+      "copy",
+      "draw_seed",
+      "hashlib",
+      "np",
+      "pack",
+      "sample",
+      "unpack",
+      "validate_controls"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/width_prior.py",
+    "original_sha256": "08ef0a7ba943336b5ccc72c2c4451af92c1fa5fee0917ba50dd942be0f2cd02a",
+    "current": "src/abvid/cast/population/width_prior.py",
+    "symbols": [
+      "ContextPrior",
+      "Counter",
+      "TEMPERATURES",
+      "VARIANT",
+      "WidthPrior",
+      "deepcopy",
+      "digest",
+      "inverse",
+      "np",
+      "pack",
+      "transformed",
+      "unpack",
+      "validate_controls"
+    ]
+  },
+  {
+    "original": "CAST/improvement/src/cast_improvement/width_selection.py",
+    "original_sha256": "c5d55564386835886c4bcf8f4151d8c5dd2382fcfe7ac6e1125ce44d280f7259",
+    "current": "src/abvid/cast/population/width_selection.py",
+    "symbols": [
+      "Counter",
+      "TEMPERATURES",
+      "VARIANT",
+      "aggregate",
+      "np",
+      "original_aggregate",
+      "product"
+    ]
+  },
+  {
+    "original": "experiments/h1/extract.py",
+    "original_sha256": "e9d85a8fde5db04bf90acca444b39e3e75e2394077ef6a8bbd95d96133533f76",
+    "current": "src/abvid/data/audio.py",
+    "symbols": [
+      "observation"
+    ]
+  },
+  {
+    "original": "experiments/h1/extract.py",
+    "original_sha256": "e9d85a8fde5db04bf90acca444b39e3e75e2394077ef6a8bbd95d96133533f76",
+    "current": "src/abvid/representations/mfcc.py",
+    "symbols": [
+      "mfcc_features"
+    ]
+  },
+  {
+    "original": "experiments/h1/freeze.py",
+    "original_sha256": "1ca7849f00697c7cba6bfa106c5476052f27d5c5a47d588fcabf92d2ec7cc08f",
+    "current": "src/abvid/data/splits.py",
+    "symbols": [
+      "stream_seed",
+      "select",
+      "assert_separation"
+    ]
+  },
+  {
+    "original": "experiments/h1/evaluate.py",
+    "original_sha256": "9135a9654d5ea88e1074cf55590297b148ec875f3b260ac055f19b4c01bbd6dc",
+    "current": "src/abvid/learning/linear.py",
+    "symbols": [
+      "fixed_fit"
+    ]
+  },
+  {
+    "original": "experiments/h1/evaluate.py",
+    "original_sha256": "9135a9654d5ea88e1074cf55590297b148ec875f3b260ac055f19b4c01bbd6dc",
+    "current": "src/abvid/evaluation/baselines.py",
+    "symbols": [
+      "cm_for",
+      "f1",
+      "cm_metrics",
+      "metrics",
+      "bootstrap"
+    ]
+  },
+  {
+    "original": "experiments/h2/source_adapter.py",
+    "original_sha256": "e33e5da65d7e350bc3ea5d55817a7bc63cacc7f7350c86b0d1589f48237bbabc",
+    "current": "src/abvid/simulation/sources.py",
+    "symbols": "all numerical definitions"
+  },
+  {
+    "original": "experiments/h2/deterministic_filters.py",
+    "original_sha256": "0680eecb307bb2644fa3b56f492c040ce20a5c6070a4da68bc9fdc5e70069737",
+    "current": "src/abvid/simulation/filters.py",
+    "symbols": "all numerical definitions"
+  },
+  {
+    "original": "experiments/h2/renderer.py",
+    "original_sha256": "d8586bd732ec30a655c0abc84c0fec47a74027832da545946193dda89201936a",
+    "current": "src/abvid/simulation/propagation.py",
+    "symbols": "all numerical definitions"
+  },
+  {
+    "original": "experiments/h2/metrics.py",
+    "original_sha256": "9fa3ec96fa192ba138a2a45eb873cf6e6764dadfeda098ef8556c89f69a4f0e9",
+    "current": "src/abvid/evaluation/factorial.py",
+    "symbols": "all numerical definitions"
+  },
+  {
+    "original": "src/vehicle_audio/beats_adapter.py",
+    "original_sha256": "c04ebab8726c89c707205bdf3e126c65e1d43ec9f93b069aba6ae184d3b5e016",
+    "current": "src/abvid/representations/beats.py",
+    "symbols": "all numerical definitions"
+  },
+  {
+    "original": "experiments/admission/audit_integrity.py",
+    "original_sha256": "c9ecd5e01160d5585097392f12186e9b37fd12a0fb29f3c4f925154eb541161e",
+    "current": "src/abvid/data/admission.py",
+    "symbols": "pure admission and grouping operations"
+  },
+  {
+    "original": "experiments/admission/audit_provenance.py",
+    "original_sha256": "edc0ad44d78ebdca9a3aeba85caa33873ac8d1181fd0fcf247ad5233db7776ba",
+    "current": "src/abvid/data/grouping.py",
+    "symbols": "pure admission and grouping operations"
+  }
+]

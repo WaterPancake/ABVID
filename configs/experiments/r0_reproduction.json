@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "r0_reproduction",
+  "phase": "reproduction",
+  "description": "Published splits and released checkpoint audit",
+  "contract": {
+    "path": "archive:experiments/reproduction/README.md",
+    "sha256": "37c829f48ba6d0a1ff3222408a4dd02b3930225eb3a19cff373a3223de01c16d"
+  },
+  "execution": {
+    "mode": "frozen_replay",
+    "environment": "reproduction",
+    "script": "archive:experiments/reproduction/replay_p01_beats_rng.py",
+    "script_sha256": "e94326c687079c803e77910dffa65925e8b12cc920e6f5d24a5d0fe929452936",
+    "arguments": [
+      "--help"
+    ],
+    "module": null
+  },
+  "reports": [
+    "repo:reports/published_reproduction_status.md"
+  ]
+}

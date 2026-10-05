@@ -6,7 +6,7 @@ Subsequent change: the user-authorized [v1.1 amendment](../experiments/AMENDMENT
 
 **All three dataset families are present under `dataset/`, but the frozen three-class experiment is not executable.** IDMT's microphone/channel mapping contradicts the protocol, and its motorcycle recordings cannot satisfy the required independent-group support. Published replay also needs assets absent from the supplied AI4TEN directory. These are data-admission findings, not experimental results.
 
-The audit inspected filenames, provider documentation, archive inventories/checksums, WAV headers and NPY headers. It did not read waveform samples or feature-array values, listen to target recordings, fit models, assign split roles, or modify the frozen protocol. Detailed counts, input-document hashes and limitations are in [dataset_readiness_audit.json](../experiments/dataset_readiness_audit.json).
+The audit inspected filenames, provider documentation, archive inventories/checksums, WAV headers and NPY headers. It did not read waveform samples or feature-array values, listen to target recordings, fit models, assign split roles, or modify the frozen protocol. Detailed counts, input-document hashes and limitations are in [dataset_readiness_audit.json](https://github.com/WaterPancake/ABVID/blob/77daa1b339906d35b6fa0a59a166ecf2eac01174/experiments/dataset_readiness_audit.json).
 
 ## Inventory and integrity
 
@@ -27,7 +27,7 @@ Header observations: IDMT is 48 kHz stereo FLOAT, with 13,904 files containing 9
 
 ### The frozen sensor selector needs correction
 
-[DATASET_PROTOCOL §2](../experiments/DATASET_PROTOCOL.md) specifies “CH12/sE8.” The supplied [IDMT README](../dataset/IDMT_Traffic/readme.md), under “File naming convention,” identifies `SE` as sE8 and explicitly illustrates an `SE_CH34` car recording. Channel number cannot be used as a uniform proxy for microphone type in this release.
+[DATASET_PROTOCOL §2](../experiments/DATASET_PROTOCOL.md) specifies “CH12/sE8.” The supplied [IDMT README](ARTIFACT_INDEX.md#artifact-c7112509e13e), under “File naming convention,” identifies `SE` as sE8 and explicitly illustrates an `SE_CH34` car recording. Channel number cannot be used as a uniform proxy for microphone type in this release.
 
 Observed non-background counts for the intended three classes:
 
@@ -58,7 +58,7 @@ Under DATASET_PROTOCOL §§4–5, seven groups yield five training, one validati
 
 Our interpretation: motorcycle label and acquisition context are heavily confounded in this candidate subset. This does not establish which acoustic cues a classifier would use, and it does not show that IDMT is unusable for every task. It does establish that this particular three-class split is infeasible. Splitting neighbouring clips or paired microphones across roles would not create independent sessions.
 
-The provider [metadata script](../dataset/IDMT_Traffic/annotation/import_idmt_traffic_dataset.py), function `import_idmt_traffic_dataset` docstring, calls `speed_kmh` the **site speed limit** and `weather` the dry/wet road condition. Do not promote these to measured vehicle speed or meteorological measurements. The script was read, not executed.
+The provider [metadata script](ARTIFACT_INDEX.md#artifact-0eb8559945a9), function `import_idmt_traffic_dataset` docstring, calls `speed_kmh` the **site speed limit** and `weather` the dry/wet road condition. Do not promote these to measured vehicle speed or meteorological measurements. The script was read, not executed.
 
 ## MELAUDIS: target candidates present, admission incomplete
 
@@ -70,9 +70,9 @@ Before assigning `M_DEV` and `M_LOCK`, reconcile site aliases and same-road acqu
 
 Each `synthetic/pyroadacoustics` class contains 5,000 WAVs. `synthetic/audioldm` contains 201 car, 200 truck and 200 motorcycle WAVs. The extra car file relative to the README's stated 200/class is recorded, not deleted or presumed a duplicate. Directory names identify the release's labels; they do not verify the actual renderer.
 
-The supplied [README](../dataset/AI4TEN/README.md), “Contents,” describes CNN snapshots, configurations and scripts. Those directories are absent from the supplied tree. Therefore E2-P-R/E2-P-S replay cannot run from this tree alone. Recover the checksum-pinned release assets identified in DATASET_PROTOCOL §1 and verify snapshot/scaler/feature identities and row order before any replay. This is a missing-local-assets finding, not a claim that the assets are unavailable from the public release.
+The supplied [README](ARTIFACT_INDEX.md#artifact-d6e3ee81f6ab), “Contents,” describes CNN snapshots, configurations and scripts. Those directories are absent from the supplied tree. Therefore E2-P-R/E2-P-S replay cannot run from this tree alone. Recover the checksum-pinned release assets identified in DATASET_PROTOCOL §1 and verify snapshot/scaler/feature identities and row order before any replay. This is a missing-local-assets finding, not a claim that the assets are unavailable from the public release.
 
-The [feature metadata](../dataset/AI4TEN/data/features/metadata.json) describes 1,019 historical DATASEC+MAVD evaluation examples. `X_test.npy` has header shape `[1019,216,120,1]`; `y_test.npy` has shape `[1019]`. Their values were not inspected. Shape agreement alone does not establish label/feature alignment or original recording groups, and these historical features are not the raw MELAUDIS target partition.
+The [feature metadata](ARTIFACT_INDEX.md#artifact-07636fef48ca) describes 1,019 historical DATASEC+MAVD evaluation examples. `X_test.npy` has header shape `[1019,216,120,1]`; `y_test.npy` has shape `[1019]`. Their values were not inspected. Shape agreement alone does not establish label/feature alignment or original recording groups, and these historical features are not the raw MELAUDIS target partition.
 
 No generation sidecars establish source-template/run lineage in the supplied synthetic tree. Strict E2-B requires grouped synthetic train/validation selection; indexed filenames alone cannot establish independence. This prerequisite remains unresolved under DATASET_PROTOCOL §5.
 
