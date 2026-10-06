@@ -33,6 +33,11 @@ The project should determine which components cause the
 synthetic-to-real gap and which forms of simulation/randomization
 actually improve held-out real-world performance.
 
+The [CAST research roadmap](CAST_ROADMAP.md) defines the connected branch for
+effective-observation fitting, source coverage and a later separately frozen
+classification-transfer test. It supplies the detailed path toward RQ5/E8;
+its coverage results do not establish transfer or clean-source recovery.
+
 ## 2. Research questions
 
 ### RQ1 --- Synthetic-to-real
@@ -316,8 +321,17 @@ H1 is unchanged, and MELAUDIS remains exposed development data.
 Location mixes source and recording conditions, so those diagnostics alone did
 not isolate source-versus-propagation effects. The later H2 result above tests
 the declared interventions, not an intrinsic division of all domain mismatch.
-These civilian results do not advance the
-military milestone gates in [AGENTS.md](AGENTS.md).
+The earlier military program is retired from the active checkout; its
+historical results and protected-source roles remain unchanged under
+[AGENTS.md](AGENTS.md).
+
+**CAST progress — 2026-10-06:** the [v15 coverage study](reports/CAST_improvement.md)
+met its declared descriptor-level development objective, with 82.019% car and
+81.286% truck mean marginal coverage on one repeatedly exposed IDMT group.
+Classification transfer remains untested. Follow the [CAST roadmap](CAST_ROADMAP.md)
+for broader grouped coverage checks, feature-dependence diagnostics and the
+proposed matched classification experiment; new transfer access requires its own
+authorization and frozen protocol.
 
 ### E0 --- Within-domain sanity check
 
@@ -343,6 +357,38 @@ simulator.
 
 Compare a simple CNN/classifier with frozen BEATs and AST. Cache
 embeddings.
+
+### P0: Offline classification prototype
+
+**Placement:** package the completed minimum H1 baseline immediately after
+E0–E3, alongside continued H2 and CAST research. The unrun AST/CNN extensions
+and a positive synthetic-data result are not prerequisites for this delivery.
+P0 is a packaging milestone, not a new scientific experiment.
+
+**Current status — 2026-10-06:** a local baseline CLI and model bundle package
+the existing H1 real-data BEATs arm, with parity checks against its archived
+predictions. The implementation and local report are separate from this roadmap
+update. An inspectable replay interface remains a proposed follow-up.
+
+The first prototype accepts a supplied vehicle event and returns car/truck
+classification using the frozen H1 preprocessing, BEATs encoder and a declared
+linear head. Preserve the original grouped evaluation, model identity, input
+hashes and known failure cases; do not select a demonstration head by performance.
+Motorcycles remain excluded. This closed-set prototype does not establish
+vehicle-presence detection, calibrated confidence or independent generalization.
+
+The next delivery checkpoint is an offline replay interface with audio playback,
+waveform/spectrogram, the analyzed interval, predictions and model provenance.
+Include known successes and failures. Longer-recording predictions over time need
+declared window, hop and timestamp rules; the centered-event benchmark does not
+validate those additional behaviors. Keep large models and audio outside the
+checkout, and verify packaging against the fixed baseline without new tuning.
+
+CAST belongs in the training-data pipeline and is not a runtime dependency of
+P0. A CAST-trained prototype version requires the separately frozen, authorized
+classification-utility comparison in the [CAST roadmap](CAST_ROADMAP.md).
+Live vehicle detection and deployment are later milestones requiring a new task
+protocol, vehicle-absent examples, causal inference and deployment evaluation.
 
 ### E4 --- Source-model ablation
 
@@ -460,6 +506,11 @@ Avoid directories full of `final_v3_REAL` nonsense.
 
 ## 13. Immediate next actions
 
+The [P0 delivery track](#p0-offline-classification-prototype) can proceed alongside
+the research actions below: preserve the local baseline CLI/bundle and its parity
+record, then scope the inspectable offline replay interface. CAST classification
+gains and further simulator development are not prerequisites for that interface.
+
 1.  Preserve the completed R0/H1, source-only diagnostic and regularization
     transfer results as versioned references; retain MFCC alongside BEATs.
 2.  Close the bounded regularization check without automatically replacing
@@ -489,8 +540,16 @@ Avoid directories full of `final_v3_REAL` nonsense.
     verified unexposed recordings; E6–E9 remain later conditional extensions.
 6.  Favor independent recording contexts over more excerpts from the same
     groups. Keep BVP access optional; do not make it a project dependency.
+7.  Advance the [CAST branch](CAST_ROADMAP.md#immediate-work-order) through fixed
+    grouped coverage and joint-feature diagnostics before a separately frozen
+    utility comparison. Preserve v15 as the reference and compare CAST against
+    ordinary augmentation and matched real-data budgets, without treating
+    descriptor coverage as a classification result.
 
 ## 14. Decision gate
+
+This gate governs further scientific investment in simulation; it does not block
+packaging the completed baseline as the P0 offline prototype.
 
 After E0--E3, stop and ask:
 
