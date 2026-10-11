@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "cast_grouped_coverage",
+  "phase": "source_coverage",
+  "description": "CAST-4A grouped coverage design and metadata freeze only; no scientific execution",
+  "contract": {
+    "path": "repo:experiments/cast_coverage/grouped_coverage/design.json",
+    "sha256": "43382aa0a7641b43af0e42003dbcf05c76c3dedbf48e61b658e8e8ce120bdaef"
+  },
+  "execution": {
+    "mode": "metadata_only",
+    "environment": "cast",
+    "script": "repo:src/abvid/cast/grouped_design.py",
+    "script_sha256": "dec33075f846e1bcd8db750f421f9a294bd2cde18c4d6e2b9e8e8a34ba7507e3",
+    "module": "abvid.cast.grouped_design",
+    "arguments": [
+      "freeze",
+      "--config",
+      "repo:configs/experiments/cast_grouped_coverage.json"
+    ]
+  },
+  "reports": [
+    "repo:reports/CAST_grouped_coverage_design.md"
+  ]
+}

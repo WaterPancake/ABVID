@@ -1,0 +1,1887 @@
+{
+  "authority_policy": {
+    "all_storage_resolution": "abvid.paths.resolve",
+    "archive_numeric_implementations": "authoritative_frozen_numerical_recipe",
+    "current_packaged_implementations": "relocated_components_to_be_used_with_focused_parity_checks_before_future_execution",
+    "effective_criteria": "metric_config.criteria_only",
+    "historical_selection_rules": "not_executable_in_CAST_4A_no_width_or_population_search",
+    "numerical_import_or_execution_during_contract_construction": false,
+    "role_data": "replaced_by_current_fold_manifest_rules_no_historical_fold0_exclusion_or_380_parent_assumption_is_executable"
+  },
+  "execution": {
+    "authorized": false,
+    "descriptor_or_feature_access_performed": false,
+    "fitting_performed": false,
+    "generation_performed": false,
+    "historical_runners_may_be_modified": false,
+    "parameter_bank_access_performed": false,
+    "performed": false,
+    "raw_audio_access_performed": false,
+    "scoring_performed": false
+  },
+  "execution_blockers": [
+    {
+      "detail": "Packaged population/engine.py contains SmoothRenderer but lacks historical smooth8 fit. abvid.cast.fit.fit instantiates the original rectangular renderer and is not a faithful substitute. Implement a reusable packaged adapter and verify focused synthetic/parity tests before any future fit.",
+      "id": "exact_smooth8_fitting_adapter_missing",
+      "status": "unresolved"
+    },
+    {
+      "detail": "Only metadata input IDs, protocol, hashes and recorded audit metadata inspected. Full parameter/component/observation ancestry remains unaudited for each new training role.",
+      "id": "reuse_only_candidate",
+      "status": "unresolved_until_authorized_content_audit"
+    },
+    {
+      "detail": "Historical wrappers hard-code old fold0, 380 parents and excluded group. Preserve them unchanged; new thin experiment adapter must validate current role manifests and use abvid.paths.",
+      "id": "historical_fixed_role_wrappers",
+      "status": "not_reusable_for_new_grouped_execution"
+    },
+    {
+      "detail": "No recipe here grants audio, descriptor, parameter-bank, fitting, generation or scoring access; source-only execution needs separate authorization and a reviewed fail-closed runner.",
+      "id": "future_execution_runner_and_role_guards",
+      "status": "not_authorized_or_implemented_by_this_contract"
+    }
+  ],
+  "expected_spectrum_calibration": {
+    "band_reduction": "eight_original_half_open_noise_edges_then_sum_normalize_floor_1e-12",
+    "best_state": "first_strict_minimum_objective_including_initial_state",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "checking_stream_role": "calibration_data_not_independent_validation",
+    "epsilon": 1e-08,
+    "evaluated_objective_states": 151,
+    "expected_power_mixture": "harmonic_fraction*mean_check_harmonic_PSD+(1-harmonic_fraction)*mean_check_noise_PSD_no_cross_term",
+    "flags": {
+      "exact_mixture_boundary": [
+        0.0,
+        1.0
+      ],
+      "harmonic_dominant_mixture_above": 0.95,
+      "noise_dominant_mixture_below": 0.05,
+      "noise_weight_near_boundary_below": 1e-05
+    },
+    "gradient_clip": 100.0,
+    "lr": 0.03,
+    "mixture_projection_after_each_update": [
+      0.0,
+      1.0
+    ],
+    "noise_logits_initial_floor": 1e-12,
+    "noise_parameterization": "softmax",
+    "objective": "0.5*(mean_square(log_spectrum_prediction-log_spectrum_target)+mean_square(log_band_prediction-log_band_target))",
+    "optimized_controls": [
+      "noise_logits",
+      "harmonic_fraction"
+    ],
+    "optimizer": "torch.optim.Adam",
+    "same_parent_check_realizations": 2,
+    "saved": [
+      "initial_parameters",
+      "best_parameters",
+      "all_151_losses",
+      "best_step",
+      "maximum_gradient_norm_before_clip",
+      "target_sha256",
+      "same_parent_observation_sha256",
+      "initial_bank_row_sha256",
+      "original_fit_sha256",
+      "streams",
+      "flags",
+      "runtime",
+      "two_reconstruction_waveforms"
+    ],
+    "spectrum_reduction": {
+      "normalization_sum_floor": 1e-12,
+      "reshape": [
+        64,
+        8
+      ],
+      "rfft_bins_slice": [
+        0,
+        512
+      ],
+      "sum_axis": 1
+    },
+    "steps": 150,
+    "target_probability_log_floor": 1e-08,
+    "welch": {
+      "detrend": "each_frame_mean",
+      "hop": 1024,
+      "mean_over_frames_and_two_check_realizations": true,
+      "nperseg": 2048,
+      "one_sided_factors": "DC_and_Nyquist_1_all_other_bins_2",
+      "sample_rate_hz": 16000,
+      "scaling": "1/(16000*sum(window**2))",
+      "window": "periodic_Hann"
+    }
+  },
+  "failure_policy": {
+    "boundary_or_ambiguity_alone": "retain_flagged_parent_and_all_alternatives",
+    "drop_failed_seed_or_fold": false,
+    "relax_grouping": false,
+    "replace_failed_parent": false,
+    "retune_width": false,
+    "scientific_failure": "report_fixed_criteria_failure_without_tuning",
+    "technical_failure": "preserve_all_inputs_outputs_flags_and_failure_records_fold_unassessable_if_complete_bank_or_metrics_cannot_be_formed"
+  },
+  "fit_role": {
+    "classes": {
+      "car": 0,
+      "truck": 1
+    },
+    "dataset_id": "IDMT",
+    "excluded_groups": "all_current_fold_held_groups_from_hashed_grouped_design_manifest",
+    "fitting_access": "only_current_fold_training_recordings_after_separate_execution_authorization",
+    "historical_role_fields_reused": false,
+    "recording_session": "preserve_exact_source_metadata_unknown_stays_unknown",
+    "release_id": "IDMT_V1",
+    "rule": "fitonly_currentfold",
+    "selection_seed": 42,
+    "source_metadata": "canonical_grouped_design_input_references",
+    "target_access": "none",
+    "training_ids": "exact_current_fold_training_ids_from_hashed_grouped_design_manifest"
+  },
+  "historical_non_executable_metadata": {
+    "calibration_verification_recorded": {
+      "calibrations_replayed": 380,
+      "new_replay_performed": false,
+      "passed": true,
+      "waveforms_replayed": 760
+    },
+    "environment_verified_live_for_scientific_execution": false,
+    "explanation": "The nested historical source metric config retains 0.05 from the old study. V15 top-level criteria, active aggregate implementation and outer wrapper use 0.025. Only metric_config.criteria in this new contract is executable.",
+    "fitter_phase_label_in_inherited_configs": "historical_CAST2_label_removed_from_sanitized_recipe_not_a_new_CAST2_run",
+    "historical_v15_width_search": [
+      1.0,
+      1.1,
+      1.25,
+      1.5
+    ],
+    "nested_legacy_gain_field_active": false,
+    "recorded_environment": {
+      "executable": "/Users/magi/workspace/ABVID/.venv/bin/python",
+      "machine": "arm64",
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "processor": "arm",
+      "python": "3.11.13 (main, Sep  2 2025, 14:10:56) [Clang 20.1.4 ]",
+      "versions": {
+        "matplotlib": "3.11.1",
+        "numpy": "2.4.6",
+        "pytest": "9.1.1",
+        "scipy": "1.17.1",
+        "soundfile": "0.14.0",
+        "torch": "2.13.0"
+      }
+    },
+    "renderer_envelope_knots_legacy_field": {
+      "effective_v10_v11_envelope_control_count": 41,
+      "inherited_value": 5,
+      "rule": "model_specific_envelope_control_count_and_69_coordinate_schema_authoritative"
+    },
+    "v15_nested_metric_config_criteria": {
+      "description": "Exploratory engineering adequacy rules, not calibrated statistical or perceptual tests",
+      "family_spread_ratio_bounds_each_class": [
+        0.5,
+        2.0
+      ],
+      "mean_marginal_coverage_each_class": 0.8,
+      "relative_W1_gain_over_each_control_each_class": 0.05
+    },
+    "v15_outer_effective_gain": 0.025,
+    "v15_outer_rng_namespace": "cast_improvement_sampling_v1:outer",
+    "v15_source_top_level_criteria": {
+      "coverage": 0.8,
+      "gain_each_control": 0.025,
+      "spread": [
+        0.5,
+        2
+      ]
+    },
+    "width_search_allowed_in_CAST4A": false
+  },
+  "historical_runtime_anchors": {
+    "hardware_model": "unknown_in_recorded_environment_metadata",
+    "limitations": [
+      "timings_include_recorded_concurrent_presentation_or_analysis_work",
+      "RSS_is_single_process_lifetime_high_water_mark_not_aggregate_machine_memory",
+      "no_current_hardware_or_software_execution_benchmark_performed",
+      "new_grouped_fit_adapter_parity_and_data_inventory_audit_have_unmeasured_cost",
+      "any_budget_extrapolation_must_be_labeled_planning_estimate_and_reconciled_with_actual_stage_timings"
+    ],
+    "numpy": "2.4.6",
+    "platform": "macOS_arm64",
+    "python": "3.11.13",
+    "scipy": "1.17.1",
+    "smooth8_fit": {
+      "additional_parents": 330,
+      "additional_wall_seconds": 2650.7,
+      "combined_parents": 380,
+      "combined_wall_seconds": 3057.92,
+      "highest_recorded_single_worker_peak_RSS_bytes": 713605120,
+      "input_audio_seconds": 760,
+      "pilot_parents": 50,
+      "pilot_wall_seconds": 407.22
+    },
+    "source": "repo:reports/CAST_improvement.md",
+    "source_section": "Verification, runtime and reproduction",
+    "spectrum_v11_calibration": {
+      "parents": 380,
+      "wall_seconds": 147.72815158400044,
+      "workers": 4
+    },
+    "spectrum_v9_calibration": {
+      "parents": 380,
+      "wall_seconds": 98.91872666699055,
+      "workers": 4
+    },
+    "status": "historical_observations_not_new_measurements_or_promised_runtime",
+    "torch": "2.13.0",
+    "torch_threads_per_worker": 1,
+    "v15_outer": {
+      "full_replay_wall_seconds": 355.23,
+      "generated_samples": 1500,
+      "generation_scoring_process_peak_RSS_bytes": 644448256,
+      "generation_scoring_wall_seconds": 413.78,
+      "replay_process_peak_RSS_bytes": 985399296,
+      "waveform_generation_subset_wall_seconds": 31.79
+    },
+    "workers": 4
+  },
+  "id": "cast_4a_grouped_coverage_numerical_contract_v1",
+  "inherited_numerical_config_sha256": {
+    "smooth8_temporal41_v10": "2b0948f9f413050e8ab2a14c1579b2d5112ae6a638e03a2bffc6fe4a34773204",
+    "smooth8_v1": "b00198c4d9bc6555006e28996fd0376e72f182c85d5efb1962f7de5b31f4c3d4",
+    "spectrum16_temporal41_v11": "f669563373aebd90aa778ccbc9a758641beda6ca80444e7d4e8bc1b5f6c581c4"
+  },
+  "metric_config": {
+    "arms": [
+      "joint",
+      "prototype",
+      "marginals"
+    ],
+    "class_order": [
+      "car",
+      "truck"
+    ],
+    "classification": false,
+    "conditional_held_fitting": false,
+    "coverage_quantiles": [
+      0.05,
+      0.95
+    ],
+    "criteria": {
+      "across_groups_claim_requires": "every_declared_fold_class_passes_all_criteria",
+      "mean_marginal_coverage_each_class_each_fold": 0.8,
+      "mean_seed_family_spread_ratio_bounds_each_class_each_fold": [
+        0.5,
+        2.0
+      ],
+      "pooled_success_is_sufficient": false,
+      "relative_W1_gain_over_each_matched_width_control_each_class_each_fold": 0.025
+    },
+    "held_group": "resolved_current_fold_excluded_group_or_fail_closed_group_set_adapter",
+    "log_spectrum_bins": 64,
+    "primary_families": [
+      "log_spectrum",
+      "bands",
+      "envelope",
+      "modulation"
+    ],
+    "samples_per_class_per_seed_per_arm": 50,
+    "sampling_realizations": 1,
+    "scale_floors": {
+      "bands": 0.01,
+      "envelope": 0.05,
+      "log_spectrum": 0.1,
+      "modulation": 0.02
+    },
+    "seeds": [
+      42,
+      123,
+      456,
+      789,
+      1024
+    ],
+    "spectral_probability_floor": 1e-08,
+    "target_access": "none",
+    "version": "cast_improvement_sampling_v1:outer"
+  },
+  "metric_definitions": {
+    "all_seed_outcomes_retained": true,
+    "bands": "sum_Welch_power_in_original_eight_half_open_analysis_bands_normalize_total_floor_1e-12",
+    "coordinate_sort_before_reduction": true,
+    "coverage": "mean_within_family_of_fraction_held_values_ge_generated_q05_and_le_generated_q95_then_equal_mean_families",
+    "coverage_quantiles": [
+      0.05,
+      0.95
+    ],
+    "descriptor_audio": "float64_DC_removed_unit_RMS_with_1e-12_RMS_floor_from_same_32000_sample_shape",
+    "envelope": "RMS_each_nonoverlapping_800_sample_50ms_frame",
+    "family_W1": "mean_per_coordinate_W1",
+    "family_dimensions": {
+      "bands": 8,
+      "envelope": 40,
+      "log_spectrum": 64,
+      "modulation": 20
+    },
+    "family_spread_ratio": "mean_coordinate_std(generated/scale)/mean_coordinate_std(held/scale)",
+    "family_weights": {
+      "bands": 0.25,
+      "envelope": 0.25,
+      "log_spectrum": 0.25,
+      "modulation": 0.25
+    },
+    "higher_level_group_uncertainty": "declared_in_grouped_design_protocol_separate_from_synthesis_seed_variation",
+    "log_spectrum": "sum_Welch_power_in_64_equal_half_open_bins_0_to_4000_normalize_total_floor_1e-12_then_log_max_probability_1e-8",
+    "matched_control_gain": "1-mean_seed_joint_W1/mean_seed_same_width_control_W1",
+    "modulation": "abs(rfft(envelope-mean(envelope)))[frequencies>0_and_<=10Hz]/40",
+    "modulation_frequencies_hz": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      4.5,
+      5.0,
+      5.5,
+      6.0,
+      6.5,
+      7.0,
+      7.5,
+      8.0,
+      8.5,
+      9.0,
+      9.5,
+      10.0
+    ],
+    "per_coordinate_W1": "scipy.stats.wasserstein_distance(generated_coordinate,held_coordinate)/training_scale_coordinate",
+    "per_fold_seed_aggregation": "arithmetic_mean_over_exactly_five_fixed_seeds_for_each_class_width_arm",
+    "quantile_method": "numpy.quantile_method_linear",
+    "scale_weighting": "equal_observation_within_class_training_selection_not_group_reweighting",
+    "selection_or_threshold_tuning": false,
+    "spread_acceptance": "each_family_mean_of_five_seed_spread_ratios_in_closed_interval_0.5_to_2",
+    "spread_denominator_minimum": 1e-12,
+    "std_ddof": 0,
+    "total_W1": "mean_of_four_family_W1_values",
+    "training_scale": "maximum(population_std_of_same_class_current_fold_training_descriptors,per_family_floor)",
+    "undefined_spread": "technical_failure_keep_all_records_no_replacement",
+    "welch": {
+      "average": "mean",
+      "detrend": "constant",
+      "implementation": "scipy.signal.welch",
+      "nfft": 2048,
+      "noverlap": 1024,
+      "nperseg": 2048,
+      "return_onesided": true,
+      "sample_rate_hz": 16000,
+      "scaling": "density",
+      "window": "hann_periodic"
+    },
+    "zero_control_distance": "undefined_relative_gain_technical_failure_no_replacement_or_epsilon_substitution",
+    "zero_spread_coordinate_threshold": 1e-12
+  },
+  "per_parent_pipeline": [
+    {
+      "all_alternative_starts_retained": true,
+      "best_state_per_start": "strict_improvement_over_initial_or_previous_best",
+      "checking": "evaluate_each_winning_start_vector_separately_with_same_two_check_realizations",
+      "evaluated_states_per_start": 301,
+      "fit_precision": "float32_controls_float64_phase_accumulation",
+      "fitter_authority": "archive:CAST/improvement/src/cast_improvement/engine.py:fit",
+      "input_id": "file_id",
+      "known_harmonic_weights": null,
+      "renderer": "SmoothRenderer",
+      "settings": "renderer_configs.smooth8_v1",
+      "stage": "smooth8_v1",
+      "start_count": 4,
+      "start_selection": "first_argmin_best_fit_stream_loss"
+    },
+    {
+      "beta": "clip(dot(target-normalized_noise,normalized_harmonic-normalized_noise)/squared_shape_separation,0,1)",
+      "component_power": {
+        "array_shape": [
+          1,
+          2,
+          32000
+        ],
+        "bands": "original_eight_half_open_noise_edges",
+        "dtype": "float64",
+        "mean_check_realizations": 2,
+        "noverlap": 1024,
+        "nperseg": 2048,
+        "sample_rate_hz": 16000,
+        "welch_window": "hann"
+      },
+      "fraction": "beta*noise_total/((1-beta)*harmonic_total+beta*noise_total)",
+      "identifiability_squared_shape_separation_floor": 1e-10,
+      "input": "smooth8_v1_winner_same_parent_two_saved_checking_component_waveforms",
+      "noise_dominant_flag_threshold": 0.05,
+      "nonworsening_tolerance": 1e-12,
+      "stage": "parent_mixture_v7",
+      "undefined_rule": "retain_original_at_mixture_boundary_zero_power_or_unidentifiable_shapes_and_record_flag",
+      "unweight_components_when": "0<original_mix<1",
+      "unweight_harmonic": "harmonic_band_power/original_mix",
+      "unweight_noise": "noise_band_power/(1-original_mix)",
+      "zero_power_floor": 1e-12
+    },
+    {
+      "basis": "linear_endpoint_inclusive_16000_sample_amplitude_basis_reshape_40x400x5_mean_axis1",
+      "boundary_flag_thresholds": [
+        0.10000001,
+        2.99999999
+      ],
+      "bounds": [
+        0.1,
+        3.0
+      ],
+      "bounds_tolerance": 1e-12,
+      "constraint": "mean_basis_amplitude_equal_original",
+      "constraint_tolerance": 1e-08,
+      "controls": 5,
+      "failure_rule": "retain_original_envelope_with_failure_flag",
+      "ftol": 1e-12,
+      "maxiter": 300,
+      "nonworsening_tolerance": 1e-12,
+      "objective": "mean_square(frame_basis@envelope-target_scaled)",
+      "optimizer": "scipy.optimize.minimize_SLSQP_analytic_jacobian",
+      "stage": "envelope_v8",
+      "target": "same_parent_40_frame_RMS_envelope",
+      "target_mean_floor": 1e-12,
+      "target_scale": "original_mean_basis_amplitude/target_mean"
+    },
+    {
+      "initial_bank": "envelope_v8",
+      "input_id": "same_file_id_as_original_smooth8_fit",
+      "noise_control_count": 8,
+      "settings": "expected_spectrum_calibration",
+      "stage": "spectrum_v9",
+      "unchanged_controls": [
+        "spacing_hz",
+        "harmonic_weights",
+        "envelope_knots"
+      ]
+    },
+    {
+      "basis": "linear_endpoint_inclusive_16000_sample_amplitude_basis_reshape_40x400x41_mean_axis1",
+      "boundary_flag_thresholds": [
+        0.10000001,
+        2.99999999
+      ],
+      "bounds": [
+        0.1,
+        3.0
+      ],
+      "bounds_tolerance": 1e-12,
+      "constraint": "mean_basis_amplitude_equal_lifted_original",
+      "constraint_tolerance": 1e-08,
+      "controls": 41,
+      "failure_rule": "retain_lifted_original_envelope_with_failure_flag",
+      "ftol": 1e-14,
+      "initial_bank": "spectrum_v9",
+      "lift": "np.interp(linspace(0,1,41),linspace(0,1,5),old_envelope)",
+      "maxiter": 300,
+      "nonworsening_tolerance": 1e-12,
+      "objective": "mean_square(frame_basis@envelope-target_scaled)+0.01*mean_square(second_difference@envelope)",
+      "optimizer": "scipy.optimize.minimize_SLSQP_analytic_jacobian",
+      "smoothness": 0.01,
+      "stage": "temporal_v10",
+      "target": "same_parent_40_frame_RMS_envelope",
+      "target_mean_floor": 1e-12,
+      "target_scale": "lifted_original_mean_basis_amplitude/target_mean"
+    },
+    {
+      "all_parent_fit_flags_retained": true,
+      "initial_bank": "temporal_v10",
+      "input_id": "same_file_id_as_original_smooth8_fit",
+      "lift": "normalize(exp(np.interp(new_centers,old_centers,log(max(old_weights,1e-12)/old_band_widths)))*new_Voronoi_widths)",
+      "noise_control_count": 16,
+      "settings": "expected_spectrum_calibration",
+      "stage": "resolution_v11",
+      "unchanged_controls": [
+        "spacing_hz",
+        "harmonic_weights",
+        "envelope_knots"
+      ]
+    }
+  ],
+  "population": {
+    "arms": {
+      "joint": "one_whole_virtual_child_of_one_uniform_group_uniform_parent_donor",
+      "marginals": "69_independent_scalar_donor_child_choices_from_identical_width_population_then_simplex_normalize",
+      "prototype": "fixed_coordinate_mean_of_identical_width_population_with_same_group_parent_child_weights"
+    },
+    "context_v14": {
+      "discarded_spacing_projection_counts": "record_separately_not_as_applied_projection",
+      "mode": "spectrotemporal_context",
+      "prototype": "equal_group_equal_parent_equal_child_arithmetic_mean_in_packed_raw_coordinates_then_unpack_simplex_normalize",
+      "restore_bit_exact_from_original_residual_parent": [
+        "spacing_hz",
+        "harmonic_weights"
+      ],
+      "transformed_controls": [
+        "noise_weights",
+        "harmonic_fraction",
+        "envelope_knots"
+      ]
+    },
+    "coordinate_count": 69,
+    "coordinate_order": [
+      [
+        "spacing_hz",
+        3
+      ],
+      [
+        "harmonic_weights",
+        8
+      ],
+      [
+        "noise_weights",
+        16
+      ],
+      [
+        "harmonic_fraction",
+        1
+      ],
+      [
+        "envelope_knots",
+        41
+      ]
+    ],
+    "freeze_before_generation": [
+      "all_training_parent_ids_and_hashes",
+      "all_class_group_centers",
+      "all_width_centers",
+      "all_virtual_child_population_hashes",
+      "all_width_specific_prototypes",
+      "all_bounds",
+      "applied_and_upstream_projection_counts",
+      "training_only_descriptor_scales"
+    ],
+    "group_sort": "group_id_ascending",
+    "group_v12": {
+      "child_formula": "class_center+parent_residual+sign*factor*(child_center_group_mean-class_center)",
+      "child_order": "sorted_group_then_sign_-1_+1",
+      "children_per_parent": "2*G",
+      "class_center": "equal_group_mean_of_group_centers",
+      "factor": "sqrt((G+1)/(G-1))",
+      "group_center": "equal_parent_mean_of_transformed_parameters_within_group",
+      "mode": "group_predictive",
+      "residual": "parent_transformed_vector_minus_own_group_center",
+      "signs": [
+        -1.0,
+        1.0
+      ],
+      "weighting": "equal_group_equal_original_parent_within_group_equal_virtual_child"
+    },
+    "inverse": {
+      "bounded_exponential": "saturated_coordinates_equal_exact_declared_endpoints",
+      "envelope_bounds": [
+        0.1,
+        3.0
+      ],
+      "envelope_log_gauge": "original_residual_parent_mean_log_envelope",
+      "mixture_logit_clip": [
+        -15.0,
+        15.0
+      ],
+      "record_every_projection": true,
+      "simplex": "stable_softmax",
+      "spacing_bounds_hz": [
+        10.0,
+        400.0
+      ]
+    },
+    "minimum_connected_groups_per_class": 3,
+    "parent_sort": "file_id_ascending",
+    "recompute_per_fold": [
+      "class_centers",
+      "group_centers",
+      "virtual_children",
+      "width_centers",
+      "prototypes",
+      "descriptor_scales"
+    ],
+    "synthesis_ancestry": [
+      "direct_residual_donors",
+      "69_coordinate_donors_when_applicable",
+      "selected_child_index_center_group_sign",
+      "every_class_group_center_parent",
+      "every_width_center_parent",
+      "original_recording_session_links",
+      "original_fit_alternatives_and_flags",
+      "transitive_calibration_hashes"
+    ],
+    "training_only": true,
+    "transform": {
+      "envelope": "natural_log_minus_block_mean",
+      "envelope_floor": "none_needed_all_controls_bounded_at_least_0.1",
+      "harmonic_and_noise": "log(max(weight,1e-8))_minus_block_mean",
+      "harmonic_noise_floor": 1e-08,
+      "mix": "logit(clip(mix,1e-4,1-1e-4))",
+      "mix_input_clip": [
+        0.0001,
+        0.9999
+      ],
+      "spacing": "natural_log"
+    },
+    "width_v15": {
+      "T1_rule": "return_exact_v14_samples_and_statistics_without_transform_inverse_roundtrip",
+      "active_controls": [
+        "noise_weights",
+        "harmonic_fraction",
+        "envelope_knots"
+      ],
+      "active_slice_end_exclusive": 69,
+      "active_slice_start_inclusive": 11,
+      "center": "class_specific_equal_group_equal_parent_equal_child_mean_after_v14_bounds_and_restoration_in_transformed_coordinates",
+      "envelope_log_gauge": "original_residual_parent_mean_log_envelope",
+      "fixed_widths": [
+        1.0,
+        1.1
+      ],
+      "recompute_prototype_for_each_width": true,
+      "restore_bit_exact": [
+        "spacing_hz",
+        "harmonic_weights"
+      ],
+      "transformation": "center+T*(child_transformed-center)_on_active_slice_only",
+      "upstream_projection_flags": "retain_separately_from_width_inverse_projection_flags"
+    }
+  },
+  "purpose": "Faithful fixed v15 T=1.1 versus v14 T=1 source-domain grouped coverage with width-matched controls.",
+  "references": [
+    {
+      "path": "archive:CAST/configs/pilot_v0.json",
+      "role": "historical_base_audio_initialization_objective_and_bounds",
+      "sha256": "dc561af7eee5fcc7277c46b5093f46054ebcda3ae94640a95e31cbf28bff1b4f"
+    },
+    {
+      "path": "archive:CAST/generalization/src/cast_generalization/method.py",
+      "role": "historical_descriptor_scaling_distance_and_coverage_authority",
+      "sha256": "e7ac96c3bdd3366769e20dd32f20b53c239b1154d904527a6eba012b556183e2"
+    },
+    {
+      "path": "archive:CAST/improvement/PROTOCOL.md",
+      "role": "smooth8_v1_historical_protocol",
+      "sha256": "680e0fa22b49dc75feab6ceb940d57d7d5bbeb08f25acbcacf5453fd278d7845"
+    },
+    {
+      "path": "archive:CAST/improvement/context_v14/PROTOCOL.md",
+      "role": "context_v14_historical_protocol",
+      "sha256": "9c9d6d41ab3c77f00b571b4abdf05459f7e9cc70e5955b69bd93a91141342b3e"
+    },
+    {
+      "path": "archive:CAST/improvement/envelope_v8/PROTOCOL.md",
+      "role": "envelope_v8_historical_protocol",
+      "sha256": "39423abab94f3251e7525aed9626d524d6f985cb59995b578730698fabc0554d"
+    },
+    {
+      "path": "archive:CAST/improvement/group_v12/PROTOCOL.md",
+      "role": "group_v12_historical_protocol",
+      "sha256": "c23ece5b7498679a31750f8bda04d3a3cd7e818840653ffb93b10f4081be9132"
+    },
+    {
+      "path": "archive:CAST/improvement/parent_mixture_v7/PROTOCOL.md",
+      "role": "parent_mixture_v7_historical_protocol",
+      "sha256": "919be6f25d9b9ce87305932162178391bc0a7aef7db8bbbf2cf7c41f88e1bca3"
+    },
+    {
+      "path": "archive:CAST/improvement/resolution_v11/PROTOCOL.md",
+      "role": "resolution_v11_historical_protocol",
+      "sha256": "380b940188312f0105eb913a05986b1541c8fd7a9c9d6852651066a4cb8aa107"
+    },
+    {
+      "path": "archive:CAST/improvement/resolution_v11/runs/cast_resolution_v11_20261005/calibration_summary.json",
+      "role": "historical_v11_declared_bank_hash_and_completion_metadata",
+      "sha256": "854c381abf1aa7c55d383a4f9ad22598ea50dc7de5c6c0f6ba365b89cdc95d8c"
+    },
+    {
+      "path": "archive:CAST/improvement/resolution_v11/runs/cast_resolution_v11_20261005/calibration_verification.json",
+      "role": "historical_v11_recorded_replay_evidence_metadata",
+      "sha256": "db840ffbf308d2d7bcda128ffcea186274e3a2b176f58b7f578b28b8d40414c0"
+    },
+    {
+      "path": "archive:CAST/improvement/resolution_v11/runs/cast_resolution_v11_20261005/lock.json",
+      "role": "historical_v11_input_hash_metadata",
+      "sha256": "bfdf07fec5832b065f986a626ab584b0f86df4a679c17d0d6cbd3fee83e563fe"
+    },
+    {
+      "path": "archive:CAST/improvement/resolution_v11/runs/cast_resolution_v11_20261005/protocol.json",
+      "role": "historical_v11_renderer_calibration_settings_and_candidate_parent_id_metadata",
+      "sha256": "9dc1e2fa3d207509f3896a737a83f438c7bfa2adbc87154d105e1c88d6500b2a"
+    },
+    {
+      "path": "archive:CAST/improvement/runs/cast_smooth8_v1_20261004_r1/renderer.config.json",
+      "role": "historical_smooth8_v1_complete_renderer_fit_configuration",
+      "sha256": "7d4594142265a841e4c1f23e511497f7cf63ecaedb437b67649025fd1e18e613"
+    },
+    {
+      "path": "archive:CAST/improvement/runs/cast_smooth8_v1_20261004_r1/snapshot.json",
+      "role": "historical_smooth8_fitting_environment_metadata",
+      "sha256": "2f758f22c5e54d7019b0d67553a70578355a4eab5c313c63a7bd723e9a214e3e"
+    },
+    {
+      "path": "archive:CAST/improvement/spectrum_v9/PROTOCOL.md",
+      "role": "spectrum_v9_historical_protocol",
+      "sha256": "d812cb3e8f669a463dda95f745effa0b3e62340958e6e94541c82833a6517e81"
+    },
+    {
+      "path": "archive:CAST/improvement/spectrum_v9/runs/cast_spectrum_v9_20261004/calibration_summary.json",
+      "role": "historical_v9_calibration_runtime_metadata",
+      "sha256": "e81493561ed63ff9f9323809a0fed893de174b73a91994a37c20db7b5d849504"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/capacity_engine.py",
+      "role": "historical_numerical_or_ancestry_authority_capacity_engine",
+      "sha256": "187011ce58d81fe0d1f80dd90ce321355ed4789dcc03b909c4e0fed6f98e507b"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/context_prior.py",
+      "role": "historical_numerical_or_ancestry_authority_context_prior",
+      "sha256": "0616553b4be7a16972c6f501ccf7cf5f44a530fd5c2f5d23253ae1a1c33e51f2"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/data.py",
+      "role": "historical_numerical_or_ancestry_authority_data",
+      "sha256": "b68bdb13eb58e536c7a0c7af90238f7f506d5caf912d2b87b6f40163ce014d65"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/engine.py",
+      "role": "historical_numerical_or_ancestry_authority_engine",
+      "sha256": "78af0f34dd24e784601ac7ada639c9e88c69ec2457642cdcbc16e4adafa0a070"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/envelope_prior.py",
+      "role": "historical_numerical_or_ancestry_authority_envelope_prior",
+      "sha256": "d86586ffcb3ca9ad609355be2adc456d9146dbe8afcb9e6e39ca9bf536c811d9"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/evaluate.py",
+      "role": "historical_numerical_or_ancestry_authority_evaluate",
+      "sha256": "c8392b087645c89350f89db0e06dd864ec4fcb092d0855a2613ac63c47e19f1a"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/group_prior.py",
+      "role": "historical_numerical_or_ancestry_authority_group_prior",
+      "sha256": "d3d6d9a1d196b5550212b33fdc57cd5784cbbc23c757b9ecc1da39dfa8c69825"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/parent_mixture_bank.py",
+      "role": "historical_numerical_or_ancestry_authority_parent_mixture_bank",
+      "sha256": "e1596fd19994b52e94597a87f738e3cc1c7fd67e3523644300c1979d4b28e5ad"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/parent_mixture_prior.py",
+      "role": "historical_numerical_or_ancestry_authority_parent_mixture_prior",
+      "sha256": "df883f935276c6a483a54773c10e3ed2cc2bcbd4a10ee74a20b70b1bff4a21a4"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/resolution_bank.py",
+      "role": "historical_numerical_or_ancestry_authority_resolution_bank",
+      "sha256": "637d5bc31212aff062059168d256e1c2e0be191b938775ee44c8d28370065a27"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/resolution_calibration.py",
+      "role": "historical_numerical_or_ancestry_authority_resolution_calibration",
+      "sha256": "42407e3c5cf38344829b44693177eefe6f53ac88f6b224ba9740262e794d3cf8"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/resolution_model.py",
+      "role": "historical_numerical_or_ancestry_authority_resolution_model",
+      "sha256": "809eef46aa2c5fe56481ba73b478ac928efac83a227c483c5353f034519b89e8"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/resolution_sampling.py",
+      "role": "historical_numerical_or_ancestry_authority_resolution_sampling",
+      "sha256": "94ca3df2ab2799ce6b096e1d0e5ff144918cac4d8eb06bb89c528c800ef03771"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/spectrum_bank.py",
+      "role": "historical_numerical_or_ancestry_authority_spectrum_bank",
+      "sha256": "2cbc0d27b2737f4153d3fbc6298f05a9aaa156abf545c5dda28709b46d203f3e"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/spectrum_calibration.py",
+      "role": "historical_numerical_or_ancestry_authority_spectrum_calibration",
+      "sha256": "59e68d7308795b4973a93be398a51a373891fb50b379c70afb5e71e022dd752c"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/temporal_prior.py",
+      "role": "historical_numerical_or_ancestry_authority_temporal_prior",
+      "sha256": "892f55a54319e8892fdca201a88d55bebf84499737ce169f0e11d3d245601779"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/temporal_sampling.py",
+      "role": "historical_numerical_or_ancestry_authority_temporal_sampling",
+      "sha256": "10e039e1690bdee43e02bbf52c52a9309ee5c09aa1e44f4ec096087ce37fc7fe"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/width_outer.py",
+      "role": "historical_numerical_or_ancestry_authority_width_outer",
+      "sha256": "012fd128ea851e7c7b5c8d469d9342f26776dee788f9462f8fa5a6fbe0856306"
+    },
+    {
+      "path": "archive:CAST/improvement/src/cast_improvement/width_prior.py",
+      "role": "historical_numerical_or_ancestry_authority_width_prior",
+      "sha256": "08ef0a7ba943336b5ccc72c2c4451af92c1fa5fee0917ba50dd942be0f2cd02a"
+    },
+    {
+      "path": "archive:CAST/improvement/temporal_v10/PROTOCOL.md",
+      "role": "temporal_v10_historical_protocol",
+      "sha256": "c4c53b5b06db2975a1ce0b3aaa89e350801d6fe4a1b018bf35643a273d2de9ca"
+    },
+    {
+      "path": "archive:CAST/improvement/width_v15/PROTOCOL.md",
+      "role": "width_v15_historical_protocol",
+      "sha256": "e6bb876264061d16887355cb642f441b4a37c8b628d28dcf85740fde62a8d6e9"
+    },
+    {
+      "path": "archive:CAST/improvement/width_v15/evaluations/context_width_v15_full_source/protocol.json",
+      "role": "historical_v15_complete_source_recipe_metadata",
+      "sha256": "0a27466e1f403a3d6ccbe40ccdc2c58f09e6d089a96b82d6740f48b24045a064"
+    },
+    {
+      "path": "archive:CAST/improvement/width_v15/evaluations/width_v15_outer_development/config.resolved.json",
+      "role": "historical_v15_outer_configuration_with_effective_0p025_margin_and_exact_outer_RNG_namespace",
+      "sha256": "1e28daba9e5f1d2cdd29bbb81514661c0881b5cba3fccdbdbf812ca54c266f56"
+    },
+    {
+      "path": "archive:CAST/requirements-lock.txt",
+      "role": "historical_pinned_numerical_environment",
+      "sha256": "d05f9bc9a4d663cd2d8cac170030d6c1cf09882e25e7792606e4bbb4cfa773b0"
+    },
+    {
+      "path": "archive:CAST/src/cast/artifacts.py",
+      "role": "historical_base_numerical_authority_artifacts",
+      "sha256": "13daad277595e4cad76443a2fa3f8e78d14350d4b3c02964f8328fdb04551fc3"
+    },
+    {
+      "path": "archive:CAST/src/cast/audio.py",
+      "role": "historical_base_numerical_authority_audio",
+      "sha256": "d5cbff61133be6a85e5f040d2b6663221bdf3b7838dcdaf324c58bace41c40b6"
+    },
+    {
+      "path": "archive:CAST/src/cast/config.py",
+      "role": "historical_base_numerical_authority_config",
+      "sha256": "1deff227c55706771906e1e69ae5b5892d93c54bd3a405fcee186e82b524ed75"
+    },
+    {
+      "path": "archive:CAST/src/cast/fit.py",
+      "role": "historical_base_numerical_authority_fit",
+      "sha256": "c7e4afe32a9041b175b86a46442fad205027b5390e6b7a1a68f701390882fcdd"
+    },
+    {
+      "path": "archive:CAST/src/cast/renderer.py",
+      "role": "historical_base_numerical_authority_renderer",
+      "sha256": "e592a53d3bd10a2ed673b453955bf30fc07f92a7825a9ef8d5defab891cc536a"
+    },
+    {
+      "path": "repo:environments/cast-requirements.lock",
+      "role": "current_checkout_record_of_historical_pinned_environment",
+      "sha256": "d05f9bc9a4d663cd2d8cac170030d6c1cf09882e25e7792606e4bbb4cfa773b0"
+    },
+    {
+      "path": "repo:reports/CAST_improvement.md",
+      "role": "historical_runtime_and_hardware_summary_only_no_new_result",
+      "sha256": "13ba40a3659b946a289b3e063eb862312b57cdd18e371f6265ba9fe7fc7f3d6f"
+    },
+    {
+      "path": "repo:src/abvid/cast/artifacts.py",
+      "role": "current_packaged_numerical_reference_artifacts",
+      "sha256": "d3d88082bd43a6ce8c046f6685c5384d7b8743e39cf3e458e12a9ca84cff3ade"
+    },
+    {
+      "path": "repo:src/abvid/cast/audio.py",
+      "role": "current_packaged_numerical_reference_audio",
+      "sha256": "12a97e1f0a30717765dacbd8e1245022f6b813b23f287b69b5e21284034d747d"
+    },
+    {
+      "path": "repo:src/abvid/cast/config.py",
+      "role": "current_packaged_numerical_reference_config",
+      "sha256": "d487c1a6e6e89b637d8b8710996b7da5d33441d16c539b351ea8ba73dd060363"
+    },
+    {
+      "path": "repo:src/abvid/cast/coverage.py",
+      "role": "current_packaged_numerical_reference_coverage",
+      "sha256": "c96ec42628d27959dde25b930c74cbc857c43ee1dc3f1b507569d3bb5f4ab3b5"
+    },
+    {
+      "path": "repo:src/abvid/cast/fit.py",
+      "role": "current_packaged_numerical_reference_fit",
+      "sha256": "5856bece2ba49e5720582f6c20c9b5e6edd8158819d9ff044148d0191d2746e1"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/capacity_engine.py",
+      "role": "current_packaged_numerical_reference_capacity_engine",
+      "sha256": "876a77e947326fe67d891dc1f4bc42cca39368433ca5722cc9e7db5c0c9a8cda"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/context_prior.py",
+      "role": "current_packaged_numerical_reference_context_prior",
+      "sha256": "bbc6051c82c9dd72f2b034500221c242db303cb41b8ea3bd532f42d5c5e39434"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/engine.py",
+      "role": "current_packaged_numerical_reference_engine",
+      "sha256": "fdf1da92fb5bd8410b07704501fa69fad64e3db79f60353440481abc0f6b5d8e"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/envelope_prior.py",
+      "role": "current_packaged_numerical_reference_envelope_prior",
+      "sha256": "545b5bd281630faf4ea04c799cfb977fabf5b4df14ec289b961e08a0195efaf7"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/evaluate.py",
+      "role": "current_packaged_numerical_reference_evaluate",
+      "sha256": "cfafed0a5450f8d7931f10ba03e12ebadc4e74c268b590d5302dd29b50af2b04"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/group_prior.py",
+      "role": "current_packaged_numerical_reference_group_prior",
+      "sha256": "9183baf1a7c38d454114b512021f24710273a6c1bbb30917a02941c0318a8762"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/parent_mixture_bank.py",
+      "role": "current_packaged_numerical_reference_parent_mixture_bank",
+      "sha256": "6a5e812362525609cd32aa29c05692444ea9461a4d594812f0587d9cc71b8e1e"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/parent_mixture_prior.py",
+      "role": "current_packaged_numerical_reference_parent_mixture_prior",
+      "sha256": "66b844ab6b85cdb0d9b24e067e165b3e41a2a332b8ec2a9bcb936f74b1bc176c"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/resolution_bank.py",
+      "role": "current_packaged_numerical_reference_resolution_bank",
+      "sha256": "004aa9f91ef9564b9eb64e63ea9c29c30d5ce891349ebb1d115dac30238b7027"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/resolution_calibration.py",
+      "role": "current_packaged_numerical_reference_resolution_calibration",
+      "sha256": "1959fd27c8cc7b97ac13ef97013c17a1b8b526408440112f9223aae04611395c"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/resolution_model.py",
+      "role": "current_packaged_numerical_reference_resolution_model",
+      "sha256": "4744ea354d26056a8b6dd04ba0192fce7ec0c461afcfc764df5622ad802bede8"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/resolution_sampling.py",
+      "role": "current_packaged_numerical_reference_resolution_sampling",
+      "sha256": "4a021f146b823069d7f97d12f4759b34dbf04429bbdeda3123c8fd03d1e4e504"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/spectrum_bank.py",
+      "role": "current_packaged_numerical_reference_spectrum_bank",
+      "sha256": "ec9339a9e847007194ed4ec6bc4fee42afbd3890c12e178efbd050afbd9d3483"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/spectrum_calibration.py",
+      "role": "current_packaged_numerical_reference_spectrum_calibration",
+      "sha256": "91c11a1210058e1e03f979caeb6d1d1e2046487f27aaa986b70baf5e172b28cb"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/temporal_prior.py",
+      "role": "current_packaged_numerical_reference_temporal_prior",
+      "sha256": "94be25be726c04ee672130f87a9c53e7d32ee2929b5bcbcd82599f77cb503b2a"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/temporal_sampling.py",
+      "role": "current_packaged_numerical_reference_temporal_sampling",
+      "sha256": "cc77da090df1442a7496aebc6f7c3f40d81bb74553b521372e43c1ac6cb9af8c"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/width_prior.py",
+      "role": "current_packaged_numerical_reference_width_prior",
+      "sha256": "b3f821a0bb469314a8621186f3325871951ba55da050652328d796dc5625f03d"
+    },
+    {
+      "path": "repo:src/abvid/cast/renderer.py",
+      "role": "current_packaged_numerical_reference_renderer",
+      "sha256": "65eff2d361af930055b319ab15a5fe37e6494c58a9f86c4687810557c4d2ff83"
+    }
+  ],
+  "renderer_configs": {
+    "smooth8_temporal41_v10": {
+      "acceptance": {
+        "alias_energy_fraction_tolerance": 1e-05,
+        "changing_spacing_tolerance_hz": 15.625,
+        "finite_difference_relative_tolerance": 0.03,
+        "harmonic_spacing_tolerance_hz": 7.8125,
+        "minimum_fit_loss_improvement_fraction": 0.05,
+        "noise_band_L1_tolerance": 0.35,
+        "nontrivial_fixtures": [
+          "harmonic",
+          "noise",
+          "changing",
+          "mixture"
+        ],
+        "replay_max_abs_tolerance": 0.0,
+        "resampler_max_abs_tolerance": 2e-06,
+        "single_tone_identifiability": "fix_known_fundamental_only_weights_for_unambiguous_recovery_also_test_unrestricted_tone_ambiguity",
+        "single_tone_spacing_tolerance_hz": 7.8125
+      },
+      "audio": {
+        "channels": "arithmetic_mean_two_stored_CH34",
+        "crop": "center_floor_start_after_resampling",
+        "decode_dtype": "float64",
+        "intermediate_rate_hz": 8000,
+        "kaiser_beta": 5.0,
+        "output_dtype": "float32",
+        "padtype": "constant_zero",
+        "profile": "core8_2s",
+        "resampler": "scipy.signal.resample_poly",
+        "sample_rate_hz": 16000,
+        "samples": 32000,
+        "short_audio": "reject_no_padding"
+      },
+      "classifier": null,
+      "data": {
+        "classes": {
+          "car": 0,
+          "truck": 1
+        },
+        "dataset_id": "IDMT",
+        "excluded_groups": "all_current_fold_held_groups_from_hashed_grouped_design_manifest",
+        "fitting_access": "only_current_fold_training_recordings_after_separate_execution_authorization",
+        "historical_role_fields_reused": false,
+        "recording_session": "preserve_exact_source_metadata_unknown_stays_unknown",
+        "release_id": "IDMT_V1",
+        "rule": "fitonly_currentfold",
+        "selection_seed": 42,
+        "source_metadata": "canonical_grouped_design_input_references",
+        "target_access": "none",
+        "training_ids": "exact_current_fold_training_ids_from_hashed_grouped_design_manifest"
+      },
+      "diagnostics": {
+        "boundary_fraction": 0.01,
+        "envelope_frame_samples": 800,
+        "equally_good_relative_loss": 0.05,
+        "mix_disagreement": 0.2,
+        "modulation_max_hz": 10.0,
+        "noise_dominant_mix_threshold": 0.1,
+        "poor_envelope_rmse_threshold": 0.25,
+        "poor_spectral_relative_threshold": 0.75,
+        "salience_resolvable_ratio": 5.0,
+        "scientific_failure_check_improvement_fraction": 0.05,
+        "spacing_disagreement_hz": 7.8125,
+        "spectral_fft": 2048,
+        "weight_boundary_threshold": 0.001
+      },
+      "distribution": null,
+      "hardware": {
+        "deterministic_algorithms": true,
+        "device": "cpu",
+        "interop_threads": 1,
+        "torch_threads": 1
+      },
+      "initialization": {
+        "candidate_separation_hz": 8.0,
+        "centers_samples": [
+          4000,
+          16000,
+          28000
+        ],
+        "envelope": "flat",
+        "grid_step_hz": 2.0,
+        "harmonic_weight_floor": 1e-06,
+        "mix": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "salience": "sum_interpolated_magnitudes_at_harmonics_divided_by_harmonic_order",
+        "search_fft": 8192,
+        "segment_samples": 8000,
+        "trajectory": "strongest_salience_within_40Hz_log_parabolic_refinement",
+        "trajectory_endpoints": "linear_extrapolate_segment_center_estimates_to_0_1_2_seconds_then_clip",
+        "trajectory_radius_hz": 40.0,
+        "weight_logit_jitter_std": 0.1,
+        "weights": "observed_center_harmonic_magnitude_floor_1e-6_noise_uniform"
+      },
+      "loss": {
+        "boundary": "valid_frames_no_padding_discard_incomplete_tail",
+        "center": false,
+        "epsilon": 1e-05,
+        "fft_normalized": false,
+        "fft_sizes": [
+          256,
+          512,
+          1024,
+          2048
+        ],
+        "hop_divisor": 4,
+        "log": "mean_abs_natural_log_difference",
+        "magnitude_floor": "add_epsilon_inside_log",
+        "onesided": true,
+        "regularization": "none",
+        "relative": "mean_abs_difference_over_mean_target_plus_epsilon",
+        "resolution_weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "term_weights": [
+          1.0,
+          1.0
+        ],
+        "window": "periodic_Hann"
+      },
+      "normalization": {
+        "fit": "dc_removed_unit_rms_shape_only",
+        "numerical_rms_floor": 1e-12,
+        "playback": "restore_original_AC_RMS_then_one_common_gain",
+        "playback_peak_limit": 0.95,
+        "silence_rms": 1e-07,
+        "wav_subtype": "FLOAT"
+      },
+      "optimizer": {
+        "best_state": "minimum_fit_loss_including_initial",
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "epsilon": 1e-08,
+        "gradient_clip_norm": 100.0,
+        "lr": 0.03,
+        "name": "adam",
+        "spacing_coordinate_scale_hz": 100.0,
+        "spacing_lr": 0.001,
+        "steps": 300
+      },
+      "renderer": {
+        "alias_rule": "instantaneous_harmonic_frequency_strictly_below_Nyquist",
+        "component_normalization": "DC_removed_unit_RMS_before_mixing",
+        "dtype": "float32_with_float64_phase_accumulation",
+        "envelope_bounds": [
+          0.1,
+          3.0
+        ],
+        "envelope_control_count": 41,
+        "envelope_knots": 5,
+        "envelope_normalization": "interpolated_curve_unit_RMS",
+        "harmonic_weights": "softmax_amplitude_sum_one",
+        "harmonics": 8,
+        "internal_sample_rate_hz": 8000,
+        "interpolation": "linear_endpoint_inclusive",
+        "mix": "clamped_linear_harmonic_energy_fraction_0_1",
+        "noise_edges_hz": [
+          0,
+          125,
+          250,
+          500,
+          1000,
+          1500,
+          2000,
+          3000,
+          4000
+        ],
+        "noise_filter": "log_power_linear_interpolation_at_original_band_centers",
+        "noise_weights": "simplex_point_power_times_original_band_width",
+        "phase": "seeded_per_harmonic_uniform_0_2pi_shared_across_starts",
+        "samples": 16000,
+        "spacing_hz_bounds": [
+          10.0,
+          400.0
+        ],
+        "spacing_knots": 3,
+        "upsampler": "differentiable_FIR_equivalent_scipy_resample_poly_2_1",
+        "upsampler_taps": 41,
+        "version": "cast_smooth8_temporal41_v10"
+      },
+      "schema_version": 1,
+      "seeds": {
+        "check_noise_stream": "disjoint",
+        "check_realizations": 2,
+        "derivation": "SHA256_canonical_JSON_[run,input_id,component,purpose,index]_first8_big_mod_2**63",
+        "fit_realizations": 2,
+        "run": 42,
+        "sampling_realizations": 1,
+        "starts": [
+          42,
+          123,
+          456,
+          789
+        ]
+      }
+    },
+    "smooth8_v1": {
+      "acceptance": {
+        "alias_energy_fraction_tolerance": 1e-05,
+        "changing_spacing_tolerance_hz": 15.625,
+        "finite_difference_relative_tolerance": 0.03,
+        "harmonic_spacing_tolerance_hz": 7.8125,
+        "minimum_fit_loss_improvement_fraction": 0.05,
+        "noise_band_L1_tolerance": 0.35,
+        "nontrivial_fixtures": [
+          "harmonic",
+          "noise",
+          "changing",
+          "mixture"
+        ],
+        "replay_max_abs_tolerance": 0.0,
+        "resampler_max_abs_tolerance": 2e-06,
+        "single_tone_identifiability": "fix_known_fundamental_only_weights_for_unambiguous_recovery_also_test_unrestricted_tone_ambiguity",
+        "single_tone_spacing_tolerance_hz": 7.8125
+      },
+      "audio": {
+        "channels": "arithmetic_mean_two_stored_CH34",
+        "crop": "center_floor_start_after_resampling",
+        "decode_dtype": "float64",
+        "intermediate_rate_hz": 8000,
+        "kaiser_beta": 5.0,
+        "output_dtype": "float32",
+        "padtype": "constant_zero",
+        "profile": "core8_2s",
+        "resampler": "scipy.signal.resample_poly",
+        "sample_rate_hz": 16000,
+        "samples": 32000,
+        "short_audio": "reject_no_padding"
+      },
+      "classifier": null,
+      "data": {
+        "classes": {
+          "car": 0,
+          "truck": 1
+        },
+        "dataset_id": "IDMT",
+        "excluded_groups": "all_current_fold_held_groups_from_hashed_grouped_design_manifest",
+        "fitting_access": "only_current_fold_training_recordings_after_separate_execution_authorization",
+        "historical_role_fields_reused": false,
+        "recording_session": "preserve_exact_source_metadata_unknown_stays_unknown",
+        "release_id": "IDMT_V1",
+        "rule": "fitonly_currentfold",
+        "selection_seed": 42,
+        "source_metadata": "canonical_grouped_design_input_references",
+        "target_access": "none",
+        "training_ids": "exact_current_fold_training_ids_from_hashed_grouped_design_manifest"
+      },
+      "diagnostics": {
+        "boundary_fraction": 0.01,
+        "envelope_frame_samples": 800,
+        "equally_good_relative_loss": 0.05,
+        "mix_disagreement": 0.2,
+        "modulation_max_hz": 10.0,
+        "noise_dominant_mix_threshold": 0.1,
+        "poor_envelope_rmse_threshold": 0.25,
+        "poor_spectral_relative_threshold": 0.75,
+        "salience_resolvable_ratio": 5.0,
+        "scientific_failure_check_improvement_fraction": 0.05,
+        "spacing_disagreement_hz": 7.8125,
+        "spectral_fft": 2048,
+        "weight_boundary_threshold": 0.001
+      },
+      "distribution": null,
+      "hardware": {
+        "deterministic_algorithms": true,
+        "device": "cpu",
+        "interop_threads": 1,
+        "torch_threads": 1
+      },
+      "initialization": {
+        "candidate_separation_hz": 8.0,
+        "centers_samples": [
+          4000,
+          16000,
+          28000
+        ],
+        "envelope": "flat",
+        "grid_step_hz": 2.0,
+        "harmonic_weight_floor": 1e-06,
+        "mix": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "salience": "sum_interpolated_magnitudes_at_harmonics_divided_by_harmonic_order",
+        "search_fft": 8192,
+        "segment_samples": 8000,
+        "trajectory": "strongest_salience_within_40Hz_log_parabolic_refinement",
+        "trajectory_endpoints": "linear_extrapolate_segment_center_estimates_to_0_1_2_seconds_then_clip",
+        "trajectory_radius_hz": 40.0,
+        "weight_logit_jitter_std": 0.1,
+        "weights": "observed_center_harmonic_magnitude_floor_1e-6_noise_uniform"
+      },
+      "loss": {
+        "boundary": "valid_frames_no_padding_discard_incomplete_tail",
+        "center": false,
+        "epsilon": 1e-05,
+        "fft_normalized": false,
+        "fft_sizes": [
+          256,
+          512,
+          1024,
+          2048
+        ],
+        "hop_divisor": 4,
+        "log": "mean_abs_natural_log_difference",
+        "magnitude_floor": "add_epsilon_inside_log",
+        "onesided": true,
+        "regularization": "none",
+        "relative": "mean_abs_difference_over_mean_target_plus_epsilon",
+        "resolution_weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "term_weights": [
+          1.0,
+          1.0
+        ],
+        "window": "periodic_Hann"
+      },
+      "normalization": {
+        "fit": "dc_removed_unit_rms_shape_only",
+        "numerical_rms_floor": 1e-12,
+        "playback": "restore_original_AC_RMS_then_one_common_gain",
+        "playback_peak_limit": 0.95,
+        "silence_rms": 1e-07,
+        "wav_subtype": "FLOAT"
+      },
+      "optimizer": {
+        "best_state": "minimum_fit_loss_including_initial",
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "epsilon": 1e-08,
+        "gradient_clip_norm": 100.0,
+        "lr": 0.03,
+        "name": "adam",
+        "spacing_coordinate_scale_hz": 100.0,
+        "spacing_lr": 0.001,
+        "steps": 300
+      },
+      "renderer": {
+        "alias_rule": "instantaneous_harmonic_frequency_strictly_below_Nyquist",
+        "component_normalization": "DC_removed_unit_RMS_before_mixing",
+        "dtype": "float32_with_float64_phase_accumulation",
+        "envelope_bounds": [
+          0.1,
+          3.0
+        ],
+        "envelope_knots": 5,
+        "envelope_normalization": "interpolated_curve_unit_RMS",
+        "harmonic_weights": "softmax_amplitude_sum_one",
+        "harmonics": 8,
+        "internal_sample_rate_hz": 8000,
+        "interpolation": "linear_endpoint_inclusive",
+        "mix": "clamped_linear_harmonic_energy_fraction_0_1",
+        "noise_edges_hz": [
+          0,
+          125,
+          250,
+          500,
+          1000,
+          1500,
+          2000,
+          3000,
+          4000
+        ],
+        "noise_filter": "log_power_linear_interpolation_at_original_band_centers",
+        "noise_weights": "simplex_point_power_times_original_band_width",
+        "phase": "seeded_per_harmonic_uniform_0_2pi_shared_across_starts",
+        "samples": 16000,
+        "spacing_hz_bounds": [
+          10.0,
+          400.0
+        ],
+        "spacing_knots": 3,
+        "upsampler": "differentiable_FIR_equivalent_scipy_resample_poly_2_1",
+        "upsampler_taps": 41,
+        "version": "cast_smooth_noise_v1_8"
+      },
+      "schema_version": 1,
+      "seeds": {
+        "check_noise_stream": "disjoint",
+        "check_realizations": 2,
+        "derivation": "SHA256_canonical_JSON_[run,input_id,component,purpose,index]_first8_big_mod_2**63",
+        "fit_realizations": 2,
+        "run": 42,
+        "sampling_realizations": 1,
+        "starts": [
+          42,
+          123,
+          456,
+          789
+        ]
+      }
+    },
+    "spectrum16_temporal41_v11": {
+      "acceptance": {
+        "alias_energy_fraction_tolerance": 1e-05,
+        "changing_spacing_tolerance_hz": 15.625,
+        "finite_difference_relative_tolerance": 0.03,
+        "harmonic_spacing_tolerance_hz": 7.8125,
+        "minimum_fit_loss_improvement_fraction": 0.05,
+        "noise_band_L1_tolerance": 0.35,
+        "nontrivial_fixtures": [
+          "harmonic",
+          "noise",
+          "changing",
+          "mixture"
+        ],
+        "replay_max_abs_tolerance": 0.0,
+        "resampler_max_abs_tolerance": 2e-06,
+        "single_tone_identifiability": "fix_known_fundamental_only_weights_for_unambiguous_recovery_also_test_unrestricted_tone_ambiguity",
+        "single_tone_spacing_tolerance_hz": 7.8125
+      },
+      "audio": {
+        "channels": "arithmetic_mean_two_stored_CH34",
+        "crop": "center_floor_start_after_resampling",
+        "decode_dtype": "float64",
+        "intermediate_rate_hz": 8000,
+        "kaiser_beta": 5.0,
+        "output_dtype": "float32",
+        "padtype": "constant_zero",
+        "profile": "core8_2s",
+        "resampler": "scipy.signal.resample_poly",
+        "sample_rate_hz": 16000,
+        "samples": 32000,
+        "short_audio": "reject_no_padding"
+      },
+      "classifier": null,
+      "data": {
+        "classes": {
+          "car": 0,
+          "truck": 1
+        },
+        "dataset_id": "IDMT",
+        "excluded_groups": "all_current_fold_held_groups_from_hashed_grouped_design_manifest",
+        "fitting_access": "only_current_fold_training_recordings_after_separate_execution_authorization",
+        "historical_role_fields_reused": false,
+        "recording_session": "preserve_exact_source_metadata_unknown_stays_unknown",
+        "release_id": "IDMT_V1",
+        "rule": "fitonly_currentfold",
+        "selection_seed": 42,
+        "source_metadata": "canonical_grouped_design_input_references",
+        "target_access": "none",
+        "training_ids": "exact_current_fold_training_ids_from_hashed_grouped_design_manifest"
+      },
+      "diagnostics": {
+        "boundary_fraction": 0.01,
+        "envelope_frame_samples": 800,
+        "equally_good_relative_loss": 0.05,
+        "mix_disagreement": 0.2,
+        "modulation_max_hz": 10.0,
+        "noise_dominant_mix_threshold": 0.1,
+        "poor_envelope_rmse_threshold": 0.25,
+        "poor_spectral_relative_threshold": 0.75,
+        "salience_resolvable_ratio": 5.0,
+        "scientific_failure_check_improvement_fraction": 0.05,
+        "spacing_disagreement_hz": 7.8125,
+        "spectral_fft": 2048,
+        "weight_boundary_threshold": 0.001
+      },
+      "distribution": null,
+      "hardware": {
+        "deterministic_algorithms": true,
+        "device": "cpu",
+        "interop_threads": 1,
+        "torch_threads": 1
+      },
+      "initialization": {
+        "candidate_separation_hz": 8.0,
+        "centers_samples": [
+          4000,
+          16000,
+          28000
+        ],
+        "envelope": "flat",
+        "grid_step_hz": 2.0,
+        "harmonic_weight_floor": 1e-06,
+        "mix": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "salience": "sum_interpolated_magnitudes_at_harmonics_divided_by_harmonic_order",
+        "search_fft": 8192,
+        "segment_samples": 8000,
+        "trajectory": "strongest_salience_within_40Hz_log_parabolic_refinement",
+        "trajectory_endpoints": "linear_extrapolate_segment_center_estimates_to_0_1_2_seconds_then_clip",
+        "trajectory_radius_hz": 40.0,
+        "weight_logit_jitter_std": 0.1,
+        "weights": "observed_center_harmonic_magnitude_floor_1e-6_noise_uniform"
+      },
+      "loss": {
+        "boundary": "valid_frames_no_padding_discard_incomplete_tail",
+        "center": false,
+        "epsilon": 1e-05,
+        "fft_normalized": false,
+        "fft_sizes": [
+          256,
+          512,
+          1024,
+          2048
+        ],
+        "hop_divisor": 4,
+        "log": "mean_abs_natural_log_difference",
+        "magnitude_floor": "add_epsilon_inside_log",
+        "onesided": true,
+        "regularization": "none",
+        "relative": "mean_abs_difference_over_mean_target_plus_epsilon",
+        "resolution_weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "term_weights": [
+          1.0,
+          1.0
+        ],
+        "window": "periodic_Hann"
+      },
+      "normalization": {
+        "fit": "dc_removed_unit_rms_shape_only",
+        "numerical_rms_floor": 1e-12,
+        "playback": "restore_original_AC_RMS_then_one_common_gain",
+        "playback_peak_limit": 0.95,
+        "silence_rms": 1e-07,
+        "wav_subtype": "FLOAT"
+      },
+      "optimizer": {
+        "best_state": "minimum_fit_loss_including_initial",
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "epsilon": 1e-08,
+        "gradient_clip_norm": 100.0,
+        "lr": 0.03,
+        "name": "adam",
+        "spacing_coordinate_scale_hz": 100.0,
+        "spacing_lr": 0.001,
+        "steps": 300
+      },
+      "renderer": {
+        "alias_rule": "instantaneous_harmonic_frequency_strictly_below_Nyquist",
+        "component_normalization": "DC_removed_unit_RMS_before_mixing",
+        "dtype": "float32_with_float64_phase_accumulation",
+        "envelope_bounds": [
+          0.1,
+          3.0
+        ],
+        "envelope_control_count": 41,
+        "envelope_knots": 5,
+        "envelope_normalization": "interpolated_curve_unit_RMS",
+        "harmonic_weights": "softmax_amplitude_sum_one",
+        "harmonics": 8,
+        "internal_sample_rate_hz": 8000,
+        "interpolation": "linear_endpoint_inclusive",
+        "mix": "clamped_linear_harmonic_energy_fraction_0_1",
+        "noise_control_centers_hz": [
+          62.5,
+          125.0,
+          187.5,
+          281.25,
+          375.0,
+          562.5,
+          750.0,
+          1000.0,
+          1250.0,
+          1500.0,
+          1750.0,
+          2125.0,
+          2500.0,
+          3000.0,
+          3500.0,
+          4000.0
+        ],
+        "noise_control_reference_widths_hz": [
+          93.75,
+          62.5,
+          78.125,
+          93.75,
+          140.625,
+          187.5,
+          218.75,
+          250.0,
+          250.0,
+          250.0,
+          312.5,
+          375.0,
+          437.5,
+          500.0,
+          500.0,
+          250.0
+        ],
+        "noise_edges_hz": [
+          0,
+          125,
+          250,
+          500,
+          1000,
+          1500,
+          2000,
+          3000,
+          4000
+        ],
+        "noise_filter": "log_power_linear_at_sixteen_fixed_points",
+        "noise_weights": "simplex_point_power_times_Voronoi_reference_width",
+        "phase": "seeded_per_harmonic_uniform_0_2pi_shared_across_starts",
+        "samples": 16000,
+        "spacing_hz_bounds": [
+          10.0,
+          400.0
+        ],
+        "spacing_knots": 3,
+        "upsampler": "differentiable_FIR_equivalent_scipy_resample_poly_2_1",
+        "upsampler_taps": 41,
+        "version": "cast_spectrum16_temporal41_v11"
+      },
+      "schema_version": 1,
+      "seeds": {
+        "check_noise_stream": "disjoint",
+        "check_realizations": 2,
+        "derivation": "SHA256_canonical_JSON_[run,input_id,component,purpose,index]_first8_big_mod_2**63",
+        "fit_realizations": 2,
+        "run": 42,
+        "sampling_realizations": 1,
+        "starts": [
+          42,
+          123,
+          456,
+          789
+        ]
+      }
+    }
+  },
+  "rng": {
+    "byteorder": "big",
+    "calibration_streams": "same_file_id_phase_shared_and_two_check_noise_realizations",
+    "check_noise_fields": [
+      42,
+      "file_id",
+      "noise",
+      "check",
+      "realization_index_0_or_1"
+    ],
+    "child_seed_fields": [
+      "cast_improvement_sampling_v1:outer",
+      "group_effect_v12_children",
+      "class",
+      "synthesis_seed_label",
+      "sample_index",
+      "arm"
+    ],
+    "child_seed_modulus": null,
+    "direct_donor_draw_order": "uniform_sorted_group_index_then_uniform_file_id_sorted_parent_index_within_group",
+    "excluded_group_handling": "current_fold_role_guard_separate_from_RNG_namespace",
+    "fit_noise_fields": [
+      42,
+      "file_id",
+      "noise",
+      "fit",
+      "realization_index_0_or_1"
+    ],
+    "fit_phase_fields": [
+      42,
+      "file_id",
+      "phase",
+      "shared",
+      0
+    ],
+    "fitting_input_id": "file_id",
+    "fitting_start_seed_labels": [
+      42,
+      123,
+      456,
+      789
+    ],
+    "hash_prefix_bytes": 8,
+    "initialization_fields": [
+      42,
+      "file_id",
+      "initialization",
+      "start",
+      "start_seed_label"
+    ],
+    "joint_child_draw_count": 1,
+    "marginals_child_draw_count": 69,
+    "marginals_direct_donor_count": 69,
+    "new_seed_search": false,
+    "numpy_generator": "np.random.default_rng_PCG64",
+    "paired_across_arms": [
+      "phase",
+      "noise"
+    ],
+    "paired_across_folds": [
+      "same_RNG_keys_with_fold_specific_admitted_donor_population"
+    ],
+    "paired_across_widths": [
+      "direct_donor",
+      "child_choice",
+      "phase",
+      "noise"
+    ],
+    "phase_draw": "torch.rand(8,dtype=float64)*2*pi",
+    "prototype_child_draw_count": 0,
+    "renderer_seed_modulus": 9223372036854775808,
+    "run_seed": 42,
+    "sample_index_range_inclusive": [
+      0,
+      49
+    ],
+    "sample_input_id_excludes": [
+      "actual_fold_id",
+      "arm",
+      "temperature",
+      "analysis_label"
+    ],
+    "sample_input_id_template": "cast_improvement_sampling_v1:outer:sampling:{class}:{synthesis_seed_label}:{sample_index:04d}",
+    "sampling_fold_argument": "outer",
+    "sampling_namespace": "cast_improvement_sampling_v1:outer",
+    "sampling_noise_fields": [
+      42,
+      "sample_input_id",
+      "noise",
+      "sampling",
+      0
+    ],
+    "sampling_phase_fields": [
+      42,
+      "sample_input_id",
+      "phase",
+      "sampling",
+      0
+    ],
+    "seed_hash": "SHA256(canonical_JSON(fields))",
+    "selection_seed_fields": [
+      "cast_improvement_sampling_v1:outer",
+      "selection",
+      "class",
+      "synthesis_seed_label",
+      "sample_index",
+      "arm"
+    ],
+    "selection_seed_modulus": null,
+    "synthesis_seed_labels": [
+      42,
+      123,
+      456,
+      789,
+      1024
+    ],
+    "torch_generator": "torch.Generator().manual_seed(derived_renderer_seed)",
+    "white_noise_draw": "torch.randn(16000,dtype=float32)"
+  },
+  "saved_fit_reuse": {
+    "all_recorded_input_ids_equal_file_ids": true,
+    "cache_miss_rule": "compute_same_frozen_per_parent_recipe_after_separate_execution_authorization_without_substituting_examples",
+    "candidate_count_recorded": 380,
+    "candidate_inventory_field": "input_ids",
+    "candidate_inventory_source": "archive:CAST/improvement/resolution_v11/runs/cast_resolution_v11_20261005/protocol.json",
+    "declared_bank_hash_content_verified_this_task": false,
+    "declared_calibrated_bank_sha256": "a9c5398c9ae6d3b65584fd5db408e352575514b8cd8a8d078d49ba31fe56ca8c",
+    "mismatch_rule": "reject_reuse_preserve_mismatch_record_then_use_same_frozen_recipe_if_execution_authorized",
+    "required_before_reuse": [
+      "parent_id_is_current_fold_training_id",
+      "source_dataset_release_class_group_recording_session_and_all_provenance_links_match",
+      "input_audio_sha256_and_decode_shape_rate_match",
+      "core8_2s_shape_profile_and_silence_rule_match",
+      "same_file_id_seed_namespace_run_seed_all_streams_match",
+      "smooth8_renderer_initialization_optimizer_loss_all_starts_and_winner_rule_match",
+      "all_v7_v8_v9_v10_v11_settings_match",
+      "all_original_fit_component_observation_and_calibration_hashes_match_transitively",
+      "original_parameter_gauge_boundary_flags_alternatives_and_failures_preserved",
+      "saved_numerical_environment_precision_and_implementation_match_or_exact_focused_parity_is_verified",
+      "all_ancestors_are_same_parent_or_allowed_current_fold_training_ancestors",
+      "complete_recorded_audit_chain_matches_unchanged_files",
+      "new_fold_reuse_record_references_original_immutable_artifacts_without_relabeling_historical_role"
+    ],
+    "reusable_population_statistics": false,
+    "reuse_unit": "same_parent_computation_only",
+    "status": "candidate_only_not_content_audited_or_approved_for_reuse"
+  },
+  "scalar_details_not_fully_expressed_in_historical_configs": {
+    "canonical_json": {
+      "allow_nan": false,
+      "encoding": "utf-8",
+      "separators": [
+        ",",
+        ":"
+      ],
+      "sort_keys": true
+    },
+    "control_validation": {
+      "coordinate_bounds_tolerance": 1e-06,
+      "simplex_negative_values_allowed": false,
+      "simplex_sum_absolute_tolerance": 1e-06
+    },
+    "initialize": {
+      "candidate_sort": "np.argsort_negative_salience_kind_stable",
+      "grid": "np.arange(10,400+0.1,2)",
+      "harmonic_floor": "max(weight,maximum_weight*1e-6)",
+      "harmonic_jitter": "exp(Normal(0,0.1))",
+      "initial_envelope": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "initial_noise_simplex": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ],
+      "parabolic_denominator_must_be_below": -1e-12,
+      "parabolic_fraction_clip": [
+        -0.5,
+        0.5
+      ],
+      "parabolic_log_floor_addition": 1e-12,
+      "segment_window": "np.hanning_8000_symmetric"
+    },
+    "parameterization": {
+      "envelope": "0.1+2.9*sigmoid(raw)",
+      "envelope_initial_logit_input_clip": [
+        1e-06,
+        0.999999
+      ],
+      "project_mixture_raw": [
+        0.0,
+        1.0
+      ],
+      "project_spacing_raw": [
+        0.1,
+        4.0
+      ],
+      "simplex_log_floor": 1e-12,
+      "spacing_raw_scale_hz": 100.0
+    },
+    "smooth_noise": {
+      "DC_excluded": true,
+      "amplitude_gain": "exp(0.5*interpolated_log_density)",
+      "exact_Nyquist_excluded": true,
+      "exact_zero_gain_restored_at_component_endpoints": true,
+      "interpolation": "two_point_linear_in_log_power_constant_endpoint_extrapolation",
+      "mixture_amplitude_sqrt_floor": 1e-12,
+      "per_component_shape_normalization_floor": 1e-12,
+      "power_density": "max(noise_weight,1e-12)/reference_width"
+    },
+    "upsampling": {
+      "implementation": "insert_zero_after_each_internal_sample_then_conv1d_padding20",
+      "output_samples": 32000,
+      "taps": "scipy.signal.firwin(41,0.5,window=(kaiser,5.0))*2_cast_float32"
+    }
+  },
+  "schema_version": 1,
+  "status": "frozen_recipe_metadata_only_not_an_execution_authorization"
+}

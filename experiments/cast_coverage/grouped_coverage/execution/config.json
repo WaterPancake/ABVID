@@ -1,0 +1,119 @@
+{
+  "chain_contract": {
+    "path": "repo:experiments/cast_coverage/grouped_coverage/readiness/chain_contract.json",
+    "sha256": "d6f38ccd9c7207ad9f154ecd44e86814682b15faa4dde4ce0a8e02d8f492f3f5"
+  },
+  "design_config": {
+    "path": "repo:configs/experiments/cast_grouped_coverage.json",
+    "sha256": "3b15ad4bc6cec421158a5f7b80c2cf0de270010f233ebfbce857dd66d635ddba"
+  },
+  "design_lock": {
+    "path": "artifact:cast/grouped_coverage/cast4a_design_20261007_v1/lock.json",
+    "sha256": "392222ec36f88bf9012655a788005d2ae72422336c8ed786e9ec04f5978b2de4"
+  },
+  "entrypoint": {
+    "module": "abvid.cast.grouped_runner",
+    "script": "repo:src/abvid/cast/grouped_runner.py"
+  },
+  "expected_counts": {
+    "eligible_cached_parents": 380,
+    "generated_waveforms": 27000,
+    "new_parent_fits": 1484,
+    "partitions": 9,
+    "source_recordings": 4413,
+    "training_parents_per_partition": 380,
+    "unique_training_parents": 1864
+  },
+  "expected_environment": {
+    "numpy": "2.4.6",
+    "python": "3.11.13",
+    "scipy": "1.17.1",
+    "soundfile": "0.14.0",
+    "torch": "2.13.0"
+  },
+  "id": "cast4a_grouped_execution_v1",
+  "implementation_references": [
+    {
+      "path": "repo:src/abvid/cast/grouped_design.py",
+      "sha256": "dec33075f846e1bcd8db750f421f9a294bd2cde18c4d6e2b9e8e8a34ba7507e3"
+    },
+    {
+      "path": "repo:src/abvid/cast/grouped_execution_config.py",
+      "sha256": "4e92843c7e86a8d76b5a987586e5f0c8d469386e08b86d118cf9cb4210f16d40"
+    },
+    {
+      "path": "repo:src/abvid/cast/grouped_metrics.py",
+      "sha256": "d500027b140cee762a38268fdb013d630061bfaf3c94069073114d3d8d5c28bc"
+    },
+    {
+      "path": "repo:src/abvid/cast/grouped_parent.py",
+      "sha256": "e03b666379dc6b724f3e00228d5b51d016d0dbf3f8cb28ee840d9d84eb23508a"
+    },
+    {
+      "path": "repo:src/abvid/cast/grouped_parents.py",
+      "sha256": "ff79812e523caefd54dbdc057e256fd17a9904dbceb6577287a01b646b8d0285"
+    },
+    {
+      "path": "repo:src/abvid/cast/grouped_population.py",
+      "sha256": "15e00b03352cfc58e52fac39651e8bc0095fcf71cc3c5f3612ff445201bcd635"
+    },
+    {
+      "path": "repo:src/abvid/cast/grouped_runner.py",
+      "sha256": "85ff6e4af75d4c3de82039e931935a2f678866a59aa1e15eae938ac9b35cf20e"
+    },
+    {
+      "path": "repo:src/abvid/cast/grouped_storage.py",
+      "sha256": "c69bca0d3b51b1d4944a5d03aa045ae0d2a2f87680b43493c737688f0d8561d4"
+    }
+  ],
+  "max_workers": 4,
+  "numerical_contract": {
+    "path": "repo:experiments/cast_coverage/grouped_coverage/numerical_contract.json",
+    "sha256": "77dd6af160f1d7aa2ea9237e02aa1177468fed1a72fc3f10d6c2aadaa23bab2c"
+  },
+  "output": "artifact:cast/grouped_coverage/cast4a_run_20261008_v1",
+  "readiness_config": {
+    "path": "repo:experiments/cast_coverage/grouped_coverage/readiness/audit.json",
+    "sha256": "d51640e74d5ada4863444070349def9940ca69d3c649e2e4ac227714e8adb6f2"
+  },
+  "readiness_lock": {
+    "path": "artifact:cast/grouped_coverage/cast4a_readiness_20261007_v1/lock.json",
+    "sha256": "2dca3f510bbba025445803798571d0fa88ceb82c737e1775e19dbf70fddd8514"
+  },
+  "schema_version": 1,
+  "scope": "source_domain_effective_observation_coverage_only",
+  "test_references": [
+    {
+      "path": "repo:tests/cast/test_grouped_design.py",
+      "sha256": "fc93f5d0dc4e1a79d6dd084379f42866ad5afd24fa8a24666c2188bfc4ae96ea"
+    },
+    {
+      "path": "repo:tests/cast/test_grouped_execution_config.py",
+      "sha256": "35a09e80a19f211251b303cac8e5fe2d4ce702c3b534ba5defeef7d90773ac50"
+    },
+    {
+      "path": "repo:tests/cast/test_grouped_metrics.py",
+      "sha256": "a82f1f933476ba899ffaac3b1ec05375b47a38a617cf5da6ad99b0549351eae8"
+    },
+    {
+      "path": "repo:tests/cast/test_grouped_parent.py",
+      "sha256": "31666aad4c4113e47ac1297010defc84f36ef7396add70d11371a3d4f84b2906"
+    },
+    {
+      "path": "repo:tests/cast/test_grouped_parents.py",
+      "sha256": "e94f5d2d97638ce9ee9c27c021e669b840d9b094de9c54baef75a1f424d9f4e0"
+    },
+    {
+      "path": "repo:tests/cast/test_grouped_population.py",
+      "sha256": "44213d33334502398e0c72231e91ea85198437478ec9c1669ecb858f2a388214"
+    },
+    {
+      "path": "repo:tests/cast/test_grouped_runner.py",
+      "sha256": "6fd192f2b49dee29b89c95f9142f06641565ab94665a9890198b72c4637cccd5"
+    },
+    {
+      "path": "repo:tests/cast/test_grouped_storage.py",
+      "sha256": "f256fd4f112344be9253b8ddb0dd1c80a2f074070ff4334e2b777b102155261c"
+    }
+  ]
+}

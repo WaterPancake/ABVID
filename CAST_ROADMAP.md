@@ -1,6 +1,6 @@
 # CAST research roadmap
 
-Updated 2026-10-06. CAST fits an effective model of recorded vehicle acoustics,
+Updated 2026-10-08. CAST fits an effective model of recorded vehicle acoustics,
 then samples its fitted population to generate additional observations. Its
 research objective is to determine whether that calibration improves vehicle
 classification across recording groups and datasets, beyond ordinary augmentation
@@ -101,6 +101,24 @@ including a negative result. Advancement and positive scientific claims depend
 on the evidence; a failed hypothesis is not an implementation defect.
 
 ## CAST-4A broaden grouped coverage evaluation
+
+**Preparation status (2026-10-08):** The
+[grouped protocol](experiments/cast_coverage/grouped_coverage/PROTOCOL.md) and
+[metadata design](reports/CAST_grouped_coverage_design.md) now fix six group
+holdouts plus a separate three-site sensitivity analysis, all at 190/class.
+Each width has its own joint, prototype and marginal arms. The
+[fitter and saved-fit readiness checks](reports/CAST_fit_readiness.md) now pass:
+the packaged smooth8 fitter matches the historical full-budget synthetic result,
+and all 380 named parameter records are eligible within their exact training
+roles. Later cached reconstruction waveforms remain excluded. The
+[grouped runner](reports/CAST_grouped_runner.md) now connects same-parent
+calibration, fold-local populations, complete-generation gates, scoring and
+resumable replay under an additive pinned execution configuration. Its
+322 focused implementation checks pass; the new tests still require the
+human-only harness-baseline review before merge. Scientific execution remains
+unrun: another 1,484 distinct selected parents
+still require fits before the nine-fold coverage schedule can finish.
+CAST-4B/5 and the frozen scientific design are unchanged.
 
 **Question:** Does the frozen v15 method meet its existing descriptor criteria
 across the admitted IDMT groups?
@@ -405,9 +423,10 @@ current help default is not a reproduction of the full v15 workflow.
 
 ## Immediate work order
 
-1. Prepare the CAST-4A source-only protocol and metadata inventory, retaining
-   fixed v15 and the existing acceptance criteria. Check whole-site feasibility
-   before choosing its sensitivity-analysis budget.
+1. Complete the separately scoped CAST-4A scientific execution using the
+   prepared grouped runner: fit the missing selected parents, rebuild all nine
+   populations, generate and replay the frozen schedule, then score the held
+   groups/sites. Keep fixed v15 and the existing acceptance criteria.
 2. Define and verify the CAST-4B joint metric on synthetic dependence/dispersion
    fixtures, then evaluate the same frozen banks after source-only authorization.
 3. Freeze the CAST-5A matched arm table, common input profile, manual prior,

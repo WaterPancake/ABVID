@@ -1,0 +1,385 @@
+{
+  "analyses": [
+    {
+      "folds": 6,
+      "held": "literal H1 fold test_ids, all observations",
+      "id": "group",
+      "selection_seed": 42,
+      "train": "literal H1 fold train_ids[42], retain order",
+      "training_groups": 5,
+      "validation": null
+    },
+    {
+      "folds": 3,
+      "held": "all admitted IDMT at held site, sorted file_id; both dates",
+      "id": "site",
+      "selection_seed": 42,
+      "train": "abvid.data.splits.select(all IDMT outside held site,190,42,cast4a_site_v1|{site})",
+      "training_groups": 4,
+      "validation": null
+    }
+  ],
+  "arms": [
+    {
+      "id": "v14_joint",
+      "sampler": "joint",
+      "temperature": 1.0
+    },
+    {
+      "id": "v14_prototype",
+      "sampler": "prototype",
+      "temperature": 1.0
+    },
+    {
+      "id": "v14_marginals",
+      "sampler": "marginals",
+      "temperature": 1.0
+    },
+    {
+      "id": "v15_joint",
+      "sampler": "joint",
+      "temperature": 1.1
+    },
+    {
+      "id": "v15_prototype",
+      "sampler": "prototype",
+      "temperature": 1.1
+    },
+    {
+      "id": "v15_marginals",
+      "sampler": "marginals",
+      "temperature": 1.1
+    }
+  ],
+  "budget_per_class": 190,
+  "dataset": {
+    "classes": {
+      "car": 0,
+      "truck": 1
+    },
+    "id": "IDMT",
+    "mapping": "identity",
+    "motorcycle": "excluded",
+    "provider_channels": [
+      3,
+      4
+    ],
+    "release": "IDMT_V1",
+    "scope": "recorded effective observations; not dry physical sources",
+    "unknown_sessions": "retain null; never infer"
+  },
+  "execution_scope": "metadata_only",
+  "failure_policy": {
+    "drop_failed_seeds": false,
+    "interruptions": "exact unchanged restart allowed with recovery record",
+    "relax_grouping": false,
+    "replace_examples": false,
+    "retune_after_held_access": false,
+    "solver_fallback": "retain flagged original/lifted parameters exactly as inherited recipe specifies",
+    "unrecoverable": "mark failed fold, retain artifacts; no all-groups success claim"
+  },
+  "future_artifacts": [
+    "per-parent alternatives and full calibration ancestry",
+    "fold-local banks and group/width statistics",
+    "generated waveforms and full donor lineage",
+    "540 per-fold/class/seed/arm descriptor score rows",
+    "per-class/fold/arm summaries and bootstrap intervals",
+    "failure/projection/ambiguity records",
+    "environment/code/config/runtime/memory and replay verification",
+    "reports/CAST_grouped_coverage.md"
+  ],
+  "future_execution_gates": [
+    "separately scoped scientific execution",
+    "packaged smooth8 fitter and role adapter with focused parity tests",
+    "audit any candidate per-parent fit cache before reuse",
+    "freeze every train-only bank/statistic before held scoring",
+    "full planned generation schedule before fold scoring",
+    "retain all failures and replay artifacts"
+  ],
+  "id": "cast4a_grouped_design_v1",
+  "implementation_references": [
+    {
+      "path": "repo:pyproject.toml",
+      "sha256": "7cdd50d42d9ed0e92eefbca0b6ce4a4bbb59bfb6c1d929a1631e9dcaa8e9e7a7"
+    },
+    {
+      "path": "repo:src/abvid/__init__.py",
+      "sha256": "f0c43cc9eb3cfa5948b37faf5c5806d471a6cef08494ddc4b4a7fe0f9efef010"
+    },
+    {
+      "path": "repo:src/abvid/cast/__init__.py",
+      "sha256": "504fb095c2a58598236df12c279beee24bbb20488f943fa786badf035aa9c339"
+    },
+    {
+      "path": "repo:src/abvid/cast/artifacts.py",
+      "sha256": "d3d88082bd43a6ce8c046f6685c5384d7b8743e39cf3e458e12a9ca84cff3ade"
+    },
+    {
+      "path": "repo:src/abvid/cast/audio.py",
+      "sha256": "12a97e1f0a30717765dacbd8e1245022f6b813b23f287b69b5e21284034d747d"
+    },
+    {
+      "path": "repo:src/abvid/cast/config.py",
+      "sha256": "d487c1a6e6e89b637d8b8710996b7da5d33441d16c539b351ea8ba73dd060363"
+    },
+    {
+      "path": "repo:src/abvid/cast/coverage.py",
+      "sha256": "c96ec42628d27959dde25b930c74cbc857c43ee1dc3f1b507569d3bb5f4ab3b5"
+    },
+    {
+      "path": "repo:src/abvid/cast/fit.py",
+      "sha256": "5856bece2ba49e5720582f6c20c9b5e6edd8158819d9ff044148d0191d2746e1"
+    },
+    {
+      "path": "repo:src/abvid/cast/grouped_design.py",
+      "sha256": "dec33075f846e1bcd8db750f421f9a294bd2cde18c4d6e2b9e8e8a34ba7507e3"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/__init__.py",
+      "sha256": "4bba9b6a831fd6815f8d3a0e1293f961c3e6f479ef0c6a0b2d953095702af03a"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/alternative_prior.py",
+      "sha256": "0c9044ac4295302f28ac4335eb062f1080cf27df2a9a17f86458b2e23a386121"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/balanced_prior.py",
+      "sha256": "a6be0addace2257f49f2cee23dc6e98b5f9a4cf419a01e2afbaf01d3acd7a411"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/block_prior.py",
+      "sha256": "f9533defda9b7b6b69361afd315908dcbb7d6afa296a47b266880562c6620f8c"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/calibration_prior.py",
+      "sha256": "6e9bf3f9776aa4eedbaa856bd33d65d8b2638ec9b108f5d2ca8cbf34b4e56499"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/capacity_engine.py",
+      "sha256": "876a77e947326fe67d891dc1f4bc42cca39368433ca5722cc9e7db5c0c9a8cda"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/context_prior.py",
+      "sha256": "bbc6051c82c9dd72f2b034500221c242db303cb41b8ea3bd532f42d5c5e39434"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/engine.py",
+      "sha256": "fdf1da92fb5bd8410b07704501fa69fad64e3db79f60353440481abc0f6b5d8e"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/envelope_prior.py",
+      "sha256": "545b5bd281630faf4ea04c799cfb977fabf5b4df14ec289b961e08a0195efaf7"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/evaluate.py",
+      "sha256": "cfafed0a5450f8d7931f10ba03e12ebadc4e74c268b590d5302dd29b50af2b04"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/group_prior.py",
+      "sha256": "9183baf1a7c38d454114b512021f24710273a6c1bbb30917a02941c0318a8762"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/mixture_prior.py",
+      "sha256": "38ba22fce65e835c56a31f88ecbe52426218f98aa1b7de3ba6f580d2afc4a4d5"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/parent_mixture_bank.py",
+      "sha256": "6a5e812362525609cd32aa29c05692444ea9461a4d594812f0587d9cc71b8e1e"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/parent_mixture_prior.py",
+      "sha256": "66b844ab6b85cdb0d9b24e067e165b3e41a2a332b8ec2a9bcb936f74b1bc176c"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/resolution_bank.py",
+      "sha256": "004aa9f91ef9564b9eb64e63ea9c29c30d5ce891349ebb1d115dac30238b7027"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/resolution_calibration.py",
+      "sha256": "1959fd27c8cc7b97ac13ef97013c17a1b8b526408440112f9223aae04611395c"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/resolution_evaluation.py",
+      "sha256": "a02c6a0ed14d5db05fc597bd6da4f9c83c7365d8dd1113555e41920b506c9b08"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/resolution_model.py",
+      "sha256": "4744ea354d26056a8b6dd04ba0192fce7ec0c461afcfc764df5622ad802bede8"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/resolution_sampling.py",
+      "sha256": "4a021f146b823069d7f97d12f4759b34dbf04429bbdeda3123c8fd03d1e4e504"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/spectrum_bank.py",
+      "sha256": "ec9339a9e847007194ed4ec6bc4fee42afbd3890c12e178efbd050afbd9d3483"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/spectrum_calibration.py",
+      "sha256": "91c11a1210058e1e03f979caeb6d1d1e2046487f27aaa986b70baf5e172b28cb"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/temporal_prior.py",
+      "sha256": "94be25be726c04ee672130f87a9c53e7d32ee2929b5bcbcd82599f77cb503b2a"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/temporal_sampling.py",
+      "sha256": "cc77da090df1442a7496aebc6f7c3f40d81bb74553b521372e43c1ac6cb9af8c"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/width_prior.py",
+      "sha256": "b3f821a0bb469314a8621186f3325871951ba55da050652328d796dc5625f03d"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/width_selection.py",
+      "sha256": "70eb06c1967ada9baf221d297cc053d44e0bd3996822b717b6503dc7c2810586"
+    },
+    {
+      "path": "repo:src/abvid/cast/renderer.py",
+      "sha256": "65eff2d361af930055b319ab15a5fe37e6494c58a9f86c4687810557c4d2ff83"
+    },
+    {
+      "path": "repo:src/abvid/cast/synthetic.py",
+      "sha256": "3b988f70321d0748c7c6abf30faa53425616b24f33b67231fc4d81e62dbf6032"
+    },
+    {
+      "path": "repo:src/abvid/cli.py",
+      "sha256": "07aff4f9873214376e890edf0c6ccfe01755d6f7d6660864a8ec027bdec2edef"
+    },
+    {
+      "path": "repo:src/abvid/data/__init__.py",
+      "sha256": "6c115b16f0e85a9e23218983e3383126ed34a0c574dbb7ee1af40c0e25d23d55"
+    },
+    {
+      "path": "repo:src/abvid/data/splits.py",
+      "sha256": "09f1039df7b98b493acbe701e2549ca834d89265adfd4327386c73d6180b4f36"
+    },
+    {
+      "path": "repo:src/abvid/paths.py",
+      "sha256": "b6f985036a59c29ab60033a1e7c8258155f52729639abc10a2c690f0ff7ec933"
+    },
+    {
+      "path": "repo:src/abvid/protocol.py",
+      "sha256": "2896da0e03766c0758e78ef425b43d2c2d90f5a9559d81c34a905f97ca5260de"
+    },
+    {
+      "path": "repo:src/abvid/provenance/__init__.py",
+      "sha256": "9e64787a219fa4c4713c0b01e5c7a360d364709c4a0f50cacaefa1bdf4cd1938"
+    },
+    {
+      "path": "repo:src/abvid/provenance/hashing.py",
+      "sha256": "b15cf25fe7ed0789af6e140b1202fdd3054a752d70710ce5aecf0b5a83594772"
+    },
+    {
+      "path": "repo:uv.lock",
+      "sha256": "457a95df2ad356c9e9dd862ba233c6dc9aff75f8ec52e03d9067705b3fed4dc5"
+    }
+  ],
+  "inputs": {
+    "admission": {
+      "path": "archive:experiments/h1/frozen/h1_common_budget_v1.3/admitted.jsonl",
+      "sha256": "ee8b67b002a4528b036e6d2a3ab6f8f6015cd59fffbbc27214ad2786a7d31f96"
+    },
+    "candidate_fit_lock": {
+      "path": "archive:CAST/improvement/resolution_v11/runs/cast_resolution_v11_20261005/lock.json",
+      "sha256": "bfdf07fec5832b065f986a626ab584b0f86df4a679c17d0d6cbd3fee83e563fe"
+    },
+    "candidate_fit_protocol": {
+      "path": "archive:CAST/improvement/resolution_v11/runs/cast_resolution_v11_20261005/protocol.json",
+      "sha256": "9dc1e2fa3d207509f3896a737a83f438c7bfa2adbc87154d105e1c88d6500b2a"
+    },
+    "candidate_fit_verification": {
+      "path": "archive:CAST/improvement/resolution_v11/runs/cast_resolution_v11_20261005/calibration_verification.json",
+      "sha256": "db840ffbf308d2d7bcda128ffcea186274e3a2b176f58b7f578b28b8d40414c0"
+    },
+    "h1_config": {
+      "path": "archive:experiments/h1/frozen/h1_common_budget_v1.3/config.json",
+      "sha256": "81783da5dcc135e92c80862d92a4a8da3cf4ae8af36704cd53e51c7291159191"
+    },
+    "h1_lock": {
+      "path": "archive:experiments/h1/frozen/h1_common_budget_v1.3/lock.json",
+      "sha256": "3e427a2f4ee084ecdd4102dd3a9863a55cc06496abdb9688258ec26cbaaf901e"
+    },
+    "numerical_contract": {
+      "path": "repo:experiments/cast_coverage/grouped_coverage/numerical_contract.json",
+      "sha256": "77dd6af160f1d7aa2ea9237e02aa1177468fed1a72fc3f10d6c2aadaa23bab2c"
+    },
+    "protocol": {
+      "path": "repo:experiments/cast_coverage/grouped_coverage/PROTOCOL.md",
+      "sha256": "29f7787bc922747cbb2c0ead04c233f984324f8062c5ec57fee40f5ef347acc1"
+    }
+  },
+  "metrics": {
+    "acceptance": "each primary fold/class v15 joint must satisfy coverage>=0.8, both control W1 gains>=0.025, all family spread means in [0.5,2] and technical gates",
+    "authority": "numerical_contract.json metric_config and metric_definitions",
+    "falsification": "Any primary fold/class misses one fixed criterion falsifies across-evaluated-groups adequacy. Numerical/provenance failure is technical incompletion, not evidence for physical source or propagation dominance.",
+    "site": "same criteria, separate sensitivity; cannot rescue primary failure",
+    "synthesis_aggregation": "arithmetic mean over all five seeds; W1 gain is ratio of means",
+    "v14": "same criteria, reference only; no width selection"
+  },
+  "models": {
+    "augmentation": "only the six declared fitted-population samplers; no added propagation/environment/sensor transformation",
+    "classifier": null,
+    "fine_tuning": false,
+    "pretrained_checkpoint": null,
+    "representation": "four frozen descriptor families in numerical_contract.json"
+  },
+  "output": "artifact:cast/grouped_coverage/cast4a_design_20261007_v1",
+  "question": "Does fixed CAST v15 meet the existing source-descriptor criteria across admitted IDMT groups?",
+  "resources": {
+    "environment": "cast profile, inherited numeric versions and lock references in numerical_contract.json; no environment changes during scientific execution",
+    "hardware": "CPU, deterministic algorithms, four outer workers maximum and one torch thread/inter-op thread each; no GPU required. Historical hardware model unknown.",
+    "new_runtime_seconds": null,
+    "runtime_planning": "Historical timings are in numerical contract; estimate only after adapter parity, no timing experiment in this metadata freeze.",
+    "storage": "external artifact root; no generated audio/models/features inside checkout"
+  },
+  "samples_per_class_seed_arm": 50,
+  "sampling": {
+    "ancestry": "all training parents behind centers plus direct donors, never held groups",
+    "fold_width_in_rng": false,
+    "index_range_inclusive": [
+      0,
+      49
+    ],
+    "namespace": "cast_improvement_sampling_v1:outer",
+    "parameters_drawn_during_freeze": false,
+    "schedule_file": "planned_generation.jsonl",
+    "waveform_streams_shared_across_arms": true
+  },
+  "schema_version": 1,
+  "seeds": [
+    42,
+    123,
+    456,
+    789,
+    1024
+  ],
+  "selection_numpy_version": "2.4.6",
+  "study_status": "design freeze; scientific execution unrun",
+  "uncertainty": {
+    "bootstrap": "numpy.random.Generator(numpy.random.PCG64(314159)) reset per analysis; one shared index matrix for all contrasts",
+    "contrasts": [
+      "v15_joint minus v14_joint coverage and family spread",
+      "v14_joint W1 minus v15_joint W1",
+      "each width control W1 minus same-width joint W1",
+      "per-fold relative W1 gains, equally averaged over folds"
+    ],
+    "draws": 10000,
+    "folds_per_draw": {
+      "group": 6,
+      "site": 3
+    },
+    "interpretation": "descriptive conditional intervals; overlapping training sets, only three sites; not independent confirmation",
+    "interval": [
+      0.025,
+      0.975
+    ],
+    "missing": "no complete-schedule interval for an incomplete analysis",
+    "point_estimate": "equal-fold means of per-class fixed-seed means; class-balanced summary gives each class equal weight",
+    "quantile_method": "linear",
+    "replacement": true,
+    "seed_variation": "report each seed and min/max separately; do not bootstrap seeds",
+    "unit": "whole held fold vector; both classes, all arms, all five seeds remain paired"
+  },
+  "validation_policy": "No tuning, model selection, width search, or early stopping against held observations; fixed inherited recipe."
+}

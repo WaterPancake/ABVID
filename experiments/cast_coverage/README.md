@@ -2,6 +2,11 @@
 
 CAST observation-model coverage; transfer remains untested.
 
+Follow the [CAST research roadmap](../../CAST_ROADMAP.md) for current status,
+the next grouped coverage checks, proposed classification controls and the
+dependencies on the [main ABVID plan](../../ABVID_ROADMAP.md). The
+[original plan](PLAN.md) and replay protocols retain their historical scope.
+
 - Canonical wrapper: [configuration](../../configs/experiments/cast_coverage.json).
 - Original contract: `archive:CAST/improvement/width_v15/PROTOCOL.md` (SHA256 pinned by the wrapper).
 - Original runner directory: `archive:CAST`.

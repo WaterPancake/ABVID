@@ -1,0 +1,81 @@
+{
+  "chain_contract": {
+    "path": "repo:experiments/cast_coverage/grouped_coverage/readiness/chain_contract.json",
+    "sha256": "d6f38ccd9c7207ad9f154ecd44e86814682b15faa4dde4ce0a8e02d8f492f3f5"
+  },
+  "design_config": {
+    "path": "repo:configs/experiments/cast_grouped_coverage.json",
+    "sha256": "3b15ad4bc6cec421158a5f7b80c2cf0de270010f233ebfbce857dd66d635ddba"
+  },
+  "design_lock": {
+    "path": "artifact:cast/grouped_coverage/cast4a_design_20261007_v1/lock.json",
+    "sha256": "392222ec36f88bf9012655a788005d2ae72422336c8ed786e9ec04f5978b2de4"
+  },
+  "entrypoint": {
+    "path": "repo:src/abvid/cast/readiness.py",
+    "sha256": "52ec0e1bfd14536d0910709a025dfeade010b6f62961a230769cb9e60764d05c"
+  },
+  "expected_environment": {
+    "numpy": "2.4.6",
+    "python": "3.11.13",
+    "scipy": "1.17.1",
+    "soundfile": "0.14.0",
+    "torch": "2.13.0"
+  },
+  "id": "cast4a_fit_readiness_v1",
+  "implementation_references": [
+    {
+      "path": "repo:src/abvid/cast/smooth_fit.py",
+      "sha256": "07d4d84379172119deab5285742c7a5ecd40ab897bfc0d9a2ddbe6feedbccc76"
+    },
+    {
+      "path": "repo:src/abvid/cast/roles.py",
+      "sha256": "92aa068fe216abf0116405d386d22b4351100fe8726947e25a71d48a330bfd75"
+    },
+    {
+      "path": "repo:src/abvid/cast/reuse_chain.py",
+      "sha256": "38eefb95e58ba341613a7a36ff48e10823737c847d77b9fbfef95efee9467b84"
+    },
+    {
+      "path": "repo:tests/cast/test_smooth_fit.py",
+      "sha256": "73b6569f1dda9bffb12fe40f57fd92b9b767c8c81eabd5ecafcf48eb9b62c3cf"
+    },
+    {
+      "path": "repo:tests/cast/test_roles.py",
+      "sha256": "d8169fbf13b0b43cee36548e8609fd41568f067b239b7311683991742c4baaa4"
+    },
+    {
+      "path": "repo:tests/cast/test_reuse_chain.py",
+      "sha256": "a6d0de20c0485f1f60b8d29bd87b42e99cba0e7f6461264088b56eb2308615d5"
+    },
+    {
+      "path": "repo:tests/cast/test_readiness.py",
+      "sha256": "0e2fac67cf7b73a650f6be6580eba15c42dc2db6b4625bf4918f3c1ef09bf0ca"
+    }
+  ],
+  "output": "artifact:cast/grouped_coverage/cast4a_readiness_20261007_v1",
+  "schema_version": 1,
+  "scope": "existing_source_fit_audit_and_synthetic_parity_only",
+  "validation_references": [
+    {
+      "path": "artifact:cast/grouped_coverage/cast4a_readiness_validation_20261007_v1/tests.xml",
+      "sha256": "96b4c65207fa3a3f68082e0c7f59e6674b63e56082d5082ed1714a77a2c913c6"
+    },
+    {
+      "path": "artifact:cast/grouped_coverage/cast4a_readiness_validation_20261007_v1/tests.log",
+      "sha256": "6d5a1c75c36928d7d21613fc9c6280eab466d92931de82915b595cde2c463798"
+    },
+    {
+      "path": "artifact:cast/grouped_coverage/cast4a_smooth_fit_parity_20261007_v1/smooth_fit_parity_mixture_2.json",
+      "sha256": "77f6b23e9a832ad0c268b91a42e2255abc57bf7a90d6293423c2afe4e36db755"
+    },
+    {
+      "path": "artifact:cast/grouped_coverage/cast4a_smooth_fit_parity_20261007_v1/smooth_fit_parity_single_tone_2.json",
+      "sha256": "acb25d81292bfcd06b844f68b3768b737dd41d82e57ad1718238c9e957d468dd"
+    },
+    {
+      "path": "artifact:cast/grouped_coverage/cast4a_smooth_fit_parity_20261007_v1/smooth_fit_parity_mixture_300.json",
+      "sha256": "dbf2c50ee7a670813bd66500e04ba80d57aa93a7435e430cd9163b0856e0db9e"
+    }
+  ]
+}
