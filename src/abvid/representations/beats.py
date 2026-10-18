@@ -88,8 +88,9 @@ def extract_embeddings(encoder, waveforms):
 def extract_layer_embeddings(encoder, waveforms):
     """Mean-pooled token outputs of every transformer layer: batch x layers x 768.
 
-    Forward hooks read each layer's output during one frozen forward pass; the
-    last layer equals ``extract_embeddings`` (checked by the caller's tests).
+    Forward hooks read each layer's output during one frozen forward pass. The
+    last layer must match ``extract_embeddings`` (checked here at runtime); the two
+    use different reductions, so the check allows float rounding, not exact bits.
     """
     captured = []
     hooks = [layer.register_forward_hook(lambda _m, _i, out: captured.append(out[0]))
@@ -102,6 +103,6 @@ def extract_layer_embeddings(encoder, waveforms):
     if len(captured) != len(encoder.encoder.layers):
         raise ValueError("Missing layer outputs")
     layers = torch.stack([x.transpose(0, 1).mean(dim=1) for x in captured], dim=1)
-    if not torch.equal(layers[:, -1], final):
+    if not torch.allclose(layers[:, -1], final, rtol=1e-5, atol=1e-5):
         raise ValueError("Last-layer mean differs from the frozen embedding")
     return layers.float()
