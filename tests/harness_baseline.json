@@ -1,15 +1,16 @@
 {
   "environments": {
     "baseline": {
-      "test_count": 489
+      "test_count": 711
     },
     "cast": {
-      "test_count": 467
+      "test_count": 678
     }
   },
   "file_hashes": {
     "configs/experiments/admission.json": "b9b61bd1389bf0bfff284660d2b6c44ee7048e66dfc3eb91439f1b5dda46d50c",
     "configs/experiments/cast_coverage.json": "647f656d5ca5166111a42d53393e37dedecf627e71ad9d94179c300e8faa5d02",
+    "configs/experiments/cast_grouped_coverage.json": "3b15ad4bc6cec421158a5f7b80c2cf0de270010f233ebfbce857dd66d635ddba",
     "configs/experiments/h1_baselines.json": "8ce20565e921098d9c3ac4fbeca17229e5d77cf41f7913089776985873c87e08",
     "configs/experiments/h2_simulation.json": "721d1d8985824c3923be8ef29949628bfc49e4cec4ce623fe609b59de4ed5dac",
     "configs/experiments/r0_reproduction.json": "03c418daddccde0ac99e7a14e5f801ca62b00dcc4b0565f3d6dabe4c2e91890b",

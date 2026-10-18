@@ -337,7 +337,10 @@ and introduces a per-dataset target panel. Under these metrics:
 - H1's BEATs procedural-only advantage shrinks from +11.82 macro-F1 to +2.59 AUROC
   points, and its interval crosses zero.
 - MFCC synthetic "gains" reverse.
-- H2's BEATs path advantage holds at −22.41 AUROC for D (source minus path).
+- H2's BEATs D (source minus path) stays at −22.41 AUROC, but the effect is carried
+  by the implemented air filter's latency: an implementation effect, not a physical
+  path mechanism. With latency removed the path finding does not survive (H2R entry,
+  [research log](RESEARCH_LOG.md)).
 - MFCC ranks the target at about 70% AUROC despite predicting truck almost everywhere.
 
 Future target results report per-dataset rows and ranking metrics alongside macro-F1.
@@ -588,6 +591,8 @@ gains and further simulator development are not prerequisites for that interface
     - [Joint confirmation plan](experiments/joint_confirmation/PLAN.md) (2026-10-11):
       CAST and a corrected H2 replication are developed separately on IDMT and
       MELAUDIS, frozen together, and scored on the sealed DCASE set in one pass.
+      Superseded 2026-10-12: neither CAST-5A nor H2R has positive development
+      evidence, and the user decided to keep DCASE sealed until a candidate does.
 7.  Advance the [CAST branch](CAST_ROADMAP.md#immediate-work-order) through fixed
     grouped coverage and joint-feature diagnostics before a separately frozen
     utility comparison. Preserve v15 as the reference and compare CAST against

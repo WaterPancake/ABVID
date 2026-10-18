@@ -195,13 +195,18 @@ storage locations and historical replay boundaries.
 - **Incidents:**
   - An RC-loader performance bug (eager `setdefault`) was fixed and regression-tested,
     with no numerical effect; the population fingerprint was reproduced.
-  - The working tree was switched to `learned-audio-signature` outside this session;
-    executed code was identical to `main` `2a1d40e`.
+  - The run executed on branch `learned-audio-signature` (commit `1937c89`, 77 dirty
+    paths) from untracked code; it was not `main` `2a1d40e`. See Provenance.
 - **Decision:** CAST-5B not justified (roadmap precondition unmet). The joint DCASE pass
   has no primary with positive development evidence; re-scoping is the user's decision.
 - **Provenance:**
   - Design identity: `bceaf26b…32fc`.
   - Results: `ce2df9b3…2bf3`.
+  - Recorded environment: commit `1937c89` with 77 dirty paths, Python 3.11.13,
+    torch 2.11.0, NumPy 1.26.4, macOS 26.6.2 arm64; statistics seed 20261013.
+  - Code: the recorded `learn.py` SHA256 `96c2b78d…85f8` matches the file committed
+    to `main` in `273675c`. Imported library modules were not hashed at run time, so
+    their identity with the committed versions is `unknown`.
   - Report: [CAST_source_classification](reports/CAST_source_classification.md).
 
 ## 2026-10-12 — B1 baseline strength (IDMT, development) and dataset scan
@@ -213,6 +218,14 @@ storage locations and historical replay boundaries.
   - **Drivers:** full-band input (BEATs +5.9), strong L2 (+4.0), all data once
     regularized; combined BEATs +12.7. MFCC26 generalizes best within IDMT; CNN14 is
     worst.
+  - **Provenance:** results record branch `learned-audio-signature`, commit `1937c89`
+    with 84 dirty paths, Python 3.11.13, torch 2.11.0, NumPy 1.26.4, macOS 26.6.2
+    arm64. The recorded `run.py` (`56f451c5…c2e8`) and protocol (`7f83741d…ab2f`)
+    SHA256 values match the files committed to `main` in `59c468d`; imported library
+    modules (including `beats.py` and `grouped_search.py`) were not hashed at run time,
+    so their identity is `unknown`. Seeds: H1 lock selections 42, 123, 456, 789, 1024;
+    bootstrap PCG64 20261014. Checkpoints: BEATs `d43cbfad…8d34` (H1 config), CNN14
+    `0dc499e4…4b31`.
   - [Report](reports/B1_baseline_strength.md).
 - **Implication (hypothesis):** CAST and H2 were band-limited to 4 kHz and scored on the
   same route. Full-band synthesis plus the B1 recipe is needed before revisiting synthetic

@@ -436,19 +436,22 @@ current help default is not a reproduction of the full v15 workflow.
 
 ## Immediate work order
 
-1. Complete the separately scoped CAST-4A scientific execution using the
-   prepared grouped runner: fit the missing selected parents, rebuild all nine
-   populations, generate and replay the frozen schedule, then score the held
-   groups/sites. Keep fixed v15 and the existing acceptance criteria.
+1. CAST-4A's first grouped execution ended in
+   [technical incompletion](reports/CAST4A_run_20261011.md): all parents fitted, but
+   the byte-level replay gate failed on float-WAV `PEAK` timestamps, so no coverage
+   result exists. A corrected, separately pinned execution revision awaits human
+   review because it changes pinned runner and test code. Keep fixed v15 and the
+   existing acceptance criteria.
 2. Define and verify the CAST-4B joint metric on synthetic dependence/dispersion
    fixtures, then evaluate the same frozen banks after source-only authorization.
-3. Freeze the CAST-5A matched arm table, common input profile, manual prior,
-   conventional augmentation and statistical decisions. Resolve every executable
-   configuration choice before requesting or performing the classifier experiment.
+3. CAST-5A ran under its frozen protocol (2026-10-12, development, within IDMT):
+   a practical gain is ruled out and no gain is established. The CAST-5B
+   precondition is not met.
 4. Plan admission of genuinely unexposed recording groups alongside this work.
-   DCASE 2024 Task 10 is admitted from metadata and sealed. CAST-5C shares that set
-   with a corrected H2 replication in one jointly frozen scoring pass; see the
-   [joint confirmation plan](experiments/joint_confirmation/PLAN.md).
+   DCASE 2024 Task 10 is admitted from metadata and sealed. The jointly frozen
+   CAST-5C/H2R pass in the [joint confirmation plan](experiments/joint_confirmation/PLAN.md)
+   is not planned: neither candidate has positive development evidence, and the
+   user decided on 2026-10-12 to keep DCASE sealed until one does.
    Defer cross-dataset scoring, component expansion and amortized fitting until
    their stated evidence and access conditions are satisfied.
 
