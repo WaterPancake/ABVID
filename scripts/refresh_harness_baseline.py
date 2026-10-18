@@ -46,6 +46,7 @@ FROZEN_FILES = [
     "configs/experiments/h1_baselines.json",
     "configs/experiments/h2_simulation.json",
     "configs/experiments/cast_coverage.json",
+    "configs/experiments/cast_grouped_coverage.json",
 ]
 
 ENVIRONMENTS = ("cast", "baseline")
@@ -61,7 +62,7 @@ def selection_args(environment: str) -> list[str]:
 def collected_test_count(environment: str) -> int:
     """Count tests in the environment's own isolated uv environment."""
     command = [
-        "uv", "run", "--extra", environment, "--isolated",
+        "uv", "run", "--locked", "--extra", environment, "--isolated",
         "python", "-m", "pytest",
         "--collect-only", "-q", "--no-header",
         *selection_args(environment),
@@ -79,7 +80,8 @@ def collected_test_count(environment: str) -> int:
     if per_file:
         total = sum(int(count) for _, count in per_file)
         return total
-    match = re.search(r"(\d+) tests? collected", result.stdout)
+    # "N/M tests collected (K deselected)": N is the selected count.
+    match = re.search(r"(\d+)(?:/\d+)? tests? collected", result.stdout)
     if match:
         return int(match.group(1))
     raise SystemExit(
