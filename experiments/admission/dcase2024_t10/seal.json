@@ -1,0 +1,16 @@
+{
+  "audio_downloaded": false,
+  "consumed_by": null,
+  "created": "2026-10-11",
+  "dataset_id": "DCASE2024_T10_DEV",
+  "exposure_history": [
+    "2026-10-11: metadata-only admission (label tables, site meta.json, archive directories); no audio bytes requested, no features or model scores computed"
+  ],
+  "metadata": "data:DCASE2024_T10/metadata_v2",
+  "metadata_hashes_sha256": "7e1d83a105af2da3c8f051dbf30b737cbb30d1ba4a79987a032105bdb569e1e1",
+  "protocol": "repo:experiments/admission/dcase2024_t10/PROTOCOL.md",
+  "protocol_sha256": "61530ed2e64f6fbdc1d63aef624d4ba2f3a9febd8905a19b3c56f320c82115ff",
+  "role": "T_confirm_candidate",
+  "schema_version": 1,
+  "status": "sealed"
+}

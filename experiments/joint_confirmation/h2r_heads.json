@@ -1,0 +1,334 @@
+{
+ "cells": {
+  "S0_P0": "H2 F00",
+  "S0_P1c": "latency-control A1L0, S0",
+  "S1_P0": "H2 F10",
+  "S1_P1c": "latency-control A1L0, S1"
+ },
+ "decided": "2026-10-11",
+ "heads": [
+  {
+   "bank": 42,
+   "cell": "S0_P0",
+   "fit_id": "h2.r42.F00.BEATs768",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r42.F00.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "060ae12b88f5fbee9ca2ab2ec9421cca9ee82f09c2eaace1fe4f27aec2fac6c8"
+  },
+  {
+   "bank": 123,
+   "cell": "S0_P0",
+   "fit_id": "h2.r123.F00.BEATs768",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r123.F00.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "187c517826328c84dba8831a45abf1e08bba9e83aed52887da5ed0f6b3d893e3"
+  },
+  {
+   "bank": 456,
+   "cell": "S0_P0",
+   "fit_id": "h2.r456.F00.BEATs768",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r456.F00.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "0170027c01b9b170caabc877cbe2b43bd339a8f1090569d89ea5e05a96968cfd"
+  },
+  {
+   "bank": 789,
+   "cell": "S0_P0",
+   "fit_id": "h2.r789.F00.BEATs768",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r789.F00.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "25cf495f9fb8950364186f918d74940623ad00f0a4564e50b8ec6ed88f54053c"
+  },
+  {
+   "bank": 1024,
+   "cell": "S0_P0",
+   "fit_id": "h2.r1024.F00.BEATs768",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r1024.F00.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "e734a8bb4fd4b716caf0e4d1967b0cb04616ed87a642b54395ea1d646d4ea66b"
+  },
+  {
+   "bank": 42,
+   "cell": "S0_P1c",
+   "fit_id": "h2l.r42.S0.A1L0.BEATs768",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r42.S0.A1L0.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "6cf1b8495a15eeb52fad8f142e31d5d9fdbbd1a34de80e052009f104400d5ad3"
+  },
+  {
+   "bank": 123,
+   "cell": "S0_P1c",
+   "fit_id": "h2l.r123.S0.A1L0.BEATs768",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r123.S0.A1L0.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "440fb429cbb3a991978999d4046d5d088ebce57365f6b0c816c72cbecd63665c"
+  },
+  {
+   "bank": 456,
+   "cell": "S0_P1c",
+   "fit_id": "h2l.r456.S0.A1L0.BEATs768",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r456.S0.A1L0.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "9d6c0466ebccc652d9e053d1977f9d7aba64578547bdcd9cf43e295a4078d2e4"
+  },
+  {
+   "bank": 789,
+   "cell": "S0_P1c",
+   "fit_id": "h2l.r789.S0.A1L0.BEATs768",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r789.S0.A1L0.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "c098e00916452ff21410ae9320ef7de83c623eae4dccdca08c536eccbdae67e8"
+  },
+  {
+   "bank": 1024,
+   "cell": "S0_P1c",
+   "fit_id": "h2l.r1024.S0.A1L0.BEATs768",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r1024.S0.A1L0.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "f3aed9f4e583c97e37ff83f3fd392a2540c5ec842ff6c272761099052a02f8c5"
+  },
+  {
+   "bank": 42,
+   "cell": "S1_P0",
+   "fit_id": "h2.r42.F10.BEATs768",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r42.F10.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "9b452a534d27bbf2fc117b7f07c640b77f44325398185645c10d1397517333fc"
+  },
+  {
+   "bank": 123,
+   "cell": "S1_P0",
+   "fit_id": "h2.r123.F10.BEATs768",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r123.F10.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "c9782123b35c29d3204ec361031fa371060ad16372c08c741713cafa284d2750"
+  },
+  {
+   "bank": 456,
+   "cell": "S1_P0",
+   "fit_id": "h2.r456.F10.BEATs768",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r456.F10.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "03595446c46a52fba395d54b00bfb2ee4ca5c811791d3107b47a0555edb18603"
+  },
+  {
+   "bank": 789,
+   "cell": "S1_P0",
+   "fit_id": "h2.r789.F10.BEATs768",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r789.F10.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "dd3ddec1a3ad77438a86f7838beda7cc5c53fde222edc9472a824fe2b9b9c7ee"
+  },
+  {
+   "bank": 1024,
+   "cell": "S1_P0",
+   "fit_id": "h2.r1024.F10.BEATs768",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r1024.F10.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "38b202632a68950c7108e1e596599a48a225b2f94eb251f3f5bd9108c37fb8ba"
+  },
+  {
+   "bank": 42,
+   "cell": "S1_P1c",
+   "fit_id": "h2l.r42.S1.A1L0.BEATs768",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r42.S1.A1L0.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "9c2f1d37d98d7fd13fc76e64cf089eb22a167de6c04fd37a2669cac0403efbf2"
+  },
+  {
+   "bank": 123,
+   "cell": "S1_P1c",
+   "fit_id": "h2l.r123.S1.A1L0.BEATs768",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r123.S1.A1L0.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "c9084cdafb503194da8e19c0674279aed21430833a8f4fa90376071abe605cae"
+  },
+  {
+   "bank": 456,
+   "cell": "S1_P1c",
+   "fit_id": "h2l.r456.S1.A1L0.BEATs768",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r456.S1.A1L0.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "c35ef1a7f6197972aaef787fecf3283e5dafdd58d27f65d1f6d8cd95f3d78c5c"
+  },
+  {
+   "bank": 789,
+   "cell": "S1_P1c",
+   "fit_id": "h2l.r789.S1.A1L0.BEATs768",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r789.S1.A1L0.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "607e6b18e8c34ddaaae3e5e31436b757d7d9427523ee0c4fe31752efae7d481d"
+  },
+  {
+   "bank": 1024,
+   "cell": "S1_P1c",
+   "fit_id": "h2l.r1024.S1.A1L0.BEATs768",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r1024.S1.A1L0.BEATs768.joblib",
+   "representation": "BEATs768",
+   "sha256": "d4e0a0a5bcb0220d57631103b987b80f3241372edc1680c4683cbedc948f793c"
+  },
+  {
+   "bank": 42,
+   "cell": "S0_P0",
+   "fit_id": "h2.r42.F00.MFCC26",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r42.F00.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "bcaecf04b5cd7fbcfe211a8b33e6523d7eefaca097c0588ac2c0982625362e1f"
+  },
+  {
+   "bank": 123,
+   "cell": "S0_P0",
+   "fit_id": "h2.r123.F00.MFCC26",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r123.F00.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "814b84ac032b944d5a149caa872ad6ec369cefa75a1e5617e11eb7a5e68b4b76"
+  },
+  {
+   "bank": 456,
+   "cell": "S0_P0",
+   "fit_id": "h2.r456.F00.MFCC26",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r456.F00.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "c6f4380bd5dc40336660a7d5692a776094bff363eae2474e554ec14c890a9668"
+  },
+  {
+   "bank": 789,
+   "cell": "S0_P0",
+   "fit_id": "h2.r789.F00.MFCC26",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r789.F00.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "28ca2186ae776ba11a9894c1591ecbabaa45ca44cce31c978a817c49d50a6c4c"
+  },
+  {
+   "bank": 1024,
+   "cell": "S0_P0",
+   "fit_id": "h2.r1024.F00.MFCC26",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r1024.F00.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "07525417dc2b116a189bffa7bcbf7f3cbe569d3253626a8ca3a1deb70d48f418"
+  },
+  {
+   "bank": 42,
+   "cell": "S0_P1c",
+   "fit_id": "h2l.r42.S0.A1L0.MFCC26",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r42.S0.A1L0.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "7ed749c68999c0dfc2265eeff495a23e027192ec1c4d1df90bd63d6a05703ad9"
+  },
+  {
+   "bank": 123,
+   "cell": "S0_P1c",
+   "fit_id": "h2l.r123.S0.A1L0.MFCC26",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r123.S0.A1L0.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "48ab2132698f860f257906acf29f0a6efdf1e5a23dfef92dc7988a2043169e0a"
+  },
+  {
+   "bank": 456,
+   "cell": "S0_P1c",
+   "fit_id": "h2l.r456.S0.A1L0.MFCC26",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r456.S0.A1L0.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "05df23c8cd37c255455e27ab00a390b2fd67dcd2d2d3c3f4000d2f6bd4fc1305"
+  },
+  {
+   "bank": 789,
+   "cell": "S0_P1c",
+   "fit_id": "h2l.r789.S0.A1L0.MFCC26",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r789.S0.A1L0.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "7aaee6f37bca67cacf0ada0b08da3e1a4e7f0753b22f25199a044dcaf67a00f1"
+  },
+  {
+   "bank": 1024,
+   "cell": "S0_P1c",
+   "fit_id": "h2l.r1024.S0.A1L0.MFCC26",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r1024.S0.A1L0.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "72a549e7caf49bdb7bf54b423c358527ebee13052ff4020104226a89ae8d4149"
+  },
+  {
+   "bank": 42,
+   "cell": "S1_P0",
+   "fit_id": "h2.r42.F10.MFCC26",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r42.F10.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "f4b19c5edf06be972a6da75b00e6bd6122954ec2e32834b4283517e64ed05dfe"
+  },
+  {
+   "bank": 123,
+   "cell": "S1_P0",
+   "fit_id": "h2.r123.F10.MFCC26",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r123.F10.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "115e357ebb6488d06af96c4884876d8bb7f64f5be79bc8c4a60bdb9105447e14"
+  },
+  {
+   "bank": 456,
+   "cell": "S1_P0",
+   "fit_id": "h2.r456.F10.MFCC26",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r456.F10.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "1694fe84040556800919d1a71592374816aa0dc8ad4a1d4fe85d96c5bbf92f47"
+  },
+  {
+   "bank": 789,
+   "cell": "S1_P0",
+   "fit_id": "h2.r789.F10.MFCC26",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r789.F10.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "a48d310475c409c15f2aa0a2e94a47ad7ee59b6728e4ff3d4ed32396ba5bfd10"
+  },
+  {
+   "bank": 1024,
+   "cell": "S1_P0",
+   "fit_id": "h2.r1024.F10.MFCC26",
+   "model": "archive:experiments/h2/models/source_path_20261004_r1/models/h2.r1024.F10.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "ffee3de8475c3588216e86069a16065d7f6784acd48a82076f09c292ad6a8488"
+  },
+  {
+   "bank": 42,
+   "cell": "S1_P1c",
+   "fit_id": "h2l.r42.S1.A1L0.MFCC26",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r42.S1.A1L0.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "d63e57ab7c1e95db2add390c5ed08d4c491c373a3134e2acb4da2bee56685437"
+  },
+  {
+   "bank": 123,
+   "cell": "S1_P1c",
+   "fit_id": "h2l.r123.S1.A1L0.MFCC26",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r123.S1.A1L0.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "13893d2d0789abc2a7da42e4d33ce2b83491cc26fc6d7247dcee39688ea5017a"
+  },
+  {
+   "bank": 456,
+   "cell": "S1_P1c",
+   "fit_id": "h2l.r456.S1.A1L0.MFCC26",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r456.S1.A1L0.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "241a4061fbe86bcb58d90b85cb4bc706a06b665b84ea8cccd5b8876d01e1f4b2"
+  },
+  {
+   "bank": 789,
+   "cell": "S1_P1c",
+   "fit_id": "h2l.r789.S1.A1L0.MFCC26",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r789.S1.A1L0.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "31f680f096cb692b3258c0f49022a7b98ac5727ad0372c32a5a5b572313f44f7"
+  },
+  {
+   "bank": 1024,
+   "cell": "S1_P1c",
+   "fit_id": "h2l.r1024.S1.A1L0.MFCC26",
+   "model": "archive:experiments/h2_air_latency/models/attenuation_latency_20261004_v1/models/h2l.r1024.S1.A1L0.MFCC26.joblib",
+   "representation": "MFCC26",
+   "sha256": "a727e7eaa6c4a8a7ad01e0c1ab164e2266ba3c42689f366598724139e746c563"
+  }
+ ],
+ "role": "H2R pre-declared secondary (no confirmatory claim)",
+ "schema_version": 1,
+ "training_input_route": "H2 8 kHz render, receiver RMS, 8->16 kHz, 2 s"
+}

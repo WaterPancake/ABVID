@@ -1,0 +1,471 @@
+{
+  "counts_by_set": {
+    "A_full_set": 767,
+    "B_full_set": 767,
+    "C_full_set": 767,
+    "D_full_set": 767,
+    "E_large_set": 717,
+    "F_large_set": 716,
+    "G_large_set": 717,
+    "H_large_set": 717
+  },
+  "dataset": "rdoerfler/procedural-engine-sounds",
+  "domain": "synthetic_recording_derived",
+  "inventory_audio_count": 5935,
+  "inventory_bytes": 26277434215,
+  "inventory_sha256": "234af7370ebb667327f6b4df84f44572eb7473a60eeb00d872dba7722f914456",
+  "license": "CC-BY-NC-4.0",
+  "metadata": [
+    {
+      "oid": "1d65f92a5d79d5c7bc7eed97e41a7ec0a1872b51",
+      "path": "CITATION.cff",
+      "size": 2638,
+      "type": "file"
+    },
+    {
+      "oid": "0b22baba8a374cd6363d8709af4fd065d802b88f",
+      "path": "LICENSE",
+      "size": 19423,
+      "type": "file"
+    },
+    {
+      "oid": "ff02340064a750312c2173bbb51052bb4964ba00",
+      "path": "README.md",
+      "size": 10712,
+      "type": "file"
+    },
+    {
+      "oid": "36193deb8e2b274e9e633eeb7f2d6ccb3ff2a5c7",
+      "path": "USAGE.txt",
+      "size": 3293,
+      "type": "file"
+    },
+    {
+      "oid": "34dcf40dd6a596c87f33c7eb58a4da7984e12f41",
+      "path": "dataset/metadata/A_full_set_stats.csv",
+      "size": 143430,
+      "type": "file"
+    },
+    {
+      "oid": "acde77d7a8d66f8dda0dea383b8623991e85ff20",
+      "path": "dataset/metadata/A_full_set_summary.json",
+      "size": 1094,
+      "type": "file"
+    },
+    {
+      "oid": "d377aba06203b57110525316e4c598a22084805f",
+      "path": "dataset/metadata/B_full_set_stats.csv",
+      "size": 143285,
+      "type": "file"
+    },
+    {
+      "oid": "899a57cc6df6d5e07fd2073a3372e06f651aa636",
+      "path": "dataset/metadata/B_full_set_summary.json",
+      "size": 1088,
+      "type": "file"
+    },
+    {
+      "oid": "6c4d526e6a46d8cea47f408a01fa77f25dbfb6a8",
+      "path": "dataset/metadata/C_full_set_stats.csv",
+      "size": 143386,
+      "type": "file"
+    },
+    {
+      "oid": "bac619b97a8dd545a64bdb53a1842668ad58986e",
+      "path": "dataset/metadata/C_full_set_summary.json",
+      "size": 1089,
+      "type": "file"
+    },
+    {
+      "oid": "ebd1830f7d33cf7945dce25634d8753128ed2552",
+      "path": "dataset/metadata/D_full_set_stats.csv",
+      "size": 143368,
+      "type": "file"
+    },
+    {
+      "oid": "63e26f627a934088402fe8cbe1a7b3ba5943e7d4",
+      "path": "dataset/metadata/D_full_set_summary.json",
+      "size": 1095,
+      "type": "file"
+    },
+    {
+      "oid": "b2bbe733573c9911b8e31e359ec84267f7eb34f8",
+      "path": "dataset/metadata/E_large_set_stats.csv",
+      "size": 134268,
+      "type": "file"
+    },
+    {
+      "oid": "c82db04a365fd075130a6f9febaccfdca85914ca",
+      "path": "dataset/metadata/E_large_set_summary.json",
+      "size": 1097,
+      "type": "file"
+    },
+    {
+      "oid": "18e642a0873be8d510cc4d33762b3eb938cb58af",
+      "path": "dataset/metadata/F_large_set_stats.csv",
+      "size": 134036,
+      "type": "file"
+    },
+    {
+      "oid": "7b6ee9b4cf031fb0099afb5ae7a0393252fb6236",
+      "path": "dataset/metadata/F_large_set_summary.json",
+      "size": 1086,
+      "type": "file"
+    },
+    {
+      "oid": "c58b2b2fa5494a8419d66ee309b2616d7e43f73e",
+      "path": "dataset/metadata/G_large_set_stats.csv",
+      "size": 134202,
+      "type": "file"
+    },
+    {
+      "oid": "4355e0541e61ddf74c89590964380d2a91797906",
+      "path": "dataset/metadata/G_large_set_summary.json",
+      "size": 1093,
+      "type": "file"
+    },
+    {
+      "oid": "aa6c53dc58089573925e597c5cda133278f0dce3",
+      "path": "dataset/metadata/H_large_set_stats.csv",
+      "size": 134120,
+      "type": "file"
+    },
+    {
+      "oid": "2a528b6707170614cb53e0abcfd8ce9baff22ab9",
+      "path": "dataset/metadata/H_large_set_summary.json",
+      "size": 1096,
+      "type": "file"
+    }
+  ],
+  "physical_cylinder_count": "assumed_from_author_timbre_description_not_independently_verified",
+  "revision": "e57c44ab64e8528a7b37fc693b553bf4b66440e7",
+  "schema_version": 1,
+  "selected": [
+    {
+      "capture_configuration": "A_full_set",
+      "conservative_group": "entire_release_shared_control_and_timbre_ancestry",
+      "cylinders_assumed": 4,
+      "engine": "E1",
+      "filename_trace_candidate": "001",
+      "lfs": {
+        "oid": "328d16293aecf9e1c181146e726898d8099fae1a4391c3d8e63feb6f898b52dd",
+        "pointerSize": 132,
+        "size": 4723244
+      },
+      "oid": "5a997be479c492dfe7b713d60f4b4288ffc7e1e2",
+      "original_control_session": "unknown",
+      "path": "dataset/audio/A_full_set/001_Engine-A.wav",
+      "recording_session": "unknown",
+      "role": "synthetic_development_reconstruction_only",
+      "size": 4723244,
+      "type": "file",
+      "xetHash": "cf339b7d281992d6615d0aac4141b6a518474cb3860d7d95af2403a5027f0c25"
+    },
+    {
+      "capture_configuration": "A_full_set",
+      "conservative_group": "entire_release_shared_control_and_timbre_ancestry",
+      "cylinders_assumed": 4,
+      "engine": "E1",
+      "filename_trace_candidate": "359",
+      "lfs": {
+        "oid": "26543322e7f5dcdd81b730660a89f5073005f49b4f72d5c09357aa71de64d270",
+        "pointerSize": 132,
+        "size": 4723244
+      },
+      "oid": "960421f2fd3d1d65b75f750dee558d6dac1f5d14",
+      "original_control_session": "unknown",
+      "path": "dataset/audio/A_full_set/359_Engine-A.wav",
+      "recording_session": "unknown",
+      "role": "synthetic_development_reconstruction_only",
+      "size": 4723244,
+      "type": "file",
+      "xetHash": "43bc7876658faa493140afe1fa1da5b69e16d22c32d88074afcc759e41e15ef3"
+    },
+    {
+      "capture_configuration": "B_full_set",
+      "conservative_group": "entire_release_shared_control_and_timbre_ancestry",
+      "cylinders_assumed": 8,
+      "engine": "E2",
+      "filename_trace_candidate": "001",
+      "lfs": {
+        "oid": "c23835d727eb701dda4063492fff4b3765d6b0c8b1ffda19421c6d9b594dc38a",
+        "pointerSize": 132,
+        "size": 4723244
+      },
+      "oid": "c9d564a6090ca1ba6b62c8d3749087c83a82540f",
+      "original_control_session": "unknown",
+      "path": "dataset/audio/B_full_set/001_Engine-B.wav",
+      "recording_session": "unknown",
+      "role": "synthetic_development_reconstruction_only",
+      "size": 4723244,
+      "type": "file",
+      "xetHash": "006108de84294f475680ef570d93ad6805322f4a1a725b2c649b71774a401b1e"
+    },
+    {
+      "capture_configuration": "B_full_set",
+      "conservative_group": "entire_release_shared_control_and_timbre_ancestry",
+      "cylinders_assumed": 8,
+      "engine": "E2",
+      "filename_trace_candidate": "359",
+      "lfs": {
+        "oid": "860e498c8a66a75722b3e74ae4f1b317fc7fa65d096217a03d35c1f434be6026",
+        "pointerSize": 132,
+        "size": 4723244
+      },
+      "oid": "1ac8819e89f0ce3b318bc1739e0a19ff1771ef18",
+      "original_control_session": "unknown",
+      "path": "dataset/audio/B_full_set/359_Engine-B.wav",
+      "recording_session": "unknown",
+      "role": "synthetic_development_reconstruction_only",
+      "size": 4723244,
+      "type": "file",
+      "xetHash": "b717d41caf137d006ef99cde98cb18d8698a432971ff8e02c6aaae796bd58088"
+    },
+    {
+      "capture_configuration": "C_full_set",
+      "conservative_group": "entire_release_shared_control_and_timbre_ancestry",
+      "cylinders_assumed": 8,
+      "engine": "E3",
+      "filename_trace_candidate": "001",
+      "lfs": {
+        "oid": "2682f40d97a3755b5cf7c2f948e2ebd453361cbfef9ddd14d55e4efe8ca0ad67",
+        "pointerSize": 132,
+        "size": 4723244
+      },
+      "oid": "8818153528666fb0b8c8ac3d52d8b08d6be88e64",
+      "original_control_session": "unknown",
+      "path": "dataset/audio/C_full_set/001_Engine-C.wav",
+      "recording_session": "unknown",
+      "role": "synthetic_development_reconstruction_only",
+      "size": 4723244,
+      "type": "file",
+      "xetHash": "73f485b914e518e48fe0b16a3dfc18fe592c28734871c1c8025286b788f4cd2a"
+    },
+    {
+      "capture_configuration": "C_full_set",
+      "conservative_group": "entire_release_shared_control_and_timbre_ancestry",
+      "cylinders_assumed": 8,
+      "engine": "E3",
+      "filename_trace_candidate": "359",
+      "lfs": {
+        "oid": "d864f327be7f59d3771f792f4647c06ad111239271c95d6f57879daa97079b5a",
+        "pointerSize": 132,
+        "size": 4723244
+      },
+      "oid": "0e9771234f63879f06de42fb11cfc81ad7065462",
+      "original_control_session": "unknown",
+      "path": "dataset/audio/C_full_set/359_Engine-C.wav",
+      "recording_session": "unknown",
+      "role": "synthetic_development_reconstruction_only",
+      "size": 4723244,
+      "type": "file",
+      "xetHash": "f151e77be2cdcbda100e271437264d974f2877b49ae541b4872f59004e19b228"
+    },
+    {
+      "capture_configuration": "D_full_set",
+      "conservative_group": "entire_release_shared_control_and_timbre_ancestry",
+      "cylinders_assumed": 8,
+      "engine": "E3",
+      "filename_trace_candidate": "001",
+      "lfs": {
+        "oid": "748bd1832c847ccc5a8008aab397de5cf7c3ebfc818fbb18e826042815927504",
+        "pointerSize": 132,
+        "size": 4723244
+      },
+      "oid": "7e25f233c6e164860856d9b6770aefc5c208ab10",
+      "original_control_session": "unknown",
+      "path": "dataset/audio/D_full_set/001_Engine-D.wav",
+      "recording_session": "unknown",
+      "role": "synthetic_development_reconstruction_only",
+      "size": 4723244,
+      "type": "file",
+      "xetHash": "d4d8f3f7826cdc8a0001c7445d63560b8bae5b1ac90b4384a2e6bfd94085b994"
+    },
+    {
+      "capture_configuration": "D_full_set",
+      "conservative_group": "entire_release_shared_control_and_timbre_ancestry",
+      "cylinders_assumed": 8,
+      "engine": "E3",
+      "filename_trace_candidate": "359",
+      "lfs": {
+        "oid": "7e993661b21b71523f9fa878c5a36f439ae31599f67a293d4246dd71d550a7d8",
+        "pointerSize": 132,
+        "size": 4723244
+      },
+      "oid": "2b90e32811c4810d805b7e0d89407f0e87c58fdd",
+      "original_control_session": "unknown",
+      "path": "dataset/audio/D_full_set/359_Engine-D.wav",
+      "recording_session": "unknown",
+      "role": "synthetic_development_reconstruction_only",
+      "size": 4723244,
+      "type": "file",
+      "xetHash": "d22d46d3ca4b162f42548aba77e7c0b3c29b3e7206ff2e008670e4a22add9fb4"
+    },
+    {
+      "capture_configuration": "E_large_set",
+      "conservative_group": "entire_release_shared_control_and_timbre_ancestry",
+      "cylinders_assumed": 8,
+      "engine": "E3",
+      "filename_trace_candidate": "001",
+      "lfs": {
+        "oid": "ad8b6757667941d09a4318eb24dd6bbb53fdf79cf552f71e3f736029ce2c7cbf",
+        "pointerSize": 132,
+        "size": 4723244
+      },
+      "oid": "0af24c4de6a0382453927bd4e860e21d460dc2e9",
+      "original_control_session": "unknown",
+      "path": "dataset/audio/E_large_set/001_Engine-E.wav",
+      "recording_session": "unknown",
+      "role": "synthetic_development_reconstruction_only",
+      "size": 4723244,
+      "type": "file",
+      "xetHash": "5f86721c135d0f5287420ead533c9da239c5c99ac5cdff39ddc053d65dc0a434"
+    },
+    {
+      "capture_configuration": "E_large_set",
+      "conservative_group": "entire_release_shared_control_and_timbre_ancestry",
+      "cylinders_assumed": 8,
+      "engine": "E3",
+      "filename_trace_candidate": "359",
+      "lfs": {
+        "oid": "f1b91da33db9fe0c642bdcc615caed17554a73d159299adadb039b8ec4a11693",
+        "pointerSize": 132,
+        "size": 4452396
+      },
+      "oid": "15dd3f97f16a7664cf5d7e09f439b15e8b3a81e9",
+      "original_control_session": "unknown",
+      "path": "dataset/audio/E_large_set/359_Engine-E.wav",
+      "recording_session": "unknown",
+      "role": "synthetic_development_reconstruction_only",
+      "size": 4452396,
+      "type": "file",
+      "xetHash": "a6f781f30232d04d762f27a8c194b3e572064fcc5a230c65737b82865a01ac8d"
+    },
+    {
+      "capture_configuration": "F_large_set",
+      "conservative_group": "entire_release_shared_control_and_timbre_ancestry",
+      "cylinders_assumed": 8,
+      "engine": "E3",
+      "filename_trace_candidate": "001",
+      "lfs": {
+        "oid": "fed47585a3a7f6fd4529b6953db00f57f273bcb40b3e4c0455b59f70af5c3367",
+        "pointerSize": 132,
+        "size": 4723244
+      },
+      "oid": "637069323314f91f537ec5887543b588c2e3d75a",
+      "original_control_session": "unknown",
+      "path": "dataset/audio/F_large_set/001_Engine-F.wav",
+      "recording_session": "unknown",
+      "role": "synthetic_development_reconstruction_only",
+      "size": 4723244,
+      "type": "file",
+      "xetHash": "2e51ed7aedeb6f5a8faa064a6c9b1b5038db1dd89be82633ced2cc98266a4125"
+    },
+    {
+      "capture_configuration": "F_large_set",
+      "conservative_group": "entire_release_shared_control_and_timbre_ancestry",
+      "cylinders_assumed": 8,
+      "engine": "E3",
+      "filename_trace_candidate": "359",
+      "lfs": {
+        "oid": "2eac4bac1d78964c43697919990d9bf07a2add23aff1ccc88f75a8fc54db062c",
+        "pointerSize": 132,
+        "size": 4723244
+      },
+      "oid": "93370ec37eb2c75574cc5afbd87f4c494ecae8af",
+      "original_control_session": "unknown",
+      "path": "dataset/audio/F_large_set/359_Engine-F.wav",
+      "recording_session": "unknown",
+      "role": "synthetic_development_reconstruction_only",
+      "size": 4723244,
+      "type": "file",
+      "xetHash": "ec2b13bb4452d3b8e060d9ca98ed829a3456a36674fe12c3defa4edd835d34fe"
+    },
+    {
+      "capture_configuration": "G_large_set",
+      "conservative_group": "entire_release_shared_control_and_timbre_ancestry",
+      "cylinders_assumed": 8,
+      "engine": "E3",
+      "filename_trace_candidate": "001",
+      "lfs": {
+        "oid": "2ce07c5f1bb36a1ec4093e41f2ae015039f43cc54e38f0097a72a454bae38b2a",
+        "pointerSize": 132,
+        "size": 4723244
+      },
+      "oid": "ec1102e1aed29405f6ac9d9154c1169c20137681",
+      "original_control_session": "unknown",
+      "path": "dataset/audio/G_large_set/001_Engine-G.wav",
+      "recording_session": "unknown",
+      "role": "synthetic_development_reconstruction_only",
+      "size": 4723244,
+      "type": "file",
+      "xetHash": "de148beb332d71a4e6c7b75183f7dd97737c82b8665a5b57c4a58d4f6f37a2d6"
+    },
+    {
+      "capture_configuration": "G_large_set",
+      "conservative_group": "entire_release_shared_control_and_timbre_ancestry",
+      "cylinders_assumed": 8,
+      "engine": "E3",
+      "filename_trace_candidate": "359",
+      "lfs": {
+        "oid": "382b3e0961e9971a5cee0906d8c9f353396c54fe686a14ee07f13ea8385dde25",
+        "pointerSize": 132,
+        "size": 4456492
+      },
+      "oid": "b168397613b4f034e6aad7eee4a25d178963ebeb",
+      "original_control_session": "unknown",
+      "path": "dataset/audio/G_large_set/359_Engine-G.wav",
+      "recording_session": "unknown",
+      "role": "synthetic_development_reconstruction_only",
+      "size": 4456492,
+      "type": "file",
+      "xetHash": "77ad6cd882d9b82eb44cd7ff394496ef02d1be96b1483d6da282e4eb9b5649e6"
+    },
+    {
+      "capture_configuration": "H_large_set",
+      "conservative_group": "entire_release_shared_control_and_timbre_ancestry",
+      "cylinders_assumed": 8,
+      "engine": "E2",
+      "filename_trace_candidate": "001",
+      "lfs": {
+        "oid": "4b8974ae10a5968aa2e5af6fd7eb1a2e97e285dcb8b4b016f699d240e7aa82c6",
+        "pointerSize": 132,
+        "size": 4723244
+      },
+      "oid": "0de88686112b9090ababbb629dff6acecf59dde8",
+      "original_control_session": "unknown",
+      "path": "dataset/audio/H_large_set/001_Engine-H.wav",
+      "recording_session": "unknown",
+      "role": "synthetic_development_reconstruction_only",
+      "size": 4723244,
+      "type": "file",
+      "xetHash": "2639d2444df66fc0c25b28d36c7cc5e3c06f4417fddc1e4a7a4568ab9c63bc9e"
+    },
+    {
+      "capture_configuration": "H_large_set",
+      "conservative_group": "entire_release_shared_control_and_timbre_ancestry",
+      "cylinders_assumed": 8,
+      "engine": "E2",
+      "filename_trace_candidate": "359",
+      "lfs": {
+        "oid": "6a820282dc9b6cd284eba59eb464d7c1a39ae8c2538ea5120ee9a57a191069a7",
+        "pointerSize": 132,
+        "size": 4456492
+      },
+      "oid": "b630a962296e83633f40f4aa26880f95b603fcd3",
+      "original_control_session": "unknown",
+      "path": "dataset/audio/H_large_set/359_Engine-H.wav",
+      "recording_session": "unknown",
+      "role": "synthetic_development_reconstruction_only",
+      "size": 4456492,
+      "type": "file",
+      "xetHash": "aedad48a7977b845f91026bf6107b4443f955d8b9977268dc8301a4fb17c82df"
+    }
+  ],
+  "selected_prefixes": [
+    "001",
+    "359"
+  ],
+  "selection": "lexicographic_first_and_midpoint_of_filename_prefix_intersection_all_eight_sets",
+  "splits": "one_conservative_development_role_no_validation_or_test"
+}

@@ -1,0 +1,65 @@
+{
+  "purpose": "Preserve CAST v0 and current smooth8 benchmark definitions and historical reports",
+  "references": [
+    {
+      "path": "repo:src/abvid/cast/config.py",
+      "sha256": "d487c1a6e6e89b637d8b8710996b7da5d33441d16c539b351ea8ba73dd060363"
+    },
+    {
+      "path": "repo:src/abvid/cast/renderer.py",
+      "sha256": "65eff2d361af930055b319ab15a5fe37e6494c58a9f86c4687810557c4d2ff83"
+    },
+    {
+      "path": "repo:src/abvid/cast/fit.py",
+      "sha256": "5856bece2ba49e5720582f6c20c9b5e6edd8158819d9ff044148d0191d2746e1"
+    },
+    {
+      "path": "repo:src/abvid/cast/audio.py",
+      "sha256": "12a97e1f0a30717765dacbd8e1245022f6b813b23f287b69b5e21284034d747d"
+    },
+    {
+      "path": "repo:src/abvid/cast/smooth_fit.py",
+      "sha256": "07d4d84379172119deab5285742c7a5ecd40ab897bfc0d9a2ddbe6feedbccc76"
+    },
+    {
+      "path": "repo:src/abvid/cast/population/engine.py",
+      "sha256": "fdf1da92fb5bd8410b07704501fa69fad64e3db79f60353440481abc0f6b5d8e"
+    },
+    {
+      "path": "repo:reports/CAST_pilot.md",
+      "sha256": "f6a1d00c3290a86b80872d67f1c08eb2e23f4df3151a1a314826dd9798c93624"
+    },
+    {
+      "path": "repo:reports/CAST_generalization.md",
+      "sha256": "2ff8607e5413355e27232c0887c1428de66ced0bcc3dff5d4aa2d2b786cb8045"
+    },
+    {
+      "path": "repo:reports/CAST_improvement.md",
+      "sha256": "13ba40a3659b946a289b3e063eb862312b57cdd18e371f6265ba9fe7fc7f3d6f"
+    },
+    {
+      "path": "repo:configs/experiments/cast_coverage.json",
+      "sha256": "647f656d5ca5166111a42d53393e37dedecf627e71ad9d94179c300e8faa5d02"
+    },
+    {
+      "path": "repo:uv.lock",
+      "sha256": "457a95df2ad356c9e9dd862ba233c6dc9aff75f8ec52e03d9067705b3fed4dc5"
+    },
+    {
+      "path": "archive:CAST/src/cast/config.py",
+      "sha256": "1deff227c55706771906e1e69ae5b5892d93c54bd3a405fcee186e82b524ed75"
+    },
+    {
+      "path": "archive:CAST/src/cast/renderer.py",
+      "sha256": "e592a53d3bd10a2ed673b453955bf30fc07f92a7825a9ef8d5defab891cc536a"
+    },
+    {
+      "path": "archive:CAST/src/cast/fit.py",
+      "sha256": "c7e4afe32a9041b175b86a46442fad205027b5390e6b7a1a68f701390882fcdd"
+    },
+    {
+      "path": "archive:CAST/src/cast/audio.py",
+      "sha256": "d5cbff61133be6a85e5f040d2b6663221bdf3b7838dcdaf324c58bace41c40b6"
+    }
+  ]
+}

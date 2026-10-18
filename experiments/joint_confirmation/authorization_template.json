@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "seal": "repo:experiments/admission/dcase2024_t10/seal.json",
+  "seal_sha256": "<sha256 of seal.json at authorization time>",
+  "protocol": "repo:experiments/joint_confirmation/PROTOCOL.md",
+  "protocol_sha256": "<sha256 of the FROZEN joint protocol>",
+  "overlap_audit": "artifact:joint_confirmation/overlap_audit_<date>/matches.json",
+  "overlap_audit_sha256": "<sha256 of the audit result>",
+  "authorized_by": "<person>",
+  "date": "<YYYY-MM-DD>",
+  "scoring_passes": 1
+}

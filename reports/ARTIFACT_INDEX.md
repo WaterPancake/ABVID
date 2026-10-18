@@ -1495,3 +1495,56 @@ Local file: `archive:experiments/reproduction/results/R0_20260929/R0_result_ledg
 **`experiments/reproduction/results/reproduction_audit.json`**
 
 Local file: `archive:experiments/reproduction/results/reproduction_audit.json`.
+
+## Added 2026-10-11 (outside the archive)
+
+These entries use the active storage roots (`data:` and `artifact:`, see `abvid paths`).
+Anchor IDs are the first 12 hex digits of SHA256 of the root-qualified reference.
+
+<a id="artifact-3a180471aab6"></a>
+
+**`data:DCASE2024_T10/metadata_v2/summary.json`**
+
+DCASE 2024 Task 10 metadata-only admission summary. SHA256 `9905cd453daf7844226e2fd12a6bcae44dfb109b7f2c3c58aa352c0bf60018b6`.
+
+<a id="artifact-04d853464f38"></a>
+
+**`data:DCASE2024_T10/metadata_v2/receipt.json`**
+
+Byte-range transfer receipt (3,365,619 bytes; 0 audio bytes). SHA256 `23d10b5c5d766a0d249d31fde651787291f7aa69752d2e9617a10b3ba0eeda32`.
+
+<a id="artifact-dae994c8ec63"></a>
+
+**`data:DCASE2024_T10/metadata_v2/segments.jsonl`**
+
+15,013 labelled one-minute segment records. SHA256 `6b86539bf42f89429a77be97fe0feb9289efe9ea84bf6092bb5b6e084154b08d`. Hash list: `hashes.json`, SHA256 `7e1d83a105af2da3c8f051dbf30b737cbb30d1ba4a79987a032105bdb569e1e1`.
+
+<a id="artifact-a964f1669a63"></a>
+
+**`artifact:target_panel/rescore_20261011_v2/results.json`**
+
+Post hoc prevalence-robust re-scoring of archived H1/H2/latency predictions, with commit/environment provenance. SHA256 `fb813dfe268c494f3142874ee0a435edd91c985606501022225ad64c58a51ac6`. The earlier `rescore_20261011_v1` run (SHA256 `05d61b3f…2d80`) has identical numbers and lacks provenance.
+
+<a id="artifact-e0a5272695a4"></a>
+
+**`artifact:joint_confirmation/h2r_corrected_assembly_20261011_v1/results.json`**
+
+Post hoc latency-free H2 source × path assembly (H2 F00/F10 + latency-control A1L0) on exposed MELAUDIS. SHA256 `03f55da0c298b19f410b9e5bbc954f3eb58134cd8dbd3b0c0984d1ab4fdd09e6`.
+
+<a id="artifact-f1f17c2825d5"></a>
+
+**`artifact:cast/grouped_coverage/cast4a_run_20261008_v1/results/results.json`**
+
+CAST-4A run summary: technical incompletion (generation replay gate, WAV PEAK timestamp). SHA256 `325a4577d1d28adfdc283f404d1790f1454d059dca04bd31f47228859e04178b`.
+
+<a id="artifact-aa9ec94d5703"></a>
+
+**`artifact:cast/utility/cast5a_run_20261011_v1/learning/scores/results.json`**
+
+CAST-5A per-head held scores, paired bootstrap and decision flags (420 heads). SHA256 `ce2df9b35e58e19b5a4326c8d9e636f3b5b9ac197cc07b4988ddaf7e9d4f2bf3`. Design identity `bceaf26b983c0ef948fc492ea25045d77d29c5e0c23cd57a60c48f63f88832fc`; heads manifest `9315e73b7f74f1bce0685df298982bc490e74a8c1492613efcdfb1ee0242db61`.
+
+<a id="artifact-71bdc7bfa2d8"></a>
+
+**`artifact:baseline_strength/b1_20261012_v1/results.json`**
+
+B1 baseline-strength search within IDMT (96 configurations, nested selection). SHA256 `46399d342855a6ea672be430f9a8bcfafa4baaa962c112487bd4313fbe43a62e`; features `aab4b3aac1072bbd6ede4213e224802d512b987efc41dd193354d8facbc38d93`.

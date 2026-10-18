@@ -1,0 +1,11 @@
+--- a/tests/test_physics_engine.py
++++ b/tests/test_physics_engine.py
+@@ -134,7 +134,7 @@
+     audio, rpm, torque, sr = decode(path, row)
+     raw, target, controls, levels = prepare(audio, rpm, torque, sr)
+     assert audio.shape[1] == 2
+-    assert abs(np.mean(raw)) < 1e-5  # Including telemetry would inject a DC term.
++    assert abs(float(np.mean(raw)) - float(np.mean(audio))) < 1e-6  # Preserve decoded PCM16 DC; telemetry must not enter audio.
+     assert controls["rpm"].min() > 1499 and controls["rpm"].max() < 1501
+     assert controls["torque_nm"].min() > 99 and controls["torque_nm"].max() < 101
+     assert levels["crop_start_seconds"] == 0.5
