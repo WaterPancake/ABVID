@@ -5,7 +5,11 @@ unsupervised side project that learns the postulated acoustic signature of milit
 vehicle models (T-72, T-80, T-90, M1, Leopard and others) and feeds it back into CAST.
 The full design and its rationale are in [PROPOSAL.md](PROPOSAL.md).
 
-**Status: plan only.** Nothing is collected, fitted or authorized.
+**Current P0:** preparation is separately authorized and documented in
+[PROTOCOL_DRAFT.md](PROTOCOL_DRAFT.md), [P0_STATUS.md](P0_STATUS.md), and the
+[research report](../../reports/military_signature_P0.md). No real media has been
+collected or processed and no model has been fitted. The outline below is the
+original plan; later phases still need separate authorization.
 
 ## 0. Scope
 

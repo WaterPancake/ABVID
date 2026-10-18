@@ -1,0 +1,267 @@
+{
+  "supplement_id": "military_signature_p0_metadata_followup_20261011",
+  "scope": "public_HTML_metadata_only_not_a_media_manifest",
+  "relationship_to_frozen_candidates": "Additive evidence; original candidate_metadata.json and 55-file freeze unchanged.",
+  "retrieval_record_ref": "artifact:military_signature/p0/public-metadata-followup-20261011/retrieval.json",
+  "candidates": [
+    {
+      "outlet": "DVIDS",
+      "label_confidence": "caption",
+      "license_status": "public_domain_banner_pending_per_asset_review",
+      "license_note": "Page shows a public-domain banner and refers to DVIDS copyright restrictions; per-asset/intended-use admission remains pending",
+      "recording_session": "unknown",
+      "session_evidence": "unknown",
+      "independence_verified": false,
+      "physical_vehicle_id": "unknown",
+      "raw_media_sha256": "unknown",
+      "native_sample_rate_hz": "unknown",
+      "audio_quality": "unknown",
+      "usable_foreground_seconds": "unknown",
+      "background_support": "unknown",
+      "engine_in_recording": "unknown",
+      "camera_identity": "unknown",
+      "media_access_performed": false,
+      "asset_id": "DVIDS-329602",
+      "url": "https://www.dvidshub.net/video/329602/humvee-training-b-roll",
+      "title": "Humvee Training B-roll",
+      "page_date_taken": "2014-04-03",
+      "page_date_taken_raw": "04.03.2014",
+      "page_date_posted_raw": "04.14.2014 21:44",
+      "unit": "128th Mobile Public Affairs Detachment",
+      "originator": "128th Mobile Public Affairs Detachment",
+      "producer_byline": "Richard Stowell",
+      "location": "JOINT BASE MCGUIRE-DIX-LAKEHURST, NEW JERSEY, US",
+      "duration_seconds_from_page": 263,
+      "caption_model": "HMMWV M1151",
+      "caption_variant": "M1151",
+      "caption_models": [
+        "HMMWV M1151"
+      ],
+      "metadata_observation": "Caption identifies M1151 driver-licensing training by the 4th Financial Management Sustainment Detachment.",
+      "flags": [
+        "One caption lead does not establish eight independent groups",
+        "M1165A1 specifications cannot be transferred to this M1151 recording"
+      ],
+      "metadata_snapshot": {
+        "source_id": "DVIDS_329602",
+        "url": "https://www.dvidshub.net/video/329602/humvee-training-b-roll",
+        "retrieved_at": "2026-10-12T00:04:37.853847+00:00",
+        "mode": "HTML_only_no_scripts_or_associated_media",
+        "status": "retrieved",
+        "content_type": "text/html",
+        "final_url": "https://www.dvidshub.net/video/329602/humvee-training-b-roll",
+        "sha256": "cef27a9eba6e55d290de218180677c1276bd5a98ba7003c346e3e7584903c91b",
+        "snapshot_ref": "artifact:military_signature/p0/public-metadata-followup-20261011/DVIDS_329602.html",
+        "visible_text_ref": "artifact:military_signature/p0/public-metadata-followup-20261011/DVIDS_329602.txt"
+      }
+    },
+    {
+      "outlet": "DVIDS",
+      "label_confidence": "caption",
+      "license_status": "public_domain_banner_pending_per_asset_review",
+      "license_note": "Page shows a public-domain banner and refers to DVIDS copyright restrictions; per-asset/intended-use admission remains pending",
+      "recording_session": "unknown",
+      "session_evidence": "unknown",
+      "independence_verified": false,
+      "physical_vehicle_id": "unknown",
+      "raw_media_sha256": "unknown",
+      "native_sample_rate_hz": "unknown",
+      "audio_quality": "unknown",
+      "usable_foreground_seconds": "unknown",
+      "background_support": "unknown",
+      "engine_in_recording": "unknown",
+      "camera_identity": "unknown",
+      "media_access_performed": false,
+      "asset_id": "DVIDS-607339",
+      "url": "https://www.dvidshub.net/video/607339/arkansas-field-artillery-unit-fires-m109a6-paladins-during-operation-western-strike",
+      "title": "Arkansas Field Artillery Unit Fires M109A6 Paladins During Operation Western Strike",
+      "page_date_taken": "2018-06-09",
+      "page_date_taken_raw": "06.09.2018",
+      "page_date_posted_raw": "06.13.2018 17:55",
+      "unit": "Arkansas National Guard Public Affairs Office",
+      "originator": "Arkansas National Guard Public Affairs Office",
+      "producer_byline": "Stephen Wright",
+      "location": "GUERNSEY, WYOMING, US",
+      "duration_seconds_from_page": 337,
+      "caption_model": "M109A6 Paladin",
+      "caption_variant": "M109A6",
+      "caption_models": [
+        "M109A6 Paladin"
+      ],
+      "metadata_observation": "Caption identifies M109A6 firing during Operation Western Strike at Camp Guernsey.",
+      "flags": [
+        "Gunfire described in caption; audio contamination not observed",
+        "Caption identity does not identify audible vehicle intervals"
+      ],
+      "metadata_snapshot": {
+        "source_id": "DVIDS_607339",
+        "url": "https://www.dvidshub.net/video/607339/arkansas-field-artillery-unit-fires-m109a6-paladins-during-operation-western-strike",
+        "retrieved_at": "2026-10-12T00:04:37.854690+00:00",
+        "mode": "HTML_only_no_scripts_or_associated_media",
+        "status": "retrieved",
+        "content_type": "text/html",
+        "final_url": "https://www.dvidshub.net/video/607339/arkansas-field-artillery-unit-fires-m109a6-paladins-during-operation-western-strike",
+        "sha256": "facfcf1f08cc02975b3aa3e0e5b5df932de4eeb67e1943e700640fa1a4362a96",
+        "snapshot_ref": "artifact:military_signature/p0/public-metadata-followup-20261011/DVIDS_607339.html",
+        "visible_text_ref": "artifact:military_signature/p0/public-metadata-followup-20261011/DVIDS_607339.txt"
+      }
+    },
+    {
+      "outlet": "DVIDS",
+      "label_confidence": "caption",
+      "license_status": "public_domain_banner_pending_per_asset_review",
+      "license_note": "Page shows a public-domain banner and refers to DVIDS copyright restrictions; per-asset/intended-use admission remains pending",
+      "recording_session": "unknown",
+      "session_evidence": "unknown",
+      "independence_verified": false,
+      "physical_vehicle_id": "unknown",
+      "raw_media_sha256": "unknown",
+      "native_sample_rate_hz": "unknown",
+      "audio_quality": "unknown",
+      "usable_foreground_seconds": "unknown",
+      "background_support": "unknown",
+      "engine_in_recording": "unknown",
+      "camera_identity": "unknown",
+      "media_access_performed": false,
+      "asset_id": "DVIDS-967175",
+      "url": "https://www.dvidshub.net/video/967175/army-250-parade-celebration-b-roll",
+      "title": "Army 250 Parade Celebration: B-Roll",
+      "page_date_taken": "2025-06-14",
+      "page_date_taken_raw": "06.14.2025",
+      "page_date_posted_raw": "06.17.2025 05:56",
+      "unit": "XVIII Airborne Corps",
+      "originator": "XVIII Airborne Corps",
+      "producer_byline": "Rene Rosas",
+      "location": "WASHINGTON, DISTRICT OF COLUMBIA, US",
+      "duration_seconds_from_page": 639,
+      "caption_model": "multiple models",
+      "caption_variant": "unknown",
+      "caption_models": [
+        "M109A6 Paladin",
+        "Stryker",
+        "Bradley Fighting Vehicle"
+      ],
+      "metadata_observation": "The caption shot log names M109A6, Stryker and Bradley among parade entries.",
+      "caption_segment_log_handling": "Source caption metadata only. Do not import shot-log intervals as blind audio annotations; frame rate, audible vehicles and clean audio are unknown.",
+      "flags": [
+        "Potential mixed-model event diagnostic, not primary single-model grouping evidence",
+        "Event/unit link to DVIDS-966208; independent physical populations not established",
+        "Caption also names an M1 heavy wrecker; this is not an M1 Abrams label",
+        "Caption includes historical and other out-of-roster vehicles",
+        "Crowd and ceremony context; contamination not auditioned"
+      ],
+      "metadata_snapshot": {
+        "source_id": "DVIDS_967175",
+        "url": "https://www.dvidshub.net/video/967175/army-250-parade-celebration-b-roll",
+        "retrieved_at": "2026-10-12T00:04:37.854841+00:00",
+        "mode": "HTML_only_no_scripts_or_associated_media",
+        "status": "retrieved",
+        "content_type": "text/html",
+        "final_url": "https://www.dvidshub.net/video/967175/army-250-parade-celebration-b-roll",
+        "sha256": "7779c6beaecb175d9b3b19405a515775780184d31e251d74e8157518b6f64f88",
+        "snapshot_ref": "artifact:military_signature/p0/public-metadata-followup-20261011/DVIDS_967175.html",
+        "visible_text_ref": "artifact:military_signature/p0/public-metadata-followup-20261011/DVIDS_967175.txt"
+      }
+    },
+    {
+      "outlet": "DVIDS",
+      "label_confidence": "caption",
+      "license_status": "public_domain_banner_pending_per_asset_review",
+      "license_note": "Page shows a public-domain banner and refers to DVIDS copyright restrictions; per-asset/intended-use admission remains pending",
+      "recording_session": "unknown",
+      "session_evidence": "unknown",
+      "independence_verified": false,
+      "physical_vehicle_id": "unknown",
+      "raw_media_sha256": "unknown",
+      "native_sample_rate_hz": "unknown",
+      "audio_quality": "unknown",
+      "usable_foreground_seconds": "unknown",
+      "background_support": "unknown",
+      "engine_in_recording": "unknown",
+      "camera_identity": "unknown",
+      "media_access_performed": false,
+      "asset_id": "DVIDS-966208",
+      "url": "https://www.dvidshub.net/video/966208/us-army-vehicles-staged-west-potomac-park-waterfront-b-roll",
+      "title": "U.S. Army vehicles staged at the West Potomac Park Waterfront [B-Roll]",
+      "page_date_taken": "2025-06-09",
+      "page_date_taken_raw": "06.09.2025",
+      "page_date_posted_raw": "06.10.2025 13:44",
+      "unit": "U.S. Army Military District of Washington",
+      "originator": "U.S. Army Military District of Washington",
+      "producer_byline": "Bernabe Lopez",
+      "location": "DISTRICT OF COLUMBIA, US",
+      "duration_seconds_from_page": 234,
+      "caption_model": "multiple models",
+      "caption_variant": "unknown",
+      "caption_models": [
+        "M1A2 Abrams",
+        "M2 Bradley",
+        "M109A6 Paladin"
+      ],
+      "metadata_observation": "Caption describes staging for the Army birthday parade and identifies vehicles arriving from 1st Cavalry Division units at Fort Cavazos.",
+      "flags": [
+        "Date Taken June 9 versus caption staging June 10; preserve both",
+        "Event/unit link to DVIDS-967175; repeated physical vehicles possible",
+        "Transport/staging context does not prove running engines or clean vehicle audio"
+      ],
+      "metadata_snapshot": {
+        "source_id": "DVIDS_966208",
+        "url": "https://www.dvidshub.net/video/966208/us-army-vehicles-staged-west-potomac-park-waterfront-b-roll",
+        "retrieved_at": "2026-10-12T00:04:37.855300+00:00",
+        "mode": "HTML_only_no_scripts_or_associated_media",
+        "status": "retrieved",
+        "content_type": "text/html",
+        "final_url": "https://www.dvidshub.net/video/966208/us-army-vehicles-staged-west-potomac-park-waterfront-b-roll",
+        "sha256": "d5557ac414136ac0264ac08cd969bb1b1f601894e17a0616f5ebb20ef897858e",
+        "snapshot_ref": "artifact:military_signature/p0/public-metadata-followup-20261011/DVIDS_966208.html",
+        "visible_text_ref": "artifact:military_signature/p0/public-metadata-followup-20261011/DVIDS_966208.txt"
+      }
+    }
+  ],
+  "suspected_population_links": [
+    {
+      "asset_ids": [
+        "DVIDS-966208",
+        "DVIDS-967175"
+      ],
+      "basis": "Both captions identify the June 2025 Army birthday parade; M109A6 and Bradley entries identify the 1st Cavalry Division population.",
+      "link_type": "possible common physical-vehicle population; not a proven shared recording session",
+      "action_before_admission": "Retain this dependence lead. Resolve shoot, reuse and individual identities; do not count the two assets as independent groups from metadata alone."
+    }
+  ],
+  "search_negative_findings": [
+    {
+      "queries": [
+        "site:dvidshub.net/video/ \"M1165\"",
+        "site:dvidshub.net/video/ \"M1165A1\""
+      ],
+      "observation": "Bounded web search returned publications but no usable exact-variant video lead.",
+      "interpretation": "Search failure does not establish absence from DVIDS. Do not invent M1165A1 independence or substitute M1151 engine evidence."
+    }
+  ],
+  "summary": {
+    "additional_candidate_assets": 4,
+    "total_candidate_assets_with_frozen_ledger": 11,
+    "models_with_caption_leads_across_both_ledgers": [
+      "M1 Abrams family",
+      "Leopard 2 / Leopard unspecified",
+      "Bradley family",
+      "Stryker family",
+      "M109A6 Paladin",
+      "HMMWV M1151"
+    ],
+    "caption_class_count": 6,
+    "verified_independent_recording_groups": 0,
+    "six_model_eight_group_quota_established": false,
+    "usable_audio_support": "unknown",
+    "model_granularity_frozen_for_P1": false,
+    "powerplant_labels_for_recordings": "unknown",
+    "P1_authorized": false
+  },
+  "restrictions": [
+    "Caption classes mix family and variant granularity; a future roster must fix the identity definition before collection/evaluation.",
+    "Shot logs are source metadata; blind trimming cannot use their labelled interval boundaries.",
+    "All raw media, engine identity, audibility and background-support fields remain unknown.",
+    "Metadata retrieval did not execute scripts, embedded players or load associated media."
+  ]
+}

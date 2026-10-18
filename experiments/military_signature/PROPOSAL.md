@@ -8,6 +8,10 @@ workflow or the earlier benchmark, and it does not change their historical
 results or the roles of protected sources (including the reviewed T-80BVM/T-90M
 segments).
 
+P0 preparation is now separately authorized in the user session. Its corrections,
+evidence and remaining gates are in [PROTOCOL_DRAFT.md](PROTOCOL_DRAFT.md) and
+[P0_STATUS.md](P0_STATUS.md). The proposal below remains the design history.
+
 ## Question
 
 Does real-world audio of particular military vehicle models contain a

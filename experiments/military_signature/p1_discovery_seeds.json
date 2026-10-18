@@ -1,0 +1,108 @@
+{
+  "created_at": "2026-10-12T02:44:13.656Z",
+  "mode": "primary_DVIDS_search_leads_only",
+  "searches": [
+    {
+      "label": "abrams",
+      "query": "site:dvidshub.net/video/ \"Abrams\" \"B-Roll\"",
+      "urls": [
+        "https://www.dvidshub.net/video/1754/abrams-tank-b-roll",
+        "https://www.dvidshub.net/video/524546/abrams-tank-maintainers-keeping-us-soldiers-2017-nordic-tank-challenge-b-roll",
+        "https://www.dvidshub.net/video/841851/abrams-operations-summit-tank-b-roll",
+        "https://www.dvidshub.net/video/572786/taa-abrams-set-up-b-roll-package",
+        "https://www.dvidshub.net/video/1001299/enhancing-fighting-capabilities-us-army-m1a2-abrams-conducts-live-fire-training-with-nato-allies-b-roll",
+        "https://www.dvidshub.net/video/996227/b-roll-3-8-cav-abrams-platoon-live-fire-operation-warhorse-surge",
+        "https://www.dvidshub.net/video/841356/us-and-polish-partners-attend-abrams-operations-summit-b-roll",
+        "https://www.dvidshub.net/video/987082/iron-heroes-m1a2-abrams-tank-live-fire-accuracy-screening-test-b-roll",
+        "https://www.dvidshub.net/video/410989/m1a2-abrams-tank-offload-bulgaria-b-roll",
+        "https://www.dvidshub.net/video/742736/b-roll-gen-robert-abrams-visits-usag-daegu-evaluates-us-response-covid-19",
+        "https://www.dvidshub.net/video/882364/m1a2-sepv3-abrams-main-battle-tank-loader-pov-b-roll",
+        "https://www.dvidshub.net/video/984276/1st-infantry-division-conducts-m1a2-abrams-table-iv-v-gunnery-bulgaria-b-roll"
+      ]
+    },
+    {
+      "label": "leopard",
+      "query": "site:dvidshub.net/video/ \"Leopard\" \"tank\"",
+      "urls": [
+        "https://www.dvidshub.net/video/879491/nato-allies-train-ukrainian-soldiers-leopard-tanks-poland-b-roll",
+        "https://www.dvidshub.net/video/1011696/germanys-tank-brigade-participates-its-first-exercise-lithuania",
+        "https://www.dvidshub.net/video/932199/ukrainian-tankers-train-poland-with-nato-allies-mastersubs",
+        "https://www.dvidshub.net/video/946216/ukrainian-troops-train-poland-master-allied-leopard-2-tanks",
+        "https://www.dvidshub.net/video/686162/norwegian-tanks-arrive-poland-exercise-noble-jump-2019-one-result",
+        "https://www.dvidshub.net/video/831895/norwegian-tanks-launch-live-fire-drills-lithuania",
+        "https://www.dvidshub.net/video/688131/german-leopard-tank-target-practice-strike-back-19",
+        "https://www.dvidshub.net/video/855729/us-soldiers-explore-finnish-leopard-battle-tank",
+        "https://www.dvidshub.net/video/882815/exercise-noble-jump-23-norwegian-dutch-german-soldiers-lift-leopard-tank",
+        "https://www.dvidshub.net/video/952520/usareur-af-international-tank-challenge",
+        "https://www.dvidshub.net/video/916378/nato-allies-demonstrate-strengthened-deterrence-and-defence-during-polish-led-dragon-2024-exercise",
+        "https://www.dvidshub.net/video/819508/biggest-nato-exercise-lithuania-marks-10th-rotation-efp-battlegroup"
+      ]
+    },
+    {
+      "label": "bradley",
+      "query": "site:dvidshub.net/video/ \"Bradley\" \"convoy\"",
+      "urls": [
+        "https://www.dvidshub.net/video/766451/b-roll-bradley-convoy-northeastern-syria",
+        "https://www.dvidshub.net/video/590296/nc-guard-abrams-tanks-and-bradley-fighting-vehicles-95",
+        "https://www.dvidshub.net/video/1705/raider-base-b-roll",
+        "https://www.dvidshub.net/video/795825/alwyn-c-cashe-garden-dedicated",
+        "https://www.dvidshub.net/video/286235/exercise-raider-ready",
+        "https://www.dvidshub.net/video/419720/116th-cavalry-brigade-combat-team-begins-training-national-training-center"
+      ]
+    },
+    {
+      "label": "stryker",
+      "query": "site:dvidshub.net/video/ \"Stryker\" \"B-Roll\"",
+      "urls": [
+        "https://www.dvidshub.net/video/1010471/1-23-infantry-30mm-stryker-b-roll",
+        "https://www.dvidshub.net/video/972885/stryker-survey-and-black-hawk-aircraft-decon-b-roll",
+        "https://www.dvidshub.net/video/1024929/2d-cavalry-regiment-stryker-familiarization-gunnery-broll",
+        "https://www.dvidshub.net/video/481459/usa-murphy-stryker-b-roll",
+        "https://www.dvidshub.net/video/666409/stryker-redeployment-b-roll",
+        "https://www.dvidshub.net/video/943782/stryker-jrtc-b-roll-package",
+        "https://www.dvidshub.net/video/483942/orient-shield-2016-stryker-demo-b-roll",
+        "https://www.dvidshub.net/video/589501/stryker-mission-ops-convoy-b-roll",
+        "https://www.dvidshub.net/video/861223/broll-8-37th-stryker-download",
+        "https://www.dvidshub.net/video/358437/b-roll-stryker-operations",
+        "https://www.dvidshub.net/video/28750/stryker",
+        "https://www.dvidshub.net/video/873196/2-2-stryker-gunnery-broll"
+      ]
+    },
+    {
+      "label": "m109",
+      "query": "site:dvidshub.net/video/ \"M109\" \"B-Roll\"",
+      "urls": [
+        "https://www.dvidshub.net/video/795698/m109-paladin-howitzer-b-roll",
+        "https://www.dvidshub.net/video/846427/m109-howitzer-degraded-training",
+        "https://www.dvidshub.net/video/485602/centcom-commander-fires-m-109-paladin",
+        "https://www.dvidshub.net/video/974185/us-and-british-artillery-units-fire-m109a6-paladins-during-northern-strike-25-2",
+        "https://www.dvidshub.net/video/801177/xctc-21-05-camp-guernsey-m109-howitzer-lanes-130th-field-artillery-brigade",
+        "https://www.dvidshub.net/video/884357/moving-equipment-african-lion",
+        "https://www.dvidshub.net/video/516696/3rd-battalion-29th-field-artillery-regiment-bring-equipment-zagan-poland-b-roll",
+        "https://www.dvidshub.net/video/932935/m109-a6-paladins-zeroing-exercise-operation-fortitude-2024",
+        "https://www.dvidshub.net/video/5794/1-41-field-artillery",
+        "https://www.dvidshub.net/video/893652/2-222-artillery-b-roll",
+        "https://www.dvidshub.net/video/800891/african-lion-2021-royal-moroccan-armed-forces-paladin-live-fire",
+        "https://www.dvidshub.net/video/847461/soldiers-us-and-norway-train-armed-forces-ukraine"
+      ]
+    },
+    {
+      "label": "hmmwv",
+      "query": "site:dvidshub.net/video/ \"Humvee\" \"driving\"",
+      "urls": [
+        "https://www.dvidshub.net/video/35282/humvee-capabilities",
+        "https://www.dvidshub.net/video/64777/driven-drive",
+        "https://www.dvidshub.net/video/842870/156-crg-southern-strike-2022-humvee-driving-training",
+        "https://www.dvidshub.net/video/64304/roadside-assistance",
+        "https://www.dvidshub.net/video/11647/4th-id-ia-shooting-and-drivers-training-b-roll",
+        "https://www.dvidshub.net/video/921247/b-roll-african-lion-24-conducts-port-operations-gabes-tunisia",
+        "https://www.dvidshub.net/video/973361/spectrum-situational-awareness-system-s2as-user-assessment-b-roll",
+        "https://www.dvidshub.net/video/638757/trident-juncture-2018-united-states-marine-corps-near-oppdal",
+        "https://www.dvidshub.net/video/914522/b-roll-justified-accord-2024-participants-conduct-quick-response-force-drills-and-react-contact",
+        "https://www.dvidshub.net/video/12865/gun-turret-b-roll",
+        "https://www.dvidshub.net/video/84442/light-weight-modular-causeway-system-part-1",
+        "https://www.dvidshub.net/video/2235/sfc-smith-battlesite"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "supplement_id": "military_signature_p0_source_followup_20261011",
+  "protocol_id": "military_signature_p0_v1",
+  "scope": "P0 public literature only; no real media, features or fitting",
+  "relationship_to_frozen_ledger": "Additive dated evidence. The original source_evidence.json and 55-file freeze remain unchanged.",
+  "sources": [
+    {
+      "evidence_status": "selected original PDF pages verified",
+      "workflow": "Extracted Markdown read first; original PDF text and rendered pages checked",
+      "candidate_recording_engine": "unknown",
+      "source_id": "CUMMINS_DEFENSE",
+      "title": "Power Solutions for Defense",
+      "publisher": "Cummins",
+      "publication_date": "unknown",
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0075965.pdf",
+      "pdf_sha256": "7f1c7aadb100c27f0c9f58223fb2ecfb5a0508dc9a23c4079425d943a0a0cc53",
+      "markdown_sha256": "7721ae97dc290b319f1720a662bb7954152d966d247b4f2e145999ada6441400",
+      "claims": [
+        {
+          "pdf_page": 13,
+          "printed_page": "11",
+          "section": "Distinguished service at every milestone; 1981 timeline entry",
+          "author_statement": "The brochure associates the start of Bradley production in 1981 with VTA903-500 engines.",
+          "interpretation": "Historical association only. It does not identify the engine in a 2020 Bradley metadata candidate.",
+          "render_ref": "artifact:military_signature/p0/literature-followup-20261011/CUMMINS_DEFENSE_p13.png"
+        }
+      ],
+      "pdf_ref": "artifact:military_signature/p0/literature-followup-20261011/CUMMINS_DEFENSE.pdf",
+      "markdown_ref": "artifact:military_signature/p0/literature-followup-20261011/CUMMINS_DEFENSE.md"
+    },
+    {
+      "evidence_status": "selected original PDF pages verified",
+      "workflow": "Extracted Markdown read first; original PDF text and rendered pages checked",
+      "candidate_recording_engine": "unknown",
+      "source_id": "CUMMINS_V903",
+      "title": "V903",
+      "publisher": "Cummins",
+      "publication_date": "2024-09 revision",
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0063416.pdf",
+      "pdf_sha256": "c814c4f85a3b905d8731787accc5bbf30e912513b0fa91a3d9aa9d2e987f8f5d",
+      "markdown_sha256": "4dc76686d4ff0ca5be79dc9ab49afc13a072e0f55a73919d75ddfe3461587e30",
+      "claims": [
+        {
+          "pdf_page": 2,
+          "printed_page": "unknown",
+          "section": "General specifications; Engine Design; Bulletin 5600645 Rev. 9/24",
+          "author_statement": "The V903 specification describes a 90-degree V8, four-stroke diesel architecture.",
+          "interpretation": "Supports the described V903 family architecture. Linking it to the historical Bradley association is a family-level interpretation, not proof of any recorded Bradley configuration.",
+          "render_ref": "artifact:military_signature/p0/literature-followup-20261011/CUMMINS_V903_p2.png"
+        }
+      ],
+      "pdf_ref": "artifact:military_signature/p0/literature-followup-20261011/CUMMINS_V903.pdf",
+      "markdown_ref": "artifact:military_signature/p0/literature-followup-20261011/CUMMINS_V903.md"
+    },
+    {
+      "evidence_status": "selected original PDF pages verified",
+      "workflow": "Extracted Markdown read first; original PDF text and rendered pages checked",
+      "candidate_recording_engine": "unknown",
+      "source_id": "ARMY_M109_1992",
+      "title": "Army Research, Development & Acquisition Bulletin, September–October 1992",
+      "publisher": "U.S. Army",
+      "publication_date": "1992-09/10",
+      "url": "https://asc.army.mil/docs/pubs/alt/archives/1992/Sep-Oct_1992.PDF",
+      "pdf_sha256": "ce1eb1aca7695b827effd2f1a8e6299ef1eb8d3afe198b53979fa68f23c97ed7",
+      "markdown_sha256": "b9eb13d586a43a299f3658fcbca64b277fa35d6b291ec736e112a2d318972b07",
+      "claims": [
+        {
+          "pdf_page": 57,
+          "printed_page": "55",
+          "section": "RD&A News Briefs: Howitzer and FAASV Get Improved Engine",
+          "author_statement": "The brief describes a modified eight-cylinder Detroit Diesel 8V71T for M109A6 and M992A1, designated 8V71T-LHR.",
+          "interpretation": "Supports the reported M109A6 diesel association. Stroke count is not established by this page, and the association does not cover every M109 variant.",
+          "render_ref": "artifact:military_signature/p0/literature-followup-20261011/ARMY_M109_1992_p57.png"
+        }
+      ],
+      "pdf_ref": "artifact:military_signature/p0/literature-followup-20261011/ARMY_M109_1992.pdf",
+      "markdown_ref": "artifact:military_signature/p0/literature-followup-20261011/ARMY_M109_1992.md"
+    },
+    {
+      "evidence_status": "selected original PDF pages verified",
+      "workflow": "Extracted Markdown read first; original PDF text and rendered pages checked",
+      "candidate_recording_engine": "unknown",
+      "source_id": "ARMY_STRYKER_2020",
+      "title": "Tracks, January 23, 2020",
+      "publisher": "Anniston Army Depot, U.S. Army",
+      "publication_date": "2020-01-23",
+      "url": "https://anad.army.mil/docs/librariesprovider2/default-document-library/tr012320_v2.pdf?sfvrsn=7a536430_0",
+      "pdf_sha256": "2c5f00e93f57271921caa6df5c49cebe2437f7336183f2f7bc17ef5c14ac6d94",
+      "markdown_sha256": "60aa67bdcf866a8710ae84612f12ee4a4ea3207c9516036ae241a7ac2e147594",
+      "claims": [
+        {
+          "pdf_page": 1,
+          "printed_page": "1",
+          "section": "First Stryker FMS program begins at ANAD; Jennifer Bacchus, ANAD PAO",
+          "author_statement": "Thirty Strykers were being reset as Infantry Carrier Vehicles for the Royal Thai Army.",
+          "interpretation": "Defines the reported reset population, not a universal Stryker specification.",
+          "render_ref": "artifact:military_signature/p0/literature-followup-20261011/ARMY_STRYKER_2020_p1.png"
+        },
+        {
+          "pdf_page": 4,
+          "printed_page": "4",
+          "section": "From STRYKER, page 1",
+          "author_statement": "Vehicles in the reset program could arrive with Caterpillar C7 or 3126 engines and leave with serviced C7 engines.",
+          "interpretation": "A family caption alone cannot identify an engine. Recording-specific engine labels remain unknown without further evidence.",
+          "render_ref": "artifact:military_signature/p0/literature-followup-20261011/ARMY_STRYKER_2020_p4.png"
+        }
+      ],
+      "pdf_ref": "artifact:military_signature/p0/literature-followup-20261011/ARMY_STRYKER_2020.pdf",
+      "markdown_ref": "artifact:military_signature/p0/literature-followup-20261011/ARMY_STRYKER_2020.md"
+    },
+    {
+      "evidence_status": "selected original PDF pages verified",
+      "workflow": "Extracted Markdown read first; original PDF text and rendered pages checked",
+      "candidate_recording_engine": "unknown",
+      "source_id": "CAT_DIESEL_FLUIDS_2025",
+      "title": "Cat Commercial Diesel Engine Fluids Recommendations, SEBU6251-32",
+      "publisher": "Caterpillar",
+      "publication_date": "2025-02",
+      "url": "https://caterpillar.scene7.com/is/content/Caterpillar/CM20250210-d820f-61dca",
+      "pdf_sha256": "25bebbaa87b976b4891426952d429f88f6601e45e0dbb3f9874718a18f1a1d7c",
+      "markdown_sha256": "217345cab40d27c1c55fdb727f7599faa975255f33334ba7a86f7daabf60c1ed",
+      "claims": [
+        {
+          "pdf_page": 49,
+          "printed_page": "49",
+          "section": "Engine Oil Selection; Diesel Engine Oil (DEO) Characteristics; viscosity note",
+          "author_statement": "An oil-viscosity note explicitly includes 3126 and C7 among diesel engine families.",
+          "interpretation": "Combined with the Army article, this supports a coarse diesel association for the two reported Stryker engine families. It provides no recording-specific engine identification, cylinder count or stroke count.",
+          "render_ref": "artifact:military_signature/p0/literature-followup-20261011/CAT_DIESEL_FLUIDS_2025_p49.png"
+        }
+      ],
+      "pdf_ref": "artifact:military_signature/p0/literature-followup-20261011/CAT_DIESEL_FLUIDS_2025.pdf",
+      "markdown_ref": "artifact:military_signature/p0/literature-followup-20261011/CAT_DIESEL_FLUIDS_2025.md"
+    },
+    {
+      "evidence_status": "selected original PDF pages verified",
+      "workflow": "Extracted Markdown read first; original PDF text and rendered pages checked",
+      "candidate_recording_engine": "unknown",
+      "source_id": "AMGENERAL_M1165",
+      "title": "M1100 Series HMMWV: M1165A1 Special Ops",
+      "publisher": "AM General",
+      "publication_date": "unknown",
+      "document_identifier": "AMP05072018DOM",
+      "url": "https://www.amgeneral.com/wp-content/uploads/2019/12/M1165-Special-Ops.pdf",
+      "pdf_sha256": "21c010d2314fa48f73b51efd37f2c60ede55e27653e0a9e8a9bca71cc2f4c056",
+      "markdown_sha256": "79dc33716608406e1bfaa4f23d0e7d94373d0f9a7c17723715aa5709ee768358",
+      "claims": [
+        {
+          "pdf_page": 1,
+          "printed_page": "unknown",
+          "section": "M1165A1 Special Ops product description",
+          "author_statement": "The brochure identifies the subject as M1165A1 Special Ops in the HMMWV family.",
+          "interpretation": "Do not combine HMMWV and JLTV into one model identity.",
+          "render_ref": "artifact:military_signature/p0/literature-followup-20261011/AMGENERAL_M1165_p1.png"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": "unknown",
+          "section": "M1165A1 Special Ops specifications; Engine",
+          "author_statement": "The engine entry specifies a GEP 6.5-litre V8 turbocharged diesel.",
+          "interpretation": "Supports the described M1165A1 configuration. Other HMMWV variants, JLTV configurations and recordings remain unverified; stroke count stays unknown.",
+          "render_ref": "artifact:military_signature/p0/literature-followup-20261011/AMGENERAL_M1165_p2.png"
+        }
+      ],
+      "pdf_ref": "artifact:military_signature/p0/literature-followup-20261011/AMGENERAL_M1165.pdf",
+      "markdown_ref": "artifact:military_signature/p0/literature-followup-20261011/AMGENERAL_M1165.md"
+    }
+  ],
+  "powerplant_updates": [
+    {
+      "vehicle_scope": "Bradley production beginning in 1981",
+      "engine": "VTA903-500",
+      "powerplant": "diesel at V903 family level",
+      "configuration": "V903 family V8 four-stroke; historical installation details unknown",
+      "evidence": [
+        "CUMMINS_DEFENSE PDF p13 / printed p11",
+        "CUMMINS_V903 PDF p2"
+      ],
+      "status": "historical association plus family specification; not candidate-specific"
+    },
+    {
+      "vehicle_scope": "M109A6 in the 1992 Army report",
+      "engine": "8V71T-LHR",
+      "powerplant": "diesel",
+      "cylinders": 8,
+      "stroke_count": "unknown",
+      "evidence": [
+        "ARMY_M109_1992 PDF p57 / printed p55"
+      ],
+      "status": "reported variant association; not all M109 variants"
+    },
+    {
+      "vehicle_scope": "Strykers entering the documented 2020 Anniston reset program",
+      "engine_options": [
+        "Caterpillar C7",
+        "Caterpillar 3126"
+      ],
+      "powerplant": "diesel",
+      "cylinders": "unknown",
+      "stroke_count": "unknown",
+      "evidence": [
+        "ARMY_STRYKER_2020 PDF p1, p4",
+        "CAT_DIESEL_FLUIDS_2025 PDF p49"
+      ],
+      "status": "reported reset population; exact candidate engine unknown"
+    },
+    {
+      "vehicle_scope": "M1165A1 Special Ops described by AM General",
+      "engine": "GEP 6.5-litre turbocharged V8",
+      "powerplant": "diesel",
+      "cylinders": 8,
+      "stroke_count": "unknown",
+      "evidence": [
+        "AMGENERAL_M1165 PDF p1–2"
+      ],
+      "status": "brochure configuration; not all HMMWV or JLTV variants"
+    }
+  ],
+  "unknowns": [
+    "T-72/T-80/T-80UD/T-90 associations remain unverified under the PDF-authoritative contract.",
+    "JLTV is not established by the M1165A1 brochure.",
+    "No source here identifies the engine or firing/order label of any proposed recording.",
+    "No new verified independent recording groups or usable-audio observations were established."
+  ],
+  "retrieval_records": [
+    "artifact:military_signature/p0/literature-followup-20261011/retrieval.json",
+    "artifact:military_signature/p0/literature-followup-20261011/retrieval_curl.json",
+    "artifact:military_signature/p0/literature-followup-20261011/retrieval_additional.json"
+  ],
+  "unverified_primary_leads": [
+    {
+      "source_id": "ARMOR_2023_SUMMER",
+      "url": "https://www.benning.army.mil/armor/eARMOR/content/issues/2023/Summer/ARMOR_Summer_2023_edition.pdf",
+      "status": "local retrieval timed out; web PDF excerpt did not yield verifiable pages",
+      "sha256": "unknown",
+      "verified_claims": []
+    },
+    {
+      "source_id": "ARMOR_1998_SEP",
+      "url": "https://www.benning.army.mil/Armor/eARMOR/content/issues/1998/SEP_OCT/ArmorSeptemberOctober1998web.pdf",
+      "status": "retrieval timed out; no original-page verification",
+      "sha256": "unknown",
+      "verified_claims": []
+    },
+    {
+      "source_id": "ARMOR_2001_SEP",
+      "url": "https://www.benning.army.mil/Armor/eARMOR/content/issues/2001/SEP_OCT/ArmorSeptemberOctober2001web.pdf",
+      "status": "retrieval timed out; no original-page verification",
+      "sha256": "unknown",
+      "verified_claims": []
+    }
+  ],
+  "method_notes": [
+    "Initial Python TLS failures are retained. System curl succeeded with default TLS validation; certificate checks were not disabled.",
+    "Selected renders and PDF extraction checks are retained in pdf_page_checks.json.",
+    "Public literature documents with empty-password PDF encryption were opened using the standard reader; no credentials or media were used."
+  ],
+  "P1_authorized": false
+}

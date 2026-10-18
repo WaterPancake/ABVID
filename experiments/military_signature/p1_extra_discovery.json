@@ -1,0 +1,77 @@
+{
+  "created_at": "2026-10-12T02:52:19.429Z",
+  "searches": [
+    {
+      "label": "leopard_extra",
+      "query": "site:dvidshub.net/video/ leopard tanks training US soldiers",
+      "urls": [
+        "https://www.dvidshub.net/video/855729/us-soldiers-explore-finnish-leopard-battle-tank",
+        "https://www.dvidshub.net/video/879491/nato-allies-train-ukrainian-soldiers-leopard-tanks-poland-b-roll",
+        "https://www.dvidshub.net/video/688131/german-leopard-tank-target-practice-strike-back-19",
+        "https://www.dvidshub.net/video/634874/trident-juncture-2018-panzer-tank-training",
+        "https://www.dvidshub.net/video/882815/exercise-noble-jump-23-norwegian-dutch-german-soldiers-lift-leopard-tank",
+        "https://www.dvidshub.net/video/932199/ukrainian-tankers-train-poland-with-nato-allies-mastersubs",
+        "https://www.dvidshub.net/video/946216/ukrainian-troops-train-poland-master-allied-leopard-2-tanks",
+        "https://www.dvidshub.net/video/1011696/germanys-tank-brigade-participates-its-first-exercise-lithuania",
+        "https://www.dvidshub.net/video/883088/sweden-trains-with-nato-allies-exercise-aurora-2023",
+        "https://www.dvidshub.net/video/605359/strong-europe-tank-challenge-offensive-operations-with-french-and-austrian-soldiers",
+        "https://www.dvidshub.net/video/635676/trident-juncture-2018-prime-minister-visits-norwegian-troops",
+        "https://www.dvidshub.net/video/941336/tanks-action"
+      ]
+    },
+    {
+      "label": "hmmwv_extra",
+      "query": "site:dvidshub.net/video/ \"HMMWV\" \"B-Roll\"",
+      "urls": [
+        "https://www.dvidshub.net/video/972570/caribbean-thunder-2025-hmmwv-engine-swap-b-roll",
+        "https://www.dvidshub.net/video/27421/hmmwv-egress-assistance-trainer",
+        "https://www.dvidshub.net/video/762326/hmmwv-egress-assistance-trainer-heat-b-roll",
+        "https://www.dvidshub.net/video/294093/hmmwv-egress-assistance-trainer-roll",
+        "https://www.dvidshub.net/video/868525/tow-missiles-fired-hmmwv-platform",
+        "https://www.dvidshub.net/video/972570/caribbean-thunder-2025-maintenance-team-swap-hmmwv",
+        "https://www.dvidshub.net/video/451617/hmmwv-load-and-unload",
+        "https://www.dvidshub.net/video/421282/swift-response-2015-hmmwv-egress-assistance-trainer",
+        "https://www.dvidshub.net/video/294956/jmtc-hmmwv-egress-assistance-trainer",
+        "https://www.dvidshub.net/video/27424/hmmwv-egress-assistance-trainer-spanish",
+        "https://www.dvidshub.net/video/951135/us-army-soldiers-action-combined-resolve-25-1",
+        "https://www.dvidshub.net/video/994737/task-force-brawlers-conduct-vehicle-terrain-familiarization-training-b-roll"
+      ]
+    },
+    {
+      "label": "m109_extra",
+      "query": "site:dvidshub.net/video/ \"M109A6\" \"B-Roll\"",
+      "urls": [
+        "https://www.dvidshub.net/video/934132/northern-strike-24-2-1-201-fa-m109a6-paladin-training-social-media-b-roll",
+        "https://www.dvidshub.net/video/863472/b-roll-idaho-national-guard-m109a6-howitzer-exercise-african-lion-22",
+        "https://www.dvidshub.net/video/863491/b-roll-idaho-national-guard-m109a6-howitzer-exercise-african-lion-22",
+        "https://www.dvidshub.net/video/974185/us-and-british-artillery-units-fire-m109a6-paladins-during-northern-strike-25-2",
+        "https://www.dvidshub.net/video/607339/arkansas-field-artillery-unit-fires-m109a6-paladins-during-operation-western-strike",
+        "https://www.dvidshub.net/video/967175/army-250-parade-celebration-b-roll",
+        "https://www.dvidshub.net/video/1006440/ivy-mass-observation-point",
+        "https://www.dvidshub.net/video/912344/b-roll-task-force-marne-paladin-crews-conduct-live-fire-exercise-poland",
+        "https://www.dvidshub.net/video/110284/combined-arms-live-fire-exercise-builds-camaraderie-among-soldiers",
+        "https://www.dvidshub.net/video/137865/howitzers-kuwait",
+        "https://www.dvidshub.net/video/898609/b-roll-task-force-marne-soldiers-conduct-artillery-live-fire-poland",
+        "https://www.dvidshub.net/video/966208/us-army-vehicles-staged-west-potomac-park-waterfront-b-roll"
+      ]
+    },
+    {
+      "label": "bradley_extra",
+      "query": "site:dvidshub.net/video/ \"Bradley\" \"maneuver\" \"B-Roll\"",
+      "urls": [
+        "https://www.dvidshub.net/video/897660/2-15-cav-bradley-fighting-vehicle-maneuver-training-b-roll",
+        "https://www.dvidshub.net/video/897659/2-15-cav-bradley-maneuver-training-vertical-b-roll",
+        "https://www.dvidshub.net/video/993639/3-8-cavalry-conducts-platoon-level-stx-bradley-aerial-footage",
+        "https://www.dvidshub.net/video/993637/us-soldiers-train-with-m2a3-bradleys-during-platoon-stx-poland",
+        "https://www.dvidshub.net/video/524204/iron-focus-2017-broll",
+        "https://www.dvidshub.net/video/843074/b-roll-spartan-bradley-crew-honored-best-army",
+        "https://www.dvidshub.net/video/357693/m2-bradley-fighting-vehicles-tango-with-opposing-forces-ofpor-annual-training",
+        "https://www.dvidshub.net/video/374080/estonian-and-us-armies-show-and-tell-fathers-day",
+        "https://www.dvidshub.net/video/374089/cavalry-scouts-show-off-their-gear-estonian-army-conscripts",
+        "https://www.dvidshub.net/video/822687/gulf-gunnery-armor-platoon-live-fire",
+        "https://www.dvidshub.net/video/373655/estonian-prime-minister-receives-cav-welcome-tapa",
+        "https://www.dvidshub.net/video/478354/tank-live-fire-romania"
+      ]
+    }
+  ]
+}
