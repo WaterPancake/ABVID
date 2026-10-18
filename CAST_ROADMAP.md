@@ -26,7 +26,7 @@ transfer run or access to additional audio.
 | CAST-2 real pilot | Complete | All 50 IDMT fits completed and improved checking loss; 43/50 retained disagreement between near-equivalent starts. Physical parameters are not identified. |
 | CAST-3 fitted population | Implemented through v15 | The current population uses 380 training observations, 190/class, from five conservative groups. Generated examples retain all contributing ancestry. |
 | CAST-4 acoustic coverage | Development objective met | v15 passes the declared mean coverage, control-distance and spread criteria on one repeatedly exposed IDMT outer group. Independent confirmation remains open. |
-| CAST-5 classification transfer | Unrun | CAST has no established classification gain. |
+| CAST-5 classification transfer | 5A complete (development) | [CAST-5A](reports/CAST_source_classification.md): RC − RA macro-F1 +0.47 [−0.97, 2.08]; practical gain ruled out, no gain established; CAST-only beats the unfitted prior (AUROC 60.6 vs 47.5). 5B precondition not met. |
 | CAST-6 learned parameter estimator | Deferred | Consider only after demonstrating a useful fitting task and a measured runtime bottleneck. |
 
 Sources: [pilot](reports/CAST_pilot.md), [original coverage failure](reports/CAST_generalization.md),
@@ -267,6 +267,19 @@ as the proposed utility target; it is unrelated to the historical
 that practical gain, an upper bound below 3 rules out that effect size, and a
 crossing interval is inconclusive. Use zero separately for a claim of any gain.
 
+**Precision planning (2026-10-11):** The
+[H1 paired-variance analysis](reports/CAST5A_precision_planning.md) finds
+conditional source-proxy interval widths around 3.6–5.1 F1 points, with wider
+location-sensitive stress cases. The cited 3.5-point H1 mixing interval is a
+MELAUDIS contrast, not RC minus RA. Under the central source variance scenarios,
+roughly 5.6–6.6-point true gains are needed for 80% probability of a lower bound
+above three, using a normal planning approximation. A true three-point gain is
+the decision boundary, not a high-power alternative. Actual RC/RA variance is
+unknown. Before freezing, record the precision assumptions and the role of the
+three-site sensitivity; retain possible inconclusion near the margin or obtain
+separately scoped matched variance evidence/additional independent groups.
+The three-point margin is unchanged; this does not freeze or execute CAST-5A.
+
 Also report balanced accuracy, both recalls, confusion matrices, calibration,
 group and worst-group outcomes, constant predictors and runtime. Predeclare
 class-recall regression limits and any confirmatory multiplicity handling in
@@ -433,6 +446,9 @@ current help default is not a reproduction of the full v15 workflow.
    conventional augmentation and statistical decisions. Resolve every executable
    configuration choice before requesting or performing the classifier experiment.
 4. Plan admission of genuinely unexposed recording groups alongside this work.
+   DCASE 2024 Task 10 is admitted from metadata and sealed. CAST-5C shares that set
+   with a corrected H2 replication in one jointly frozen scoring pass; see the
+   [joint confirmation plan](experiments/joint_confirmation/PLAN.md).
    Defer cross-dataset scoring, component expansion and amortized fitting until
    their stated evidence and access conditions are satisfied.
 

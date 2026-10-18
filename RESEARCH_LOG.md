@@ -94,3 +94,135 @@ original working tree externally and its research source in Git history; moved
 shared numeric code to `src/abvid`. No new scientific run or target evaluation.
 See [the refactor report](reports/REFACTOR.md) for exact numerical parity, tests,
 storage locations and historical replay boundaries.
+
+## 2026-10-11 — Confirmation target admission and prevalence-robust re-scoring
+
+- **Hypothesis/purpose:** MELAUDIS is exposed and its 3.17% truck prevalence makes
+  macro-F1 at a fixed argmax boundary mostly a boundary-placement measure. Find an
+  unexposed target and re-read the existing evidence with threshold-free metrics.
+- **Admission:** DCASE 2024 Task 10 development release, admitted from metadata only
+  under [`dcase2024_t10_metadata_v1`](experiments/admission/dcase2024_t10/PROTOCOL.md),
+  which was written before the run.
+  - **Transfer:** 3,365,619 bytes by HTTP range requests; 0 audio bytes.
+  - **Labels:** 15,013 labelled minutes at 6 sites; 1,361 single-car and 228 single-cv
+    minutes, with cv concentrated at loc1/loc3/loc6.
+  - **Isolation:** the evaluation release has no labels. Empty minutes are mostly
+    absent, so the label-only isolation sensitivity finds 0 minutes.
+  - **Seal:** sealed as a `T_confirm` candidate (seal SHA256 `7ff5f704…6f9f`).
+  - [Report](reports/dataset_admission_dcase2024_t10.md).
+- **Re-scoring:** `target_panel_rescore_v1` uses archived H1/H2/latency predictions
+  only (hash-checked), 10,000 paired group/selection draws, seed 20261011; no fitting.
+  - BEATs procedural − real: +11.82 F1 → +2.59 AUROC [−8.48, 9.48].
+  - IDMT within − MELAUDIS: +9.93 AUROC [−2.00, 16.24].
+  - H2 D (source − path): −22.41 AUROC [−25.55, −10.28].
+  - MFCC H2 cells: about 69–71% AUROC with BA 50%.
+  - [Report](reports/target_panel.md).
+- **Interpretation:** the H2 path/latency direction holds for BEATs; H1's synthetic
+  counterexample is weakened to inconclusive; MFCC failures are calibration, not
+  ranking. All of this is post hoc development evidence.
+- **Failure modes:** four uneven MELAUDIS groups (one with one truck); no AUROC margin
+  was declared in earlier protocols; car/cv is a proxy for car/truck; DCASE sessions
+  are unknown and cv support covers about four sites.
+- **Decision:** report per-dataset panel rows and AUROC/BA/AP alongside macro-F1 in
+  future frozen protocols. Reserve DCASE for one authorized comparison.
+- **Next experiment:** none launched. A human must review the new tests and refresh the
+  harness baseline. The next frozen comparison (CAST-5A/5B or an H2 replication) should
+  declare its AUROC margin and whether it consumes the DCASE seal.
+- **Verification:** 14 new synthetic-fixture tests pass in both environments. The
+  metrics match brute-force and scikit-learn references, including ties and weighted
+  resamples, and reproduce the AUROCs previously reported for H2 (48.6% direct-path
+  BEATs; MFCC 69.61% latency only, 65.51% attenuation only).
+- **Provenance:** working tree dirty on base commit `2a1d40e` (another session edits the same worktree); environments `cast`
+  (`.venv`) and `baseline`; macOS arm64, CPU only. The re-scoring took 6 s.
+
+## 2026-10-11 — Joint confirmation plan: tracks started
+
+- **Decision (user):** use the sealed DCASE set for both CAST and a corrected H2
+  replication, frozen jointly and scored once ([plan](experiments/joint_confirmation/PLAN.md)).
+- **CAST:** CAST-4A grouped execution started 15:59 under its pinned runner and
+  environment, fitting 1,484 missing parents; the first fits carry no numerical
+  failures. CAST-5A needs 1,496 further parents; its [draft](experiments/joint_confirmation/CAST5A_DRAFT.md)
+  is unfrozen.
+- **H2R:** renderer v2 (`abvid.simulation.propagation_v2`) declares air-filter latency.
+  It reproduces v1 exactly in causal mode and an archived latency-free render bit for
+  bit. A post hoc assembly of the latency-free 2×2 from existing hashed heads on
+  exposed MELAUDIS:
+  - BEATs path marginal: +5.96 AUROC [−6.51, 9.52].
+  - Source marginal: −5.61 [−10.04, −3.71].
+  - Every BEATs cell at the always-truck macro-F1 level.
+  - MFCC at 65–71% AUROC, with the corrected path lowering it by 5.1.
+
+  The H2 path finding does not survive latency removal; source versus path cannot be
+  ranked at this floor.
+- **Access:** label-blind overlap audit tool. A real-audio check found a quiet
+  spliced IDMT clip at 30.99 s (true 31.0, r = 0.983); an earlier global peak budget
+  missed it, and a regression test now covers that case. Audit-access authorization
+  added to `abvid.data.sealing`.
+- **Next:** finish 4A; obtain user decisions (primary, AUROC margin, H2R option,
+  RA/RU defaults, precision acceptance); fit 5A parents; freeze 5A.
+
+## 2026-10-11 — CAST-4A execution: technical incompletion
+
+- **Run:** `cast4a_run_20261008_v1`, pinned runner and environment, 15:59–21:24.
+- **Parents:** all 1,864 complete (1,484 new fits, 380 audited reuses), with 0
+  numerical or technical failures.
+- **Generation:** 27,000 samples written, then the exact-replay gate failed in all 9
+  folds. Held descriptors and scores were never computed.
+- **Cause:** libsndfile writes a `PEAK` chunk timestamp into float WAV files (offset
+  60). The runner compares raw bytes on replay. The decoded waveforms, records and
+  descriptors replay identically.
+- **Decision:** no CAST-4A coverage claim. A corrected, separately pinned execution
+  revision is proposed in [the report](reports/CAST4A_run_20261011.md) and awaits
+  human review because it changes pinned runner and test code. CAST-5A continues; its
+  banks use `.npy`.
+
+## 2026-10-12 — CAST-5A: classification utility within IDMT (complete)
+
+- **Protocol:** `cast5a_utility_v1`, frozen before execution. 30 roles (6 IDMT folds × 5
+  H1 selections), 190 real parents/class, 7 arms × 2 representations = 420 heads,
+  shape-only profile, frozen BEATs768/MFCC26, H1 linear head.
+- **Result:** BEATs RC − RA macro-F1 **+0.47 [−0.97, 2.08]**.
+  - **Practical gain ruled out** (upper bound < 3); no gain established.
+  - AUROC −1.78 [−4.75, 0.70].
+  - Site-block sensitivity: +0.47 [−0.72, 2.06].
+  - MFCC agrees.
+  - RA − R ≈ 0: augmentation adds nothing either.
+  - CAST-only vs unfitted renderer: AUROC +13.0 [5.5, 18.3], but CAST-only remains well
+    below real-only (60.6 vs 71.3).
+- **Interpretation:** descriptor coverage (CAST-4) did not translate into classification
+  utility at this budget and with a frozen representation. Development evidence on
+  exposed IDMT groups.
+- **Incidents:**
+  - An RC-loader performance bug (eager `setdefault`) was fixed and regression-tested,
+    with no numerical effect; the population fingerprint was reproduced.
+  - The working tree was switched to `learned-audio-signature` outside this session;
+    executed code was identical to `main` `2a1d40e`.
+- **Decision:** CAST-5B not justified (roadmap precondition unmet). The joint DCASE pass
+  has no primary with positive development evidence; re-scoping is the user's decision.
+- **Provenance:**
+  - Design identity: `bceaf26b…32fc`.
+  - Results: `ce2df9b3…2bf3`.
+  - Report: [CAST_source_classification](reports/CAST_source_classification.md).
+
+## 2026-10-12 — B1 baseline strength (IDMT, development) and dataset scan
+
+- **B1:** protocol `baseline_strength_v1`, frozen before running. 96 configurations
+  (encoder × route × budget × C), 4,608 fits, 0 failures.
+  - **Result:** nested leave-one-group-out selection raises held-out-group AUROC from
+    71.49 (H1) to **84.10, Δ +12.6 [8.3, 17.8]**, with every group improving.
+  - **Drivers:** full-band input (BEATs +5.9), strong L2 (+4.0), all data once
+    regularized; combined BEATs +12.7. MFCC26 generalizes best within IDMT; CNN14 is
+    worst.
+  - [Report](reports/B1_baseline_strength.md).
+- **Implication (hypothesis):** CAST and H2 were band-limited to 4 kHz and scored on the
+  same route. Full-band synthesis plus the B1 recipe is needed before revisiting synthetic
+  utility.
+- **Dataset scan (label/metadata files only):**
+  - MVD: 1,077 trucks, 4 Delhi sites; data licence unconfirmed.
+  - FSD50K: 154 trucks, ~80 uploaders.
+  - SONYC-UST v2: proxy task, 48 sensors.
+  - TUT 2017: small.
+  - MAVD: 25 trucks, excluded.
+  - AudioSet: training only.
+  - [Report](reports/dataset_scan_20261012.md).
+- **Decision (user):** DCASE stays sealed for later.

@@ -227,6 +227,12 @@ Start with public civilian data so experiments are reproducible.
     source-audio material.
 -   **AI4TEN resources:** use released synthetic/real data, code and
     models to reproduce the modern baseline.
+-   **DCASE 2024 Task 10 (Bosch):** six roadside sites, four-capsule array,
+    per-minute car/commercial-vehicle counts plus a per-site pyroadacoustics
+    synthetic counterpart. [Admitted from metadata only and sealed](reports/dataset_admission_dcase2024_t10.md)
+    (2026-10-11) as the first `T_confirm` candidate: 1,361 single-car and 228
+    single-cv minutes, about four informative sites. Car/cv is a proxy task, not
+    car/truck. One authorized scoring pass consumes it.
 
 Keep dataset identities separate. Do not make a giant pooled dataset
 immediately. Dataset identity is itself an experimental variable.
@@ -324,6 +330,37 @@ the declared interventions, not an intrinsic division of all domain mismatch.
 The earlier military program is retired from the active checkout; its
 historical results and protected-source roles remain unchanged under
 [AGENTS.md](AGENTS.md).
+
+**Target evaluation — 2026-10-11:** a [post hoc re-scoring](reports/target_panel.md)
+of the archived predictions adds AUROC, AP against prevalence and balanced accuracy,
+and introduces a per-dataset target panel. Under these metrics:
+- H1's BEATs procedural-only advantage shrinks from +11.82 macro-F1 to +2.59 AUROC
+  points, and its interval crosses zero.
+- MFCC synthetic "gains" reverse.
+- H2's BEATs path advantage holds at −22.41 AUROC for D (source minus path).
+- MFCC ranks the target at about 70% AUROC despite predicting truck almost everywhere.
+
+Future target results report per-dataset rows and ranking metrics alongside macro-F1.
+DCASE 2024 Task 10 is sealed for one frozen confirmation pass.
+
+**Baseline strength — 2026-10-12:** a [nested search within IDMT](reports/B1_baseline_strength.md)
+lifts held-out-group AUROC from 71.5 to 84.1 (+12.6 [8.3, 17.8]) using:
+- full-band input;
+- all training data with balanced weights;
+- strong L2;
+- MFCC26 or the BEATs layer mean.
+
+The H1 baseline was limited mainly by its 4 kHz route and weak regularization. Future
+synthetic comparisons should use full-band synthesis and this recipe. The [dataset scan](reports/dataset_scan_20261012.md)
+ranks MVD (1,077 trucks, 4 sites), FSD50K (about 80 truck uploaders) and SONYC-UST v2
+(proxy, 48 sensors) as candidates. DCASE stays sealed.
+
+**CAST-5A — 2026-10-12:** the [within-IDMT utility test](reports/CAST_source_classification.md)
+rules out a practical CAST gain over conventional augmentation: BEATs RC − RA macro-F1
++0.47 [−0.97, 2.08]. Augmentation also adds nothing over real-only training. CAST-only
+training carries some real class information (AUROC 60.6 vs 47.5 for the unfitted
+renderer). The CAST-4A grouped run produced [no coverage result](reports/CAST4A_run_20261011.md)
+because of a WAV-timestamp replay defect.
 
 **CAST progress — 2026-10-06:** the [v15 coverage study](reports/CAST_improvement.md)
 met its declared descriptor-level development objective, with 82.019% car and
@@ -540,6 +577,17 @@ gains and further simulator development are not prerequisites for that interface
     verified unexposed recordings; E6–E9 remain later conditional extensions.
 6.  Favor independent recording contexts over more excerpts from the same
     groups. Keep BVP access optional; do not make it a project dependency.
+    Use the [target panel](reports/target_panel.md):
+    - MELAUDIS remains exposed development data.
+    - The [sealed DCASE 2024 Task 10 set](reports/dataset_admission_dcase2024_t10.md)
+      is reserved for one frozen comparison. It opens only with a human authorization,
+      a cross-corpus overlap audit and its class-independent window rule.
+    - MAVD needs an overlap audit before any role.
+    - The planned camera-labelled roadside collection remains the long-term,
+      fully controlled target.
+    - [Joint confirmation plan](experiments/joint_confirmation/PLAN.md) (2026-10-11):
+      CAST and a corrected H2 replication are developed separately on IDMT and
+      MELAUDIS, frozen together, and scored on the sealed DCASE set in one pass.
 7.  Advance the [CAST branch](CAST_ROADMAP.md#immediate-work-order) through fixed
     grouped coverage and joint-feature diagnostics before a separately frozen
     utility comparison. Preserve v15 as the reference and compare CAST against
