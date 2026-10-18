@@ -96,11 +96,18 @@ def _collected_test_count() -> int:
         env={**os.environ, "PYTHONPATH": str(REPO_ROOT / "src")},
         timeout=300,
     )
+    if result.returncode != 0:
+        pytest.fail(
+            f"pytest --collect-only failed (env={environment}, exit "
+            f"{result.returncode}); a partial count is not comparable:\n"
+            f"{result.stdout[-2000:]}\n{result.stderr[-2000:]}"
+        )
     # "-q" prints per-file summaries: "tests/foo.py: 12"
     per_file = re.findall(r"^(\S+\.py): (\d+)$", result.stdout, re.M)
     if per_file:
         return sum(int(count) for _, count in per_file)
-    match = re.search(r"(\d+) tests? collected", result.stdout)
+    # "N/M tests collected (K deselected)": N is the selected count.
+    match = re.search(r"(\d+)(?:/\d+)? tests? collected", result.stdout)
     if match:
         return int(match.group(1))
     pytest.fail(
