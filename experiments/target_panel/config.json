@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "target_panel_rescore_v1",
+  "description": "Post hoc prevalence-robust re-scoring of archived, already exposed MELAUDIS/IDMT predictions. No fitting, selection or thresholding for model choice.",
+  "inputs": {
+    "h1_results": "archive:experiments/h1/results/H1_20261002",
+    "h1_admitted": "archive:experiments/h1/frozen/h1_common_budget_v1.3/admitted.jsonl",
+    "h2_results": "archive:experiments/h2/results/source_path_20261004_r1",
+    "latency_results": "archive:experiments/h2_air_latency/results/attenuation_latency_20261004_v1",
+    "dcase_seal": "repo:experiments/admission/dcase2024_t10/seal.json"
+  },
+  "h1": {
+    "representations": ["BEATs768", "MFCC26"],
+    "seeds": [42, 123, 456, 789, 1024],
+    "folds": 6,
+    "real_arms": ["real", "real_repeated", "real_plus_procedural", "real_plus_audioldm"],
+    "synthetic_arms": ["procedural", "audioldm"]
+  },
+  "h2": {"cells": ["F00", "F01", "F10", "F11"], "representations": ["BEATs768", "MFCC26"]},
+  "latency": {"sources": ["S0", "S1"], "cells": ["A0L0", "A1L0", "A0L1", "A1L1"],
+              "variant": "native", "representations": ["BEATs768", "MFCC26"]},
+  "uncertainty": {"draws": 10000, "seed": 20261011,
+                  "method": "paired percentile bootstrap: whole target groups with selection/bank resampling; draw 0 is the point estimate"},
+  "output": "artifact:target_panel/rescore_20261011_v2"
+}
