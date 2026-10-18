@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "h2r_corrected_assembly_v1",
+  "description": "Post hoc development assembly of a latency-free H2 source x path 2x2 from existing hashed predictions on exposed MELAUDIS. No rendering, fitting or selection.",
+  "cells": {
+    "S0_P0": {"study": "h2", "array": "{rep}", "index": [0]},
+    "S1_P0": {"study": "h2", "array": "{rep}", "index": [2]},
+    "S0_P1c": {"study": "latency", "array": "native__{rep}", "index": [0, 1]},
+    "S1_P1c": {"study": "latency", "array": "native__{rep}", "index": [1, 1]}
+  },
+  "cell_notes": {
+    "P0": "H2 moving direct path (cells F00/F10).",
+    "P1c": "Latency-control A1L0: ground reflection plus the same 11-tap air coefficients applied centred (no added delay). Same templates, geometry slots, banks and budgets as H2."
+  },
+  "inputs": {
+    "h2": "archive:experiments/h2/results/source_path_20261004_r1",
+    "latency": "archive:experiments/h2_air_latency/results/attenuation_latency_20261004_v1"
+  },
+  "representations": ["BEATs768", "MFCC26"],
+  "banks": 5,
+  "uncertainty": {"draws": 10000, "seed": 20261012},
+  "output": "artifact:joint_confirmation/h2r_corrected_assembly_20261011_v1"
+}
