@@ -49,3 +49,25 @@ protected-source status remain unchanged. Do not resume them implicitly.
   distinguish author claims from interpretation. Use `unknown` when not established.
 - Run focused regression/parity checks after refactoring. Do not launch a new
   scientific experiment merely to validate packaging.
+
+## Harness integrity (anti-reward-hacking)
+
+The mechanical verification contract for coding agents (e.g., Codex):
+
+- `tests/test_harness_integrity.py` is a canary: it fails when the collected
+  test count drifts from `tests/harness_baseline.json` (silent test deletion
+  or padding) or when a frozen file (uv.lock, the experiment configs) no
+  longer hashes to its committed value.
+- The two uv extras (`cast`, `baseline`) conflict by design and collect
+  different test sets; the baseline records one expected count per
+  environment. CI runs both. Archive-marker tests require the local artifact
+  bundle and are excluded from CI.
+- Baseline updates are HUMAN-ONLY: regenerate with
+  `scripts/refresh_harness_baseline.py` in the SAME commit as a legitimate
+  suite change, and call it out in the PR description. Never edit
+  `tests/harness_baseline.json` by hand to make a red run green.
+- Any diff touching `tests/`, `tests/harness_baseline.json`,
+  `configs/experiments/*.json`, `uv.lock` or `.github/workflows/test.yml`
+  requires line-by-line human review before merge. An agent must never edit
+  tests, the baseline file, the canary, or this section to make a failing run
+  pass — that is the exact failure mode this layer exists to catch.

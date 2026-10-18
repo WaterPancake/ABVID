@@ -1,0 +1,60 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pytest:
+    name: pytest (${{ matrix.extra }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # The two dependency environments conflict by design ([tool.uv]
+        # conflicts) and collect different test sets. The graded selection is
+        # IDENTICAL to what the harness-integrity canary counts:
+        #   - both: -m "not archive" (archive tests need the local artifact bundle)
+        #   - cast: ignores the 3 baseline-only modules (librosa/sklearn imports)
+        extra: [cast, baseline]
+    timeout-minutes: 30
+    env:
+      ABVID_TEST_ENV: ${{ matrix.extra }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.11"
+
+      - name: Guard — canary files must exist
+        run: |
+          test -f tests/harness_baseline.json || { echo "::error::tests/harness_baseline.json deleted — integrity canary disabled"; exit 1; }
+          test -f tests/test_harness_integrity.py || { echo "::error::tests/test_harness_integrity.py deleted — integrity canary disabled"; exit 1; }
+
+      - name: Run graded test suite (cast selection)
+        if: matrix.extra == 'cast'
+        run: |
+          uv run --extra cast pytest -m "not archive" \
+            --ignore=tests/test_h1.py \
+            --ignore=tests/test_simulation.py \
+            --ignore=tests/test_benchmark_prototype.py
+
+      - name: Run graded test suite (baseline selection)
+        if: matrix.extra == 'baseline'
+        run: |
+          uv run --extra baseline pytest -m "not archive"
+
+      # NOTE FOR REVIEWERS: any PR touching tests/, tests/harness_baseline.json,
+      # configs/experiments/*.json, uv.lock, or this workflow file requires
+      # line-by-line human review. The canary (tests/test_harness_integrity.py)
+      # fails CI when the test count or a frozen-file hash drifts from the
+      # committed baseline; regenerate ONLY via
+      # scripts/refresh_harness_baseline.py in the same commit as a legitimate
+      # change, with the change called out in the PR description.
