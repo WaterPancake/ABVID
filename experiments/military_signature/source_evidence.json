@@ -1,0 +1,252 @@
+{
+  "protocol_id": "military_signature_p0_v1",
+  "created_at": "2026-10-11T21:39:18.814792+00:00",
+  "source_rows": [
+    {
+      "source_id": "P04",
+      "title": "Acoustic and seismic signals of heavy military vehicles for co-operative verification",
+      "pdf_ref": "archive:ABVID Lit Review/pdf-ver/Acoustic and seismic signals of heavy military vehicles for co-operative verification.pdf",
+      "markdown_ref": "archive:ABVID Lit Review/markdown-ver/Acoustic and seismic signals of heavy military vehicles for co-operative verification/Acoustic and seismic signals of heavy military vehicles for co-operative verification.md",
+      "pdf_sha256": "0c60efc61e1f102de2b1ccd96167ddb6ce3a73f98111cc0500112999c3280925",
+      "workflow": "Markdown read first, then PDF text and visual page verification",
+      "claims": [
+        {
+          "pdf_page": 16,
+          "printed_page": "728",
+          "section": "5.1 Single spectra",
+          "author_statement": "Engine periodicity contributes spectral harmonics; tracked motion adds track/sprocket periodicity. Track contributions need not dominate airborne sound.",
+          "interpretation": "Mechanical plausibility for coarse cues does not establish model recognition."
+        },
+        {
+          "pdf_page": 21,
+          "printed_page": "733",
+          "section": "5.3 Relative harmonic powers; Table 5",
+          "author_statement": "Table 5 lists Leopard 1 and Leopard 2 as four-stroke V10 and V12 diesels. Dominant spectral lines are not necessarily firing-frequency peaks.",
+          "interpretation": "Do not infer cylinders, RPM or firing order from the largest peak alone."
+        }
+      ],
+      "markdown_sha256": "055a17ffb234e3e36c8b3a31cf0c222134fd23a694814a9760410603d9bf1de9"
+    },
+    {
+      "source_id": "P05",
+      "title": "Acoustic–seismic detection and classification of military vehicles—developing tools for disarmament and peace-keeping",
+      "pdf_ref": "archive:ABVID Lit Review/pdf-ver/Acoustic–seismic detection and classification of military vehicles—developing tools for disarmament and peace-keeping.pdf",
+      "markdown_ref": "archive:ABVID Lit Review/markdown-ver/Acoustic–seismic detection and classification of military vehicles—developing tools for disarmament and peace-keeping/Acoustic–seismic detection and classification of military vehicles—developing tools for disarmament and peace-keeping.md",
+      "pdf_sha256": "638552d4f7b34ccd17f24b99ac65eb940c278b78c0498996f6dd40e0c5dd4e09",
+      "workflow": "Markdown read first, then PDF text and visual page verification",
+      "claims": [
+        {
+          "pdf_page": 20,
+          "printed_page": "1104",
+          "section": "Table 3 and its split footnote",
+          "author_statement": "Within each pass, two thirds trained and one third tested; acoustic-only full-pass recognition was 89%.",
+          "interpretation": "This split does not verify transfer to new independent sessions or physical vehicles."
+        },
+        {
+          "pdf_page": 21,
+          "printed_page": "1105",
+          "section": "6 Conclusions and outlook",
+          "author_statement": "Relative harmonic powers vary with rotation rate and observation angle.",
+          "interpretation": "Order normalization alone need not remove state or recording geometry."
+        },
+        {
+          "pdf_page": 22,
+          "printed_page": "1106",
+          "section": "6 Conclusions and outlook, continuation",
+          "author_statement": "The method chiefly recognizes engine/exhaust types; different vehicle types sharing engines can be grouped together.",
+          "interpretation": "A strong engine cue is not automatically a model identity cue."
+        }
+      ],
+      "markdown_sha256": "4857d9826423a2dd90024bb59f5c12628389471db89edc62b6f5112653954e04"
+    },
+    {
+      "source_id": "P11",
+      "title": "Engine Speed–Independent Acoustic Signature for Vehicles",
+      "pdf_ref": "archive:ABVID Lit Review/pdf-ver/Engine Speed–Independent Acoustic Signature for Vehicles.pdf",
+      "markdown_ref": "archive:ABVID Lit Review/markdown-ver/Engine Speed–Independent Acoustic Signature for Vehicles/Engine Speed–Independent Acoustic Signature for Vehicles.md",
+      "pdf_sha256": "b5e9aed51751274f9596e5c6244ae536f6db9c06a2919d215b003570fd3f2a23",
+      "workflow": "Markdown read first, then PDF text and visual page verification",
+      "claims": [
+        {
+          "pdf_page": 2,
+          "printed_page": "95",
+          "section": "II Material",
+          "author_statement": "Four cars were recorded near their engines during repeated 800–3000 rpm sweeps.",
+          "interpretation": "This is limited physical-vehicle and recording-condition support."
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": "96",
+          "section": "II Material, continuation",
+          "author_statement": "The first increase/decrease episode trained and the second tested.",
+          "interpretation": "Speed-sweep holdout is not an independent-session/model-population test."
+        }
+      ],
+      "markdown_sha256": "b89b69b6b09a0484bc9d90941d8d9fb18556c7d5de2e4fe28385ba499bf92876"
+    },
+    {
+      "source_id": "P12",
+      "title": "Improving acoustic vehicle classification by information fusion",
+      "pdf_ref": "archive:ABVID Lit Review/pdf-ver/Improving acoustic vehicle classification by information fusion.pdf",
+      "markdown_ref": "archive:ABVID Lit Review/markdown-ver/Improving acoustic vehicle classification by information fusion/Improving acoustic vehicle classification by information fusion.md",
+      "pdf_sha256": "f612af2c64d26c21c977982d8245690940bfea62788a79aa903579f909bd2c25",
+      "workflow": "Markdown read first, then PDF text and visual page verification",
+      "claims": [
+        {
+          "pdf_page": 9,
+          "printed_page": "37",
+          "section": "6 Experimental results",
+          "author_statement": "The US ARL dataset uses five anonymized vehicle classes, two tracked and three wheeled.",
+          "interpretation": "Named model and variant identities remain unknown."
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": "38",
+          "section": "6 Experimental results; Table 1",
+          "author_statement": "Each class has six runs; three runs train and three test. Harmonic features vary within classes and overlap across classes.",
+          "interpretation": "Run holdout offers more separation than within-pass splitting; session and individual identities remain unknown."
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": "39",
+          "section": "6 Experimental results; Fig. 3 and continuation",
+          "author_statement": "The other three runs test; SVM parameter selection uses training data only.",
+          "interpretation": "Adopt training-only preprocessing/selection; do not infer independent recording sessions from runs."
+        }
+      ],
+      "markdown_sha256": "f26d5a00dfb6907be9a4105073f374ef991efacdaab76574a424572dacaae020"
+    },
+    {
+      "source_id": "HW_M1_AGT1500",
+      "title": "AGT1500 Turbine Engine brochure",
+      "publisher": "Honeywell",
+      "publication_year": "unknown",
+      "url": "https://aerospace.honeywell.com/content/dam/aerobt/en/documents/landing-pages/brochures/AGT1500-Turbine-Engine-Brochure.pdf",
+      "pdf_ref": "artifact:military_signature/p0/literature/HW_AGT1500.pdf",
+      "markdown_ref": "artifact:military_signature/p0/literature/HW_AGT1500.md",
+      "pdf_sha256": "c3dd615fb1b5dcb31ea8e1e0765f276ef07fb630724b26c1a621b99815cfacd8",
+      "workflow": "Locally extracted Markdown read first; PDF page visually verified",
+      "claims": [
+        {
+          "pdf_page": 1,
+          "printed_page": "unknown",
+          "section": "Product description",
+          "author_statement": "The AGT1500 gas turbine powers the M1 Abrams.",
+          "interpretation": "Supports the coarse M1 turbine association, not every candidate variant or an acoustic classifier."
+        }
+      ]
+    }
+  ],
+  "powerplant_table": [
+    {
+      "vehicle": "M1 Abrams",
+      "powerplant": "turbine",
+      "engine": "AGT1500",
+      "evidence": "HW_M1_AGT1500 PDF p1 product description",
+      "candidate_variant_specific_verification": "unknown"
+    },
+    {
+      "vehicle": "Leopard 1, paper example",
+      "powerplant": "diesel",
+      "engine": "V10 four-stroke; exact model unknown",
+      "evidence": "P04 PDF p21 printed p733 Table 5"
+    },
+    {
+      "vehicle": "Leopard 2, paper example",
+      "powerplant": "diesel",
+      "engine": "V12 four-stroke; exact model unknown",
+      "evidence": "P04 PDF p21 printed p733 Table 5",
+      "candidate_2A4_variant_specific_verification": "unknown"
+    },
+    {
+      "vehicle": "T-72 variants",
+      "powerplant": "unknown",
+      "engine": "unknown",
+      "evidence": "Proposal memory-derived table not yet PDF-authoritatively verified"
+    },
+    {
+      "vehicle": "T-80 variants including BVM",
+      "powerplant": "unknown",
+      "engine": "unknown",
+      "evidence": "Proposal memory-derived table not yet PDF-authoritatively verified"
+    },
+    {
+      "vehicle": "T-80UD",
+      "powerplant": "unknown",
+      "engine": "unknown",
+      "evidence": "Proposal memory-derived table not yet PDF-authoritatively verified"
+    },
+    {
+      "vehicle": "T-90 variants",
+      "powerplant": "unknown",
+      "engine": "unknown",
+      "evidence": "Proposal memory-derived table not yet PDF-authoritatively verified"
+    },
+    {
+      "vehicle": "Bradley candidate",
+      "powerplant": "unknown",
+      "engine": "unknown",
+      "evidence": "Proposal memory-derived table not yet PDF-authoritatively verified"
+    },
+    {
+      "vehicle": "Stryker candidate",
+      "powerplant": "unknown",
+      "engine": "unknown",
+      "evidence": "Proposal memory-derived table not yet PDF-authoritatively verified"
+    },
+    {
+      "vehicle": "M109",
+      "powerplant": "unknown",
+      "engine": "unknown",
+      "evidence": "Proposal memory-derived table not yet PDF-authoritatively verified"
+    },
+    {
+      "vehicle": "HMMWV/JLTV",
+      "powerplant": "unknown",
+      "engine": "unknown",
+      "evidence": "Proposal memory-derived table not yet PDF-authoritatively verified"
+    }
+  ],
+  "unavailable_primary_sources": [
+    {
+      "source_id": "ROSTEC_T80BVM",
+      "url": "https://rostec.ru/media/news/t-80bvm-letayushchiy-tank-snova-v-stroyu/",
+      "retrieved_at": "2026-10-11T21:33:56.605674+00:00",
+      "mode": "HTML_only_no_associated_media",
+      "status": "failed",
+      "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1016)>",
+      "sha256": "unknown",
+      "snapshot_ref": "unknown"
+    },
+    {
+      "source_id": "ROSTEC_DIESEL",
+      "url": "https://rostec.ru/media/news/tanki-vybirayut-dizel/",
+      "retrieved_at": "2026-10-11T21:33:56.639551+00:00",
+      "mode": "HTML_only_no_associated_media",
+      "status": "failed",
+      "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1016)>",
+      "sha256": "unknown",
+      "snapshot_ref": "unknown"
+    },
+    {
+      "source_id": "ODIN_T80UD",
+      "url": "https://odin.t2com.army.mil/WEG/Asset/T-80UD_Ukrainian_Main_Battle_Tank_(MBT)",
+      "status": "web tool returned empty page; searched excerpt not treated as verified evidence"
+    },
+    {
+      "source_id": "ARMOR_1998",
+      "url": "https://www.moore.army.mil/armor/EArmor/content/issues/1998/SEP_OCT/ArmorSeptemberOctober1998web.pdf",
+      "status": "web tool inaccessible"
+    }
+  ],
+  "analyst_identifiability_argument": {
+    "statement": "Source-free x=Hs+n background samples constrain n, not H or s separately.",
+    "status": "algebraic reasoning, not an empirical or paper-author claim"
+  },
+  "unknowns": [
+    "No directly reviewed study validates this proposed cross-session military model task",
+    "No verified candidate-session independence or usable audio",
+    "No established L3 engine-order ground truth for these candidates",
+    "No published justification for the ten-group sufficiency threshold"
+  ]
+}

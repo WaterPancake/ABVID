@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "id": "military_signature_p1_admission_5gb_v1",
+  "phase": "P1_media_admission",
+  "authorization": {
+    "real_media_collection": true,
+    "real_media_processing": true,
+    "model_fitting": false,
+    "representation_extraction": false,
+    "protected_source_evaluation": false,
+    "media_publication": false
+  },
+  "authorization_basis": {
+    "user_request": "I allocate to you 20GB of storange, but keep the time per assest. Get more data",
+    "latest_override": "lets start with 5 GB",
+    "interpretation": "5 GB replaces 20 GB; retain the 20-minute per-asset cap and expand the candidate population. The old ten-asset and 45-minute-total draft bounds are replaced by this collection contract."
+  },
+  "storage": {
+    "data_root": "data:military_signature/p1_admission/20261011_5gb",
+    "artifact_root": "artifact:military_signature/p1_admission/20261011_5gb",
+    "maximum_total_bytes": 5000000000,
+    "minimum_free_disk_bytes": 2000000000,
+    "reserved_workspace_bytes": 100000000
+  },
+  "collection": {
+    "maximum_asset_seconds": 1200,
+    "target_collected_assets": 64,
+    "maximum_candidate_assets": 160,
+    "caption_classes": [
+      "abrams",
+      "leopard",
+      "bradley",
+      "stryker",
+      "m109",
+      "hmmwv"
+    ],
+    "rendition_policy": "explicit page MP4 first; otherwise highest-bandwidth HLS at at most 720p; copy streams without encoding",
+    "request_timeout_seconds": 20,
+    "maximum_metadata_bytes": 2000000,
+    "maximum_encoded_asset_bytes": 500000000,
+    "never_split_long_assets": true
+  },
+  "scientific_scope": {
+    "recording_session": "unknown unless supported by evidence",
+    "independence_from_asset_id": false,
+    "vehicle_labels": "caption only; not confirmed interval identity",
+    "human_blind_review_required": true,
+    "experimental_roles": "unassigned",
+    "verified_group_quota_not_inferred_from_asset_count": true
+  },
+  "protected_catalogs": [
+    "archive:configs/audio_sources.yaml",
+    "archive:benchmarks/v0.1/native_real_7t5w/audio_sources.yaml",
+    "archive:benchmarks/v0.1/preprocessing_grid_v1/audio_sources.yaml",
+    "archive:benchmarks/v0.1/beats_comparison_v1/audio_sources.yaml",
+    "archive:benchmarks/v0.1/beats_comparison_v2/audio_sources.yaml"
+  ]
+}

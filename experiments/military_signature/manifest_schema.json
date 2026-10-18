@@ -1,0 +1,421 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "protocol_id": {
+      "const": "military_signature_p0_v1"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/asset"
+      }
+    },
+    "segments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/segment"
+      }
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/label"
+      }
+    },
+    "reuse_links": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/link"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "protocol_id",
+    "assets",
+    "segments",
+    "labels",
+    "reuse_links"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:abvid:military-signature:manifest:1",
+  "$defs": {
+    "asset": {
+      "type": "object",
+      "properties": {
+        "asset_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+        },
+        "url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "date_taken": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(unknown|\\d{4}-\\d{2}-\\d{2})$"
+        },
+        "date_posted": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "location": {
+          "type": "string",
+          "minLength": 1
+        },
+        "outlet": {
+          "type": "string",
+          "minLength": 1
+        },
+        "producer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license_status": {
+          "enum": [
+            "public_domain",
+            "permitted",
+            "restricted",
+            "unknown"
+          ]
+        },
+        "license_note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retrieved_at": {
+          "type": "string",
+          "minLength": 1
+        },
+        "raw_sha256": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "media_ref": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^data:military_signature/[^:]+$"
+        },
+        "media_kind": {
+          "enum": [
+            "synthetic_fixture",
+            "real"
+          ]
+        },
+        "duration_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "native_sample_rate_hz": {
+          "type": "integer",
+          "minimum": 1000
+        },
+        "channels": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8
+        },
+        "recording_session": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session_evidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "independence_verified": {
+          "type": "boolean"
+        },
+        "physical_vehicle_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "vehicle_identity_evidence": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "asset_id",
+        "url",
+        "title",
+        "date_taken",
+        "date_posted",
+        "unit",
+        "location",
+        "outlet",
+        "producer",
+        "license_status",
+        "license_note",
+        "license_url",
+        "retrieved_at",
+        "raw_sha256",
+        "media_ref",
+        "media_kind",
+        "duration_seconds",
+        "native_sample_rate_hz",
+        "channels",
+        "recording_session",
+        "session_evidence",
+        "independence_verified",
+        "physical_vehicle_id",
+        "vehicle_identity_evidence"
+      ],
+      "additionalProperties": false
+    },
+    "segment": {
+      "type": "object",
+      "properties": {
+        "segment_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+        },
+        "asset_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+        },
+        "start_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "end_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "kind": {
+          "enum": [
+            "foreground",
+            "background",
+            "rejected"
+          ]
+        },
+        "role": {
+          "enum": [
+            "development",
+            "validation",
+            "evaluation",
+            "quarantine"
+          ]
+        },
+        "rejection_reasons": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "music",
+              "narration",
+              "gunfire",
+              "aircraft",
+              "wind_masking",
+              "multiple_vehicles",
+              "no_vehicle",
+              "no_background",
+              "too_short",
+              "clipping",
+              "editing_or_codec_artifact",
+              "uncertain_audibility",
+              "access_failure",
+              "rights_unresolved",
+              "other"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "trimmer_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+        },
+        "tool_version": {
+          "const": "signature-preparation-1"
+        },
+        "blind_review": {
+          "const": true
+        },
+        "audible_vehicle_count": {
+          "anyOf": [
+            {
+              "const": "unknown"
+            },
+            {
+              "type": "integer",
+              "minimum": 0
+            }
+          ]
+        },
+        "motion_state": {
+          "enum": [
+            "idle",
+            "rev",
+            "accelerate",
+            "constant",
+            "pass_by",
+            "brake",
+            "unknown"
+          ]
+        },
+        "distance_m": {
+          "anyOf": [
+            {
+              "const": "unknown"
+            },
+            {
+              "type": "number",
+              "minimum": 0
+            }
+          ]
+        },
+        "mic_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contaminants": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "music",
+              "narration",
+              "gunfire",
+              "aircraft",
+              "wind",
+              "crowd",
+              "agc_pumping",
+              "unknown"
+            ]
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "segment_id",
+        "asset_id",
+        "start_seconds",
+        "end_seconds",
+        "kind",
+        "role",
+        "rejection_reasons",
+        "trimmer_id",
+        "tool_version",
+        "blind_review",
+        "audible_vehicle_count",
+        "motion_state",
+        "distance_m",
+        "mic_type",
+        "contaminants"
+      ],
+      "additionalProperties": false
+    },
+    "label": {
+      "type": "object",
+      "properties": {
+        "segment_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+        },
+        "caption_model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "caption_variant": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "enum": [
+            "confirmed",
+            "caption",
+            "unknown"
+          ]
+        },
+        "L1": {
+          "enum": [
+            "tracked",
+            "wheeled",
+            "unknown"
+          ]
+        },
+        "L2": {
+          "enum": [
+            "turbine",
+            "diesel",
+            "other",
+            "unknown"
+          ]
+        },
+        "L3": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label_evidence": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "segment_id",
+        "caption_model",
+        "caption_variant",
+        "confidence",
+        "L1",
+        "L2",
+        "L3",
+        "label_evidence"
+      ],
+      "additionalProperties": false
+    },
+    "link": {
+      "type": "object",
+      "properties": {
+        "left": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+        },
+        "right": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+        },
+        "kind": {
+          "enum": [
+            "provenance",
+            "suspected_reuse",
+            "waveform_reuse"
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "left",
+        "right",
+        "kind",
+        "evidence"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
