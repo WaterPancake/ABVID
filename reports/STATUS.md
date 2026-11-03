@@ -16,23 +16,24 @@ independent data.
 
 ## 1. Needs your action
 
-These are owed reviews, uncommitted work and decisions only you can make.
+These are owed reviews, unpushed work and decisions only you can make.
 
-1. **Commit or discard the Oct 25 work.** It exists only in your working tree:
-   - `src/abvid/cast/stage_diagnostic.py`, `src/abvid/cast/utility_gap_audit.py`, `src/abvid/data/mvd_download.py`
-   - `experiments/cast_utility/GAP_AUDIT.md`, `experiments/cast_utility/stage_diagnostic/`
-     (including the new `listen.py`/`listen.html` listening tool; its MP3 output is at
-     `artifact:cast/listening/stage_diagnosis_20261025_v1/`)
-   - the Oct 31 time-varying renderer study: `src/abvid/cast/time_varying.py` and
-     `experiments/cast_utility/time_varying/` (protocol and run script)
-   - the Nov 1 held-out reconstruction check: `experiments/cast_utility/held_reconstruction/`
-     (frozen protocol and run script)
-   - the Nov 2 tv3 held-group test: `experiments/cast_utility/tv3_held/` (frozen protocol and run script)
-   - the three 20261025 reports plus their JSON and figures, now in `reports/archive/`
+1. **Push or merge `cast/diagnosis-20261102`.** The Oct 25 – Nov 2 work is
+   committed locally on that branch (from `3cc64ac`, not pushed):
+   - `45d79c5`: report archive, link fixes, this page, `AGENTS.md`,
+     `docs/LEARNING.md`
+   - `f18a176`: CAST diagnosis code, frozen protocols, run scripts and the
+     Oct 25 reports
+   - `ec4ed5f`: the MVD download helper
 
-   None of the three modules has tests. The current CAST conclusions (section 3)
-   depend on them. `stage_diagnostic/report.py` still names the old `reports/`
-   output paths.
+   **Gaps:**
+   - The new CAST modules (`stage_diagnostic`, `time_varying`,
+     `utility_gap_audit`) have no tests.
+   - `stage_diagnostic/report.py` still names the old `reports/` output paths.
+
+   **Left untracked on purpose:** `.claude/`, `docs/.obsidian/`,
+   `annotation.json`, `ABVID_CAST_core_concepts.md` and
+   `docs/SIGNATURE_FOCUS_PLAN.md` (the last waits on the branch policy).
 2. **Review the CAST-4A serialization fix** (`cast4a/serialization-revision`, `6a76b22`).
    - **What it fixes:** the CAST-4A coverage run failed only because libsndfile writes
      a timestamp into float WAV headers, which broke the byte-exact replay check.
