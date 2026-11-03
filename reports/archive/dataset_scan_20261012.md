@@ -5,7 +5,7 @@ groups at three sites) and MELAUDIS (exposed; 3% trucks) provide. Every count be
 comes from published label or metadata files only, read as untrusted data. **No audio
 was downloaded** and no model was applied. Nothing is admitted yet: each candidate
 still needs provenance checks, a licence check and the cross-corpus overlap audit
-([`abvid.data.overlap`](../src/abvid/data/overlap.py)) before any role is assigned.
+([`abvid.data.overlap`](../../src/abvid/data/overlap.py)) before any role is assigned.
 
 ## Candidates
 

@@ -18,7 +18,7 @@ model evaluation was launched as part of this restructuring.
   implementations. Large artifacts and downloaded data are local only.
 - Moved actual shared admission, grouping, preprocessing, MFCC/BEATs interfaces,
   linear head, metrics/bootstrap, source synthesis, propagation and CAST numerical
-  functions into importable packages. The [symbol map](refactor_symbol_map.json)
+  functions into importable packages. The [symbol map](../refactor_symbol_map.json)
   identifies original paths, hashes and extracted definitions.
 - Organized experiment instructions under `admission`, `r0_reproduction`,
   `h1_baselines`, `h2_simulation` and `cast_coverage`.
@@ -71,9 +71,9 @@ convenient view of it. The admitted MELAUDIS extraction and model directories
 have compatibility links from their historical paths. Never weaken historical
 provenance guards to accommodate a storage layout.
 
-The [artifact index](ARTIFACT_INDEX.md) locates full local evidence; small code and
+The [artifact index](../ARTIFACT_INDEX.md) locates full local evidence; small code and
 protocol links resolve to the source snapshot in Git. The literature matrix is
-byte-for-byte unchanged. The [structure guide](../docs/STRUCTURE.md) describes
+byte-for-byte unchanged. The [structure guide](../../docs/STRUCTURE.md) describes
 module ownership and archive relocation constraints.
 
 CAST descriptor coverage remains source-domain development evidence. The source

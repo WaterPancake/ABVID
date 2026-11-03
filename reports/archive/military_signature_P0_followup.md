@@ -1,13 +1,13 @@
 # Military acoustic signature P0 evidence follow-up
 
 2026-10-11 local date; protocol `military_signature_p0_v1`.
-This is an additive supplement to the [frozen P0 report](military_signature_P0.md).
+This is an additive supplement to the [frozen P0 report](../military_signature_P0.md).
 The original report, source ledger and 55-file freeze remain the dated P0 snapshot.
 This follow-up covers public literature and the artificial browser round trip.
 
 The supplied annotation passed import, connected-group validation and native
 export. The user has now confirmed that Chrome audio playback, waveform,
-spectrogram and interval controls displayed correctly. The [round-trip record](../experiments/military_signature/ANNOTATION_ROUNDTRIP.md)
+spectrogram and interval controls displayed correctly. The [round-trip record](../../experiments/military_signature/ANNOTATION_ROUNDTRIP.md)
 links the explicit confirmation receipt and sample-exact export evidence. This
 closes the human browser handoff listed in the original report. It is run-level
 user evidence; there is no instrumented or per-recording playback trace.
@@ -16,7 +16,7 @@ user evidence; there is no instrumented or per-recording playback trace.
 
 Six additional original public PDFs were retrieved. Their extracted Markdown
 was read before the selected original pages were rendered and visually checked.
-The [supplementary source ledger](../experiments/military_signature/source_evidence_supplement.json)
+The [supplementary source ledger](../../experiments/military_signature/source_evidence_supplement.json)
 records PDF/Markdown hashes, page and section locators, author statements,
 interpretations, rendered pages and failed access attempts. Documents and
 renders are outside the checkout at

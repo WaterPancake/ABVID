@@ -1,7 +1,7 @@
 # B1: baseline strength within IDMT
 
 Completed 2026-10-12 under the frozen protocol
-[`baseline_strength_v1`](../experiments/baseline_strength/PROTOCOL.md) (SHA256
+[`baseline_strength_v1`](../../experiments/baseline_strength/PROTOCOL.md) (SHA256
 `7f83741d…ab2f`). This is development evidence on previously exposed IDMT groups. No
 MELAUDIS, DCASE or synthetic data was used.
 
@@ -113,15 +113,15 @@ candidate for the eventual DCASE pass.
 ## Provenance
 
 - Features SHA256: `aab4b3aa…8d93`.
-- Results SHA256: `46399d34…a62e` ([index](ARTIFACT_INDEX.md#artifact-71bdc7bfa2d8)).
+- Results SHA256: `46399d34…a62e` ([index](../ARTIFACT_INDEX.md#artifact-71bdc7bfa2d8)).
 - Executed from the `learned-audio-signature` checkout (`1937c89`; code identical to
   `main` `2a1d40e` plus two Markdown files), dirty tree.
 - numpy 1.26.4, torch 2.11.0, scikit-learn 1.4.2, macOS arm64, CPU.
 
 Code:
-- [`run.py`](../experiments/baseline_strength/run.py)
-- [`grouped_search`](../src/abvid/learning/grouped_search.py)
-- [`cnn14`](../src/abvid/representations/cnn14.py)
+- [`run.py`](../../experiments/baseline_strength/run.py)
+- [`grouped_search`](../../src/abvid/learning/grouped_search.py)
+- [`cnn14`](../../src/abvid/representations/cnn14.py)
 - `beats.extract_layer_embeddings`
 
 Tests: `tests/test_baseline_strength.py`, 7 passing including two archive checks.

@@ -2,7 +2,7 @@
 
 Completed 2026-10-05. A runnable car/truck model is saved at
 `artifact:benchmarks/abvid_real_beats_v0_1`, with WAV inference and an evaluation
-report. [Commands and fixed protocol](../experiments/benchmark_prototype/README.md).
+report. [Commands and fixed protocol](../../experiments/benchmark_prototype/README.md).
 
 The build fitted 30 StandardScaler/logistic-regression heads on the existing
 hash-verified BEATs feature cache: five fixed seeds × six IDMT held-out groups,

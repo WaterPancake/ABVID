@@ -1,7 +1,7 @@
 # DCASE 2024 Task 10 metadata admission
 
 Metadata-only admission and seal for the DCASE 2024 Task 10 development release.
-Read the [protocol](PROTOCOL.md) and the [report](../../../reports/dataset_admission_dcase2024_t10.md).
+Read the [protocol](PROTOCOL.md) and the [report](../../../reports/archive/dataset_admission_dcase2024_t10.md).
 `PROTOCOL.md` and `seal.json` are hash-bound: editing either breaks `verify_seal`.
 
 ```bash

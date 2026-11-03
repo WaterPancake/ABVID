@@ -159,7 +159,7 @@ Do not treat (2) as proof of (3).
     classification by information fusion*\
     https://eprints.soton.ac.uk/272713/
 
-**Output:** `reports/physical_signal_model.md`
+**Output:** `reports/archive/physical_signal_model.md`
 
 ### Phase B --- Invariance / representations
 
@@ -182,7 +182,7 @@ Do not treat (2) as proof of (3).
     Tokenizers*\
     https://arxiv.org/abs/2212.09058
 
-**Output:** `reports/representation_taxonomy.md`
+**Output:** `reports/archive/representation_taxonomy.md`
 
 ### Phase C --- Domain shift / synthetic-to-real
 
@@ -210,8 +210,8 @@ Do not treat (2) as proof of (3).
     Study of Session-Level Data Leakage*\
     https://arxiv.org/abs/2606.29589
 
-**Outputs:** `reports/domain_shift_taxonomy.md`,
-`reports/research_gaps.md`, `reports/proposed_experiments.md`
+**Outputs:** `reports/archive/domain_shift_taxonomy.md`,
+`reports/archive/research_gaps.md`, `reports/archive/proposed_experiments.md`
 
 ## 6. Dataset strategy
 
@@ -229,7 +229,7 @@ Start with public civilian data so experiments are reproducible.
     models to reproduce the modern baseline.
 -   **DCASE 2024 Task 10 (Bosch):** six roadside sites, four-capsule array,
     per-minute car/commercial-vehicle counts plus a per-site pyroadacoustics
-    synthetic counterpart. [Admitted from metadata only and sealed](reports/dataset_admission_dcase2024_t10.md)
+    synthetic counterpart. [Admitted from metadata only and sealed](reports/archive/dataset_admission_dcase2024_t10.md)
     (2026-10-11) as the first `T_confirm` candidate: 1,361 single-car and 228
     single-cv minutes, about four informative sites. Car/cv is a proxy task, not
     car/truck. One authorized scoring pass consumes it.
@@ -299,7 +299,7 @@ H1 are complete: E0, E1, released-bank E2 and the MFCC comparison in E3.
 The [R0 checkpoint audit](reports/published_reproduction_status.md)
 retains unresolved items; it does not establish full training reproduction.
 See [H1 results](reports/H1_baseline_results.md) and the current
-[experimental proposal](reports/proposed_experiments.md). The core task
+[experimental proposal](reports/archive/proposed_experiments.md). The core task
 remains car/truck; motorcycle is excluded. AST/new CNN comparisons remain
 unrun extensions. The minimum E4–E5 four-cell H2 comparison is now
 [complete and verified](reports/H2_source_path_results.md): 9,600 observations
@@ -316,11 +316,11 @@ with latency only, 35.46% with both, and 3.68% with attenuation only. The prior
 gain is therefore an implemented ground/filter-delay effect, not isolated
 physical-absorption evidence. E6–E9 remain proposed.
 
-The [completed IDMT-only diagnostics](reports/H1_source_diagnostics.md)
+The [completed IDMT-only diagnostics](reports/archive/H1_source_diagnostics.md)
 found modest regularization/bandwidth benefits, little gain from increasing
 190 to 359 examples/class, a truck-recall cost from F1-selected thresholds,
 and substantial whole-location holdout losses. That pass did not evaluate
-the target. The subsequent [regularization transfer check](reports/H1_regularization_transfer.md)
+the target. The subsequent [regularization transfer check](reports/archive/H1_regularization_transfer.md)
 is also complete: BEATs improves target balanced accuracy and truck recall,
 but its +0.63-point F1 interval crosses zero; worst-group failures persist.
 H1 is unchanged, and MELAUDIS remains exposed development data.
@@ -331,7 +331,7 @@ The earlier military program is retired from the active checkout; its
 historical results and protected-source roles remain unchanged under
 [AGENTS.md](AGENTS.md).
 
-**Target evaluation — 2026-10-11:** a [post hoc re-scoring](reports/target_panel.md)
+**Target evaluation — 2026-10-11:** a [post hoc re-scoring](reports/archive/target_panel.md)
 of the archived predictions adds AUROC, AP against prevalence and balanced accuracy,
 and introduces a per-dataset target panel. Under these metrics:
 - H1's BEATs procedural-only advantage shrinks from +11.82 macro-F1 to +2.59 AUROC
@@ -346,7 +346,7 @@ and introduces a per-dataset target panel. Under these metrics:
 Future target results report per-dataset rows and ranking metrics alongside macro-F1.
 DCASE 2024 Task 10 is sealed for one frozen confirmation pass.
 
-**Baseline strength — 2026-10-12:** a [nested search within IDMT](reports/B1_baseline_strength.md)
+**Baseline strength — 2026-10-12:** a [nested search within IDMT](reports/archive/B1_baseline_strength.md)
 lifts held-out-group AUROC from 71.5 to 84.1 (+12.6 [8.3, 17.8]) using:
 - full-band input;
 - all training data with balanced weights;
@@ -354,15 +354,15 @@ lifts held-out-group AUROC from 71.5 to 84.1 (+12.6 [8.3, 17.8]) using:
 - MFCC26 or the BEATs layer mean.
 
 The H1 baseline was limited mainly by its 4 kHz route and weak regularization. Future
-synthetic comparisons should use full-band synthesis and this recipe. The [dataset scan](reports/dataset_scan_20261012.md)
+synthetic comparisons should use full-band synthesis and this recipe. The [dataset scan](reports/archive/dataset_scan_20261012.md)
 ranks MVD (1,077 trucks, 4 sites), FSD50K (about 80 truck uploaders) and SONYC-UST v2
 (proxy, 48 sensors) as candidates. DCASE stays sealed.
 
-**CAST-5A — 2026-10-12:** the [within-IDMT utility test](reports/CAST_source_classification.md)
+**CAST-5A — 2026-10-12:** the [within-IDMT utility test](reports/archive/CAST_source_classification.md)
 rules out a practical CAST gain over conventional augmentation: BEATs RC − RA macro-F1
 +0.47 [−0.97, 2.08]. Augmentation also adds nothing over real-only training. CAST-only
 training carries some real class information (AUROC 60.6 vs 47.5 for the unfitted
-renderer). The CAST-4A grouped run produced [no coverage result](reports/CAST4A_run_20261011.md)
+renderer). The CAST-4A grouped run produced [no coverage result](reports/archive/CAST4A_run_20261011.md)
 because of a WAV-timestamp replay defect.
 
 **CAST progress — 2026-10-06:** the [v15 coverage study](reports/CAST_improvement.md)
@@ -580,9 +580,9 @@ gains and further simulator development are not prerequisites for that interface
     verified unexposed recordings; E6–E9 remain later conditional extensions.
 6.  Favor independent recording contexts over more excerpts from the same
     groups. Keep BVP access optional; do not make it a project dependency.
-    Use the [target panel](reports/target_panel.md):
+    Use the [target panel](reports/archive/target_panel.md):
     - MELAUDIS remains exposed development data.
-    - The [sealed DCASE 2024 Task 10 set](reports/dataset_admission_dcase2024_t10.md)
+    - The [sealed DCASE 2024 Task 10 set](reports/archive/dataset_admission_dcase2024_t10.md)
       is reserved for one frozen comparison. It opens only with a human authorization,
       a cross-corpus overlap audit and its class-independent window rule.
     - MAVD needs an overlap audit before any role.

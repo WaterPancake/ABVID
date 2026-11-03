@@ -5,10 +5,10 @@ No model was refitted, selected or thresholded. Every number below comes from th
 archived H1, H2 and attenuation/latency prediction files, each checked against its
 recorded SHA256. Nothing here is independent confirmation.
 
-Code: [`abvid.evaluation.ranking`](../src/abvid/evaluation/ranking.py) and
-[`abvid.evaluation.panel`](../src/abvid/evaluation/panel.py). Thin layer:
-[`experiments/target_panel`](../experiments/target_panel/README.md). Full results:
-[`results.json`](ARTIFACT_INDEX.md#artifact-a964f1669a63) (SHA256 `fb813dfe…1ac6`; v1 had identical numbers without commit provenance).
+Code: [`abvid.evaluation.ranking`](../../src/abvid/evaluation/ranking.py) and
+[`abvid.evaluation.panel`](../../src/abvid/evaluation/panel.py). Thin layer:
+[`experiments/target_panel`](../../experiments/target_panel/README.md). Full results:
+[`results.json`](../ARTIFACT_INDEX.md#artifact-a964f1669a63) (SHA256 `fb813dfe…1ac6`; v1 had identical numbers without commit provenance).
 
 ## Why
 
@@ -73,7 +73,7 @@ includes it and R0 scored that material. The roadside row is the collection plan
 | MFCC26 / IDMT + AudioLDM | 58.13 [54.23, 72.90] | 1.26 | 6.20 | 56.47 |
 
 Paired contrasts, in percentage points. The macro-F1 column is copied from the
-[H1 report](H1_baseline_results.md):
+[H1 report](../H1_baseline_results.md):
 
 | Contrast | BEATs macro-F1 | BEATs AUROC | MFCC macro-F1 | MFCC AUROC |
 |---|---:|---:|---:|---:|

@@ -6,16 +6,16 @@ torque and cylinder assumptions, then optionally applies distance and delay.
 It is **not yet a replacement for CAST**: its fitted mean spectral loss is 2.0901
 versus 1.3898 for original CAST on the same 16 synthetic observations.
 
-Open the [audio and plots](../../abvid-artifacts/physics_engine/physics_v0_20261008/index.html),
+Open the [audio and plots](../../../abvid-artifacts/physics_engine/physics_v0_20261008/index.html),
 read the [dataset audit](CAST_physics_data_audit.md), or use the
-[reproduction commands](../experiments/physics_engine/README.md).
+[reproduction commands](../../experiments/physics_engine/README.md).
 Original CAST code, frozen settings and historical result files remain intact.
 
 ## What was built
 
-Reusable implementation: [`src/abvid/physics`](../src/abvid/physics).
-Thin protocol layer: [`experiments/physics_engine`](../experiments/physics_engine).
-Canonical numerical configuration: [`engine_v0.json`](../configs/physics/engine_v0.json).
+Reusable implementation: [`src/abvid/physics`](../../src/abvid/physics).
+Thin protocol layer: [`experiments/physics_engine`](../../experiments/physics_engine).
+Canonical numerical configuration: [`engine_v0.json`](../../configs/physics/engine_v0.json).
 
 ```text
 prescribed RPM + cylinder assumption → firing clock → finite-width pulses ─┐
@@ -35,14 +35,14 @@ This is an evenly firing four-stroke pulse/resonator approximation with an
 explicit torque-to-excitation heuristic. It does not simulate combustion
 chemistry, cylinder pressure, gas flow, exhaust geometry, tires or a cabin.
 Absolute pressure and vehicle identity are not calibrated. The full equations,
-sampling decisions, controls and omissions are in the [frozen protocol](../experiments/physics_engine/PROTOCOL.md).
+sampling decisions, controls and omissions are in the [frozen protocol](../../experiments/physics_engine/PROTOCOL.md).
 
 The separate eight-second demo sweeps 1000–4000 RPM and 20–200 Nm while a source
 travels from x=−60 m to +60 m, passing a microphone 5 m away. Its arrival-time
 map creates kinematic Doppler and its pressure gain follows inverse distance.
 No Doppler correction is applied twice. Listen to the
-[source](../../abvid-artifacts/physics_engine/physics_v0_20261008/demo/source_playback.wav)
-and [microphone](../../abvid-artifacts/physics_engine/physics_v0_20261008/demo/passby_playback.wav)
+[source](../../../abvid-artifacts/physics_engine/physics_v0_20261008/demo/source_playback.wav)
+and [microphone](../../../abvid-artifacts/physics_engine/physics_v0_20261008/demo/passby_playback.wav)
 at a common playback gain.
 
 ## Fixed comparison
@@ -124,8 +124,8 @@ the user's instruction to resume. The original assertion assumed that PCM16
 quantization preserved exactly zero DC. It now checks that preprocessing
 preserves the decoded audio's actual DC within 1e-6; telemetry leakage still
 fails. Production preprocessing and existing tests were not altered. The
-[reviewable patch](../experiments/physics_engine/test_correction_for_review.patch)
-and [verification record](../../abvid-artifacts/physics_engine/physics_v0_20261008/verification.json)
+[reviewable patch](../../experiments/physics_engine/test_correction_for_review.patch)
+and [verification record](../../../abvid-artifacts/physics_engine/physics_v0_20261008/verification.json)
 preserve that history.
 
 Recorded workflow time was **591.65 seconds**, including 36.26 seconds for
@@ -141,7 +141,7 @@ Matplotlib 3.11.1. Timings are from one local run, not an isolated performance
 benchmark. No environment or lockfile was updated.
 
 Before merge, a human must review the new tests and regenerate the harness
-baseline in accordance with [AGENTS.md](../AGENTS.md). That maintenance item
+baseline in accordance with [AGENTS.md](../../AGENTS.md). That maintenance item
 remains open; the full suite is not described as green. This prototype does not
 merge changes or relax the canary.
 
@@ -151,12 +151,12 @@ External run: `artifact:physics_engine/physics_v0_20261008`.
 
 | Artifact | Contents |
 |---|---|
-| [index.html](../../abvid-artifacts/physics_engine/physics_v0_20261008/index.html) | All audio comparisons, demo and diagnostic plots |
-| [summary.json](../../abvid-artifacts/physics_engine/physics_v0_20261008/summary.json) | Losses, descriptive groups, scientific failures and measured runtime |
-| [audit.json](../../abvid-artifacts/physics_engine/physics_v0_20261008/audit.json) | Full metadata reconciliation and bounded audio admission |
-| [snapshot.json](../../abvid-artifacts/physics_engine/physics_v0_20261008/snapshot.json) | Resolved config, source hashes, commit/dirty state, environment and baseline preservation |
-| [replay.json](../../abvid-artifacts/physics_engine/physics_v0_20261008/replay.json) | Exact numerical replay/refit result |
-| [artifacts.json](../../abvid-artifacts/physics_engine/physics_v0_20261008/artifacts.json) | SHA-256 manifest of the original 298 run artifacts |
+| [index.html](../../../abvid-artifacts/physics_engine/physics_v0_20261008/index.html) | All audio comparisons, demo and diagnostic plots |
+| [summary.json](../../../abvid-artifacts/physics_engine/physics_v0_20261008/summary.json) | Losses, descriptive groups, scientific failures and measured runtime |
+| [audit.json](../../../abvid-artifacts/physics_engine/physics_v0_20261008/audit.json) | Full metadata reconciliation and bounded audio admission |
+| [snapshot.json](../../../abvid-artifacts/physics_engine/physics_v0_20261008/snapshot.json) | Resolved config, source hashes, commit/dirty state, environment and baseline preservation |
+| [replay.json](../../../abvid-artifacts/physics_engine/physics_v0_20261008/replay.json) | Exact numerical replay/refit result |
+| [artifacts.json](../../../abvid-artifacts/physics_engine/physics_v0_20261008/artifacts.json) | SHA-256 manifest of the original 298 run artifacts |
 | `clips/<configuration>_<prefix>/` | Original and reconstructed audio, controls, parameters, histories, alternatives, failures and plot |
 | `demo/` | Source/component/microphone audio, prescribed states, parameters and plot |
 
@@ -172,7 +172,7 @@ From the checkout, reproduce with a new output directory:
 PYTHONDONTWRITEBYTECODE=1 MPLCONFIGDIR=/tmp/abvid-physics-mpl OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 .venv/bin/python -m abvid.physics run --config repo:configs/physics/engine_v0.json --output artifact:physics_engine/physics_v0_reproduction --download
 ```
 
-Then run the exact replay command in the [README](../experiments/physics_engine/README.md).
+Then run the exact replay command in the [README](../../experiments/physics_engine/README.md).
 Raw data and generated artifacts remain outside the checkout. Downloaded audio
 and its derivatives retain the source's CC BY-NC license conditions.
 

@@ -1,7 +1,7 @@
 # CAST-5A: classification utility within IDMT
 
 Completed 2026-10-12 under the frozen protocol
-[`cast5a_utility_v1`](../experiments/cast_utility/PROTOCOL.md) (SHA256 `b19e78b4…6b64`).
+[`cast5a_utility_v1`](../../experiments/cast_utility/PROTOCOL.md) (SHA256 `b19e78b4…6b64`).
 Domain: held-out IDMT connected groups, all previously exposed in H1, so this is
 **development evidence**. The task is car/truck with frozen BEATs768 (primary) and
 MFCC26.
@@ -168,7 +168,7 @@ cannot be the primary of the DCASE pass; the plan's consequences are recorded th
 **Hashes:**
 - Design identity: `bceaf26b983c0ef948fc492ea25045d77d29c5e0c23cd57a60c48f63f88832fc`.
 - Features: real `6e1a4b84…`, RA `da036817…`, RU `0d3dd623…`, RC `27e2a4a6…`.
-- Results: `ce2df9b3…2bf3` ([index](ARTIFACT_INDEX.md#artifact-aa9ec94d5703)).
+- Results: `ce2df9b3…2bf3` ([index](../ARTIFACT_INDEX.md#artifact-aa9ec94d5703)).
 - Predictions: `86cd3803…5203`.
 
 **Environments:**
@@ -185,4 +185,4 @@ cannot be the primary of the DCASE pass; the plan's consequences are recorded th
 - Scoring: 23 s.
 
 Tables come from `experiments/cast_utility/report_tables.py`; commands are in the
-[README](../experiments/cast_utility/README.md).
+[README](../../experiments/cast_utility/README.md).

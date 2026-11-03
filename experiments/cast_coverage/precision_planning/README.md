@@ -3,7 +3,7 @@
 This analysis reads existing H1 scalar scores, confusion matrices and paired
 bootstrap draws. It does not fit classifiers, decode audio/features, run
 inference, generate CAST audio, or freeze CAST-5A. The three-point margin stays
-unchanged. See [the findings](../../../reports/CAST5A_precision_planning.md).
+unchanged. See [the findings](../../../reports/archive/CAST5A_precision_planning.md).
 
 Use the existing baseline environment from the repository root:
 

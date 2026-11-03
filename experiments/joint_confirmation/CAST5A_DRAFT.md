@@ -72,7 +72,7 @@ class-independent version is a negative control only.
 - **Also reported:** AUROC, AP against prevalence, balanced accuracy, both recalls
   and worst-group recall. Flag groups with fewer than 15 trucks (two IDMT groups
   hold 10 and 14).
-- **Precision:** from the [precision planning](../../reports/CAST5A_precision_planning.md),
+- **Precision:** from the [precision planning](../../reports/archive/CAST5A_precision_planning.md),
   a true gain of about 5.6–6.6 points is needed for an 80% chance of clearing the
   margin. A true 3-point gain will probably be inconclusive. Accepted by the user
   2026-10-11; the design is unchanged.

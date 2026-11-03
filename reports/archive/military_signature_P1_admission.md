@@ -3,8 +3,8 @@
 2026-10-11–12 local dates; contract `military_signature_p1_admission_5gb_v1`.
 The user authorized more data, retained the 20-minute per-asset limit, then
 reduced the starting storage allocation to 5 GB. The separately versioned
-[authorization record](../experiments/military_signature/P1_AUTHORIZATION.md)
-and [canonical contract](../experiments/military_signature/p1_admission_5gb.json)
+[authorization record](../../experiments/military_signature/P1_AUTHORIZATION.md)
+and [canonical contract](../../experiments/military_signature/p1_admission_5gb.json)
 record this scope. The original P0 protocol and 55-file freeze remain unchanged.
 
 The collection contains **54 recordings, 8,735.906 seconds (2 h 25 min 35.906 s)**.

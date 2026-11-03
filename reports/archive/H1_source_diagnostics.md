@@ -6,9 +6,9 @@ The main finding is a large loss when an entire location is unseen, alongside a 
 
 ## Evidence and interpretation rules
 
-- [Frozen protocol](ARTIFACT_INDEX.md#artifact-493f997fa48f), [exact selections and hashes](ARTIFACT_INDEX.md#artifact-3bf6b0e3155d), [config](ARTIFACT_INDEX.md#artifact-9f5318d56a84).
-- [All aggregates and paired intervals](ARTIFACT_INDEX.md#artifact-839ccdd59669), [every outer evaluation](ARTIFACT_INDEX.md#artifact-28c1e99e4964), [inner selections](ARTIFACT_INDEX.md#artifact-e140773869e0), [verification](ARTIFACT_INDEX.md#artifact-6864b4cfa236), [reproduction commands](../experiments/h1_baselines/source_diagnostics/README.md).
-- [Unchanged original H1](H1_baseline_results.md) and [qualified data admission](dataset_admission_provenance.md).
+- [Frozen protocol](../ARTIFACT_INDEX.md#artifact-493f997fa48f), [exact selections and hashes](../ARTIFACT_INDEX.md#artifact-3bf6b0e3155d), [config](../ARTIFACT_INDEX.md#artifact-9f5318d56a84).
+- [All aggregates and paired intervals](../ARTIFACT_INDEX.md#artifact-839ccdd59669), [every outer evaluation](../ARTIFACT_INDEX.md#artifact-28c1e99e4964), [inner selections](../ARTIFACT_INDEX.md#artifact-e140773869e0), [verification](../ARTIFACT_INDEX.md#artifact-6864b4cfa236), [reproduction commands](../../experiments/h1_baselines/source_diagnostics/README.md).
+- [Unchanged original H1](../H1_baseline_results.md) and [qualified data admission](../dataset_admission_provenance.md).
 
 Use all 4,413 admitted sE8 CH34 excerpts: 3,902 cars and 511 trucks, six conservative site/date groups at three locations. Five seeds vary training selection: 42, 123, 456, 789, 1024. Unless named otherwise, reuse H1’s exact 190/class selections, two-second mean-channel native→8 kHz→16 kHz waveform, frozen official BEATs768 or MFCC26, train-only StandardScaler and C=1 logistic regression. No augmentation, encoder training, relabelling or padding.
 

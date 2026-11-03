@@ -21,8 +21,8 @@ The existing metadata audit verifies the original manifest SHA-256
 Its 22,861 records have no explicit RPM/engine-speed or torque fields. This is
 a statement about the available admitted metadata, not proof that no external
 annotations exist. Original null/unknown sessions remain unchanged. See the
-[saved metadata audit](../../abvid-artifacts/physics_engine/metadata_audit_20261008_complete.json)
-and [prior admission report](dataset_admission_provenance.md).
+[saved metadata audit](../../../abvid-artifacts/physics_engine/metadata_audit_20261008_complete.json)
+and [prior admission report](../dataset_admission_provenance.md).
 
 ## Public release audit
 
@@ -53,8 +53,8 @@ All 16 selected files passed byte-size and SHA-256 verification before decoding,
 checks. Their decoded statistics agree with the published per-file metadata to
 at most 2.274e-13 absolute error. No sampled audio reaches the declared clipping
 threshold. The admission/download pass took 36.26 seconds on this machine.
-See [audit.json](../../abvid-artifacts/physics_engine/physics_v0_20261008/audit.json)
-and the [frozen selection](../experiments/physics_engine/input_lock.json).
+See [audit.json](../../../abvid-artifacts/physics_engine/physics_v0_20261008/audit.json)
+and the [frozen selection](../../experiments/physics_engine/input_lock.json).
 
 PCM16 implies approximately 0.305 RPM and 0.0305 Nm per quantization step under
 these scales. Sample-indexed release controls do not establish the precision,
@@ -107,7 +107,7 @@ controls let implementation proceed before that collection exists.
 
 ## Reproduce
 
-The [prototype command](../experiments/physics_engine/README.md) reproduces the
+The [prototype command](../../experiments/physics_engine/README.md) reproduces the
 pinned inventory/metadata checks, bounded audio audit and CAST comparison.
 After those inputs are cached, reproduce the broader metadata-only audit with
 a new output filename:

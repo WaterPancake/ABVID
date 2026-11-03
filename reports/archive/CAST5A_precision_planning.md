@@ -9,7 +9,7 @@ normal planning approximations require a true gain around **5.6–6.6 points**
 for 80% probability that the lower two-sided 95% bound exceeds three. These
 are sensitivity scenarios, not a measured CAST-versus-augmentation variance.
 
-The three-point margin and the proposed [CAST-5A design](../CAST_ROADMAP.md#cast-5a-test-classification-utility-within-idmt)
+The three-point margin and the proposed [CAST-5A design](../../CAST_ROADMAP.md#cast-5a-test-classification-utility-within-idmt)
 remain unchanged and **unfrozen**. This analysis used existing saved H1 scalar
 scores and resampling draws only. It performed no new fitting, inference,
 feature extraction, audio generation or held-recording evaluation.
@@ -21,7 +21,7 @@ The saved BEATs real-plus-procedural minus real contrast is **2.710900 points,
 estimator SD is **0.888871 points**, obtained from the saved 10,000 paired draws,
 not inferred solely from the rounded width. The two arm estimators correlate
 **0.9681**. Pairing explains how their difference can be much more precise than
-either absolute score. These figures reproduce the [H1 mixing result](H1_baseline_results.md#paired-gap-and-mixing-estimates).
+either absolute score. These figures reproduce the [H1 mixing result](../H1_baseline_results.md#paired-gap-and-mixing-estimates).
 
 That contrast evaluated **MELAUDIS**, resampling four uneven target groups,
 six source folds and five selections. It compared procedural mixing with
@@ -196,7 +196,7 @@ calculation.
 
 ## Reproducibility and complete results
 
-[Analysis instructions](../experiments/cast_coverage/precision_planning/README.md)
+[Analysis instructions](../../experiments/cast_coverage/precision_planning/README.md)
 point to the thin reader and reusable numerical helpers. The retained revision
 is `artifact:cast/precision/cast5a_h1_precision_20261011_v2`.
 `precision.json` includes **44 contrast/resampling rows**: both BEATs and MFCC,

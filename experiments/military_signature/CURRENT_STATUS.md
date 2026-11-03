@@ -13,7 +13,7 @@ untested; fitting and representation extraction are outside the current scope.
 
 The [current authorization](P1_AUTHORIZATION.md),
 [collection contract](p1_admission_5gb.json) and
-[P1 report](../../reports/military_signature_P1_admission.md) supersede the earlier
+[P1 report](../../reports/archive/military_signature_P1_admission.md) supersede the earlier
 metadata-only handoff for collection. At the current verified snapshot, 54
 recordings total 8,735.906 seconds and occupy 4,879,449,428 bytes across the new
 data and artifact roots. The longest recording is 505.706 seconds. The 64-asset
@@ -64,7 +64,7 @@ test file remain required before merge. The original 55-file P0 freeze is intact
 | Manifest schema and recording/reuse/known-individual grouping | [manifest_schema.json](manifest_schema.json), [implementation](../../src/abvid/signature/manifest.py) | Verified with artificial cases. Public asset IDs supply no verified session count. |
 | Offline trimming and deduplication tooling | [CLI](../../src/abvid/signature/__main__.py), [round trip](ANNOTATION_ROUNDTRIP.md) | Synthetic import/export passed; user confirmed Chrome playback and display. Real-media behavior remains untested. |
 | Synthetic validation evidence | `artifact:military_signature/p0/validation-20261011-final/validation.json`; round-trip `verification.json` | Native sample equality, rejected intervals and provenance preserved; 37 focused regression checks passed at the recorded run. |
-| Literature, feasibility, confounds and negative findings | [frozen report](../../reports/military_signature_P0.md), [follow-up](../../reports/military_signature_P0_followup.md), [source supplement](source_evidence_supplement.json) | PDF-authoritative selected claims; unsupported variant/engine labels remain unknown. |
+| Literature, feasibility, confounds and negative findings | [frozen report](../../reports/military_signature_P0.md), [follow-up](../../reports/archive/military_signature_P0_followup.md), [source supplement](source_evidence_supplement.json) | PDF-authoritative selected claims; unsupported variant/engine labels remain unknown. |
 | Public metadata inspection | [candidate_metadata.json](candidate_metadata.json) | Seven leads spanning four model captions; zero verified independent recording groups. Rights and audio suitability are unresolved. |
 | Harness integrity and handoff | Original report and `artifact:military_signature/p0/verification-20261011.json` | Recorded count canary failed: 707 versus 467; baseline-file and frozen-file checks passed. Human baseline refresh and line-by-line test review remain required before merge. |
 

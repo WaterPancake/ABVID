@@ -7,8 +7,8 @@ No new real observation has been fitted, no 27,000-sample study population has
 been generated, and no new grouped-coverage or classifier-transfer result is
 reported here.
 
-The [execution instructions](../experiments/cast_coverage/grouped_coverage/execution/README.md)
-and [pinned execution configuration](../experiments/cast_coverage/grouped_coverage/execution/config.json)
+The [execution instructions](../../experiments/cast_coverage/grouped_coverage/execution/README.md)
+and [pinned execution configuration](../../experiments/cast_coverage/grouped_coverage/execution/config.json)
 provide the new entry point. The canonical design configuration and all existing
 numerical, readiness and historical locks remain unchanged.
 
@@ -74,7 +74,7 @@ its payload lock SHA256 is
 The repository's test-count canary requires a human baseline refresh after
 legitimate suite changes. This work adds regression tests and leaves
 `tests/harness_baseline.json`, the canary and the frozen-file hashes unchanged.
-[AGENTS.md](../AGENTS.md) states: “Baseline updates are HUMAN-ONLY” and requires
+[AGENTS.md](../../AGENTS.md) states: “Baseline updates are HUMAN-ONLY” and requires
 line-by-line human review of test changes before merge. A resulting test-count
 failure is reported separately from numerical/regression results; it is not
 silently repaired by changing the baseline. The separate canary run has **two

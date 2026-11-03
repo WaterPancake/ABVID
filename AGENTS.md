@@ -1,54 +1,99 @@
-# Active research scope
+# Agent instructions
 
-The active research question is: which acoustic simulation components most
-strongly determine synthetic-to-real vehicle classification with pretrained audio
-representations? Source-model dominance over propagation mismatch is a hypothesis,
-not an assumption. Follow `ABVID_ROADMAP.md` and the current reports.
+**Read [`reports/STATUS.md`](reports/STATUS.md) first.** It is the current state
+of the project: open actions, next steps, established results and known gaps.
+When a result or decision changes, update it.
 
-## Research sequence
+## The project
 
-1. Admit datasets through integrity, annotation and provenance checks.
-2. R0: retain paper-specific classes and original splits for published reproduction.
-3. H1: measure within-domain, cross-dataset and released synthetic-to-real gaps.
-4. H2: change controlled simulation components while keeping populations, budgets,
-   representation and evaluation fixed.
-5. CAST: source-domain effective-observation fitting and coverage. Transfer needs
-   a separately authorized and frozen experiment; coverage is not transfer proof.
+**Question:** which acoustic simulation components most strongly determine
+synthetic-to-real car/truck classification with pretrained audio representations?
+Source-model dominance over propagation mismatch is a hypothesis, not an assumption.
+The plans are [`ABVID_ROADMAP.md`](ABVID_ROADMAP.md) and [`CAST_ROADMAP.md`](CAST_ROADMAP.md).
+
+| Stage | What it is | Where it stands |
+|---|---|---|
+| Admission | Integrity, annotation and provenance checks | IDMT, MELAUDIS and AI4TEN banks admitted. DCASE 2024 T10 sealed. MVD downloaded, not admitted |
+| R0 | Reproduce published papers with their own classes and splits | Partial; closed |
+| H1 | Within-domain, cross-dataset and released synthetic-to-real gaps | Done. B1 later found a much stronger baseline recipe |
+| H2 | Change controlled simulation components; keep populations, budgets, representation and evaluation fixed | Path effect was filter latency; source vs. path unresolved |
+| CAST | Fit effective observations, then sample a population | Utility test (5A) negative. Transfer needs a separately authorized, frozen experiment; coverage is not transfer proof |
 
 The earlier military tracked/wheeled benchmark, Milestone 7 gates and OpenClaw
 workflow are retired from the active checkout. Their historical results and
-protected-source status remain unchanged. Do not resume them implicitly.
+protected-source status remain unchanged. Do not resume them implicitly. The
+military signature side project (`experiments/military_signature`,
+`src/abvid/signature`) is a separate track; its branch policy is an open decision
+in `STATUS.md`.
 
-## Implementation boundaries
+## Where things go
 
-- Reusable code belongs under `src/abvid`, including `src/abvid/cast`.
-- Experiments are thin protocol/configuration layers. Do not import sibling
+- **Reusable code:** under `src/abvid`, including `src/abvid/cast`.
+- **Experiments:** thin protocol/configuration layers. Do not import sibling
   experiment scripts through `sys.path`.
-- Frozen historical runners use the external original-layout archive and exact
-  recorded environments. Never edit their manifests/locks to accommodate a refactor.
-- Large audio, models, features and generated results stay outside the checkout.
-- Validate the canonical JSON config and resolve storage through `abvid.paths`.
-- Preserve pinned third-party code, licenses and repair provenance in `vendor/`.
+- **Reports:** `reports/STATUS.md` is the living summary. Superseded reports go
+  in `reports/archive/`.
+- **Large audio, models, features and generated results:** outside the checkout.
+  Resolve storage through `abvid.paths`, and validate the canonical JSON config.
+- **Third-party code:** keep pinned code, licenses and repair provenance in `vendor/`.
 
-## Scientific guardrails
+## Frozen: do not edit or move
 
-- Never randomly divide clips/windows from one original recording across roles.
-  Group by original recording/session and retain all known provenance links.
-- Preserve `recording_session`; unknown metadata stays `unknown`. Do not invent
-  independent sessions from filenames, clips or diagnostic subgroups.
-- Fit preprocessing statistics/classifiers on training data only. Do not tune on
-  final target tests. Exposed target results remain exposed development evidence.
-- Keep R0 original-paper classes distinct from the current car/truck-only study.
-  Motorcycle remains excluded from the latter unless a new protocol changes it.
-- Record domain, dataset version, split, seed, commit, checkpoint, configuration,
-  metrics and group-level uncertainty with every research result.
-- Distinguish recorded observations from clean physical source models, source
-  coverage from transfer, diagnostic evidence from independent generalization,
-  and numerical implementation effects from physical mechanisms.
-- Literature: Markdown first, PDF authoritative; cite paper ID/page/section and
+- **Historical runners:** they use the external original-layout archive and exact
+  recorded environments. Never edit their manifests or locks to accommodate a
+  refactor.
+- **Pinned files:** files fixed by path or SHA256 are `configs/experiments/*.json`,
+  `uv.lock`, experiment `PROTOCOL.md` files, seals, locks and freezes. The DCASE
+  seal, for example, binds its protocol's hash.
+- **Pinned reports:** the reports left directly in `reports/` (not `archive/`)
+  are pinned by those configs and locks. Keep them byte-identical in place.
+  Stale links inside frozen documents are expected; leave them.
+
+## Scientific rules
+
+- **Grouping:**
+  - Never randomly divide clips/windows from one original recording across roles.
+    Group by original recording/session and retain all known provenance links.
+  - Preserve `recording_session`; unknown metadata stays `unknown`. Do not invent
+    independent sessions from filenames, clips or diagnostic subgroups.
+- **Data roles:**
+  - Fit preprocessing statistics/classifiers on training data only.
+  - Do not tune on final target tests. Exposed target results remain exposed
+    development evidence.
+  - DCASE stays sealed until a human authorizes one scoring pass.
+- **Tasks:** keep R0 original-paper classes distinct from the car/truck study.
+  Motorcycle stays excluded from the latter unless a new protocol changes it.
+- **Authorization:** scientific runs need a frozen protocol and the user's explicit
+  authorization. Do not launch a new experiment merely to validate packaging; run
+  focused regression/parity checks after refactoring.
+- **Recording results:**
+  - Record with every research result: domain, dataset version, split, seed,
+    commit, checkpoint, configuration, metrics and group-level uncertainty.
+  - Report AUROC, balanced accuracy and AP alongside macro-F1, per dataset (never
+    pooled), with worst-group results.
+- **Interpreting results:** distinguish recorded observations from clean physical
+  source models, coverage from transfer, diagnostic evidence from independent
+  generalization, and numerical implementation effects from physical mechanisms.
+- **Literature:** Markdown first, PDF authoritative. Cite paper ID/page/section and
   distinguish author claims from interpretation. Use `unknown` when not established.
-- Run focused regression/parity checks after refactoring. Do not launch a new
-  scientific experiment merely to validate packaging.
+
+## Writing
+
+The user learns as the work happens. Keep reports short and in plain language.
+Lead with the result and what needs to happen next, and put hashes and settings
+after that. Add new results and decisions to `reports/STATUS.md` instead of
+creating long standalone reports.
+
+## Running tests
+
+CI runs both uv extras without archive-marker tests. The `cast` environment has no
+librosa, so three test files are excluded there:
+
+```sh
+.venv/bin/python -m pytest -m "not archive" --ignore=tests/test_h1.py \
+  --ignore=tests/test_simulation.py --ignore=tests/test_benchmark_prototype.py
+.venv-baseline/bin/python -m pytest -m "not archive"
+```
 
 ## Harness integrity (anti-reward-hacking)
 

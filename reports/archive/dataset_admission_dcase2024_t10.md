@@ -7,18 +7,18 @@ requested, and no feature, model score or listening check exists for this releas
 It is **not** a car/truck test: its second class is the provider's "commercial
 vehicle" (cv).
 
-[Protocol](../experiments/admission/dcase2024_t10/PROTOCOL.md) (written before the
-run) · [seal](../experiments/admission/dcase2024_t10/seal.json) ·
-[commands](../experiments/admission/dcase2024_t10/README.md) ·
-code: [`abvid.data.dcase_t10`](../src/abvid/data/dcase_t10.py),
-[`abvid.data.remote_zip`](../src/abvid/data/remote_zip.py),
-[`abvid.data.sealing`](../src/abvid/data/sealing.py).
+[Protocol](../../experiments/admission/dcase2024_t10/PROTOCOL.md) (written before the
+run) · [seal](../../experiments/admission/dcase2024_t10/seal.json) ·
+[commands](../../experiments/admission/dcase2024_t10/README.md) ·
+code: [`abvid.data.dcase_t10`](../../src/abvid/data/dcase_t10.py),
+[`abvid.data.remote_zip`](../../src/abvid/data/remote_zip.py),
+[`abvid.data.sealing`](../../src/abvid/data/sealing.py).
 
 ## Why this release
 
 MELAUDIS was scored during R0 and remains exposed development data. Its four
 conservative groups hold 256 trucks, 187 of them in one group and 1 in another
-([H1](H1_baseline_results.md)). MAVD and DataSEC are partly exposed through the
+([H1](../H1_baseline_results.md)). MAVD and DataSEC are partly exposed through the
 P02 test material. No checkout file, literature-matrix entry, archived report or
 archived literature Markdown mentions this release, its record IDs or its
 companion paper (arXiv 2401.09308).
@@ -72,9 +72,9 @@ than MELAUDIS but **not** a large number of independent recording contexts.
 
 Per-split detail, the full segment manifest (`segments.jsonl`) and hashes are stored
 outside the checkout at `data:DCASE2024_T10/metadata_v2/`. See the
-[summary](ARTIFACT_INDEX.md#artifact-3a180471aab6),
-[receipt](ARTIFACT_INDEX.md#artifact-04d853464f38) and
-[manifest](ARTIFACT_INDEX.md#artifact-dae994c8ec63).
+[summary](../ARTIFACT_INDEX.md#artifact-3a180471aab6),
+[receipt](../ARTIFACT_INDEX.md#artifact-04d853464f38) and
+[manifest](../ARTIFACT_INDEX.md#artifact-dae994c8ec63).
 
 ## Findings that shape later use
 
@@ -100,7 +100,7 @@ outside the checkout at `data:DCASE2024_T10/metadata_v2/`. See the
 
 ## Seal
 
-[`seal.json`](../experiments/admission/dcase2024_t10/seal.json) (SHA256
+[`seal.json`](../../experiments/admission/dcase2024_t10/seal.json) (SHA256
 `7ff5f704cea1ad92c14052e00168e1da50fcbcbce84a541f0ba7abafb6aa6f9f`) binds the protocol
 (SHA256 `61530ed2…115ff`) to the metadata hash list (`7e1d83a1…e1e1`). The
 `verify_seal` check recomputes every metadata hash. `authorize` refuses access unless a

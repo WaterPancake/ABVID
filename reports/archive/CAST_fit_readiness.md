@@ -2,7 +2,7 @@
 
 Completed 2026-10-07. The historical smooth8 fitter is packaged, exact synthetic parity passed, and **380/380 saved calibrated parameter records are eligible for reuse within their declared training roles**. This is an implementation and provenance result. No new real recordings were fitted, no study population was generated, and no coverage or classification result was computed.
 
-The [grouped design freeze](CAST_grouped_coverage_design.md) remains unchanged. This step adds the [audit contract](../experiments/cast_coverage/grouped_coverage/readiness/audit.json), [chain contract](../experiments/cast_coverage/grouped_coverage/readiness/chain_contract.json) and [replay instructions](../experiments/cast_coverage/grouped_coverage/readiness/README.md), without editing historical runners, locks, environments or results.
+The [grouped design freeze](../CAST_grouped_coverage_design.md) remains unchanged. This step adds the [audit contract](../../experiments/cast_coverage/grouped_coverage/readiness/audit.json), [chain contract](../../experiments/cast_coverage/grouped_coverage/readiness/chain_contract.json) and [replay instructions](../../experiments/cast_coverage/grouped_coverage/readiness/README.md), without editing historical runners, locks, environments or results.
 
 ## Individual checks
 
@@ -68,6 +68,6 @@ Audit output: `artifact:cast/grouped_coverage/cast4a_readiness_20261007_v1`.
 
 Payload identity: `bcbdca5de863a1bd0166271ffe5f76c9cdc7615d182d30be8f059eb6de01f59e`. The audit took 13.96 seconds. It records commit `25cb13a151a4ecf458e3da1d8ba7651351e52c42` plus dirty status and exact source/test/evidence snapshots. This report does not claim these additions are committed or pushed.
 
-Per-parent records retain every checked hash, failure list, stage flag and reuse exclusion. `fold_reuse.json` lists exact eligible and missing IDs for each role. Parity evidence and focused-test logs are stored alongside the audit in the external artifact root; the [README](../experiments/cast_coverage/grouped_coverage/readiness/README.md) gives version-pinned setup and replay commands.
+Per-parent records retain every checked hash, failure list, stage flag and reuse exclusion. `fold_reuse.json` lists exact eligible and missing IDs for each role. Parity evidence and focused-test logs are stored alongside the audit in the external artifact root; the [README](../../experiments/cast_coverage/grouped_coverage/readiness/README.md) gives version-pinned setup and replay commands.
 
 The requested fitter/parity and saved-fit admission work is complete. The next implementation is the thin grouped execution runner that connects the existing calibration stages and role guards to the frozen schedule. Its later scientific run must fit the 1,484 missing selected parents, rebuild each fold's population statistics, generate the declared arms and evaluate coverage with all failures retained. No new method, data budget, width, class rule or acceptance criterion is introduced here.
