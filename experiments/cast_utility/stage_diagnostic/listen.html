@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAST stage listening</title>
+<style>
+  :root { --bg: #fafaf8; --fg: #1d1d1b; --muted: #6b6b66; --line: #e3e2dc; --car: #2f6fb0; --truck: #b5562a; --on: #1f8a5b; --chip: #ecebe5; --wrong: #c0362c; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #18181a; --fg: #e8e7e2; --muted: #9a9993; --line: #2e2e31; --car: #79a9de; --truck: #e08b62; --on: #4fc48d; --chip: #26262a; --wrong: #ff7a6e; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 24px 16px 48px; background: var(--bg); color: var(--fg); font: 14px/1.45 -apple-system, system-ui, sans-serif; }
+  h1 { font-size: 20px; margin: 0 0 6px; }
+  p { margin: 4px 0; color: var(--muted); max-width: 900px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin: 16px 0; position: sticky; top: 0; background: var(--bg); padding: 8px 0; z-index: 2; border-bottom: 1px solid var(--line); }
+  .bar label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+  select, button { font: inherit; color: inherit; background: var(--chip); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+  #now { color: var(--muted); }
+  .wrap { overflow-x: auto; }
+  table { border-collapse: collapse; min-width: 900px; }
+  th, td { border-bottom: 1px solid var(--line); padding: 4px 8px; text-align: center; white-space: nowrap; }
+  th { position: sticky; top: 49px; background: var(--bg); font-weight: 600; font-size: 12px; vertical-align: bottom; white-space: normal; width: 92px; z-index: 1; }
+  td.id { text-align: left; font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
+  .car { color: var(--car); font-weight: 600; } .truck { color: var(--truck); font-weight: 600; }
+  .grp { color: var(--muted); font-size: 11px; }
+  button.play { width: 36px; padding: 2px 0; }
+  button.play.on { background: var(--on); color: #fff; border-color: var(--on); }
+  .none { color: var(--line); }
+  tr:hover td { background: var(--chip); }
+  .v { display: block; font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .v.wrong { color: var(--wrong); font-weight: 700; }
+  #count { color: var(--muted); }
+</style>
+</head>
+<body>
+<h1>CAST stage listening — role utility_s42_0, 380 training clips</h1>
+<p>Each row is one real IDMT training clip. Left to right: the clip exactly as the classifier received it (8 kHz route, so nothing above 4 kHz), the same 2 s at full band (up to 8 kHz; the classifier never saw this), then CAST's re-renders after fitting (smooth8), the calibration steps v7–v10 (only 50 traced clips), calibrated v11, and v11 with fresh phase/noise.</p>
+<p>All clips are unit-RMS and played at the same gain, so loudness is comparable. MP3 is for listening only. <a href="spectrograms.html">Mel spectrograms: fitted vs original, by classifier verdict →</a></p>
+<p id="vnote">The number under each clip is the saved real-trained classifier's probability that it is a truck (%). <b style="color:var(--wrong)">Red</b> means the classifier gets that clip wrong. This classifier was trained on these exact originals, so it gets every original right; a red re-render is a clip it no longer recognizes. Full band has no number: no classifier saw that route.</p>
+<div class="bar">
+  <label>Class <select id="cls"><option value="">All</option><option>car</option><option>truck</option></select></label>
+  <label><input type="checkbox" id="traced"> Only the 50 traced clips</label>
+  <label>Noise realization <select id="real"><option value="0">0</option><option value="1">1</option></select></label>
+  <label class="vonly">Classifier <select id="rep"><option value="BEATs768">BEATs</option><option value="MFCC26">MFCC</option></select></label>
+  <label class="vonly">Only clips it gets right originally but wrong at <select id="flip"><option value="">(show all)</option><option value="smooth8">smooth8</option><option value="v11">v11</option><option value="v11_fresh">v11 fresh</option></select></label>
+  <button id="stop">Stop (Space)</button>
+  <span id="count"></span>
+  <span id="now"></span>
+</div>
+<div class="wrap"><table><thead><tr id="head"></tr></thead><tbody id="body"></tbody></table></div>
+<script src="verdicts.js"></script>
+<script>
+const ROWS = __ROWS__, COLUMNS = __COLUMNS__, FILES = new Set(__FILES__.map(f => f.join("|")));
+const V = window.VERDICTS ? window.VERDICTS.p_truck : null;
+if (!V) { document.getElementById("vnote").remove(); document.querySelectorAll(".vonly").forEach(e => e.remove()); }
+function verdict(rep, id, col, r) {
+  if (!V) return null;
+  const table = V[rep], key = [id, col, r].join("|");
+  if (key in table) return table[key];
+  return (col === "original") ? table[[id, col, 0].join("|")] : null;
+}
+const wrong = (x, p) => (p > 0.5) !== (x.class === "truck");
+const audio = new Audio(); let current = null;
+const $ = id => document.getElementById(id);
+function src(id, col, r) {
+  if (FILES.has([id, col, r].join("|"))) return `audio/${id}/${col}_${r}.mp3`;
+  if (FILES.has([id, col, 0].join("|")) && (col === "original" || col === "full_band")) return `audio/${id}/${col}_0.mp3`;
+  return null;
+}
+function stop() { audio.pause(); if (current) current.classList.remove("on"); current = null; $("now").textContent = ""; }
+function play(btn, path, label) {
+  if (current === btn) return stop();
+  stop(); audio.src = path; audio.currentTime = 0; audio.play(); btn.classList.add("on"); current = btn; $("now").textContent = "Playing: " + label;
+}
+audio.onended = stop;
+function render() {
+  const cls = $("cls").value, traced = $("traced").checked, r = +$("real").value;
+  const rep = V ? $("rep").value : null, flip = V ? $("flip").value : "";
+  $("head").innerHTML = "<th>Clip</th>" + COLUMNS.map(c => `<th>${c[1]}</th>`).join("");
+  const rows = ROWS.filter(x => (!cls || x.class === cls) && (!traced || x.traced) && (!flip || (() => {
+      const o = verdict(rep, x.id, "original", 0), s = verdict(rep, x.id, flip, r);
+      return o != null && s != null && !wrong(x, o) && wrong(x, s); })()))
+    .sort((a, b) => a.class.localeCompare(b.class) || a.group.localeCompare(b.group) || a.id.localeCompare(b.id));
+  $("body").innerHTML = rows.map(x => `<tr><td class="id"><span class="${x.class}">${x.class}</span> ${x.id}<br><span class="grp">${x.group}</span></td>` +
+    COLUMNS.map(c => { const p = src(x.id, c[0], r), v = verdict(rep, x.id, c[0], r);
+      const tag = v == null ? "" : `<span class="v${wrong(x, v) ? " wrong" : ""}">${Math.round(100 * v)}</span>`;
+      return p ? `<td><button class="play" data-p="${p}" data-l="${x.class} ${x.id} · ${c[1]}">▶</button>${tag}</td>` : `<td class="none">—</td>`; }).join("") + "</tr>").join("");
+  $("count").textContent = `${rows.length} clips`;
+  stop();
+}
+$("body").addEventListener("click", e => { const b = e.target.closest("button.play"); if (b) play(b, b.dataset.p, b.dataset.l); });
+["cls", "traced", "real", "rep", "flip"].forEach(id => $(id) && $(id).addEventListener("change", render));
+$("stop").onclick = stop;
+document.addEventListener("keydown", e => { if (e.code === "Space" && e.target.tagName !== "SELECT") { e.preventDefault(); stop(); } });
+render();
+</script>
+</body>
+</html>

@@ -1,14 +1,18 @@
 # CAST research roadmap
 
-Updated 2026-10-08. CAST fits an effective model of recorded vehicle acoustics,
+Updated 2026-11-03. CAST fits an effective model of recorded vehicle acoustics,
 then samples its fitted population to generate additional observations. Its
 research objective is to determine whether that calibration improves vehicle
 classification across recording groups and datasets, beyond ordinary augmentation
 of the same real recordings.
 
-The next priority is **validate the current population more broadly, then test
-its classification utility under matched controls**. Increasing renderer size or
-training a neural generator is conditional on evidence of a specific limitation.
+The utility test (CAST-5A) found no classification gain. The diagnosis since
+then (see [Diagnosis after CAST-5A](#diagnosis-after-cast-5a)) shows where
+class information is lost. The next priority is to **freeze the B1 recipe as
+the reference baseline**. If CAST continues after that, **find what the
+renderer removes from car recordings** before adding controls. Increasing
+renderer size or training a neural generator stays conditional on evidence of a
+specific limitation. The live summary is [reports/STATUS.md](reports/STATUS.md).
 
 This is the CAST branch of [ABVID_ROADMAP.md](ABVID_ROADMAP.md), particularly
 RQ5 and E8, with interfaces to H1 baselines and H2 component studies. It retains
@@ -26,7 +30,7 @@ transfer run or access to additional audio.
 | CAST-2 real pilot | Complete | All 50 IDMT fits completed and improved checking loss; 43/50 retained disagreement between near-equivalent starts. Physical parameters are not identified. |
 | CAST-3 fitted population | Implemented through v15 | The current population uses 380 training observations, 190/class, from five conservative groups. Generated examples retain all contributing ancestry. |
 | CAST-4 acoustic coverage | Development objective met | v15 passes the declared mean coverage, control-distance and spread criteria on one repeatedly exposed IDMT outer group. Independent confirmation remains open. |
-| CAST-5 classification transfer | 5A complete (development) | [CAST-5A](reports/CAST_source_classification.md): RC − RA macro-F1 +0.47 [−0.97, 2.08]; practical gain ruled out, no gain established; CAST-only beats the unfitted prior (AUROC 60.6 vs 47.5). 5B precondition not met. |
+| CAST-5 classification transfer | 5A complete (development) | [CAST-5A](reports/archive/CAST_source_classification.md): RC − RA macro-F1 +0.47 [−0.97, 2.08]; practical gain ruled out, no gain established; CAST-only beats the unfitted prior (AUROC 60.6 vs 47.5). 5B precondition not met. |
 | CAST-6 learned parameter estimator | Deferred | Consider only after demonstrating a useful fitting task and a measured runtime bottleneck. |
 
 Sources: [pilot](reports/CAST_pilot.md), [original coverage failure](reports/CAST_generalization.md),
@@ -48,8 +52,29 @@ These are means over five fixed synthesis seeds on 570 real observations in
 one outer group. Two car seeds remain below 80% coverage. Class-balanced W1 is
 4.460% worse than the narrower v14 population: widening improved coverage at a
 cost in distance. The completed v15 study passed 306 historical tests and full
-source/outer replay. The later [repository parity checks](reports/REFACTOR.md)
+source/outer replay. The later [repository parity checks](reports/archive/REFACTOR.md)
 are a separate validation of code relocation, not another scientific experiment.
+
+## Diagnosis after CAST-5A
+
+These diagnostics ran 2026-10-25 to 2026-11-02 on already-exposed IDMT
+development data. Each scored the saved CAST-5A heads, and no new head was
+trained. Run records and full metrics are in [reports/STATUS.md](reports/STATUS.md).
+
+| Study | Question | Result |
+|---|---|---|
+| Stage diagnosis (Oct 25) | Where does the real head lose the class: fit, calibration or sampling? | On its own training clips, AUROC goes 100 → 68 (re-render) → 77 (calibrated) → 63 (population samples). This used one role and an overfit head. |
+| Time-varying weights, training side (`cast_tv_weights_v1`, Oct 31) | Do fixed spectral weights cause the loss? | Small or ambiguous: BEATs 68.2 → 71.1, against a +5 bar. It shifts the threshold more than it separates the classes. |
+| Held reconstruction (`cast_held_reconstruction_v1`, Nov 1) | Is the loss memorized detail or a cue that generalizes? | Partial: on held groups BEATs goes 71.3 → 61.4 (−9.9 [−15.2, −3.5]). About 70% of the training-side drop was memorized detail. Re-rendering still removes about half of the signal that generalizes. The BEATs C head does no better on re-rendered held clips (60.6 → 59.4), which points at the population too. |
+| tv3 on held groups (`cast_tv3_held_v1`, Nov 2) | Does the time-varying renderer win back the generalizable cue? | Ambiguous: +2.2 [−2.9, +6.6] on groups 1–5, against a +3 bar. Re-rendered cars are still called truck. |
+
+**Reading:**
+- **Where the loss is:** re-rendering loses class cue that generalizes,
+  mostly in cars. Both encoders hear re-rendered cars as truck-like.
+- **What tv3 explains:** time-varying spectral weights account for only a
+  small part of that loss.
+- **The baseline caveat:** every comparison here uses the 8 kHz route. Its
+  real-data ceiling (about 71 AUROC) is well below the B1 recipe's (84).
 
 The current W1 averages one-dimensional feature-distribution distances, scaled
 using training-real variability, within four equally weighted descriptor families.
@@ -107,11 +132,11 @@ on the evidence; a failed hypothesis is not an implementation defect.
 [metadata design](reports/CAST_grouped_coverage_design.md) now fix six group
 holdouts plus a separate three-site sensitivity analysis, all at 190/class.
 Each width has its own joint, prototype and marginal arms. The
-[fitter and saved-fit readiness checks](reports/CAST_fit_readiness.md) now pass:
+[fitter and saved-fit readiness checks](reports/archive/CAST_fit_readiness.md) now pass:
 the packaged smooth8 fitter matches the historical full-budget synthetic result,
 and all 380 named parameter records are eligible within their exact training
 roles. Later cached reconstruction waveforms remain excluded. The
-[grouped runner](reports/CAST_grouped_runner.md) now connects same-parent
+[grouped runner](reports/archive/CAST_grouped_runner.md) now connects same-parent
 calibration, fold-local populations, complete-generation gates, scoring and
 resumable replay under an additive pinned execution configuration. Its
 322 focused implementation checks pass; the new tests still require the
@@ -261,14 +286,14 @@ Record BEATs pretraining separately. Freeze synthetic counts and fitting budgets
 
 The primary contrast is **RC minus RA**. RC minus RR/R, RC minus RU and C minus U
 are required supporting contrasts. Use the ABVID proposal's **3 macro-F1 point**
-practical margin from the [shared experimental design](reports/proposed_experiments.md)
+practical margin from the [shared experimental design](reports/archive/proposed_experiments.md)
 as the proposed utility target; it is unrelated to the historical
 2.5% relative W1 criterion. A lower paired 95% interval above 3 points supports
 that practical gain, an upper bound below 3 rules out that effect size, and a
 crossing interval is inconclusive. Use zero separately for a claim of any gain.
 
 **Precision planning (2026-10-11):** The
-[H1 paired-variance analysis](reports/CAST5A_precision_planning.md) finds
+[H1 paired-variance analysis](reports/archive/CAST5A_precision_planning.md) finds
 conditional source-proxy interval widths around 3.6–5.1 F1 points, with wider
 location-sensitive stress cases. The cited 3.5-point H1 mixing interval is a
 MELAUDIS contrast, not RC minus RA. Under the central source variance scenarios,
@@ -287,7 +312,7 @@ the executable protocol. An aggregate improvement with zero-recall cases does
 not establish reliable recognition. Paired group/selection uncertainty must
 retain overlapping-fold dependencies and disclose limited group support.
 
-**Deliverable:** `reports/CAST_source_classification.md`, every scaler/head,
+**Deliverable:** `reports/archive/CAST_source_classification.md`, every scaler/head,
 prediction, ancestry manifest, feature/checkpoint hash and verification receipt.
 
 **Decision:** A gain beyond RA and RR justifies a frozen cross-dataset check.
@@ -437,16 +462,20 @@ current help default is not a reproduction of the full v15 workflow.
 ## Immediate work order
 
 1. CAST-4A's first grouped execution ended in
-   [technical incompletion](reports/CAST4A_run_20261011.md): all parents fitted, but
+   [technical incompletion](reports/archive/CAST4A_run_20261011.md): all parents fitted, but
    the byte-level replay gate failed on float-WAV `PEAK` timestamps, so no coverage
    result exists. A corrected, separately pinned execution revision awaits human
    review because it changes pinned runner and test code. Keep fixed v15 and the
-   existing acceptance criteria.
+   existing acceptance criteria. This is lower priority now: it measures
+   coverage, and CAST-5A showed that coverage does not become classification
+   value.
 2. Define and verify the CAST-4B joint metric on synthetic dependence/dispersion
    fixtures, then evaluate the same frozen banks after source-only authorization.
 3. CAST-5A ran under its frozen protocol (2026-10-12, development, within IDMT):
    a practical gain is ruled out and no gain is established. The CAST-5B
-   precondition is not met.
+   precondition is not met. The diagnosis since then
+   ([above](#diagnosis-after-cast-5a)) supports neither adopting tv3 nor scaling
+   up sampling yet.
 4. Plan admission of genuinely unexposed recording groups alongside this work.
    DCASE 2024 Task 10 is admitted from metadata and sealed. The jointly frozen
    CAST-5C/H2R pass in the [joint confirmation plan](experiments/joint_confirmation/PLAN.md)
@@ -454,6 +483,11 @@ current help default is not a reproduction of the full v15 workflow.
    user decided on 2026-10-12 to keep DCASE sealed until one does.
    Defer cross-dataset scoring, component expansion and amortized fitting until
    their stated evidence and access conditions are satisfied.
+5. Next CAST step, after B1 is frozen as the reference baseline: compare
+   what the renderer removes from the cars that flip to truck, using the
+   existing renders. This comparison is descriptive and needs no new run.
+   Then make a renderer change under its own protocol and test it on held
+   groups first.
 
 The first useful scientific milestone is a paired answer to whether CAST's
 broader acoustic coverage produces added classification value over conventional
