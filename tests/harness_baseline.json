@@ -1,10 +1,10 @@
 {
   "environments": {
     "baseline": {
-      "test_count": 756
+      "test_count": 769
     },
     "cast": {
-      "test_count": 723
+      "test_count": 736
     }
   },
   "file_hashes": {
