@@ -1,6 +1,6 @@
 # ABVID status
 
-Updated 2026-11-02. This page condenses the project's reports down to what is
+Updated 2026-11-04. This page condenses the project's reports down to what is
 still open or needs a decision. The original reports remain the detailed record
 (settings, hashes, uncertainty). Most are in `archive/`; see the source map at
 the end.
@@ -10,21 +10,23 @@ for synthetic training data to help a car/truck classifier on real recordings?
 
 **Where it stands:** the headline question (source vs. propagation) is still
 unanswered. The H2 propagation effect was an implementation artifact, and CAST
-adds no classification value in its current form. Every result so far is
-development evidence on already-exposed data. Nothing has been confirmed on
-independent data.
+adds no classification value in its current form. The frozen B1 reference
+recipe is the first gain to hold outside IDMT: BEATs on MELAUDIS goes 61.6 → 73.3
+AUROC. Every result so far is development evidence on already-exposed data.
+Nothing has been confirmed on independent data.
 
 ## 1. Needs your action
 
 These are owed reviews, unpushed work and decisions only you can make.
 
-1. **Push or merge `cast/diagnosis-20261102`.** The Oct 25 – Nov 2 work is
+1. **Push or merge `cast/diagnosis-20261102`.** The Oct 25 – Nov 4 work is
    committed locally on that branch (from `3cc64ac`, not pushed):
    - `45d79c5`: report archive, link fixes, this page, `AGENTS.md`,
      `docs/LEARNING.md`
    - `f18a176`: CAST diagnosis code, frozen protocols, run scripts and the
      Oct 25 reports
    - `ec4ed5f`: the MVD download helper
+   - `ccc8121`: the B1 reference recipe and the MELAUDIS check
 
    **Gaps:**
    - The new CAST modules (`stage_diagnostic`, `time_varying`,
@@ -82,13 +84,92 @@ These are owed reviews, unpushed work and decisions only you can make.
 Ordered by how much each would change the picture. Each needs its own frozen
 protocol before running.
 
-1. **Make the B1 recipe the reference baseline.**
+1. **B1 recipe: the reference baseline (2026-11-03); positive on MELAUDIS for BEATs (2026-11-04).**
    - **The finding:** within IDMT, held-out-group AUROC rose from 71.5 to 84.1
      using full-band input (native → 16 kHz, not the 8 kHz route), all training
      data with balanced class weights, and strong L2 (C ≈ 0.001–0.01).
    - **Encoders:** MFCC26 generalized best; the BEATs layer mean was close.
    - **What's left:** this was recommended but never frozen as the reference.
      Every earlier synthetic comparison ran on the weaker 8 kHz route.
+   - **Frozen and run (2026-11-03, `b1_reference_v1`): this is now the
+     real-only reference.** All later "real-only reference" comparisons use it
+     unchanged. The recipe code is in `src/abvid/learning/reference.py`.
+     - **Recipe:** full-band input, all training data with balanced weights,
+       MFCC26 and BEATs layer mean reported separately. C is chosen inside the
+       training groups.
+     - **IDMT held-group AUROC:**
+       - **BEATs layer mean:** 84.9 [80.1, 89.4], or +13.4 [9.6, 18.1] over
+         H1's reference. BA 77.1, AP 48.4, macro-F1 63.6; worst group 76.2
+         (`b00d69dd`, 10 trucks). It chose C 0.001 in every fold.
+       - **MFCC26:** 86.7 [82.4, 91.0], or +15.2 [8.2, 23.6]. BA 77.8,
+         AP 48.1, macro-F1 60.1; worst group 79.1 (`e1daf436`). It chose C 1
+         or 0.1.
+       - Site-block intervals are in the run record.
+     - **No more memorizing:**
+       - **BEATs:** training AUROC is 90.9, against 100 under H1, and only
+         6 points above its held score.
+       - **MFCC:** training AUROC 86.0, held 86.7.
+       - **Why it matters:** the confound behind the CAST stage diagnosis's
+         100 → 68 should largely disappear under this recipe.
+     - **Threshold still off:** macro-F1 at the argmax rule stays around
+       60–64. In the two small-truck groups every truck is caught but car
+       recall drops to 48–61%, a threshold effect at about 10% truck
+       prevalence.
+     - **Optimistic:** the route, budget and representations were picked after
+       B1's outer results were seen. Only C is nested.
+     - **Correction:** the frozen protocol calls the later cross-dataset check
+       "the untouched test". That is wrong for MELAUDIS: H1 already scored
+       there, so it is exposed development data. The only untouched target is
+       sealed DCASE.
+     - **All-IDMT heads** (trained on all six groups, scored on nothing):
+       - BEATs: C 0.001, `heads/beats_avg.joblib`, SHA256 `ff49f793…`
+       - MFCC: C 1, `heads/mfcc26.joblib`, SHA256 `0d770904…`
+     - **Run record:** `artifact:baseline_strength/b1_reference_20261103_v1`
+       (`results.json` `7f1ebc2c…`).
+       - **Protocol:** `experiments/baseline_reference/PROTOCOL.md` (SHA256
+         `1950f4e1…`).
+       - **Code:** `run.py` `6b2b61f1…`, `reference.py` `02ba715d…`,
+         `grouped_search.py` `7fea0de6…`; commit `daf72e9` plus a dirty tree.
+       - **Inputs:** B1 features `aab4b3aa…` and results `46399d34…`.
+       - **Statistics:** 10,000 fold and site-block draws, seed 20261103.
+       - **Gates:** 288/288 fits reproduce B1 exactly; feature re-extraction
+         difference 0.0.
+     - **Gap:** `reference.py` has no tests. Adding them needs your
+       human-only harness-baseline refresh.
+   - **B1 on MELAUDIS (2026-11-04, `b1_melaudis_v1`): positive for BEATs.**
+     This is the first gain that holds outside IDMT, on exposed development
+     data.
+     - **Primary:** IDMT-trained BEATs on MELAUDIS reaches AUROC 73.3
+       [70.7, 82.9], against H1's 61.6. The gain is +11.7 [+6.6, +17.4]
+       (paired whole-group bootstrap; no draws rejected).
+       - **All four groups improve:** 84.4 vs 73.0, 78.5 vs 62.8, 71.1 vs
+         59.5 (the 6,477-event group), and 93.2 vs 88.6 (the 1-truck group).
+       - **Other BEATs measures, B1 vs H1:** BA 68.5 vs 57.4 (+11.1
+         [6.7, 15.7]); AP 8.3 vs 5.7 (2.6× vs 1.8× prevalence); truck recall
+         at 5% car false-positive rate 18.4 vs 11.9.
+     - **MFCC is unresolved:** 68.9 vs 64.6, a gain of +4.3 [−8.6, +9.8].
+       MFCC was the best encoder within IDMT (86.7) but loses 17.8 points on
+       MELAUDIS, while BEATs loses 11.6. The pretrained representation
+       carries over better; this is descriptive, from one target dataset.
+     - **Still weak in absolute terms:** AP is only 2.6× prevalence. At the
+       fixed rule, car recall is 59.7% at 3.2% trucks, so the threshold is
+       still off.
+     - **What it supports:** B1-BEATs is now a candidate for the one-time
+       DCASE pass (item 6).
+     - **Run record:** `artifact:baseline_strength/b1_melaudis_20261103_v1`
+       (`results.json` `711d93e9…`).
+       - **Protocol:** `experiments/b1_melaudis/PROTOCOL.md` (SHA256
+         `ed8ca4f4…`, frozen 2026-11-04 on user approval).
+       - **Code:** `run.py` `21aeda80…`, `reference.py` `02ba715d…`,
+         `ranking.py` `eb726e1e…`.
+       - **Features:** `c81af8a5…`.
+       - **Heads:** `ff49f793…` (BEATs), `0d770904…` (MFCC).
+       - **Statistics:** 10,000 draws, seed 20261104.
+       - **Gates:**
+         - all 8,066 members match both admission hashes, and the extracted
+           copies were deleted;
+         - the frozen heads, the target-panel scorer replay and the feature
+           path are all exact.
 2. **CAST: reconstruction and sampling both lose signal (revised 2026-11-01).**
    - **The stage diagnosis:** with the real-trained head scored on its own 380
      training clips (AUROC):
@@ -315,7 +396,12 @@ protocol before running.
 6. **Keep DCASE 2024 Task 10 sealed.**
    - **Unsealing needs:** a candidate with positive development evidence, a
      frozen protocol, an overlap audit and your written authorization.
-   - **Cheapest candidate:** a cross-dataset check of the B1 recipe.
+   - **Candidate (2026-11-04):** the frozen all-IDMT B1-BEATs head. It has
+     positive development evidence on MELAUDIS (+11.7 AUROC over H1).
+     Remaining before a pass:
+     - an overlap audit (DCASE vs. IDMT/MELAUDIS and BEATs pretraining data);
+     - a frozen DCASE protocol;
+     - your written authorization.
    - **Caveat:** DCASE's second class is "commercial vehicle", a proxy for truck.
 
 Parked, with no action planned:
