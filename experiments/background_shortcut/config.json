@@ -1,0 +1,17 @@
+{
+  "schema": "background_shortcut_v0",
+  "status": "draft; not in configs/experiments (the registry has no diagnostic phase); freeze PROTOCOL.md before a probe run",
+  "features": {
+    "path": "artifact:features/session_confound/idmt_beats768/features.npz",
+    "sha256": "92d1bcc1390347bf6c8acc514c580cce2af32f1f8075f9f3f836fca6c464bb04",
+    "produced_by": "TheApexWu/ABVID@4223f17 experiments/session_confound/extract_beats.py; H1 preprocessing and checkpoint pins in meta.json beside the features"
+  },
+  "selection": {
+    "vehicle": "IDMT car/truck rows with no admission exclusion (SE sensor, CH34)",
+    "background": "IDMT -BG rows on the SE sensor, CH34, excluded only as class_out_of_scope_v1.1"
+  },
+  "folds": "leave_one_site_out",
+  "budget_per_class": 190,
+  "seeds": [42, 123, 456, 789, 1024],
+  "classifier": "repo:configs/reference/h1.json#classifier"
+}
