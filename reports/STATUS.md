@@ -46,14 +46,24 @@ These are owed reviews and decisions only you can make.
    **Left untracked on purpose:** `.claude/`, `docs/.obsidian/`,
    `annotation.json`, `ABVID_CAST_core_concepts.md` and
    `docs/SIGNATURE_FOCUS_PLAN.md` (the last waits on the branch policy).
-2. **Decide whether to rerun CAST-4A coverage.** The serialization fix is
-   merged (`1153aea`). The original run failed only because libsndfile writes a
-   timestamp into float WAV headers, which broke the byte-exact replay check;
-   samples are now stored as `.npy`.
-   - **Cost of the rerun:** all 1,864 fitted parents are reusable; only generation
-     and scoring would be rerun.
-   - **The question:** is it still worth running? It measures coverage, which
-     CAST-5A already showed does not turn into classification value.
+2. **CAST-4A rerun: blocked by a second runner bug (2026-11-08).** The
+   serialization fix is merged (`1153aea`): samples are now `.npy`, because
+   libsndfile's float WAV header timestamp broke the byte-exact replay check.
+   You authorized the rerun, and the v2 attempt stopped after 18 seconds,
+   before any parent was fitted or any held recording opened.
+   - **Cause:** the four parent-fit worker processes reload the configuration
+     with the v1 loader (`grouped_parents._worker_initialize`), which accepts
+     only the v1 config. The v2 tests never started those workers.
+   - **Preserved:** `artifact:cast/grouped_coverage/cast4a_run_20261018_v2_npy`
+     (90 MB: the attempt record and the 380 reused older parents).
+   - **Correction:** a rerun cannot reuse the 1,484 parents fitted on Oct 11.
+     Each parent is tied to its execution config hash, so any revision refits
+     them (about 5.5 hours on 4 workers, about 10 GB).
+   - **Fix needed:** a v3 revision with a worker loader that accepts the
+     revision config, a test that starts a real worker, a new output folder,
+     your test review and a baseline refresh.
+   - **Still open:** whether coverage is worth this, since CAST-5A showed it
+     does not turn into classification value.
    - **CAST-4B MMD** (also merged) catches joint-distribution differences that
      the per-feature metric misses. It is verified on synthetic fixtures only,
      and using it on real data needs its own frozen experiment.
