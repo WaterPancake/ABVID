@@ -1,6 +1,6 @@
 # ABVID status
 
-Updated 2026-11-04. This page condenses the project's reports down to what is
+Updated 2026-11-08. This page condenses the project's reports down to what is
 still open or needs a decision. The original reports remain the detailed record
 (settings, hashes, uncertainty). Most are in `archive/`; see the source map at
 the end.
@@ -17,16 +17,26 @@ Nothing has been confirmed on independent data.
 
 ## 1. Needs your action
 
-These are owed reviews, unpushed work and decisions only you can make.
+These are owed reviews and decisions only you can make.
 
-1. **Push or merge `cast/diagnosis-20261102`.** The Oct 25 – Nov 4 work is
-   committed locally on that branch (from `3cc64ac`, not pushed):
+1. **Open a PR from `cast/diagnosis-20261102` to `main`.** The branch was
+   pushed on 2026-11-08 (it starts from `3cc64ac`). It carries the
+   Oct 25 – Nov 8 work:
    - `45d79c5`: report archive, link fixes, this page, `AGENTS.md`,
      `docs/LEARNING.md`
    - `f18a176`: CAST diagnosis code, frozen protocols, run scripts and the
      Oct 25 reports
    - `ec4ed5f`: the MVD download helper
-   - `ccc8121`: the B1 reference recipe and the MELAUDIS check
+   - `24f70ae`: the B1 reference recipe and the MELAUDIS check
+   - `1153aea`: merges the CAST-4A serialization fix (`6a76b22`) and the
+     CAST-4B MMD metric (`c60a682`). You refreshed the harness baseline
+     in that commit: cast 723 → 748, baseline 756 → 781. These are the
+     25 new tests in `tests/cast/test_cast4a_serialization_revision.py`
+     and `tests/cast/test_joint.py`; name both in the PR description.
+   - the commit after it: the two branch reports moved to `archive/`, their
+     out-of-date delivery sections corrected, and this update
+
+   Both review sets in `docs/CODE_REVIEW_PENDING.md` are now done.
 
    **Gaps:**
    - The new CAST modules (`stage_diagnostic`, `time_varying`,
@@ -36,27 +46,18 @@ These are owed reviews, unpushed work and decisions only you can make.
    **Left untracked on purpose:** `.claude/`, `docs/.obsidian/`,
    `annotation.json`, `ABVID_CAST_core_concepts.md` and
    `docs/SIGNATURE_FOCUS_PLAN.md` (the last waits on the branch policy).
-2. **Review the CAST-4A serialization fix** (`cast4a/serialization-revision`, `6a76b22`).
-   - **What it fixes:** the CAST-4A coverage run failed only because libsndfile writes
-     a timestamp into float WAV headers, which broke the byte-exact replay check.
-     The fix stores samples as `.npy`.
-   - **What merging takes:** your line-by-line test review plus a human-only
-     harness-baseline refresh.
+2. **Decide whether to rerun CAST-4A coverage.** The serialization fix is
+   merged (`1153aea`). The original run failed only because libsndfile writes a
+   timestamp into float WAV headers, which broke the byte-exact replay check;
+   samples are now stored as `.npy`.
    - **Cost of the rerun:** all 1,864 fitted parents are reusable; only generation
      and scoring would be rerun.
-   - **Decide first:** is this still worth running? It measures coverage, which
+   - **The question:** is it still worth running? It measures coverage, which
      CAST-5A already showed does not turn into classification value.
-3. **Review the CAST-4B MMD branch** (`cast4b/joint-metric-fixtures`, `c60a682`).
-   - **What it adds:** a joint-distribution metric that catches what the
-     per-feature coverage metric misses.
-   - **Review status:** `docs/CODE_REVIEW_PENDING.md` (review set 2) recommends
-     approval.
-   - **At merge:** fix that branch report's stale "Commit delivery" paragraph.
-     Regenerate the baseline with `scripts/refresh_harness_baseline.py`; don't
-     copy the counts quoted in the review note.
-   - Review set 1 in the same note appears done: it was merged via PR #2/#3,
-     with a baseline refresh in `9d70279`.
-4. **Decide the branch policy.** The project memory says the military side project
+   - **CAST-4B MMD** (also merged) catches joint-distribution differences that
+     the per-feature metric misses. It is verified on synthetic fixtures only,
+     and using it on real data needs its own frozen experiment.
+3. **Decide the branch policy.** The project memory says the military side project
    stays on `learned-audio-signature`, never merged wholesale. PRs #2 and #3
    merged that branch into `origin/main`. Pick one:
    - accept the merged state, or
@@ -64,14 +65,14 @@ These are owed reviews, unpushed work and decisions only you can make.
 
    `AGENTS.md` still describes the military program as retired. Separately, local
    `main` (`9faba71`) is behind `origin/main` (`3cc64ac`).
-5. **Military P1: do the blind interval review.**
+4. **Military P1: do the blind interval review.**
    - **What's waiting:** 54 recordings (2 h 26 min) across 7 caption-hidden packets.
    - **Why it matters:** until you mark the foreground/background intervals, the
      side project has zero admitted segments and zero verified independent
      recording groups, and nothing downstream can run.
    - **How to start:** the review server is documented only as
      `http://127.0.0.1:8766/`, with no launch command recorded.
-6. **Housekeeping.**
+5. **Housekeeping.**
    - **Stray file:** `annotation.json` at the repo root is a synthetic UI check
      from Oct 11.
    - **Untracked:** `docs/.obsidian/` and `.claude/` (ignore or commit).
@@ -473,7 +474,7 @@ report paths. They are hash-pinned, so those links stay stale on purpose.
 |---|---|
 | CAST diagnosis (current) | `CAST_stage_diagnosis_20261025`, `CAST_gap_and_data_decision_20261025` (+ JSON) |
 | CAST utility | `CAST_source_classification` (5A), `CAST5A_precision_planning` |
-| CAST coverage | `CAST4A_run_20261011`, `CAST_grouped_runner`, `CAST_fit_readiness`, `CAST_grouped_coverage_design`, `CAST_improvement` (v15), `CAST_generalization`, `CAST_pilot` |
+| CAST coverage | `CAST4A_serialization_revision`, `CAST_joint_metric_fixtures` (4B MMD), `CAST4A_run_20261011`, `CAST_grouped_runner`, `CAST_fit_readiness`, `CAST_grouped_coverage_design`, `CAST_improvement` (v15), `CAST_generalization`, `CAST_pilot` |
 | CAST physics | `CAST_physics_prototype`, `CAST_physics_data_audit` |
 | Baselines | `B1_baseline_strength`, `target_panel`, `H1_regularization_transfer`, `H1_source_diagnostics`, `H1_baseline_results` |
 | H2 | `H2_air_latency_control`, `H2_ground_air_collapse`, `H2_source_path_results` |

@@ -50,6 +50,6 @@ was performed to prepare this revision. Correction step 3, including reuse of th
 a separately reviewed operation. This revision adds no automatic v1-output
 migration or retry in place.
 
-See [the serialization revision report](../../../../../reports/CAST4A_serialization_revision.md)
-for validation details. The human-only harness baseline remains unchanged;
-test-count drift must be reviewed before merge.
+See [the serialization revision report](../../../../../reports/archive/CAST4A_serialization_revision.md)
+for validation details. The user refreshed the harness baseline when this
+revision was merged (`1153aea`, 2026-11-08).

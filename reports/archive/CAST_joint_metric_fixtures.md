@@ -1,7 +1,7 @@
 # CAST-4B joint metric: synthetic fixture verification
 
 This implements only the fixture-verification phase of
-[CAST-4B](../CAST_ROADMAP.md#cast-4b-test-feature-relationships-and-representation-coverage).
+[CAST-4B](../../CAST_ROADMAP.md#cast-4b-test-feature-relationships-and-representation-coverage).
 All inputs are fixed synthetic arrays. This is implementation evidence; it
 establishes no source coverage, representation coverage or classification
 transfer result. Existing CAST banks, runners, W1 definitions and thresholds
@@ -9,7 +9,7 @@ are unchanged. There is no real-data, archived-artifact or network access.
 
 ## Metric and freeze contract
 
-The reusable implementation is [joint.py](../src/abvid/cast/joint.py).
+The reusable implementation is [joint.py](../../src/abvid/cast/joint.py).
 `gaussian_mmd_squared` returns the **biased empirical squared MMD**:
 
 ```text
@@ -53,7 +53,7 @@ seed 42). The determinism check also exercises seeded calibration subsampling.
 
 ## Verification fixtures
 
-[test_joint.py](../tests/cast/test_joint.py) contains these tests (12 cases):
+[test_joint.py](../../tests/cast/test_joint.py) contains these tests (12 cases):
 
 - `test_mmd_detects_dependence_with_exactly_matched_family_marginals`: exact
   empirical marginal matches, with cross-family correlation reversed; every
@@ -96,7 +96,7 @@ The run uses the existing pinned CAST environment through
 archive roots point to unused temporary fixture locations. A temporary JUnit
 report records the exact outcome. No lockfile update or dependency download
 is needed. Harness-baseline maintenance remains human-only; test changes
-require line-by-line human review before merge under [AGENTS.md](../AGENTS.md).
+require line-by-line human review before merge under [AGENTS.md](../../AGENTS.md).
 
 Result: **733 passed, 1 failed, 3 skipped**, exit status 1, in 68.372 seconds
 (JUnit wall time). The sole failure is
@@ -111,10 +111,9 @@ other protected files remain unchanged.
 
 ## Commit delivery
 
-The requested checkout branch is `cast4b/joint-metric-fixtures`. Staging in
-this worktree is blocked by the filesystem sandbox: Git cannot create
-`/Users/magi/workspace/ABVID/.git/worktrees/abvid-cast4b/index.lock` outside the
-writable roots. A local clone in `/private/tmp/abvid-cast4b-commit-delivery`
-preserves the change as a commit on the same named branch, with a one-commit
-bundle and format-patch for delivery. The original checkout's branch ref is
-unchanged; its three added files remain available for review.
+The three files were committed directly as `c60a682` on
+`cast4b/joint-metric-fixtures`; the `/tmp` bundle route was not used. On
+2026-11-08 that branch was merged with `cast4a/serialization-revision` into
+`cast/diagnosis-20261102` (merge `1153aea`). The user ran the harness baseline
+refresh in the merge commit: CAST 723 → 748, baseline 756 → 781 for both
+branches together.

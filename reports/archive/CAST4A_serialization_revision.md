@@ -27,7 +27,7 @@ The checkpoint still compares all serialized payload bytes and metadata exactly.
 |---|---|
 | ID | `cast4a_grouped_execution_v2_npy` |
 | Configuration | `repo:experiments/cast_coverage/grouped_coverage/execution/serialization_v2/config.json` |
-| Instructions | [serialization_v2/README.md](../experiments/cast_coverage/grouped_coverage/execution/serialization_v2/README.md) |
+| Instructions | [serialization_v2/README.md](../../experiments/cast_coverage/grouped_coverage/execution/serialization_v2/README.md) |
 | Entrypoint | `python -m abvid.cast.cast4a_serialization_runner` |
 | Output | `artifact:cast/grouped_coverage/cast4a_run_20261018_v2_npy` |
 | Original configuration SHA256 | `3b415989bc2cbd2fdb1bba9398dcf445f6db55223e2c7aabbd6d5855d2a7380f` |
@@ -125,14 +125,8 @@ baseline refresh and line-by-line test review remain human actions before merge.
 
 ## Commit handoff
 
-The checkout is on `cast4a/serialization-revision`. Staging the six additions
-failed because the sandbox cannot write the worktree's Git metadata outside the
-writable checkout:
-
-```text
-fatal: Unable to create '/Users/magi/workspace/ABVID/.git/worktrees/abvid-cast4a/index.lock': Operation not permitted
-```
-
-No commit was created. All changes remain as six new files, with no tracked-file
-modifications. Suggested commit message:
-`Add separately pinned CAST-4A deterministic NPY serialization revision`.
+The six files were committed as `6a76b22` on `cast4a/serialization-revision`.
+On 2026-11-08 that branch was merged with `cast4b/joint-metric-fixtures` into
+`cast/diagnosis-20261102` (merge `1153aea`). The user ran the harness baseline
+refresh in the merge commit: CAST 723 → 748, baseline 756 → 781 for both
+branches together. Correction step 3 (the rerun) has not been authorized.
