@@ -357,6 +357,45 @@ synthetic comparisons should use full-band synthesis and this recipe. The [datas
 ranks MVD (1,077 trucks, 4 sites), FSD50K (about 80 truck uploaders) and SONYC-UST v2
 (proxy, 48 sensors) as candidates. DCASE stays sealed.
 
+**B1 reference — 2026-11-03/04:** the recipe above is now frozen as the
+real-only reference, and its gain holds on a second dataset. Trained on IDMT,
+BEATs reaches 73.3 AUROC on MELAUDIS against H1's 61.6 (+11.7 [6.6, 17.4]), and
+all four MELAUDIS groups improve. Later real-only comparisons use this recipe
+unchanged (`src/abvid/learning/reference.py`).
+
+| Head (trained on IDMT) | Scored on | AUROC [95% CI] | Gain over H1 | BA | AP | Macro-F1 | Worst-group AUROC |
+|---|---|---:|---:|---:|---:|---:|---:|
+| BEATs layer mean | IDMT, 6 held-out groups | 84.9 [80.1, 89.4] | +13.4 [9.6, 18.1] | 77.1 | 48.4 | 63.6 | 76.2 |
+| MFCC26 | IDMT, 6 held-out groups | 86.7 [82.4, 91.0] | +15.2 [8.2, 23.6] | 77.8 | 48.1 | 60.1 | 79.1 |
+| BEATs layer mean | MELAUDIS, 4 groups | 73.3 [70.7, 82.9] | +11.7 [6.6, 17.4] | 68.5 | 8.3 | 42.7 | 71.1 |
+| MFCC26 | MELAUDIS, 4 groups | 68.9 [67.0, 80.7] | +4.3 [−8.6, 9.8] | 60.8 | 7.3 | 32.3 | 67.6 |
+
+- **BEATs carries over better than MFCC.** MFCC was best within IDMT but loses
+  17.8 AUROC points on MELAUDIS, against 11.6 for BEATs, and its MELAUDIS gain
+  over H1 is unresolved. This is descriptive, from one target dataset.
+- **Still weak in absolute terms.** MELAUDIS trucks are 3.2% of events, so
+  BEATs's AP of 8.3 is only 2.6× chance. The default threshold is off: car
+  recall is 59.7%, which is why macro-F1 stays low.
+- **Less memorization.** BEATs training AUROC is 90.9 against 84.9 held out;
+  under H1 it was 100.
+- **Optimistic and exposed.** The input route, training budget and
+  representations were chosen after B1's results were seen; only the L2
+  strength C is nested. IDMT and MELAUDIS are both already-exposed development
+  data. The only untouched target is sealed DCASE, and the all-IDMT B1-BEATs
+  head is the current candidate for its single pass.
+
+MELAUDIS worst-group AUROC excludes the group with one truck (BEATs 93.2,
+MFCC 42.5). Settings: native audio resampled to 16 kHz, all training clips
+with balanced class weights, C chosen inside the training groups from
+{0.001, 0.01, 0.1, 1}. Frozen all-IDMT heads: BEATs C 0.001 (`ff49f793…`),
+MFCC C 1 (`0d770904…`). Intervals: IDMT fold bootstrap (10,000 draws, seed
+20261103); MELAUDIS paired whole-group bootstrap (10,000 draws, seed 20261104).
+Protocols: [baseline reference](experiments/baseline_reference/PROTOCOL.md)
+and [MELAUDIS check](experiments/b1_melaudis/PROTOCOL.md). Run records:
+`artifact:baseline_strength/b1_reference_20261103_v1` (results `7f1ebc2c…`) and
+`artifact:baseline_strength/b1_melaudis_20261103_v1` (results `711d93e9…`),
+from commit `daf72e9` plus uncommitted changes.
+
 **CAST-5A — 2026-10-12:** the [within-IDMT utility test](reports/archive/CAST_source_classification.md)
 rules out a practical CAST gain over conventional augmentation: BEATs RC − RA macro-F1
 +0.47 [−0.97, 2.08]. Augmentation also adds nothing over real-only training. CAST-only
