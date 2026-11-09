@@ -2,7 +2,7 @@
 
 `src/abvid/` contains reusable numerical code. It does not import an experiment
 folder. `experiments/` holds scientific instructions and canonical registry
-entries. `reports/STATUS.md` is the current project state. `reports/archive/`
+entries. `reports/archive/`
 holds the detailed historical reports, except the few that frozen configs pin in
 place. Full results live outside Git. Tests use synthetic fixtures unless explicitly marked as requiring
 local frozen artifacts.

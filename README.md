@@ -6,8 +6,8 @@ vehicle classification performance with pretrained audio representations.
 The active work uses civilian car/truck recordings, frozen BEATs features,
 published-result reproduction, controlled propagation studies, and CAST source
 coverage. Source-model dominance is a hypothesis; the completed controls do not
-establish it. Start with [the current status](reports/STATUS.md), then
-[the roadmap](ABVID_ROADMAP.md) and [repository guide](docs/STRUCTURE.md).
+establish it. Start with [the roadmap](ABVID_ROADMAP.md) and the
+[repository guide](docs/STRUCTURE.md).
 The [refactor report](reports/archive/REFACTOR.md) records preservation and validation checks.
 The [runnable real-data prototype](experiments/benchmark_prototype/README.md)
 provides a saved car/truck model, WAV prediction and a verified H1 benchmark;
@@ -24,7 +24,7 @@ src/abvid/          data, simulation, cast, representations, learning, evaluatio
 experiments/        admission, r0_reproduction, h1_baselines, h2_simulation, cast_coverage
 configs/            canonical experiment configurations and numerical references
 tests/              numerical, leakage, path and configuration regression checks
-reports/            STATUS.md (current state), pinned reports, archive/ (detailed history)
+reports/            pinned reports, archive/ (detailed history)
 literature/         literature matrix and paper index
 vendor/             upstream simulation license, revision and repair history
 environments/       separate historical numerical environment pins

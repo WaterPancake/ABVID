@@ -12,7 +12,7 @@ class information is lost. The next priority is to **freeze the B1 recipe as
 the reference baseline**. If CAST continues after that, **find what the
 renderer removes from car recordings** before adding controls. Increasing
 renderer size or training a neural generator stays conditional on evidence of a
-specific limitation. The live summary is [reports/STATUS.md](reports/STATUS.md).
+specific limitation.
 
 This is the CAST branch of [ABVID_ROADMAP.md](ABVID_ROADMAP.md), particularly
 RQ5 and E8, with interfaces to H1 baselines and H2 component studies. It retains
@@ -59,7 +59,8 @@ are a separate validation of code relocation, not another scientific experiment.
 
 These diagnostics ran 2026-10-25 to 2026-11-02 on already-exposed IDMT
 development data. Each scored the saved CAST-5A heads, and no new head was
-trained. Run records and full metrics are in [reports/STATUS.md](reports/STATUS.md).
+trained. Protocols are under `experiments/cast_utility/`; run records are in
+the artifact store.
 
 | Study | Question | Result |
 |---|---|---|

@@ -328,8 +328,7 @@ Location mixes source and recording conditions, so those diagnostics alone did
 not isolate source-versus-propagation effects. The later H2 result above tests
 the declared interventions, not an intrinsic division of all domain mismatch.
 The earlier military program is retired from the active checkout; its
-historical results and protected-source roles remain unchanged under
-[AGENTS.md](AGENTS.md).
+historical results and protected-source roles remain unchanged.
 
 **Target evaluation — 2026-10-11:** a [post hoc re-scoring](reports/archive/target_panel.md)
 of the archived predictions adds AUROC, AP against prevalence and balanced accuracy,
