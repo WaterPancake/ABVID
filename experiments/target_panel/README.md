@@ -2,7 +2,7 @@
 
 Post hoc, descriptive re-scoring of archived, already exposed predictions with
 prevalence-robust metrics. It loads prediction files only, never models, features
-or audio, and fits nothing. See the [report](../../reports/target_panel.md).
+or audio, and fits nothing. See the [report](../../reports/archive/target_panel.md).
 
 ```bash
 # Requires ABVID_ARCHIVE_ROOT (or configs/local.json). Output directory is create-only.

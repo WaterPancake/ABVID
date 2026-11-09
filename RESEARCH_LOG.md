@@ -29,7 +29,7 @@
 - **Failures/limits:** absolute worst group/class recall remains 4.63% BEATs and 0% MFCC. Four uneven conservative target groups and overlapping source fits limit bootstrap coverage. The largest group contains 6,477/8,066 events; one group has one truck. The source-minus-target F1 gaps do not shrink. Candidate C selection has additional source-validation label access; target remains exposed development data.
 - **Verification/runtime:** 7 pre-run tests passed; 107 pipelines, 120 source/target evaluations, 480 target-group scores, all scaler statistics/probabilities/metrics/bootstrap samples and 60 reconstructed source-only C choices independently verified. All 60 original H1 target arrays replay exactly; 8,079 protected artifacts unchanged. M3 Pro CPU: prediction/scoring/bootstrap 29.13 s, verification 26.42 s; no GPU/downloads.
 - **Decision:** close this bounded check. Retain H1 and regularization as a documented sensitivity; no automatic replacement or further target-driven C/threshold sweep. Prepare the existing source × propagation factorial's source/backend/trajectory manifests and common head/bandwidth controls before implementation. Source dominance remains untested; military gates are unchanged.
-- **Evidence:** [results and factorial preparation](reports/H1_regularization_transfer.md), [protocol/commands](experiments/h1_baselines/transfer_sensitivity/README.md), [frozen lock](reports/ARTIFACT_INDEX.md#artifact-4ead9b529d90), [verification](reports/ARTIFACT_INDEX.md#artifact-56d2b5d77ecf).
+- **Evidence:** [results and factorial preparation](reports/archive/H1_regularization_transfer.md), [protocol/commands](experiments/h1_baselines/transfer_sensitivity/README.md), [frozen lock](reports/ARTIFACT_INDEX.md#artifact-4ead9b529d90), [verification](reports/ARTIFACT_INDEX.md#artifact-56d2b5d77ecf).
 
 ## H1 follow-up — Completed source-only diagnostic pass
 
@@ -42,7 +42,7 @@
 - **D5:** Entire-site holdout lowers F1 53.08→42.86% BEATs and 56.23→44.77% MFCC. Paired changes −10.21 [−17.46,−3.23] and −11.46 [−18.91,−4.84]; three-site block intervals also exclude zero. Location is entangled with fleet/state, posted limits, road conditions and acquisition context, and training groups fall from five to four. No causal propagation attribution follows.
 - **Verification/runtime:** 8 protocol boundary tests plus two artificial encoder checks; all 1,757 scalers/heads, 1,080 outer/900 inner evaluations and 60 nested choices independently checked. All 60 original H1 source probability arrays replay exactly; 798 protected H1 files unchanged. M3 Pro CPU: extraction 345.54 s, fits/scoring/bootstrap 56.16 s, verification 26.27 s (rounded; exact JSON authoritative).
 - **Decision:** preserve H1. Keep class recall, BA, ranking and worst-group results beside F1; retain MFCC and matched-bandwidth controls. A separately frozen transfer sensitivity is needed before promoting any diagnostic setting. Source-versus-propagation dominance remains untested; H2–H5 and military gates are unchanged.
-- **Evidence:** [individual findings](reports/H1_source_diagnostics.md), [protocol/commands](experiments/h1_baselines/source_diagnostics/README.md), [lock](reports/ARTIFACT_INDEX.md#artifact-3bf6b0e3155d), [verification](reports/ARTIFACT_INDEX.md#artifact-6864b4cfa236).
+- **Evidence:** [individual findings](reports/archive/H1_source_diagnostics.md), [protocol/commands](experiments/h1_baselines/source_diagnostics/README.md), [lock](reports/ARTIFACT_INDEX.md#artifact-3bf6b0e3155d), [verification](reports/ARTIFACT_INDEX.md#artifact-6864b4cfa236).
 
 ## H1 — Largest common budget and completed minimum baselines
 
@@ -92,7 +92,7 @@
 Reorganized the active project around admission, R0/H1/H2 and CAST. Preserved the
 original working tree externally and its research source in Git history; moved
 shared numeric code to `src/abvid`. No new scientific run or target evaluation.
-See [the refactor report](reports/REFACTOR.md) for exact numerical parity, tests,
+See [the refactor report](reports/archive/REFACTOR.md) for exact numerical parity, tests,
 storage locations and historical replay boundaries.
 
 ## 2026-10-11 — Confirmation target admission and prevalence-robust re-scoring
@@ -109,14 +109,14 @@ storage locations and historical replay boundaries.
   - **Isolation:** the evaluation release has no labels. Empty minutes are mostly
     absent, so the label-only isolation sensitivity finds 0 minutes.
   - **Seal:** sealed as a `T_confirm` candidate (seal SHA256 `7ff5f704…6f9f`).
-  - [Report](reports/dataset_admission_dcase2024_t10.md).
+  - [Report](reports/archive/dataset_admission_dcase2024_t10.md).
 - **Re-scoring:** `target_panel_rescore_v1` uses archived H1/H2/latency predictions
   only (hash-checked), 10,000 paired group/selection draws, seed 20261011; no fitting.
   - BEATs procedural − real: +11.82 F1 → +2.59 AUROC [−8.48, 9.48].
   - IDMT within − MELAUDIS: +9.93 AUROC [−2.00, 16.24].
   - H2 D (source − path): −22.41 AUROC [−25.55, −10.28].
   - MFCC H2 cells: about 69–71% AUROC with BA 50%.
-  - [Report](reports/target_panel.md).
+  - [Report](reports/archive/target_panel.md).
 - **Interpretation:** the H2 path/latency direction holds for BEATs; H1's synthetic
   counterexample is weakened to inconclusive; MFCC failures are calibration, not
   ranking. All of this is post hoc development evidence.
@@ -172,7 +172,7 @@ storage locations and historical replay boundaries.
   60). The runner compares raw bytes on replay. The decoded waveforms, records and
   descriptors replay identically.
 - **Decision:** no CAST-4A coverage claim. A corrected, separately pinned execution
-  revision is proposed in [the report](reports/CAST4A_run_20261011.md) and awaits
+  revision is proposed in [the report](reports/archive/CAST4A_run_20261011.md) and awaits
   human review because it changes pinned runner and test code. CAST-5A continues; its
   banks use `.npy`.
 
@@ -207,7 +207,7 @@ storage locations and historical replay boundaries.
   - Code: the recorded `learn.py` SHA256 `96c2b78d…85f8` matches the file committed
     to `main` in `273675c`. Imported library modules were not hashed at run time, so
     their identity with the committed versions is `unknown`.
-  - Report: [CAST_source_classification](reports/CAST_source_classification.md).
+  - Report: [CAST_source_classification](reports/archive/CAST_source_classification.md).
 
 ## 2026-10-12 — B1 baseline strength (IDMT, development) and dataset scan
 
@@ -226,7 +226,7 @@ storage locations and historical replay boundaries.
     so their identity is `unknown`. Seeds: H1 lock selections 42, 123, 456, 789, 1024;
     bootstrap PCG64 20261014. Checkpoints: BEATs `d43cbfad…8d34` (H1 config), CNN14
     `0dc499e4…4b31`.
-  - [Report](reports/B1_baseline_strength.md).
+  - [Report](reports/archive/B1_baseline_strength.md).
 - **Implication (hypothesis):** CAST and H2 were band-limited to 4 kHz and scored on the
   same route. Full-band synthesis plus the B1 recipe is needed before revisiting synthetic
   utility.
@@ -237,5 +237,5 @@ storage locations and historical replay boundaries.
   - TUT 2017: small.
   - MAVD: 25 trucks, excluded.
   - AudioSet: training only.
-  - [Report](reports/dataset_scan_20261012.md).
+  - [Report](reports/archive/dataset_scan_20261012.md).
 - **Decision (user):** DCASE stays sealed for later.

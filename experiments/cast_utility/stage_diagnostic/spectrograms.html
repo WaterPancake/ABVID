@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAST fit spectrograms</title>
+<style>
+  :root { --bg: #fafaf8; --fg: #1d1d1b; --muted: #6b6b66; --line: #e3e2dc; --chip: #ecebe5; --on: #1f8a5b; --wrong: #c0362c; --right: #2f6fb0; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #18181a; --fg: #e8e7e2; --muted: #9a9993; --line: #2e2e31; --chip: #26262a; --on: #4fc48d; --wrong: #ff7a6e; --right: #79a9de; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 24px 16px 48px; background: var(--bg); color: var(--fg); font: 14px/1.45 -apple-system, system-ui, sans-serif; }
+  h1 { font-size: 20px; margin: 0 0 6px; } h2 { font-size: 17px; margin: 32px 0 8px; } h3 { font-size: 15px; margin: 20px 0 8px; }
+  p { margin: 4px 0; color: var(--muted); max-width: 900px; }
+  nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; position: sticky; top: 0; background: var(--bg); padding: 8px 0; border-bottom: 1px solid var(--line); z-index: 2; }
+  nav a, button { font: inherit; color: inherit; background: var(--chip); border: 1px solid var(--line); border-radius: 6px; padding: 3px 9px; cursor: pointer; text-decoration: none; }
+  button.on { background: var(--on); color: #fff; border-color: var(--on); }
+  img { max-width: 100%; height: auto; display: block; border-radius: 4px; background: #fff; }
+  .summary { margin: 8px 0 16px; }
+  .card { border-top: 1px solid var(--line); padding: 10px 0; }
+  .meta { display: flex; gap: 10px; align-items: center; margin-bottom: 6px; font-size: 13px; }
+  .very_wrong h3 { color: var(--wrong); } .still_right h3 { color: var(--right); }
+  #now { color: var(--muted); }
+</style>
+</head>
+<body>
+<h1>CAST fit vs original: mel spectrograms</h1>
+<p>Each picture is the log-mel filterbank that BEATs computes from the 2 s clip before its transformer (128 bands, 25 ms frames, 10 ms hop), shown in dB with BEATs's normalization undone. Groups use the saved real-trained BEATs classifier's verdict on the fitted (smooth8, noise realization 0) re-render; the original is always classified correctly. The dashed line marks 4 kHz: neither version has content above it on this route.</p>
+<p>Summary panels: <b>left</b>, the average spectrum; <b>middle</b>, how much the fit adds (+) or removes (−) per band; <b>right</b>, how much of the original's frame-to-frame variation the fit keeps (1 = all of it). Grey shading above 4 kHz is resampling-filter leakage, not signal. Below about 125 Hz a 25 ms frame cannot resolve the mel bands, so several bands repeat one FFT bin and the 78 Hz band is always empty (it shows as a dark row in the pictures and is omitted from the summaries). Descriptive training-data comparison only.</p>
+<nav id="nav"><a href="index.html">← Listening page</a><button id="stop">Stop</button><span id="now"></span></nav>
+<div id="root"></div>
+<script>
+const REPORT = __REPORT__;
+const audio = new Audio(); let current = null;
+const $ = id => document.getElementById(id);
+function stop() { audio.pause(); if (current) current.classList.remove("on"); current = null; $("now").textContent = ""; }
+audio.onended = stop;
+document.addEventListener("click", e => {
+  const b = e.target.closest("button[data-p]"); if (!b) return;
+  if (current === b) return stop();
+  stop(); audio.src = b.dataset.p; audio.play(); b.classList.add("on"); current = b; $("now").textContent = "Playing: " + b.dataset.l;
+});
+$("stop").onclick = stop;
+const pct = p => Math.round(100 * p) + "%";
+$("root").innerHTML = REPORT.map(c => `
+  <section id="${c.class}"><h2>${c.class[0].toUpperCase() + c.class.slice(1)}s</h2>
+  <img class="summary" src="${c.summary}" alt="${c.class} group summary">
+  ${c.groups.map(g => `<div class="${g.key}" id="${c.class}-${g.key}"><h3>${g.label}: ${g.clips.length} clips</h3>
+    ${g.clips.map(x => `<div class="card"><div class="meta"><b>${c.class} ${x.id}</b>
+      <span>P(truck) ${pct(x.po)} → ${pct(x.pf)}</span>
+      <button data-p="audio/${x.id}/original_0.mp3" data-l="${c.class} ${x.id} original">▶ original</button>
+      <button data-p="audio/${x.id}/smooth8_0.mp3" data-l="${c.class} ${x.id} fitted">▶ fitted</button></div>
+      <img loading="lazy" src="${x.png}" alt="spectrograms for ${x.id}"></div>`).join("")}</div>`).join("")}
+  </section>`).join("");
+$("nav").insertAdjacentHTML("beforeend", REPORT.flatMap(c => c.groups.map(g =>
+  `<a href="#${c.class}-${g.key}">${c.class}: ${g.key.replace("_", " ")} (${g.clips.length})</a>`)).join(""));
+</script>
+</body>
+</html>

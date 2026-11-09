@@ -6,7 +6,7 @@ and scored in **one** pass. The set is not split between studies, and neither st
 opens it first. This plan is not a frozen protocol; it orders the work and lists the
 open decisions.
 
-Basis: [proposed experiments](../../reports/proposed_experiments.md) allows one
+Basis: [proposed experiments](../../reports/archive/proposed_experiments.md) allows one
 confirmation batch for several comparisons if all are fixed before access. The seal
 and its rules are in [`dcase2024_t10`](../admission/dcase2024_t10/README.md); the
 sealed `PROTOCOL.md` is not edited.
@@ -23,7 +23,7 @@ sealed `PROTOCOL.md` is not edited.
 
 | Track | Steps | Status 2026-10-11 (evening) |
 |---|---|---|
-| **C: CAST** | CAST-4A grouped coverage → CAST-4B joint metric → CAST-5A within IDMT → CAST-5B on exposed MELAUDIS → freeze one CAST procedure | **4A:** parents complete; no coverage result (WAV `PEAK`-timestamp replay defect, [report](../../reports/CAST4A_run_20261011.md)). **5A complete 2026-10-12:** BEATs RC − RA macro-F1 +0.47 [−0.97, 2.08], so a practical gain is **ruled out** ([report](../../reports/CAST_source_classification.md)). The CAST-5B precondition is not met |
+| **C: CAST** | CAST-4A grouped coverage → CAST-4B joint metric → CAST-5A within IDMT → CAST-5B on exposed MELAUDIS → freeze one CAST procedure | **4A:** parents complete; no coverage result (WAV `PEAK`-timestamp replay defect, [report](../../reports/archive/CAST4A_run_20261011.md)). **5A complete 2026-10-12:** BEATs RC − RA macro-F1 +0.47 [−0.97, 2.08], so a practical gain is **ruled out** ([report](../../reports/archive/CAST_source_classification.md)). The CAST-5B precondition is not met |
 | **H: H2 replication (H2R)** | renderer v2 with the H2 filter latency declared and validated → H2R design → development run on exposed MELAUDIS → freeze | Renderer v2 done and tested, including bit-exact archive parity. The corrected 2×2 assembled from existing heads shows **no usable classifier** once latency is removed ([H2R draft](H2R_DRAFT.md)); design decision pending |
 | **A: access** | label-blind cross-corpus overlap audit tool → DCASE feature route (four-capsule channel mean, the comparison's resampling route, the sealed window rule) → precision check from DCASE support counts (metadata only) | Overlap tool done (`abvid.data.overlap`; real-audio check passed). Audit-access (A1) and scoring (A2) authorization checks are implemented. Rough precision noted in the [protocol draft](PROTOCOL_DRAFT.md) |
 | **J: joint freeze** | one document naming both studies' heads, preprocessing, metrics, primary designation and multiplicity rule → overlap audit run → human authorization → single scoring pass → seal marked consumed | [Protocol draft](PROTOCOL_DRAFT.md) unfrozen; waiting on tracks C/H and on user decisions |
@@ -81,5 +81,5 @@ Still open:
 - Authorization A1, the audit download, at the joint freeze.
 - Authorization A2, the single scoring pass.
 
-Long term, the planned roadside collection ([target panel](../../reports/target_panel.md))
+Long term, the planned roadside collection ([target panel](../../reports/archive/target_panel.md))
 removes the need for studies to share one confirmation set.
